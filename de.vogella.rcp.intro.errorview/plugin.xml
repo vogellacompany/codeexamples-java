@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.intro.errorview.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.rcp.intro.errorview.Perspective"
+            id="de.vogella.rcp.intro.errorview.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="Admin">
+            <command
+                  commandId="org.eclipse.ui.views.showView"
+                  label="Show Error View"
+                  style="push">
+               <parameter
+                     name="org.eclipse.ui.views.showView.viewId"
+                     value="org.eclipse.pde.runtime.LogView">
+               </parameter>
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>

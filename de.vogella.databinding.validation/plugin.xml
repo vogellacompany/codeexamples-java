@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.databinding.validation.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.databinding.validation.Perspective"
+            id="de.vogella.databinding.validation.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="de.vogella.databinding.validation.PersonViewValidation"
+            id="de.vogella.databinding.validation.personview"
+            name="name"
+            restorable="true">
+      </view>
+   </extension>
+
+</plugin>

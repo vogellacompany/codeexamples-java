@@ -1,0 +1,108 @@
+Manifest-Version: 1.0
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.jdt; singleton:=true
+Eclipse-SourceReferences: scm:cvs:pserver:dev.eclipse.org:/cvsroot/ecl
+ ipse:org.eclipse.jdt;tag=v20100526-0800
+Require-Bundle: org.eclipse.ui.intro;bundle-version="[3.2.0,4.0.0)",or
+ g.eclipse.ui.cheatsheets;bundle-version="[3.2.0,4.0.0)"
+Bundle-Version: 3.6.0.v201006080911
+Bundle-ManifestVersion: 2
+
+Name: intro/css/whatsnew.properties
+SHA1-Digest: 2pxt5LLxrDiM7Z4Tg7cHlGcFFuk=
+
+Name: about.ini
+SHA1-Digest: o/0b662qf7dolpQ4R4xmrkB2fwc=
+
+Name: images/topiclabel/tu_swtapp48_hov.gif
+SHA1-Digest: BjI5VXA1/0FJNqOPWgGHA6FW8eQ=
+
+Name: intro/css/samples.properties
+SHA1-Digest: //Upwc/Z59lOhKDZbYs0/Em4AIw=
+
+Name: images/topiclabel/ov_javadev48.gif
+SHA1-Digest: Xa7lAFDAXwEz2m/rycenR6bJ7iY=
+
+Name: plugin.properties
+SHA1-Digest: JsUFQw4WL5KLzHAv5eDoDA4wJN8=
+
+Name: cheatsheets/HelloWorldSWT.xml
+SHA1-Digest: 6R0KqDRMEAFvg2CNseW8bwirg8A=
+
+Name: intro/whatsnewExtensionContent.xml
+SHA1-Digest: o+uOTPIx8oQd6QbvVldvbjAPd2U=
+
+Name: images/topiclabel/wn_javadevtools48.gif
+SHA1-Digest: 9oX5XAqbIYHXuK2+6q7EUurC9kU=
+
+Name: images/topiclabel/ov_javadev48_hov.gif
+SHA1-Digest: +bz7+UseC+d/JQuleexuZOKkAj8=
+
+Name: intro/css/overview.properties
+SHA1-Digest: FMynMsSRmgNx4JeF090vsIaiZdM=
+
+Name: plugin.xml
+SHA1-Digest: 7iqfcuP+X/7I3xd7iKj2mMcknIc=
+
+Name: intro/css/overview.css
+SHA1-Digest: 1Qs8JgDNLzOdfuylluWCUzUeKFM=
+
+Name: eclipse32.png
+SHA1-Digest: eCk/A3/COXL3S6qAVDOSrlsqmLw=
+
+Name: images/topiclabel/sa_samplepyramid48.gif
+SHA1-Digest: 5RMVjJAMFMHQVd6ibgsfIK3ViMA=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: KyT9FF7C7t86NoBoa2kZT3ZJBfw=
+
+Name: about.mappings
+SHA1-Digest: 3GYjqYiTZhHow0iw7EVpSTXrAlY=
+
+Name: images/topiclabel/wn_javadevtools48_hov.gif
+SHA1-Digest: 8OOICJ/6sVCMpW+O+bvP6bjS4mU=
+
+Name: intro/samplesExtensionContent.xml
+SHA1-Digest: J8vxLzcUhLK21751xd5MQOf3UJk=
+
+Name: about.html
+SHA1-Digest: ejOZra0kypGLQQ2bJtGTX+LI8tU=
+
+Name: images/topiclabel/tu_javaapp48.gif
+SHA1-Digest: dXcv+YpwgT4x34pnHAW1TruZsZc=
+
+Name: intro/css/samples.css
+SHA1-Digest: VVWXZdmGqBqXqI0n0CJnDWj+oog=
+
+Name: cheatsheets/HelloWorld.xml
+SHA1-Digest: idRVtmz9r+HJ8tWsCw3M8dux6iU=
+
+Name: images/topiclabel/sa_samplepyramid48_hov.gif
+SHA1-Digest: 5j4lU+A1NeXsPB6RxPcBJeAEa/k=
+
+Name: about.properties
+SHA1-Digest: v3zvn7qQwrDA71i49Yyqas0/KdM=
+
+Name: intro/tutorialsExtensionContent.xml
+SHA1-Digest: fkV25dp+e5p97Gl/QOc+AewmAv0=
+
+Name: intro/css/whatsnew.css
+SHA1-Digest: AuVHTxPwgEOnrt5tiX/UC6AHQaU=
+
+Name: images/topiclabel/tu_swtapp48.gif
+SHA1-Digest: Vwiyzwri0XioTNGmTZS7xbR6IXg=
+
+Name: intro/css/tutorials.css
+SHA1-Digest: rv2CNL9W6MqQ/P0HFb30ZNB0cJ4=
+
+Name: intro/css/tutorials.properties
+SHA1-Digest: kTuc2dg2ITdTLMC1ALk0XhkrLU4=
+
+Name: images/topiclabel/tu_javaapp48_hov.gif
+SHA1-Digest: LxjyfbrwJR/kPIAvY+uMWwDNKJM=
+
+Name: intro/overviewExtensionContent.xml
+SHA1-Digest: wlaXC1JLm+Inlr4GIO0xyf4DnaM=
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.net.proxy.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="de.vogella.rcp.net.proxy.Perspective"
+            id="de.vogella.rcp.net.proxy.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="de.vogella.rcp.net.proxy.View"
+            id="de.vogella.rcp.net.proxy.view">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <command
+               commandId="org.eclipse.ui.window.preferences"
+               label="Open Preferences"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

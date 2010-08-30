@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<!--
+    Copyright (c) 2009 Tasktop Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+         Tasktop Technologies - initial API and implementation
+ -->
+
+<toc label="Tasks User Guide">
+ <anchor id="before-reference" />
+ <topic label="Feature Reference">
+  	<anchor id="before-reference-content"/>
+    <link toc="Mylyn-User-Guide-toc.xml"/>
+    <anchor id="after-reference-content"/>
+    <anchor id="additions-reference" />
+ </topic>
+ <topic label="Frequently Asked Questions">
+  	<anchor id="before-faq-content"/>
+    <link toc="Mylyn-FAQ-toc.xml"/>
+    <anchor id="after-faq-content"/>
+    <anchor id="additions-faq" />
+ </topic>
+  	<anchor id="after-reference" />
+  	<anchor id="additions" />
+ 	<topic href="doc/notices.html" label="Legal" />
+</toc>
+
+

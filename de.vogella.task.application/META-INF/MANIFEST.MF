@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Application Plug-in
+Bundle-SymbolicName: de.vogella.task.application; singleton:=true
+Bundle-Version: 1.0.0
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ de.vogella.task.dao;bundle-version="1.0.0",
+ de.vogella.task.model;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.vogella.task.application.views

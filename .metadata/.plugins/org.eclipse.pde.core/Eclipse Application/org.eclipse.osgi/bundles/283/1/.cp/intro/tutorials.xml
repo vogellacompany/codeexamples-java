@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+  	<extensionContent id="org.eclipse.team.svn.tutorials" style="css/tutorials.css" name="Subversive Tutorials" path="tutorials/@">
+		<group label="Subversive" style-id="content-group" id="org.eclipse.team.svn-tutorials-group">
+       		<link label="Subversive Tutorials" url="http://org.eclipse.ui.intro/showHelpTopic?id=/org.eclipse.team.svn.help/teamSupport.html" id="subversive-tutorials" style-id="content-link">
+          		<text>Learn about most common use cases when working with Subversive.</text>
+       		</link>
+       	</group>
+  	</extensionContent>
+</introContent>

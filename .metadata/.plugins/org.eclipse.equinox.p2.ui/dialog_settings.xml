@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.InstallWizard.WizardSettings">
+		<item value="838" key="DIALOG_WIDTH"/>
+		<item value="-46" key="DIALOG_Y_ORIGIN"/>
+		<item value="56" key="DIALOG_X_ORIGIN"/>
+		<item value="751" key="DIALOG_HEIGHT"/>
+		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.PreselectedIUInstallWizard.WizardSettings">
+		<item value="820" key="DIALOG_WIDTH"/>
+		<item value="19" key="DIALOG_Y_ORIGIN"/>
+		<item value="542" key="DIALOG_HEIGHT"/>
+		<item value="-79" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+</section>

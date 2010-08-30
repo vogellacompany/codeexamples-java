@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+	<skin>
+		<id>aqua.desktop</id>
+		<family>aqua</family>
+		<render-kit-id>
+			org.apache.myfaces.trinidad.desktop
+		</render-kit-id>
+		<style-sheet-name>skins/aqua.css
+		</style-sheet-name>
+	</skin>
+</skins>

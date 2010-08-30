@@ -1,0 +1,11 @@
+Spatzennest
+Twitter-Timelines in die eigene Homepage einbinden
+------------------------------------------------------------------------
+c't 20/09, Seite 188 (ola)
+
+index.html	Die Startseite, die das Skript einbettet
+twitter.js	Der JavaScript-Code zum Laden und Darstellen der Tweets
+*.css	Stilvorgaben
+loading2.gif	Ein animiertes Lade-Icon
+twitproxy2.php	Der Twitter-Proxy
+helper.js	Ein paar nützliche JavaScript-Funktionen

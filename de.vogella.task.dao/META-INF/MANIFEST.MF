@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Dao Plug-in
+Bundle-SymbolicName: de.vogella.task.dao
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: de.vogella.task.model;bundle-version="1.0.0",
+ org.junit4;bundle-version="4.3.1"
+Export-Package: de.vogella.task.dao

@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn FAQ - Team Support</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Team Support</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Java-Development.html" title="Java Development">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="WikiText.html" title="WikiText">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Java Development</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">WikiText</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Team_Support">Team Support</h1>
+		<h2 id="My_change_set_is_missing_or_doesn.E2.80.99t_contain_elements_it_should._Help.21">My change set is missing or doesn’t contain elements it should. Help!</h2>
+		<p>If a task change set disappears or is missing items, toggle the Incoming/Outgoing mode of the Synchronize view via its toolbar button. </p>
+		<h2 id="Why_does_task_change_set_not_appear_when_I_modify_files.3F">Why does task change set not appear when I modify files?</h2>
+		<p>A task change set should appear if you activate a task and modify a file connected to a compatible source repository (e.g. CVS, SVN).  If it does not try the following:</p>
+		<ul>
+			<li>Ensure you have installed the [
+				<a href="http://www.eclipse.org/mylyn/downloads/" target="mylyn_external">http://www.eclipse.org/mylyn/downloads/</a> 
+				<i>Mylyn Bridge: Eclipse IDE</i> feature].  Note that previously this feature was named Eclipse SDK and not distributed with the Java-only Eclipse download (
+				<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=191793" target="mylyn_external">bug 191793</a>).
+			</li>
+		</ul>
+		<ul>
+			<li>If you are using Subclipse or Subversicve, make sure you have the respective integration for Mylyn installed.</li>
+		</ul>
+		<ul>
+			<li>Verify that the [[Mylyn/User_Guide#Configuring_the_Synchronize_view_for_change_sets|configured 
+				<i>Synchronize View</i> is configured for change sets]].
+			</li>
+		</ul>
+		<ul>
+			<li>Verify that Mylyn Tasks UI and Mylyn Team UI are enabled under General → Startup and Shutdown in the Eclipse preferences.</li>
+		</ul>
+		<p>If the above are working but the change set appears to be missing relevant files:</p>
+		<ul>
+			<li>You may be seeing the 
+				<i>Synchronize</i> view’s refresh problem (
+				<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=142395" target="mylyn_external">bug 142395</a>).  Toggle from 
+				<i>Incoming/Ougtoing</i> to 
+				<i>Incoming</i> mode and back again to refresh the view.
+			</li>
+		</ul>
+		<ul>
+			<li>If the files or change set are still missing deactivate and reactivate the task to force a full refresh.</li>
+		</ul>
+		<h2 id="Why_do_files_disappear_from_the_change_set_when_I_close_them.3F">Why do files disappear from the change set when I close them?</h2>
+		<p>If you have the 
+			<i>Preferences → Mylyn → Context → Manage open editors to match task context</i> option enabled, Mylyn will perform editor management so that you don’t have to.  Closing a file makes it less interesting, and causes it to disappear from the active task context, and hence from the change set.  This option prevents you from having to manage the set of open files, will automatically close editors for files that become uninteresting, and will ensure that the open editors match the task context.
+		</p>
+		<h2 id="Why_am_I_missing_elements_when_I_retrieve_someone_else.E2.80.99s_context.3F">Why am I missing elements when I retrieve someone else’s context?</h2>
+		<p>To identify elements within a project, Mylyn relies on the name of the project being consistent across workspaces.  If the project name in the workspace that the context was created with is different than its name in your workspace, the task context will not show elements within that project (
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=164058" target="mylyn_external">bug 164058</a>).  The other case where context can be lost is if the elements change names outside of the workspace ( 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=164243" target="mylyn_external">bug 164243</a>).
+		</p>
+		<p>The work-around is to use the same project names across your team’s workspaces.  We recommend the following two approaches for standardizing on project names:</p>
+		<ul>
+			<li>Use 
+				<b>Team Project Sets</b>: these are a very useful Eclipse facility that allows your entire team to check out numerous projects from version control by importing a single file.  Create a project set via 
+				<i>File → Export → Team Project Set</i>, host this file somewhere accessible, then have others import vai 
+				<i>File → Import → Team Project Set</i>.
+			</li>
+			<li>Have developers check out projects into their workspace without renaming them.  The above is a shortcut for doing this.  If alphabetical sort order in the 
+				<i>Package Explorer</i> is a problem, organize your projects via 
+				<i>Project Explorer → view menu → Top Level Elements → Working Sets</i>.
+			</li>
+		</ul><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Java-Development.html" title="Java Development">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="FAQ.html" title="Mylyn FAQ">
+						<img alt="Mylyn FAQ" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="WikiText.html" title="WikiText">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Java Development</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">WikiText</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.databinding.person.listviewer.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.databinding.person.listviewer.Perspective"
+            id="de.vogella.databinding.person.listviewer.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="de.vogella.databinding.person.listviewer.View"
+            id="de.vogella.databinding.person.listviewer.View"
+            name="View"
+            restorable="true">
+      </view>
+      <view
+            class="de.vogella.databinding.person.listviewer.ViewElements"
+            id="de.vogella.databinding.person.listviewer.ViewElements"
+            name="Element Views"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               closeable="true"
+               id="de.vogella.databinding.person.listviewer.ViewElements"
+               minimized="false"
+               moveable="true"
+               ratio="0.5"
+               relationship="left"
+               relative="org.eclipse.ui.editorss"
+               showTitle="true"
+               standalone="true"
+               visible="true">
+         </view>
+         <view
+               closeable="true"
+               id="de.vogella.databinding.person.listviewer.View"
+               minimized="false"
+               moveable="true"
+               ratio="1"
+               relationship="left"
+               relative="org.eclipse.ui.editorss"
+               showTitle="true"
+               standalone="true"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

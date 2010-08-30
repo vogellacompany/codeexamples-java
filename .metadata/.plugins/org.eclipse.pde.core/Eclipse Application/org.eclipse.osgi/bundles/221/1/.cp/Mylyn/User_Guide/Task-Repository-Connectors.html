@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn User Guide - Task Repository Connectors</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Task Repository Connectors</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Preferences.html" title="Preferences">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Updating-This-Document.html" title="Updating This Document">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Preferences</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Updating This Document</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Task_Repository_Connectors">Task Repository Connectors</h1>
+		<p>Mylyn allows you to collaborate on tasks via a shared task repository, also known as bug tracking systems.  In order to collaborate, you need to have a 
+			<b>Connector</b> to your particular repository.
+		</p>
+		<p>See 
+			<a href="http://wiki.eclipse.org/Mylyn/Extensions" title="Mylyn/Extensions" target="mylyn_external">Mylyn Extensions</a> for a list of available connectors.
+		</p>
+		<h2 id="Bugzilla_Connector">Bugzilla Connector</h2>
+		<p>See 
+			<a href="../../Mylyn/FAQ/Bugzilla-Connector.html#Bugzilla_Connector" title="Mylyn/FAQ#Bugzilla_Connector">Bugzilla Connector Troubleshooting</a>.
+		</p>
+		<h2 id="Trac_Connector">Trac Connector</h2>
+		<p>See 
+			<a href="../../Mylyn/FAQ/Trac-Connector.html#Trac_Connector" title="Mylyn/FAQ#Trac_Connector">Trac Connector Troubleshooting</a>.
+		</p>
+		<h2 id="Generic_Web_Templates_Connector">Generic Web Templates Connector</h2>
+		<p>The generic web repository connector is NOT part of the default Mylyn install. You can install it from the incubator update site. See 
+			<a href="http://www.eclipse.org/mylyn/downloads/" target="mylyn_external">Mylyn download page</a> for more details.
+		</p>
+		<p>The web connector allow to retrieve tasks from repositories that don't have rich connectors, but can show list of tasks on the web UI. Out of the box connector provides configuration templates for the following issue tracking systems:</p>
+		<ul>
+			<li>Google Code Hosting (<code>code.google.com</code>)</li>
+			<li>IssueZilla (<code>java.net, dev2dev, tigris.org</code>)</li>
+			<li>GForge (<code>objectweb.org</code>)</li>
+			<li>SourceForge (<code>sf.net</code>), see 
+				<a href="http://wiki.eclipse.org/Using_Sourceforge_with_Mylyn" title="Using Sourceforge with Mylyn" target="mylyn_external">Using Sourceforge with Mylyn</a>
+			</li>
+			<li>Mantis (<code>www.futureware.biz/mantis</code>)</li>
+			<li>ChangeLogic (<code>changelogic.araneaframework.org</code>)</li>
+			<li>OTRS (<code>otrs.org</code>)</li>
+			<li>phpBB</li>
+			<li>vBulletin</li>
+		</ul>
+		<p>Lists of issues can be extracted from existing web pages using simple parsing configuration. Configuration can be also parametrized to make it easier to customize it for a specific project.</p>
+		<p>The parameters used for configuring project properties are typically substituted into the URLs used to access the repository. Substitution and matching rules can be edited under the 
+			<i>Advanced Configuration</i> section on both the 
+			<i>Repository Settings</i> page and the 
+			<i>Edit Query</i> page.
+		</p>
+		<p>See 
+			<a href="../../Mylyn/FAQ/Web-Templates-Connector.html#Web_Templates_Connector" title="Mylyn/FAQ#Web_Templates_Connector">FAQ</a> for the troubleshooting tips.
+		</p>
+		<p>
+			<b>For example</b>, consider the configuration steps for GlassFish project at <code>java.net</code>:
+		</p>
+		<p>
+			<b>1.</b> Create new Generic web-based repository (in the Task Repository view). GlassFish is using IssueZilla and has a preconfigured template that can be selected by server url 
+			<i>
+				<a href="https://glassfish.dev.java.net/issues" target="mylyn_external">https://glassfish.dev.java.net/issues</a>
+			</i>. You can also specify all fields manually in the 
+			<i>Advanced Configuration</i> section. For GlassFish the following settings are required:
+		</p>
+		<ul>
+			<li>Task URL: <code>${serverUrl}/show_bug.cgi?id=</code></li>
+			<li>New Task URL: <code>${serverUrl}/enter_bug.cgi?issue_type=DEFECT</code></li>
+			<li>Query URL: <code>${serverUrl}/buglist.cgi?component=glassfish&amp;issue_status=NEW&amp;issue_status=STARTED&amp;issue_status=REOPENED&amp;order=Issue+Number</code></li>
+			<li>Query Pattern: <code>&lt;a href="show_bug.cgi\?id\=(.+?)"&gt;.+?&lt;span class="summary"&gt;(.+?)&lt;/span&gt;</code></li>
+		</ul>
+		<dl>
+			<dd>
+				<b>Note:</b> 
+				<i>Query Pattern</i> field should be a <code>regexp</code> with 1st matching group on 
+				<i>Issue ID</i> and 2nd on 
+				<i>Issue Description</i>. Alternatively, you could use named matching groups: ({Id}.+?), ({Description}.+?), ({Status}.+?), ({Owner}.+?) and ({Type}.+?), then they can appear in query <code>regexp</code> in an arbitrary order. The second option requires build 2.0.0v20070717 or later.
+			</dd>
+		</dl>
+		<dl>
+			<dd>
+				<b>Note:</b> the above fields are using parameter substitution <code>${..}</code>. Variables <code>serverUrl, userId</code> and <code>password</code> are substituted from the values of corresponding fields of the repository preference page. In addition you can specify any arbitrary parameters and their values that will be also substituted into the template fields.
+			</dd>
+		</dl>
+		<dl>
+			<dd>
+				<b>Note:</b> the SourceForge template included with connector assume that 
+				<i>single repository is used for all projects</i>. User should create multiple queries, and set project parameters at the query level. Because web connector don't support actions like "open repository task" there is really no need to create separate repositories per project and if you think about it that is how it work for connectors for Bugzilla and JIRA. However, it is still possible to setup separate repository per project using repository url like http://sourceforge.net/tracker/?group_id=172199 and accordingly updating derived urls is the advanced repository settings.
+			</dd>
+		</dl>
+		<p><!-- TODO need login setup for above GlassFish example -->
+
+			<b>For the web repository that require user to login, use advanced configuration in following way.</b> 
+<i>			This configuration is for GForge, you might need to change it for other repositories</i>:
+		</p>
+		<ul>
+			<li>Login Request URL - an address that form is using to submit login request: <code>${serverUrl}/account/login.php?return_to=&amp;form_loginname=${userId}&amp;form_pw=${password}&amp;login=Login 
+				<b>(POST)</b></code>
+			</li>
+			<li>Login Form URL - an address where login form is located 
+				<i>(only needed if server need a login token in the parameters of the Login Request URL)</i>: <code>${serverUrl}/account/login.php</code>
+			</li>
+			<li>Login Token Pattern - pattern to extract value of the <code>loginToken</code> parameter from the form page 
+				<i>(only needed if server need a login token in the parameters of the Login Request URL and Login Form URL is specified)</i>: <code>session_ser=(.+?)</code>
+			</li>
+		</ul>
+		<p>
+			<b>2.</b> Create a new query for the GlassFish task repository created above (either from popup context menu in the Task List view or using a "New..." wizard from File -&gt; New... -&gt; Other... menu).
+		</p>
+		<ul>
+			<li>
+				<i>Query URL</i> and 
+				<i>Query Pattern</i> in the 
+				<i>Repository Preferences</i> are used as default query parameters and can be overwritten in 
+				<i>Advanced Configuration</i> section in 
+				<i>Query Preferences</i>. Custom parameter values can also be overridden here as well as new parameters for substitution into the specific query.
+			</li>
+		</ul>
+		<ul>
+			<li>In the 
+				<i>Advanced Configuration</i> section of the "New Query" dialog, there is a "Preview" button. You can use it to test your query pattern.
+			</li>
+		</ul>
+		<p>
+			<img border="0" src="images/Generic-web-repository-settings.gif"/>
+		</p>
+		<h2 id="XPlanner_Connector">XPlanner Connector</h2>
+		<p>The XPlanner connector is currently in the Experimental state.  It supports XPlanner version .7.</p>
+		<p>
+			<b>Query</b>
+		</p>
+		<p>XPlanner Connector supports creating queries from your XPlanner repository.  You can select to create a query for your own in progress tasks (the default), or select projects or iterations or user stories from a list.  You can also select ones assigned to you, or all.  Currently you can choose to group the results by tasks or user stories.  If you group the results by tasks, this will result in a single query with the applicable tasks underneath it.  If you choose to group the results by user stories, this will result in multiple queries added to the task list, each one corresponding to a user story, with the applicable tasks underneath it:</p>
+		<p>
+			<img border="0" src="images/XPlannerQuery.jpg"/>
+		</p>
+		<p>
+			<b>Task Editor</b>
+		</p>
+		<p>A rich editor for editing XPlanner tasks is available.  It currently doesn't support all of the attributes you can change in XPlanner itself, but allows you to modify the basic ones necessary for XP development -- e.g. summary, description, estimated time. The attributes section of the editor displays an XPlanner-like view of the meaningful attributes, some of which are not editable.</p>
+		<p>
+			<img border="0" src="images/XPlannerTaskEditor.gif"/>
+		</p>
+		<p>
+			<b>User Story Editor</b>
+		</p>
+		<p>If you open an XPlanner element by id, using the "Open Repository Task by Key/ID" dialog, and that id is a user story id, you will see the read-only user story editor.  This editor is just useful for seeing the major details of a user story -- no items in it can be changed, since there is no really good mapping between a user story and a Mylyn task.</p>
+		<p>
+			<img border="0" src="images/XPlannerUserStoryEditor.gif"/>
+		</p>
+		<p>
+			<a href="http://wiki.eclipse.org/Category:Draft_Documentation" title="Category:Draft Documentation" target="mylyn_external">Category:Draft Documentation</a>
+		</p><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Preferences.html" title="Preferences">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="User-Guide.html" title="Mylyn User Guide">
+						<img alt="Mylyn User Guide" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Updating-This-Document.html" title="Updating This Document">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Preferences</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Updating This Document</td>
+			</tr>
+		</table>
+	</body>
+</html>

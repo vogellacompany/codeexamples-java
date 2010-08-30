@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.microsoft.fileexplorer.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.microsoft.fileexplorer.Perspective"
+            id="de.vogella.microsoft.fileexplorer.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="de.vogella.microsoft.fileexplorer.FileExplorerView"
+            id="de.vogella.microsoft.fileexplorer.FileExplorerView"
+            name="File Explorer"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               closeable="true"
+               id="de.vogella.microsoft.fileexplorer.FileExplorerView"
+               minimized="false"
+               moveable="true"
+               ratio="0.95f"
+               relationship="left"
+               relative="org.eclipse.ui.editorss"
+               showTitle="true"
+               standalone="true"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

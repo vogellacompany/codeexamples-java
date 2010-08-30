@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+	<!-- This is a comment -->
+<people>
+	<address type="personal">
+		<name>Lars </name>
+		<street> Test </street>
+		<telephon number="0123" />
+	</address>
+	<address type="personal">
+		<name>Joe </name>
+		<street> Test2 </street>
+		<telephon number="1234" />
+	</address>
+	<address type="business">
+		<name>Jim</name>
+		<street> Test3 </street>
+		<telephon number="2345" />
+	</address>
+</people>

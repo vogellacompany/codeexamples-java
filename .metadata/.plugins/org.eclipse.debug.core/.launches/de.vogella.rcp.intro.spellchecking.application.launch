@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.pde.ui.RuntimeWorkbench">
+<booleanAttribute key="append.args" value="true"/>
+<stringAttribute key="application" value="de.vogella.rcp.intro.spellchecking.application"/>
+<booleanAttribute key="askclear" value="true"/>
+<booleanAttribute key="automaticAdd" value="false"/>
+<stringAttribute key="checked" value="[NONE]"/>
+<booleanAttribute key="clearws" value="false"/>
+<booleanAttribute key="default" value="false"/>
+<stringAttribute key="location" value="${workspace_loc}/../runtime-de.vogella.rcp.intro.spellchecking.application"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dosgi.requiredJavaVersion=1.5 -XX:MaxPermSize=256m -Xms40m -Xmx512m"/>
+<booleanAttribute key="pde.generated.config" value="true"/>
+<stringAttribute key="pde.version" value="3.3"/>
+<stringAttribute key="selected_target_plugins" value="com.ibm.icu*4.2.1.v20100412,javax.servlet*2.5.0.v200910301333,org.eclipse.ant.core*3.2.200.v20100427,org.eclipse.compare.core*3.5.100.I20100526-0800,org.eclipse.core.commands*3.6.0.I20100512-1500,org.eclipse.core.contenttype*3.4.100.v20100505-1235,org.eclipse.core.databinding*1.3.100.I20100601-0800,org.eclipse.core.databinding.observable*1.3.0.I20100601-0800,org.eclipse.core.databinding.property*1.3.0.I20100601-0800,org.eclipse.core.expressions*3.4.200.v20100505,org.eclipse.core.filebuffers*3.5.100.v20100520-0800,org.eclipse.core.filesystem*1.3.0.v20100526-0737,org.eclipse.core.filesystem.linux.x86*1.4.0.v20100505-1235,org.eclipse.core.jobs*3.5.0.v20100515,org.eclipse.core.net*1.2.100.I20100511-0800,org.eclipse.core.net.linux.x86*1.1.0.I20100505-1245,org.eclipse.core.resources*3.6.0.v20100526-0737,org.eclipse.core.runtime*3.6.0.v20100505,org.eclipse.core.runtime.compatibility.auth*3.2.200.v20100517,org.eclipse.core.runtime.compatibility.registry*3.3.0.v20100520,org.eclipse.core.variables*3.2.400.v20100505,org.eclipse.ecf*3.1.0.v20100529-0735,org.eclipse.ecf.filetransfer*4.0.0.v20100529-0735,org.eclipse.ecf.identity*3.1.0.v20100529-0735,org.eclipse.ecf.provider.filetransfer*3.1.0.v20100529-0735,org.eclipse.ecf.provider.filetransfer.ssl*1.0.0.v20100529-0735,org.eclipse.ecf.ssl*1.0.0.v20100529-0735,org.eclipse.equinox.app*1.3.0.v20100512,org.eclipse.equinox.common*3.6.0.v20100503,org.eclipse.equinox.concurrent*1.0.100.v20100503,org.eclipse.equinox.p2.core*2.0.0.v20100510,org.eclipse.equinox.p2.engine*2.0.0.v20100606,org.eclipse.equinox.p2.metadata*2.0.0.v20100601,org.eclipse.equinox.p2.metadata.repository*1.1.0.v20100513,org.eclipse.equinox.p2.repository*2.0.0.v20100519,org.eclipse.equinox.preferences*3.3.0.v20100503,org.eclipse.equinox.registry*3.5.0.v20100503,org.eclipse.equinox.security*1.0.200.v20100503,org.eclipse.help*3.5.0.v20100524,org.eclipse.jface*3.6.0.I20100601-0800,org.eclipse.jface.databinding*1.4.0.I20100601-0800,org.eclipse.jface.text*3.6.0.v20100526-0800,org.eclipse.jface.text.source*3.6.0.v20100526-0800,org.eclipse.osgi*3.6.0.v20100517,org.eclipse.osgi.services*3.2.100.v20100503,org.eclipse.swt*3.6.0.v3650b,org.eclipse.swt.gtk.linux.x86*3.6.0.v3650b,org.eclipse.text*3.5.0.v20100601-1300,org.eclipse.ui*3.6.0.I20100603-1100,org.eclipse.ui.editors*3.6.0.v20100520-0800,org.eclipse.ui.forms*3.5.0.v20100427,org.eclipse.ui.ide*3.6.0.I20100601-0800,org.eclipse.ui.views*3.5.0.I20100527-0800,org.eclipse.ui.workbench*3.6.0.I20100603-1100,org.eclipse.ui.workbench.texteditor*3.6.0.v20100520-0800"/>
+<stringAttribute key="selected_workspace_plugins" value="de.vogella.rcp.intro.spellchecking*1.0.0.qualifier"/>
+<booleanAttribute key="usefeatures" value="false"/>
+</launchConfiguration>

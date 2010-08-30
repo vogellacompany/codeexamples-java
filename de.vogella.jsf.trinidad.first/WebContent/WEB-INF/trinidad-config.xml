@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<trinidad-config xmlns="http://myfaces.apache.org/trinidad/config">
+<!-- Enable debug output -->
+  <debug-output>true</debug-output>
+  <accessibility-mode>default</accessibility-mode>
+  <skin-family>simple</skin-family>   
+</trinidad-config>
+

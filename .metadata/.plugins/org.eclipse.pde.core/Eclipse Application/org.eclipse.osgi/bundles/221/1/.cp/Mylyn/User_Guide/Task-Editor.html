@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn User Guide - Task Editor</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Task Editor</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Task-Repositories.html" title="Task Repositories">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Task-Focused-Interface.html" title="Task-Focused Interface">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Task Repositories</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Task-Focused Interface</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Task_Editor">Task Editor</h1>
+		<p>The task editor allows you to view and edit the tasks in your task list. Double-click on a task in your task list to open the editor. The features of the task editor will vary depending on whether it is a local task or a shared repository task. For shared repository tasks, there are some differences depending on the type of repository (and corresponding connector) that you are using (link: connectors). </p>
+		<h2 id="Repository_Task_Details">Repository Task Details</h2>
+		<p>In this section, we describe the task editor for shared bugs in a Bugzilla repository. Task editors for other repository types such as JIRA offer similar functionality.</p>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-Task-Editor-Top.png"/>
+		</p>
+		<p>
+			<b>Editor toolbar buttons</b>
+		</p>
+		<ul>
+			<li>
+				<b>Synchronize Incoming Changes</b> - Updates the local copy of the task to reflect any changes on the server.
+			</li>
+			<li>
+				<b>Create a new subtask</b> - Creates a new task that will be considered a prerequisite to completing the current task. Subtasks appear nested under their parent task in the task list. In Bugzilla terminology, the subtask "Blocks" the parent task and the subtask's ID will appear in the "Blocks:" field of the parent task.
+			</li>
+			<li>
+				<b>History</b> - Displays the task's change history in an internal browser using the web interface.
+			</li>
+			<li>
+				<b>Open with Web Browser</b> - Displays the web interface for the task in an internal web browser.
+			</li>
+			<li>
+				<b>Activate</b> - Toggles the activation and deactivation of the task.
+			</li>
+		</ul>
+		<p>
+			<b>Attributes</b>
+			Use the Attributes section to add or update structured information about the task.
+		</p>
+		<p>
+			<b>Team Planning</b>
+			The Team Planning section contains time-related information about the task that will be shared with your team. You can use the 
+			<b>Due</b> field to set a due date for your task. On the due date, the task will appear in red in your task list.
+		</p>
+		<p>
+			<b>Attachments</b>
+			You can attach a file to this task so that a copy will be uploaded to your task repository and become available to anyone who can access the task. 
+		</p>
+		<p>To attach a file</p>
+		<ul>
+			<li>click the "Attach..." button, which will open a wizard.</li>
+			<li>Select from one of the following:
+				<ul>
+					<li>
+						<b>File</b> - Uploads a file from your system. Click "Browse" on the right to select the file.
+					</li>
+					<li>
+						<b>Clipboard</b> - 
+					</li>
+					<li>
+						<b>Workspace</b> - Uploads a file from your workspace. Select the file from the box below.
+					</li>
+				</ul>
+			</li>
+			<li>Click next to enter attachment details:
+				<ul>
+					<li>
+						<b>Description</b> - Provide a brief description of the file. This description will appear in the attachment list in the task editor.
+					</li>
+					<li>
+						<b>Comment</b> - Provide a comment about the file. This comment will appear in the comments section of the task editor.
+					</li>
+					<li>
+						<b>Content Type</b> - Optionally specify a content type for the file
+					</li>
+					<li>
+						<b>Patch</b> - Check this if the attachment is a source code patch file
+					</li>
+					<li>
+						<b>Attach Context</b> - Check this if you would also like to attach the context of your task. This context describes the resources that are most relevant to the task. If you attach a context, others can download it and focus the UI on the same resources that are relevant to you.
+					</li>
+					<li>Click "Next" to preview your file. If your file is an image, a preview of the file will appear.</li>
+					<li>Click "Finish" to upload the file to the task repository. Files are uploaded without the need to click "submit" at the bottom of the task editor.</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<b>Duplicate Detection</b>
+			When submitting bug reports, you can avoid duplicates by clicking the "Search" button. This will search the repository for a stack trace that matches a stack trace in the task's Description field. The results of the duplicate detection show up in the Search view. If a match is found, you can open it and comment instead of creating a new bug report.
+		</p>
+		<p>
+			<b>Comments</b>
+			Use this section to add new comments about the task and view all previous comments. Comments you have read previously are folded. You can expand and re-read individual comments or click the "+" at the top right to expand all comments.
+		</p>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-Task-Editor-Bottom.png"/>
+		</p>
+		<p>
+			<b>Actions</b>
+			Use this section to change the task's status or reassign the task to another person. 
+		</p>
+		<ul>
+			<li>
+				<b>Attach Context</b> - Uploads information about the resources that you have interacted with to the server. The context will appear in the attachments list so that others can download it and focus their UI on the resources that you found relevant for this task.
+			</li>
+			<li>
+				<b>Submit</b> - Submits all local changes to the task to your team's shared task repository.
+			</li>
+		</ul>
+		<p>
+			<b>People</b>
+			This section shows the people who are collaborating on the task.
+		</p>
+		<ul>
+			<li>
+				<b>Assigned to</b> - This is the person who is responsible for completing the task
+			</li>
+			<li>
+				<b>Reporter</b> - This person created the task
+			</li>
+			<li>
+				<b>QA Contact</b> - 
+			</li>
+			<li>
+				<b>Add CC</b> - Use this box to add new people to the "CC" list. People on the "CC" list will be notified of any changes to this task. To add a new person, type the start of their email address and then press ctrl+space to complete the address using content assist. You can add several addresses, separated with a comma.
+			</li>
+			<li>
+				<b>CC</b> - This box shows the people who are currently on the "CC" list. To remove a person, simply select their email address so that it is highlighted and click "Submit". You can hold down ctrl to select multiple people.
+			</li>
+		</ul>
+		<h2 id="Context">Context</h2>
+		<p>The context tab allows you to manage the context of resources associated with the task. You can view the context tab by selecting it in the lower left of the editor window.</p>
+		<p>
+			<b>Elements</b>
+			<br/>
+			This section lists the resources that are part of the task's context. Because the number of elements may be large, you can adjust the level of detail using the slider at the top of the 
+			<i>Actions</i> section. Sliding the control all the way to the left will show you all elements in your task context. As you slide to the right, only the elements with a high level of interest will be displayed. You can manually remove elements from your task context by right-clicking and selecting "Remove From Context". You may choose to view all elements and prune irrelevant items in this way before attaching the context to the task so that others can download it.
+		</p>
+		<p>
+			<b>Actions</b>
+			<br/>
+		</p>
+		<ul>
+			<li>
+				<b>Element Detail Slider</b> - Adjusts the minimum level of interest required for an element to be displayed in the 
+				<i>Elements</i> section.
+			</li>
+			<li>
+				<b>Attach Context</b> - Attaches the context to the task so that it is available for download from the shared task repository. The context consists of the elements shown on the right.
+			</li>
+			<li>
+				<b>Retrieve Context</b> - Replaces the current task context with one that is attached to the task in the shared task repository.
+			</li>
+			<li>
+				<b>Copy Context to...</b> - Copy the task context to another task. That task will then have the same context as the current task.
+			</li>
+			<li>
+				<b>Clear Context.</b> - Removes all context information from the task.
+			</li>
+		</ul>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-Context-Tab.png"/>
+		</p>
+		<h2 id="Planning">Planning</h2>
+		<p>Use the planning tab to access local information about the task that is private to your workspace. You can view the planning tab by selecting it in the lower left of the editor window. This tab contains a large area where you can enter personal notes about the task. See the local task section for more information about fields in the Personal Planning section.</p>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-Planning-Tab.png"/>
+		</p><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Task-Repositories.html" title="Task Repositories">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="User-Guide.html" title="Mylyn User Guide">
+						<img alt="Mylyn User Guide" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Task-Focused-Interface.html" title="Task-Focused Interface">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Task Repositories</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Task-Focused Interface</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<servlet>
+		<servlet-name>CreateNewTodo</servlet-name>
+		<servlet-class>de.vogella.gae.java.todo.ServletCreateTodo</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RemoveTodo</servlet-name>
+		<servlet-class>de.vogella.gae.java.todo.ServletRemoveTodo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RemoveTodo</servlet-name>
+		<url-pattern>/done</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreateNewTodo</servlet-name>
+		<url-pattern>/new</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Email</servlet-name>
+		<servlet-class>de.vogella.gae.java.todo.EmailServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Email</servlet-name>
+		<url-pattern>/_ah/mail/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>StupidCounter</servlet-name>
+		<servlet-class>de.vogella.gae.java.todo.StupidServletCount</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StupidCounter</servlet-name>
+		<url-pattern>/count</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>TodoApplication.jsp</welcome-file>
+	</welcome-file-list>
+
+
+</web-app>

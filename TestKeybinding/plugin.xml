@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="testkeybinding.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="testkeybinding.Perspective"
+            id="TestKeybinding.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="mycommands"
+         name="mycommands"
+         point="org.eclipse.ui.commands">
+      <command
+            description="My first command"
+            id="testkeybinding.mycommand1"
+            name="MyCommand">
+      </command>
+      <keyBinding
+            commandId="testkeybinding.mycommand1"
+            keyConfigurationId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            keySequence="M1+D">
+      </keyBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="TestKeybinding.actionSet1"
+            label="label"
+            visible="true">
+         <action
+               class="testkeybinding.HelloAction"
+               definitionId="testkeybinding.mycommand1"
+               id="testkeybinding.helloaction"
+               label="HelloAction"
+               menubarPath="hello">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

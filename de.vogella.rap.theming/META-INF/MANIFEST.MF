@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Theming
+Bundle-SymbolicName: de.vogella.rap.theming; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.vogella.rap.theming.Activator
+Require-Bundle: org.eclipse.rap.ui
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: javax.servlet;version="2.4.0",
+ javax.servlet.http;version="2.4.0"

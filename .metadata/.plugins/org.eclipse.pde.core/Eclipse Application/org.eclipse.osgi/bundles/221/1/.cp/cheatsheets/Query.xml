@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+    Copyright (c) 2009 Tasktop Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+         Tasktop Technologies - initial API and implementation
+ -->
+
+<cheatsheet title="Create a query from bugs.eclipse.org">
+   <intro>
+      <description>
+         This cheat sheet shows you how to create a query from bugs.eclipse.org.<br/>
+      </description>
+   </intro>
+   <item title="Open the Task List view" dialog="true" skip="false">
+      <description>
+         If the Task List view is not opened, select in the main menu  <b>Window &gt; Show View &gt; Other... &gt; Tasks &gt;Task List</b> or click on the &quot;Click to Perform&quot; link below.
+      </description>
+      <command serialization="org.eclipse.ui.views.showView(org.eclipse.ui.views.showView.viewId=org.eclipse.mylyn.tasks.ui.views.tasks)" confirm="true">
+      </command>
+   </item>
+   <item title="Setup Task Repository" dialog="true" skip="true">
+      <description>
+         In this step you can learn how to setup your Bugzilla account, but you can skip it.
+<br/><br/>
+If the Task Repositories view isn&apos;t opened, select in the main menu  <b>Window &gt; Show View &gt; Other... &gt; Tasks &gt; Task Repository</b>.
+<br/><br/>
+In the Task Repositories view you can see <b>Eclipse.org</b>. Right click on it and select <b>Properties</b>.<br/>
+Check out the <b>Anonymous Access</b> checkbox.<br/>
+Enter your user id for the <b>User ID</b> and password for the <b>Password</b>. <br/>
+Click on the <b>Validate Settings</b> button to check your given parameters.<br/>
+If you do not have an account you can create one by clicking on the <b>Create new accout</b> link.<br/>
+Click on the <b>Finish</b> button to save the values and close the dialog.
+      </description>
+   </item>
+   <item title="Create a new Query" dialog="true" skip="false">
+      <description>
+         In the Task List view, click on the right mouse button then select <b>New &gt; Query</b> or click on the &quot;Click to Perform&quot; link below.
+      </description>
+      <command serialization="org.eclipse.ui.newWizard(newWizardId=org.eclipse.mylyn.tasks.ui.wizards.new.query)" confirm="true">
+      </command>
+   </item>
+   <item title="Setup the query" dialog="true" skip="false">
+      <description>
+         Select <b>Eclipse.org</b> then click on the <b>Next</b> button.<br/>
+ Select <b>Create a query using form</b> then click on the <b>Next</b> button.<br/>
+ Enter <b>Mylyn bugs</b> for the query&apos;s title.
+ Select <b>Mylyn</b> from the Product and <b>P1, P2</b> from the Priority then click on the <b>Finish</b> button.
+      </description>
+   </item>
+</cheatsheet>

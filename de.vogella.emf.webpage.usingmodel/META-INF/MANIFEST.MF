@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Usingmodel
+Bundle-SymbolicName: de.vogella.emf.webpage.usingmodel
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.5.0",
+ de.vogella.emf.webpage.model;bundle-version="1.0.0"

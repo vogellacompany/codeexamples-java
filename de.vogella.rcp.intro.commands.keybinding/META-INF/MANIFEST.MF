@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Keybinding Plug-in
+Bundle-SymbolicName: de.vogella.rcp.intro.commands.keybinding; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: de.vogella.rcp.intro.commands.keybinding.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

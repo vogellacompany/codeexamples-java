@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<project name="Ant-Test" default="Main" basedir=".">
+	<!-- Sets variables which can later be used. -->
+	<!-- The value of a property is accessed via ${} -->
+	<property name="src.dir" location="src" />
+	<property name="lib.dir" location="lib" />
+	<property name="build.dir" location="build" />
+
+	<!--
+		Create a classpath container which can be later used in the ant task
+	-->
+	<path id="build.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<!-- Deletes the existing build directory-->
+	<target name="clean">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<!-- Creates the  build  directory-->
+	<target name="makedir">
+		<mkdir dir="${build.dir}" />
+	</target>
+
+	<!-- Compiles the java code -->
+	<target name="compile" depends="clean, makedir">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="build.classpath" />
+	</target>
+
+
+
+	<target name="Main" depends="compile">
+		<description>Main target</description>
+	</target>
+
+</project>

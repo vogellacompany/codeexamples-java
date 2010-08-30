@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Validation Plug-in
+Bundle-SymbolicName: de.vogella.databinding.validation; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: de.vogella.databinding.validation.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.databinding;bundle-version="1.1.1",
+ org.eclipse.core.databinding.beans;bundle-version="1.1.1",
+ org.eclipse.jface.databinding;bundle-version="1.2.1"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn FAQ - Task-Focused UI</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Task-Focused UI</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Web-Templates-Connector.html" title="Web Templates Connector">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Context-and-Timing-data.html" title="Context and Timing data">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Web Templates Connector</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Context and Timing data</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Task-Focused_UI">Task-Focused UI</h1>
+		<h2 id="What_is_the_Task-Focused_UI.3F">What is the Task-Focused UI?</h2>
+		<p>When you activate a task, Mylyn automatically maintains a task context by monitoring your interaction.  The task context provides a predictable degree-of-interest weighting of the relevance of the elements and relations that you work with to the task-at-hand (as described in the 
+			<a href="http://kerstens.org/mik/publications/2006-11-mylar-fse.pdf" target="mylyn_external">Foundations of Software Engineering conference paper</a>).  The Task-Focused UI is the mechanism by which Mylyn presents Mylyn the task-context model in order to reduce information overload and to automate the manual management of UI elements like editors and change sets.  Examples:
+		</p>
+		<ul>
+			<li>Filtering, decoration and expansion management in views</li>
+			<li>Automatic folding in editors</li>
+			<li>Ranking in content assist</li>
+			<li>Editor management</li>
+			<li>Perspective management</li>
+			<li>Change set management</li>
+		</ul>
+		<h2 id="Why_do_files_disappear_from_Focused_views_when_I_close_them.3F">Why do files disappear from Focused views when I close them?</h2>
+		<p>By default Mylyn automatically manages the set of open files to match the task context, so that you don’t have to.  This ensures that the editor list (viewable via mechanisms like Ctrl+E) corresponds to what you in views like the 
+			<i>Package Explorer</i> when they are in Focused mode.  When you close a file manually, you express that it is uninteresting, and as such it will be removed from the task context.  It will also disappear from the corresponding automatically managed change sets for the same reason.  This behavior can be turned off via 
+			<i>Preferences → Mylyn → Context → Manage open editors to match task context</i>.  However, it is highly recommended since Mylyn will prevent the number of editors from bloating by automatically closing editors for elements that have decayed in interest, and always keep the editors for interesting elements open.
+		</p>
+		<h2 id="Why_did_all_my_editor_tabs_disappear.3F">Why did all my editor tabs disappear?</h2>
+		<p>When you deactivate a task, all editors will be closed, and then when you reactivate the task all the windows will be open again.  Try it, it’s fun. </p>
+		<p>Mylyn actively manages your open editors with task context. It takes some getting used to, but enables switching between tasks when you are multitasking without cluttering your editor tabs.  This editor management can be disabled  via 
+			<i>Window → Preferences → Mylyn → Context</i>. However, before disabling it consider reading the 
+			<i>“Managing open editors…”</i> section of 
+			<a href="http://www-128.ibm.com/developerworks/java/library/j-mylar2/index.html#N10116" target="mylyn_external">  Task-focused programming with Mylar</a>.
+		</p>
+		<h2 id="How_do_I_get_rid_of_an_element_if_it_is_not_interesting.3F">How do I get rid of an element if it is not interesting?</h2>
+		<p>When a view is focused elements will disappear on their own if they are not repeatedly selected via a mechanism called interest decay.  Note that decay does not use the wall clock, but instead relies on the number of selections that you have made when working on that task to determine which elements disappear.  This helps make it feel very predictable.</p>
+		<p>If you want want to force one or more elements to disappear from the context use the 
+			<b>Remove from Focus</b> action on the context menu.  Note that the element will still be part of the task context since it was previously part of the interaction.  
+		</p>
+		<p>If you want to permanently delete the element from the interaction history use the 
+			<b>Remove from Context</b> action on the 
+			<b>Context</b> tab of the 
+			<b>Task Editor</b>.  For example, if a company private element was part of a task context that is to be shared with a public repository, this action can be used to clean it up before sharing.  Note that elements will be removed from the task context recursively.
+		</p>
+		<h2 id="Which_Focused_UI_features_can_I_turn_off.3F">Which Focused UI features can I turn off?</h2>
+		<p>
+			<b>All of them.</b>  When no task is active neither are any of Mylyn’s features.  When working with task contexts Mylyn’s Focused UI features are all optional and in general configurable.  While many find it the key benefit of Mylyn, the entire Focused UI is optional and can be uninstalled via 
+			<i>Help → Software Updates → Manage Configuration</i>.
+		</p>
+		<p>The following table summarizes how the key features can be toggled:</p>
+		<table>
+			<tr>
+				<th>
+					<b>UI Mechanism</b>
+				</th>
+				<th>
+					<b>Example/description</b>
+				</th>
+				<th>
+					<b>Toggle using</b>
+				</th>
+			</tr>
+			<tr>
+				<td>Interest filtering</td>
+				<td>Package Explorer</td>
+				<td>
+					<i>Focus on Active Task</i> button on view toolbar
+				</td>
+			</tr>
+			<tr>
+				<td>Automatic toggling of filtering</td>
+				<td>Package Explorer</td>
+				<td>''Preferences → Mylar → Context → Toggle focused mode..</td>
+			</tr>
+			<tr>
+				<td>Interest decoration</td>
+				<td>Bolding of landmark elements</td>
+				<td>
+					<i>Preferences -&gt; General -&gt; Appearance -&gt; Label Decoration</i>
+				</td>
+			</tr>
+			<tr>
+				<td>Content assist</td>
+				<td>Ranking of interesting elements</td>
+				<td>Eclipse 3.2: 
+					<i>Java -&gt; Editor -&gt; Content Assist -&gt; Work in Progress -&gt;</i> turn off Mylyn, turn on Java
+				</td>
+			</tr>
+			<tr>
+				<td>Active change sets</td>
+				<td>Grouping of changes by tasks</td>
+				<td>
+					<i>Preferences -&gt; Mylyn -&gt; Team</i>
+				</td>
+			</tr>
+			<tr>
+				<td>Editor management</td>
+				<td>Auto opening/closing of editors</td>
+				<td>
+					<i>Preferences -&gt; Mylyn -&gt; Editor Management</i>
+				</td>
+			</tr>
+			<tr>
+				<td>Active views</td>
+				<td>Active Search and Hierarchy</td>
+				<td>Only on if view is active</td>
+			</tr>
+		</table>
+		<p>For additional configuration options see the 
+			<i>Mylyn</i> and 
+			<i>General → Appearance</i> preference pages.
+		</p>
+		<p>
+			<b>Note</b>: if you have turned off automatic focusing of views consider using the 
+			<i>Navigate → Quick Context View</i> facility.
+		</p>
+		<h2 id="Why_can.E2.80.99t_I_Alt.2BClick_to_references_libraries.3F">Why can’t I Alt+Click to references libraries?</h2>
+		<p>Due to 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=200832" target="mylyn_external">bug 200832</a>, if you have the “Show ‘Referenced Libraries’ Node” option enabled in the view menu of the 
+			<i>Package Explorer</i> you will not be able to Alt+click to library nodes if there isn’t a library visible already.  Disable this option to make Alt+Click work.
+		</p>
+		<h2 id="Why_is_the_.27.27Link_with_Editor.27.27_button_disabled.3F">Why is the ''Link with Editor'' button disabled?</h2>
+		<p>Mylyn automatically turns on editor linking when the view is focused, since the main use case for turning it off (having the view jump around) is remedied by focusing the view.  In other words, the button is pressed for you automatically and we need to ensure that it cannot be manually unchecked, which is why it appears disabled.</p>
+		<h2 id="What_happened_to_the_Active_Search_and_Active_Hierarchy_views.3F">What happened to the Active Search and Active Hierarchy views?</h2>
+		<p>These views were not included in the Mylyn 1.0 release because they never made it beyond the experimental phase.  </p>
+		<ul>
+			<li>The 
+				<i>Active Search</i> view has not been sufficiently tuned to adapt to the lifecycle of a task context, and as a result requires manual manipulation of the degree-of-separation scope as you work on long-running tasks.  Otherwise it becomes overloaded with elements.  In addition, it is not yet clear whether an additional view is the right UI for this facility, and it is hard to find room for an additional view of this size on screen resolutions of 1600x1200 and smaller.
+			</li>
+			<li>The 
+				<i>Active Hierarchy</i> view is also hard to allocate space for, especially when using the in-place hierarchy (Ctrl+T) on a landmark can be a quick way to see the relevant part of the task context’s hierarchy.
+			</li>
+		</ul>
+		<p>These features still show promise in displaying task context and saving repetitive searches, so we have not removed them.  They have instead moved to the Mylyn Sandbox, and can be used and experimented with by following the 
+			<a href="http://wiki.eclipse.org/index.php/Mylyn_Contributor_Reference#Sandbox" target="mylyn_external">instructions on the Contributors page</a>.  For feedback on these views please use the corresponding bug reports or newsgroup.
+		</p><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Web-Templates-Connector.html" title="Web Templates Connector">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="FAQ.html" title="Mylyn FAQ">
+						<img alt="Mylyn FAQ" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Context-and-Timing-data.html" title="Context and Timing data">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Web Templates Connector</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Context and Timing data</td>
+			</tr>
+		</table>
+	</body>
+</html>

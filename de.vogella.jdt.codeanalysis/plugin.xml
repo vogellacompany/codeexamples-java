@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="de.vogella.jdt.codeanalysis.views.ResultView"
+            id="de.vogella.jdt.codeanalysis.ResultView"
+            name="Analysis Result"
+            restorable="true">
+      </view>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.jdt.codeanalysis.handler.CalculateUsage"
+            id="de.vogella.jdt.codeanalysis.calculateUsage"
+            name="Calculate method usage">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
+         <command
+               commandId="de.vogella.jdt.codeanalysis.calculateUsage"
+               label="Calculate method usage"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   
+
+</plugin>

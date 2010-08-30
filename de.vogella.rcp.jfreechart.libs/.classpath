@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry exported="true" kind="lib" path="swtgraphics2d.jar"/>
+	<classpathentry exported="true" kind="lib" path="jcommon-1.0.16.jar"/>
+	<classpathentry exported="true" kind="lib" path="jfreechart-1.0.13.jar"/>
+	<classpathentry exported="true" kind="lib" path="jfreechart-1.0.13-experimental.jar"/>
+	<classpathentry exported="true" kind="lib" path="jfreechart-1.0.13-swt.jar"/>
+	<classpathentry exported="true" kind="lib" path="servlet.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

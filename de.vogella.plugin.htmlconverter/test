@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="com.google.gdt.eclipse.core.deploymentParticipant" name="Deployment Participant" schema="schema/com.google.gdt.eclipse.core.deployParticipant.exsd"/>
+   <extension
+         id="webAppNature"
+         name="Web Application Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="com.google.gdt.eclipse.core.natures.WebAppNature">
+         </run>
+      </runtime>
+      <requires-nature
+            id="org.eclipse.jdt.core.javanature">
+      </requires-nature>
+      <builder
+            id="com.google.gdt.eclipse.core.webAppProjectValidator">
+      </builder>
+   </extension>
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            class="com.google.gdt.eclipse.core.properties.ui.CoreProjectPropertyPage"
+            id="com.google.gdt.eclipse.core.properties.coreProjectPropertyPage"
+            name="Google">
+         <enabledWhen>
+            <adapt
+                  type="org.eclipse.core.resources.IProject">
+               <test
+                     property="org.eclipse.core.resources.projectNature"
+                     value="org.eclipse.jdt.core.javanature">
+               </test>
+            </adapt>
+         </enabledWhen>
+      </page>
+      <page
+            category="com.google.gdt.eclipse.core.properties.coreProjectPropertyPage"
+            class="com.google.gdt.eclipse.core.properties.ui.WebappProjectPropertyPage"
+            id="com.google.gdt.eclipse.core.properties.ui.webappProjectPropertyPage"
+            name="Web Application">
+         <enabledWhen>
+            <adapt
+                  type="org.eclipse.core.resources.IProject">
+               <test
+                     property="org.eclipse.core.resources.projectNature"
+                     value="org.eclipse.jdt.core.javanature">
+               </test>
+            </adapt>
+         </enabledWhen>
+      </page>
+   </extension>
+   <extension
+         id="webAppProjectValidator"
+         name="Google WebApp Project Validator"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            callOnEmptyDelta="true"
+            hasNature="true"
+            isConfigurable="false">
+         <run
+               class="com.google.gdt.eclipse.core.validation.WebAppProjectValidator">
+         </run>
+      </builder>
+   </extension>   
+    <extension
+         id="webAppProblemMarker"
+         name="Google Web App Problem"
+         point="org.eclipse.core.resources.markers">
+      <persistent
+            value="true">
+      </persistent>
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+   </extension>
+    <extension
+          point="org.eclipse.ui.ide.markerResolution">
+       <markerResolutionGenerator
+             class="com.google.gdt.eclipse.core.validation.ValidatorProblemMarkerResolutionGenerator"
+             markerType="com.google.gdt.eclipse.core.webAppProblemMarker">
+       </markerResolutionGenerator>
+    </extension>   
+</plugin>

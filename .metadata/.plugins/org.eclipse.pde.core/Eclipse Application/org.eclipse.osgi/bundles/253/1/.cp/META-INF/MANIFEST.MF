@@ -1,0 +1,149 @@
+Manifest-Version: 1.0
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.pde; singleton:=true
+Eclipse-SourceReferences: scm:cvs:pserver:dev.eclipse.org:/cvsroot/ecl
+ ipse:pde/ui/org.eclipse.pde;tag=v20100601
+Bundle-Version: 3.6.0.v201006080911
+Bundle-ManifestVersion: 2
+
+Name: intro/css/whatsnew.properties
+SHA1-Digest: /vnjvq7o9PiULKjbHcolTLV29EY=
+
+Name: images/topiclabel/sa_sampleorb48_hov.gif
+SHA1-Digest: pbDTqXvEt/IYlXswQuJx8yexq+c=
+
+Name: cheatsheets/helloworld/helloworld-extension.xml
+SHA1-Digest: TzsO0jDKYw/OVq4iEQokhcf0K8w=
+
+Name: about.ini
+SHA1-Digest: kXc442dFFbAOxh4gE76ALGdGBdA=
+
+Name: cheatsheets/rcpapp/rcpapp-export.xml
+SHA1-Digest: FxL8gtoFfh7q98QXioIWdl7GNYI=
+
+Name: images/topiclabel/ov_eclplugindev48_hov.gif
+SHA1-Digest: ZVldvGy6zIiEuGLpVz9HpZAyeqE=
+
+Name: cheatsheets/rcpapp/rcpapp-customize.xml
+SHA1-Digest: pof3zXoajjgBRdW535L+FLhbbRY=
+
+Name: intro/css/samples.properties
+SHA1-Digest: QQ6YVGvAWXUPshoxytEBaJtuPRI=
+
+Name: images/topiclabel/tu_rcpapp48.gif
+SHA1-Digest: 9HSSLJKBs3U+qPJ/Lnjw4e0iKsg=
+
+Name: cheatsheets/helloworld/helloworld-create.xml
+SHA1-Digest: 2uydwR+8dEMQvu+eVEbuod4ZJAE=
+
+Name: cheatsheets/rcpapp/rcpapp-create.xml
+SHA1-Digest: tZw1GeLOWD27YHpLWehhM+LN+5A=
+
+Name: cheatsheets/rcpapp-composite.xml
+SHA1-Digest: sBDx024Ll50yK2R5xLOMPYIk9v0=
+
+Name: plugin.properties
+SHA1-Digest: lO6OQbeSZW6px06mEF4kA3/PFPU=
+
+Name: images/topiclabel/tu_createplugin48.gif
+SHA1-Digest: r3db8zp2BCj5G4rEEoeFEUNAJ7E=
+
+Name: intro/whatsnewExtensionContent.xml
+SHA1-Digest: J09evTrxigoCeLX9/TvXjpcjAQQ=
+
+Name: images/topiclabel/tu_rcpapp48_hov.gif
+SHA1-Digest: rlm8pfPliBcuVYpyUJkOZ3Ju2U0=
+
+Name: images/topiclabel/sa_samplecube48.gif
+SHA1-Digest: SAcfiBWRb4Vvom42dmGEzMqT0Xc=
+
+Name: cheatsheets/helloworld/helloworld-update.xml
+SHA1-Digest: Bxvx+j9t2Cmi2bYyxHaSjtjZtrQ=
+
+Name: intro/css/overview.properties
+SHA1-Digest: U5b0JzoesCrZLmduk33X9GpS0Co=
+
+Name: intro/samplesExtensionContent2.xml
+SHA1-Digest: hXgpyM/aUWtqGSJInRTckO2rr10=
+
+Name: images/topiclabel/wn_pluginenviro48.gif
+SHA1-Digest: tJeF1bQdQCbsVHqRYWzuwyotezA=
+
+Name: cheatsheets/rcpapp/rcpapp-feature-product.xml
+SHA1-Digest: f9Szkf7L6pVCKnYcGtJvjZqwoDo=
+
+Name: plugin.xml
+SHA1-Digest: lw0LsoUd4b3CKAQrIeIihNEKEsM=
+
+Name: intro/css/overview.css
+SHA1-Digest: SiqXBcrHOJpCTSkxb+7GzB9Drok=
+
+Name: cheatsheets/helloworld/helloworld-install.xml
+SHA1-Digest: HUmQ7j3GL3H3Mp1uyVqseoeiH2Y=
+
+Name: eclipse32.png
+SHA1-Digest: eCk/A3/COXL3S6qAVDOSrlsqmLw=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: KyT9FF7C7t86NoBoa2kZT3ZJBfw=
+
+Name: images/topiclabel/tu_createplugin48_hov.gif
+SHA1-Digest: Yy/GEGP593zqc88TUpVqCOqK/CU=
+
+Name: cheatsheets/rcpapp/rcpapp-plugin-product.xml
+SHA1-Digest: 7uwOGenLoCSSgWEJB7zZn1NyOCA=
+
+Name: about.mappings
+SHA1-Digest: n2k/TEYFeHYQxc5KE6thsBeZAjk=
+
+Name: images/topiclabel/sa_samplecube48_hov.gif
+SHA1-Digest: 3/roMpUlkVFDJMgCrhgXDsFGqco=
+
+Name: intro/samplesExtensionContent.xml
+SHA1-Digest: IegLi6JFjb04+wWC7nw3pJEJJJw=
+
+Name: images/topiclabel/wn_pluginenviro48_hov.gif
+SHA1-Digest: Ii5BuYI5dCrdy9hj8WSP4aen26w=
+
+Name: cheatsheets/helloworld-composite.xml
+SHA1-Digest: dH/dB8hQQRpMCC43FYfRRM10BT4=
+
+Name: about.html
+SHA1-Digest: ejOZra0kypGLQQ2bJtGTX+LI8tU=
+
+Name: intro/css/samples.css
+SHA1-Digest: QqaUT6Yf5HMSYxhs9GXV67TAPEo=
+
+Name: cheatsheets/setup-apitools-existing-projects.xml
+SHA1-Digest: /9ZJjX2WXz5xhglORhI91m/4hKU=
+
+Name: images/topiclabel/sa_sampleorb48.gif
+SHA1-Digest: Rzk8fmt6Gh63qoYC1I0WFe+6Y6E=
+
+Name: images/topiclabel/ov_eclplugindev48.gif
+SHA1-Digest: QsxtqOjy6Kiawy+9kOQoAaVdchU=
+
+Name: about.properties
+SHA1-Digest: olqgCe9//wLuHLbAxmnE8CMJXRQ=
+
+Name: intro/tutorialsExtensionContent.xml
+SHA1-Digest: mkL4BNfwLBxgz/pkRC34fa4WKIM=
+
+Name: intro/css/whatsnew.css
+SHA1-Digest: bQuwKFQsaf29lfHFh4X8JLNZ/xM=
+
+Name: cheatsheets/helloworld/helloworld-feature.xml
+SHA1-Digest: tyqpeS5+gQCYx0c3gtuq7lU41tc=
+
+Name: intro/css/tutorials.properties
+SHA1-Digest: d2iIT/BQShMp4YbniRtAceOZWgY=
+
+Name: intro/css/tutorials.css
+SHA1-Digest: +DTkAc75C53BFEbguyVjNqQkZaE=
+
+Name: intro/overviewExtensionContent.xml
+SHA1-Digest: plCu+QsqEEH7v9wNPk3g9PaAz8Q=
+

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="Help">
+            <command
+                  commandId="org.eclipse.ui.help.aboutAction"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="de.vogella.task.application.application"
+            name="Task Manager">
+         <property
+               name="windowImages"
+               value="icons/dissolve_group.gif,icons/profile_wiz.png">
+         </property>
+         <property
+               name="aboutText"
+               value="This is my text">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/dissolve_group.gif">
+         </property>
+         <property
+               name="appName"
+               value="Task Manager">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="de.vogella.task.application.application"
+            name="Task Manager">
+         <property
+               name="windowImages"
+               value="icons/dissolve_group.gif,icons/profile_wiz.png">
+         </property>
+         <property
+               name="aboutText"
+               value="This is my text">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/dissolve_group.gif">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.splashHandlers">
+      <splashHandler
+            class="de.vogella.task.product.splashHandlers.InteractiveSplashHandler"
+            id="de.vogella.task.product.splashHandlers.interactive">
+      </splashHandler>
+      <splashHandlerProductBinding
+            productId="de.vogella.task.product.product"
+            splashId="de.vogella.task.product.splashHandlers.interactive">
+      </splashHandlerProductBinding>
+   </extension>
+
+</plugin>

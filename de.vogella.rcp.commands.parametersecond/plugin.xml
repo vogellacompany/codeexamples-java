@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.commands.parametersecond.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.rcp.commands.parametersecond.Perspective"
+            id="de.vogella.rcp.commands.parametersecond.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.rcp.commands.parametersecond.handler.SayHello"
+            id="de.vogella.rcp.commands.parametersecond.sayHello"
+            name="Say Hello">
+         <commandParameter
+               id="de.vogella.rcp.commands.parametersecond.commandParameter1"
+               name="name"
+               optional="true"
+               values="de.vogella.rcp.commands.parametersecond.NameValueParameter">
+         </commandParameter>
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <command
+               commandId="de.vogella.rcp.commands.parametersecond.sayHello"
+               label="Say Hello"
+               style="push">
+            <parameter
+                  name="de.vogella.rcp.commands.parametersecond.commandParameter1"
+                  value="Jackisdf">
+            </parameter>
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

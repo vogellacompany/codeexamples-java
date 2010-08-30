@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
+         <command
+               commandId="de.vogella.plugin.htmlconverter.convert"
+               label="Create HTML"
+               style="push">
+               <visibleWhen>
+               <with
+                     variable="activeMenuSelection">
+                  <iterate>
+                     <adapt
+                           type="org.eclipse.jdt.core.ICompilationUnit">
+                     </adapt></iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.plugin.htmlconverter.handler.Convert"
+            id="de.vogella.plugin.htmlconverter.convert"
+            name="Convert">
+      </command>
+   </extension>
+
+</plugin>

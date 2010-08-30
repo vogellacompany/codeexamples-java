@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><people>
+	<place-where-person-live>
+		<name><hubba>Lars </hubba></name>
+		<street> Test </street>
+		<telephon number="0123"/>
+	</place-where-person-live>
+	<place-where-person-live>
+		<name><hubba>Joe </hubba></name>
+		<street> Test2 </street>
+		<telephon number="1234"/>
+	</place-where-person-live>
+	<place-where-person-live>
+		<name><hubba>Jim</hubba></name>
+		<street> Test3 </street>
+		<telephon number="2345"/>
+	</place-where-person-live>
+</people>

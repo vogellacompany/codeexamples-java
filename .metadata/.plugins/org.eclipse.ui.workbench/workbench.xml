@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="31" version="2.0">
+<workbenchAdvisor/>
+<window height="920" maximized="true" width="1251" x="185" y="70">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="132" y="30"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="120" y="30"/>
+<coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="30"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="104" y="30"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="152" y="30"/>
+<coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="30"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.pde.ui.manifestEditor" itemType="typeToolBarContribution" x="40" y="30"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1281991596963" focus="true" label="Workspace - Plug-in Development">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.eclipse.pde.ui.manifestEditor" name="plugin.xml" partName="com.code9.examples.spellchecking" path="/home/vogella/Desktop/hubba/com.code9.examples.spellchecking/plugin.xml" title="com.code9.examples.spellchecking" tooltip="com.code9.examples.spellchecking/plugin.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/com.code9.examples.spellchecking/plugin.xml"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TextBox.java" partName="TextBox.java" path="/home/vogella/Desktop/hubba/com.code9.examples.spellchecking/src/com/code9/examples/spellchecking/handlers/TextBox.java" title="TextBox.java" tooltip="com.code9.examples.spellchecking/src/com/code9/examples/spellchecking/handlers/TextBox.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/com.code9.examples.spellchecking/src/com/code9/examples/spellchecking/handlers/TextBox.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3513" selectionTopPixel="476"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="Document.class" partName="Document.class" title="Document.class" tooltip="org.eclipse.jface.text.Document" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=com.code9.examples.spellchecking/\/home\/vogella\/eclipse\/eclipse-3.6-rcp\/plugins\/org.eclipse.text_3.5.0.v20100601-1300.jar&lt;org.eclipse.jface.text(Document.class"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="88" selectionTopPixel="0"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.team.svn.ui.repository.RepositoriesView" partName="SVN Repositories">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>&#x0A;<category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="73" org.eclipse.ui.ide.markerType="403" org.eclipse.ui.ide.pathField="143" org.eclipse.ui.ide.resourceField="108" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
+<viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jet.javafilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
+<child filterId="org.eclipse.pde.ui.BinaryProjectFilter1" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
+<child filterId="org.eclipse.mylyn.java.ui.MembersFilter" isEnabled="false"/>
+</xmlDefinedFilters>
+<lastRecentlyUsedFilters>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter"/>
+</lastRecentlyUsedFilters>
+</customFilters>
+</viewState>
+</view>
+<view id="org.eclipse.mylyn.tasks.ui.views.tasks" partName="Task List"/>
+<view id="org.eclipse.pde.runtime.LogView" partName="Error Log">
+<viewState activate="true" allSessions="true" column2="300" column3="150" column4="945" error="true" groupBy="0" info="true" limit="50" ok="true" orderType="2" orderValue="-1" show_filter_text="true" useLimit="true" warning="true"/>
+</view>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
+<view id="org.eclipse.pde.ui.PluginsView" partName="Plug-ins"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.pde.ui.PDEPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.pde.internal.ui.PDEPerspective" id="org.eclipse.pde.ui.PDEPerspective" label="Plug-in Development"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.team.svn.ui.menu.help"/>
+<show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<show_view_action id="org.eclipse.jdt.ui.PackagesView"/>
+<show_view_action id="org.eclipse.pde.ui.PluginsView"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<new_wizard_action id="org.eclipse.mylyn.tasks.ui.wizards.new.repository.task"/>
+<new_wizard_action id="org.eclipse.pde.ds.ui.wizard"/>
+<new_wizard_action id="org.eclipse.pde.ui.NewProductConfigurationWizard"/>
+<new_wizard_action id="org.eclipse.pde.ui.NewProfileWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewInterfaceCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSourceFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<perspective_action id="org.eclipse.ui.resourcePerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.pde.ui.PluginsView"/>
+<view id="org.eclipse.pde.runtime.LogView"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.team.svn.ui.repository.RepositoriesView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<page content="org.eclipse.pde.ui.PluginsView" label="Plug-ins"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1a82e92" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.34032354" ratioLeft="568" ratioRight="1101" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottomRight" ratio="0.093103446" ratioLeft="81" ratioRight="789" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.team.svn.ui.repository.RepositoriesView" appearance="2" expanded="2">
+<page content="org.eclipse.pde.runtime.LogView" label="Error Log"/>
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.team.svn.ui.repository.RepositoriesView" label="SVN Repositories"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1d50fd2" ratio="0.74934036" ratioLeft="568" ratioRight="190" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="Task List"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.pde.ui.manifestEditor" path="/de.vogella.rcp.intro.spellchecking/META-INF/MANIFEST.MF"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.rcp.intro.spellchecking/src/de/vogella/rcp/intro/spellchecking/View.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.pde.ui.manifestEditor" path="/com.code9.examples.spellchecking/plugin.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/com.code9.examples.spellchecking/src/com/code9/examples/spellchecking/handlers/TextBox.java"/>
+</editors>
+<item historyLabel="de.vogella.rcp.intro.spellchecking" index="0"/>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position/>
+</item>
+<item historyLabel="View.java" index="1">
+<position/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="524" y="0"/>
+</item>
+<item historyLabel="de.vogella.rcp.intro.spellchecking" index="0"/>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="863" y="0"/>
+</item>
+<item historyLabel="de.vogella.rcp.intro.spellchecking" index="0"/>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="863" y="0"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="1355" y="0"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="1201" y="29"/>
+</item>
+<item historyLabel="de.vogella.rcp.intro.spellchecking" index="0"/>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="1201" y="29"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="195" y="0"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="1154" y="25"/>
+</item>
+<item historyLabel="com.code9.examples.spellchecking" index="2"/>
+<item historyLabel="TextBox.java" index="3">
+<position info="not_deleted" x="3042" y="134"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position/>
+</item>
+<item historyLabel="TextBox.java" index="3">
+<position info="not_deleted" x="3507" y="0"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="1162" y="0"/>
+</item>
+<item historyLabel="TextBox.java" index="3">
+<position info="not_deleted" x="1057" y="0"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="379" y="0"/>
+</item>
+<item historyLabel="TextBox.java" index="3">
+<position info="not_deleted" x="9265" y="39"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="1148" y="0"/>
+</item>
+<item historyLabel="de.vogella.rcp.intro.spellchecking" index="0"/>
+<item historyLabel="TextBox.java" index="3">
+<position info="not_deleted" x="9548" y="0"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="1355" y="0"/>
+</item>
+<item active="true" historyLabel="TextBox.java" index="3">
+<position info="not_deleted" x="9548" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Document.class" tooltip="org.eclipse.jface.text.Document">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=com.code9.examples.spellchecking/\/home\/vogella\/eclipse\/eclipse-3.6-rcp\/plugins\/org.eclipse.text_3.5.0.v20100601-1300.jar&lt;org.eclipse.jface.text(Document.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TextBox.java" tooltip="com.code9.examples.spellchecking/src/com/code9/examples/spellchecking/handlers/TextBox.java">
+<persistable path="/com.code9.examples.spellchecking/src/com/code9/examples/spellchecking/handlers/TextBox.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.pde.ui.manifestEditor" name="plugin.xml" tooltip="com.code9.examples.spellchecking/plugin.xml">
+<persistable path="/com.code9.examples.spellchecking/plugin.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="View.java" tooltip="de.vogella.rcp.intro.spellchecking/src/de/vogella/rcp/intro/spellchecking/View.java">
+<persistable path="/de.vogella.rcp.intro.spellchecking/src/de/vogella/rcp/intro/spellchecking/View.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.pde.ui.manifestEditor" name="MANIFEST.MF" tooltip="de.vogella.rcp.intro.spellchecking/META-INF/MANIFEST.MF">
+<persistable path="/de.vogella.rcp.intro.spellchecking/META-INF/MANIFEST.MF"/>
+</file>
+</mruList>
+</workbench>

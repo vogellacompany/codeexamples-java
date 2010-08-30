@@ -1,0 +1,11 @@
+<root>
+  <facet id="jpt.jpa">
+    <node name="libprov">
+      <attribute name="provider-id" value="eclipselink-110-osgi-bundles-library-provider"/>
+    </node>
+    <node name="osgi-bundles-container">
+      <attribute name="bundles" value="javax.persistence:[1.0.0,2.0.0);org.eclipse.persistence.core:[1.1.0,2.0.0);org.eclipse.persistence.jpa:[1.1.0,2.0.0);org.eclipse.persistence.asm:[1.1.0,2.0.0);org.eclipse.persistence.antlr:[1.1.0,2.0.0)"/>
+      <attribute name="label" value="EclipseLink 1.1.x"/>
+    </node>
+  </facet>
+</root>

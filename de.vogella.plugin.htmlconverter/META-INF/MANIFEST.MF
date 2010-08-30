@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Htmlconverter Plug-in
+Bundle-SymbolicName: de.vogella.plugin.htmlconverter;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: de.vogella.plugin.htmlconverter.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.expressions;bundle-version="3.4.1",
+ org.eclipse.jdt.core;bundle-version="3.4.4",
+ org.eclipse.core.resources;bundle-version="3.4.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: vogella.de
+Bundle-ActivationPolicy: lazy

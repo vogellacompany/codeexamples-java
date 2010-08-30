@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Germany
+Bundle-SymbolicName: de.vogella.geocoding.germany
+Bundle-Version: 1.0.0
+Export-Package: de.vogella.geocoding.yahoo.test
+Require-Bundle: de.vogella.geocoding.model;bundle-version="1.0.0",
+ de.vogella.geocoding.yahoo;bundle-version="1.0.0"

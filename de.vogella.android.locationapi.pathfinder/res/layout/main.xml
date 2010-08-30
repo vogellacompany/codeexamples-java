@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Longitute"></TextView>
+	<EditText android:id="@+id/EditText01" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Unknown"></EditText>
+	<TextView android:id="@+id/TextView02" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Latitude"></TextView>
+	<EditText android:id="@+id/EditText02" android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:text="Unknown"></EditText>
+<Button android:text="@+id/Button01" android:id="@+id/Button01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:onClick="showLocation"></Button>
+</LinearLayout>

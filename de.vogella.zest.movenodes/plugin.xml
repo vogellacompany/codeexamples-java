@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.zest.movenodes.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="de.vogella.zest.movenodes.Perspective"
+            id="de.vogella.zest.movenodes.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="de.vogella.zest.movenodes.View"
+            id="de.vogella.zest.movenodes.view">
+      </view>
+   </extension>
+
+</plugin>

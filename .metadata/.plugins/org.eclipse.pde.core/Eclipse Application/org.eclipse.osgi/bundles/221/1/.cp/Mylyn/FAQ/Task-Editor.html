@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn FAQ - Task Editor</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Task Editor</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Task-List.html" title="Task List">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Task-Repositories.html" title="Task Repositories">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Task List</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Task Repositories</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Task_Editor">Task Editor</h1>
+		<h2 id="When_I_submit_a_new_bug_to_eclipse.org_the_priority_isn.E2.80.99t_updated.3F">When I submit a new bug to eclipse.org the priority isn’t updated?</h2>
+		<p>Eclipse.org’s Bugzilla repository forces all new bug reports to priority 3 (P3) regardless of what is selected in Mylyn. Eventually we will disable this field in the new bug editor for bugs.eclipse.org and provide a tooltip with explanation ( 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=204630" target="mylyn_external">bug 204630</a> ).
+		</p>
+		<h2 id="Why_am_I_seeing_strange_boxes_where_I_expect_to_see_proper_characters.3F">Why am I seeing strange boxes where I expect to see proper characters?</h2>
+		<p>If for example you aren’t seeing the proper single quote chacters in the summary of 
+			<a href="http://wiki.eclipse.org/https://bugs.eclipse.org/bugs/show_bug.cgi?id=197644_bug#197644" title="https://bugs.eclipse.org/bugs/show_bug.cgi?id=197644 bug#197644" target="mylyn_external">https://bugs.eclipse.org/bugs/show_bug.cgi?id=197644 bug#197644</a>, check that the encoding is set correctly for the repository in the asociated Task Repositories view (Properties → Additional Settings → Character Encoding). For bugs.eclipse.org/bugs set your charcter encoding to 
+			<i>ISO-8859-1</i>.
+		</p>
+		<h2 id="How_can_I_view_images_or_screenshots_that_are_attached_to_an_image.3F">How can I view images or screenshots that are attached to an image?</h2>
+		<p>By default Eclipse does not provide a built-in image viewer so images can either be opened with a browser or saved to disk and opened in a native image viewer. Alternatively Eclipse extension such as QuickImage can be installed which support opening images within Eclipse.</p><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Task-List.html" title="Task List">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="FAQ.html" title="Mylyn FAQ">
+						<img alt="Mylyn FAQ" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Task-Repositories.html" title="Task Repositories">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Task List</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Task Repositories</td>
+			</tr>
+		</table>
+	</body>
+</html>

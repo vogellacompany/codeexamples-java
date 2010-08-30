@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.activities.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="de.vogella.rcp.activities.Perspective"
+            id="de.vogella.rcp.activities.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="de.vogella.rcp.activities.View"
+            id="de.vogella.rcp.activities.view">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.activities">
+      <activity
+            id="de.vogella.rcp.activities.view"
+            name="Activate View">
+      </activity>
+      <activityPatternBinding
+            activityId="de.vogella.rcp.activities.view"
+            isEqualityPattern="false"
+            pattern="de.vogella.rcp.activities/de.vogella.rcp.activities.view">
+      </activityPatternBinding>
+      <activityPatternBinding
+            activityId="de.vogella.rcp.activities.view"
+            isEqualityPattern="true"
+            pattern="de.vogella.rcp.activities/org.eclipse.ui.views.showView">
+      </activityPatternBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               closeable="true"
+               id="de.vogella.rcp.activities.view"
+               minimized="false"
+               moveable="true"
+               ratio="1.0f"
+               relationship="stack"
+               relative="org.eclipse.ui.editorss"
+               showTitle="true"
+               standalone="false"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.rcp.activities.handler.Activate"
+            id="de.vogella.rcp.activities.activate"
+            name="Activate Activity">
+      </command>
+      <command
+            defaultHandler="de.vogella.rcp.activities.handler.DeActivate"
+            id="de.vogella.rcp.activities.deactivate"
+            name="Deactivate Activity">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <command
+               commandId="de.vogella.rcp.activities.activate"
+               label="Activate Activity"
+               style="push">
+         </command>
+         <command
+               commandId="de.vogella.rcp.activities.deactivate"
+               label="Deactivate Activity"
+               style="push">
+         </command>
+         <command
+               commandId="org.eclipse.ui.views.showView"
+               label="Show"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

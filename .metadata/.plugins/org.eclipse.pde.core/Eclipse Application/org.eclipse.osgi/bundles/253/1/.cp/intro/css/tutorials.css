@@ -1,0 +1,5 @@
+a#rcp img { background-image : url(../../images/topiclabel/tu_rcpapp48.gif); }
+a#rcp:hover img { background-image : url(../../images/topiclabel/tu_rcpapp48_hov.gif); }
+
+a#pde-hello-world img { background-image : url(../../images/topiclabel/tu_createplugin48.gif); }
+a#pde-hello-world:hover img { background-image : url(../../images/topiclabel/tu_createplugin48_hov.gif); }

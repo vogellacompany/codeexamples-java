@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Infos Plug-in
+Bundle-SymbolicName: de.vogella.jdt.infos; singleton:=true
+Bundle-Version: 1.0.0
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.resources;bundle-version="3.4.2",
+ org.eclipse.jdt;bundle-version="3.4.2",
+ org.eclipse.jdt.core;bundle-version="3.4.4",
+ org.eclipse.jdt.apt.core;bundle-version="3.3.101",
+ org.eclipse.core.runtime;bundle-version="3.4.0",
+ org.eclipse.jface.text;bundle-version="3.4.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

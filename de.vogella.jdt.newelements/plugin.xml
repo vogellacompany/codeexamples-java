@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.jdt.newelements.handler.AddPackage"
+            id="de.vogella.jdt.newelements.AddPackage"
+            name="Add Package">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="Create Elements">
+            <command
+                  commandId="de.vogella.jdt.newelements.AddPackage"
+                  label="Add Project Package"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>

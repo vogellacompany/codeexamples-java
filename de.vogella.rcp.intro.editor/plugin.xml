@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.intro.editor.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="de.vogella.rcp.intro.editor.Perspective"
+            id="de.vogella.rcp.intro.editor.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="de.vogella.rcp.intro.editor.View"
+            id="de.vogella.rcp.intro.editor.view">
+      </view>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="de.vogella.rcp.intro.editor.application"
+            name="RCP Application">
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="de.vogella.rcp.intro.editor.editors.MyPersonEditor"
+            default="false"
+            icon="icons/alt_window_16.gif"
+            id="de.vogella.rcp.intro.editor.editors.MyPersonEditor"
+            name="MyPersonEditor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.rcp.intro.editor.handler.CallEditor"
+            id="de.vogella.rcp.intro.editor.callEditor"
+            name="Call Editor">
+      </command>
+   </extension>
+
+</plugin>

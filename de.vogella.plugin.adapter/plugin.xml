@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Sample Category"
+            id="de.vogella.plugin.adapter">
+      </category>
+      <view
+            name="Sample View"
+            icon="icons/sample.gif"
+            category="de.vogella.plugin.adapter"
+            class="de.vogella.plugin.adapter.views.SampleView"
+            id="de.vogella.plugin.adapter.views.SampleView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.TaskList"
+               relationship="right"
+               id="de.vogella.plugin.adapter.views.SampleView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="de.vogella.plugin.adapter.model.Todo"
+            class="de.vogella.plugin.adapter.TodoAdapterFactory">
+         <adapter
+               type="org.eclipse.ui.views.properties.IPropertySource">
+         </adapter>
+      </factory>
+   </extension>
+
+</plugin>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.vogella.docs.web.model/src"
+    modelPluginID="de.vogella.docs.web.model" modelName="vogella" rootImplementsInterface=""
+    featureMapWrapperInterface="" featureMapWrapperInternalInterface="" featureMapWrapperClass=""
+    booleanFlagsField="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>vogella.ecore</foreignModel>
+  <genPackages prefix="vogella" basePackage="de.vogella.docs.web.model" disposableProviderFactory="true"
+      ecorePackage="vogella.ecore#/">
+    <genClasses ecoreClass="vogella.ecore#//CodeExample">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//CodeExample/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//CodeExample/sort"/>
+    </genClasses>
+    <genClasses ecoreClass="vogella.ecore#//Article">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//Article/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//Article/sort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//Article/rssRelevant"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vogella.ecore#//Article/codeExamples"/>
+    </genClasses>
+    <genClasses ecoreClass="vogella.ecore#//Webpage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//Webpage/header"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//Webpage/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//Webpage/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//Webpage/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//Webpage/keywords"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//Webpage/rssRelevant"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vogella.ecore#//Webpage/articles"/>
+    </genClasses>
+    <genClasses ecoreClass="vogella.ecore#//MyWeb">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//MyWeb/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//MyWeb/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//MyWeb/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//MyWeb/keywords"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vogella.ecore#//MyWeb/pages"/>
+    </genClasses>
+    <genClasses ecoreClass="vogella.ecore#//Category">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//Category/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//Category/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vogella.ecore#//Category/sort"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

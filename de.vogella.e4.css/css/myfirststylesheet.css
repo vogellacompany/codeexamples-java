@@ -1,0 +1,17 @@
+
+Label {
+	font: Verdana 20px;
+	color:rgb(178,34,34);
+	background-color:rgb(255,255,255) rgb(0,0,0) 60%;
+}
+
+Button {
+	font: Verdana 15px;
+	background-color:rgb(255,255,255) rgb(0,0,0);  
+}
+
+
+Text {
+	font: Verdana 15px;
+	background-color:radial rgb(255,255,255) rgb(0,0,0);  
+}

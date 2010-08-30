@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.vogella.docs.web.model:MyWeb xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:de.vogella.docs.web.model="http:///de.vogella.docs.web.modell/vogella.ecore">
+ 
+  <pages header="Java Tutorials" name="java" title="Java Tutorials" description="Java Tutorials. Includes introduction, JUnit testing,  XML handling, the Java Persistence API (JPA), the Spring framework and more.  " keywords="JUnit, XML, iText, JFreechart, Stax, SAP, JCo, Java Logging API, Java Preferences, JPA, Spring, JDBCTemplate, Dependency Injection" rssRelevant="true">
+		 	<categories name="Introduction">
+    <articles name="JavaPDF" rssRelevant="true" sort="510">
+      <codeExamples name="de.vogella.pdf.write" sort="10"/>
+    </articles>
+    <articles name="JFreeChart" rssRelevant="true" sort="500">
+      <codeExamples name="de.vogella.jfreechart.swing.pie" sort="10"/>
+      <codeExamples name="de.vogella.jfreechart.swing.bar" sort="20"/>
+    </articles>
+    <articles name="JUnit" sort="17">
+      <codeExamples name="de.vogella.junit.first" sort="10"/>
+      <codeExamples name="JUnitMockTest" sort="20"/>
+    </articles>
+    <articles name="JavaIntroduction" rssRelevant="true">
+      <codeExamples name="de.vogella.java.intro" sort="10"/>
+      <codeExamples name="JavaIntroductionExercises" sort="30"/>
+    </articles>
+    <articles name="JavaPreferences" rssRelevant="true" sort="5"/>
+    <articles name="DesignPatterns" rssRelevant="true"/>
+    <articles name="DesignPatternSingleton" rssRelevant="true" sort="610"/>
+    <articles name="DesignPatternObserver"/>
+    <articles name="SAPJCo">
+      <codeExamples name="de.vogella.sap.jco" sort="10"/>
+    </articles>
+    <articles name="JavaXML" rssRelevant="true" sort="26">
+      <codeExamples name="de.vogella.xml.stax.reader" sort="10"/>
+      <codeExamples name="de.vogella.xml.stax.writer" sort="20"/>
+      <codeExamples name="de.vogella.xml.jaxb" sort="50"/>
+    </articles>
+    <articles name="Logging" rssRelevant="true" sort="7">
+      <codeExamples name="de.vogella.logger" sort="10"/>
+    </articles>
+    <articles name="SAPWebDynpro" sort="22"/>
+    <articles name="RSSFeed" rssRelevant="true" sort="23">
+      <codeExamples name="de.vogella.rss.read" sort="10"/>
+      <codeExamples name="de.vogella.rss.write" sort="20"/>
+    </articles>
+    <articles name="JavaPersistenceAPI" rssRelevant="true" sort="42"/>
+    <articles name="MySQLJava">
+      <codeExamples name="de.vogella.mysql.first" sort="10"/>
+    </articles>
+    <articles name="Lucene" rssRelevant="true" sort="60"/>
+    <articles name="JavaExcel" rssRelevant="true" sort="65">
+      <codeExamples name="JavaExcelRead" sort="20"/>
+      <codeExamples name="JavaExcelWrite" sort="10"/>
+    </articles>
+    <articles name="JavaME" rssRelevant="true" sort="70"/>
+    <articles name="JavaPerformance" sort="300"/>
+    <articles name="JavaRegularExpressions" rssRelevant="true" sort="280">
+      <codeExamples name="de.vogella.regex.test" sort="10"/>
+      <codeExamples name="de.vogella.regex.string" sort="12"/>
+      <codeExamples name="de.vogella.regex.eitheror" sort="20"/>
+      <codeExamples name="de.vogella.regex.numbermatch" sort="100"/>
+      <codeExamples name="de.vogella.regex.weblinks" sort="200"/>
+      <codeExamples name="de.vogella.regex.phonenumber" sort="22"/>
+    </articles>
+    <articles name="JavaFX"/>
+    <articles name="JavaGeocoding" rssRelevant="true" sort="360">
+      <codeExamples name="de.vogella.geocoding.model" sort="10"/>
+      <codeExamples name="de.vogella.geocoding.yahoo" sort="20"/>
+    </articles>
+    <articles name="JavaConcurrency" rssRelevant="true" sort="350">
+      <codeExamples name="de.vogella.concurrency.threads" sort="10"/>
+      <codeExamples name="de.vogella.concurrency.threadpools" sort="20"/>
+      <codeExamples name="de.vogella.concurrency.callables" sort="30"/>
+      <codeExamples name="de.vogella.performance.defensivecopy" sort="40"/>
+      <codeExamples name="de.vogella.concurrency.nonblocking.counter" sort="50"/>
+    </articles>
+    <articles name="SpringDependencyInjection" rssRelevant="true" sort="80">
+      <codeExamples name="de.vogella.spring.di.model" sort="10"/>
+      <codeExamples name="de.vogella.spring.di.annotations.first" sort="10"/>
+      <codeExamples name="de.vogella.spring.di.xml.first" sort="10"/>
+    </articles>
+    <articles name="SpringJDBC" rssRelevant="true" sort="95">
+      <codeExamples name="de.vogella.spring.jdbctemplate" sort="10"/>
+    </articles>
+    <articles name="JavaDateTimeAPI"/>
+  </categories>
+		 	</pages>
+  <pages header="Eclipse Plugin and Eclipse RCP Tutorials" name="eclipse" title="Eclipse, RCP, Plugin and OSGi Development" description="Development with Eclipse plugins, covers  Eclipse RCP, Eclipse plugiin development, JUnit testing, UML2, OSGi, EMF and more." keywords="Eclipse, RCP, JUnit, Plugin, EMF, UML2, Databinding, OSGi, JFreeChart, JFace, Rich Client Platform, Commands" rssRelevant="true">
+		 	<categories name="Introduction">
+    <articles name="RichClientPlatform" rssRelevant="true" sort="90">
+      <codeExamples name="de.vogella.rcp.intro.first" sort="10"/>
+      <codeExamples name="de.vogella.rcp.commands.first" sort="25"/>
+      <codeExamples name="de.vogella.rcp.intro.traytest" sort="60"/>
+      <codeExamples name="de.vogella.rcp.intro.view" sort="60"/>
+      <codeExamples name="de.vogella.rcp.intro.dialogs.standard" sort="70"/>
+      <codeExamples name="de.vogella.rcp.intro.dialogs.custom" sort="80"/>
+      <codeExamples name="de.vogella.rcp.intro.wizards" sort="90"/>
+      <codeExamples name="de.vogella.rcp.intro.editor" sort="92"/>
+      <codeExamples name="de.vogella.rcp.intro.fieldassist" sort="96"/>
+      <codeExamples name="de.vogella.rcp.intro.errorview" sort="340"/>
+      <codeExamples name="de.vogella.rcp.intro.deploy" sort="600"/>
+      <codeExamples name="de.vogella.rcp.activities" sort="600"/>
+      <codeExamples name="de.vogella.ganttchart.test" sort="800"/>
+      <codeExamples name="de.vogella.rcp.intro.fixedview" sort="810"/>
+      <codeExamples name="de.vogella.rcp.net.proxy" sort="820"/>
+    </articles>
+    <articles name="Eclipse" rssRelevant="true" sort="5">
+      <codeExamples name="de.vogella.eclipse.ide.first" sort="10"/>
+      <codeExamples name="de.vogella.eclipse.ide.jars" sort="20"/>
+    </articles>
+    <articles name="EclipseShortcuts" rssRelevant="true" sort="480"/>
+    <articles name="EclipseDebugging" rssRelevant="true" sort="520">
+      <codeExamples name="de.vogella.debug.first" sort="10"/>
+    </articles>
+    <articles name="EclipseCodeAccess" rssRelevant="true" sort="320"/>
+    <articles name="EclipseJFreeChart" rssRelevant="true" sort="12">
+      <codeExamples name="de.vogella.jfreechart.pie" sort="10"/>
+      <codeExamples name="de.vogella.jfreechart.libs" sort="20"/>
+      <codeExamples name="de.vogella.jfreechart.barchart" sort="30"/>
+    </articles>
+    <articles name="EclipseEMF" rssRelevant="true" sort="600">
+      <codeExamples name="de.vogella.emf.webpage" sort="10"/>
+      <codeExamples name="de.vogella.emf.webpage.edit" sort="20"/>
+      <codeExamples name="de.vogella.emf.webpage.editor" sort="30"/>
+      <codeExamples name="de.vogella.emf.javaconvert" sort="40"/>
+    </articles>
+    <articles name="EclipseJET" rssRelevant="true" sort="580">
+      <codeExamples name="de.vogella.emf.webpage" sort="10"/>
+      <codeExamples name="de.vogella.emf.webpage.edit" sort="20"/>
+      <codeExamples name="de.vogella.emf.webpage.editor" sort="30"/>
+    </articles>
+    <articles name="EclipseMicrosoftIntegration" rssRelevant="true" sort="14">
+      <codeExamples name="de.vogella.microsoft.outlook" sort="20"/>
+    </articles>
+    <articles name="EclipseDataToolsPlatform" rssRelevant="true" sort="30"/>
+    <articles name="EclipseJFaceTable" rssRelevant="true" sort="19">
+      <codeExamples name="de.vogella.jface.tableviewer" sort="10"/>
+    </articles>
+    <articles name="EclipseTPTP" sort="4">
+      <codeExamples name="de.vogella.tptp.javaproject" sort="10"/>
+      <codeExamples name="de.vogella.tptp.webproject" sort="20"/>
+      <codeExamples name="de.vogella.tptp.rcpproject" sort="30"/>
+    </articles>
+    <articles name="UML" rssRelevant="true" sort="25">
+      <codeExamples name="de.vogella.uml2.first" sort="10"/>
+    </articles>
+    <articles name="EclipseBIRT" rssRelevant="true" sort="72">
+      <codeExamples name="de.vogella.birt.stocks" sort="10"/>
+      <codeExamples name="de.vogella.birt.stocks.rcp" sort="20"/>
+    </articles>
+    <articles name="EclipsePlugIn" rssRelevant="true" sort="330">
+      <codeExamples name="de.vogella.plugin.first" sort="10"/>
+      <codeExamples name="de.vogella.plugin.htmlconverter" sort="20"/>
+      <codeExamples name="de.vogella.plugin.openview" sort="30"/>
+      <codeExamples name="de.vogella.plugin.markers" sort="40"/>
+    </articles>
+    <articles name="EclipseDataBinding" rssRelevant="true" sort="85">
+      <codeExamples name="de.vogella.databinding.person.model" sort="10"/>
+      <codeExamples name="de.vogella.databinding.person.swt" sort="20"/>
+      <codeExamples name="de.vogella.databinding.person.listviewer" sort="30"/>
+      <codeExamples name="de.vogella.databinding.personpojo" sort="40"/>
+      <codeExamples name="de.vogella.databinding.validation" sort="50"/>
+    </articles>
+    <articles name="Mylyn" rssRelevant="true" sort="120">
+      <codeExamples name="de.vogella.mylyn.tasksmodify" sort="10"/>
+    </articles>
+    <articles name="OSGi" rssRelevant="true" sort="200">
+      <codeExamples name="de.vogella.osgi.firstbundle" sort="10"/>
+      <codeExamples name="de.vogella.osgi.quote" sort="20"/>
+      <codeExamples name="de.vogella.osgi.quoteconsumer" sort="30"/>
+      <codeExamples name="de.vogella.osgi.quoteservice" sort="40"/>
+      <codeExamples name="de.vogella.osgi.ds.quoteservice" sort="50"/>
+      <codeExamples name="de.vogella.osgi.ds.quoteconsumer" sort="60"/>
+      <codeExamples name="de.vogella.osgi.url.shorten" sort="200"/>
+      <codeExamples name="de.vogella.osgi.url.tinyurl" sort="210"/>
+      <codeExamples name="de.vogella.osgi.url.consumer" sort="220"/>
+    </articles>
+    <articles name="EclipseP2Update" sort="150"/>
+    <articles name="EclipseRAP" rssRelevant="true" sort="430">
+      <codeExamples name="de.vogella.rap.first" sort="10"/>
+      <codeExamples name="de.vogella.rap.theming" sort="20"/>
+    </articles>
+    <articles name="EclipseExtensionPoint" rssRelevant="true" sort="180">
+      <codeExamples name="de.vogella.extensionprovider.simple" sort="10"/>
+      <codeExamples name="de.vogella.extensionusage.simple" sort="20"/>
+    </articles>
+    <articles name="EclipseFeatureProject"/>
+    <articles name="EclipsePDEBuild" rssRelevant="true" sort="290">
+      <codeExamples name="de.vogella.build.ui" sort="10"/>
+      <codeExamples name="de.vogella.build.feature" sort="20"/>
+      <codeExamples name="de.vogella.build.script" sort="30"/>
+    </articles>
+    <articles name="JavaPersistenceAPI" sort="42"/>
+    <articles name="EclipseE4">
+      <codeExamples name="de.vogella.e4.first" sort="10"/>
+      <codeExamples name="de.vogella.e4.css" sort="20"/>
+    </articles>
+    <articles name="XWT">
+      <codeExamples name="de.vogella.e4.xwt" sort="30"/>
+    </articles>
+    <articles name="EclipseCommands" rssRelevant="true" sort="310">
+      <codeExamples name="de.vogella.rcp.commands.first" sort="10"/>
+      <codeExamples name="de.vogella.rcp.intro.commands.keybinding" sort="30"/>
+      <codeExamples name="de.vogella.rcp.intro.commands.toolbar" sort="40"/>
+      <codeExamples name="de.vogella.rcp.intro.commands.popup" sort="60"/>
+      <codeExamples name="de.vogella.rcp.commands.sourceprovider" sort="70"/>
+      <codeExamples name="de.vogella.rcp.commands.parameterfirst" sort="80"/>
+      <codeExamples name="de.vogella.rcp.commands.runtimecommands" sort="90"/>
+    </articles>
+    <articles name="EclipseForms" rssRelevant="true" sort="340">
+      <codeExamples name="de.vogella.rcp.intro.forms" sort="10"/>
+    </articles>
+    <articles name="EclipseJDT" rssRelevant="true" sort="420">
+      <codeExamples name="de.vogella.jdt.infos" sort="10"/>
+      <codeExamples name="de.vogella.jdt.packageexplorer" sort="30"/>
+      <codeExamples name="de.vogella.jdt.newelements" sort="20"/>
+    </articles>
+    <articles name="EclipseSubversive"/>
+    <articles name="EclipseZest" rssRelevant="true" sort="700">
+      <codeExamples name="de.vogella.zest.first" sort="10"/>
+      <codeExamples name="de.vogella.zest.jface" sort="20"/>
+      <codeExamples name="de.vogella.zest.movenodes" sort="30"/>
+    </articles>
+    <articles name="EclipsePreferences" rssRelevant="true" sort="490">
+      <codeExamples name="de.vogella.preferences.page" sort="20"/>
+      <codeExamples name="de.vogella.preferences.test" sort="10"/>
+    </articles>
+    <articles name="Android" rssRelevant="true" sort="740">
+      <codeExamples name="de.vogella.android.network.html" sort="20"/>
+      <codeExamples name="de.vogella.android.first" sort="10"/>
+      <codeExamples name="de.vogella.android.intents" sort="30"/>
+    </articles>
+    <articles name="EclipseDali">
+      <codeExamples name="de.vogella.dali.first" sort="10"/>
+    </articles>
+    <articles name="EclipseJobs"/>
+    <articles name="EclipseJarToPlugin" rssRelevant="true" sort="550"/>
+    <articles name="Findbugs" rssRelevant="true" sort="560"/>
+    <articles name="Checkstyle" rssRelevant="true" sort="570"/>
+    <articles name="EclipseInternationalization" rssRelevant="true" sort="620">
+      <codeExamples name="MultiLanguage" sort="700"/>
+    </articles>
+    <articles name="EclipseMemoryAnalyser" rssRelevant="true" sort="690">
+      <codeExamples name="de.vogella.mat.first" sort="10"/>
+    </articles>
+    <articles name="EclipseDragAndDrop">
+      <codeExamples name="EclipseDragAndDrop" sort="10"/>
+    </articles>
+    <articles name="EclipseBuilder"/>
+    <articles name="XSLT">
+      <codeExamples name="de.vogella.xslt.first" sort="10"/>
+    </articles>
+    <articles name="EGit">
+      <codeExamples name="de.vogella.xslt.first" sort="10"/>
+    </articles>
+  </categories>
+		 	</pages>
+  <pages header="Tutorials" name="general" title="General programming topics">
+		 	<categories name="Introduction">
+    <articles name="CSS"/>
+    <articles name="General"/>
+    <articles name="Microsoft"/>
+    <articles name="MicrosoftOutlookMacros"/>
+    <articles name="Firefox"/>
+  </categories>
+		 	</pages>
+  <pages header="Tutorials about Web programming with Java (and related) technology" name="web" title="Web development" description="Web development with Java technologies, e.g. Servlets, JSP, JSF, Eclipse WTP, Google Web Toolkit (GWT) and more. " keywords="Eclipse WTP, Webservice, JavaServer Faces, JSF, Apache MyFaces, GWT, Tomcat, Servlets, JSP" rssRelevant="true">
+		 	<categories name="Introduction">
+    <articles name="JavaWebTerminology"/>
+    <articles name="HTML"/>
+    <articles name="CSS"/>
+    <articles name="EclipseWTP" rssRelevant="true" sort="370">
+      <codeExamples name="de.vogella.wtp.filecounter" sort="10"/>
+      <codeExamples name="de.vogella.wtp.jsp" sort="20"/>
+    </articles>
+    <articles name="GWT" rssRelevant="true" sort="210">
+      <codeExamples name="de.vogella.gwt.first" sort="10"/>
+      <codeExamples name="de.vogella.gwt.helloworld" sort="20"/>
+      <codeExamples name="de.vogella.gwt.helloserver" sort="30"/>
+      <codeExamples name="de.vogella.gwt.module.model" sort="40"/>
+      <codeExamples name="de.vogella.gwt.module.application" sort="50"/>
+    </articles>
+    <articles name="Grails" rssRelevant="true" sort="70"/>
+    <articles name="GoogleAppEngine" rssRelevant="true" sort="270"/>
+    <articles name="GoogleAppEngineJava" sort="280">
+      <codeExamples name="de.vogella.gae.java.todo" sort="10"/>
+    </articles>
+    <articles name="AjaxwithDojo" rssRelevant="true" sort="40"/>
+    <articles name="JavaScript" rssRelevant="true" sort="450"/>
+    <articles name="SpringSourcedmServer" rssRelevant="true" sort="250"/>
+    <articles name="JavaWebservice"/>
+    <articles name="Webservice" sort="90">
+      <codeExamples name="de.vogella.webservice.soap.axis2" sort="10"/>
+      <codeExamples name="de.vogella.webservice.soap.axis2.client" sort="20"/>
+    </articles>
+    <articles name="ApacheTomcat"/>
+    <articles name="Jetty"/>
+    <articles name="JavaServerFaces" rssRelevant="true" sort="220">
+      <codeExamples name="de.vogella.jsf.first" sort="10"/>
+      <codeExamples name="de.vogella.jsf.starter" sort="20"/>
+      <codeExamples name="de.vogella.jsf.todo" sort="30"/>
+      <codeExamples name="de.vogella.jsf.skins" sort="40"/>
+    </articles>
+    <articles name="ApacheMyFaces" rssRelevant="true" sort="230">
+      <codeExamples name="de.vogella.jsf.trinidad.first" sort="50"/>
+    </articles>
+    <articles name="JavaFX" rssRelevant="true" sort="260"/>
+    <articles name="JavaNetworking" rssRelevant="true" sort="530">
+      <codeExamples name="de.vogella.web.html" sort="10"/>
+      <codeExamples name="de.vogella.web.get" sort="20"/>
+    </articles>
+    <articles name="GoogleWave" rssRelevant="true" sort="650">
+      <codeExamples name="de.vogella.google.wave.firstrobot" sort="10"/>
+    </articles>
+    <articles name="REST">
+      <codeExamples name="de.vogella.jersey.first" sort="10"/>
+    </articles>
+  </categories>
+		 	</pages>
+  <pages header="JVM,  Database, Server and Build Tutorials" name="technology" title="JVM,  Databases, Server and Build environments" description="Tutorials about JVM,  Database, Server and Build environments, e.g. Groovy, MySQL, Apache Derby, Apache Ant, Scala" keywords="Ubuntu, Databases, Apache Ant, Apache Derby, Docbook, MySQL, Groovy, Scala" rssRelevant="true">
+		 	<categories name="Introduction">
+    <articles name="Podcasts"/>
+    <articles name="DocBook" rssRelevant="true" sort="15"/>
+    <articles name="Podcasts"/>
+    <articles name="Ubuntu"/>
+    <articles name="DocBook"/>
+    <articles name="Python" rssRelevant="true" sort="470">
+      <codeExamples name="de.vogella.python.first" sort="10"/>
+      <codeExamples name="de.vogella.python.testing" sort="20"/>
+      <codeExamples name="de.vogella.python.files" sort="30"/>
+    </articles>
+    <articles name="MySQL" rssRelevant="true" sort="660"/>
+    <articles name="MySQLJava" rssRelevant="true" sort="670">
+      <codeExamples name="de.vogella.mysql.first" sort="10"/>
+    </articles>
+    <articles name="ContinuousIntegration" sort="320"/>
+    <articles name="GoogleTechnologies"/>
+    <articles name="Mercurial"/>
+    <articles name="Git" rssRelevant="true" sort="750"/>
+    <articles name="PHP"/>
+    <articles name="ApacheDerby" rssRelevant="true" sort="680"/>
+    <articles name="ApacheAnt" rssRelevant="true" sort="300">
+      <codeExamples name="de.vogella.build.ant.first" sort="10"/>
+    </articles>
+    <articles name="ApacheTomcat"/>
+    <articles name="Scala" rssRelevant="true" sort="730">
+      <codeExamples name="de.vogella.scala.first" sort="10"/>
+      <codeExamples name="de.vogella.scala.variables" sort="20"/>
+      <codeExamples name="de.vogella.scala.functions" sort="30"/>
+      <codeExamples name="de.vogella.scala.loops" sort="40"/>
+      <codeExamples name="de.vogella.scala.collections" sort="50"/>
+      <codeExamples name="de.vogella.scala.caseclasses" sort="60"/>
+      <codeExamples name="de.vogella.scala.classexample" sort="22"/>
+      <codeExamples name="de.vogella.scala.uniformaccess" sort="40"/>
+      <codeExamples name="de.vogella.scala.quicksort" sort="400"/>
+      <codeExamples name="de.vogella.scala.switchcase" sort="42"/>
+    </articles>
+    <articles name="Groovy" rssRelevant="true" sort="240">
+      <codeExamples name="de.vogella.groovy.first" sort="10"/>
+    </articles>
+    <articles name="SQL"/>
+    <articles name="VMWare"/>
+    <articles name="KDE"/>
+    <articles name="JUnit" rssRelevant="true" sort="17">
+      <codeExamples name="JUnitTest" sort="10"/>
+      <codeExamples name="JUnitMockTest" sort="20"/>
+    </articles>
+    <articles name="OpenSocialGadgets">
+      <codeExamples name="de.vogella.javascript.simple" sort="10"/>
+      <codeExamples name="de.vogella.javascript.maps" sort="20"/>
+    </articles>
+    <articles name="XSLT" rssRelevant="true" sort="760">
+      <codeExamples name="de.vogella.xslt.first" sort="10"/>
+    </articles>
+    <articles name="SAPTransactions"/>
+  </categories>
+		 	</pages>
+  <pages header="Algorithmus Tutorials" name="algorithms" title="Java Algorithms" description="Articles about Algorithms and their implementation in Java" keywords="Algorithms, Prime Factorization, Euclid, Shuffel" rssRelevant="true">
+		 	<categories name="Introduction">
+    <articles name="JavaDatastructures" rssRelevant="true" sort="720">
+      <codeExamples name="de.vogella.datastructures.list" sort="10"/>
+      <codeExamples name="de.vogella.datastructures.map" sort="20"/>
+      <codeExamples name="de.vogella.datastructures.stack" sort="30"/>
+    </articles>
+    <articles name="ComplexityAnalysis"/>
+    <articles name="JavaAlgorithms"/>
+    <articles name="JavaAlgorithmsQuicksort" rssRelevant="true" sort="640">
+      <codeExamples name="de.vogella.algorithms.sort.quicksort" sort="10"/>
+    </articles>
+    <articles name="JavaAlgorithmsMergesort" rssRelevant="true" sort="630">
+      <codeExamples name="de.vogella.algorithms.sort.mergesort" sort="10"/>
+      <codeExamples name="de.vogella.algorithms.sort.standardjava" sort="20"/>
+    </articles>
+    <articles name="JavaAlgorithmsSearch">
+      <codeExamples name="de.vogella.algorithms.search.sequential" sort="10"/>
+      <codeExamples name="de.vogella.algorithms.search.binary" sort="20"/>
+    </articles>
+    <articles name="JavaAlgorithmsEuclid" rssRelevant="true" sort="380">
+      <codeExamples name="de.vogella.algorithms.euclid" sort="10"/>
+    </articles>
+    <articles name="JavaAlgorithmsShuffle" rssRelevant="true" sort="390">
+      <codeExamples name="de.vogella.algorithms.shuffle" sort="10"/>
+    </articles>
+    <articles name="JavaAlgorithmsPrimeNumbers" rssRelevant="true" sort="400">
+      <codeExamples name="de.vogella.algorithms.primenumbers" sort="10"/>
+    </articles>
+    <articles name="JavaAlgorithmsPrimeFactorization" rssRelevant="true" sort="410">
+      <codeExamples name="de.vogella.algorithms.primefactors" sort="10"/>
+    </articles>
+    <articles name="JavaAlgorithmsTowersOfHanoi" rssRelevant="true" sort="440"/>
+    <articles name="JavaAlgorithmsDijkstra"/>
+  </categories>
+		 	</pages>
+</de.vogella.docs.web.model:MyWeb>

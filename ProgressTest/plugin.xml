@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="progresstest.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="progresstest.Perspective"
+            id="ProgressTest.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="ProgressTest.actionSet1"
+            label="label"
+            visible="true">
+         <action
+               class="progresstest.ProgressDialogAction"
+               id="progresstest.progressdialog"
+               label="Progressdialog"
+               menubarPath="progress"
+               toolbarPath="progress">
+         </action>
+         <action
+               class="progresstest.ProgressIndicatorAction"
+               id="progresstest.progressindicator"
+               label="Progressindicator"
+               menubarPath="progressindicator"
+               toolbarPath="progressindicator">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

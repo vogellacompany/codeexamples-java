@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?><!--
+    Copyright (c) 2009 Tasktop Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+         Tasktop Technologies - initial API and implementation
+ -->
+
+<introContent>
+	<extensionContent id="org.eclipse.mylyn" name="Mylyn"
+		style="css/overview.css" alt-style="css/overview.properties" path="overview/@">
+		<group id="content-group" style-id="content-group">
+			<!--
+			<link label="Mylyn"
+				url="http://org.eclipse.ui.intro/showHelpTopic?id=/org.eclipse.mylyn.help.ui/doc/overview.html"
+				id="mylyn-overview" style-id="content-link">
+				<text>Learn more about how Mylyn will help you focus on tasks</text>
+			</link>
+			-->
+			<link label="Mylyn Task Management"
+				url="http://org.eclipse.ui.intro/runAction?pluginId=org.eclipse.mylyn.help.ui&amp;class=org.eclipse.mylyn.internal.tasks.ui.actions.WelcomeIntroAction&amp;id=org.eclipse.mylyn.doc.legend.show.action"
+				id="mylyn-overview" style-id="content-link">
+				<text>Open the Mylyn Task List and launch the New Task wizard</text>
+			</link>
+	<!-- 		<group id="links">	
+				<link
+	        label="Open Task List"
+	        url="http://org.eclipse.ui.intro/runAction?pluginId=org.eclipse.mylyn.help.ui&amp;class=org.eclipse.mylyn.internal.tasks.ui.actions.WelcomeIntroAction&amp;id=org.eclipse.mylyn.doc.legend.show.action"
+	        id="opentasklist"
+	        style-id="action-link"/>
+	        <link
+	        label="Connect to Task Repository"
+	        url="http://org.eclipse.ui.intro/runAction?pluginId=org.eclipse.mylyn.help.ui&amp;class=org.eclipse.mylyn.internal.tasks.ui.actions.ShowTasksUiLegendAction&amp;id=org.eclipse.mylyn.doc.legend.show.action"
+	        id="connectrepository"
+	        />
+	        </group>-->
+		</group>
+			
+			
+	</extensionContent>
+</introContent>

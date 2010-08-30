@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<introContent>
+  <extensionContent id="rap-introExtension" style="css/overview.css" name="Rich Ajax Platform (RAP)" path="overview/@">
+    <group style-id="content-group" id="rap-introLink-group">
+      <link label="Rich Ajax Platform (RAP)" url="http://org.eclipse.ui.intro/showPage?id=rapoverview" id="rap-introLink" style-id="content-link">
+        <text>
+          Learn how to install and use the Rich Ajax Platform
+        </text>
+      </link>
+    </group>
+
+  </extensionContent>
+  <!-- overview page -->
+  <page id="rapoverview" style="$theme$/html/overview.css,css/overview.css" alt-style="$theme$/swt/overview.properties" style-id="page">
+    <anchor id="head-anchor"/>
+    <title style-id="intro-header">Rich Ajax Platform</title>
+    <group id="extra-group1" filteredFrom="swt"/>
+    <!-- navigation -->
+    <group id="navigation-links" filteredFrom="swt">
+      <group id="page-links" computed="true">
+      </group>
+      <group id="action-links">
+        <link url="http://org.eclipse.ui.intro/switchToLaunchBar" label="Workbench" id="workbench" style-id="$high-contrast$">
+          <text>Go to the workbench</text>
+        </link>
+      </group>
+    </group>
+    <!-- content -->
+    <group id="page-content">
+
+      <group id="content-header" label="Rich Ajax Platform (RAP)" filteredFrom="swt">
+      </group>
+      <text 
+          style-id="page-title" 
+          id="page-title" 
+          filteredFrom="html">
+        Rich Ajax Platform (RAP)
+      </text>
+      <text style-id="page-description" id="page-description">
+        The RAP project aims to enable developers to build rich, Ajax-enabled 
+        web applications by using the Eclipse development model, plug-ins with 
+        the well known Eclipse workbench extension points and a widget toolkit 
+        with SWT API (plus JFace).
+      </text>
+      <!-- panes -->
+      <group style-id="content-group" id="rap-target-one-group">
+        <link 
+          label="Install Target Platform" 
+          url="http://org.eclipse.ui.intro/runAction?class=org.eclipse.rap.ui.internal.intro.target.InstallRAPTargetAction&amp;pluginId=org.eclipse.rap.ui.intro&amp;standby=true" 
+          id="rap-target-one" 
+          style-id="content-link">
+          <text>
+            In order to work with RAP you need to have the runtime available.
+            To install the target platform bundled with this feature, click 
+            the above link.  
+          </text>
+        </link>
+      </group>
+      <group style-id="content-group" id="rap-target-quick-group">
+        <link 
+          label="Quick tour" 
+          url="http://org.eclipse.ui.intro/showStandby?partId=org.eclipse.platform.cheatsheet&amp;input=org.eclipse.rap.target.cheatsheet" 
+          id="rap-target-quick" 
+          style-id="content-link">
+          <text>
+            Learn how to install and start a demo of the Rich Ajax Platform.
+          </text>
+        </link>
+      </group>
+      <group style-id="content-group" id="rap-target-cvs-group">
+        <link 
+          label="Get RAP from CVS" 
+          url="http://www.eclipse.org/rap/cvs.php" 
+          id="rap-target-cvs" 
+          style-id="content-link">
+          <text>
+            Learn how to obtain the latest RAP sources from the repository.
+          </text>
+        </link>
+      </group>
+
+    </group>
+  </page>
+</introContent>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='de_vogella_gwt_uibinder'>
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name='com.google.gwt.uibinder.UiBinder' />
+
+	<inherits name='com.google.gwt.user.theme.standard.Standard' />
+
+	<!-- Specify the app entry point class.                         -->
+	<entry-point class='de.vogella.gwt.uibinder.client.De_vogella_gwt_uibinder' />
+
+	<!-- Specify the paths for translatable code                    -->
+	<source path='client' />
+
+</module>

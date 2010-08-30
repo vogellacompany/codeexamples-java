@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+  	<extensionContent id="udc-introExtension" style="udc.css" name="UDC" path="overview/@">
+		<group style-id="content-group" id="udc-introLink-group">
+       		<link label="Usage Data Collector" url="http://org.eclipse.ui.intro/showHelpTopic?id=/org.eclipse.epp.usagedata.ui/html/toc.html" id="udc-introLink" style-id="content-link">
+          		<text>The Usage Data Collector collects information about how you are using the Eclipse platform.</text>
+       		</link>
+       	</group>
+  	</extensionContent>
+</introContent>

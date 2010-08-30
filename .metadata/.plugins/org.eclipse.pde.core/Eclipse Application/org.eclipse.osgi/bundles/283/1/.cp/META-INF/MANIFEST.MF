@@ -1,0 +1,59 @@
+Manifest-Version: 1.0
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5, JavaSE-1.6
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.team.svn;singleton:=true
+Require-Bundle: org.eclipse.ui.intro,org.eclipse.ui.intro.universal,or
+ g.eclipse.ui
+Bundle-Version: 0.7.9.I20100512-1900
+Bundle-ManifestVersion: 2
+
+Name: Subversive.png
+SHA1-Digest: d4QG5/9nOk4cXZFmnThwgomGwes=
+
+Name: about.ini
+SHA1-Digest: x6Bt+1hwPv2TwnQ0+OQ9L7F8zCw=
+
+Name: intro/firststeps.xml
+SHA1-Digest: J/hdNLmPmzTEfCWYDrV6rh9qlYI=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: 09gN05tobgS/MdtqyTNQhOhB73M=
+
+Name: intro/overview.xml
+SHA1-Digest: pExYWNZX2+o1A2QHn8ANPc+nSSY=
+
+Name: about.html
+SHA1-Digest: ejOZra0kypGLQQ2bJtGTX+LI8tU=
+
+Name: plugin.properties
+SHA1-Digest: glzbjIREV6eWdZKQYB58YzZr43c=
+
+Name: intro/css/migrate.css
+SHA1-Digest: UzpkOeEm8GG4IJUHl7CeBlq2DWI=
+
+Name: intro/migrate.xml
+SHA1-Digest: +XCsUBtw6Z0fh3ljXynBVQ7phwQ=
+
+Name: intro/css/graphics/Subversive_hover.png
+SHA1-Digest: QAAtBBNgeAjhxBBrSyOMRXchl/Q=
+
+Name: intro/css/graphics/Subversive.png
+SHA1-Digest: QAAtBBNgeAjhxBBrSyOMRXchl/Q=
+
+Name: intro/tutorials.xml
+SHA1-Digest: QxXVLIHh+ndfJ+ip0+jHjk0+6Tk=
+
+Name: intro/css/firststeps.css
+SHA1-Digest: BUoU2tgjaC08gmA+AozNV7vj338=
+
+Name: intro/css/tutorials.css
+SHA1-Digest: 7/+LDWENX0pAI5k2tyO2pMXFTIU=
+
+Name: plugin.xml
+SHA1-Digest: WCx5nM/xQqFdVjq3SZo7lG0Bpg8=
+
+Name: intro/css/overview.css
+SHA1-Digest: Y/sxQ2GVyemvobSu7EWSX8N3Ylo=
+

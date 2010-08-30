@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.jface.tableviewer.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="de.vogella.jface.tableviewer.Perspective"
+            id="de.vogella.jface.tableviewer.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="de.vogella.jface.tableviewer.View"
+            id="de.vogella.jface.tableviewer.view">
+      </view>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="de.vogella.jface.tableviewer.application"
+            name="RCP Application">
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.jface.tableviewer.commands.Print"
+            id="de.vogella.jface.tableviewer.commands.Print"
+            name="Print">
+      </command>
+      <command
+            defaultHandler="de.vogella.jface.tableviewer.commands.AddPerson"
+            id="de.vogella.jface.tableviewer.commands.AddPerson"
+            name="Add Person">
+      </command>
+      <command
+            defaultHandler="de.vogella.jface.tableviewer.commands.DeletePerson"
+            id="de.vogella.jface.tableviewer.commands.DeletePerson"
+            name="Delete Person">
+      </command>
+      <command
+            defaultHandler="de.vogella.jface.tableviewer.commands.CopyPersonClipboard"
+            id="de.vogella.jface.tableviewer.commands.CopyPersonClipboard"
+            name="Copy Person to Clipboard">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <command
+               commandId="de.vogella.jface.tableviewer.commands.Print"
+               label="Print Model"
+               style="push">
+         </command>
+         <command
+               commandId="de.vogella.jface.tableviewer.commands.AddPerson"
+               label="Add Person"
+               style="push">
+         </command>
+         <command
+               commandId="de.vogella.jface.tableviewer.commands.DeletePerson"
+               label="Delete Person"
+               style="push">
+         </command>
+         <command
+               commandId="de.vogella.jface.tableviewer.commands.CopyPersonClipboard"
+               defaultHandler="de.vogella.jface.tableviewer.commands.CopyPersonClipboard"
+               id="de.vogella.jface.tableviewer.commands.CopyPersonClipboard"
+               label="Copy to Clipboard"
+               name="Copy Person to Clipboard">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

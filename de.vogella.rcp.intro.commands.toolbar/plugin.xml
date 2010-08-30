@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.intro.commands.toolbar.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="de.vogella.rcp.intro.commands.toolbar.Perspective"
+            id="de.vogella.rcp.intro.commands.toolbar.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="de.vogella.rcp.intro.commands.toolbar.View"
+            id="de.vogella.rcp.intro.commands.toolbar.view">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.rcp.intro.commands.toolbar.handler.Hello"
+            id="de.vogella.rcp.intro.commands.toolbar.Hello"
+            name="Hello">
+      </command>
+      <command
+            defaultHandler="de.vogella.rcp.intro.commands.toolbar.handler.Hello"
+            id="referenceToMenuId"
+            name="referenceToMenuId">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="de.vogella.rcp.intro.commands.toolbar.toolbar1">
+            <command
+                  commandId="de.vogella.rcp.intro.commands.toolbar.Hello"
+                  icon="icons/alt_window_16.gif"
+                  label="Say Hello"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:de.vogella.rcp.intro.commands.toolbar.view">
+         <command
+               commandId="de.vogella.rcp.intro.commands.toolbar.Hello"
+               icon="icons/alt_window_16.gif"
+               label="Say Hello"
+               style="push">
+         </command>
+         <command
+               commandId="referenceToMenuId"
+               icon="icons/alt_window_16.gif"
+               label="Pulldown Menu"
+               style="pulldown">
+         </command>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="de.vogella.rcp.intro.commands.toolbar.toolbar3">
+            <command
+                  commandId="referenceToMenuId"
+                  icon="icons/alt_window_16.gif"
+                  label="Pulldown Menu"
+                  style="pulldown">
+            </command>
+         </toolbar>
+      </menuContribution>
+      <menuContribution
+            locationURI="menu:referenceToMenuId">
+         <command
+               commandId="de.vogella.rcp.intro.commands.toolbar.Hello"
+               icon="icons/alt_window_16.gif"
+               label="Say Hello 1"
+               style="push">
+         </command>
+         <command
+               commandId="de.vogella.rcp.intro.commands.toolbar.Hello"
+               icon="icons/alt_window_16.gif"
+               label="Say Hello 2"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

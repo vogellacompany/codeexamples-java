@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.intro.traytest.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.rcp.intro.traytest.Perspective"
+            id="de.vogella.rcp.intro.traytest.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.rcp.intro.traytest.commands.ExitCommand"
+            id="de.vogella.rcp.intro.traytest.exitCommand"
+            name="Exit">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               id="fileMenu"
+               label="File">
+            <command
+                  commandId="de.vogella.rcp.intro.traytest.exitCommand"
+                  label="Exit"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.4"?>
+
+<product name="Task Manager" id="de.vogella.task.product.product" application="de.vogella.task.application.application" useFeatures="false">
+
+   <aboutInfo>
+      <image path="/de.vogella.task.product/icons/dissolve_group.gif"/>
+      <text>
+         This is my text
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/de.vogella.task.product/icons/dissolve_group.gif" i32="/de.vogella.task.product/icons/profile_wiz.png"/>
+
+   <splash
+      location="de.vogella.task.product"
+      handlerType="interactive" />
+   <launcher name="Task">
+      <solaris/>
+      <win useIco="false">
+         <bmp
+            winSmallHigh="/de.vogella.task.product/icons/dissolve_group24.bmp"
+            winSmallLow="/de.vogella.task.product/icons/dissolve_group.bmp"/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+      <plugin id="com.ibm.icu"/>
+      <plugin id="de.vogella.task.application"/>
+      <plugin id="de.vogella.task.dao"/>
+      <plugin id="de.vogella.task.model"/>
+      <plugin id="de.vogella.task.product"/>
+      <plugin id="de.vogella.task.taskdetails"/>
+      <plugin id="org.eclipse.core.commands"/>
+      <plugin id="org.eclipse.core.contenttype"/>
+      <plugin id="org.eclipse.core.databinding"/>
+      <plugin id="org.eclipse.core.expressions"/>
+      <plugin id="org.eclipse.core.jobs"/>
+      <plugin id="org.eclipse.core.runtime"/>
+      <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
+      <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.common"/>
+      <plugin id="org.eclipse.equinox.preferences"/>
+      <plugin id="org.eclipse.equinox.registry"/>
+      <plugin id="org.eclipse.help"/>
+      <plugin id="org.eclipse.jface"/>
+      <plugin id="org.eclipse.jface.databinding"/>
+      <plugin id="org.eclipse.osgi"/>
+      <plugin id="org.eclipse.swt"/>
+      <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true"/>
+      <plugin id="org.eclipse.ui"/>
+      <plugin id="org.eclipse.ui.workbench"/>
+      <plugin id="org.junit4"/>
+   </plugins>
+
+</product>

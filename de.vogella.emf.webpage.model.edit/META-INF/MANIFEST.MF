@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: de.vogella.emf.webpage.model.edit;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-ClassPath: .
+Bundle-Activator: de.vogella.emf.webpage.model.webpage.provider.WebpageEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.vogella.emf.webpage.model.webpage.provider
+Require-Bundle: org.eclipse.core.runtime,
+ de.vogella.emf.webpage.model;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn FAQ - Task Repositories</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Task Repositories</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Task-Editor.html" title="Task Editor">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Bugzilla-Connector.html" title="Bugzilla Connector">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Task Editor</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Bugzilla Connector</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Task_Repositories">Task Repositories</h1>
+		<h2 id="What_if_I.E2.80.99m_not_using_a_Task_Repository.3F">What if I’m not using a Task Repository?</h2>
+		<p>Mylyn does not require the use a of a task repository and can be used entirely with the 
+			<i>Local Tasks</i> repository that it comes bundled with.  However, if working with a team, a shared 
+			<i>Task Repository</i> provides the key infrastructure needed to let your team work in a Task-Focused way via Mylyn’s collaborative facilities.
+		</p>
+		<p>Those not currently using another supported 
+			<i>Task Repository</i> should consider the repositories currently 
+			<a href="http://www.eclipse.org/mylyn/downloads/" target="mylyn_external">supported by Mylyn</a> as well as those supported by the 
+			<a href="http://wiki.eclipse.org/index.php/Mylyn_Extensions" target="mylyn_external">third party Mylyn extensions</a>.
+		</p>
+		<h2 id="What_if_Mylyn_doesn.E2.80.99t_support_my_task.2Fbug.2Fissue.2Fticket_repository.3F">What if Mylyn doesn’t support my task/bug/issue/ticket repository?</h2>
+		<p>To see support for your repository faster, do a search of the open repository connector requests and 
+			<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=anywordssubstr&amp;short_desc=%5Bconnector%5D&amp;product=Mylyn&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=" target="mylyn_external">vote for the corresponding bug</a> if your tracker is there, or 
+			<a href="http://www.eclipse.org/mylar/bugs.php" target="mylyn_external">create a new bug</a>.  
+		</p>
+		<p>
+			<a href="../../Mylyn/User_Guide/Task-Repository-Connectors.html#Generic_Web_Templates_Connector" title="Mylyn/User_Guide#Generic_Web_Templates_Connector">Generic Repository Connector</a>, allows creating Queries to the web-based issue tracking repositories and get list of issues from the web UI into the Task List.
+		</p>
+		<p>It is also possible to link a 
+			<i>local task</i> with the web page in web-based repository via the Mylyn Web integration.
+		</p>
+		<p>
+			<b>To create a task from any web-based repository:</b>
+		</p>
+		<ul>
+			<li>Drag the URL from the address bar of the browser, or from a hyperlink in a bug listing to the 
+				<i>Mylyn Tasks</i> view.  This will create a task for the bug, link it to the page, and populate the description with the title of the corresponding page.   
+				<b>In Mozilla:</b> simply drag the URL.  
+				<b>In Internet Explorer:</b> you must have <code>Ctrl</code> pressed in order for Eclipse to recognize the drop.
+			</li>
+			<li>
+				<b>Alternatively,</b> you can copy the URL, press the 
+				<i>New Task</i> button on the 
+				<i>Mylyn Tasks</i> view.  This has the same effect as above but you can edit the description after retrieving it.
+			</li>
+			<li>Opening the task will now open the corresponding issue.  You can also <code>right+click</code> the task and select 
+				<i>Open in External Browser</i>.
+			</li>
+		</ul>
+		<p>
+			<img border="0" src="images/mylar-tasklist-weblink-editor.gif"/>
+		</p>
+		<h2 id="Why_were_my_repository_credentials_reset.3F">Why were my repository credentials reset?</h2>
+		<p>If you upgrade Eclipse or your Java VM, you will need to reset your credentials in the 
+			<i>Task Repositories</i> view because these are stored in the secure Eclipse workbench keyring.  Also see 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=149607" target="mylyn_external">bug 149607</a>.  If you are migrating 
+			<b>from Eclipse 3.2 to 3.3</b> note that you will need to use a different update site, which is listed here: 
+			<a href="http://eclipse.org/mylyn/dl.php" target="mylyn_external">http://eclipse.org/mylyn/dl.php</a>
+		</p>
+		<h2 id="Why_are_my_updated_repository_attributes_not_showing_up.3F">Why are my updated repository attributes not showing up?</h2>
+		<p>Your server’s repository attributes can change frequently, for example, there can be a new "milestone" or "version" added to the Bugzilla repository with each release.  When the 
+			<i>Preferences → Mylyn → Task List → Synchronization</i> setting is enabled, every 10th synchronization will update the attributes from the repository.  If you do not have this setting enabled, your can force the update via the 
+			<i>Update Attributes</i> action on the task repositories’ context menu in the 
+			<i>Task Repositories</i> view.  Note that you will need to reopen a task editor to see the updated attributes.  If you instead update via the button on the 
+			<i>Attributes</i> section of the 
+			<i>Task Editor</i> the attribute settings will be reloaded without needing to reopen.
+		</p>
+		<p>
+			<b>bugs.eclipse.org users</b>: Note that the attributes listing on eclipse.org is mirrored, and the mirrors are only updated 24 hours.  As such, you may need to wait up to 24 hours for the new attributes to show up.
+		</p>
+		<h2 id="Authentication_Troubleshooting">Authentication Troubleshooting</h2>
+		<p>You must ensure repository credentials are filled out correctly. Refer to the diagram below:</p>
+		<p>
+			<a href="http://wiki.eclipse.org/image:_AuthenticationTroubleshooting2.png" title="image: AuthenticationTroubleshooting2.png" target="mylyn_external">right</a>
+		</p>
+		<ol>
+			<li>Enter the repository URL (i.e. 
+				<a href="https://bugs.eclipse.org/bugs" target="mylyn_external">https://bugs.eclipse.org/bugs</a>) and an optional label
+			</li>
+			<li>Credentials
+				<ul>
+					<li>Usually email address and password </li>
+					<li>Some sites, such as <code>dev.eclipse.org</code>, use anonymous logon with password left blank.</li>
+				</ul>
+			</li>
+			<li>Http Authentication (optional)
+				<ul>
+					<li>Some sites are protected by either BASIC or DIGEST http authentication. If this is the case, enter appropriate credentials here.</li>
+					<li>One way to test if the site requires http authentication is to point your browser at the repository. If you are presented with an authentication dialog popup, the site is likely protected by http authentication.</li>
+				</ul>
+			</li>
+			<li>Proxy Server Configuration (optional)
+				<ul>
+					<li>By default Mylyn uses the Platform’s Install/Update proxy settings. Uncheck this box if you wish to use an alternative proxy.</li>
+					<li>If the proxy requires authentication, this is where you enable and enter your proxy credentials.</li>
+					<li>If you are experiencing connection problems, ensure your Install/Update proxy settings are valid or the repository specific settings are correct</li>
+					<li>Mylyn has been tested with HTTP proxy servers. Currently SOCKS is not supported.</li>
+				</ul>
+			</li>
+			<li>Validate Settings 
+				<ul>
+					<li>Press the 
+						<i>validate</i> button to test the settings
+					</li>
+					<li>If you are seeing errors like “HTTP Response Code 407” or “Proxy Authentication Error” it is likely that you need to configure proxy settings as described above.</li>
+					<li>If your sever uses a certificate and fails to connect, e.g. you see exceptions <tt>sun.security.validator.ValidatorException: PKIX path building failed</tt> then you need to point Eclipse at your certificate, see below.</li>
+				</ul>
+			</li>
+		</ol>
+		<h3 id="Certificate_authentication">Certificate authentication</h3>
+		<p>Mylyn supports authentication with certificates from a Java keystore. The path and password to the keystore need to be specified in system properties. These can be set in the eclipse.ini in your eclipse install directory:</p>
+		<pre>-vmargs
+…
+-Djavax.net.ssl.keyStore=/path/to/.eclipsekeystore
+-Djavax.net.ssl.keyStorePassword=123456
+</pre>
+		<p>If your keystore does not have the default type (JKS) you can specify a different type:</p>
+		<pre>-Djavax.net.ssl.keyStoreType=PKCS12
+</pre>
+		<h4 id="Creating_a_keystore">Creating a keystore</h4>
+		<p>If you do not have a client certificate you can create one and have it signed by a CA:</p>
+		<pre>keytool -genkey -keyalg DSA -keysize 1024
+</pre>
+		<p>Use this command to create a new certificate signing request:</p>
+		<pre>keytool -certreq &gt; client.csr
+</pre>
+		<p>Submit the client.csr file to your CA for signing. The CA’s certificate as well as your signed certificate that is returned by the CA need to be imported into the keystore:</p>
+		<pre>keytool -importcert -alias ca -file ca.crt
+keytool -importcert -file client.crt
+</pre>
+		<p>See 
+			<a href="http://java.sun.com/j2se/1.5.0/docs/guide/security/SecurityToolsSummary.html" target="mylyn_external">this page</a> for links to the keytool documentation.
+		</p>
+		<h3 id="NTLM_authentication">NTLM authentication</h3>
+		<p>For NTLM authentication to work a special format for the username needs to be used where 
+			<i>DOMAIN</i> needs to be replaced by the Windows login domain: 
+		</p>
+		<pre>DOMAIN\username 
+</pre>
+		<p>The built-in NTLM support of the JDK which is used by Eclipse does 
+			<b>not work</b> with Mylyn since it uses the HttpClient library to access repositories. Limitations in regard to NTLM authentication are documented in the 
+			<a href="http://wiki.apache.org/jakarta-httpclient/FrequentlyAskedNTLMQuestions" target="mylyn_external">NTLM FAQ</a> and also discussion on 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=201911" target="mylyn_external">bug 201911</a>.
+		</p>
+		<ul>
+			<li>If your repository uses MS NTLM authentication and only standard http authentication is being passed to the repository this can result when the local hostname cannot be resolved. Ensure your machine’s hostname is set correctly and resolves to a valid address.</li>
+			<li>It is not possible to use NTLM authentication for the proxy as well as for the repository.</li>
+		</ul>
+		<p>If NTLM authentication fails the 
+			<b>
+				<a href="http://ntlmaps.sourceforge.net/" target="mylyn_external">NTLM Authorization Proxy Server</a>
+			</b> has been reported to 
+			<b>work</b> with Mylyn.
+		</p>
+		<h2 id="Network_Troubleshooting">Network Troubleshooting</h2>
+		<h3 id="Performance_Problems_with_HTTPS">Performance Problems with HTTPS</h3>
+		<p>The built-in SSL support of the JDK will to a name lookup for each new connection. In case your network setup cannot resolve the host name (e.g. no proper name server), this lookup will time out, delaying the whole job.
+			If setting up a name server is not an option, a work around would be to edit your local hosts file, and add the server IP there (and, if possible, add your computer's IP to the server's hosts file).</p>
+		<h2 id="Why_are_task_hyperlinks_not_working.3F">Why are task hyperlinks not working?</h2>
+		<p>For task hyperlinks in textual editors (e.g. Java editor) and other text viewers (e.g. History view comments) you must associate the project that contains the resource to the task repository.  </p>
+		<dl>
+			<dd>
+				<i>Project association can also come from 3rd party metadata trough the contrubuted 
+					<a href="http://wiki.eclipse.org/Mylar_Integrator_Reference#Mapping_from_projects_to_Task_Repositories" title="Mylar_Integrator_Reference#Mapping_from_projects_to_Task_Repositories" target="mylyn_external">extension point</a>. 
+					<a href="http://subclipse.tigris.org/" target="mylyn_external">Subclipse</a> and 
+					<a href="http://docs.codehaus.org/display/M2ECLIPSE/Integration+with+Mylyn" target="mylyn_external">Maven integration for Eclipse</a> plugins contributing it. See few more details 
+					<a href="http://jroller.com/page/eu?entry=linking_projects_from_the_eclipse" target="mylyn_external">here</a>.
+				</i>
+			</dd>
+		</dl>
+		<p>Note that to view a hyperlink you must hold down the <code>Ctrl</code> key when hovering over the reference to the task.  References to tasks are connector specific and the common reference is found on the top left of the task editor and other conventions tend to follow those used in the web UI (e.g. “bug 123” for Bugzilla, “ABC-123” for JIRA).</p>
+		<p>
+			<img border="0" src="images/mylyn-project-repository-association.gif"/>
+		</p><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Task-Editor.html" title="Task Editor">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="FAQ.html" title="Mylyn FAQ">
+						<img alt="Mylyn FAQ" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Bugzilla-Connector.html" title="Bugzilla Connector">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Task Editor</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Bugzilla Connector</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.rap.ui.entrypoint">
+      <entrypoint
+            class="de.vogella.rap.theming.Application"
+            parameter="mail"
+            id="de.vogella.rap.theming.Application">
+      </entrypoint>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RAP Perspective"
+            class="de.vogella.rap.theming.Perspective"
+            id="de.vogella.rap.theming.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="true"
+            name="Message"
+            icon="icons/sample2.gif"
+            class="de.vogella.rap.theming.View"
+            id="de.vogella.rap.theming.view">
+      </view>
+      <view
+            name="Mailboxes"
+            icon="icons/sample3.gif"
+            class="de.vogella.rap.theming.NavigationView"
+            id="de.vogella.rap.theming.navigationView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Mail"
+            id="de.vogella.rap.theming.category">
+      </category>
+      <command
+            name="Open Mailbox"
+            description="Opens a mailbox"
+            categoryId="de.vogella.rap.theming.category"
+            id="de.vogella.rap.theming.open">
+      </command>
+      <command
+            name="Open Message Dialog"
+            description="Opens a message dialog"
+            categoryId="de.vogella.rap.theming.category"
+            id="de.vogella.rap.theming.openMessage">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.rap.ui.themes">
+      <theme
+            file="themes/theme.css"
+            id="de.vogella.rap.theming.MyFirstTheme"
+            name="My Theme">
+      </theme>
+   </extension>
+   <extension
+         point="org.eclipse.rap.ui.branding">
+      <branding
+            defaultEntrypointId="de.vogella.rap.theming.Application"
+            id="de.vogella.rap.theming.branding1"
+            servletName="rap"
+            themeId="de.vogella.rap.theming.MyFirstTheme">
+      </branding>
+   </extension>
+
+</plugin>

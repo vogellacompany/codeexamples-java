@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+
+	<LinearLayout android:id="@+id/LinearLayout01"
+		android:layout_height="wrap_content" android:layout_width="fill_parent">
+
+		<TextView android:id="@+id/TextView01"
+			android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/todo_edit_summary"></TextView>
+		<EditText android:layout_height="wrap_content" android:id="@+id/todo_edit_summary" android:layout_weight="1" android:layout_width="wrap_content"></EditText>
+	</LinearLayout>
+
+	<TextView android:id="@+id/TextView02"
+		android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/todo_edit_description"></TextView>
+	<EditText android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1" android:id="@+id/todo_edit_description"></EditText>
+	<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/todo_edit_button" android:text="@string/todo_edit_confirm"></Button>
+</LinearLayout>

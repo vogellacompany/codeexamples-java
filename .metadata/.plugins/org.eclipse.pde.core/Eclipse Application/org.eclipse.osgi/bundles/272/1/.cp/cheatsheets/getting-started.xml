@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet title="Getting Started with the Rich Ajax Platform">
+   <intro href="/org.eclipse.pde.doc.user/guide/tools/preference_pages/target_platform.htm">
+      <description>
+         This cheat sheet shows you how to explore the demo applications 
+         that come with RAP. 
+         <br/>
+         If not yet done we will help you to install the RAP Target 
+         Platform.
+         <br/>
+         As RAP is a platform itself it <b>cannot be installed on top of 
+         an existing Eclipse</b> installation. 
+         <br/>
+         Click the <b>?</b> button if you want to know more about target 
+         platforms.
+      </description>
+   </intro>
+   <item title="Installing the target" dialog="true" skip="true">
+      <description>
+         First let&apos;s install the target. You can skip this step if it 
+         is already installed. If not, it is <b>required</b> to install the 
+         target before running the demo or developing plug-ins on top of RAP.
+      </description>
+      <command serialization="org.eclipse.rap.ui.intro.installTarget" confirm="false">
+      </command>
+   </item>
+   <item title="Importing the demo..." dialog="true" skip="true">
+      <description>
+         To test the just installed target we lauch the demo that comes
+         with the target.
+         To import it, click the <b>Perform</b> link, select <b>Projects 
+         with source folders</b> and choose the <b>org.eclipse.rap.demo</b> 
+         plug-in on the next page.
+      </description>
+      <command 
+        serialization="org.eclipse.ui.file.import(importWizardId=org.eclipse.pde.ui.PluginImportWizard)" 
+        confirm="false">
+      </command>
+   </item>
+   <item title="...and launching it" dialog="true" skip="true">
+      <description>
+         To launch the demo application we use the <b>RAP Workbench Demo</b>
+         launch configration that is bundled with the just imported plug-in.
+         <br />
+         Use the <b>Run</b> &gt; <b>Open Run Dialog</b> menu item or click 
+         <b>Perform</b> and select the above mentioned launch configuration.
+      </description>
+      <command 
+        serialization="org.eclipse.rap.ui.internal.intro.commands.launchRAPApplication" 
+        confirm="false">
+      </command>
+   </item>
+</cheatsheet>

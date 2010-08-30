@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.rap.ui.launch.RAPLauncher">
+<booleanAttribute key="append.args" value="true"/>
+<booleanAttribute key="automaticAdd" value="false"/>
+<booleanAttribute key="automaticValidate" value="false"/>
+<stringAttribute key="bootstrap" value=""/>
+<stringAttribute key="checked" value="[NONE]"/>
+<booleanAttribute key="clearConfig" value="false"/>
+<stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/de.vogella.rap.first"/>
+<booleanAttribute key="default_auto_start" value="true"/>
+<intAttribute key="default_start_level" value="4"/>
+<booleanAttribute key="includeOptional" value="false"/>
+<booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -console -consolelog"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Declipse.ignoreApp=true -Dosgi.noShutdown=true"/>
+<stringAttribute key="org.eclipse.rap.launch.browserMode" value="INTERNAL"/>
+<stringAttribute key="org.eclipse.rap.launch.entryPoint" value="hello"/>
+<stringAttribute key="org.eclipse.rap.launch.libraryVariant" value="STANDARD"/>
+<stringAttribute key="org.eclipse.rap.launch.logLevel" value="OFF"/>
+<booleanAttribute key="org.eclipse.rap.launch.openBrowser" value="true"/>
+<intAttribute key="org.eclipse.rap.launch.port" value="10080"/>
+<stringAttribute key="org.eclipse.rap.launch.servletName" value="rap"/>
+<booleanAttribute key="org.eclipse.rap.launch.terminatePrevious" value="true"/>
+<booleanAttribute key="org.eclipse.rap.launch.useManualPort" value="false"/>
+<stringAttribute key="pde.version" value="3.3"/>
+<booleanAttribute key="show_selected_only" value="false"/>
+<stringAttribute key="target_bundles" value="org.eclipse.rap.ui@default:default,org.eclipse.osgi@-1:true,org.eclipse.rap.demo@default:default,org.eclipse.rap.ui.forms@default:default,org.apache.commons.logging@default:default,org.eclipse.core.expressions@default:default,org.eclipse.core.contenttype@default:default,org.eclipse.core.jobs@default:default,org.eclipse.rap.ui.workbench@default:default,org.eclipse.equinox.preferences@default:default,org.mortbay.jetty.util@default:default,javax.servlet@default:default,org.eclipse.rap.ui.views@default:default,org.eclipse.rap.rwt.q07@default:false,org.eclipse.equinox.registry@default:default,org.eclipse.rap.rwt@default:default,org.eclipse.equinox.http.servlet@default:default,org.eclipse.core.databinding.observable@default:default,org.eclipse.equinox.app@default:default,org.eclipse.core.databinding.property@default:default,org.eclipse.equinox.common@2:true,org.eclipse.equinox.http.registry@default:default,org.eclipse.core.databinding.beans@default:default,org.eclipse.core.commands@default:default,org.eclipse.core.databinding@default:default,org.eclipse.rap.demo.databinding@default:default,org.eclipse.rap.jface.databinding@default:default,org.mortbay.jetty.server@default:default,org.eclipse.rap.jface@default:default,org.eclipse.core.runtime@default:true,org.eclipse.osgi.services@default:default,org.eclipse.equinox.http.jetty@default:default,com.ibm.icu.base@default:default"/>
+<booleanAttribute key="tracing" value="false"/>
+<booleanAttribute key="useDefaultConfigArea" value="true"/>
+<stringAttribute key="workspace_bundles" value="de.vogella.rap.first@default:default"/>
+</launchConfiguration>

@@ -1,0 +1,11 @@
+
+body {
+  padding: 10px;
+}
+
+/* stock list header row */
+.tableHeader {
+  background-color: #2062B8;
+  color: white;
+  font-style: italic;
+}

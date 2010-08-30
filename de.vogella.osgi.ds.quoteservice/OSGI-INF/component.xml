@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="de.vogella.osgi.ds.quoteservice">
+   <implementation class="de.vogella.osgi.ds.quoteservice.QuoteService"/>
+   <service>
+      <provide interface="de.vogella.osgi.quote.IQuoteService"/>
+   </service>
+</scr:component>

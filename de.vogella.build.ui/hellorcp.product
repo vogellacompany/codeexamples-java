@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.4"?>
+
+<product name="hellorcp" id="de.vogella.build.ui.product" application="de.vogella.build.ui.application" version="1.0" useFeatures="true">
+
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/de.vogella.build.ui/icons/alt_window_16.gif" i32="/de.vogella.build.ui/icons/alt_window_32.gif"/>
+
+   <launcher name="hellorcp">
+      <solaris/>
+      <win useIco="true">
+         <ico path="/de.vogella.build.ui/icons/alt_launcher.ico"/>
+         <bmp/>
+      </win>
+   </launcher>
+
+
+   <vm>
+   </vm>
+
+   <plugins>
+      <plugin id="de.vogella.build.ui"/>
+      <plugin id="org.eclipse.core.runtime"/>
+      <plugin id="org.eclipse.ui"/>
+   </plugins>
+
+   <features>
+      <feature id="de.vogella.build.feature" version="1.0.0"/>
+   </features>
+
+</product>

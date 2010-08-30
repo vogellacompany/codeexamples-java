@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.pde.ui.RuntimeWorkbench">
+<booleanAttribute key="append.args" value="true"/>
+<stringAttribute key="application" value="de.vogella.task.application.application"/>
+<booleanAttribute key="askclear" value="true"/>
+<booleanAttribute key="automaticAdd" value="false"/>
+<booleanAttribute key="automaticValidate" value="true"/>
+<stringAttribute key="bad_container_name" value="\de.vogella.task.application\launcho"/>
+<stringAttribute key="bootstrap" value=""/>
+<stringAttribute key="checked" value="[NONE]"/>
+<booleanAttribute key="clearConfig" value="false"/>
+<booleanAttribute key="clearws" value="false"/>
+<booleanAttribute key="clearwslog" value="false"/>
+<stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/de.vogella.task.application.application"/>
+<booleanAttribute key="default" value="false"/>
+<booleanAttribute key="includeOptional" value="true"/>
+<stringAttribute key="location" value="${workspace_loc}/../runtime-de.vogella.task.application.application"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dorg.osgi.service.http.port=9090 -Dosgi.noShutdown=true"/>
+<booleanAttribute key="pde.generated.config" value="false"/>
+<stringAttribute key="pde.version" value="3.3"/>
+<stringAttribute key="product" value="ErrorTest.product"/>
+<stringAttribute key="selected_target_plugins" value="com.ibm.icu,javax.servlet,org.eclipse.core.commands,org.eclipse.core.contenttype,org.eclipse.core.databinding,org.eclipse.core.expressions,org.eclipse.core.jobs,org.eclipse.core.runtime,org.eclipse.core.runtime.compatibility.auth,org.eclipse.core.runtime.compatibility.registry,org.eclipse.equinox.app,org.eclipse.equinox.common,org.eclipse.equinox.preferences,org.eclipse.equinox.registry,org.eclipse.help,org.eclipse.jface,org.eclipse.jface.databinding,org.eclipse.osgi,org.eclipse.osgi.services,org.eclipse.swt,org.eclipse.swt.win32.win32.x86,org.eclipse.ui,org.eclipse.ui.views,org.eclipse.ui.workbench,org.junit4"/>
+<stringAttribute key="selected_workspace_plugins" value="de.vogella.task.application,de.vogella.task.dao,de.vogella.task.model"/>
+<booleanAttribute key="show_selected_only" value="true"/>
+<booleanAttribute key="tracing" value="false"/>
+<booleanAttribute key="useDefaultConfig" value="true"/>
+<booleanAttribute key="useDefaultConfigArea" value="true"/>
+<booleanAttribute key="useProduct" value="false"/>
+<booleanAttribute key="usefeatures" value="false"/>
+</launchConfiguration>

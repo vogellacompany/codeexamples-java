@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk6">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v6.0">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jackson-core-asl-1.1.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-client-1.1.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-core-1.1.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-json-1.1.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-server-1.1.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jettison-1.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

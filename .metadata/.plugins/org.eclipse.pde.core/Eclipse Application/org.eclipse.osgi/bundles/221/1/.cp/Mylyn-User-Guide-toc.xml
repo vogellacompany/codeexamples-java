@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc topic="Mylyn/User_Guide/User-Guide.html" label="Mylyn User Guide">
+	<topic href="Mylyn/User_Guide/User-Guide.html" label="Task List">
+		<topic href="Mylyn/User_Guide/User-Guide.html#Task_List_Presentation" label="Task List Presentation"></topic>
+		<topic href="Mylyn/User_Guide/User-Guide.html#Icon_Legend_and_Color_Coding" label="Icon Legend and Color Coding"></topic>
+		<topic href="Mylyn/User_Guide/User-Guide.html#Creating_new_Tasks" label="Creating new Tasks">
+			<topic href="Mylyn/User_Guide/User-Guide.html#Local_Tasks" label="Local Tasks"></topic>
+			<topic href="Mylyn/User_Guide/User-Guide.html#Repository_Tasks" label="Repository Tasks"></topic>
+		</topic>
+		<topic href="Mylyn/User_Guide/User-Guide.html#Creating_new_Queries" label="Creating new Queries"></topic>
+		<topic href="Mylyn/User_Guide/User-Guide.html#Scheduling" label="Scheduling"></topic>
+		<topic href="Mylyn/User_Guide/User-Guide.html#Synchronization" label="Synchronization"></topic>
+		<topic href="Mylyn/User_Guide/User-Guide.html#Incoming_Changes" label="Incoming Changes"></topic>
+		<topic href="Mylyn/User_Guide/User-Guide.html#Reviewing_Tasks" label="Reviewing Tasks"></topic>
+		<topic href="Mylyn/User_Guide/User-Guide.html#Task_Progress_Indicators" label="Task Progress Indicators"></topic>
+		<topic href="Mylyn/User_Guide/User-Guide.html#Task_List_Settings_and_Operations" label="Task List Settings and Operations"></topic>
+	</topic>
+	<topic href="Mylyn/User_Guide/Task-Repositories.html" label="Task Repositories"></topic>
+	<topic href="Mylyn/User_Guide/Task-Editor.html" label="Task Editor">
+		<topic href="Mylyn/User_Guide/Task-Editor.html#Repository_Task_Details" label="Repository Task Details"></topic>
+		<topic href="Mylyn/User_Guide/Task-Editor.html#Context" label="Context"></topic>
+		<topic href="Mylyn/User_Guide/Task-Editor.html#Planning" label="Planning"></topic>
+	</topic>
+	<topic href="Mylyn/User_Guide/Task-Focused-Interface.html" label="Task-Focused Interface">
+		<topic href="Mylyn/User_Guide/Task-Focused-Interface.html#Focusing_Navigator_Views" label="Focusing Navigator Views"></topic>
+		<topic href="Mylyn/User_Guide/Task-Focused-Interface.html#Alt.2BClick_Navigation" label="Alt+Click Navigation"></topic>
+		<topic href="Mylyn/User_Guide/Task-Focused-Interface.html#Focusing_Editors" label="Focusing Editors"></topic>
+		<topic href="Mylyn/User_Guide/Task-Focused-Interface.html#Task-focused_Ordering" label="Task-focused Ordering"></topic>
+		<topic href="Mylyn/User_Guide/Task-Focused-Interface.html#Working_Set_Integration" label="Working Set Integration"></topic>
+		<topic href="Mylyn/User_Guide/Task-Focused-Interface.html#Open_Task_dialog" label="Open Task dialog"></topic>
+		<topic href="Mylyn/User_Guide/Task-Focused-Interface.html#Task_Hyperlinking" label="Task Hyperlinking"></topic>
+		<topic href="Mylyn/User_Guide/Task-Focused-Interface.html#Reporting_Bugs_from_the_Error_Log" label="Reporting Bugs from the Error Log"></topic>
+	</topic>
+	<topic href="Mylyn/User_Guide/Team-Support.html" label="Team Support">
+		<topic href="Mylyn/User_Guide/Team-Support.html#Task-focused_Change_Sets" label="Task-focused Change Sets"></topic>
+		<topic href="Mylyn/User_Guide/Team-Support.html#Automatic_Commit_Messages" label="Automatic Commit Messages"></topic>
+		<topic href="Mylyn/User_Guide/Team-Support.html#Working_with_Patches" label="Working with Patches"></topic>
+	</topic>
+	<topic href="Mylyn/User_Guide/Shortcuts.html" label="Shortcuts"></topic>
+	<topic href="Mylyn/User_Guide/Preferences.html" label="Preferences">
+		<topic href="Mylyn/User_Guide/Preferences.html#Tasks" label="Tasks"></topic>
+		<topic href="Mylyn/User_Guide/Preferences.html#Context_2" label="Context"></topic>
+		<topic href="Mylyn/User_Guide/Preferences.html#Resources" label="Resources"></topic>
+		<topic href="Mylyn/User_Guide/Preferences.html#Team" label="Team"></topic>
+		<topic href="Mylyn/User_Guide/Preferences.html#Shortcuts_2" label="Shortcuts"></topic>
+	</topic>
+	<topic href="Mylyn/User_Guide/Task-Repository-Connectors.html" label="Task Repository Connectors">
+		<topic href="Mylyn/User_Guide/Task-Repository-Connectors.html#Bugzilla_Connector" label="Bugzilla Connector"></topic>
+		<topic href="Mylyn/User_Guide/Task-Repository-Connectors.html#Trac_Connector" label="Trac Connector"></topic>
+		<topic href="Mylyn/User_Guide/Task-Repository-Connectors.html#Generic_Web_Templates_Connector" label="Generic Web Templates Connector"></topic>
+		<topic href="Mylyn/User_Guide/Task-Repository-Connectors.html#XPlanner_Connector" label="XPlanner Connector"></topic>
+	<anchor id="additions-repository-connectors"/>
+	</topic>
+	<topic href="Mylyn/User_Guide/Updating-This-Document.html" label="Updating This Document"></topic>
+</toc>

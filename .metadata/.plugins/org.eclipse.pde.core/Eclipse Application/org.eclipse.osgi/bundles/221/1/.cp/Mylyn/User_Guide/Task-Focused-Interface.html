@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn User Guide - Task-Focused Interface</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Task-Focused Interface</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Task-Editor.html" title="Task Editor">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Team-Support.html" title="Team Support">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Task Editor</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Team Support</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Task-Focused_Interface">Task-Focused Interface</h1>
+		<p>The task-focused interface is oriented around tasks and offers several ways to focus the interface on only what is relevant for the currently active task.</p>
+		<h2 id="Focusing_Navigator_Views">Focusing Navigator Views</h2>
+		<p>You can focus navigator views (e.g. Package Explorer, Project Explorer, Navigator) by toggling the "Focus on Active Task" button in the toolbar. When focused, the view will show only the resources that are "interesting" for the currently active task.</p>
+		<p>
+			<img border="0" src="images/Feature-Guide-3.0-Package-Explorer-Focused.png"/>
+		</p>
+		<h2 id="Alt.2BClick_Navigation">Alt+Click Navigation</h2>
+		<p>To navigate to a new resource that is not a part of the active task's context, you can toggle "Focus on Active Task" off, browse to the resource, and then click "Focus on Active Task" again to see only relevant resources. A more efficient way to add new resources is to use Alt+Click navigation (Clicking the mouse while holding the Alt key).</p>
+		<p>When a view is in Focused mode, you can Alt+Click a node to temporarily show all of its children.  </p>
+		<ul>
+			<li>Once an element that was previously not interesting is selected with the mouse, it becomes interesting the other child elements will disappear. The clicked element is now a part of the task's context.</li>
+			<li>Alt can be held down while clicking to drill down from a top-level element to a deeply nested element that is to be added to the task context.</li>
+			<li>Multiple Alt+Clicks are supported so that you can add several elements to the task context. As soon as a normal click is made, uninteresting elements will disappear.</li>
+			<li>Ctrl+Clicks (i.e. disjoint selections, use Command key on Mac) are also supported and will cause each element clicked to become interesting.  The first normal click will cause uninteresting elements to disappear.  Note that Ctrl+clicked elements will become interesting (turn from gray to black) but only the most recently-clicked one will be selected while Alt is held down.</li>
+		</ul>
+		<h2 id="Focusing_Editors">Focusing Editors</h2>
+		<p>Some editors such as the Java editor support focusing. Clicking the Focus button in the toolbar will fold all declarations that are not part of the active task context.</p>
+		<p>
+			<img border="0" src="images/Feature-Guide-3.0-Focused-Editor.png"/>
+		</p>
+		<h2 id="Task-focused_Ordering">Task-focused Ordering</h2>
+		<p>When a task is active, elements that are interesting are displayed more prominently. For example, when you open the Java Open Type dialog (Ctrl+Shift+T), types that are interesting for the active task are shown first. Similarly, when you use ctrl+space to autocomplete a method name in a Java source file, methods that are in the task context are displayed at the top.</p>
+		<h2 id="Working_Set_Integration">Working Set Integration</h2>
+		<p>When Focus is applied to a navigator view, the working sets filter for that navigator view will be disabled. This ensures that you see all interesting elements when working on a task that spans working sets. To enforce visibility of only elements within one working set, do the following:</p>
+		<ul>
+			<li>Set the view to show working sets as top-level elements.</li>
+			<li>Use the 
+				<i>Go Into</i> action on the popup menu of the working set node in the view to scope the view down to just the working set.
+			</li>
+		</ul>
+		<h2 id="Open_Task_dialog">Open Task dialog</h2>
+		<p>An 
+			<i>Open Type</i> style dialog is available for opening tasks (<code>Ctrl+F12</code>) and for activating tasks (<code>Ctrl+F9</code>). The list is initially populated by recently active tasks.  The active task can also be deactivated via <code>Ctrl+Shift+F9</code>.  This can be used as a keyboard-only alternative for multi-tasking without the 
+			<i>Task List</i> view visible.  These actions appear in the 
+			<i>Navigate</i> menu.
+		</p>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-Open-Task.png"/>
+		</p>
+		<h2 id="Task_Hyperlinking">Task Hyperlinking</h2>
+		<p>In the task editor, comments that include text of the form bug#123 or task#123 or bug 123 will be hyperlinked.  Ctrl+clicking on this text will open the task or bug in the rich task editor.</p>
+		<p>To support hyperlinks within other text editors such as code or .txt files, the project that contains the file must be associated with a particular task repository. This is configured by right-clicking on the project and navigating to "Properties" &gt; "Task Repository" and selecting the task repository used when working with this project.</p>
+		<h2 id="Reporting_Bugs_from_the_Error_Log">Reporting Bugs from the Error Log</h2>
+		<p>Bugs can created directly from events in the 
+			<i>Error Log</i> view.  This will create a new repository task editor with the summary and description populated with the error event's details.  If the Connector you are using does not have a rich editor, the event details will be placed into the clipboard so that you can paste them into the web-based editor that will be opened automatically.
+		</p>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-Error-Log.png"/>
+		</p><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Task-Editor.html" title="Task Editor">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="User-Guide.html" title="Mylyn User Guide">
+						<img alt="Mylyn User Guide" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Team-Support.html" title="Team Support">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Task Editor</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Team Support</td>
+			</tr>
+		</table>
+	</body>
+</html>

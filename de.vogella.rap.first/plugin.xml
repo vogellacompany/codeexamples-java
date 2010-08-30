@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.rap.ui.entrypoint">
+      <entrypoint
+            class="de.vogella.rap.first.Application"
+            parameter="hello"
+            id="de.vogella.rap.first.Application">
+      </entrypoint>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RAP Perspective"
+            class="de.vogella.rap.first.Perspective"
+            id="de.vogella.rap.first.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="de.vogella.rap.first.View"
+            id="de.vogella.rap.first.View"
+            name="View"
+            restorable="true">
+      </view>
+   </extension>
+
+</plugin>

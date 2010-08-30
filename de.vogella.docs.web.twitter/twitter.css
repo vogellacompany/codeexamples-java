@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+#twitterUser {
+}
+
+#tweet {
+	margin-top: 1.5ex;
+	width: 256px;
+}
+
+#tweet .twitterStatus {
+    color: black;
+}
+
+#tweet a {
+   color: #333366;
+   text-decoration: none;
+   font-weight: bold;
+}
+
+#tweet a:hover {
+   color: #302178;
+   text-decoration: underline;
+}
+
+#tweet a:visited {
+   color: #333399;
+}
+
+#tweet .twitterTime {
+   font-size: 95%;
+   color: #22224e;
+   font-style: italic;
+   font-family: Georgia, serif;
+}
+
+#tweet .twitterSource {
+   font-size: 95%;
+   color: #302178;
+   font-style: italic;
+   font-family: Georgia, serif;
+}
+
+#tweet .twitterPage {
+   font-size: 95%;
+   color: #302178;
+   font-style: italic;
+   text-align: right;
+   margin: 0;
+   padding: 0;
+   height: 16px;
+}
+
+#tweet li {
+   list-style-type: none;
+   list-style-position: outside;
+   text-indent: 0;
+   margin: 0 0 0.7ex 0;
+   padding: 0.7ex 0 0 0;
+   border-top: 1px dotted #046381;
+}
+
+#tweet ul {
+   margin: 0 0 2ex 0;
+}
+
+#tweet .more {
+   padding: 2px;
+}
+
+#tweet img {
+   border: 1px solid #302178;
+}

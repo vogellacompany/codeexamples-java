@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="copy.temp" default="default">
+
+  <target name="default" description="">
+  	<unzip src="${src}" dest="${dest}" overwrite="true"/>     
+  </target>
+
+</project>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.plugin.openview.handler.OpenSvnRepositoryViewHandler"
+            id="de.vogella.plugin.openview.OpenSubversionRepositoryView"
+            name="Open SubversionRepository View">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <command
+               commandId="de.vogella.plugin.openview.OpenSubversionRepositoryView"
+               label="Open SVN Rep"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

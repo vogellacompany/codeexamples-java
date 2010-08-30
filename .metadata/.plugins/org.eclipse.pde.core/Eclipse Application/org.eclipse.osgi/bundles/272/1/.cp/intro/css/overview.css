@@ -1,0 +1,12 @@
+
+a#rap-introLink img { background-image : url(../graphics/rap.gif); }
+a#rap-introLink:hover img { background-image : url(../graphics/rap_hov.gif); }
+
+a#rap-target-one img { background-image : url(../graphics/extract_target.gif); }
+a#rap-target-one:hover img { background-image : url(../graphics/extract_target.gif); }
+
+a#rap-target-quick img { background-image : url(../graphics/quick_tour.gif); }
+a#rap-target-quick:hover img { background-image : url(../graphics/quick_tour.gif); }
+
+a#rap-target-cvs img { background-image : url(../graphics/tu_checkout48.gif); }
+a#rap-target-cvs:hover img { background-image : url(../graphics/tu_checkout48_hov.gif); }

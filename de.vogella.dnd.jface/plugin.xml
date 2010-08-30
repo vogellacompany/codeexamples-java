@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.dnd.jface.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="de.vogella.dnd.jface.Perspective"
+            id="de.vogella.dnd.jface.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="com.android.ide.eclipse.ddms.views.category"
+            class="de.vogella.dnd.jface.view.TreeView"
+            id="de.vogella.dnd.jface.view.treeview"
+            name="Tree View">
+      </view>
+      <view
+            class="de.vogella.dnd.jface.view.TableView"
+            id="de.vogella.dnd.jface.view.tableview"
+            name="Table View"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               id="de.vogella.dnd.jface.view.treeview"
+               minimized="false"
+               relationship="left"
+               relative="org.eclipse.ui.editorss">
+         </view>
+         <view
+               id="de.vogella.dnd.jface.view.tableview"
+               minimized="false"
+               relationship="right"
+               relative="org.eclipse.ui.editorss">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

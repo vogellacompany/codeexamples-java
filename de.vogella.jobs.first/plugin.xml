@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.jobs.first.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.jobs.first.Perspective"
+            id="de.vogella.jobs.first.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.jobs.first.handler.RunJob1"
+            id="de.vogella.jobs.first.runJob1"
+            name="Run Job 1">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <command
+               commandId="de.vogella.jobs.first.runJob1"
+               label="Start Job"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

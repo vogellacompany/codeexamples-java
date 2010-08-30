@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?><!--
+    Copyright (c) 2009 Tasktop Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+         Tasktop Technologies - initial API and implementation
+ -->
+
+<introContent>
+	<extensionContent id="org.eclipse.mylyn" name="Mylyn"
+		style="css/tutorials.css" alt-style="css/tutorials.properties" path="tutorials/@">
+		<group label="Task-focused programming" id="mylyn" style-id="content-group">
+			<link 
+				url="http://org.eclipse.ui.intro/showStandby?partId=org.eclipse.platform.cheatsheet&amp;input=org.eclipse.mylyn.cheatsheet.query" 
+				label="Use the Task List" id="mylyn-query"	style-id="content-link">
+				<text>Learn how to create tasks and task repository queries</text>
+			</link>
+			<link
+				url="http://www.eclipse.org/mylyn/start/"
+				label="Visit the Mylyn homepage" id="mylyn-task" style-id="content-link">
+				<text>Learn about the benefits of task-focused programming with Mylyn</text>
+			</link>
+		</group>
+	</extensionContent>
+</introContent>
+
+<!--
+<link
+	url="http://org.eclipse.ui.intro/showStandby?partId=org.eclipse.platform.cheatsheet&amp;input=org.eclipse.mylyn.cheatsheet.taskfocus"
+	label="Focus on Java" id="mylyn-task" style-id="content-link">
+	<text>Learn how to reduce information overload and multitask with ease.</text>
+</link>
+-->

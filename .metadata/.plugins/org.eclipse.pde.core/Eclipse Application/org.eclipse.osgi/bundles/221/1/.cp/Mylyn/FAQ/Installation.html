@@ -1,0 +1,743 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn FAQ - Installation</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Installation</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="FAQ.html" title="Mylyn FAQ">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Task-List.html" title="Task List">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Mylyn FAQ</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Task List</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Installation">Installation</h1>
+		<ul>
+			<li>
+				<a href="http://eclipse.org/mylyn/dl.php" target="mylyn_external">Mylyn download page</a>
+			</li>
+		</ul>
+		<p>As of writing, Mylyn comes bundled with the main EPP distributions (
+			<a href="http://www.eclipse.org/downloads/" target="mylyn_external">jee, java, cpp</a>). If you wish to manually install Mylyn there are to methods depending on the version of Eclipse. Method 1 outlines how to install using the Eclipse 3.4 update manager. Method 2 below describes how to install Mylyn into Eclipse 3.3 and below using the Update Manager. 
+		</p>
+		<h3 id="Install_Method_1_-_Eclipse_3.4">Install Method 1 - Eclipse 3.4</h3>
+		<ol>
+			<li>Select ''Help &gt; Software Updates...</li>
+			<li>Select 
+				<i>Available Software</i> tab
+			</li>
+			<li>Press the 
+				<i>Add Site...</i> button
+			</li>
+			<li>Enter the Mylyn update site url: 
+				<ol>
+					<li><code>
+						<a href="http://download.eclipse.org/tools/mylyn/update/e3.4" target="mylyn_external">http://download.eclipse.org/tools/mylyn/update/e3.4</a></code>
+					</li>
+					<li>Additional extension update sites are from 
+						<a href="http://www.eclipse.org/mylyn/downloads/" target="mylyn_external">the download page</a>
+					</li>
+				</ol>
+			</li>
+			<li>After pressing 
+				<i>OK</i> the update site will be available in the sites list
+			</li>
+			<li>Expand the Mylyn update site node and select all components desired</li>
+			<li>Press the 
+				<i>Install...</i> button to install Mylyn
+			</li>
+		</ol>
+		<h3 id="Install_Method_2_-_Eclipse_3.3_and_older">Install Method 2 - Eclipse 3.3 and older</h3>
+		<ol>
+			<li>Select 
+				<i>Help-&gt;Software Updates-&gt;Find and Install</i>.
+			</li>
+			<li>Select 
+				<i>Search for new features to install</i> and select 
+				<i>Next</i>.
+			</li>
+			<li>Select 
+				<i>New Remote Site</i>.
+			</li>
+			<li>Enter "Mylyn" for the name and insert the update site url:
+				<ol>
+					<li><code>
+						<a href="http://download.eclipse.org/tools/mylyn/update/e3.3" target="mylyn_external">http://download.eclipse.org/tools/mylyn/update/e3.3</a></code>
+					</li>
+					<li>Additional extension update sites are from 
+						<a href="http://www.eclipse.org/mylyn/downloads/" target="mylyn_external">the download page</a>
+					</li>
+				</ol>
+			</li>
+			<li>Select 
+				<i>OK</i>.
+			</li>
+			<li>Make sure there is a check in the 
+				<i>Mylyn</i> box, and select 
+				<i>Finish</i>.
+			</li>
+			<li>Put a check in the box next to 
+				<i>Mylyn</i>.  If you don't mind downloading some stuff you don't need, go ahead and select 
+				<i>Next</i>.  Otherwise, expand the 
+				<i>Mylyn</i> line (by clicking on the disclosure triangle) and select what you want.  We recommend downloading the 
+				<i>Task List</i>, the 
+				<i>Focused UI</i>, and connectors appropriate to the bug repository that you use -- Bugzilla, Trac, or Jira.  (Note that to download Jira, you need both the core and the connector.)  You can download Mylyn without a bug repository, but it won't be as interesting an experience. If you download the Focused UI you will want to also choose the Bridge appropraite to the content you work with. Most developers will want to include all bridges provided.
+			</li>
+			<li>Read the license agreements, accept or decline as appropriate, and either select 
+				<i>Next</i> (if you accept) or 
+				<i>Cancel</i> (if you do not accept).  
+			</li>
+			<li>You will see a list of features and where to install them.  If the default installation directory is fine, select 
+				<i>Finish</i>.
+			</li>
+		</ol>
+		<h2 id="What_is_the_release_schedule.3F">What is the release schedule?</h2>
+		<ul>
+			<li>Weekly builds: available every Wednesday and on-demand (should be used by all Mylyn contributors not self-hosting from CVS 
+				<a href="http://wiki.eclipse.org/index.php/Mylyn_Contributor_Reference#Self-hosting" target="mylyn_external">straight from CVS</a>)
+			</li>
+			<li>Release builds: see the 
+				<a href="http://www.eclipse.org/projects/project-plan.php?projectid=tools.mylyn" target="mylyn_external">project plan</a>
+			</li>
+		</ul>
+		<h2 id="What_versions_of_Eclipse_are_supported.3F">What versions of Eclipse are supported?</h2>
+		<p>See the 
+			<a href="http://eclipse.org/mylyn/dl.php" target="mylyn_external">download page</a>.
+		</p>
+		<p>Mylyn also relies on a  web browser that works with the Standard Widget Toolkit; Windows and MacOS users are fine, but Linux users might have to download another browser. See 
+			<a href="http://www.eclipse.org/swt/faq.php#browserlinux" target="mylyn_external">the SWT Browser guide</a> for which browsers will work. See 
+			<a href="../../Mylyn/User_Guide/User-Guide.html#Installing_Browser_on_Linux" title="Mylyn/User_Guide#Installing_Browser_on_Linux">installing browser on Linux</a> for installation instructions.
+		</p>
+		<h2 id="What_version_of_Java_is_required.3F">What version of Java is required?</h2>
+		<p>Mylyn needs the 
+			<b>Java 5</b> virtual machine.
+		</p>
+		<p>To check the version of the Java virtual machine that Eclipse was launched with to to 
+			<i>Help → About Eclipse SDK → Configuration Details</i> and verify that the java.vm.version is 1.5.  
+		</p>
+		<p>Mac users should refer to the last comment on 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=116347#c4" target="mylyn_external">bug 1163477</a> for instructions on how to change the 1.4 default.
+		</p>
+		<ul>
+			<li>If you do not have Java 5, you can download it from 
+				<a href="http://72.5.124.55/javase/downloads/index.jsp" target="mylyn_external">Sun’s web site</a>. 
+			</li>
+			<li>If you have more than one VM, you need to specify that Eclipse should use the JDK1.5 VM.  </li>
+		</ul>
+		<p>In Unix, set the environment variable <code>JAVA_HOME</code> to the root of the JDK1.5 installation and/or set the <code>PATH</code> variable to put the JDK1.5 executable directory before any other VM executable directories.  For example, under <code>bash</code> in Unix:</p>
+		<pre>export JAVA_HOME="''(location of JDK1.5 root)''"
+export PATH=$JAVA_HOME/bin:$PATH
+</pre>
+		<p><b>We do 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=140955" target="mylyn_external">not recommend</a> using JDK 1.6 on Eclipse 3.1.</b> (It works fine with Eclipse 3.2 or 3.3.) To use JDK 1.6 on Eclipse 3.1, you must add the following line to your <code>config.ini</code>file:
+		</p>
+		<pre>org.osgi.framework.executionenvironment=OSGi/Minimum-1.0,OSGi/Minimum-1.1,JRE-1.1,J2SE-1.2,
+J2SE-1.3,J2SE-1.4,J2SE-1.5,JavaSE-1.6
+</pre>
+		<h2 id="What_version_of_Mylyn_is_distributed_with_the_Eclipse_downloads.3F">What version of Mylyn is distributed with the Eclipse downloads?</h2>
+		<p>The 
+			<a href="http://www.eclipse.org/downloads/" target="mylyn_external">default Eclipse downloads</a> contain the following Mylyn redistributions.  Since the redistributed versions can be missing important bug fixes or feature additions, we recommend using the 
+			<a href="http://www.eclipse.org/mylyn/downloads" target="mylyn_external">latest version of Mylyn</a>.
+		</p>
+		<ul>
+			<li>Eclipse IDE for Java Developers: all of Mylyn except Team integration (e.g. automatic change sets) integration.  Install the Eclipse CVS integration and then install the latest Mylyn build to get this component.</li>
+		</ul>
+		<ul>
+			<li>Eclipse IDE for Java EE Developers: all of Mylyn redistribution, install manually</li>
+		</ul>
+		<ul>
+			<li>Eclipse IDE for C/C++ Developers: no Mylyn redistribution, install manually</li>
+		</ul>
+		<ul>
+			<li>Eclipse for RCP/Plug-in Developers: all of Mylyn redistributed</li>
+		</ul>
+		<ul>
+			<li>Eclipse Classic: no Mylyn redistribution, install manually</li>
+		</ul>
+		<h2 id="What_happened_to_the_Mylyn_JIRA_Connector.3F">What happened to the Mylyn JIRA Connector?</h2>
+		<p>
+			<b>
+				<a href="http://tasktop.com/blog/eclipse/mylyn-jira-connector-moving" target="mylyn_external">The Mylyn JIRA Connector has moved to Atlassian</a>
+			</b>. The Atlassian JIRA connector can be installed from the update site below. It is a drop-in replacement for the Mylyn JIRA connector. If the latter is already installed it will be disabled and replaced by the Atlassian JIRA connector during the installation. It is not necessary to uninstall the Mylyn JIRA connector. 
+		</p>
+		<pre>Update Site: http://update.atlassian.com/atlassian-eclipse-plugin/
+</pre>
+		<p>See 
+			<a href="http://confluence.atlassian.com/display/IDEPLUGIN/Using+JIRA+in+the+Eclipse+Connector" target="mylyn_external">documentation for installation instructions</a>. 
+		</p>
+		<p>Bug reports and support requests should be 
+			<a href="https://studio.atlassian.com/browse/PLE" target="mylyn_external">directed to Atlassian</a>.
+		</p>
+		<h2 id="My_tasks_or_queries_disappeared.2C_what_do_I_do.3F">My tasks or queries disappeared, what do I do?</h2>
+		<p>This happens if Mylyn failed to install.  First ensure that you have a correct install by following the instructions in the next section.  After that, if you still do not see your tasks use the 
+			<i>Task List</i> view menu → 
+			<i>Restore Tasks From History…</i> command (also available via 
+			<i>File → Import → Task List</i>.
+		</p>
+		<h2 id="General_Installation_Troubleshooting">General Installation Troubleshooting</h2>
+		<p>
+			<b>I’m being asked to restart Eclipse, should I?</b>
+			Upon installing you will get a dialog box asking if you would like to restart Eclipse.  We recommend that you select 
+			<i>Yes</i>.
+		</p>
+		<p>
+			<b>I’ve installed Mylyn ; why can’t I see anything different?</b>
+		</p>
+		<p>The two most likely possibilities are:</p>
+		<ol>
+			<li>You don’t have any Mylyn views open.  Select 
+				<i>Window → Show View → Other</i>, then select 
+				<i>Mylyn</i> and you should see the available Mylyn Views. 
+			</li>
+			<li>If you still don’t see anything, then perhaps you aren’t using the JDK1.5 VM (or later).  See 
+				<a href="http://wiki.eclipse.org/Mylyn_Installation_Guide#Download_and_configure_Java" title="Mylyn_Installation_Guide#Download_and_configure_Java" target="mylyn_external">configuring Java</a>.
+			</li>
+		</ol>
+		<p>
+			<b>What does “<code>Root exception: java.lang.UnsupportedClassVersionError: org/eclipse/mylar/tasklist/MylarTasklistPlugin (Unsupported major.minor version 49.0)</code>” mean?</b>
+		</p>
+		<p>It probably means that the virtual machine is JDK1.4 or lower. See 
+			<a href="http://wiki.eclipse.org/Mylyn_Installation_Guide#Download_and_configure_Java" title="Mylyn_Installation_Guide#Download_and_configure_Java" target="mylyn_external">download and configure Java</a>.
+		</p>
+		<p>
+			<b>What does “Could not create Browser page: No more handles (<code>java.lang.UnsatisfiedLinkError: …</code>)” mean?</b>
+		</p>
+		<p>It probably means that you are running Linux and don’t have Eclipse and a Web browser configured to work together.  See 
+			<a href="../../Mylyn/User_Guide/User-Guide.html#Installing_Browser_on_Linux" title="Mylyn/User_Guide#Installing_Browser_on_Linux">installing a browser on Linux</a>.
+		</p>
+		<p>
+			<b>What does “Could not create Bugzilla editor input” and “<code>java.io.IOException</code>: SAX2 driver class <code>org.apache.xerces.parsers.SAXParser</code> not found” mean?</b>
+		</p>
+		<p>It probably means that you are on MacOS, and for some reason are missing Xerces from the Mac JDK1.5.  You will probably need to add it to your default classpath.  Please refer to and comment on 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=144287" target="mylyn_external">bug 144287</a> if you see this problem.
+		</p>
+		<p>To ensure that you are using the 1.5 VM refer to the last comment on 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=116347#c4" target="mylyn_external">bug 1163477</a> for instructions on how to change the 1.4 default.
+		</p>
+		<p>
+			<i>' Startup warnings</i>'
+		</p>
+		<p>If you see startup errors or warnings such as <code>BundleException</code> or timeout messages restart Eclipse with the <code>-clean</code> flag either on the command line, in your shortcut link, or by temporarily it into the <code>eclipse/eclipse.ini</code> file.  These warnings do not cause any bad behavior, but this bug has been fixed in all Mylyn builds after 2.1.  The warnings have this form:</p>
+		<pre> !MESSAGE While loading class "org.eclipse.mylar.tasks.ui.TasksUiPlugin", thread "Thread
+ [main,6,main]" timed out waiting (5000ms) for thread "Thread[Worker-3,5,main]" to finish
+ starting bundle "update@plugins/org.eclipse.mylar.tasks.ui_2.0.0.v20070514-1800.jar [809]". 
+ To avoid deadlock, thread "Thread[main,6,main]" is proceeding but 
+ "org.eclipse.mylar.tasks.ui.TasksUiPlugin" may not be fully initialized.
+</pre>
+		<h2 id="Installation_Troubleshooting_on_Eclipse_3.4_and_later">Installation Troubleshooting on Eclipse 3.4 and later</h2>
+		<p>Ensure that all required update sites are enabled under Help &gt; Software Updates &gt; Available Software &gt; Manage Sites:</p>
+		<ul>
+			<li>
+				<a href="http://download.eclipse.org/tools/mylyn/update/e3.4" target="mylyn_external">http://download.eclipse.org/tools/mylyn/update/e3.4</a>
+			</li>
+			<li>
+				<a href="http://download.eclipse.org/tools/mylyn/update/extras" target="mylyn_external">http://download.eclipse.org/tools/mylyn/update/extras</a>
+			</li>
+			<li>
+				<a href="http://download.eclipse.org/tools/mylyn/update/incubator" target="mylyn_external">http://download.eclipse.org/tools/mylyn/update/incubator</a>
+			</li>
+		</ul>
+		<p>Then follow these steps:</p>
+		<ol>
+			<li>Use Help &gt; Software Update &gt; Update to ensure that the latest version of all features is installed</li>
+			<li>Install again</li>
+			<li>If Install fails with a "No repository found containing..." message, remove and re-add the update site that hosts the feature for which the download is failing</li>
+			<li>Install again</li>
+			<li>If the update fails with a "Cannot complete the request..." message, uninstall Mylyn and all Mylyn dependencies</li>
+			<li>Install again</li>
+		</ol>
+		<h3 id="Why_does_the_installation_fail_with_.27.27No_repository_found.27.27.3F">Why does the installation fail with ''No repository found''?</h3>
+		<p>The message indicates that the Eclipse provisioning system P2 has found meta data to install a plug-in but can not locate an artifact repository that provides the required downloads. To recover please remove the Mylyn update sites under 
+			<i>Help → Software Updates… → Available Software → Manage Sites</i>. Then re-add the sites which will refresh the meta data and artifacts available on the update sites.
+		</p>
+		<p>Also see steps under 
+			<a href="Installation.html#Installation_Troubleshooting_on_Eclipse_3.4_and_later">Installation Troubleshooting on Eclipse 3.4 and later</a>.
+		</p>
+		<h3 id="Why_does_update_fail_with_.27.27Cannot_complete_the_request.27.27.3F">Why does update fail with ''Cannot complete the request''?</h3>
+		<p>If any of the installed features have unsatisfied dependencies or if features where previously installed from the extras or incubator update site P2 may fail with an error similar to the ones below. Try these steps to recover:</p>
+		<ol>
+			<li>Ensure that the Mylyn for Eclipse 3.4 and Mylyn Extras sites are enabled in Software Updates &gt; Available Software &gt; Manage Sites</li>
+			<li>Select Update from Software Updates &gt; Installed Software</li>
+			<li>Retry the installation</li>
+		</ol>
+		<pre style="overflow:scroll">
+ Cannot complete the request. See the details. 
+ Mylyn Focused UI (Recommended) is already installed, so an update will be performed instead. 
+ Mylyn Task List (Required) is already installed, so an update will be performed instead.
+ Mylyn Bridge: Eclipse IDE is already installed, so an update will be performed instead.
+ Mylyn Bridge: Java Development is already installed, so an update will be performed instead.
+ Mylyn Bridge: Plug-in Development is already installed, so an update will be performed instead.
+ Mylyn Bridge: Team Support is already installed, so an update will be performed instead.
+ Mylyn Connector: Bugzilla is already installed, so an update will be performed instead.
+ Cannot find a solution where both Match[requiredCapability: org.eclipse.equinox.p2.iu/org.eclipse.mylyn.monitor.ui/[3.0.3.v20081015-1500 -e3x,3.0.3.v20081015-1500-e3x]] and Match[requiredCapability: org.eclipse.equinox.p2.iu/org.eclipse.mylyn.monitor.ui/[3.0.1.v20080721-2100-e3x,3.0.1.v20080721-2100-e3x]]can be satisfied.
+ […]
+</pre>
+		<pre>Cannot find a solution satisfying the following requirements org.eclipse.ui [3.4.2.M20090204-0800].
+</pre>
+		<p>Also see steps under 
+			<a href="Installation.html#Installation_Troubleshooting_on_Eclipse_3.4_and_later">Installation Troubleshooting on Eclipse 3.4 and later</a>.
+		</p>
+		<h2 id="Installation_Troubleshooting_on_Eclipse_3.3_and_earlier">Installation Troubleshooting on Eclipse 3.3 and earlier</h2>
+		<p>
+			<i>' Update failures '</i>
+		</p>
+		<p>First, try running the update again via 
+			<i>Help → Software Updates → Search for new features…</i> and ensure that all of the Mylyn features have been updated.
+		</p>
+		<p>On Eclipse versions earlier than 3.3 (final) use 
+			<b>only the “Search for new features…”</b> option when updating Mylyn.  If you use “Search for updates…” the Update Manager will allow a partial install that can cause Mylyn to fail to start, and you will need to run update again.  See the 
+			<i>feature configuration problem</i> section below for details.  If you encounter this problemm consider voting for Platform 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=132450" target="mylyn_external">bug 132450</a>.
+		</p>
+		<p>If you have 
+			<b>updated your Eclipse 3.3 to an Eclipse 3.4 milestone</b>, you will not be able to update the 3.3 copy, because Mylyn has two separate downloads for Eclipse 3.3 and 3.4.  Also, not all of the 3.3 version of Mylyn will work in Eclipse 3.4.  Install the latest 3.4 version from: 
+			<a href="http://www.eclipse.org/mylyn/downloads/" target="mylyn_external">http://www.eclipse.org/mylyn/downloads/</a>
+		</p>
+		<p>
+			<i>' Java Persistence API Tools error when updating the JEE Eclipse Package '</i>
+		</p>
+		<p>If you are trying to install additional features and get this error you have hit 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=194959" target="mylyn_external">bug 194959</a> which should be resolved soon.  The work-around is to check off the 
+			<i>Europa Discovery Site</i> and install the first two components of the 
+			<i>Data Tools Platform</i>.
+		</p>
+		<p>
+			<b>Subclipse related problems</b>
+		</p>
+		<p>If you see the following message:</p>
+		<pre>  Subclipse Mylyar Integration (1.0.1) requires plug-in "org.eclipse.mylar.tasks.core (0.9.2)",
+  or later version
+</pre>
+		<p>You need to uninstall the old (pre 2.0) version of Subclipse and Mylar integration.  Most users should not need to do this since the old Mylar 1.x version disabled itself after the update to 2.0.  But if you see this error uninstall via: </p>
+		<ul>
+			<li>Help → Software Updates → Manage Configuration</li>
+			<li>Uninstall the Subclipse Mylar Integration (1.0.1)</li>
+			<li>Uninstall the old version of Mylar</li>
+		</ul>
+		<p>
+			<i>' Incompatible VM (e.g. JDK 1.4) '</i>
+		</p>
+		<p>If you are using the wrong VM, you’ll see errors like the following in your log file.  </p>
+		<pre>Root exception: java.lang.UnsupportedClassVersionError:
+org/eclipse/mylar/tasklist/MylarTasklistPlugin (Unsupported major.minor version 49.0)
+</pre>
+		<p>See 
+			<a href="Installation.html#What_version_of_Java_is_required.3F">Configure Java</a> to fix this problem.
+		</p>
+		<p>
+			<i>' Incompatible version of Eclipse '</i>
+		</p>
+		<p>Separate versions and update sites exist 
+			<a href="http://eclipse.org/mylyn/dl.php" target="mylyn_external">for Eclipse 3.1 and 3.2</a>), in which case you may see errors like the following in your <code>&lt;workspace&gt;/.metadata/.log </code>file or in a Mylyn view:
+		</p>
+		<pre>java.lang.NoSuchMethodError: org.eclipse.ui.internal.dialogs.FilteredTree.getFilterControl()
+The activator org.eclipse.mylar.java.MylarJavaPlugin for bundle org.eclipse.mylar.java is invalid
+</pre>
+		<p>
+			<i>' Mylyn feature configuration problem '</i>
+		</p>
+		<p>If the above do not address the issue, the easiest thing to do is uninstall any old versions and update to the latest Mylyn.  Your tasks won’t be lost, because by default they are stored in the <code>&lt;workspace&gt;/.metadata/.mylyn</code> folder which will be read next time Mylyn starts correctly. </p>
+		<ul>
+			<li>First, uninstall the old version of Mylyn using 
+				<i>Help → Software Updates → Manage Configuration</i>.  
+			</li>
+			<li>You need to Disable all Mylyn features by right-clicking them.</li>
+			<li>Allow Eclipse to restart after the last is disabled.</li>
+			<li>After restart, ensure that the 3rd toolbar button is pressed (figure below) so that you see the disabled features to uninstall.</li>
+			<li>Uninstall all the disabled features using the popup menu.  </li>
+		</ul>
+		<p>If you don’t uninstall, the the Update Manager will think that you have the latest and tell you that there are no updates. </p>
+		<p><b>Note: manually removing the plug-ins and features can lead to configuration errors.</b> </p>
+		<p>After uninstalling, update Eclipse by adding the correct update site specified at on the 
+			<a href="http://eclipse.org/mylar/dl.php" target="mylyn_external">download page</a>, and after that automatically or manually updating will install the correct version.
+		</p>
+		<p>
+			<img border="0" src="images/mylar-eclipse-manage-configuration.gif"/>
+		</p>
+		<p>
+			<b>What do I need to do in installation to be able to use Mylyn task management features with bug/task/issue trackers?</b>
+		</p>
+		<p>When you install, make sure that you select a connector for your bug/task/issue tracking software.  For example, to use Bugzilla, you have to install the Bugzilla connector component.</p>
+		<p>
+			<b>What does the error “Network connection problems encountered during search” mean?</b>
+		</p>
+		<p>If you get that message while trying to download Mylyn, it means that Eclipse couldn’t find the location you entered.  This might be because you copied something incorrectly (watch for extra characters -- even extra spaces can cause errors), or because the site went down.  You may be able to see if the site is up or down by copying the URL into your Web browser.</p>
+		<p>
+			<i>'What does the “Update manager failure” message mean? '</i>
+		</p>
+		<p>It means that Eclipse could not access the update site, or that it got confused about the configuration state of your Eclipse.  First try updating again to see if the update site is accessible.  </p>
+		<p>If you are trying to update the JIRA connector you can also try de-selecting that feature in case the <code>Tigris.org</code> update site is not accessible.  Using 
+			<i>Search for new features to install…</i> when installing can help to avoid this problem.  If that does not work see the feature configuration troubleshooting below. 
+		</p>
+		<p>
+			<b>Why am I getting messages in my <code>&lt;workspace&gt;/.metadata/.log</code> or my Mylyn view that say things like “<code>java.lang.NoSuchMethodError: org.eclipse.ui.internal.dialogs.FilteredTree.getFilterControl()</code>” and “The activator <code>org.eclipse.mylar.java.MylarJavaPlugin</code> for bundle <code>org.eclipse.mylar.java</code> is invalid”?</b>
+		</p>
+		<p>This probably means that your Mylyn download version didn’t match your Eclipse download version.  Note that 
+			<a href="http://eclipse.org/mylar/dl.php" target="mylyn_external">the download site</a> has different downloads for Eclipse 3.1 and Eclipse 3.2.
+		</p>
+		<p>To fix this problem, see the 
+			<a href="http://wiki.eclipse.org/Mylyn_Uninstallation_Guide" title="Mylyn_Uninstallation_Guide" target="mylyn_external">uninstallation guide</a>, then re-install from 
+			<a href="http://eclipse.org/mylar/dl.php" target="mylyn_external">the correct download site</a>.
+		</p>
+		<p>
+			<b>Why am I getting messages in my <code>&lt;workspace&gt;/.metadata/.log</code> or my Mylyn view that say things like “<code>java.lang.NoSuchMethodError: org.eclipse.mylyn.internal.context.core.InteractionContextManager.getScalingFactors()</code>”?</b>
+		</p>
+		<p>This could mean that some of your Mylyn plugins are on different versions. Use the update manager (“''Search for new features to install…''”) to obtain the latest versions of the Mylyn features.</p>
+		<p>
+			<b>Why doesn’t the Eclipse Update Manager display the latest versions of the Mylyn features?</b>
+		</p>
+		<p>It does. Note, however, that if you select both the Mylyn site and the Weekly Builds site, using “''Search for new features to install…''”, you must uncheck the “''Show the latest version of a feature only''” checkbox in order to see the updates available on both sites.</p>
+		<p>
+			<b>I’ve just updated to Mylyn 2.0 and I don’t see any tasks in my Task List</b>
+		</p>
+		<p>As part of the update to Mylyn 2.0 the old data folder has been migrated to &lt;workspace folder&gt;/.metadata/.mylyn from the old location &lt;workspace folder&gt;/.mylar. IF for some reason migration failed (.mylar folder still exists), simply shut down Eclipse and manually move your old &lt;workspace folder&gt;/.mylar folder to &lt;workspace folder&gt;/.metadata/.mylyn (note the name change to .mylyn)</p>
+		<p>
+			<b>Error: Network connection problems encountered during search</b>
+			Eclipse couldn’t find the location you entered.  This might be because you copied something incorrectly (watch for extra characters -- even extra spaces can cause errors), or because the site went down.  You might be able to see if the site is down by copying the URL into your Web browser.
+		</p>
+		<p>
+			<b>Error: Update manager failure</b>
+			Eclipse could not access the update site, or that it got confused about the configuration state of your Eclipse.  First try updating again to see if the update site is accessible.  If you are trying to update the JIRA connector you can also try de-selecting that feature in case the Tigris.org update site is not accessible.  Using use 
+			<i>Search for new features…</i> when installing can help to avoid this problem. You will probably get a warning that 
+			<b>the feature is unsigned</b>.  If you trust that hackers have not befouled the Mylyn plug-in, select 
+			<i>Install All</i>.
+		</p>
+		<h2 id="Why_can.27t_I_update_Mylyn_3.0_to_a_newer_release.3F">Why can't I update Mylyn 3.0 to a newer release?</h2>
+		<p>The update site link in the 3.0 and 3.0.1 features for Eclipse 3.3 points to the Mylyn for Eclipse 3.4 update site (
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=244618" target="mylyn_external">bug 244618</a>). An attempt to update will result in an error: “Mylyn Task List (Required) (3.0.1.v20080721-2100-e3x) requires plug-in "org.eclipse.ui (3.4.0.I20070918)", or later version.”
+		</p>
+		<p>To resolve the error follow these steps:</p>
+		<ol>
+			<li>Open update 
+				<b>Help → Software Updates → Find and Install…</b>
+			</li>
+			<li>Select 
+				<b>Search for new features…</b> and 
+				<b>Next</b>
+			</li>
+			<li>
+				<b>Uncheck Mylyn</b>. Add a 
+				<b>New Remote Site</b>:
+				<ul>
+					<li>Name: 
+						<b>Mylyn for Eclipse 3.3</b>
+					</li>
+					<li>URL: 
+						<b>
+							<a href="http://download.eclipse.org/tools/mylyn/update/e3.3" target="mylyn_external">http://download.eclipse.org/tools/mylyn/update/e3.3</a>
+						</b>. 
+					</li>
+				</ul>
+			</li>
+		</ol>
+		<p>Make sure the new site is selected and select Finish to proceed with the update.</p>
+		<h2 id="Installing_on_Linux">Installing on Linux</h2>
+		<h3 id="How_can_I_get_the_SWT_internal_browser_to_work_under_Linux.3F">How can I get the SWT internal browser to work under Linux?</h3>
+		<p>Mylyn uses the Standard Widget Toolkit Browser, and users have experienced problems with the SWT Browser on Linux.  This is not a Mylyn specific problem and also occurs if you try to use Eclipse’s Browser view. To test to see if your browser is properly configured, select 
+			<i>Window → Show View → Other → General → Internal Web Browser</i>, then try to load a web page. If the internal browser is problematic, consider enabling the external default browser (i.e. Firefox) via 
+			<i>Window → Preferences → General → Web Browser</i> and select the 
+			<b>Use external Web browser</b> option.
+		</p>
+		<h3 id="I.E2.80.99m_getting_a_.E2.80.9CCould_not_create_Browser_page:_No_more_handles.E2.80.9D_error">I’m getting a “Could not create Browser page: No more handles” error</h3>
+		<p>When the Browser is not properly configured exceptions such such as “Could not create Browser page: No more handles (<code>java.lang.UnsatisfiedLinkError: …</code>)” will appear when attempting to open tasks.  See 
+			<a href="http://www.eclipse.org/swt/faq.php#browserlinux" target="mylyn_external">the SWT Browser guide</a> for which browsers will work.  
+		</p>
+		<h3 id="I.E2.80.99m_having_unstable_performance_on_Linux_with_a_Sun_JVM_are_there_options.3F">I’m having unstable performance on Linux with a Sun JVM are there options?</h3>
+		<p>For those experiencing unstable performance with Linux using the Sun JVM, try the 
+			<a href="http://www-128.ibm.com/developerworks/java/jdk/linux/download.html" target="mylyn_external">IBM JVM</a>, which will require you to register with IBM prior to download. We’ve also had good reports from those using JRockit JVM.
+		</p>
+		<h3 id="Memory_consumption_problem_with_internal_browser_on_Linux-GTK">Memory consumption problem with internal browser on Linux-GTK</h3>
+		<p>If you are experiencing abnormal memory consumption upon launching the internal browser (or opening repository tasks), try shutting down eclipse, renaming/moving your <code>~/.mozilla/eclipse</code> folder and relaunching eclipse. (see 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=173782" target="mylyn_external">bug#172782</a>)
+		</p>
+		<h3 id="Error:_No_more_handles_error">Error: No more handles error</h3>
+		<pre>(java.lang.UnsatisfiedLinkError: no swt-mozilla-gtk-3449 or swt-mozilla-gtk in swt.library.path, java.library.path or the jar file)
+</pre>
+		<p>To resolve this error install a package that provides the Gecko engine library. On Ubuntu and Debian the package is called libxul0d.</p>
+		<h3 id="Recommended_Settings_for_GTK">Recommended Settings for GTK</h3>
+		<p>
+			<a href="http://blog.xam.dk/archives/81-Making-Eclipse-look-good-on-Linux.html" target="mylyn_external">This article</a> describes how to improve the visual appearance of Eclipse on GTK.
+		</p>
+		<h3 id="Recommended_GTK_Setup_for_KDE">Recommended GTK Setup for KDE</h3>
+		<p>The recommended GTK theme to use for KDE (and KDE based distributions like Kubuntu) is the
+			“Human” theme. (Possibly, this is also a good recommendation for GNOME. GNOME users, please comment.)</p>
+		<p>With Debian based distributions (e.g. Ubuntu), this theme can be installed with</p>
+		<pre> aptitude install human-theme
+</pre>
+		<p>The appearance of GTK applications is controlled by the KDE System Settings / Control Center
+			in the section “Appearance”.</p>
+		<dl>
+			<dt>GTK Styles and Fonts: GTK Styles: Select “Use another style 
+				<a href="Human">Human</a>”
+			</dt>
+		</dl>
+		<dl>
+			<dt>Colors: At bottom: 
+				<a href="x">x</a> Apply colors to non-KDE applications
+			</dt>
+		</dl>
+		<p>These changes are applied to these two GTK configuration files, respectively:</p>
+		<ul>
+			<li><tt>$HOME/.gtkrc-2.0-kde</tt></li>
+			<li><tt>$HOME/.kde/share/config/gtkrc-2.0</tt></li>
+		</ul>
+		<h3 id="Solving_issues_with_KDE_environment_variable_settings">Solving issues with KDE environment variable settings</h3>
+		<p>Most of the 
+			<a href="Installation.html#Known_UI_issues_with_KDE">known UI issues below</a> are due to a broken environment variable setting. The environment variable <tt>GTK2_RC_FILES</tt> contains a search path to find the GTK configuration files to be used by the GTK application and can be checked with
+		</p>
+		<pre> env | grep GTK2_RC_FILES
+</pre>
+		<p>The correct setting is obtained by</p>
+		<pre> export GTK2_RC_FILES=$HOME/.gtkrc-2.0-kde:$HOME/.kde/share/config/gtkrc-2.0 ''# Bourne shell''
+ setenv GTK2_RC_FILES $HOME/.gtkrc-2.0-kde:$HOME/.kde/share/config/gtkrc-2.0 ''# C shell''
+</pre>
+		<p>
+			<b>Important note:</b> The used environment setting seems to differ depending on the way KDE starts
+			the application: from Konsole, using “Run Command…”, using a desktop icon etc. Please use this simple script to check the different ways:
+		</p>
+		<pre> #!/bin/bash
+ env | grep GTK2_RC_FILES &gt;/tmp/GTK2_RC_FILES.env
+</pre>
+		<p>and look at the resulting output in <tt>/tmp</tt>.</p>
+		<p>Consider filing a bug against the distribution showing this inconsistent behaviour.</p>
+		<h3 id="Known_UI_issues_with_KDE">Known UI issues with KDE</h3>
+		<p>There a couple of bugs related to UI features not working in specific Linux distributions:</p>
+		<ul>
+			<li>
+				<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=176716" target="mylyn_external">176716: Task colors are not displayed</a>
+			</li>
+			<li>
+				<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=173928" target="mylyn_external">173928: Task acivate button does not work under linux</a>
+			</li>
+		</ul>
+		<p>Debian 3.1 (sarge) with KDE and standard X11 installation (XFree86) works fine for all three issues.</p>
+		<p>Debian testing (etch) with KDE and new X11 installation (X.Org) has issues with the color display (bug 176716 and 135928), but the Task Activate button works.</p>
+		<p>Kubuntu Dapper 6.06 with KDE and X.Org triggers all above issues. An upgrade to Edgy enables Task Color display and the date picker selection. To get the Task Activation button working you have to use Edgy and Eclipse 3.3M5eh (or newer).</p>
+		<p>Kubuntu Gutsy 7.10 has issues with the color display (bug 176716). A workaround is to change the GTK-Style to “Human”.
+			More details and another solution in the comments of bug 176716.</p>
+		<h2 id="Installing_on_MacOS">Installing on MacOS</h2>
+		<p>If you see errors like the following it may be due to Xerces missing from the Mac JDK so you may need to add it to your default classpath.  Please refer to and comment on 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=144287" target="mylyn_external">bug 144287</a> if you see this problem.
+		</p>
+		<pre>   Could not create Bugzilla editor input
+   java.io.IOException: SAX2 driver class org.apache.xerces.parsers.SAXParser not found
+</pre>
+		<p>To ensure that you are using the 1.5 VM refer to the last comment on 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=116347#c4" target="mylyn_external">bug 1163477</a> for instructions on how to change the 1.4 default.
+		</p>
+		<h2 id="Configuration_Troubleshooting">Configuration Troubleshooting</h2>
+		<h3 id="The_default_Key_Mappings_aren.E2.80.99t_working_correctly.2C_what_can_I_do.3F">The default Key Mappings aren’t working correctly, what can I do?</h3>
+		<p>If default key mappings aren’t working, try doing the following to reset them:</p>
+		<ul>
+			<li>
+				<i>Window → Reset Perspective</i>
+			</li>
+			<li>
+				<i>Then: Window → Preferences → Keys → Restore Defaults</i>
+			</li>
+		</ul>
+		<h4 id="Linux_key_mappings_a_problem.3F">Linux key mappings a problem?</h4>
+		<p>If you are running Mylyn on X-Windows, for example on Linux, FreeBSD, AIX and HP-UX, some keyboard bindings may not work by default.</p>
+		<p>If the <code>Ctrl+Alt+Shift+Arrow Up</code> shortcut for 
+			<i>Mark as Landmark</i> does not work do the following:
+		</p>
+		<ul>
+			<li>
+				<i>Menu Bar → Desktop → Control Center → Keyboard Shortcuts → Move one workspace up, Move one workspace down</i>: disable both.
+			</li>
+		</ul>
+		<p>If <code>Alt+Click</code> quick unfiltering does not work try one of the following:</p>
+		<ul>
+			<li>Hold down the <code>Windows</code> key while holding <code>Alt</code>, if available (ironic, but unsurprisingly this key is not usually mapped on Linux).</li>
+			<li>Disable the <code>Alt+drag to move</code> functionality:</li>
+		</ul>
+		<p>GNOME Desktop</p>
+		<ol>
+			<li>Open a terminal and run <code>gconf-editor</code></li>
+			<li>Go into: <code>/apps/metacity/general</code></li>
+			<li>Edit the <code>mouse_button_modifier</code> field. Setting it to nothing disables it. You can use &lt;Super&gt; to set it to the windows key.</li>
+			<li>Exit <code>gconf-editor</code>.</li>
+		</ol>
+		<p>KDE Desktop</p>
+		<ol>
+			<li>Run the 
+				<i>KDE Control Center</i>.
+			</li>
+			<li>Go to the 
+				<i>Desktop/Window Behavior</i> panel and select the 
+				<i>Window Actions</i> tab.
+			</li>
+			<li>Down in the 
+				<i>Inner Window, Titlebar &amp; Frame</i> area, change the 
+				<i>Modifier Key</i> option from <code>Alt</code> to <code>Meta</code>.
+			</li>
+		</ol>
+		<h3 id="How_do_I_enable_spell_checking_in_Eclipse_3.2_and_older.3F">How do I enable spell checking in Eclipse 3.2 and older?</h3>
+		<p>On Eclipse versions earlier than 3.3, the spell checking must be set up manually.  Spell checking is supported in the task editor for local tasks and for connectors that support rich editing (e.g. Bugzilla, Trac).</p>
+		<ul>
+			<li>To install spell checking for editors that support it you need to enable the preference in 
+				<i>General → Editors → Text Editors → Spelling</i>.
+			</li>
+			<li>You also need to install a dictionary, some instructions are 
+				<a href="http://www.javalobby.org/java/forums/t17453.html" target="mylyn_external">here</a>. A word list is available 
+				<a href="http://wiki.eclipse.org/http://wordlist.sourceforge.net/_here" title="http://wordlist.sourceforge.net/ here" target="mylyn_external">http://wordlist.sourceforge.net/ here</a> as well.
+			</li>
+		</ul>
+		<p>
+			<img border="0" src="images/mylar-spell-checking-preference.gif"/>
+		</p>
+		<h3 id="How_can_I_change_the_number_of_editors_left_open_before_Mylyn_starts_closing_editors.3F">How can I change the number of editors left open before Mylyn starts closing editors?</h3>
+		<p>Turn off or increase the number of editors to leave open using 
+			<i>Preferences → General → Editors → Number of opened editors before closing</i>.  Since Mylyn will manage the open editors with task activation, this number can be set higher or you can disable automatic closing entirely.
+		</p>
+		<h3 id="Do_I_need_the_Outline_View_when_running_Mylyn.3F">Do I need the Outline View when running Mylyn?</h3>
+		<p>No, not really.  The Package Explorer and folded signatures should provide enough context for you.  If, at some point, you really need to see an Outline View, you can always enter (Ctrl+O) to show the in-place Outline View.</p>
+		<h3 id="What_does_the_message_.E2.80.9Ccontent_assist_proposals_no_longer_appear.E2.80.9D_mean.3F">What does the message “content assist proposals no longer appear” mean?</h3>
+		<p>This usually happens when uninstalling when using Eclipse 3.2.  Make sure that the “Java Completions” and “Java Types” proposal categories are included in the default proposals via: 
+			<i>Preferences → Java → Editor → Content Assist → Advanced → Restore Defaults</i>.  Also see: 
+			<a href="http://wiki.eclipse.org/Mylyn_FAQ#Content_assist_troubleshooting" title="Mylyn FAQ#Content assist troubleshooting" target="mylyn_external">content assist troubleshooting</a>.  This 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=140416" target="mylyn_external">bug</a> has been fixed in Eclipse 3.2.1.
+		</p>
+		<h3 id="Why_do_I_get_errors_like_.E2.80.9CHTTP_Response_Code_407.E2.80.9D_or_.E2.80.9CProxy_Authentication_Error.E2.80.9D_when_accessing_repositories_through_a_proxy_server.3F">Why do I get errors like “HTTP Response Code 407” or “Proxy Authentication Error” when accessing repositories through a proxy server?</h3>
+		<p>It is likely that you need to configure these proxy server settings.  Select 
+			<i>Window → Preferences → General → Network Connections</i>, and update the section in the “Proxy settings” section of the form.
+		</p>
+		<h3 id="I_can.E2.80.99t_use_.3Ccode.3ECtrl.2BAlt.2BShift.2BArrow_Up.3C.2Fcode.3E_for.27.27_Mark_as_Landmark.27.27.__What_do_I_do.3F">I can’t use &lt;code&gt;Ctrl+Alt+Shift+Arrow Up&lt;/code&gt; for'' Mark as Landmark''.  What do I do?</h3>
+		<p>This is usually a Linux/GNOME problem, where the Gnome keyboard shortcuts are interfering with the Eclipse shortcuts.  Go to the Keyboard shortcuts (which might be something like 
+			<i>Desktop → Control Center → Keyboard Shortcuts</i> or 
+			<i>System → Preferences → Keyboard Shortcuts</i>) and disable both of these shortcuts:
+		</p>
+		<ul>
+			<li>Move one workspace up</li>
+			<li>Move one workspace down</li>
+		</ul>
+		<p>See also: 
+			<a href="../../Mylyn/User_Guide/User-Guide.html#Keyboard_mappings_on_Linux" title="Mylyn/User_Guide#Keyboard_mappings_on_Linux">keyboard mappings on Linux</a>.
+		</p>
+		<h3 id="How_do_I_turn_on_spell_checking.3F">How do I turn on spell checking?</h3>
+		<p>See 
+			<a href="../../Mylyn/User_Guide/User-Guide.html#Spell_Checking" title="Mylyn/User_Guide#Spell_Checking">spell checking</a>.
+		</p>
+		<h3 id="Why_do_I_get_an_error_when_accessing_secured_web_sites.3F">Why do I get an error when accessing secured web sites?</h3>
+		<p>The internal browser may display an error if the web site certificate is not trusted and block access to the site:</p>
+		<pre>(Error code: sec_error_unknown_issuer)
+</pre>
+		<p>On Linux start <code>firefox -profile ~/.mozilla/eclipse -no-remote</code> from the command line and open the web site in Mozilla Firefox. Add an exception for the web site and restart Eclipse. The site should now be accessible from Eclipse.</p>
+		<p>
+			<b>Notes</b>
+		</p>
+		<ol>
+			<li><code>-no-remote</code> is added because it would otherwise open a new window in the running process. You’re probably viewing this page in firefox, so the command above will not work without <code>-no-remote</code>.</li>
+			<li>Replace <code>firefox</code> by the exact command that you use to start your Mozilla browser.</li>
+		</ol>
+		<h2 id="Uninstall_troubleshooting">Uninstall troubleshooting</h2>
+		<p>We recommend 
+			<b>uninstalling in Eclipse</b> via the 
+			<i>Help → Software Updates → Manage Configuration</i> dialog.  If you get an error message when trying to uninstall, you will need to first uninstall dependencies that use Mylyn.  These include things like the Subclipse Mylyn integration and the Bugzilla Connector.
+		</p>
+		<p>You can also 
+			<b>uninstall manually</b> by deleting all of the Mylyn plug-ins and features from the <code>eclipse/plugins</code> and <code>eclipse/features</code> directory make sure to delete all of the plug-ins and then restart Eclipse with the -clean option (e.g. by inserting it into a shortcut or the <code>eclipse.ini</code> file.
+		</p>
+		<p>On 
+			<b>Eclipse 3.2:</b> if after uninstalling 
+			<b>content assist proposals no longer appear</b> you need to ensure that the 
+			<i>Java Completions</i> and 
+			<i>Java Types</i> proposal categories are included in the default proposals via: 
+			<i>Preferences → Java → Editor → Content Assist → Advanced → Restore Defaults</i>.  Also see: 
+			<a href="http://wiki.eclipse.org/Mylyn_FAQ#Content_assist_troubleshooting" title="Mylyn FAQ#Content assist troubleshooting" target="mylyn_external">content assist troubleshooting</a>.  This 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=140416" target="mylyn_external">bug</a> has been fixed in Eclipse 3.2.1.
+		</p>
+		<p>On 
+			<b>Eclipse 3.1:</b> you may need to reset the Java editor to be default for <code>.java</code> again via: 
+			<i>Preferences → General → Editors → File Associations</i>
+		</p>
+		<h2 id="Why_am_seeing_.3Ccode.3Ejava.lang.OutOfMemoryError:_PermGen_space.3C.2Fcode.3E_errors.3F">Why am seeing &lt;code&gt;java.lang.OutOfMemoryError: PermGen space&lt;/code&gt; errors?</h2>
+		<p>If your Eclipse crashes, or you see the above error after installing Mylyn or other plug-ins, you have most likely hit the infamous MaxPermSize bug.  This is not a Mylyn specific problem, but a general problem with the Sun Java VM that is often triggered on Eclipse 3.2 and later, if you have many plug-ins installed.</p>
+		<p>To fix it simply add the following to your launch arguments. This is usually to your shortcut:</p>
+		<pre>   -vmargs -XX:MaxPermSize=128m
+</pre>
+		<p>Or to the <tt>eclipse/configuration/config.ini</tt> file:</p>
+		<pre>   -XX:MaxPermSize=128m
+</pre>
+		<p>Note: For Eclipse 3.4 with the Equinox P2 profile-based provisioning support, this setting can also be modified in the current  P2 profile. With a default installation of the SDK, see: </p>
+		<p>@config.dir/../p2/org.eclipse.equinox.p2.engine/profileRegistry/&lt;name&gt;.profile/&lt;timestamp&gt;.profile</p>
+		<p>For more information, see: 
+			<a href="http://wiki.eclipse.org/Equinox_p2_Admin_UI_Users_Guide" target="mylyn_external">http://wiki.eclipse.org/Equinox_p2_Admin_UI_Users_Guide</a>
+		</p>
+		<p>If you are using a very large number of plug-ins (e.g. WTP) and still get this error you may need to increase the number to 256M.  Note that on some VMs the size may need to be a power of 2 and may drop down to the default (e.g. 32M) if it is not accepted.</p>
+		<p>Eclipse 3.3.1 users: note note that due to Platform 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=203325" target="mylyn_external">bug 203325</a> you need to use the instructions above and cannot set the size using <code>-launcher.XXMaxPermSizeL</code>, which will be ignored.
+		</p>
+		<p>For more information see the 
+			<a href="http://wiki.eclipse.org/FAQ_How_do_I_increase_the_permgen_size_available_to_Eclipse?" title="FAQ How do I increase the permgen size available to Eclipse?" target="mylyn_external">Eclispe FAQ entry</a>.  Details of the problem are on 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=92250" target="mylyn_external">Platform bug 92250</a>.
+		</p>
+		<h2 id="What_is_Mylyn.E2.80.99s_performance_profile.3F">What is Mylyn’s performance profile?</h2>
+		<p>Mylyn should have 
+			<b>no noticeable effect</b> on Eclipse’s speed or memory usage, no matter how large your workspace is.  You do not need to increase the amount of memory Eclipse runs with to use Mylyn.  Any performance issue should be 
+			<a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Mylyn" target="mylyn_external">reported as a bug</a>.  
+		</p>
+		<p>The current 
+			<b>performance profile</b> is:
+		</p>
+		<ol>
+			<li>Mylyn only runs if a task is active, and has no impact on Eclipse if no task is active.</li>
+			<li>Task context models have negligible memory overhead. </li>
+			<li>When a task is active, additional view refresh is required to update the views based on interest model changes.  This should not be noticeable on Windows where refresh is very quick, but could be more noticeable on other platforms.</li>
+			<li>The time to activate a task context is dominated by the time it takes Eclipse to open the editors in the context.  You can set the preference for how many editors to open in the Mylyn preference page (e.g. setting to 1 will dramatically reduce activation time, but also remove the benefit of having open editors correspond to the task context).  You can also turn off editor management entirely in the Mylyn Tasks view pull-down.</li>
+			<li>Eclipse startup is slowed down by (4) if a task is active when Eclipse is shut down.</li>
+			<li>The low priority background searches that the Active Search view runs can be noticeable on slower machines.</li>
+		</ol>
+		<p>
+			<b>If you are seeing performance problems, this is either a bug, or caused by other performance problems in other Eclipse plug-ins</b>'.  If you are performance problems we suggest increasing the amount of memory available to Eclipse.  This is especially useful for very large Java project workspaces, on which the size of JDT’s element cache will grow proportionally to the amount of available memory.  The setting we recommend for launching workspaces with a couple hundred large projects is:
+		</p>
+		<pre> -Xmx768M -XX:MaxPermSize=128M
+</pre>
+		<p>
+			<b>If you are seeing content assist timeouts</b> that indicate the Mylyn proposal computer did not complete quickly enough, note that the problem is not with Mylyn, but with the standard content assist mechanism timing out due to an intensive computation (eg, a large number of matches).  In this scenario switching or 
+			<a href="http://wiki.eclipse.org/Mylyn_FAQ#Content_assist_troubleshooting" title="Mylyn_FAQ#Content_assist_troubleshooting" target="mylyn_external">disabling the Mylyn proposal computers</a> does not help improve performance, although it will get rid of those messages.
+		</p><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="FAQ.html" title="Mylyn FAQ">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="FAQ.html" title="Mylyn FAQ">
+						<img alt="Mylyn FAQ" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Task-List.html" title="Task List">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Mylyn FAQ</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Task List</td>
+			</tr>
+		</table>
+	</body>
+</html>

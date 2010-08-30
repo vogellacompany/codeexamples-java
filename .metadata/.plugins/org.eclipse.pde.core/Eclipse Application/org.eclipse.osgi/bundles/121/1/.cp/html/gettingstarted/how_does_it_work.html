@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--
+/*******************************************************************************
+ * Copyright (c) 2008 The Eclipse Foundation.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *    The Eclipse Foundation - initial API and implementation
+ *******************************************************************************/
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>How Does it Work?</title>
+	<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/PRODUCT_PLUGIN/book.css" media="screen" />
+</head>
+
+<body>
+<h1>How Does it Work?</h1>
+<p>The Usage Data Collector is designed to have a minimal impact on user
+experience. The impact on performance is negligible.</p>
+
+<p>Once installed, the Usage Data Collector immediately starts
+monitoring your use of Eclipse. In particular, it takes note of the
+views, editors, perspectives, and commands that you use. It also keeps
+track of when you bring the Eclipse workbench window into focus. At a
+lower level, the Usage Data Collector records the bundles (plug-ins)
+that are loaded by Eclipse. The information collected amounts to the id
+of the entity (view, editor, perspective, etc.), the symbolic name and
+version of the bundle that contains the entity, and the time of the
+event.</p>
+
+<p>We recognize that the data collected may contain sensitive
+information. Symbolic names for bundles can potentially include company
+and product names; bundle versions, as well as view, editor, and
+perspective ids could potentially also contain sensitive information.
+With this in mind, the Usage Data Collector includes a filtering
+framework that can be used to restrict the type of information that is
+uploaded.</p>
+
+<p>After a configurable period of time (five days by default)
+passes, it asks you for permission to upload.</p>
+
+<p align="center"><img src="UploadWiz.png" /></p>
+
+<p>At this point, you can tell the Usage Data Collector what you want to
+do:</p>
+
+<ul>
+	<li><em>Upload now</em> tells the Usage Data Collector to upload the
+	data that has been captured to date. After the same configurable period
+	of time passes, you will be asked again.</li>
+
+	<li><em>Upload always</em> tells the Usage Data Collector to upload the
+	data that has been captured to date and not ask again. Henceforth, the
+	data will be uploaded without asking.</li>
+
+	<li><em>Don't upload</em> tells the Usage Data Collector not to upload
+	the data that has been captured. After that same configurable period of
+	time passes, you will be asked again. All the data collected to this
+	point will be retained.</li>
+
+	<li><em>Turn UDC feature off</em> tells the Usage Data Collector not to
+	upload the data and to stop collecting the data altogether. This turns
+	off the usage data collection.</li>
+</ul>
+<p>The period of time between requests to upload the usage data can be
+configured by changing the &quot;Upload Period&quot; field on the
+&quot;Usage Data Collection | Uploading&quot; preferences page.</p>
+
+<p align="center"><img src="UploadingPrefs.png" /></p>
+
+<p>The target for uploads is a server hosted by The Eclipse Foundation.
+The data is stored in its collected form in a foundation database.</p>
+
+<p>Two different keys are used to identify the source of the uploaded
+data. The first key identifies the workstation; this key is stored
+locally in your &quot;user home&quot; directory. The second key
+identifies the workspace; this key is stored in the <em><?= $tempdir ?></em>
+directory for the workspace. These keys are uploaded along with the
+usage data.</p>
+</body>
+</html>

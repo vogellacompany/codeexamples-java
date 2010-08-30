@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf12244544809680" configfile="/de.vogella.jsf.starter/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="LoginView" x="72" y="120" id="pf12247125805930" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf12248855333290 pf12248866572822" path="/LoginView.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="FailedLogin" x="264" y="228" id="pf12247998141091" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf12248866572822" path="/FailedLogin.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Trainer" x="285" y="132" id="pf12248855333291" inlinks="pf12248855333290" path="/Trainer.jsp"/>
+  <links id="pf12248855333290" target="pf12248855333291" source="pf12247125805930" outcome="success"/>
+  <links id="pf12248866572822" target="pf12247998141091" source="pf12247125805930" outcome="failed"/>
+</pageflow:Pageflow>

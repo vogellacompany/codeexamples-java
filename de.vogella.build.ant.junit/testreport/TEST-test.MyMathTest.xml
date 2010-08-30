@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="WDFN00194801A" name="test.MyMathTest" tests="1" time="0.094" timestamp="2010-02-02T23:19:19">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jre6\bin" />
+    <property name="java.vm.version" value="16.0-b13" />
+    <property name="ant.library.dir" value="C:\Eclipse35Examples\plugins\org.apache.ant_1.7.1.v20090120-1145\lib" />
+    <property name="ant.version" value="Apache Ant version 1.7.1 compiled on June 27 2008" />
+    <property name="ant.java.version" value="1.6" />
+    <property name="java.vm.vendor" value="Sun Microsystems Inc." />
+    <property name="java.vendor.url" value="http://java.sun.com/" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="user.country" value="DE" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="sun.os.patch.level" value="Service Pack 2" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="user.dir" value="C:\Documents and Settings\d034797\Desktop\Documents\16_EclipseProjects\20_WebpageExamples\de.vogella.build.ant.junit" />
+    <property name="java.runtime.version" value="1.6.0_18-b07" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="eclipse.pdebuild.scripts" value="/C:/Eclipse35Examples/plugins/org.eclipse.pde.build_3.5.1.R35x_20090820/scripts/" />
+    <property name="basedir" value="C:\Documents and Settings\d034797\Desktop\Documents\16_EclipseProjects\20_WebpageExamples\de.vogella.build.ant.junit" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jre6\lib\endorsed" />
+    <property name="os.arch" value="x86" />
+    <property name="java.io.tmpdir" value="C:\DOCUME~1\d034797\LOCALS~1\Temp\" />
+    <property name="ant.core.lib" value="C:\Eclipse35Examples\plugins\org.apache.ant_1.7.1.v20090120-1145\lib\ant.jar" />
+    <property name="line.separator" value="
+" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="user.variant" value="" />
+    <property name="os.name" value="Windows XP" />
+    <property name="ant.home" value="C:\Eclipse35Examples\plugins\org.apache.ant_1.7.1.v20090120-1145" />
+    <property name="eclipse.pdebuild.templates" value="/C:/Eclipse35Examples/plugins/org.eclipse.pde.build_3.5.1.R35x_20090820/templates/" />
+    <property name="build.dir" value="C:\Documents and Settings\d034797\Desktop\Documents\16_EclipseProjects\20_WebpageExamples\de.vogella.build.ant.junit\build" />
+    <property name="ant.project.name" value="Ant-Test" />
+    <property name="sun.jnu.encoding" value="Cp1252" />
+    <property name="eclipse.pdebuild.home" value="/C:/Eclipse35Examples/plugins/org.eclipse.pde.build_3.5.1.R35x_20090820/./" />
+    <property name="java.library.path" value="C:\Program Files\Java\jre6\bin;.;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre6/bin/client;C:/Program Files/Java/jre6/bin;C:\Program Files\ThinkPad\Utilities;C:\PROGRA~1\SECUDE\SECUDE~1;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Java\jdk1.6.0_18\bin;C:\PROGRA~1\SAP\FrontEnd\SAPgui;C:\Program Files\Intel\Wireless\Bin\;C:\Program Files\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Groovy\Groovy-1.6.3\bin;C:\Program Files\Grails\grails-1.1.1\bin;C:\Program Files\QuickTime\QTSystem\;C:\Program Files\Apache Software Foundation\db-derby-10.5.3.0-bin\\bin;C:\Program Files\Mercurial;C:\Program Files\Git\cmd;C:\Program Files\Git\bin;C:\Program Files\Apache Software Foundation\apache-ant-1.8.0RC1\bin;C:\Program Files\Google\google_appengine\" />
+    <property name="ant.file.Ant-Test" value="C:\Documents and Settings\d034797\Desktop\Documents\16_EclipseProjects\20_WebpageExamples\de.vogella.build.ant.junit\build.xml" />
+    <property name="java.class.version" value="50.0" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="test.report.dir" value="C:\Documents and Settings\d034797\Desktop\Documents\16_EclipseProjects\20_WebpageExamples\de.vogella.build.ant.junit\testreport" />
+    <property name="sun.management.compiler" value="HotSpot Client Compiler" />
+    <property name="os.version" value="5.1" />
+    <property name="ant.file" value="C:\Documents and Settings\d034797\Desktop\Documents\16_EclipseProjects\20_WebpageExamples\de.vogella.build.ant.junit\build.xml" />
+    <property name="user.home" value="C:\Documents and Settings\d034797" />
+    <property name="user.timezone" value="" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="java.specification.version" value="1.6" />
+    <property name="file.encoding" value="Cp1252" />
+    <property name="java.class.path" value="C:\Documents and Settings\d034797\Desktop\Documents\16_EclipseProjects\20_WebpageExamples\de.vogella.build.ant.junit\lib\junit.jar;C:\Documents and Settings\d034797\Desktop\Documents\16_EclipseProjects\20_WebpageExamples\de.vogella.build.ant.junit\build;C:\Documents and Settings\d034797\Desktop\Documents\16_EclipseProjects\20_WebpageExamples\de.vogella.build.ant.junit;C:\Program Files\Java\jre6\lib\ext\QTJava.zip;C:\Eclipse35Examples\plugins\org.apache.ant_1.7.1.v20090120-1145\lib\ant-launcher.jar;C:\Eclipse35Examples\plugins\org.apache.ant_1.7.1.v20090120-1145\lib\ant.jar;C:\Eclipse35Examples\plugins\org.apache.ant_1.7.1.v20090120-1145\lib\ant-junit.jar" />
+    <property name="user.name" value="d034797" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="java.home" value="C:\Program Files\Java\jre6" />
+    <property name="sun.arch.data.model" value="32" />
+    <property name="user.language" value="de" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="java.vm.info" value="mixed mode, sharing" />
+    <property name="test.dir" value="C:\Documents and Settings\d034797\Desktop\Documents\16_EclipseProjects\20_WebpageExamples\de.vogella.build.ant.junit\src" />
+    <property name="java.version" value="1.6.0_18" />
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jre6\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jre6\lib\resources.jar;C:\Program Files\Java\jre6\lib\rt.jar;C:\Program Files\Java\jre6\lib\sunrsasign.jar;C:\Program Files\Java\jre6\lib\jsse.jar;C:\Program Files\Java\jre6\lib\jce.jar;C:\Program Files\Java\jre6\lib\charsets.jar;C:\Program Files\Java\jre6\classes" />
+    <property name="java.vendor" value="Sun Microsystems Inc." />
+    <property name="file.separator" value="\" />
+    <property name="src.dir" value="C:\Documents and Settings\d034797\Desktop\Documents\16_EclipseProjects\20_WebpageExamples\de.vogella.build.ant.junit\src" />
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.desktop" value="windows" />
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86" />
+  </properties>
+  <testcase classname="test.MyMathTest" name="testMulti" time="0.016" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

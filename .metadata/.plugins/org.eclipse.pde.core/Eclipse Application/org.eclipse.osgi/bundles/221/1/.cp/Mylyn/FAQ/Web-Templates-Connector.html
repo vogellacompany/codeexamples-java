@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn FAQ - Web Templates Connector</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Web Templates Connector</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Trac-Connector.html" title="Trac Connector">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Task-Focused-UI.html" title="Task-Focused UI">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Trac Connector</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Task-Focused UI</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Web_Templates_Connector">Web Templates Connector</h1>
+		<h2 id="Where_can_I_find_the_Web_Templates_connector.3F">Where can I find the Web Templates connector?</h2>
+		<p>It is available from the incubator update site. Please see 
+			<a href="http://www.eclipse.org/mylyn/downloads/" target="mylyn_external">http://www.eclipse.org/mylyn/downloads/</a> .
+		</p>
+		<h2 id="Why_can.E2.80.99t_I_connect_using_one_of_the_existing_templates.3F">Why can’t I connect using one of the existing templates?</h2>
+		<p>The Web Connector have a “Preview” button in “Advanced Configuration” section in the “Query” preferences dialog. If you get an error or preview table does not show the expected list, you can use “Open” button to verify if web page downloaded by the Web Connector is correct. </p>
+		<p>Alternatively, you can use Query Pattern like 
+			({Description}.+?)({Id}\n) to see content of the retrieved page in preview table and compare it with the source of the web page for the same url loaded into the web browser.</p>
+		<p>If retrieved web page is correct, but “Preview” don’t show expected results you need to check the “Query Pattern”. A popular mistake is an unmasked ‘?’ that separates request parameters in the url). For example:</p>
+		<pre>&lt;a href="show_bug.cgi\?id\=(.+?)"&gt;.+?&lt;span class="summary"&gt;(.+?)&lt;/span&gt;
+</pre>
+		<p>If you don’t see the correct web page, check the following:</p>
+		<ul>
+			<li>query URL or substituted parameters are correct
+				<ul>
+					<li>
+						<b>Note:</b> only the parameters are URL-encoded, e.g. the query URL <tt>x:${y}</tt> with the substituted parameter <tt>${y}</tt> set to <tt>a:b</tt> gets “<tt>x:a%3Ab</tt>” (only the substituted parameters are URL encoded
+					</li>
+				</ul>
+			</li>
+			<li>web application require user to login and login configuration in the Web Connector repository configuration is correct (see Web Connector repository settings)</li>
+		</ul>
+		<p>To debug web application auth further, you could use the wget tool (on Windows it available as a standalone command line tool and also included with Cygwin) and run the following command:</p>
+		<pre>wget -v -d -o query.log -O query.html "http://your.query.url"
+</pre>
+		<p>If repository require basic http auth, you’ll need to use ''--http-user=USER'' and ''--http-password=PASS'' options.</p>
+		<p>Then open file 
+			<i>query.html</i> in the web browser and check if it show list of issues you need to fetch from the web server. If it does have correct list, then there could be a problem with query pattern used for parsing. 
+		</p>
+		<p>If 
+			<i>query.html</i> does not show expected list of issues you can check 
+			<i>query.log</i> for server responses and try to identify if server require authentication, redirecting your requests somewhere or issue any other errors.
+		</p>
+		<h2 id="Known_limitations_3">Known limitations</h2>
+		<ul>
+			<li>In Mylyn 1.0: if a web server responds by requesting a redirect to an absolute URL while fetching a resource, the connector falsely prepends “/” to the URL and the request will fail. The workaround is to use final url where redirect is pointing to (you can find it as describe above). See 
+				<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=167282" target="mylyn_external">bug 167282</a> for details.
+			</li>
+		</ul>
+		<h2 id="Where_can_I_find_additional_templates.3F">Where can I find additional templates?</h2>
+		<ul>
+			<li>
+				<a href="http://alblue.blogspot.com/2009/04/google-code-and-mylyn-redux.html" target="mylyn_external">Instructions for Google Code</a>
+			</li>
+		</ul><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Trac-Connector.html" title="Trac Connector">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="FAQ.html" title="Mylyn FAQ">
+						<img alt="Mylyn FAQ" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Task-Focused-UI.html" title="Task-Focused UI">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Trac Connector</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Task-Focused UI</td>
+			</tr>
+		</table>
+	</body>
+</html>

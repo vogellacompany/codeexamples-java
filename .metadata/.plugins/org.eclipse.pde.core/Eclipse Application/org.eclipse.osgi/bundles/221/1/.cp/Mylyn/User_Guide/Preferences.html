@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn User Guide - Preferences</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Preferences</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Shortcuts.html" title="Shortcuts">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Task-Repository-Connectors.html" title="Task Repository Connectors">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Shortcuts</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Task Repository Connectors</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Preferences">Preferences</h1>
+		<p>You can access the following Mylyn preference pages by navigating to Window -&gt; Preferences -&gt; Tasks.</p>
+		<h2 id="Tasks">Tasks</h2>
+		<ul>
+			<li>
+				<b>Synchronization</b> - Set how often queries in your task list should update from your task repository. The default is 20 minutes.
+			</li>
+			<li>
+				<b>Scheduling</b> - Set the day when your week begins. This is used to determine whether tasks should appear as scheduled for this week.
+			</li>
+			<li>
+				<b>Task Editing</b> - Select whether tasks should be opened in the rich editor or an integrated browser window displaying the web interface for the task.
+			</li>
+		</ul>
+		<p>
+			<br/>
+			Click "Advanced" to reveal the following additional settings.
+		</p>
+		<ul>
+			<li>
+				<b>Task Timing</b> - When a task is active, the time spent working on the task is recorded. If you check "Enable inactivity timeouts", time will not be accumulated while you are not actively working. You can set the number of minutes after which time will stop being accumulated toward the active task.
+			</li>
+			<li>
+				<b>Task Data</b> - Specify the location where your task list and task context data is stored.
+			</li>
+		</ul>
+		<h2 id="Context_2">Context</h2>
+		<p>Use the following checkboxes to set your preferences for the task-focused interface.</p>
+		<ul>
+			<li>
+				<b>Auto focus navigator view on task activation</b> - Automatically toggle "Focus on Active Task" on when activating a task in navigation views such as the Package Explorer.
+			</li>
+			<li>
+				<b>Auto expand tree views when focused</b> - When toggling "Focus on Active Task", automatically expand trees so that all interesting elements are visible.
+			</li>
+			<li>
+				<b>Manage open editors to match task context</b> - When checked, activating a task will automatically open editors corresponding to the most interesting files in the task context. When deactivating a task, all editors will automatically close. While a task is active, files that become less interesting will automatically close as you work.
+			</li>
+			<li>
+				<b>Remove file from context when editor is closed</b> - When this option is checked, closing an editor will be considered an indication that you not interested in the corresponding file. Therefore, files you close will be removed from the task context. If you tend to close editors for files that you may want to return to, try unchecking this setting.
+			</li>
+			<li>
+				<b>Open last used perspective on task activation</b> - When this option is checked, activating a task will automatically switch to the perspective that was in use when the task was last active.
+			</li>
+		</ul>
+		<h2 id="Resources">Resources</h2>
+		<p>Use this preference page to add or remove resources that should not be included in the context of a task. Typically, excluded files are hidden backup or lock files that are not intented to be opened directly by the user of an application.</p>
+		<h2 id="Team">Team</h2>
+		<ul>
+			<li>
+				<b>Automatically create and manage with task context</b> - Enables automatic change set management. Change sets will be created automatically so that you can commit or update only resources that are in a task's context.
+			</li>
+			<li>
+				<b>Commit Message Template</b> - Set the values that will appear in commit messages that are automatically generated when committing resources associated with a task.
+			</li>
+		</ul>
+		<h2 id="Shortcuts_2">Shortcuts</h2>
+		<p>			<b>&nbsp;Task List view</b>
+						<ul>
+							<li><code>Ctrl+C</code>: copy taks/query URL and description</li>
+							<li><code>Ctrl+F</code>: find</li>
+							<li><code>Insert</code>: new personal task</li>
+							<li><code>F5</code>: synchronize selected</li> 
+							<li>When dragging URLs to the Task List: in Mozilla/Firefox just drag, in Internet Explorer <code>Ctrl+drag</code></li>
+						</ul>
+						<b>&nbsp;General</b>			
+						<ul>
+							<li><code>Alt+click</code> or <code>Alt+RightArrow</code>: show all children of an element in a focused view, then click to select. Hold down alt to keep drilling in, click on whitespace in view to show all root elements.</li> 
+							<li><code>Ctrl+Shift+Alt+RightArrow</code> Quick Context View</li> 
+							<li><code>Ctrl+F9</code>: activate task dialog</li>
+							<li><code>Ctrl+Shift+F9</code>: deactivate task</li>
+							<li><code>Ctrl+F12</code>: open task dialog</li>
+							<li><code>Ctrl+Shift+F12</code>: open repository task dialog</li>
+						</ul>
+						<b>&nbsp;Interest manipulation</b>			
+						<ul>
+							<li><code>Ctrl+Shift+Up</code>: mark as landmark</li>
+							<li><code>Ctrl+Shift+Down</code>: mark less interesting</li>			
+						</ul>
+						<b>&nbsp;Useful Eclipse shortcuts</b>			
+						<ul>
+							<li><code>Alt+Shift+Q, K</code>: show 
+			<i>Task List</i> view</li>
+							<li><code>Ctrl+F10</code>: invoke view menu or ruler menu in editor</li>			
+						</ul>
+		</p><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Shortcuts.html" title="Shortcuts">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="User-Guide.html" title="Mylyn User Guide">
+						<img alt="Mylyn User Guide" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Task-Repository-Connectors.html" title="Task Repository Connectors">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Shortcuts</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Task Repository Connectors</td>
+			</tr>
+		</table>
+	</body>
+</html>

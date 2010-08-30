@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Adapter Plug-in
+Bundle-SymbolicName: de.vogella.adapter.example;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: de.vogella.adapter.example.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.views;bundle-version="3.3.1"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

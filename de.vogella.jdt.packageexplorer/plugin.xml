@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
+         <command
+               commandId="de.vogella.jdt.packageexplorer.AddPackage"
+               label="Add Default Package"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.jdt.packageexplorer.handler.AddPackage"
+            id="de.vogella.jdt.packageexplorer.AddPackage"
+            name="Add Default Package">
+      </command>
+   </extension>
+
+
+</plugin>

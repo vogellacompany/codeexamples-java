@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.commands.parameterfirst.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.rcp.commands.parameterfirst.Perspective"
+            id="de.vogella.rcp.commands.parameterfirst.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.rcp.commands.parameterfirst.handler.HelloName"
+            id="de.vogella.rcp.commands.parameterfirst.helloName"
+            name="Say Hello">
+         <commandParameter
+               id="de.vogella.rcp.commands.parameterfirst.commandParameter1"
+               name="Name"
+               optional="false">
+         </commandParameter>
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <command
+               commandId="de.vogella.rcp.commands.parameterfirst.helloName"
+               label="Hello "
+               style="push">
+            <parameter
+                  name="de.vogella.rcp.commands.parameterfirst.commandParameter1"
+                  value="Lars">
+            </parameter>
+         </command>
+         <command
+               commandId="de.vogella.rcp.commands.parameterfirst.helloName"
+               label="Hello "
+               style="push">
+            <parameter
+                  name="de.vogella.rcp.commands.parameterfirst.commandParameter1"
+                  value="Jennifer">
+            </parameter>
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

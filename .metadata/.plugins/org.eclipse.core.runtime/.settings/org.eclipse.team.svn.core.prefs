@@ -1,0 +1,5 @@
+#Tue Aug 17 00:30:20 CEST 2010
+eclipse.preferences.version=1
+externalMigrateFromAuthorizationDatabase/isMigrated=true
+repositories/90b139b21fa9001f163f9114f1096b2d=90b139b21fa9001f163f9114f1096b2d;https\://vogella.googlecode.com/svn/;https\://vogella.googlecode.com/svn/trunk/;branches;tags;trunk;true;df88710e-8934-0410-ab8b-bbab12a37475;https\://vogella.googlecode.com/svn;;false;<https\://vogella.googlecode.com\:443> Google Code Subversion Repository;;0
+migrateFromAuthorizationDatabase/isMigrated=true

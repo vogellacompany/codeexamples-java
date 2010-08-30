@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+    version="1.2">
+	<managed-bean>
+		<managed-bean-name>user</managed-bean-name>
+		<managed-bean-class>de.vogella.jsf.starter.model.User</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>card</managed-bean-name>
+		<managed-bean-class>de.vogella.jsf.starter.model.Card</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<display-name>LoginView</display-name>
+		<from-view-id>/LoginView.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/Trainer.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>LoginView</display-name>
+		<from-view-id>/LoginView.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>failed</from-outcome>
+			<to-view-id>/FailedLogin.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<validator>
+		<display-name>de.vogella.jsf.starter.validator.LoginValidator</display-name>
+		<validator-id>de.vogella.jsf.starter.validator.LoginValidator</validator-id>
+		<validator-class>de.vogella.jsf.starter.validator.LoginValidator</validator-class>
+	</validator>
+
+</faces-config>

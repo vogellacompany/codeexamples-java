@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn FAQ - Task List</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Task List</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Installation.html" title="Installation">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Task-Editor.html" title="Task Editor">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Installation</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Task Editor</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Task_List">Task List</h1>
+		<h2 id="How_do_I_restore_my_tasks_from_backup.3F">How do I restore my tasks from backup?</h2>
+		<p>The task list can be restored from automated backup via the Task List view’s drop down view menu and selecting Restore Tasks from History…</p>
+		<h2 id="How_do_I_clear_outgoing_changes_on_a_task.3F">How do I clear outgoing changes on a task?</h2>
+		<p>If a task has outgoing changes you wish to discard, right click on the task and select Mark as → Clear Outgoing. If a mid-air collision occurs, press the Synchronize button in the Task editor toolbar to bring in the incoming changes. Your outgoing changes will remain.</p>
+		<h2 id="Why_do_my_tasks_not_appear_in_the_Task_List.3F">Why do my tasks not appear in the Task List?</h2>
+		<p>The task list has filtering mechanisms that can limit the items visible in the task list. If a task is missing from the task list, use the following steps to remove all filters:</p>
+		<p>
+			<img border="0" src="images/Tasklist-filter.png"/>
+		</p>
+		<ol>
+			<li>Check the filter settings in the view menu. Make sure Filter Completed tasks is not enabled and all items are checked in the Filter Priority Lower Than menu.</li>
+			<li>If the Go Up To Root icon is visible in the toolbar, select it to make all items in the task list visible.</li>
+			<li>If the Focus on Workweek button is pressed, select it to unfilter the task list.</li>
+			<li>If text is typed in the Find, use the clear button next to the find box.</li>
+			<li>Switch to All to make all all working sets visible.</li>
+		</ol>
+		<h2 id="Why_do_tasks_appear_in_the_.27.27Unmatched.27.27_container.3F">Why do tasks appear in the ''Unmatched'' container?</h2>
+		<p>The 
+			<i>Unmatched</i> containers will automatically appear if a task needs to be shown but is not matched by any query.  This is needed to ensure that the corresponding tasks do not disappear, for example, if the query is set up to only match resolved/completed tasks (a usage anti-pattern, since Mylyn has other mechanisms for preventing completed tasks from showing in the Task List).
+		</p>
+		<p>In order to ensure that you do not miss reminders or notifications the following tasks will always be shown in the Task List, even if they have been removed from a category or a query:</p>
+		<ul>
+			<li>Tasks scheduled for this week or overdue.  Remove these by using the 
+				<i>Schedule</i> pop-up menu option to defer them to a future week or to clear the schedule.
+			</li>
+			<li>Repository tasks that have incoming changes, such as comments.  Remove these by reading them or marking them as “read” via the 
+				<i>Mark → Read</i> pop-up menu.
+			</li>
+		</ul>
+		<p>To 
+			<b>get rid of tasks in the 
+				<i>Unmatched</i> container
+			</b> you can:
+		</p>
+		<ul>
+			<li>Create a new query that matches the tasks.</li>
+			<li>Right-click on one or more tasks to delete them.</li>
+		</ul>
+		<p>Recommended Mylyn usage is to keep the 
+			<i>Unmatched</i> container empty. For query setup recommendations see the sidebar at: 
+			<a href="http://www.ibm.com/developerworks/java/library/j-mylyn1/?ca=dgr-eclipse-1" target="mylyn_external">http://www.ibm.com/developerworks/java/library/j-mylyn1/?ca=dgr-eclipse-1</a>
+		</p>
+		<h2 id="How_do_I_change_the_Task_List_colors.3F">How do I change the Task List colors?</h2>
+		<p>Use 
+			<i>Window → Preferences → General → Appearance → Colors and Fonts</i>.
+		</p>
+		<h2 id="The_Unmatched_category_contains_many_irrelevant_tasks.2C_how_do_I_clean_it_up.3F">The Unmatched category contains many irrelevant tasks, how do I clean it up?</h2>
+		<p>If you created very broad queries you could end up with thousands of tasks in your Unmatched containers.  Other than clearing the <tt>workspace/.metadata/.mylyn/tasklist.xml.zip</tt> and <code>workspace/.metadata/.mylyn/offline</code> folder (note that this will entirely reset your Task List) the easiest option is to:</p>
+		<ul>
+			<li>Clean up your queries to include only tasks of interest (note that including completed/resolved tasks is recommended).</li>
+			<li>Turn off 
+				<i>Focus on Workweek</i> in the 
+				<i>Task List</i>.
+			</li>
+			<li>Delete all of the unneeded tasks from within the Unmatched containers.  Note that if the tasks are not matched by queries they will be deleted permanently and any local notes or scheduling information that you have added to them will be lost.</li>
+		</ul>
+		<h2 id="How_does_Mylyn_count_the_active_time_for_a_task.3F">How does Mylyn count the active time for a task?</h2>
+		<p>Whenever you work on a task, Mylyn accumulates the time you spend actively working on a task.  This time can be viewed in the 
+			<i>Personal Planning</i> section of the 
+			<i>Task Editor</i>.  When you are not interacting with Eclipse, the timing automatically times out after 3 minutes by default.  This means that activity outside of Eclipse will not be captured when you work on the task and that the timings in Mylyn are a lower bound of the total time spent on the task (capturing timings for work done outside of Eclipse involves OS specific extensions).
+		</p>
+		<h2 id="How_do_I_prevent_long-running_tasks_from_adding_to_the_progress_bar.3F">How do I prevent long-running tasks from adding to the progress bar?</h2>
+		<p>If you have many long-running or recurring tasks scheduled for this week, they can affect the 
+			<i>Task List</i> weekly progress bar. This can be misleading as they may never be completed.  The current work-around to prevent long-running tasks from being included in the weekly progress bar is to schedule their estimated time to be 0 (zero).  Alternatively, you can schedule only the amount of time you plan on spending on that task this week.
+		</p>
+		<h2 id="Does_the_Task_List_replace_the_Eclipse_Tasks_view.3F">Does the Task List replace the Eclipse Tasks view?</h2>
+		<p>The SDK’s 
+			<i>Tasks</i> view is used for showing markers such as ‘todo’ tags which indicate a local problem with a resource, similar to a compiler warning.  As such, these ‘tasks’ are at a much finer granularity than Mylyn’s tasks, and one task could involve cleaning up multiple todos.  In order to make working with only the markers in a particular task context, e.g. for clean-up before committing, the 
+			<i>Apply Mylyn</i> filter is available for both the 
+			<i>Problems</i> and the 
+			<i>Tasks</i> views.
+		</p>
+		<h2 id="What_if_I_use_multiple_workspaces.3F">What if I use multiple workspaces?</h2>
+		<p>Mylyn’s support for multiple workspaces is currently limited (see 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=130658" target="mylyn_external">bug 130658</a> for a discussion) because the Task List is considered to be specific to the person, and not to the workspace.  In addition, Eclipse’s support for multiple workspaces is limited to import/export based usage, and Mylyn inherits this limitation.  We highly recommend configuring your Eclipse workspace to use working sets instead of relying on multiple workspaces.  
+		</p>
+		<p>If using a single workspace is not possible you can do the following, Mylyn does provide an advanced facility for using the same data directory that’s outside of the workspace.  However, this is not generally recommended because it can cause you to overwrite an existing Task List if both workspaces are launched at the same time.  </p>
+		<ul>
+			<li>In 
+				<i>Preferences → Tasks → Task List</i> set the 
+				<i>Data Directory</i> to be a shared location, and do this for both workspaces.
+			</li>
+			<li>Be sure to avoid launching both Eclipse workspaces at the same time, as changes in one workspaces could overwrite the Task List in the other workspace.</li>
+			<li>If you upgrade Eclipse or move your workspace and don’t see your tasks, check the 
+				<i>Data Directory</i> setting.
+			</li>
+		</ul>
+		<p>Note that using 
+			<i>File → Import → Task Data</i> is another way to get an existing 
+			<i>Task List</i> into your workspace.  If you use this mechanism for sharing the 
+			<i>Task List</i> between workspaces you should export the 
+			<i>Task List</i> when switching, because in this mode you are working with two separate 
+			<i>Task List''s.  While much of the task state that yo uwork on is stored in shared task repositories, all read state, activity history, planning information and local tasks are maintained in the ''Task List</i> and as such it can become cumbersome to end up with two different lists to manage.
+		</p>
+		<p>See also:</p>
+		<ul>
+			<li>John O’Shea’s blog: 
+				<a href="http://www.xlml.com/aehso/2007/02/02/eclipse-workspaces-containing-projects-with-overlapping-locations-and-mylar/" target="mylyn_external">Eclipse workspaces containing projects with overlapping locations, and Mylar</a>
+			</li>
+		</ul>
+		<h2 id="How_do_I_export_my_task_and_repository_data.3F">How do I export my task and repository data?</h2>
+		<p>Export via File → Export → Mylyn → Task Data</p>
+		<h2 id="Why_does_Mylyn_use_the_term_.E2.80.9Ctask.E2.80.9D.3F">Why does Mylyn use the term “task”?</h2>
+		<p>There are many work items that make up the developer’s workday.  Many issue trackers and project management tools refer to these as: bugs, defects, actions, tickets, stories, enhancements, and the list goes on.  We refer to all such work items as “tasks” because the word tasks is short and commonly used in time management tools.  Task Repository connectors can customize the presentation of tasks, for example, indicating which is a defect and which is an action item.</p>
+		<h2 id="Why_are_closed_tasks_not_greyed_out_on_Linux.3F">Why are closed tasks not greyed out on Linux?</h2>
+		<p>If you are running Eclipse from KDE go to KControl → GTK Styles and Fonts and select “Use another style” in the GTK Styles section (
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=206399" target="mylyn_external">bug 206399</a>).
+		</p>
+		<p>See the 
+			<a href="../../Mylyn/User_Guide/User-Guide.html#Recommended_GTK_Setup_for_KDE" title="Mylyn/User_Guide#Recommended_GTK_Setup_for_KDE">Recommended GTK Setup for KDE</a> if the style selection does not work.
+		</p>
+		<h2 id="Why_is_starring_tasks_not_supported.3F">Why is starring tasks not supported?</h2>
+		<p>The current mechanism for starring tasks is to schedule them for 
+			<i>Today</i>, which has a very similar effect to starring in other UIs.  If you schedule a task for today, the task will stand out as blue and always show (i.e., have guaranteed visibility when the Task List is focused).  If that’s too visible, you can schedule it for 
+			<i>This Week</i>, in which case the task will always show but not turn blue.  
+		</p>
+		<p>The alternative to mark a shared task as outgoing by adding text into it and (e.g. “
+			<a href="review">review</a>”).  The ougtoing change will also give the task guaranteed visibility.  This is currently the only work-around for ‘starring’ completed tasks.
+		</p>
+		<p>The task-focused interface consider tasks orthogonal to resources (e.g., files and web pages).  Resources make sense to star/bookmark, since their primary residence is in some structural hierarchy (e.g. folders or a type hierarchy).  Starring provides a mechanism for locating the most relevant parts of a large hierarchy (at the cost of having our starred/bookmark lists bloat and become yet another thing to manage).  Tasks are inherently different than resources because their primary residence is in time (e.g. due dates, milestones, things completed in the past).  As such, the equivalent of starring for tasks is to schedule them to be viewed in the “current” time window (e.g. today or this week).  For a discussion on this refer to 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=168363" target="mylyn_external">bug 168363</a>.
+		</p><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Installation.html" title="Installation">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="FAQ.html" title="Mylyn FAQ">
+						<img alt="Mylyn FAQ" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Task-Editor.html" title="Task Editor">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Installation</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Task Editor</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.plugin.filereader.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.rcp.plugin.filereader.Perspective"
+            id="de.vogella.rcp.plugin.filereader.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.rcp.plugin.filereader.handler.ReadRessource"
+            id="de.vogella.rcp.plugin.filereader.readressource"
+            name="Read Resources">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="Test">
+            <command
+                  commandId="de.vogella.rcp.plugin.filereader.readressource"
+                  label="Read Resource"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>

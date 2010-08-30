@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?>
+<application:MApplication xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2008/Application">
+  <windows name="Main" x="100" y="100" width="800" height="600">
+    <menu>
+      <items xsi:type="application:MMenuItem" name="File">
+        <menu>
+          <items xsi:type="application:MMenuItem" id="" name="Exit" command="//@command.0"/>
+        </menu>
+      </items>
+    </menu>
+    <children policy="VerticalComposite">
+      <children xsi:type="application:MSashForm" policy="HorizontalSash">
+        <children xsi:type="application:MStack">
+          <children xsi:type="application:MContributedPart" iconURI="" name="My View" tooltip="My first View" URI="platform:/plugin/de.vogella.e4.css/de.vogella.e4.css.views.View1"/>
+        </children>
+        <weights>30</weights>
+        <weights>70</weights>
+      </children>
+    </children>
+    <handlers id="" URI="platform:/plugin/de.vogella.e4.css/de.vogella.e4.css.handlers.ExitHandler" persistedState="" command="//@command.0"/>
+  </windows>
+  <command id="application.exit" name="Exit"/>
+</application:MApplication>

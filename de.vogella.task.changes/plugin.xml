@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.task.changes.handler.AddNewTask"
+            id="de.vogella.task.changes.addNewTask"
+            name="Add new Task">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               id="Tasks"
+               label="Tasks">
+            <command
+                  commandId="de.vogella.task.changes.addNewTask"
+                  icon="icons/add_obj.gif"
+                  label="Add"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:de.vogella.task.application.views.TaskOverview">
+         <command
+               commandId="de.vogella.task.changes.addNewTask"
+               icon="icons/add_obj.gif"
+               label="Add"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<project name="svn-test" default="Main" basedir=".">
+	<!-- Sets variables which can later be used. -->
+	<!-- The value of a property is accessed via ${} -->
+	<property name="checkout" location="c:\temp\svncheckout\" />
+	<!-- Define the classpath which includes the jars that are required for svnant.jar -->
+	<path id="svnant.class.path">
+		<pathelement location="lib/svnant.jar" />
+		<pathelement location="lib/svnClientAdapter.jar" />
+		<pathelement location="lib/svnjavahl.jar" />
+		<pathelement location="lib/svnkit.jar" />
+	</path>
+
+	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="svnant.class.path" />
+
+
+	<!-- Deletes the existing build, docs and dist directory-->
+	<target name="clean">
+		<delete dir="${checkout}" />
+	</target>
+
+	<!-- Creates the  build, docs and dist directory-->
+	<target name="makedir">
+		<mkdir dir="${checkout}" />
+	</target>
+
+
+	<!-- Checkout the latest source code of svnant itself-->
+	<target name="svn">
+		<svn username="guest" password="">
+			<checkout url="http://subclipse.tigris.org/svn/subclipse/trunk/svnant/" revision="HEAD" destPath="${checkout}" />
+		</svn>
+	</target>
+
+	<target name="Main" depends="clean, makedir, svn">
+		<description>Main target</description>
+	</target>
+
+</project>

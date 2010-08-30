@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.intro.rcp.fixedview.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="de.vogella.intro.rcp.fixedview.Perspective"
+            id="de.vogella.intro.rcp.fixedview.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="de.vogella.intro.rcp.fixedview.View"
+            id="de.vogella.intro.rcp.fixedview.view">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               id="de.vogella.intro.rcp.fixedview.view"
+               minimized="false"
+               ratio="1.0f"
+               relationship="left"
+               relative="org.eclipse.ui.editorss"
+               standalone="true"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

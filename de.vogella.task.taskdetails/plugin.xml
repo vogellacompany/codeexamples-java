@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            class="de.vogella.task.taskdetails.views.TaskDescription"
+            id="de.vogella.task.taskdetails.TaskDescription"
+            name="Description"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               closeable="false"
+               id="de.vogella.task.taskdetails.TaskDescription"
+               minimized="false"
+               moveable="true"
+               ratio="0.5f"
+               relationship="bottom"
+               relative="org.eclipse.ui.editorss"
+               showTitle="true"
+               standalone="true"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

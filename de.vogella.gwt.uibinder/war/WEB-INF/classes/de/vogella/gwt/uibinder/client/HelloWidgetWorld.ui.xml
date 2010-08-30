@@ -1,0 +1,21 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+	<g:VerticalPanel>
+		<g:HorizontalPanel>
+			<g:Label>Label 2</g:Label>
+			<g:TextBox ui:field='text1'>Some Text</g:TextBox>
+		</g:HorizontalPanel>
+
+		<g:HorizontalPanel>
+			<g:Label>Label 2 </g:Label>
+			<g:TextBox ui:field='text2'>More Text</g:TextBox>
+		</g:HorizontalPanel>
+		<g:Grid>
+		</g:Grid>
+		<g:ListBox ui:field='listBox' visibleItemCount='1' />
+
+		<g:Button ui:field='submit'> Submit </g:Button>
+
+	</g:VerticalPanel>
+
+</ui:UiBinder>

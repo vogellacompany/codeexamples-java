@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Yahoo
+Bundle-SymbolicName: de.vogella.geocoding.yahoo
+Bundle-Version: 1.0.0
+Export-Package: de.vogella.geocoding.yahoo,
+ de.vogella.geocoding.yahoo.test,
+ de.vogella.geocoding.yahoo.xml
+Require-Bundle: de.vogella.geocoding.model;bundle-version="1.0.0"

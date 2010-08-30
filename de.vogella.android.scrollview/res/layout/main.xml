@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:fillViewport="true">
+
+<LinearLayout android:id="@+id/LinearLayout01" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+	<TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="This is a header" android:textAppearance="?android:attr/textAppearanceLarge" android:paddingLeft="8dip" android:paddingRight="8dip" android:paddingTop="8dip"></TextView>
+	<TextView android:text="@+id/TextView02" android:id="@+id/TextView02" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0"></TextView>
+	
+	<LinearLayout android:id="@+id/LinearLayout02" android:layout_width="wrap_content" android:layout_height="wrap_content">
+		<Button android:id="@+id/Button01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Submit" android:layout_weight="1.0"></Button>
+		<Button android:id="@+id/Button02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cancel" android:layout_weight="1.0"></Button>
+	</LinearLayout>
+</LinearLayout>
+
+
+
+
+
+</ScrollView>

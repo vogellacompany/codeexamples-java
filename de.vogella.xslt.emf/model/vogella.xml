@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.vogella.docs.web.model:WebModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:de.vogella.docs.web.model="http:///de/vogella/docs/web/model.ecore" name="index" title="Tutorial about Eclipse, Java and Web development" description="Tutorials for Eclipse, Java and Web development." keywords="Eclipse, Eclipse RCP, Eclipse Plugin, JSF, Servlet, JSP, Java, JUnit, Stax, JFreeChart, Tomcat, Groovy, Python, Tutorials">
+  <pages header="Java Tutorials" name="java" title="Java Tutorials" description="Java Tutorials for example JUnit testing,  iText, XML handling, JPA, the Spring framework and more.  " keywords="JUnit, XML, iText, JFreechart, Stax, SAP, JCo, Java Logging API, Java Preferences, JPA, Spring, JDBCTemplate, Dependency Injection" rssRelevant="true">
+    <articles name="JavaPDF" rssRelevant="true" sort="510">
+      <codeExamples name="de.vogella.pdf.write" sort="10"/>
+    </articles>
+    <articles name="JFreeChart" rssRelevant="true" sort="500">
+      <codeExamples name="de.vogella.jfreechart.swing.pie" sort="10"/>
+      <codeExamples name="de.vogella.jfreechart.swing.bar" sort="20"/>
+    </articles>
+    <categories name="Introduction">
+      <articles name="JUnit" rssRelevant="true" sort="500">
+        <codeExamples name="JUnitTest" sort="10"/>
+        <codeExamples name="JUnitMockTest" sort="30"/>
+      </articles>
+    </categories>
+  </pages>
+</de.vogella.docs.web.model:WebModel>

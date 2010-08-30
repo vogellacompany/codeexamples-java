@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+	<extensionContent id="org.eclipse.team.svn.firststeps" style="css/firststeps.css" name="Subversive First Steps" path="firststeps/@">
+		<group label="Subversive" style-id="content-group" id="org.eclipse.team.svn-firststeps-group">
+			<link label="Installing SVN connectors" url="http://org.eclipse.ui.intro/showHelpTopic?id=/org.eclipse.team.svn.help/gettingStarted/aboutSubversive/install.html" id="subversive-firststeps" style-id="content-link">
+				<text>Meet installation instructions and get to know where you can get SVN Connectors.</text>
+    		</link>
+		</group>
+	</extensionContent>
+</introContent>

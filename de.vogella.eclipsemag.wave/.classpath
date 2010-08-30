@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/gson.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/oauth-20090617.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/wave-model-20100129.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/wave-robot-api-20100428.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/twitter4j-2.1.0-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="war/WEB-INF/classes"/>
+</classpath>

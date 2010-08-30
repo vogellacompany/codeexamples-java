@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>de.vogella.jsf.trinidad.first</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+ <context-param>
+    <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+    <param-value>client</param-value>
+  </context-param>
+  
+
+  <!-- Trinidad also supports an optimized strategy for caching some
+   view state at an application level, which significantly improves
+   scalability.  However, it makes it harder to develop (updates to
+   pages will not be noticed until the server is restarted), and in
+   some rare cases cannot be used for some pages (see Trinidad
+   documentation for more information) -->
+  <context-param>
+    <param-name>org.apache.myfaces.trinidad.USE_APPLICATION_VIEW_CACHE</param-name>
+    <param-value>false</param-value>
+  </context-param>
+
+  <!-- If this parameter is enabled, Trinidad will automatically
+       check the modification date of your JSPs, and discard saved
+       state when they change;  this makes development easier,
+       but adds overhead that should be avoided when your application
+       is deployed -->
+  <context-param>
+    <param-name>org.apache.myfaces.trinidad.CHECK_FILE_MODIFICATION</param-name>
+    <param-value>true</param-value>
+  </context-param>
+
+  <!-- Enables Change Persistence at a session scope.  By default,
+       Change Persistence is entirely disabled. The ChangeManager is
+       an API, which can persist component modifications (like,
+       is a showDetail or tree expanded or collapsed). For providing
+       a custom Change Persistence implementation inherit from the 
+       Trinidad API's ChangeManager class. As the value you have 
+       to use the fullqualified class name. -->
+  <context-param>
+    <param-name>org.apache.myfaces.trinidad.CHANGE_PERSISTENCE</param-name>
+    <param-value>session</param-value>
+  </context-param>
+
+  <filter>
+    <filter-name>trinidad</filter-name>
+    <filter-class>org.apache.myfaces.trinidad.webapp.TrinidadFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>trinidad</filter-name>
+    <servlet-name>faces</servlet-name>
+  </filter-mapping>
+
+  <!-- Faces Servlet -->
+  <servlet>
+    <servlet-name>faces</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+  </servlet>
+  
+  <!-- resource loader servlet -->
+  <servlet>
+    <servlet-name>resources</servlet-name>
+    <servlet-class>org.apache.myfaces.trinidad.webapp.ResourceServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>resources</servlet-name>
+    <url-pattern>/adf/*</url-pattern>
+  </servlet-mapping>
+  
+
+
+</web-app>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="de.vogella.extensionpoint.definition.greeter">
+      <client
+            class="de.vogella.extensionpoint.contribution.GreeterGerman">
+      </client>
+   </extension>
+</plugin>

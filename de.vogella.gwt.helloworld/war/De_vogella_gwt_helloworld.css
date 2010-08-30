@@ -1,0 +1,21 @@
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+}
+
+.gwt-Label {
+	color: #DF0101;
+	font: normal 12px tahoma, arial, helvetica, sans-serif;
+	border: 1px solid #99bbe8;
+	padding: 14px;
+}
+
+.gwt-Button {
+	height: 5.7em;
+	margin-bottom: 5px;
+	padding-bottom: 3px;
+	font-size: 12px;
+	font-family: arial, sans-serif;
+}
+

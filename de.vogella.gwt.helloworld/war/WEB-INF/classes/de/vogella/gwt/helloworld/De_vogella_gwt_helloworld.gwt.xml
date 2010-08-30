@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='de_vogella_gwt_helloworld'>
+  <!-- Inherit the core Web Toolkit stuff.                        -->
+  <inherits name='com.google.gwt.user.User'/>
+
+  <inherits name='com.google.gwt.user.theme.standard.Standard'/>
+
+  <!-- Specify the app entry point class.                         -->
+  <entry-point class='de.vogella.gwt.helloworld.client.HelloGwt'/>
+</module>

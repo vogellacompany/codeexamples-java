@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Forms Plug-in
+Bundle-SymbolicName: de.vogella.rcp.intro.forms; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: de.vogella.rcp.intro.forms.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms;bundle-version="3.3.101"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn FAQ - Bugzilla Connector</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Bugzilla Connector</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Task-Repositories.html" title="Task Repositories">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="JIRA-Connector.html" title="JIRA Connector">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Task Repositories</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">JIRA Connector</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Bugzilla_Connector">Bugzilla Connector</h1>
+		<h2 id="What_versions_are_supported.3F">What versions are supported?</h2>
+		<ul>
+			<li>We 
+				<b>recommend</b> using the latest 
+				<a href="http://www.bugzilla.org/download/" target="mylyn_external">release</a> of Bugzilla (3.4.x).
+			</li>
+		</ul>
+		<ul>
+			<li>Bugzilla 3.0.9 and higher is 
+				<b>officially supported</b>.
+			</li>
+		</ul>
+		<ul>
+			<li>Bugzilla 2.18.6 is the lowest version of Bugzilla the connector is 
+				<b>known to work with</b>. If you are getting errors that indicate failure to update attributes this may be due to use of an older Bugzilla.
+			</li>
+		</ul>
+		<ul>
+			<li>If you are using 
+				<b>Bugzilla 2.18</b> and are getting 
+				<b>mid-air collisions</b> this is likely due to incorrectly formatted timestamp field in the underlying bugs database table (
+				<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=149513" target="mylyn_external">bug 149513</a>).  This can be resolved by upgrading to a more recent release of Bugzilla server.
+			</li>
+		</ul>
+		<h3 id="Tips_for_server_administrators">Tips for server administrators</h3>
+		<p>Mylyn periodically checks config.cgi to retrieve the repository configuration.
+			On Eclipse.org this resulted in heavy CPU Load for the regeneration and a big surge in band width use.</p>
+		<ul>
+			<li>This configuration seldom changes so can be cached and served from a file instead of being regenerated every time.  While the size of this file tends to be small when hosting less than a dozen projects, it can be large on repositories holding large numbers of projects, e.g. 900K on bugs.eclipse.org.</li>
+			<li>Generated bugzilla output contains a lot of unnecessary whitespace which can be trimmed before caching. For bugs.eclipse.org this reduces the file to about <em>660K</em>.</li>
+			<li>The remaining file contains a lot of redundancy so can be gzipped for further reduction.  On bugs.eclipse.org this leaves about 
+				<i>28K</i>, a considerable saving.
+			</li>
+		</ul>
+		<p>Mylyn has been modified to accept gzip encoding on all requests, and will do content negotiation. See 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=205708" target="mylyn_external">bug 205708</a>.
+		</p>
+		<p>
+			<b>To add caching for your Bugzilla repository:</b>
+		</p>
+		<ul>
+			<li>Change the name of config.cgi to config-stock.cgi and get the caching code in a new config.cgi.</li>
+			<li>The current version of this caching config.cgi script is hosted at:</li>
+		</ul>
+		<pre> via CVS: :pserver:anonymous@dev.eclipse.org:/cvsroot/technology/org.eclipse.phoenix/infra-scripts/bugzilla/
+ or: http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.phoenix/infra-scripts/bugzilla/?root=Technology_Project
+</pre>
+		<ul>
+			<li>Modifications on this script are followed on 
+				<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=205416" target="mylyn_external">bug 205416</a>
+			</li>
+		</ul>
+		<h2 id="Why_are_queries_failing.3F">Why are queries failing?</h2>
+		<ul>
+			<li>If 
+				<b>queries are not working</b> correctly ensure that you have the right Bugzilla server version selected for the corresponding repository: 
+				<i>Task Repositories (View) →</i> right+click the repository 
+				<i>→ Properties</i>.  For supported versions see the 
+				<a href="http://www.eclipse.org/mylar/dl.php" target="mylyn_external">download page</a>.  If the repository is still not functioning it may be due to authentication or connectivity problems.  If that does not resolve the problem please post a message to the newsgroup or 
+				<a href="http://www.eclipse.org/mylar/bugs.php" target="mylyn_external">submit a bug</a>.
+			</li>
+		</ul>
+		<h2 id="Why_do_I_see_my_old_username.3F">Why do I see my old username?</h2>
+		<p>If you change the username/email address on your Bugzilla account you may notice that some tasks still have the old username/email.  Explicitly synchronize the task via the 
+			<i>Task List</i> popup menu or 
+			<i>Task Editor</i> toobar in order to update your username.
+		</p>
+		<h2 id="Why_do_tasks_fail_to_open.3F">Why do tasks fail to open?</h2>
+		<ul>
+			<li>If upon opening a bug, the Bugzilla tab only displays a warning “'
+				<i>Could not download task data, possibly due to timeout or connectivity problem. Please check connection and try again.</i>'”, ensure that your repository is returning XML data by pointing your browser to <code>&lt;your-repository-url&gt;/show_bug.cgi?id=1&amp;ctype=xml</code> to show the contents of bug 1 in XML form. The Bugzilla client requires that bugs be accessible in XML form. If the repository doesn’t support xml then it is likely that the repository is too old (Mylyn currently supports Bugzilla 2.18 and later).
+			</li>
+		</ul>
+		<ul>
+			<li>If 
+				<b>reports fail to load</b> or 
+				<b>reports fail to synchronize</b> (task description remains 
+				<i>italic</i>), check the error log for a “'
+				<i>File not found</i>'” error pointing to <code>bugzilla.dtd</code> or a “'
+				<i>Failed to retrieve products from server</i>'” error message, these can result when 
+				<ul>
+					<li>the <code>urlbase</code> parameter is not set on the bugzilla server</li>
+					<li>your <code>urlbase</code> parameter is incorrect, e.g. it contains <code>index.cgi</code></li>
+					<li>your bugzilla installation is missing the <code>bugzilla.dtd</code> file. See: 
+						<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=161759" target="mylyn_external">bug#161759</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<ul>
+			<li>If 
+				<b>attributes are missing options</b> in the bug editor (ie. missing a recently added milestone,  
+				<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=155431" target="mylyn_external">bug# 155431</a>):
+				<ul>
+					<li>Update attributes by choosing 
+						<i>Update Attributes</i> from the context menu in the 
+						<i>Task Repositories</i> view
+					</li>
+					<li>Synchronize the task in the Task List</li>
+					<li>Reopen the task - new options should be available.</li>
+				</ul>
+			</li>
+		</ul>
+		<h2 id="Why_do_tasks_fail_to_submit.3F">Why do tasks fail to submit?</h2>
+		<ul>
+			<li>
+				<b>Error upon submit: unable to make any match for name/email entered.</b> If your bugzilla is configured for user names rather than full email address the QA Contact field will cause the submit to fail (
+				<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=166555" target="mylyn_external">bug# 166555</a>). To resolve, select ‘Local users enabled’ option on the Repository Configuration page. 
+			</li>
+		</ul>
+		<ul>
+			<li>If tasks 
+				<b>fail to submit</b> with credentials error, but the repository validates fine, make sure that you’ve correctly setup your account’s username and password and are not using the HTTP authentication fields instead.
+			</li>
+		</ul>
+		<ul>
+			<li>If tasks 
+				<b>fail to submit</b> with credentials error, but the repository validates fine, make sure that you’ve correctly setup your bugzilla instance’s cookie domain under the required settings.  The cookie domain must lead with a dot.
+			</li>
+		</ul>
+		<ul>
+			<li>If 
+				<b>attachments are failing to submit</b> and you see that after processing the attachment, the bugzilla bug shows a size of “bytes” (no numbers), your database may be dropping the packet sending the file.  
+				<b>On MySQL</b>, check the 
+				<a href="http://dev.mysql.com/doc/refman/5.0/en/packet-too-large.html" target="mylyn_external">max_allowed_packet directive</a>.  You may see errors like: <code>DBD::mysql::st execute</code> failed: Got a packet bigger than 'max_allowed_packet' bytes 
+				<a href="for">Statement “INSERT INTO attach_data (id, thedata) VALUES (38, ?)”</a> at <code>/path/to/bugzilla/attachment.cgi</code> line 993.  Also, 
+				<b>check the maximum attachment size</b> in 
+				<i>Bugzilla Parameters → Attachments</i>.
+			</li>
+		</ul>
+		<ul>
+			<li>If a submit fails with an 
+				<b>Invalid Username or Password</b> error even though repository settings do validate, make sure that cookies could be set. See also 
+				<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=175502" target="mylyn_external">bug 175502</a>
+			</li>
+		</ul>
+		<h2 id="What_time_zone_is_used_in_the_task_editor.3F">What time zone is used in the task editor?</h2>
+		<ul>
+			<li>The 
+				<b>times</b> that appear in the Bugzilla bug editor (ie. created, modified) 
+				<b>are local to the server hosting the Bugzilla repository</b>, not your local machine’s time zone. 
+			</li>
+		</ul>
+		<h2 id="Known_limitations">Known limitations</h2>
+		<ul>
+			<li>The <code>usermatchmode</code> is not currently supported (
+				<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=168204" target="mylyn_external">bug 168204</a>) and as such full email addresses need to be used.
+			</li>
+		</ul>
+		<ul>
+			<li>The <code>usevisibilitygroups</code> parameter is not supported (
+				<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=180876" target="mylyn_external">bug#180876</a>). Group assignment will currently be lost if updated using the Bugzilla rich task editor.
+			</li>
+		</ul>
+		<ul>
+			<li>Version 1.0 of Mylyn presents an error message upon new comment submission to Red Hat’s public Bugzilla repository. The comment is in fact posted. This issue is resolved in Mylyn 2.0M2 and higher. (
+				<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=183251" target="mylyn_external">bug#183251</a>)
+			</li>
+		</ul><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Task-Repositories.html" title="Task Repositories">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="FAQ.html" title="Mylyn FAQ">
+						<img alt="Mylyn FAQ" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="JIRA-Connector.html" title="JIRA Connector">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Task Repositories</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">JIRA Connector</td>
+			</tr>
+		</table>
+	</body>
+</html>

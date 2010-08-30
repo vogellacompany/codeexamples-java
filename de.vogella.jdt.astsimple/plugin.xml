@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.jdt.astsimple.handler.GetInfo"
+            id="de.vogella.jdt.astsimple.GetInfo"
+            name="Get Info">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <command
+               commandId="de.vogella.jdt.astsimple.GetInfo"
+               label="Get Info"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

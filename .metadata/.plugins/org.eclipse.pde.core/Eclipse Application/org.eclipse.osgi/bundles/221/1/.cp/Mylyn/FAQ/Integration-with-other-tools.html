@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn FAQ - Integration with other tools</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Integration with other tools</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="WikiText.html" title="WikiText">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Misc.html" title="Misc">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">WikiText</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Misc</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Integration_with_other_tools">Integration with other tools</h1>
+		<p>See the 
+			<b>
+				<a href="http://wiki.eclipse.org/Mylyn/Extensions" title="Mylyn/Extensions" target="mylyn_external">Mylyn Extensions</a>
+			</b> page for a listing of integration downloads.
+		</p>
+		<p>Mylyn relies on 
+			<a href="http://wiki.eclipse.org/Mylyn/Architecture" title="Mylyn/Architecture" target="mylyn_external">Bridges</a> to integrate the context model with the structure and UI features of domain-specific tools. To create a Bridge, see 
+			<a href="http://wiki.eclipse.org/Mylyn/Integrator_Reference#Creating_Bridges" title="Mylyn/Integrator_Reference#Creating_Bridges" target="mylyn_external">Creating Bridges</a>.
+		</p>
+		<p>The core set of Bridges supports the Eclipse SDK (i.e. has bridges for Java, JUnit, PDE, Ant and Resources).  The Resources Bridge enables a basic level of interoperability with other tools that use files (e.g. <code>.php, .cpp</code>), and enables Mylyn filtering to work for generic views that show those files (i.e. the 
+			<i>Project Explorer</i>, 
+			<i>Navigator</i>) and any corresponding markers (i.e. the 
+			<i>Problems</i> and 
+			<i>Tasks</i> views).  This is only the most basic context model integration, and does not offer the benefits of a specialized structure bridge, such as making declarations part of the context and providing 
+			<i>Active Search</i> facilities.  Without a Bridge Mylyn cannot be applied to tool-specific views.  
+		</p>
+		<p>
+			<b>If you would like to see support for a particular tool</b>, first do a search of the open bridge requests and 
+			<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=anywordssubstr&amp;short_desc=%5Bbridge%5D&amp;product=Mylyn&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=" target="mylyn_external">vote for the corresponding bug</a> if your tool is there, or 
+			<a href="http://www.eclipse.org/mylyn/bugs.php" target="mylyn_external">create a new bug</a>.  Also consider adding your experiences to the 
+			<a href="Integration_with_other_tools" title="Mylyn/FAQ#Integration_with_other_tools">"Integration..."</a> section of the Mylyn FAQ.
+		</p>
+		<h2 id="Using_Mylyn_with_WTP">Using Mylyn with WTP</h2>
+		<p>Context modeling works at the file level, noting the limitation of 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=144882" target="mylyn_external">bug 144882: interest filter fails on WTP Dynamic Web Project</a>
+		</p>
+		<h2 id="External_builders">External builders</h2>
+		<p>If an external builder (e.g. Maven, pydev, or other Ant-based builders) is producing output files that are being automatically added to your context because they are not being marked "derived" as with Eclipse-based builders.  You may note that such files are always show as interesting when they are generated or updated and can not be filtered away, since Mylyn expects all files that have changed as part of the task context to have interest.</p>
+		<p>In this case you can explicitly exclude these files from being added to the task context the 
+			<i>Preferences -&gt; Mylyn -&gt; Resources</i> page.  For example, if the output folder of the builder is "target", you could set this the following way.  Similarly, you could add a filter for "*.pyc" to exclude all files generated with that extension.
+		</p>
+		<p>Source code generators can be considered analogous since they produce intermediate files.  However, if you want to inspect the results of the source code generation after it is done you can avoid setting the exclusion.  Note that if a large number of files was generated not all generated files may be unfiltered.</p>
+		<p>
+			<img border="0" src="images/mylar-resource-exclusion.gif"/>
+		</p><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="WikiText.html" title="WikiText">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="FAQ.html" title="Mylyn FAQ">
+						<img alt="Mylyn FAQ" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Misc.html" title="Misc">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">WikiText</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Misc</td>
+			</tr>
+		</table>
+	</body>
+</html>

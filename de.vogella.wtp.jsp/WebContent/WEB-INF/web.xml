@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>de.vogella.wtp.jsp</display-name>
+  <welcome-file-list>
+    <welcome-file>ShowAll.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description>Controller</description>
+    <display-name>Controller</display-name>
+    <servlet-name>Controller</servlet-name>
+    <servlet-class>de.vogella.wtp.jsp.controller.Controller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Controller</servlet-name>
+    <url-pattern>/Controller</url-pattern>
+  </servlet-mapping>
+</web-app>

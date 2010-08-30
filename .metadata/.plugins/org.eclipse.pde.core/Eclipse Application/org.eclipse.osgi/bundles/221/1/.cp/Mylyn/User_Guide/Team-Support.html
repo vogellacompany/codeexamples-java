@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn User Guide - Team Support</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Team Support</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Task-Focused-Interface.html" title="Task-Focused Interface">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Shortcuts.html" title="Shortcuts">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Task-Focused Interface</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Shortcuts</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Team_Support">Team Support</h1>
+		<p>The task-focused interface provides several ways to improve your work flow when working with a source code repository such as CVS or Subversion. CVS support is available out-of-the-box and task-focused interface integration for Subversion is available via the Subclipse or Subversive plugins.</p>
+		<h2 id="Task-focused_Change_Sets">Task-focused Change Sets</h2>
+		<p>When working with a source code repository, you can commit or update only the resources that are in the context of a particular task. This helps you work on several tasks concurrently and avoid polluting your workspace with changes that are not relevant to the current task.</p>
+		<p>To enable this functionality, locate the "Synchronize" view. If the view is not visible, you can open it by navigating to Window -&gt; Show View -&gt; Other... -&gt; Team -&gt; Synchronize. Next, click the small black arrow next to "Show File System Resources" in the Synchronize view toolbar and select "Change Sets".</p>
+		<p>You can now synchronize resources in your workspace as usual (e.g. by right-clicking on a resource in the navigator and selecting "Team" -&gt; "Synchronize with Repository". Your resources will now be grouped by change sets corresponding to tasks. Expanding the task shows individual resources. Changed resources that are not a part of any task context will appear under the root of the Synchronize view. If needed missing resources can be added to the task context Change Set via the Synchronize View by right+clicking the resource and selecting "Add to" and then selecting the corresponding task. Select "no set" to remove a resource from a change set.</p>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-Change-Sets.png"/>
+		</p>
+		<p>You can use buttons in the toolbar of the Synchronize view to change modes as follows:</p>
+		<ul>
+			<li>
+				<b>Incoming Mode</b> - See only updates to be retrieved from the server
+			</li>
+			<li>
+				<b>Outgoing Mode</b> - See only your local changes to be committed to the server 
+			</li>
+			<li>
+				<b>Incoming/Outgoing Mode</b> - See both incoming and outgoing changes
+			</li>
+		</ul>
+		<p>Right-clicking a Change Set provides access to the following operations:</p>
+		<ul>
+			<li>
+				<b>Add to Task Context</b> - Adds all changed files to the active task context, see 
+				<a href="Team-Support.html#Working_with_Patches">Working with Patches</a> for more information
+			</li>
+			<li>
+				<b>Open Corresponding Task</b> - Opens the task associated with the Change Set in the Task Editor
+			</li>
+		</ul>
+		<h2 id="Automatic_Commit_Messages">Automatic Commit Messages</h2>
+		<p>When using task-focused change sets as described above, commit messages are automatically be generated based on the task whose resources are being commited. By default, the commit message includes information such as the task ID, description, and URL. To change the template for these commit messages, navigate to Window -&gt; Preferences -&gt; Tasks -&gt; Team.</p>
+		<h2 id="Working_with_Patches">Working with Patches</h2>
+		<p>When applying patches, the preferred scenario is to have a task context attached to the task along with the patch. Since this is not always feasible, Mylyn provides an action in the popup menu of the 
+			<i>Synchronize</i> view that supports adding changed elements to the task context. 
+		</p>
+		<ol>
+			<li>Activate the task containing the patch.</li>
+			<li>Apply the patch. If you are using automatic change sets, this will cause the change set created by Mylyn to contain the outoing changes. If it doesn't you can use the 
+				<i>Add to</i> action on the popup menu to add the elements to the corresponding change set. 
+			</li>
+			<li>Invoke the 
+				<i>Add to Task Context</i> action on the change set node, causing all of the changed files to be added to the task context. You can also invoke this action on a selection one or more elements (e.g. files) in the view.
+			</li>
+		</ol>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-Add-To-Context.png"/>
+		</p><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Task-Focused-Interface.html" title="Task-Focused Interface">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="User-Guide.html" title="Mylyn User Guide">
+						<img alt="Mylyn User Guide" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Shortcuts.html" title="Shortcuts">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Task-Focused Interface</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Shortcuts</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn FAQ - WikiText</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">WikiText</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Team-Support.html" title="Team Support">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Integration-with-other-tools.html" title="Integration with other tools">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Team Support</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Integration with other tools</td>
+			</tr>
+		</table><hr/>
+		<h1 id="WikiText">WikiText</h1>
+		<h2 id="What_is_WikiText.3F">What is WikiText?</h2>
+		<p>WikiText is a set of plug-ins for Eclipse that provide lightweight markup (wiki) parsing, editing and display capabilities to the Eclipse platform and Mylyn.  WikiText provides a parser for wiki markup and converts the markup to HTML, Docbook, DITA, or Eclipse Help format, either via the API or by using Ant tasks. WikiText also provides UI components (such as an editor) integrating with Eclipse and the Mylyn task editor.</p>
+		<h2 id="Where_can_I_get_WikiText.3F">Where can I get WikiText?</h2>
+		<p>WikiText is available on the Mylyn update site.  Unreleased weekly builds are also available via the Mylyn Weekly Builds update site.  See the 
+			<a href="http://www.eclipse.org/mylyn/downloads/" target="mylyn_external">Mylyn Downloads</a> for details.
+		</p>
+		<p>A stand-alone WikiText package is also available for download from the 
+			<a href="http://www.eclipse.org/mylyn/downloads/" target="mylyn_external">Mylyn Downloads</a> page.
+		</p>
+		<h2 id="How_does_WikiText_integrate_with_Mylyn.3F">How does WikiText integrate with Mylyn?</h2>
+		<p>WikiText extends the Mylyn task editor to be markup-aware.  Comments and description text is formatted according to the configured markup language.  The description and comment editors are aware of markup and provide content assist, markup help and preview.</p>
+		<p>More details can be found here: 
+			<a href="http://tasktop.com/blog/eclipse/rich-editing-for-tasks-via-mylyn-wikitext" target="mylyn_external">Rich Editing for Tasks via Mylyn WikiText (Mik Kersten)</a>
+		</p>
+		<h2 id="How_do_I_enable.2Fdisable_WikiText_extensions_to_Mylyn.3F">How do I enable/disable WikiText extensions to Mylyn?</h2>
+		<p>This is done on a per-repository basis.  When WikiText is installed it is automatically enabled for all configured task repositories for which there is a default markup language setting.</p>
+		<p>To change the default settings open the Mylyn <i>Task Repositories</i> view, right-click your task repository and select <i>Properties</i> from the context menu.  In the properties dialog choose the <i>Editor</i> settings (you may need to click on it to expand the section).</p>
+		<p>To disable WikiText for your repository, select <i>Plain Text</i>.</p>
+		<p>To enable WikiText for your repository, select the desired markup language.  The default markup language if available for your repository is labeled <i>(default)</i></p>
+		<h2 id="Where_can_I_find_WikiText_documentation.3F">Where can I find WikiText documentation?</h2>
+		<p>WikiText documentation is installed into the Eclipse help system when WikiText is installed.  To see the WikiText documentation open Eclipse, from the <i>Help</i> menu open <i>Help Contents</i>.  You will find the <i>WikiText User Guide</i> under <i>Tasks</i> in the table of contents.  If you're interested in integrating with WikiText then take a look at the <i>WikiText Developer Guide</i>.</p>
+		<p>The same WikiText documentation is also available in the stand-alone distribution and online:</p>
+		<ul>
+			<li>
+				<a href="http://help.eclipse.org/galileo/topic/org.eclipse.mylyn.wikitext.help.ui/help/Mylyn%20WikiText%20User%20Guide.html" target="mylyn_external">WikiText User Guide</a>
+			</li>
+			<li>
+				<a href="http://help.eclipse.org/galileo/topic/org.eclipse.mylyn.wikitext.help.ui/help/devguide/WikiText%20Developer%20Guide.html" target="mylyn_external">WikiText Developer Guide</a>
+			</li>
+		</ul>
+		<h2 id="How_do_I_run_the_WikiText_Ant_tasks.3F">How do I run the WikiText Ant tasks?</h2>
+		<p>The WikiText documentation provides detailed information on how this is done in the <i>WikiText User Guide</i>.</p>
+		<h2 id="Can_I_use_WikiText_without_Eclipse.3F">Can I use WikiText without Eclipse?</h2>
+		<p>Yes, the WikiText markup parser and Ant tasks may be used outside of Eclipse without reference to any Eclipse classes.</p>
+		<p>Detailed information about using WikiText APIs is available within the <i>WikiText Developer Guide</i>.  Information about using WikiText Ant tasks is available within the <i>WikiText User Guide</i>.</p>
+		<h2 id="What_output_can_WikiText_create.3F">What output can WikiText create?</h2>
+		<p>WikiText can create HTML, Eclipse Help, DITA, DocBook and FOP from wiki markup.  Using the WikiText APIs you can also extend WikiText to create other output formats.
+			DITA, DocBook and FOP can all be used to create PDF.  More information is available in the <i>WikiText User Guide</i>.</p>
+		<h2 id="What_wiki_markup_languages_does_WikiText_support.3F">What wiki markup languages does WikiText support?</h2>
+		<p>WikiText can parse the following markup languages:</p>
+		<ul>
+			<li>Confluence</li>
+			<li>MediaWiki</li>
+			<li>Textile</li>
+			<li>TracWiki</li>
+			<li>TWiki</li>
+		</ul>
+		<p>WikiText is also designed to make it easy to add support for new markup languages.</p>
+		<h2 id="Where_can_I_find_out_more_about_WikiText.3F">Where can I find out more about WikiText?</h2>
+		<ul>
+			<li>
+				<a href="http://greensopinion.blogspot.com/2009/03/mylyn-wikitext-10-released.html" target="mylyn_external">Mylyn WikiText 1.0 Released (David Green)</a>
+			</li>
+			<li>
+				<a href="http://tasktop.com/blog/eclipse/rich-editing-for-tasks-via-mylyn-wikitext" target="mylyn_external">Rich Editing for Tasks via Mylyn WikiText (Mik Kersten)</a>
+			</li>
+			<li>
+				<a href="http://www.peterfriese.de/getting-started-with-wikitext/" target="mylyn_external">Getting started with WikiText (Peter Friese)</a>
+			</li>
+			<li>
+				<a href="http://www.peterfriese.de/advanced-wikitext/" target="mylyn_external">Advanced WikiText (Peter Friese)</a>
+			</li>
+			<li>
+				<a href="http://wiki.eclipse.org/DocumentationGuidelines/Example" title="DocumentationGuidelines/Example" target="mylyn_external">DocumentationGuidelines/Example</a>
+			</li>
+			<li>
+				<a href="http://greensopinion.blogspot.com/2009/04/mylyn-wikitext-produces-pdf.html" target="mylyn_external">Mylyn WikiText Produces PDF (David Green)</a>
+			</li>
+			<li>
+				<a href="http://wiki.eclipse.org/Mylyn/WikiText" title="Mylyn/WikiText" target="mylyn_external">Mylyn WikiText wiki</a>
+			</li>
+			<li>
+				<a href="http://jdowdle.com/wp/2010/04/wikitext-eclipse-creating-documentation/" target="mylyn_external">WikiText &amp; Eclipse: Making Documentation Easier (Jon Dowdle)</a>
+			</li>
+			<li>
+				<a href="http://fsteeg.wordpress.com/2010/02/07/diagrams-in-wiki-markup-with-mylyn-wikitext-dot-and-zest/" target="mylyn_external">Diagrams in wiki markup with Mylyn WikiText, DOT, and Zest (Fabian Steeg)</a>
+			</li>
+			<li>
+				<a href="http://wiki.eclipse.org/Mylyn/Incubator/WikiText" title="Mylyn/Incubator/WikiText" target="mylyn_external">The original WikiText incubation project page</a>
+			</li>
+			<li>
+				<a href="http://greensopinion.blogspot.com/2008/08/textile-j-is-moving-to-mylyn-wikitext.html" target="mylyn_external">Textile-J Is Moving to Mylyn WikiText</a>
+			</li>
+		</ul><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Team-Support.html" title="Team Support">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="FAQ.html" title="Mylyn FAQ">
+						<img alt="Mylyn FAQ" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Integration-with-other-tools.html" title="Integration with other tools">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Team Support</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Integration with other tools</td>
+			</tr>
+		</table>
+	</body>
+</html>

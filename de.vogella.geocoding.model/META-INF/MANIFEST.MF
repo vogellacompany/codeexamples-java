@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Model Plug-in
+Bundle-SymbolicName: de.vogella.geocoding.model
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.vogella.geocoding.model

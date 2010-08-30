@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_wgJP4UwREd6NvY5K5BWKKw" name="myclasses">
+  <elementImport xmi:id="_wih1gEwREd6NvY5K5BWKKw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_wiq_cEwREd6NvY5K5BWKKw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_wiq_cUwREd6NvY5K5BWKKw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_wiq_ckwREd6NvY5K5BWKKw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_71O40EwREd6NvY5K5BWKKw" name="Person">
+    <ownedAttribute xmi:id="_nAqBMEwSEd6NvY5K5BWKKw" name="lastName" aggregation="composite"/>
+    <ownedAttribute xmi:id="_sIVFoEwSEd6NvY5K5BWKKw" name="firstName" aggregation="composite"/>
+    <ownedAttribute xmi:id="_s2-UUEwSEd6NvY5K5BWKKw" name="nickName" aggregation="composite"/>
+    <ownedOperation xmi:id="_ov9boEwSEd6NvY5K5BWKKw" name="setLastName"/>
+    <ownedOperation xmi:id="_xTb4kEwSEd6NvY5K5BWKKw" name="setFirstName">
+      <ownedParameter xmi:id="_1QwCsEwSEd6NvY5K5BWKKw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_RC57AEwTEd6NvY5K5BWKKw" name="setNickName"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_UygCIEwnEd6NvY5K5BWKKw" name="Address">
+    <ownedAttribute xmi:id="_a7muYEwnEd6NvY5K5BWKKw" name="street" aggregation="composite"/>
+    <ownedOperation xmi:id="_b3qG8EwnEd6NvY5K5BWKKw" name="setStreet"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_q_NU4EwnEd6NvY5K5BWKKw" name="" memberEnd="_q_NU4UwnEd6NvY5K5BWKKw _q_NU5EwnEd6NvY5K5BWKKw">
+    <ownedEnd xmi:id="_q_NU4UwnEd6NvY5K5BWKKw" name="src" type="_71O40EwREd6NvY5K5BWKKw" association="_q_NU4EwnEd6NvY5K5BWKKw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q_NU40wnEd6NvY5K5BWKKw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q_NU4kwnEd6NvY5K5BWKKw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_q_NU5EwnEd6NvY5K5BWKKw" name="dst" type="_UygCIEwnEd6NvY5K5BWKKw" association="_q_NU4EwnEd6NvY5K5BWKKw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q_NU5kwnEd6NvY5K5BWKKw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q_NU5UwnEd6NvY5K5BWKKw"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_PKn5QFpBEd6t_sfUS_47tA" value=""/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_DiIREEwoEd6NvY5K5BWKKw" name="Interface"/>
+</uml:Package>

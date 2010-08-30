@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.build.ui.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="de.vogella.build.ui.Perspective"
+            id="de.vogella.build.ui.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="de.vogella.build.ui.application"
+            name="hellorcp">
+         <property
+               name="appName"
+               value="hellorcp">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

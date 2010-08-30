@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.preferences.page.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.preferences.page.Perspective"
+            id="de.vogella.preferences.page.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="de.vogella.preferences.page.perferencepage.MyPreferencePage1"
+            id="de.vogella.preferences.page.preferencepage1"
+            name="MyPreference Page">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <command
+               commandId="org.eclipse.ui.window.preferences"
+               label="Show Preferences"
+               style="push">
+         </command>
+         <command
+               commandId="de.vogella.preferences.page.showPreferenceValues"
+               label="Show Values"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.preferences.page.handler.ShowPreferenceValues"
+            id="de.vogella.preferences.page.showPreferenceValues"
+            name="Show">
+      </command>
+   </extension>
+
+</plugin>

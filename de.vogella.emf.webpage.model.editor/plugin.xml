@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.vogella.emf.webpage.model.webpage.presentation.WebpageModelWizardID"
+            name="%_UI_WebpageModelWizard_label"
+            class="de.vogella.emf.webpage.model.webpage.presentation.WebpageModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/WebpageModelFile.gif">
+         <description>%_UI_WebpageModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="de.vogella.emf.webpage.model.webpage.presentation.WebpageEditorID"
+            name="%_UI_WebpageEditor_label"
+            icon="icons/full/obj16/WebpageModelFile.gif"
+            extensions="webpage"
+            class="de.vogella.emf.webpage.model.webpage.presentation.WebpageEditor"
+            contributorClass="de.vogella.emf.webpage.model.webpage.presentation.WebpageActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

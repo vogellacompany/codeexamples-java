@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?><!--
+    Copyright (c) 2009 Tasktop Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+         Tasktop Technologies - initial API and implementation
+ -->
+
+<plugin>
+	<extension
+         id="org.eclipse.mylyn.helpDocs"
+         name="Tasks"
+         point="org.eclipse.help.toc">
+      <toc
+            file="toc.xml"
+            primary="true">
+      </toc>
+      <toc
+            file="Mylyn-User-Guide-toc.xml"
+            primary="false"/>
+      <toc
+            file="Mylyn-FAQ-toc.xml"
+            primary="false"/>
+   </extension>
+  
+   <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="$nl$/intro/overviewExtensionContent.xml">
+      </configExtension>
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="$nl$/intro/whatsnewExtensionContent.xml">
+      </configExtension>
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="$nl$/intro/tutorialsExtensionContent.xml">
+      </configExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.cheatsheets.cheatSheetContent">
+      <category
+            id="org.eclipse.mylyn.cheatsheet"
+            name="%cheatsheet.category.name">
+      </category>
+      <cheatsheet
+            category="org.eclipse.mylyn.cheatsheet"
+            contentFile="$nl$/cheatsheets/Query.xml"
+            id="org.eclipse.mylyn.cheatsheet.query"
+            name="%cheatsheet.query.name">
+         <description>
+            %cheatsheet.query.description
+         </description>
+      </cheatsheet>
+      <cheatsheet
+            category="org.eclipse.mylyn.cheatsheet"
+            contentFile="$nl$/cheatsheets/TaskFocus.xml"
+            id="org.eclipse.mylyn.cheatsheet.taskfocus"
+            name="%cheatsheet.taskfocus.name">
+         <description>
+            %cheatsheet.taskfocus.description
+         </description>
+      </cheatsheet>
+   </extension>
+  
+</plugin>

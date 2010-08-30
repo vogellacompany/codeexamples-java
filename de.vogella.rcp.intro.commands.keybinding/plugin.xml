@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.intro.commands.keybinding.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.rcp.intro.commands.keybinding.Perspective"
+            id="de.vogella.rcp.intro.commands.keybinding.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.rcp.intro.commands.keybinding.HelloHandler"
+            id="de.vogella.rcp.intro.commands.keybinding.hello"
+            name="Say Hello">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="de.vogella.rcp.intro.commands.keybinding.hello"
+            schemeId="myscheme"
+            sequence="M1+1">
+      </key>
+      <key
+            commandId="de.vogella.rcp.intro.commands.keybinding.hello"
+            schemeId="myscheme"
+            sequence="M1+N">
+      </key>
+      <scheme
+            id="myscheme"
+            name="myscheme">
+      </scheme>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="de.vogella.rcp.intro.commands.keybinding.application"
+            name="Keybinding">
+         <property
+               name="appName"
+               value="Keybinding">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

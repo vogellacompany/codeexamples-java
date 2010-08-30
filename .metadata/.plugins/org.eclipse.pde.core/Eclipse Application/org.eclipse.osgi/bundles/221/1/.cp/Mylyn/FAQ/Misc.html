@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn FAQ - Misc</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Misc</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Integration-with-other-tools.html" title="Integration with other tools">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Updating-This-Document.html" title="Updating This Document">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Integration with other tools</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Updating This Document</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Misc">Misc</h1>
+		<h2 id="Performance">Performance</h2>
+		<h3 id="Retrieval_of_repository_configuration">Retrieval of repository configuration</h3>
+		<p>In order to present the valid options for attributes in the Task Editor, the repository 'configuration' must be retrieved from the repository. The default connector implementation requests a new configuration every 24hrs. In the case of Bugzilla, this is further refined by first performing a head request on the configuration to see if the Last-Modified header has changed. If so, the repository configuration is retrieved. Additionally, Eclipse.org's webmaster has redirected the config.cgi request to a static page, eliminating the processing overhead server side. For details on server side optimization of Bugzilla see 
+			<a href="http://wiki.eclipse.org/Mylyn_FAQ#Tips_for_server_administrators" title="Mylyn_FAQ#Tips_for_server_administrators" target="mylyn_external">Mylyn_FAQ#Tips_for_server_administrators</a>.  
+		</p>
+		<h2 id="Command_Line">Command Line</h2>
+		<p>The system properties below can used to change the behavior of Mylyn. To set a property pass it on the command line when starting Eclipse:
+<code>			eclipse -argument</code>.</p>
+		<table>
+			<tr>
+				<td>Argument</td>
+				<td>Mylyn Version</td>
+				<td>Description</td>
+			</tr>
+			<tr>
+				<td><code>-no-activate-task</code></td>
+				<td><center>3.1</center></td>
+				<td>Disables task activation on startup. The last active task is not re-activated on startup if a workspace crash is detected.</td>
+			</tr>
+		</table>
+		<h2 id="System_Properties">System Properties</h2>
+		<p>The system properties below can used to change the behavior of Mylyn. To set a property pass it on the command line when starting Eclipse:
+<code>			eclipse -vmargs -Dorg.eclipse.mylyn.property=value</code>.</p>
+		<table>
+			<tr>
+				<td>System Property</td>
+				<td>Mylyn Version</td>
+				<td>Default</td>
+				<td>Description</td>
+			</tr>
+			<tr>
+				<td><code>org.eclipse.mylyn.linkProviderTimeout</code></td>
+				<td><center>3.1</center></td>
+				<td>5000</td>
+				<td>Number of milli-seconds before link providers are timed out. Set to -1 to disable link providers timing out.</td>
+			</tr>
+			<tr>
+				<td><code>mylyn.discovery.directory</code></td>
+				<td><center>3.2</center></td>
+				<td>
+					<a href="http://www.eclipse.org/mylyn/discovery/directory.xml" target="mylyn_external">http://www.eclipse.org/mylyn/discovery/directory.xml</a>
+				</td>
+				<td>URL for the discovery directory.</td>
+			</tr>
+		</table>
+		<h2 id="How_do_I_enable_debugging_output_for_network_communications.3F">How do I enable debugging output for network communications?</h2>
+		<p>Add the following lines to the <code>eclipse.ini</code> file in your eclipse directory to enable tracing of header information for HTTP requests. Log output is written to the console eclipse was started from. Make sure to add these after the line that says 
+			<b><code>-vmargs</code></b>. Add a <code>-vmwargs</code> line if there is none in the file.
+		</p>
+		<pre>-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.SimpleLog
+-Dorg.apache.commons.logging.simplelog.showlogname=true
+-Dorg.apache.commons.logging.simplelog.defaultlog=off
+-Dorg.apache.commons.logging.simplelog.log.httpclient.wire.header=debug
+-Dorg.apache.commons.logging.simplelog.log.org.apache.commons.httpclient=off
+-Dorg.apache.commons.logging.simplelog.log.org.apache.axis.message=debug
+</pre>
+		<p>To also enable logging of message content, also add this lines:</p>
+		<pre>-Dorg.apache.commons.logging.simplelog.log.httpclient.wire.content=debug
+</pre>
+		<h2 id="How_do_I_enable_debugging_output_for_plug-ins.3F">How do I enable debugging output for plug-ins?</h2>
+		<p>Create a 
+			<b><code>.options</code></b> file in your eclipse directory and enable tracing by including the corresponding lines which set the tracing setting for a particular concern to true:
+		</p>
+		<p>
+			<b>JIRA</b>
+		</p>
+		<pre>org.eclipse.mylyn.jira.core/debug/connector=true
+org.eclipse.mylyn.jira.core/debug/dataHandler=true
+org.eclipse.mylyn.jira.core/debug/repository=true
+</pre>
+		<p>
+			<b>Trac</b>
+		</p>
+		<pre># trace authentication requests
+org.eclipse.mylyn.trac.core/debug/authentication=true
+# trace XML-RPC calls
+org.eclipse.mylyn.trac.core/debug/xmlrpc=true
+</pre>
+		<p>Then start eclipse with 
+			<b><code>-debug</code></b>. You can also optionally pass a filename to <code>-debug</code> if your <code>.options</code> file is not located in the eclipse directory.
+		</p>
+		<p>See also 
+			<a href="http://wiki.eclipse.org/FAQ_How_do_I_use_the_platform_debug_tracing_facility%3F" title="FAQ_How_do_I_use_the_platform_debug_tracing_facility%3F" target="mylyn_external">FAQ_How_do_I_use_the_platform_debug_tracing_facility%3F</a>.
+		</p>
+		<h2 id="Which_usage_monitoring_framework_should_I_use.3F">Which usage monitoring framework should I use?</h2>
+		<p>Three usage data collection frameworks have been created for Eclipse:</p>
+		<ol>
+			<li>
+				<a href="http://dev.eclipse.org/viewcvs/index.cgi/platform-ui-home/instrumentation/index.html?revision=1.12" target="mylyn_external">Eclipse Instrumentation Framework</a>: created as part of Platform UI, not released, not currently maintained
+			</li>
+			<li>
+				<a href="http://wiki.eclipse.org/Mylyn_Integrator_Reference#Monitor_API" title="Mylyn_Integrator_Reference#Monitor_API" target="mylyn_external">Mylyn Monitor UI Usage Reporting</a>: created in 2004, maintained as part of the Mylyn project, first released in 2005
+			</li>
+			<li>
+				<a href="http://www.eclipse.org/epp/usagedata/index.php" target="mylyn_external">Usage Data Collector</a>: maintained as part of the EPP project, first released in 2008
+			</li>
+		</ol>
+		<p>While (1) and (3) are work in a similar way, there is a significant difference between the approach used by the Mylyn Monitor and the other usage data collectors.  Instead of gathering statistics, the Mylyn UI Usage Reporting component uses the interaction history that is captured by the Mylyn Monitor.  This is the same interaction history stream that is used to determine the interest level of elements in Mylyn’s Task-Focused UI and has been refined by long-term use of Mylyn’s Task-Focused UI.  The UI Usage Monitor is extensible, de-coupled from the other parts of Mylyn and can be used independently.  </p>
+		<p>There are several main benefits to the approach of capturing a full interaction history stream instead of reporting on particular statistics.</p>
+		<ul>
+			<li>Since all of the interaction information is captured on the client, server-side reporting facilities can report on usage statistics that were not defined at deployment time.  For example, during one of the Mylyn studies we did not decide to monitor which views were opened within which perspective.  Since we had the full interaction histories this reporting was easy to add.</li>
+			<li>Interaction histories make it possible to report not just on the usage of the UI, but on the state of the UI at any given time.  For example, in one study we wanted to know what actinos the user did after invoking a build and which views were visible while the invoked that action.</li>
+			<li>An explicit interaction history makes it easier to avoid and debug privacy problems.  The Mylyn Monitor has a robust facility for filtering, encrypting and obfuscating data from interaction histories.</li>
+		</ul>
+		<p>For an example study see: 
+			<a href="http://kerstens.org/mik/publications/mylar-ieee2006.pdf" target="mylyn_external">http://kerstens.org/mik/publications/mylar-ieee2006.pdf</a>
+		</p>
+		<h2 id="How_does_Mylyn_relate_to_IBM.E2.80.99s_Jazz.3F">How does Mylyn relate to IBM’s Jazz?</h2>
+		<p>At the EclipseCon and JavaONE 2006 conferences IBM demonstrated previews of Jazz, a collaborative team server and Eclipse-based client.  Articles have remarked on the similarities between Mylyn and Jazz because both integrate tasks into Eclipse (Jazz’s “work items” and Mylyn’s “tasks”), and both provide change sets grouped by task.  But there are both significant differences and complementary aspects to the two approaches.  A key goal of Mylyn is to provide an open source framework to support integration of task management with 
+			<i>existing issue trackers and source repositories</i>.  According to the presentations, components that come with Jazz include include a 
+			<i>next-generation issue tracker and source repository</i> and related lifecycle management tools such as project health.  In addition, a driving and unique goal of Mylyn is to focus the UI around a usage-based and degree-of-interested weighted task context, which is complementary to the Jazz platform.  Just as it integrates with Mylyn’s Task List, Mylyn’s Task Focused UI and task context model components are possible to integrate with other kinds of task management systems, such as the one provided by Jazz.
+		</p>
+		<p>Update: at EclipseCon 2007 the IBM Jazz team showed a Mylyn connector for Jazz.</p>
+		<p>
+			<a href="http://wiki.eclipse.org/Category:FAQ" title="Category:FAQ" target="mylyn_external">Category:FAQ</a>
+
+			<a href="http://wiki.eclipse.org/Category:Mylyn" title="Category:Mylyn" target="mylyn_external">Category:Mylyn</a>
+		</p><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Integration-with-other-tools.html" title="Integration with other tools">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="FAQ.html" title="Mylyn FAQ">
+						<img alt="Mylyn FAQ" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Updating-This-Document.html" title="Updating This Document">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Integration with other tools</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Updating This Document</td>
+			</tr>
+		</table>
+	</body>
+</html>

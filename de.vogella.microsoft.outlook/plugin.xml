@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.microsoft.outlook.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.microsoft.outlook.Perspective"
+            id="de.vogella.microsoft.outlook.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.microsoft.outlook.handler.SendEmail"
+            id="de.vogella.microsoft.outlook.sendEmail"
+            name="Send Email">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <command
+               commandId="de.vogella.microsoft.outlook.sendEmail"
+               label="Send Email"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

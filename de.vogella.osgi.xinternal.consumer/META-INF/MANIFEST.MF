@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Consumer
+Bundle-SymbolicName: de.vogella.osgi.xinternal.consumer
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: de.vogella.osgi.xinternal.provider;bundle-version="1.0.0"

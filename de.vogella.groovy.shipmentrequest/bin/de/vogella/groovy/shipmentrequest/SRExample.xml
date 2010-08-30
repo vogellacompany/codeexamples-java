@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<n0:ShipmentRequestRequest xmlns:n0="http://sap.com/xi/SAPGlobal20/Global" xmlns:prx="urn:sap.com:proxy:P6F:/1SAI/TASD90C96BB6EBDFA07A221:700:2008/06/25">
+  <MessageHeader>
+    <ID schemeID="BTD.006" schemeAgencyID="P6F_510"/>
+    <CreationDateTime>2008-11-14T04:23:37+01:00</CreationDateTime>
+    <SenderBusinessSystemID>P6F_001</SenderBusinessSystemID>
+  </MessageHeader>
+  <ShipmentRequest>
+    <ID schemeID="BTD.006" schemeAgencyID="P6F_510">10000000000000000000000000000098228</ID>
+    <Request>
+      <DeliveryTerms>
+        <Incoterms>
+          <ClassificationCode>EXW</ClassificationCode>
+        </Incoterms>
+      </DeliveryTerms>
+      <TotalQuantity>
+        <Quantity unitCode="MTQ">1.0</Quantity>
+      </TotalQuantity>
+      <TotalQuantity>
+        <Quantity unitCode="KGM">768.0</Quantity>
+      </TotalQuantity>
+      <TotalQuantity>
+        <Quantity unitCode="PF">1.0</Quantity>
+      </TotalQuantity>
+      <Party>
+        <Party>
+          <InternalID>PERSHP0017</InternalID>
+          <Address>
+            <OrganisationFormattedName>Chicago Bakeries Inc.</OrganisationFormattedName>
+            <PhysicalAddress>
+              <CountryCode>US</CountryCode>
+              <RegionCode>IL</RegionCode>
+              <StreetPostalCode>60605</StreetPostalCode>
+              <CityName>Chicago</CityName>
+              <StreetName>S Clark Street</StreetName>
+              <HouseID>1154</HouseID>
+            </PhysicalAddress>
+            <Communication>
+              <CorrespondenceLanguageCode>en</CorrespondenceLanguageCode>
+            </Communication>
+          </Address>
+        </Party>
+        <RoleCode>6</RoleCode>
+      </Party>
+      <Party>
+        <Party>
+          <InternalID>PERCNS0017</InternalID>
+          <Address>
+            <OrganisationFormattedName>Lebensmittelgroßhandlung Meyer</OrganisationFormattedName>
+            <PhysicalAddress>
+              <CountryCode>DE</CountryCode>
+              <StreetPostalCode>40235</StreetPostalCode>
+              <CityName>Düsseldorf</CityName>
+              <StreetName>Lichtstr.</StreetName>
+              <HouseID>69-71</HouseID>
+            </PhysicalAddress>
+            <Communication>
+              <CorrespondenceLanguageCode>en</CorrespondenceLanguageCode>
+            </Communication>
+          </Address>
+        </Party>
+        <RoleCode>5</RoleCode>
+      </Party>
+      <Party>
+        <Party>
+          <InternalID>PERSHP0017</InternalID>
+          <Address>
+            <OrganisationFormattedName>Chicago Bakeries Inc.</OrganisationFormattedName>
+            <PhysicalAddress>
+              <CountryCode>US</CountryCode>
+              <RegionCode>IL</RegionCode>
+              <StreetPostalCode>60605</StreetPostalCode>
+              <CityName>Chicago</CityName>
+              <StreetName>S Clark Street</StreetName>
+              <HouseID>1154</HouseID>
+            </PhysicalAddress>
+            <Communication>
+              <CorrespondenceLanguageCode>en</CorrespondenceLanguageCode>
+            </Communication>
+          </Address>
+        </Party>
+        <RoleCode>1</RoleCode>
+      </Party>
+      <Party>
+        <Party>
+          <InternalID>PERCNS0017</InternalID>
+          <Address>
+            <OrganisationFormattedName>Lebensmittelgroßhandlung Meyer</OrganisationFormattedName>
+            <PhysicalAddress>
+              <CountryCode>DE</CountryCode>
+              <StreetPostalCode>40235</StreetPostalCode>
+              <CityName>Düsseldorf</CityName>
+              <StreetName>Lichtstr.</StreetName>
+              <HouseID>69-71</HouseID>
+            </PhysicalAddress>
+            <Communication>
+              <CorrespondenceLanguageCode>en</CorrespondenceLanguageCode>
+            </Communication>
+          </Address>
+        </Party>
+        <RoleCode>105</RoleCode>
+      </Party>
+      <Location>
+        <Location>
+          <InternalID>LTL000051</InternalID>
+          <Address>
+            <PhysicalAddress>
+              <CountryCode>DE</CountryCode>
+              <StreetPostalCode>01462</StreetPostalCode>
+              <CityName>ALTFRANKEN</CityName>
+            </PhysicalAddress>
+          </Address>
+        </Location>
+        <RoleCode>2</RoleCode>
+        <Name languageCode="en">LTL000051</Name>
+        <DateTimePeriods>
+          <RequestedFulfillmentPeriod>
+            <StartDateTime timeZoneCode="CET">2008-11-14T22:00:00Z</StartDateTime>
+          </RequestedFulfillmentPeriod>
+          <PeriodRoleCode/>
+        </DateTimePeriods>
+      </Location>
+      <Location>
+        <Location>
+          <InternalID>LTL000053</InternalID>
+          <Address>
+            <PhysicalAddress>
+              <CountryCode>DE</CountryCode>
+              <StreetPostalCode>01462</StreetPostalCode>
+              <CityName>COSSEBAUDE</CityName>
+            </PhysicalAddress>
+          </Address>
+        </Location>
+        <RoleCode>1</RoleCode>
+        <Name languageCode="en">LTL000053</Name>
+        <DateTimePeriods>
+          <RequestedFulfillmentPeriod>
+            <EndDateTime timeZoneCode="CET">2008-11-14T22:00:00Z</EndDateTime>
+          </RequestedFulfillmentPeriod>
+          <PeriodRoleCode/>
+        </DateTimePeriods>
+      </Location>
+      <Item>
+        <ID>10</ID>
+        <Quantity>
+          <Quantity unitCode="KGM">768.0</Quantity>
+        </Quantity>
+        <Quantity>
+          <Quantity unitCode="MTQ">1.0</Quantity>
+        </Quantity>
+        <Quantity>
+          <Quantity unitCode="PF">1.0</Quantity>
+        </Quantity>
+      </Item>
+    </Request>
+  </ShipmentRequest>
+</n0:ShipmentRequestRequest>

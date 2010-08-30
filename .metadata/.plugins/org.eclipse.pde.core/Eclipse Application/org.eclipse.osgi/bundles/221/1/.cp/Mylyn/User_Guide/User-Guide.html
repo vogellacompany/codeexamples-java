@@ -1,0 +1,409 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn User Guide</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Mylyn User Guide</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left"></td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Task-Repositories.html" title="Task Repositories">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top"></td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Task Repositories</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Task_List">Task List</h1>
+		<p>Use the Task List to view and manage your tasks. If the task list view is not visible, you can open it by navigating to Window -&gt; Show View -&gt; Other... -&gt; Mylyn -&gt; Task List. The Task List contains both "Local Tasks" and shared "repository tasks" that are stored in a task repository such as Bugzilla or Jira. See how to create new tasks. Local tasks are typically contained in categories, which you can create by right-clicking on the task list and selecting new -&gt; category. Repository tasks are contained in special categories that represent queries.</p>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-Task-List-Categorized.png"/>
+		</p>
+		<p>At the top of the Task List, you will find the following buttons and features:</p>
+		<ul>
+			<li>
+				<b>New Task</b> - Create a new local or repository task.
+			</li>
+			<li>
+				<b>Synchronize</b> - Update repository tasks with changes from the server.
+			</li>
+			<li>
+				<b>Task Presentation</b> - Toggle between Scheduled and Categorized presentations.
+			</li>
+			<li>
+				<b>Focus on Workweek</b> - See only tasks scheduled for this week.
+			</li>
+			<li>
+				<b>Find</b> - search for a task by typing in words from the task summary
+			</li>
+			<li>
+				<b>Working set indicator</b> - Indicates the currently active working set. Use the black arrow on the left to change the working set.
+			</li>
+			<li>
+				<b>Current task indicator</b> - Indicates the currently active task. Use the black arrow on the left to re-activate a recently active task.
+			</li>
+		</ul>
+		<h2 id="Task_List_Presentation">Task List Presentation</h2>
+		<p>The task list supports several ways to present tasks. You can toggle between the following modes by using the "Task Presentation" button in the toolbar.</p>
+		<ul>
+			<li>
+				<b>Categorized</b> - View tasks grouped by their category
+			</li>
+			<li>
+				<b>Scheduled</b> - View tasks grouped by the "
+				<i>scheduled</i> date"
+			</li>
+		</ul>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-Task-List-Presentation-Select.png"/>
+		</p>
+		<p>In either presentation, you can toggle the "Focus on Workweek" button. In this mode, only the following tasks will be visible:</p>
+		<ul>
+			<li>Tasks scheduled for this week.</li>
+			<li>Overdue tasks.</li>
+			<li>Tasks with unread changes from your task repository.</li>
+		</ul>
+		<h2 id="Icon_Legend_and_Color_Coding">Icon Legend and Color Coding</h2>
+		<p>See the legend below to interpret the icons and color coding in the task list. You can view this legend by selecting "Show UI Legend" from the menu that appears when you click the white down arrow next to the minimize button in the top right corner of the Task List view. </p>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-UI-Legend.png"/>
+		</p>
+		<h2 id="Creating_new_Tasks">Creating new Tasks</h2>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-New-Task.png"/>
+		</p>
+		<p>You can create new tasks by clicking on the "New Task" button in the Task List's toolbar. This will open the "New Task" dialog and prompt you to select a repository. There are two main types of tasks, local tasks and repository tasks.</p>
+		<h3 id="Local_Tasks">Local Tasks</h3>
+		<p>Use local tasks if you do not have a shared task repository or if you would like to create a private, personal task that is local to your workspace. To create a local task, select 
+			<b>Local Task</b> and "Finish" from the New Task dialog.
+		</p>
+		<p>You can then provide the following details about the task.</p>
+		<ul>
+			<li>'''Task Description - Your task is called "New Task" by default. Replace this with a brief task description.</li>
+			<li>
+				<b>Priority</b> - Set the priority of your task. This will affect the task's icon and order in the task list. 
+			</li>
+			<li>
+				<b>Status</b> - Set your task to "complete" or "incomplete". In your task list, completed tasks have a strikethrough font and will appear lower in the list.
+			</li>
+			<li>
+				<b>URL</b> - You can associate a URL with this task. 
+				<ul>
+					<li>"Retrieve Task Description from URL" button - Set the task description to the title of the associated URL (page)</li>
+					<li>"Open with Web Browser" button - Open the URL in the integrated web browser</li>
+				</ul>
+			</li>
+			<li>
+				<b>Scheduled For</b> - Set the date when you will work on this task. Tasks scheduled for today or a date in the past will appear in blue in your task list. Tasks scheduled for future days will appear in black. If your task list is in focused mode, only tasks for the current week will be visible (unless they have unread changes).
+			</li>
+			<li>
+				<b>Due</b> - Set the date when your task must be completed. Overdue tasks and tasks due today will appear in red in your task list.
+			</li>
+			<li>
+				<b>Estimated Hours</b> - Estimate the number of hours it will take to complete this task.
+			</li>
+			<li>
+				<b>Active</b> - Displays the total time that you have worked on this task. Time is only recorded when this task is active and you are actively interacting with the system.
+			</li>
+			<li>
+				<b>Notes</b> - Record your personal notes about this task.
+			</li>
+		</ul>
+		<p>
+			<img border="0" src="images/Feature-Guide-3.0-Local-Task.png"/>
+		</p>
+		<h3 id="Repository_Tasks">Repository Tasks</h3>
+		<p>Create a new repository task when you would like to share information about the task with your team using a task repository such as Bugzilla or JIRA. To create a new repository task, click on the "New Task" button in the Task List's toolbar. You can then select the repository where you would like to create a task. If you don't see your team's task repository, you will need to configure it in the task repositories view. Once you have selected a repository, click "Next". If you are connecting to a Bugzilla repository, select a "Product" as a top-level category for your task and click "Finish".</p>
+		<p>A new task editor will appear. If you are using Bugzilla, you can enter the following information:</p>
+		<p>Required</p>
+		<ul>
+			<li>
+				<b>Description</b> - Enter a brief task description in the text box at the top (this box does not have a label).
+			</li>
+			<li>
+				<b>Component</b> - Specify a "Component" to further categorize this task within the previously selected "Product".
+			</li>
+			<li>
+				<b>Description</b> - Describe the task in detail.
+			</li>
+		</ul>
+		<p>Optional</p>
+		<ul>
+			<li>You can specify additional information about your tasks in the "Attributes" section.</li>
+			<li>
+				<b>Personal Planning</b> - You can enter information in this section that will be local to your workspace and 
+				<b>not</b> available on your team's task repository. See "Local Tasks" for more information about the personal planning fields.
+			</li>
+			<li>
+				<b>Assigned to</b> - Specify who should work on the task. Type the first several characters of the person's email address, and then press ctrl+space to select the address from a list. A task can be assigned to only one person at a time.
+			</li>
+			<li>
+				<b>Add CC</b> - Add the addresses of people who should be notified of changes to this task. You can add multiple addresses, separated by a comma, e.g. (mik.kersten@tasktop.com, steffen.pingel@tasktop.com).
+			</li>
+		</ul>
+		<p>When finished, click "Submit" to add your new task to your team's shared task repository.</p>
+		<h2 id="Creating_new_Queries">Creating new Queries</h2>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-New-Query-Combined.png"/>
+		</p>
+		<p>Once you have configured your team's task repository, you can use Queries to add tasks to your task list.</p>
+		<ul>
+			<li>If the Task List is not visible, navigate to 
+				<i>Window -&gt; Show View -&gt; Other -&gt; Mylyn -&gt; Task List</i>
+			</li>
+			<li>Right-click on the Task List and select "New -&gt; Query..."</li>
+			<li>Select the repository whose tasks you would like to download and click "Next".</li>
+			<li>If you are prompted to select a query type, select "Create query using form" and click "Next".</li>
+			<li>Complete the form to define which tasks will be downloaded as part of this query, and then click "Finish". You can provide values for only as many parameters as necessary to filter the query results.</li>
+		</ul>
+		<p>If you are using the Bugzilla connector, you can specify the following parameters by default. The parameters for most other connectors will be similar.</p>
+		<ul>
+			<li>
+				<b>Query Title</b> - Label that appears in your task list.
+			</li>
+			<li>
+				<b>Summary</b> - Specify words that must appear in the summary of tasks matched by this query.
+			</li>
+			<li>
+				<b>Comment</b> - Words that must appear in the comments of matching tasks.
+			</li>
+			<li>
+				<b>Email</b> - Specify all or part of an email address. This address is used together with the following options:
+				<ul>
+					<li>
+						<b>Owner</b> - The specified email must match the person who the task is assigned to
+					</li>
+					<li>
+						<b>Reporter</b> - The specified email must match the person who created the task
+					</li>
+					<li>
+						<b>CC</b> - The person with the specified email address must be CC'd on the task
+					</li>
+					<li>
+						<b>Commenter</b> - The person with the specified email address must have commented on the task
+					</li>
+					<li>You can choose from the following options to specify how the email address will be matched:
+						<ul>
+							<li>
+								<b>substring</b> - Only a part of the specified address must match
+							</li>
+							<li>
+								<b>exact</b> - The specified email address must match exactly
+							</li>
+							<li>
+								<b>regexp</b> - The email address must match the specified regular expression
+							</li>
+							<li>
+								<b>notregexp</b> - The email address must NOT match the specified regular expression
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<b>Email 2</b> - You can use this parameter to specify another email address to further restrict the results
+			</li>
+			<li>
+				<b>Keywords</b> - Click the "Select..." button to specify a keyword that must be associated with matching tasks
+			</li>
+			<li>
+				<b>Product, Component, Version, ...</b> - Optionally select parameters to restrict the results to a particular product, version, etc.
+			</li>
+			<li>
+				<b>Update Attributes from Repository</b> - Click this to refresh the available parameters if the project structure on the task respository has changed recently.
+			</li>
+			<li>
+				<b>Changed in:</b> - Only tasks modified within the specified number of days will appear in the query results
+			</li>
+		</ul>
+		<h2 id="Scheduling">Scheduling</h2>
+		<p>Two kinds of dates for scheduling are provided.</p>
+		<p>
+			<b>Scheduled Date</b>
+		</p>
+		<ul>
+			<li>A soft date used for personal scheduling that can be easily deferred as priorities change. The scheduled date is the date you plan to start working on the task.</li>
+			<li>When a task reaches its scheduled date it will turn blue, indicating that the task should be activated and worked on today.</li>
+			<li>Scheduled dates are private to your local workspace</li>
+		</ul>
+		<p>
+			<b>Due Date</b>
+		</p>
+		<ul>
+			<li>A hard date when the task must be completed. This is often related to external constraints such as deadlines.</li>
+			<li>If you are using a shared task repository, due dates become an attribute of the shared task and will be visible to other team members.</li>
+			<li>A task with a due date has a small clock overlay that is blue before the due date and red after.</li>
+		</ul>
+		<h2 id="Synchronization">Synchronization</h2>
+		<p>Repository tasks and queries are synchronized to reflect the latest changes on the server. 
+			Tasks are synchronized the following ways:</p>
+		<ul>
+			<li>
+				<b>Automatic Synchronization.</b> By default, tasks will be synchronized with the repository every 20 minutes.  Automatic synchronization can be disabled via the 
+				<i>Synchronize Automatically</i> option in the view menu (e.g. when working with intermittently available connectivity).  The synchronization interval can be changed via 
+				<i>Preferences -&gt; Mylyn -&gt; Task List</i>.  
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<b>On Task Open.</b> Tasks are synchronized automatically in the background when a task editor is opened.
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<b>Manually.</b> Individual tasks and queries can be synchronized manually by right-clicking on them in the Task List and selecting "Synchronize", or via the toolbar button. Clicking the toolbar button will synchronize all queries in your task list.
+			</li>
+		</ul>
+		<p>
+			<br/>
+
+			<b>Disconnected Mode</b>
+			<br/>
+			A task repository can be put into Disconnected mode via the right-click menu in the 
+			<i>Task Repositories</i> view.  This can be useful if the task repository is not currently in use (e.g. you are no longer engaged with the project, or the repository is no longer available). The offline support will ensure that you can still access tasks that you have worked with via their offline copies, and the Disconnected mode will ensure that synchronization warnings do not appear. Note that it is not necessary to turn off synchronization or work in Disconnected Mode when working offline.
+		</p>
+		<h2 id="Incoming_Changes">Incoming Changes</h2>
+		<p>A blue arrow to the left of a task indicates that the task has changed in the shared repository. Double-click the task to view it in the task editor. Changes to the task will be highlighted in blue.</p>
+		<p>To quickly review the differences since the task was last read, hover over the task in the Task List to view a summary in a tooltip. You can also press F4 to display a tooltip. You may also wish to view the task list in "Focus on Workweek" mode, which will filter out tasks without incoming changes that are not scheduled or due this week. You can toggle "Focus on Workweek" using a button in the Task List's toolbar.</p>
+		<h2 id="Reviewing_Tasks">Reviewing Tasks</h2>
+		<p>The task list has been carefully designed to support quickly reviewing tasks. Task reviewing is best done by configuring a query to show the tasks that you want to review. Once the tasks are displayed in the Task List they can be reviewed one at a time by scrolling through them using the keyboard up/down arrows. The task tooltip should provide enough detail to do a review and will display information relevant to the currently selected task.  </p>
+		<p>To edit the selected task press the enter key, use Ctrl+Enter to open the task in the background. To quickly jump to the next unread task hold down the Alt-key when pressing up or down. To mark a task as read while navigating use Alt+shift+up/down. When reviewing tasks in this way, it is best to avoid mouse-based and gesture-based scrolling.</p>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-Task-List-Tooltip.png"/>
+		</p>
+		<h2 id="Task_Progress_Indicators">Task Progress Indicators</h2>
+		<p>
+			<b>Weekly progress</b>
+			<br/>
+			When in 
+			<i>Focus on Workweek</i> mode (right-most toolbar button), the Task List will show a progress bar that indicates progress on the tasks scheduled for the current week. Each task that is scheduled for the week but not yet completed adds to the bar. A task completed by you adds to the green progress in the bar. Deferring a task to a future week will also add to the apparent progress because it will remove the task from the current week. Mousing over the bar will indicate details about your progress, such as the number of tasks and hours completed. To avoid the need for manual estimation by default every task is estimated for 1 hour, but if you have longer or shorter running tasks that week you can adjust the estimate in the task editor's 
+			<i>Planning</i> page to ensure that the progress bar is accurate.
+		</p>
+		<p>Note that when in 
+			<i>Focus on Workweek</i> mode the 
+			<i>Task List</i> will show each of the tasks scheduled for this week.  However, overdue tasks and those with incoming changes will also show, making the number of tasks visible not be a reliable indicator of progress on the tasks planned for the week.
+		</p>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-Weekly-Progress.png"/>
+		</p>
+		<p>
+			<br/>
+
+			<b>Category Progress</b>
+			<br/>
+			You can hover over categories in the task list to display a tooltip that displays a summary of complete and incomplete tasks.
+		</p>
+		<p>
+			<img border="0" src="images/Feature-Reference-3.0-Category-Progress.png"/>
+		</p>
+		<h2 id="Task_List_Settings_and_Operations">Task List Settings and Operations</h2>
+		<p>Click the small white arrow in the top left of the task list to access the following settings:</p>
+		<ul>
+			<li>
+				<b>Go Up to Root</b> - Return to the normal presentation after previously selecting "Go Into" to see only the tasks in a particular category.
+			</li>
+			<li>
+				<b>Sort</b> - Open a dialog to set the sort order for the task list. This option is only availabe when the task list is not in "Focus on Workweek" mode.
+			</li>
+			<li>
+				<b>Filter priority lower than</b> - Hide tasks with a priority less than the priority you select. This option is only availabe when the task list is not in "Focus on Workweek" mode. 
+			</li>
+			<li>
+				<b>Filter completed tasks</b> - Hide local and repository tasks that are in a completed state.
+			</li>
+			<li>
+				<b>Search Repository</b> - Opens a dialog to search for repository tasks. Search results will appear in a separate search results view.
+			</li>
+			<li>
+				<b>Restore Tasks from History</b> - Opens a dialog for restoring lost tasks.
+			</li>
+			<li>
+				<b>Synchronize Changed</b> - Updates the task list with any changes on the task repository.
+			</li>
+			<li>
+				<b>Synchronize Automatically</b> - When checked, the task list will update from the task repository on an interval specified in Window -&gt; Preferences -&gt; Tasks -&gt; Synchronization
+			</li>
+			<li>
+				<b>Show UI Legend</b> - Displays a legend explaining icons and color-coding.
+			</li>
+			<li>
+				<b>Focus on Workweek</b> - Displays only tasks that are scheduled for this week, overdue, or have unread changes.
+			</li>
+			<li>
+				<b>Link with Editor</b> - Automatically selects the task corresponding to the active task editor.
+			</li>
+			<li>
+				<b>Preferences</b> - Access additional Task List preferences.
+			</li>
+		</ul>
+		<p>
+			<br/>
+			Right-clicking in the task list provides access to the following operations
+		</p>
+		<ul>
+			<li>
+				<b>New...</b> - Create new categories, queries, and tasks.
+			</li>
+			<li>
+				<b>Open with Browser</b> - Open the task in a web browser tab rather than the rich editor.
+			</li>
+			<li>
+				<b>Schedule for</b> - Set the soft date when you intend to work on the task.
+			</li>
+			<li>
+				<b>Mark as</b> - Mark a task as read or unread as you would an email message.
+			</li>
+			<li>
+				<b>Copy Details</b> - Places the task summary and html link in the clipboard so you can paste it into an email, document, etc.
+			</li>
+			<li>
+				<b>Delete</b> - Deletes local tasks. For repository tasks, the all downloaded data and local task information will be cleared but the task will re-appear if it still matches a query.
+			</li>
+			<li>
+				<b>Rename</b> - Rename a task.
+			</li>
+			<li>
+				<b>Go into</b> (queries only) - Show only the tasks in the selected category.
+			</li>
+			<li>
+				<b>Import and Export</b> - Access functionality for importing and exporting task data.
+			</li>
+			<li>
+				<b>Repository</b> (queries only) - Update repository settings
+			</li>
+			<li>
+				<b>Synchronize</b> - Update the selected tasks or queries from the shared task repository
+			</li>
+			<li>
+				<b>Properties</b> - Edit the settings for a repository query
+			</li>
+		</ul><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left"></td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Task-Repositories.html" title="Task Repositories">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top"></td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Task Repositories</td>
+			</tr>
+		</table>
+	</body>
+</html>

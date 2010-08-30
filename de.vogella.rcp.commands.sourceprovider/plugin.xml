@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.commands.sourceprovider.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.rcp.commands.sourceprovider.Perspective"
+            id="de.vogella.rcp.commands.sourceprovider.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.services">
+      <sourceProvider
+            provider="de.vogella.rcp.commands.sourceprovider.CommandState">
+         <variable
+               name="de.vogella.rcp.commands.sourceprovider.active"
+               priorityLevel="workbench">
+         </variable>
+      </sourceProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="de.vogella.rcp.commands.sourceprovider.command1"
+            name="Command1">
+      </command>
+      <command
+            defaultHandler="de.vogella.rcp.commands.sourceprovider.handler.Command2"
+            id="de.vogella.rcp.commands.sourceprovider.command2"
+            name="Command2">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <command
+               commandId="de.vogella.rcp.commands.sourceprovider.command1"
+               label="Command1"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="de.vogella.rcp.commands.sourceprovider.active">
+                  <equals
+                        value="ENABLED">
+                  </equals>
+               </with>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="de.vogella.rcp.commands.sourceprovider.command2"
+               label="Command2"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

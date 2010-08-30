@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.vogella.emf.webpage.model/src"
+    modelPluginID="de.vogella.emf.webpage.model" modelName="Webpage" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>webpage.ecore</foreignModel>
+  <genPackages prefix="Webpage" basePackage="de.vogella.emf.webpage.model" disposableProviderFactory="true"
+      ecorePackage="webpage.ecore#/">
+    <genDataTypes ecoreDataType="webpage.ecore#//calendar"/>
+    <genClasses ecoreClass="webpage.ecore#//Web">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webpage.ecore#//Web/keywords"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webpage.ecore#//Web/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webpage.ecore#//Web/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webpage.ecore#//Web/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webpage.ecore#//Web/pages"/>
+    </genClasses>
+    <genClasses ecoreClass="webpage.ecore#//Webpage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webpage.ecore#//Webpage/keywords"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webpage.ecore#//Webpage/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webpage.ecore#//Webpage/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webpage.ecore#//Webpage/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webpage.ecore#//Webpage/categories"/>
+    </genClasses>
+    <genClasses ecoreClass="webpage.ecore#//Category">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webpage.ecore#//Category/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webpage.ecore#//Category/articles"/>
+    </genClasses>
+    <genClasses ecoreClass="webpage.ecore#//Article">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webpage.ecore#//Article/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webpage.ecore#//Article/created"/>
+      <genOperations ecoreOperation="webpage.ecore#//Article/toString"/>
+      <genOperations ecoreOperation="webpage.ecore#//Article/test">
+        <genParameters ecoreParameter="webpage.ecore#//Article/test/input"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

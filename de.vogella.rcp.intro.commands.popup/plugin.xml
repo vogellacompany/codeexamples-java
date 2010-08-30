@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.intro.commands.popup.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="de.vogella.rcp.intro.commands.popup.Perspective"
+            id="de.vogella.rcp.intro.commands.popup.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="de.vogella.rcp.intro.commands.popup.View"
+            id="de.vogella.rcp.intro.commands.popup.view">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="de.vogella.rcp.intro.commands.popup.showSelected"
+            name="Show">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="de.vogella.rcp.intro.commands.popup.handler.ShowSelected"
+            commandId="de.vogella.rcp.intro.commands.popup.showSelected">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:de.vogella.rcp.intro.commands.popup.view">
+         <command
+               commandId="de.vogella.rcp.intro.commands.popup.showSelected"
+               label="One Item Selected"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

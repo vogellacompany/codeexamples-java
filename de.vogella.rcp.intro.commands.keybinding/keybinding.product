@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.4"?>
+
+<product name="Keybinding" id="de.vogella.rcp.intro.commands.keybinding.product" application="de.vogella.rcp.intro.commands.keybinding.application" version="1.0" useFeatures="false">
+
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+
+   <vm>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+</product>

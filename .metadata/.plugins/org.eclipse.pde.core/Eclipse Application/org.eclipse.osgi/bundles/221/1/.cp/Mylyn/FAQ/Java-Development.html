@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Mylyn FAQ - Java Development</title>
+		<link type="text/css" rel="stylesheet" href="../../book.css"/>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">Java Development</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Context-and-Timing-data.html" title="Context and Timing data">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Team-Support.html" title="Team Support">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Context and Timing data</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Team Support</td>
+			</tr>
+		</table><hr/>
+		<h1 id="Java_Development">Java Development</h1>
+		<h2 id="Content_assist_troubleshooting">Content assist troubleshooting</h2>
+		<p>Mylyn uses custom Content Assist processors in order to rank and separate the elements in the current task context.  To see proposals ranked according to interest you must have only the 
+			<i>Type Proposals (Mylyn)</i> kinds checkbox enabled in the list below, otherwise you will see duplicates.  
+			<b>If you do not see any proposals, check this list</b> to ensure that either the Mylyn or the plain proposals are enabled.  
+			<b>To do this automatically</b>, run 
+			<i>New → Mylyn → Recommended Preferences</i>. Or you can select them manually as in the preference page below.  
+		</p>
+		<p>
+			<img border="0" src="images/mylar-content-assist-prefs.gif"/>
+		</p>
+		<p>
+			<b>Why do I see duplicate proposals?</b>
+		</p>
+		<p>Ensure that you have only the 
+			<i>(Mylyn)</i> proposals kinds enabled in 
+			<i>Window → Preferences → Java → Editor → Content Assist → Advanced</i>, otherwise you will see duplicates.
+		</p>
+		<p>If you use proposals via Ctrl+Shift+Space instead of the typical Ctrl+Space you will see duplicates.  Vote for JDT/Text 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=147781" target="mylyn_external">bug 147781</a> if you use this mechanism.  Also see: 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=129080" target="mylyn_external">bug 129080</a>
+		</p>
+		<p>
+			<b>Why do I get an error message when using content assist?</b>
+		</p>
+		<p>If after invoking Content Assist you see an error message dialog that states:</p>
+		<pre>The extension took too long to return from the 'computeCompletionProposals()' operation
+</pre>
+		<p>this is most likely due to something interrupting the proposal operation (e.g. garbage collection).  Ignore it if it does not recur, increase Eclipse’s memory if it does (e.g via <code>-Xmx384M</code> command line argument). See 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=141457" target="mylyn_external">bug 141457</a> for more details.  
+		</p>
+		<p>Note that Mylyn should only add a trivial amount of overhead to content assist computation, however, the standard content assist mechanism will not report timeouts of this sort (i.e. taking longer than 5s to compute proposals).  If the system that you are working on is so large that increasing memeory does not reduce the timings to avoid the message, you could also consider disabling the Mylyn-specific content assist, as described above, but if doing so please comment on 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=141457" target="mylyn_external">bug 141457</a>.
+		</p>
+		<p>
+			<img border="0" src="images/mylyn-content-assist-timeout.gif"/>
+		</p>
+		<h2 id="Why_do_interesting_elements_not_show_in_the_Project_Explorer.3F">Why do interesting elements not show in the Project Explorer?</h2>
+		<p>The 
+			<i>Package Presentation → Hierarchical</i> mode is not supported on the 
+			<i>Project Explorer</i> view in Eclipse 3.2 through 3.3M3 and possibly later versions 
+			<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=161362" target="mylyn_external">bug 161362</a>.  Use the view menu to set 
+			<i>Package Presentation → Flat</i> as a work-around.
+		</p>
+		<h2 id="How_do_I_stop_declarations_from_showing_in_the_Package_Explorer.3F">How do I stop declarations from showing in the Package Explorer?</h2>
+		<p>If you don’t like Mylyn’s constant showing of Java members in the 
+			<i>Package Explorer</i>, select the drop-down menu, then 
+			<i>Filters…</i> and enable the 
+			<i>Mylyn Java Declarations Filter</i>.  It will then stick in the menu in case you want to toggle between modes.  
+		</p>
+		<p>Note that this will hide interest information about members that aren’t in your current file (e.g. showing you which methods are landmarks).  This means that you will need to commit those methods to memeory, and the next time that you start working on the task you will have the burden of figuring out what they are.  On smaller screen resolutions this mode can be useful, but also consider turning the Package Explorer into a fast view.</p>
+		<p>
+			<img border="0" src="images/mylar-java-filtering-declarations.gif"/>
+		</p>
+		<h2 id="Why_does_nothing_show_up_in_the_Active_Search_or_Active_Hierarchy.3F">Why does nothing show up in the Active Search or Active Hierarchy?</h2>
+		<p>As you work, elements become Landmarks (bold decoration), and these elements populate the 
+			<i>Active Search</i> and 
+			<i>Active Hierarchy</i> views.  To force an element to populate the views manually, make it a Landmark by <code>right+clicking</code> or hitting <code>Ctrl+Alt+Shift+UpArrow</code>.
+		</p>
+		<h2 id="Known_limitations_4">Known limitations</h2>
+		<ul>
+			<li>
+				<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=106678" target="mylyn_external">Bug 106678</a>: The Project Explorer’s Hierarchical Java package presentation layout is not supported on Eclipse 3.3Mx, and interesting elements will be hidden if enabled.  Work-around is to use the default Flat package presentation.
+			</li>
+		</ul><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="Context-and-Timing-data.html" title="Context and Timing data">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="FAQ.html" title="Mylyn FAQ">
+						<img alt="Mylyn FAQ" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Team-Support.html" title="Team Support">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">Context and Timing data</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Team Support</td>
+			</tr>
+		</table>
+	</body>
+</html>

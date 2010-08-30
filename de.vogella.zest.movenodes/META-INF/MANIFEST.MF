@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Movenodes Plug-in
+Bundle-SymbolicName: de.vogella.zest.movenodes; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: de.vogella.zest.movenodes.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.zest.core;bundle-version="1.0.0",
+ org.eclipse.zest.layouts;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

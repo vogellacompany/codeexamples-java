@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Quoteconsumer Plug-in
+Bundle-SymbolicName: de.vogella.osgi.quoteconsumer
+Bundle-Version: 1.0.0
+Bundle-Activator: de.vogella.osgi.quoteconsumer.Activator
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: de.vogella.osgi.quote,
+ org.osgi.framework;version="1.3.0",
+ org.osgi.util.tracker;version="1.4.0"
