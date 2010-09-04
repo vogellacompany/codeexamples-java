@@ -29,7 +29,7 @@ public class MyArrayAdapter extends ArrayAdapter<String> {
 		// Change the icon for Windows and iPhone
 		if (names[position].startsWith("Windows7") ||  names[position].startsWith("iPhone") ) {
 			ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
-			imageView.setImageResource(R.drawable.alt_window_16);
+			imageView.setImageResource(R.drawable.no);
 		} 
 		
 		return rowView;
