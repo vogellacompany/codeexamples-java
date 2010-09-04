@@ -17,7 +17,7 @@ public class MyList extends ListActivity {
 		// Create an ArrayAdapter, that will actually make the Strings above
 		// appear in the ListView
 		this.setListAdapter(new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_checked, names));
+				R.layout.rowlayout, R.id.label, names));
 	}
 
 	@Override
