@@ -1,7 +1,6 @@
 package de.vogella.android.todos;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -31,22 +30,10 @@ public class TodoEdit extends Activity {
 		if (extras != null) {
 			mRowId = extras.getLong(TodoDbAdapter.KEY_ROWID);
 		}
-		System.out.println("So far so good");
 		populateFields();
 		confirmButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				Bundle bundle = new Bundle();
-				bundle.putString(TodoDbAdapter.KEY_SUMMARY, mTitleText
-						.getText().toString());
-				bundle.putString(TodoDbAdapter.KEY_DESCRIPTION, mBodyText
-						.getText().toString());
-				if (mRowId != null) {
-					bundle.putLong(TodoDbAdapter.KEY_ROWID, mRowId);
-				}
-
-				Intent mIntent = new Intent();
-				mIntent.putExtras(bundle);
-				setResult(RESULT_OK, mIntent);
+				setResult(RESULT_OK);
 				finish();
 			}
 
