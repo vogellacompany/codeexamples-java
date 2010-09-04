@@ -12,7 +12,9 @@ public class MyList extends ListActivity {
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		// Create an array of Strings, that will be put to our ListActivity
-		String[] names = new String[] { "Linux", "Windows7", "Eclipse", "Suse", "Ubuntu", "Solaris", "Android", "iPhone"};
+		String[] names = new String[] { "Linux", "Windows7", "Eclipse", "Suse",
+				"Ubuntu", "Solaris", "Android", "iPhone", "Linux", "Windows7",
+				"Eclipse", "Suse", "Ubuntu", "Solaris", "Android", "iPhone" };
 		this.setListAdapter(new MyArrayAdapter(this, names));
 	}
 
@@ -26,6 +28,5 @@ public class MyList extends ListActivity {
 				.show();
 
 	}
-	
-	
+
 }
