@@ -16,7 +16,7 @@ import android.widget.SimpleCursorAdapter;
 import de.vogella.android.todos.database.TodoDbAdapter;
 
 public class Todos extends ListActivity {
-	private TodoDbAdapter mDbHelper;
+	private TodoDbAdapter dbHelper;
 	private static final int ACTIVITY_CREATE = 0;
 	private static final int ACTIVITY_EDIT = 1;
 	private static final int DELETE_ID = Menu.FIRST + 1;
@@ -27,9 +27,10 @@ public class Todos extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.todo_list);
-		mDbHelper = new TodoDbAdapter(this);
-		mDbHelper.open();
+		dbHelper = new TodoDbAdapter(this);
+		dbHelper.open();
 		fillData();
+		System.out.println("Hallo");
 		registerForContextMenu(getListView());
 	}
 
@@ -68,7 +69,7 @@ public class Todos extends ListActivity {
 		case DELETE_ID:
 			AdapterContextMenuInfo info = (AdapterContextMenuInfo) item
 					.getMenuInfo();
-			mDbHelper.deleteTodo(info.id);
+			dbHelper.deleteTodo(info.id);
 			fillData();
 			return true;
 		}
@@ -84,15 +85,10 @@ public class Todos extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
-		Cursor c = cursor;
-		c.moveToPosition(position);
 		Intent i = new Intent(this, TodoEdit.class);
 		i.putExtra(TodoDbAdapter.KEY_ROWID, id);
-		i.putExtra(TodoDbAdapter.KEY_SUMMARY,
-				c.getString(c.getColumnIndexOrThrow(TodoDbAdapter.KEY_SUMMARY)));
-		i.putExtra(TodoDbAdapter.KEY_DESCRIPTION, c.getString(c
-				.getColumnIndexOrThrow(TodoDbAdapter.KEY_DESCRIPTION)));
 		// Activity returns an result if called with startActivityForResult
+		
 		startActivityForResult(i, ACTIVITY_EDIT);
 	}
 
@@ -104,31 +100,12 @@ public class Todos extends ListActivity {
 	protected void onActivityResult(int requestCode, int resultCode,
 			Intent intent) {
 		super.onActivityResult(requestCode, resultCode, intent);
-		Bundle extras = intent.getExtras();
-
-		switch (requestCode) {
-		case ACTIVITY_CREATE:
-			String title = extras.getString(TodoDbAdapter.KEY_SUMMARY);
-			String body = extras.getString(TodoDbAdapter.KEY_DESCRIPTION);
-			mDbHelper.createTodo(title, body);
-			fillData();
-			break;
-		case ACTIVITY_EDIT:
-			Long mRowId = extras.getLong(TodoDbAdapter.KEY_ROWID);
-			if (mRowId != null) {
-				String editTitle = extras.getString(TodoDbAdapter.KEY_SUMMARY);
-				String editBody = extras
-						.getString(TodoDbAdapter.KEY_DESCRIPTION);
-				mDbHelper.updateTodo(mRowId, editTitle, editBody);
-			}
-			fillData();
-			break;
-		}
+		fillData();
 
 	}
 
 	private void fillData() {
-		cursor = mDbHelper.fetchAllTodos();
+		cursor = dbHelper.fetchAllTodos();
 		startManagingCursor(cursor);
 
 		String[] from = new String[] { TodoDbAdapter.KEY_SUMMARY };
