@@ -20,8 +20,14 @@ public class MyArrayAdapter extends ArrayAdapter<String> {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		LayoutInflater inflater = context.getLayoutInflater();
-		View rowView = inflater.inflate(R.layout.rowlayout, null, true);
+		// Recycle existing view if passed as parameter
+		// This will save memory and time on Android
+		// This only works if the base layout for all classes are the same
+		View rowView =  convertView;
+		if (rowView ==null){
+			LayoutInflater inflater = context.getLayoutInflater();
+			rowView = inflater.inflate(R.layout.rowlayout, null, true);
+		}
 
 		TextView label = (TextView) rowView.findViewById(R.id.label);
 		label.setText(names[position]);
