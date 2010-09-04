@@ -13,8 +13,6 @@ public class MyList extends ListActivity {
 		super.onCreate(icicle);
 		// Create an array of Strings, that will be put to our ListActivity
 		String[] names = new String[] { "Linux", "Windows7", "Eclipse", "Suse", "Ubuntu", "Solaris", "Android", "iPhone"};
-		// Create an ArrayAdapter, that will actually make the Strings above
-		// appear in the ListView
 		this.setListAdapter(new MyArrayAdapter(this, names));
 	}
 
