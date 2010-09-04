@@ -15,15 +15,15 @@ public class TodoDbAdapter  {
     public static final String KEY_DESCRIPTION = "description";
     private static final String DATABASE_TABLE = "todo";
 	private Context context;
-	private DatabaseHelper dbHelper;
 	private SQLiteDatabase database;
+	private DatabaseHelper dbHelper;
     
     public TodoDbAdapter(Context context) {
         this.context = context;
     }
     
     public TodoDbAdapter open() throws SQLException {
-        dbHelper= new DatabaseHelper(context);
+    	dbHelper = new DatabaseHelper(context);
         database =  dbHelper.getWritableDatabase();
         return this;
     }
@@ -57,7 +57,6 @@ public class TodoDbAdapter  {
      * @return true if deleted, false otherwise
      */
     public boolean deleteTodo(long rowId) {
-
         return database.delete(DATABASE_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
     }
 
@@ -69,7 +68,6 @@ public class TodoDbAdapter  {
      * @return Cursor over all notes
      */
     public Cursor fetchAllTodos() {
-
         return database.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_SUMMARY,
                 KEY_DESCRIPTION}, null, null, null, null, null);
     }
@@ -82,9 +80,7 @@ public class TodoDbAdapter  {
      * @throws SQLException if note could not be found/retrieved
      */
     public Cursor fetchTodo(long rowId) throws SQLException {
-
         Cursor mCursor =
-
                 database.query(true, DATABASE_TABLE, new String[] {KEY_ROWID,
                         KEY_SUMMARY, KEY_DESCRIPTION}, KEY_ROWID + "=" + rowId, null,
                         null, null, null, null);

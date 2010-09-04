@@ -22,16 +22,18 @@ public class MyArrayAdapter extends ArrayAdapter<String> {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = context.getLayoutInflater();
 		View rowView = inflater.inflate(R.layout.rowlayout, null, true);
-		
+
 		TextView label = (TextView) rowView.findViewById(R.id.label);
 		label.setText(names[position]);
 		System.out.println(names[position]);
 		// Change the icon for Windows and iPhone
-		if (names[position].startsWith("Windows7") ||  names[position].startsWith("iPhone") ) {
+		String s = names[position];
+		if (s.startsWith("Windows7") || s.startsWith("iPhone")
+				|| s.startsWith("Solaris")) {
 			ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
 			imageView.setImageResource(R.drawable.no);
-		} 
-		
+		}
+
 		return rowView;
 	}
 

@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView android:id="@+id/text1"
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="wrap_content" android:layout_height="wrap_content" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content" android:layout_height="wrap_content">
+	<ImageView android:id="@+id/icon" android:src="@drawable/reminder"
+		android:layout_marginLeft="4px" android:layout_marginRight="8px"
+		android:layout_height="40px" android:layout_marginTop="8px"
+		android:layout_width="30px">
+	</ImageView>
+	<TextView android:text="@+id/TextView01" android:layout_height="wrap_content" android:id="@+id/label"
+		android:textSize="40px" android:layout_marginTop="6px" android:layout_width="fill_parent" android:textColor="@color/black"></TextView>
+</LinearLayout>
