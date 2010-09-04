@@ -4,13 +4,20 @@
 	android:layout_height="fill_parent">
 
 
+	<Spinner android:id="@+id/category" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:entries="@array/priorities"></Spinner>
 	<LinearLayout android:id="@+id/LinearLayout01"
 		android:layout_height="wrap_content" android:layout_width="fill_parent">
-		<EditText android:layout_height="wrap_content" android:id="@+id/todo_edit_summary" android:layout_weight="1" android:layout_width="wrap_content" android:hint="Summary"></EditText>
+		<EditText android:layout_height="wrap_content" android:id="@+id/todo_edit_summary"
+			android:layout_weight="1" android:layout_width="wrap_content"
+			android:hint="Summary"></EditText>
+
 	</LinearLayout>
 
-	
-	<EditText android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1" android:id="@+id/todo_edit_description" android:hint="Description"></EditText>
+
+	<EditText android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:layout_weight="1"
+		android:id="@+id/todo_edit_description" android:hint="Description"></EditText>
 	<Button android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:id="@+id/todo_edit_button"
 		android:text="@string/todo_edit_confirm"></Button>

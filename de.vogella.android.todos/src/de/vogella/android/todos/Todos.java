@@ -30,7 +30,6 @@ public class Todos extends ListActivity {
 		dbHelper = new TodoDbAdapter(this);
 		dbHelper.open();
 		fillData();
-		System.out.println("Hallo");
 		registerForContextMenu(getListView());
 	}
 

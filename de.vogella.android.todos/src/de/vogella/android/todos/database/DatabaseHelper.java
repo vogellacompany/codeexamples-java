@@ -8,12 +8,12 @@ import android.util.Log;
 public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String TAG = "DatabaseAdapter";
 	private static final String DATABASE_NAME = "applicationdata";
-	
-	private static final int DATABASE_VERSION = 2;
+
+	private static final int DATABASE_VERSION = 3;
 
 	// Database creation sql statement
 	private static final String DATABASE_CREATE = "create table todo (_id integer primary key autoincrement, "
-			+ "summary text not null, description text not null);";
+			+ "category text not null, summary text not null, description text not null);";
 
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
