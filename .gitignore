@@ -1,4 +1,4 @@
-bin/**/*
-gen/**/*
-.metadata/**/*
+bin
+gen
+.metadata
 
