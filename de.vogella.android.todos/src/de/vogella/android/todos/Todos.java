@@ -27,6 +27,7 @@ public class Todos extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.todo_list);
+		this.getListView().setDividerHeight(2);
 		dbHelper = new TodoDbAdapter(this);
 		dbHelper.open();
 		fillData();
