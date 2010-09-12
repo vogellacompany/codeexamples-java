@@ -6,20 +6,29 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
 public class AlarmActivity extends Activity {
+	private NumberPicker secondsPicker;
+	private NumberPicker minutesPicker;
+	private NumberPicker hoursPicker;
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		secondsPicker = (NumberPicker) findViewById(R.id.seconds);
+		secondsPicker.setRange(1, 60);
+		minutesPicker = (NumberPicker) findViewById(R.id.minutes);
+		minutesPicker.setRange(0, 60);
+		hoursPicker = (NumberPicker) findViewById(R.id.hours);
+		hoursPicker.setRange(0, 60);
 	}
 
 	public void startAlert(View view) {
-		EditText text = (EditText) findViewById(R.id.time);
-		int i = Integer.parseInt(text.getText().toString());
+		int i = secondsPicker.getCurrent();
 		Intent intent = new Intent(this, MyBroadcastReceiver.class);
 		PendingIntent pendingIntent = PendingIntent.getBroadcast(
 				this.getApplicationContext(), 234324243, intent, 0);

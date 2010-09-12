@@ -2,4 +2,5 @@
 <resources>
     <string name="hello">Hello World, AlarmActivity!</string>
     <string name="app_name">Alarm</string>
+<string name="spinnerMessage">Select number of seconds</string>
 </resources>
