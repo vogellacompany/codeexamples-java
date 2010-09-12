@@ -18,7 +18,7 @@ public class Quicksort  {
 	private void quicksort(int low, int high) {
 		int i = low, j = high;
 		// Get the pivot element from the middle of the list
-		int pivot = numbers[(low + high) / 2];
+		int pivot = numbers[low + (high-low) / 2];
 
 		// Divide into two lists
 		while (i <= j) {
