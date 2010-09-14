@@ -2,13 +2,18 @@ package de.vogella.gae.java.todo.model;
 
 import java.util.Calendar;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Model class which will store the Todo Items
  * 
  * @author Lars Vogel
  *
  */
+@Entity
 public class Todo {
+	@Id
 	private final long id; 
 	private String author;
 	private String shortDescription;

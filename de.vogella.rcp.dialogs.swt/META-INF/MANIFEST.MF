@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Swt
+Bundle-SymbolicName: de.vogella.rcp.dialogs.swt; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.vogella.rcp.dialogs.swt.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.dialogs.jface.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.rcp.dialogs.jface.Perspective"
+            id="de.vogella.rcp.dialogs.jface.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.rcp.dialogs.jface.handler.OpenMessageDialog"
+            id="de.vogella.rcp.dialogs.jface.messagedialog"
+            name="Message">
+      </command>
+      <command
+            defaultHandler="de.vogella.rcp.dialogs.jface.OpenSelectionDialog"
+            id="de.vogella.rcp.dialogs.jface.selection"
+            name="Selection Dialog">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <command
+               commandId="de.vogella.rcp.dialogs.jface.messagedialog"
+               label="MessageDialog"
+               style="push">
+         </command>
+         <command
+               commandId="de.vogella.rcp.dialogs.jface.selection"
+               label="Selection Dialog"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>
