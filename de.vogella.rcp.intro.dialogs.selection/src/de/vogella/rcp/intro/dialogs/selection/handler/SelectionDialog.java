@@ -21,7 +21,7 @@ public class SelectionDialog extends AbstractHandler {
 		dialog.setElements(new String[] { "Linux", "Mac", "Windows" });
 		dialog.setTitle("Which operating system are you using");
 		// User pressed cancel
-		if (dialog.open()!= Window.OK){
+		if (dialog.open() != Window.OK) {
 			return false;
 		}
 		result = dialog.getResult();

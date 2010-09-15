@@ -53,8 +53,13 @@ public class MyDialog extends TitleAreaDialog {
 
 		firstNameText = new Text(parent, SWT.BORDER);
 		firstNameText.setLayoutData(gridData);
+		
 		Label label2 = new Label(parent, SWT.NONE);
 		label2.setText("Last Name");
+		// You should not re-use GridData
+		gridData = new GridData();
+		gridData.grabExcessHorizontalSpace = true;
+		gridData.horizontalAlignment = GridData.FILL;
 		lastNameText = new Text(parent, SWT.BORDER);
 		lastNameText.setLayoutData(gridData);
 		return parent;
