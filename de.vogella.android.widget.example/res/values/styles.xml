@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-	<style name="WidgetBackground">
-		 <item name="android:textSize">13sp</item>
-		  <item name="android:background">@android:color/black</item>
-	</style>
-
-</resources>

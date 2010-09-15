@@ -6,6 +6,7 @@ import org.eclipse.core.runtime.preferences.ConfigurationScope;
 import org.osgi.service.prefs.BackingStoreException;
 import org.osgi.service.prefs.Preferences;
 
+// Removes the preferences settings
 public class DeletePreferences extends AbstractHandler {
 
 	@Override

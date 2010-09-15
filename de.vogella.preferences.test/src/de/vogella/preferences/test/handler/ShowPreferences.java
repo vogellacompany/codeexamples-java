@@ -9,6 +9,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.osgi.service.prefs.Preferences;
 
+// Shows the current preferences
 public class ShowPreferences extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {

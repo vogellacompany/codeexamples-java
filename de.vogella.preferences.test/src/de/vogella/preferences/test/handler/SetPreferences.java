@@ -7,13 +7,10 @@ import org.eclipse.core.runtime.preferences.ConfigurationScope;
 import org.osgi.service.prefs.BackingStoreException;
 import org.osgi.service.prefs.Preferences;
 
+// Saves some preferences
 public class SetPreferences extends AbstractHandler {
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		// This would be using instance scope
-		// Preferences preferences = new InstanceScope()
-		// .getNode("de.vogella.preferences.test");
-		// This is using configuration scope
 		Preferences preferences = new ConfigurationScope()
 				.getNode("de.vogella.preferences.test");
 		// This would be using default n scope

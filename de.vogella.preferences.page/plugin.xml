@@ -19,10 +19,31 @@
             id="de.vogella.preferences.page.perspective">
       </perspective>
    </extension>
+    <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="de.vogella.preferences.page.View"
+            id="de.vogella.preferences.page.view">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               standalone="true"
+               minimized="false"
+               relative="org.eclipse.ui.editorss"
+               relationship="left"
+               id="de.vogella.preferences.page.view">
+         </view>
+      </perspectiveExtension>
+   </extension>
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            class="de.vogella.preferences.page.perferencepage.MyPreferencePage1"
+            class="de.vogella.preferences.page.preferencepage.MyPreferencePage1"
             id="de.vogella.preferences.page.preferencepage1"
             name="MyPreference Page">
       </page>
@@ -50,6 +71,12 @@
             id="de.vogella.preferences.page.showPreferenceValues"
             name="Show">
       </command>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="de.vogella.preferences.page.preferencepage.MyInitializer">
+      </initializer>
    </extension>
 
 </plugin>
