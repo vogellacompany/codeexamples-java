@@ -4,7 +4,9 @@ import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.beans.BeanProperties;
 import org.eclipse.core.databinding.beans.BeansObservables;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.jface.databinding.swt.ISWTObservableValue;
 import org.eclipse.jface.databinding.swt.SWTObservables;
+import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -21,7 +23,7 @@ import org.eclipse.ui.part.ViewPart;
 import de.vogella.databinding.person.model.Address;
 import de.vogella.databinding.person.model.Person;
 
-public class PersonView extends ViewPart {
+public class View extends ViewPart {
 	public static final String ID = "de.vogella.databinding.person.swt.View";
 	private Person person;
 
@@ -30,9 +32,6 @@ public class PersonView extends ViewPart {
 	private Button marriedButton;
 	private Combo genderCombo;
 	private Text countryText;
-
-	public PersonView() {
-	}
 
 	@Override
 	public void createPartControl(Composite parent) {
@@ -132,21 +131,23 @@ public class PersonView extends ViewPart {
 		IObservableValue uiElement;
 		IObservableValue modelElement;
 		// Lets bind it
-		uiElement = SWTObservables.observeText(firstName, SWT.Modify);
-		modelElement = BeansObservables.observeValue(person, "firstName");
-		// The bindValue method call binds the text element with the model
-		bindingContext.bindValue(uiElement, modelElement, null, null);
+		ISWTObservableValue widgetValue = WidgetProperties.text(SWT.Modify)
+				.observe(firstName);
+		IObservableValue modelValue = BeanProperties.value(Person.class,
+				"firstName").observe(person);
+		// The above factories are similar to the following statements
+		// uiElement = SWTObservables.observeText(firstName, SWT.Modify);
+		// modelElement = BeansObservables.observeValue(person, "firstName");
+		// // The bindValue method call binds the text element with the model
+		bindingContext.bindValue(widgetValue, modelValue);
 
-		uiElement = SWTObservables.observeText(ageText, SWT.Modify);
-		modelElement = BeansObservables.observeValue(person, "age");
-		// Remember the binding so that we can listen to validator problems
-		// See below for usage
-		bindingContext.bindValue(uiElement, modelElement, null, null);
-
-		uiElement = SWTObservables.observeSelection(marriedButton);
-		modelElement = BeansObservables.observeValue(person, "married");
-
-		bindingContext.bindValue(uiElement, modelElement, null, null);
+		widgetValue = WidgetProperties.text(SWT.Modify).observe(ageText);
+		modelValue = BeanProperties.value(Person.class, "age").observe(person);
+		bindingContext.bindValue(widgetValue, modelValue);
+		widgetValue = WidgetProperties.selection().observe(marriedButton);
+		modelValue = BeanProperties.value(Person.class, "married").observe(
+				person);
+		bindingContext.bindValue(widgetValue, modelValue);
 
 		uiElement = SWTObservables.observeSelection(genderCombo);
 		modelElement = BeansObservables.observeValue(person, "gender");
@@ -159,5 +160,4 @@ public class PersonView extends ViewPart {
 		bindingContext.bindValue(uiElement, modelElement, null, null);
 
 	}
-
 }
