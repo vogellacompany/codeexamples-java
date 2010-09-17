@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Sample Category"
+            id="de.vogella.preferences.access.commands.category">
+      </category>
+      <command
+            name="Sample Command"
+            categoryId="de.vogella.preferences.access.commands.category"
+            id="de.vogella.preferences.access.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="de.vogella.preferences.access.commands.AccessPreferences"
+            class="de.vogella.preferences.access.handlers.AccessPreferences">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="de.vogella.preferences.access.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Access Preferences"
+               mnemonic="M"
+               id="de.vogella.preferences.access.menus.sampleMenu">
+            <command
+                  commandId="de.vogella.preferences.access.commands.AccessPreferences"
+                  mnemonic="S"
+                  id="de.vogella.preferences.access.menus.sampleCommand">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="de.vogella.preferences.access.toolbars.sampleToolbar">
+            <command
+                  commandId="de.vogella.preferences.access.commands.sampleCommand"
+                  icon="icons/sample.gif"
+                  tooltip="Say hello world"
+                  id="de.vogella.preferences.access.toolbars.sampleCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>

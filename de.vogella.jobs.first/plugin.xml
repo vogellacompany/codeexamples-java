@@ -22,6 +22,11 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
+            defaultHandler="de.vogella.jobs.first.handler.RunUiJob1"
+            id="de.vogella.jobs.first.runUiJob"
+            name="Run Ui Job">
+      </command>
+      <command
             defaultHandler="de.vogella.jobs.first.handler.RunJob1"
             id="de.vogella.jobs.first.runJob1"
             name="Run Job 1">
@@ -34,6 +39,11 @@
          <command
                commandId="de.vogella.jobs.first.runJob1"
                label="Start Job"
+               style="push">
+         </command>
+         <command
+               commandId="de.vogella.jobs.first.runUiJob"
+               label="Ui Job"
                style="push">
          </command>
       </menuContribution>

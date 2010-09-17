@@ -22,8 +22,8 @@ public class ShowDialog extends AbstractHandler {
 				public void run(IProgressMonitor monitor) {
 					monitor
 							.beginTask("Doing something timeconsuming here",
-									100);
-					for (int i = 0; i < 10; i++) {
+									10);
+					for (int i = 1; i <= 10; i++) {
 						if (monitor.isCanceled())
 							return;
 						monitor.subTask("I'm doing something here " + i);
