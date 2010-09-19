@@ -4,8 +4,6 @@ import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.beans.BeanProperties;
 import org.eclipse.core.databinding.beans.BeansObservables;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
-import org.eclipse.jface.databinding.swt.ISWTObservableValue;
-import org.eclipse.jface.databinding.swt.SWTObservables;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -128,10 +126,8 @@ public class View extends ViewPart {
 	private void bindValues() {
 		// The DataBindingContext object will manage the databindings
 		DataBindingContext bindingContext = new DataBindingContext();
-		IObservableValue uiElement;
-		IObservableValue modelElement;
 		// Lets bind it
-		ISWTObservableValue widgetValue = WidgetProperties.text(SWT.Modify)
+		IObservableValue widgetValue = WidgetProperties.text(SWT.Modify)
 				.observe(firstName);
 		IObservableValue modelValue = BeanProperties.value(Person.class,
 				"firstName").observe(person);
@@ -149,15 +145,16 @@ public class View extends ViewPart {
 				person);
 		bindingContext.bindValue(widgetValue, modelValue);
 
-		uiElement = SWTObservables.observeSelection(genderCombo);
-		modelElement = BeansObservables.observeValue(person, "gender");
+		widgetValue = WidgetProperties.selection().observe(genderCombo);
+		modelValue = BeansObservables.observeValue(person, "gender");
 
-		bindingContext.bindValue(uiElement, modelElement, null, null);
+		bindingContext.bindValue(widgetValue, modelValue);
 
 		// Address field is bound to the Ui
-		uiElement = SWTObservables.observeText(countryText, SWT.Modify);
-		modelElement = BeanProperties.value("address.country").observe(person);
-		bindingContext.bindValue(uiElement, modelElement, null, null);
+		widgetValue = WidgetProperties.text(SWT.Modify).observe(ageText);
+		modelValue = BeanProperties.value(Person.class, "address.country")
+				.observe(person);
+		bindingContext.bindValue(widgetValue, modelValue);
 
 	}
 }
