@@ -22,8 +22,8 @@
    <extension
          point="org.eclipse.ui.views">
       <view
-            class="de.vogella.databinding.personpojo.MyView"
-            id="de.vogella.databinding.personpojo.myview"
+            class="de.vogella.databinding.personpojo.View"
+            id="de.vogella.databinding.personpojo.view"
             name="name"
             restorable="true">
       </view>

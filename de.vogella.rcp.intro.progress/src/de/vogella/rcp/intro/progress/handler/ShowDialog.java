@@ -28,7 +28,7 @@ public class ShowDialog extends AbstractHandler {
 							return;
 						monitor.subTask("I'm doing something here " + i);
 						sleep(1000);
-						monitor.worked(i);
+						monitor.worked(1);
 					}
 					monitor.done();
 				}

@@ -3,7 +3,6 @@ package de.vogella.databinding.validation.validators;
 import org.eclipse.core.databinding.validation.IValidator;
 import org.eclipse.core.databinding.validation.ValidationStatus;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.fieldassist.ControlDecoration;
 
 public class StringLongerThenTwo implements IValidator {
@@ -25,7 +24,7 @@ public class StringLongerThenTwo implements IValidator {
 			// We check if the string is longer then 2 signs
 			if (s.length() > 2) {
 				controlDecoration.hide();
-				return Status.OK_STATUS;
+				return ValidationStatus.ok();
 			} else {
 				controlDecoration.show();
 				return ValidationStatus.error(message);

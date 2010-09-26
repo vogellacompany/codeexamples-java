@@ -8,6 +8,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.databinding;bundle-version="1.1.1",
  org.eclipse.jface.databinding;bundle-version="1.2.1",
- org.eclipse.core.databinding.beans;bundle-version="1.1.1"
+ org.eclipse.core.databinding.beans;bundle-version="1.1.1",
+ org.eclipse.core.databinding.property;bundle-version="1.3.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -9,6 +9,12 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.swtbot.eclipse.finder;bundle-version="2.0.0",
  org.eclipse.swtbot.swt.finder;bundle-version="2.0.0",
  org.junit4;bundle-version="4.8.1",
- org.hamcrest;bundle-version="1.1.0"
+ org.hamcrest;bundle-version="1.1.0",
+ org.eclipse.swtbot.eclipse.core;bundle-version="2.0.0",
+ org.eclipse.swtbot.eclipse.junit4.headless;bundle-version="2.0.0",
+ org.eclipse.swtbot.eclipse.spy;bundle-version="2.0.0",
+ org.eclipse.swtbot.eclipse.ui;bundle-version="2.0.0",
+ org.eclipse.swtbot.go;bundle-version="2.0.0",
+ org.eclipse.swtbot.junit4_x;bundle-version="2.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,9 +1,15 @@
 package de.vogella.databinding.person.swt;
 
+import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.DataBindingContext;
+import org.eclipse.core.databinding.UpdateValueStrategy;
 import org.eclipse.core.databinding.beans.BeanProperties;
 import org.eclipse.core.databinding.beans.BeansObservables;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.core.databinding.validation.IValidator;
+import org.eclipse.core.databinding.validation.ValidationStatus;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.jface.databinding.fieldassist.ControlDecorationSupport;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -125,21 +131,35 @@ public class View extends ViewPart {
 
 	private void bindValues() {
 		// The DataBindingContext object will manage the databindings
-		DataBindingContext bindingContext = new DataBindingContext();
 		// Lets bind it
+		DataBindingContext bindingContext = new DataBindingContext();
 		IObservableValue widgetValue = WidgetProperties.text(SWT.Modify)
 				.observe(firstName);
 		IObservableValue modelValue = BeanProperties.value(Person.class,
 				"firstName").observe(person);
-		// The above factories are similar to the following statements
-		// uiElement = SWTObservables.observeText(firstName, SWT.Modify);
-		// modelElement = BeansObservables.observeValue(person, "firstName");
-		// // The bindValue method call binds the text element with the model
 		bindingContext.bindValue(widgetValue, modelValue);
 
 		widgetValue = WidgetProperties.text(SWT.Modify).observe(ageText);
 		modelValue = BeanProperties.value(Person.class, "age").observe(person);
+
+		// We want that age is a number
+		IValidator numberValidator = new IValidator() {
+
+			@Override
+			public IStatus validate(Object value) {
+				String s = String.valueOf(value);
+				boolean matches = s.matches("\\d*");
+				if (matches) {
+					return ValidationStatus.ok();
+				}
+				return ValidationStatus.error("Only Number permitted");
+			}
+		};
+		UpdateValueStrategy targetToModel = new UpdateValueStrategy();
+		targetToModel.setAfterConvertValidator(numberValidator);
+
 		bindingContext.bindValue(widgetValue, modelValue);
+
 		widgetValue = WidgetProperties.selection().observe(marriedButton);
 		modelValue = BeanProperties.value(Person.class, "married").observe(
 				person);
@@ -151,10 +171,12 @@ public class View extends ViewPart {
 		bindingContext.bindValue(widgetValue, modelValue);
 
 		// Address field is bound to the Ui
-		widgetValue = WidgetProperties.text(SWT.Modify).observe(ageText);
+		widgetValue = WidgetProperties.text(SWT.Modify).observe(countryText);
+
 		modelValue = BeanProperties.value(Person.class, "address.country")
 				.observe(person);
-		bindingContext.bindValue(widgetValue, modelValue);
-
+		// Remember the bindingContext to allow control decoration
+		Binding bindValue = bindingContext.bindValue(widgetValue, modelValue, targetToModel, null);
+		ControlDecorationSupport.create(bindValue, SWT.TOP | SWT.RIGHT);
 	}
 }
