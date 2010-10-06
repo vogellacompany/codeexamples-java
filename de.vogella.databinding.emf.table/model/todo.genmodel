@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.vogella.databinding.emf.table/src"
+    modelPluginID="de.vogella.databinding.emf.table" modelName="Todo" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>todo.ecore</foreignModel>
+  <genPackages prefix="Model" basePackage="de.vogella.databinding.emf.table" disposableProviderFactory="true"
+      ecorePackage="todo.ecore#/">
+    <genClasses ecoreClass="todo.ecore#//Todo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute todo.ecore#//Todo/summary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute todo.ecore#//Todo/description"/>
+    </genClasses>
+    <genClasses ecoreClass="todo.ecore#//Model">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference todo.ecore#//Model/todos"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
