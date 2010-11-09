@@ -1,13 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
-<%@ page import="javax.jdo.PersistenceManager" %>
-<%@ page import="javax.jdo.Query" %>
 <%@ page import="com.google.appengine.api.users.User" %>
 <%@ page import="com.google.appengine.api.users.UserService" %>
 <%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
-
 <%@ page import="de.vogella.gae.java.todo.model.Todo" %>
 <%@ page import="de.vogella.gae.java.todo.dao.Dao" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -52,7 +50,6 @@ You have a total number of <%= todos.size() %>  Todos.
 <table>
   <tr>
       <th>Short description </th>
-      <th>Due Date</th>
       <th>Long Description</th>
       <th>URL</th>
       <th>Done</th>
@@ -62,9 +59,6 @@ You have a total number of <%= todos.size() %>  Todos.
 <tr> 
 <td>
 <%=todo.getShortDescription()%>
-</td>
-<td>
-2009.11.10
 </td>
 <td>
 <%=todo.getLongDescription()%>
@@ -92,12 +86,8 @@ You have a total number of <%= todos.size() %>  Todos.
 <form action="/new" method="post" accept-charset="utf-8">
 	<table>
 		<tr>
-			<td><label for="summery">Summary</label></td>
-			<td><input type="text" name="summery" id="summery" size="65"/></td>
-		</tr>
-		<tr>
-			<td><label for="dueDate">Due Date</label></td>
-			<td><input type="text" name="dueDate" id="dueDate"/></td>
+			<td><label for="summary">Summary</label></td>
+			<td><input type="text" name="summary" id="summary" size="65"/></td>
 		</tr>
 		<tr>
 			<td valign="description"><label for="description">Description</label></td>
