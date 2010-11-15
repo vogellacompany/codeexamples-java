@@ -1,7 +1,10 @@
 package de.vogella.jface.tableviewer;
 
+import org.eclipse.jface.viewers.ArrayContentProvider;
+import org.eclipse.jface.viewers.CellLabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
+import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
@@ -22,7 +25,7 @@ import org.eclipse.ui.part.ViewPart;
 
 import de.vogella.jface.tableviewer.filter.PersonFilter;
 import de.vogella.jface.tableviewer.model.ModelProvider;
-import de.vogella.jface.tableviewer.providers.PersonContentProvider;
+import de.vogella.jface.tableviewer.model.Person;
 import de.vogella.jface.tableviewer.providers.PersonEditingSupport;
 import de.vogella.jface.tableviewer.providers.PersonLabelProvider;
 import de.vogella.jface.tableviewer.sorter.TableSorter;
@@ -37,6 +40,8 @@ public class View extends ViewPart {
 	private PersonFilter filter;
 
 	private PersonLabelProvider labelProvider;
+
+	private Menu headerMenu;
 
 	public void createPartControl(Composite parent) {
 		GridLayout layout = new GridLayout(2, false);
@@ -61,9 +66,9 @@ public class View extends ViewPart {
 				| SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER);
 
 		createColumns(parent, viewer);
-		viewer.setContentProvider(new PersonContentProvider());
-		labelProvider = new PersonLabelProvider();
-		viewer.setLabelProvider(labelProvider);
+		viewer.setContentProvider(new ArrayContentProvider());
+		// labelProvider = new PersonLabelProvider();
+		// viewer.setLabelProvider(labelProvider);
 		// Get the content for the viewer, setInput will call getElements in the
 		// contentProvider
 		viewer.setInput(ModelProvider.getInstance().getPersons());
@@ -91,41 +96,30 @@ public class View extends ViewPart {
 
 	// This will create the columns for the table
 	private void createColumns(final Composite parent, final TableViewer viewer) {
-		final Menu headerMenu = new Menu(parent);
+		headerMenu = new Menu(parent);
 		String[] titles = { "First name", "Last name", "Gender", "Married" };
 		int[] bounds = { 100, 100, 100, 100 };
+		TableViewerColumn col = createTableViewerColumn(titles[0], bounds[0], 0);
+		col.setEditingSupport(new PersonEditingSupport(viewer, 0));
+		col.setLabelProvider(new CellLabelProvider() {
+			@Override
+			public void update(ViewerCell cell) {
+				cell.setText(((Person) cell.getElement()).getFirstName());
+			}
+		});
 
-		for (int i = 0; i < titles.length; i++) {
-			final int index = i;
-			final TableViewerColumn viewerColumn = new TableViewerColumn(
-					viewer, SWT.NONE);
-			final TableColumn column = viewerColumn.getColumn();
-			column.setText(titles[i]);
-			column.setWidth(bounds[i]);
-			column.setResizable(true);
-			createMenuItem(headerMenu, column); // Create the menu item for this
-												// column
-			column.setMoveable(true);
+		col = createTableViewerColumn(titles[1], bounds[1], 1);
+		col.setEditingSupport(new PersonEditingSupport(viewer, 1));
+		col.setLabelProvider(new CellLabelProvider() {
+			@Override
+			public void update(ViewerCell cell) {
+				cell.setText(((Person) cell.getElement()).getLastName());
+			}
+		});
 
-			// Setting the right sorter
-			column.addSelectionListener(new SelectionAdapter() {
-				@Override
-				public void widgetSelected(SelectionEvent e) {
-					tableSorter.setColumn(index);
-					int dir = viewer.getTable().getSortDirection();
-					if (viewer.getTable().getSortColumn() == column) {
-						dir = dir == SWT.UP ? SWT.DOWN : SWT.UP;
-					} else {
+		// createTableViewerColumn(titles[2], bounds[2], 2);
+		// createTableViewerColumn(titles[3], bounds[3], 3);
 
-						dir = SWT.DOWN;
-					}
-					viewer.getTable().setSortDirection(dir);
-					viewer.getTable().setSortColumn(column);
-					viewer.refresh();
-				}
-			});
-			viewerColumn.setEditingSupport(new PersonEditingSupport(viewer, i));
-		}
 		final Table table = viewer.getTable();
 		table.setHeaderVisible(true);
 		table.setLinesVisible(true);
@@ -135,6 +129,39 @@ public class View extends ViewPart {
 				table.setMenu(headerMenu);
 			}
 		});
+
+	}
+
+	private TableViewerColumn createTableViewerColumn(String title, int bound,
+			final int colNumber) {
+		final TableViewerColumn viewerColumn = new TableViewerColumn(viewer,
+				SWT.NONE);
+		final TableColumn column = viewerColumn.getColumn();
+		column.setText(title);
+		column.setWidth(bound);
+		column.setResizable(true);
+		createMenuItem(headerMenu, column); // Create the menu item for this
+											// column
+		column.setMoveable(true);
+
+		// Setting the right sorter
+		column.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				tableSorter.setColumn(colNumber);
+				int dir = viewer.getTable().getSortDirection();
+				if (viewer.getTable().getSortColumn() == column) {
+					dir = dir == SWT.UP ? SWT.DOWN : SWT.UP;
+				} else {
+
+					dir = SWT.DOWN;
+				}
+				viewer.getTable().setSortDirection(dir);
+				viewer.getTable().setSortColumn(column);
+				viewer.refresh();
+			}
+		});
+		return viewerColumn;
 
 	}
 

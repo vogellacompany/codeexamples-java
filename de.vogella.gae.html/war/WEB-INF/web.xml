@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>De_vogella_gae_html</servlet-name>
+		<servlet-class>de.vogella.gae.html.De_vogella_gae_htmlServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>De_vogella_gae_html</servlet-name>
+		<url-pattern>/de_vogella_gae_html</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>

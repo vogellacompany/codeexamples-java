@@ -18,19 +18,21 @@ public enum Dao {
 		return todos;
 	}
 
-	public void add(String author, String summery, String description,
+	public void add(String userId, String summery, String description,
 			String url) {
 		synchronized (this) {
 			EntityManager em = EMFService.get().createEntityManager();
-			Todo todo = new Todo(author, summery, description, url);
+			Todo todo = new Todo(userId, summery, description, url);
 			em.persist(todo);
 			em.close();
 		}
 	}
 
-	public List<Todo> getTodos(@SuppressWarnings("unused") String user) {
+	public List<Todo> getTodos(String userId) {
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em.createQuery("select t from Todo t");
+		Query q = em
+				.createQuery("select t from Todo t where t.author = :userId");
+		q.setParameter("userId", userId);
 		List<Todo> todos = q.getResultList();
 		return todos;
 	}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<webpage:Web xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:webpage="http://webpage/1.0" xsi:schemaLocation="http://webpage/1.0 ../metamodel/webpage.ecore" keywords="" description="Main webpage in the world">
+  <pages name="My Title" title="Title" description="This is a web ">
+    <categories name="Cat1">
+      <articles name="Test"/>
+    </categories>
+  </pages>
+</webpage:Web>

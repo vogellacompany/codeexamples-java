@@ -27,7 +27,7 @@ public class ServletCreateTodo extends HttpServlet {
 		String longDescription = checkNull(req.getParameter("description"));
 		String url = checkNull(req.getParameter("url"));
 
-		Dao.INSTANCE.add(user.getNickname(), summary, longDescription, url);
+		Dao.INSTANCE.add(user.getUserId(), summary, longDescription, url);
 
 		resp.sendRedirect("/TodoApplication.jsp");
 	}

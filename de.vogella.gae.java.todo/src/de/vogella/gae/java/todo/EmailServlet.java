@@ -33,7 +33,7 @@ public class EmailServlet extends HttpServlet {
 			String description = getText(message);
 			Address[] addresses = message.getFrom();
 			User user = new User(addresses[0].toString(), "gmail.com");
-			Dao.INSTANCE.add(user.getNickname(), summary, description, "");
+			Dao.INSTANCE.add(user.getUserId(), summary, description, "");
 
 		} catch (Exception e) {
 			e.printStackTrace();

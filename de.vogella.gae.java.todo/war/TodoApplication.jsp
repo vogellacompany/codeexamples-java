@@ -1,3 +1,4 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.google.appengine.api.users.User" %>
@@ -6,8 +7,8 @@
 <%@ page import="de.vogella.gae.java.todo.model.Todo" %>
 <%@ page import="de.vogella.gae.java.todo.dao.Dao" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+
 
 <%@page import="java.util.ArrayList"%>
 
@@ -15,7 +16,7 @@
 	<head>
 		<title>Todos</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+		  <meta charset="utf-8"> 
 	</head>
 	<body>
 <%
@@ -31,7 +32,7 @@ List<Todo> todos = new ArrayList<Todo>();
 if (user != null){
     url = userService.createLogoutURL(request.getRequestURI());
     urlLinktext = "Logout";
-    todos = dao.getTodos(user.getNickname());
+    todos = dao.getTodos(user.getUserId());
 }
     
 %>
@@ -95,7 +96,7 @@ You have a total number of <%= todos.size() %>  Todos.
 		</tr>
 	<tr>
 		<td valign="top"><label for="url">URL</label></td>
-		<td><input type="text" name="url" id="url" size="65" /></td>
+		<td><input type="url" name="url" id="url" size="65" /></td>
 	</tr>
 	<tr>
 			<td colspan="2" align="right"><input type="submit" value="Create"/></td>

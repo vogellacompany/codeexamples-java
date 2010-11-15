@@ -2,6 +2,7 @@ package de.vogella.rcp.editor.example.editor;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
@@ -32,7 +33,7 @@ public class MyPersonEditor extends EditorPart {
 		setSite(site);
 		setInput(input);
 		person = MyModel.getInstance().getPersonById(this.input.getId());
-		setPartName("Person " + person.getLastName());
+		setPartName("Person ID: " + person.getId());
 	}
 
 	@Override
@@ -40,11 +41,16 @@ public class MyPersonEditor extends EditorPart {
 		GridLayout layout = new GridLayout();
 		layout.numColumns = 2;
 		parent.setLayout(layout);
-		Label label1 = new Label(parent, SWT.BORDER);
+		Label label1 = new Label(parent, SWT.NONE);
 		label1.setText("First Name");
 		Text text = new Text(parent, SWT.BORDER);
 		text.setText(person.getFirstName());
-		
+		text.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
+		new Label(parent, SWT.NONE).setText("Last Name");
+		Text lastName = new Text(parent, SWT.BORDER);
+		lastName.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true,
+				false));
+		lastName.setText(person.getLastName());
 	}
 
 	@Override
@@ -58,6 +64,7 @@ public class MyPersonEditor extends EditorPart {
 
 	@Override
 	public boolean isDirty() {
+
 		return false;
 	}
 
