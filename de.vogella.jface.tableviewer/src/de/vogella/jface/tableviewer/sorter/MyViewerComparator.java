@@ -1,18 +1,16 @@
 package de.vogella.jface.tableviewer.sorter;
 
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerSorter;
+import org.eclipse.jface.viewers.ViewerComparator;
 
 import de.vogella.jface.tableviewer.model.Person;
 
-public class TableSorter extends ViewerSorter {
+public class MyViewerComparator extends ViewerComparator {
 	private int propertyIndex;
-	// private static final int ASCENDING = 0;
 	private static final int DESCENDING = 1;
-
 	private int direction = DESCENDING;
 
-	public TableSorter() {
+	public MyViewerComparator() {
 		this.propertyIndex = 0;
 		direction = DESCENDING;
 	}
@@ -58,4 +56,5 @@ public class TableSorter extends ViewerSorter {
 		}
 		return rc;
 	}
+
 }

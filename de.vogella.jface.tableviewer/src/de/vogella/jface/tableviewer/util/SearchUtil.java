@@ -3,69 +3,78 @@ package de.vogella.jface.tableviewer.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.StyleRange;
-import org.eclipse.swt.widgets.Display;
-
 public class SearchUtil {
-	public static int[] getSearchTermOccurrences(String searchTerm,
-			String content) {
-		List<StyleRange> styleRange;
-		List<Integer> ranges;
-		Display disp = Display.getCurrent();
-		StyleRange myStyleRange = new StyleRange(0, 0, null, disp
-				.getSystemColor(SWT.COLOR_YELLOW));
-
-		styleRange = new ArrayList<StyleRange>(); // reset the StyleRange-Array
-		// for each new field
-		ranges = new ArrayList<Integer>(); // reset the ranges-array
-		// empty search term ==> return an empty StyleRange array
-		if (searchTerm.equals("")) {
-			return new int[] {};
+	/**
+	 * Searches "searchTerm" in "content" and returns an array of int pairs
+	 * (index, length) for each occurrence. The search is case-sensitive. The
+	 * consecutive occurrences are merged together.<code>
+	Examples:
+	 content = "123123x123"
+	 searchTerm = "1"
+	 --> [0, 1, 3, 1, 7, 1]
+	 content = "123123x123"
+	 searchTerm = "123"
+	 --> [0, 6, 7, 3]
+	</code>
+	 * 
+	 * @param searchTerm
+	 *            can be null or empty. int[0] is returned in this case!
+	 * @param content
+	 *            a not-null string (can be empty!)
+	 * @return an array of int pairs (index, length)
+	 */
+	public static int[] getSearchTermOccurrences(final String searchTerm,
+			final String content) {
+		if (searchTerm == null || searchTerm.length() == 0) {
+			return new int[0];
 		}
-
-		// determine all occurrences of the searchText and write the beginning
-		// and length of each occurrence into an array
-		for (int i = 0; i < content.length(); i++) {
-			if (i + searchTerm.length() <= content.length()
-					&& content.substring(i, i + searchTerm.length())
-							.equalsIgnoreCase(searchTerm)) {
-				// ranges format: n->start of the range, n+1->length of the
-				// range
-				ranges.add(i);
-				ranges.add(searchTerm.length());
-			}
+		if (content == null) {
+			throw new IllegalArgumentException("content is null");
 		}
-		// convert the list into an int[] and make sure that overlapping
-		// search term occurrences are are merged
-		int[] intRanges = new int[ranges.size()];
-		int arrayIndexCounter = 0;
-		for (int listIndexCounter = 0; listIndexCounter < ranges.size(); listIndexCounter++) {
-			if (listIndexCounter % 2 == 0) {
-				if (searchTerm.length() > 1
-						&& listIndexCounter != 0
-						&& ranges.get(listIndexCounter - 2)
-								+ ranges.get(listIndexCounter - 1) >= ranges
-								.get(listIndexCounter)) {
-					intRanges[arrayIndexCounter - 1] = 0
-							- ranges.get(listIndexCounter - 2)
-							+ ranges.get(listIndexCounter)
-							+ ranges.get(++listIndexCounter);
-				} else {
-					intRanges[arrayIndexCounter++] = ranges
-							.get(listIndexCounter);
+		final List<Integer> list = new ArrayList<Integer>();
+		int searchTermLength = searchTerm.length();
+		int index;
+		int fromIndex = 0;
+		int lastIndex = -1;
+		int lastLength = 0;
+		while (true) {
+			index = content.indexOf(searchTerm, fromIndex);
+			if (index == -1) {
+				// no occurrence of "searchTerm" in "content" starting from
+				// index "fromIndex"
+				if (lastIndex != -1) {
+					// but there was a previous occurrence
+					list.add(Integer.valueOf(lastIndex));
+					list.add(Integer.valueOf(lastLength));
 				}
-			} else {
-				intRanges[arrayIndexCounter++] = ranges.get(listIndexCounter);
-				styleRange.add(myStyleRange);
+				break;
 			}
+			if (lastIndex == -1) {
+				// the first occurrence of "searchTerm" in "content"
+				lastIndex = index;
+				lastLength = searchTermLength;
+			} else {
+				if (lastIndex + lastLength == index) {
+					// the current occurrence is right after the previous
+					// occurrence
+					lastLength += searchTermLength;
+				} else {
+					// there is at least one character between the current
+					// occurrence and the previous one
+					list.add(Integer.valueOf(lastIndex));
+					list.add(Integer.valueOf(lastLength));
+					lastIndex = index;
+					lastLength = searchTermLength;
+				}
+			}
+			fromIndex = index + searchTermLength;
 		}
-		// if there have been any overlappings we need to reduce the size of
-		// the array to avoid conflicts in the setStyleRanges method
-		int[] intRangesCorrectSize = new int[arrayIndexCounter];
-		System.arraycopy(intRanges, 0, intRangesCorrectSize, 0,
-				arrayIndexCounter);
-
-		return intRangesCorrectSize;
+		final int n = list.size();
+		final int[] result = new int[n];
+		for (int i = 0; i != n; i++) {
+			result[i] = list.get(i);
+		}
+		return result;
 	}
+
 }
