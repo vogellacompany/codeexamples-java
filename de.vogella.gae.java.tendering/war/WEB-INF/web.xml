@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>AcceptServlet</servlet-name>
+		<servlet-class>de.vogella.gae.java.tendering.AcceptServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SaveServlet</servlet-name>
+		<servlet-class>de.vogella.gae.java.tendering.SaveServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CarrierServlet</servlet-name>
+		<servlet-class>de.vogella.gae.java.tendering.CarrierServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SaveServlet</servlet-name>
+		<url-pattern>/new</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CarrierServlet</servlet-name>
+		<url-pattern>/get</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AcceptServlet</servlet-name>
+		<url-pattern>/accept</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>List.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
