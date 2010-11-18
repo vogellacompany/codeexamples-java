@@ -1,0 +1,6 @@
+----------------------------------------------------------------
+2010-10-04 21:39:19.277 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.6.1.0 - (938214): instance a816c00e-012b-792f-3741-0000024cdaf8 
+on database directory /home/vogella/databases/simpleDb   with class loader sun.misc.Launcher$AppClassLoader@601bb1
+
+Database Class Loader started - derby.database.classpath=''

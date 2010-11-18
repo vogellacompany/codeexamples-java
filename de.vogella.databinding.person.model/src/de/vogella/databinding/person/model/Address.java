@@ -1,4 +1,3 @@
-
 package de.vogella.databinding.person.model;
 
 import java.beans.PropertyChangeListener;
@@ -66,7 +65,6 @@ public class Address {
 	public void setCity(String city) {
 		propertyChangeSupport.firePropertyChange("citry", this.city,
 				this.city = city);
-		this.city = city;
 	}
 
 	public String getCountry() {

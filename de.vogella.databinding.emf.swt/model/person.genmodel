@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.vogella.databinding.emf.swt/src"
+    modelPluginID="de.vogella.databinding.emf.swt" modelName="Person" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>person.ecore</foreignModel>
+  <genPackages prefix="Model" basePackage="de.vogella.databinding.emf.swt" disposableProviderFactory="true"
+      ecorePackage="person.ecore#/">
+    <genClasses ecoreClass="person.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute person.ecore#//Person/firstName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute person.ecore#//Person/lastName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute person.ecore#//Person/gender"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute person.ecore#//Person/isMarried"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference person.ecore#//Person/phone"/>
+    </genClasses>
+    <genClasses ecoreClass="person.ecore#//Phone">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute person.ecore#//Phone/number"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

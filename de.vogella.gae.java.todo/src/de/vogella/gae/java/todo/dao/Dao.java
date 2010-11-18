@@ -1,65 +1,49 @@
 package de.vogella.gae.java.todo.dao;
 
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import org.datanucleus.sco.simple.GregorianCalendar;
-
 import de.vogella.gae.java.todo.model.Todo;
 
 public enum Dao {
 	INSTANCE;
-	private static long number = 1;
-
-	private final List<Todo> todos = new ArrayList<Todo>();
 
 	public List<Todo> listTodos() {
 		EntityManager em = EMFService.get().createEntityManager();
-		// Begin a new local transaction so that we can persist a new entity
-		em.getTransaction().begin();
-
 		// Read the existing entries
 		Query q = em.createQuery("select m from Todo todo");
-		em.getTransaction().commit();
-
-		// Create a test Todo
-		// Image that I read the data from bigtables
-		Todo todo = new Todo(1, "vogella", "Issue number 1",
-				"Detailed Description of everything", "",
-				GregorianCalendar.getInstance());
-		todos.add(todo);
+		List<Todo> todos = q.getResultList();
+		return todos;
 	}
 
-	public void add(String author, String summery, String description,
-			String url, Calendar dueDate) {
+	public void add(String userId, String summery, String description,
+			String url) {
 		synchronized (this) {
-			number++;
-			todos.add(new Todo(number, author, summery, description, url,
-					dueDate));
+			EntityManager em = EMFService.get().createEntityManager();
+			Todo todo = new Todo(userId, summery, description, url);
+			em.persist(todo);
+			em.close();
 		}
 	}
 
-	public List<Todo> getTodos(@SuppressWarnings("unused") String user) {
-		// For testing we will always return the same data no matter what the
-		// user is
+	public List<Todo> getTodos(String userId) {
+		EntityManager em = EMFService.get().createEntityManager();
+		Query q = em
+				.createQuery("select t from Todo t where t.author = :userId");
+		q.setParameter("userId", userId);
+		List<Todo> todos = q.getResultList();
 		return todos;
 	}
 
 	public void remove(long id) {
-		Todo remove = null;
-		for (Todo todo : todos) {
-			if (todo.getId() == id) {
-				remove = todo;
-			}
+		EntityManager em = EMFService.get().createEntityManager();
+		try {
+			Todo todo = em.find(Todo.class, id);
+			em.remove(todo);
+		} finally {
+			em.close();
 		}
-		if (remove != null) {
-			todos.remove(remove);
-		}
-
 	}
-
 }

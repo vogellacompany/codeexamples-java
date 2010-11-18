@@ -1,0 +1,18 @@
+«IMPORT metamodel»
+«DEFINE main FOR Web»
+«EXPAND form FOREACH forms»
+«ENDDEFINE»
+
+«DEFINE form FOR Form»
+«FILE name + ".html"»
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>«this.title»</title>
+ </head>
+ <body>
+  <h1>Your first HTML5 page</h1>
+  <p>This is a <a href="http://www.vogella.de">link</a> to another webpage</p>
+  <!-- this is a comment -->
+ </body>
+</html>

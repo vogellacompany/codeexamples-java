@@ -58,7 +58,6 @@
       <editor
             class="de.vogella.rcp.editor.example.editor.MyPersonEditor"
             default="false"
-            icon="icons/alt_window_16.gif"
             id="de.vogella.rcp.editor.example.editor.personeditor"
             name="Person Editor">
       </editor>
@@ -66,17 +65,11 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
+            defaultHandler="de.vogella.rcp.editor.example.handler.CallEditor"
             id="de.vogella.rcp.editor.example.openEditor"
             name="Open Editor">
       </command>
    </extension>
 
-   <extension
-         point="org.eclipse.ui.handlers">
-      <handler
-            class="de.vogella.rcp.editor.example.handler.CallEditor"
-            commandId="de.vogella.rcp.editor.example.openEditor">
-      </handler>
-   </extension>
    
 </plugin>

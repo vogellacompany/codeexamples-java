@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- HTML-Doctype-Angabe -->
+<html>
+ <head>
+  <title>Notizbuch</title>
+  <meta charset="iso-8859-1">
+  <!-- HTML5-Kodierungsangabe -->
+  <script type="text/javascript" src="html5app.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <!-- Google Maps API, um die Geolocation-Koordinaten in eine Adresse umzuwandeln -->
+ </head>
+ <body>
+  <header> <!-- neu in HTML5: Kopfbereich -->
+   <hgroup> <!-- neu in HTML5: Überschriftengruppe -->
+    <h1>Notizbuch</h1>
+    <h2 contenteditable>von Herbert Braun</h2>
+     <!-- Das Attribut macht den Inhalt überschreibbar -->
+   </hgroup>
+  </header>
+  <section> <!-- neu in HTML5: Dokument-Abschnitt -->
+   <form action="javascript:void(0)">
+   <!-- Nach dem Abschicken des Formulars soll nichts passieren -->
+    <textarea>Schreib hier!</textarea><br/>
+    <input type="submit" value="Speichern"/>
+   </form>
+  </section>
+  <footer> <!-- neu in HTML5: Fußbereich -->
+   <p>Letzte Aktualisierung: <time pubdate datetime="2010-10-12T18:55">12. Oktober 2010</time></p>
+   <!-- neu in HTML5: Zeitstempel -->
+  </footer>
+ </body>
+</html>

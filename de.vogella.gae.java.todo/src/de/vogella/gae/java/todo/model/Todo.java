@@ -1,7 +1,5 @@
 package de.vogella.gae.java.todo.model;
 
-import java.util.Calendar;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,27 +15,24 @@ import javax.persistence.Id;
 public class Todo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	private String author;
 
-	private String shortDescription;
-	private String longDescription;
+	private String summary;
+	private String description;
 	private String url;
-	private Calendar dueDate;
 	boolean finished;
 
-	public Todo(long id, String author, String shortDescription,
-			String longDescription, String url, Calendar dueDate) {
-		this.id = id;
+	public Todo(String author, String summary, String description,
+			String url) {
 		this.author = author;
-		this.shortDescription = shortDescription;
-		this.longDescription = longDescription;
+		this.summary = summary;
+		this.description = description;
 		this.url = url;
-		this.dueDate = dueDate;
 		finished = false;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -50,19 +45,19 @@ public class Todo {
 	}
 
 	public String getShortDescription() {
-		return shortDescription;
+		return summary;
 	}
 
 	public void setShortDescription(String shortDescription) {
-		this.shortDescription = shortDescription;
+		this.summary = shortDescription;
 	}
 
 	public String getLongDescription() {
-		return longDescription;
+		return description;
 	}
 
 	public void setLongDescription(String longDescription) {
-		this.longDescription = longDescription;
+		this.description = longDescription;
 	}
 
 	public String getUrl() {
@@ -71,14 +66,6 @@ public class Todo {
 
 	public void setUrl(String url) {
 		this.url = url;
-	}
-
-	public Calendar getDueDate() {
-		return dueDate;
-	}
-
-	public void setDueDate(Calendar dueDate) {
-		this.dueDate = dueDate;
 	}
 
 	public boolean isFinished() {

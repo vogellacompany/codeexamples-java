@@ -30,16 +30,6 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<url-pattern>/_ah/mail/*</url-pattern>
 	</servlet-mapping>
 	
-	
-	<servlet>
-		<servlet-name>StupidCounter</servlet-name>
-		<servlet-class>de.vogella.gae.java.todo.StupidServletCount</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>StupidCounter</servlet-name>
-		<url-pattern>/count</url-pattern>
-	</servlet-mapping>
-
 	<welcome-file-list>
 		<welcome-file>TodoApplication.jsp</welcome-file>
 	</welcome-file-list>
