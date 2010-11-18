@@ -13,16 +13,24 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-class>de.vogella.gae.java.tendering.SaveServlet</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>CarrierServlet</servlet-name>
-		<servlet-class>de.vogella.gae.java.tendering.CarrierServlet</servlet-class>
+		<servlet-name>DeclineServlet</servlet-name>
+		<servlet-class>de.vogella.gae.java.tendering.DeclineServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetStatusServlet</servlet-name>
+		<servlet-class>de.vogella.gae.java.tendering.GetStatusServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>SaveServlet</servlet-name>
 		<url-pattern>/new</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>CarrierServlet</servlet-name>
-		<url-pattern>/get</url-pattern>
+		<servlet-name>GetStatusServlet </servlet-name>
+		<url-pattern>/status</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeclineServlet</servlet-name>
+		<url-pattern>/decline</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>AcceptServlet</servlet-name>
