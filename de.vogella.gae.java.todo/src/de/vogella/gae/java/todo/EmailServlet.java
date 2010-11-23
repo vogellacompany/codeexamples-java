@@ -2,6 +2,7 @@ package de.vogella.gae.java.todo;
 
 import java.io.IOException;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 import javax.mail.Address;
 import javax.mail.MessagingException;
@@ -13,27 +14,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.appengine.api.users.User;
-
 import de.vogella.gae.java.todo.dao.Dao;
+import de.vogella.gae.java.todo.model.MyUser;
 
 public class EmailServlet extends HttpServlet {
+	private static final Logger log = Logger.getLogger(EmailServlet.class
+			.getName());
 
 	private static final long serialVersionUID = 1L;
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		Properties props = new Properties();
-
 		Session email = Session.getDefaultInstance(props, null);
-
 		try {
 			MimeMessage message = new MimeMessage(email, req.getInputStream());
 			String summary = message.getSubject();
 			String description = getText(message);
 			Address[] addresses = message.getFrom();
-			User user = new User(addresses[0].toString(), "gmail.com");
-			Dao.INSTANCE.add(user.getUserId(), summary, description, "");
+			MyUser user = Dao.INSTANCE.getUser(addresses[0].toString());
+			log.severe(addresses[0].toString());
+			if (user != null) {
+				Dao.INSTANCE.add(user.getUserId(), summary, description, "");
+			} else {
+				log.severe("User was null");
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -36,8 +36,29 @@
                   label="Open Help"
                   style="push">
             </command>
+            <command
+                  commandId="org.eclipse.ui.help.helpSearch"
+                  label="Search"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.help.dynamicHelp"
+                  label="Dynamic Help"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.help.helpContents"
+                  style="push">
+            </command>
          </menu>
       </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="context.xml"
+            plugin="de.vogella.rcp.help.content">
+      </contexts>
    </extension>
 
 </plugin>

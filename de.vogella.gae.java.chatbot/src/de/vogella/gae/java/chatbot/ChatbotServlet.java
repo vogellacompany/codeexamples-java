@@ -31,7 +31,7 @@ public class ChatbotServlet extends HttpServlet {
 				"This will be decided by me.",
 				"You must stay in time and in quality." };
 		Random random = new Random();
-		int nextInt = random.nextInt(4);
+		int nextInt = random.nextInt(6);
 		Message message = xmppService.parseMessage(req);
 		// To get the message send use message.getBody()
 		Message reply = new MessageBuilder()

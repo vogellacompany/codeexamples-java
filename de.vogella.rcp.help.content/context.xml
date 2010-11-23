@@ -1,0 +1,6 @@
+<contexts>
+   <context id="message">
+      <description>This is the sample context-sensitive help. There is a link to the help content below.</description>
+      <topic href="html/gettingstarted/subtopic.html" label="Subtopic" />
+   </context>
+</contexts>
