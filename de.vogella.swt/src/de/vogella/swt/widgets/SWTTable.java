@@ -38,9 +38,6 @@ public class SWTTable {
 			item.setText (2, String.valueOf(i));
 		}
 		
-		for (int i=0; i<titles.length; i++) {
-			table.getColumn (i).pack ();
-		}	
 		shell.pack ();
 		shell.open ();
 

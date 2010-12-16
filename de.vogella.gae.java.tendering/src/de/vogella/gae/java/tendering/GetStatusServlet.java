@@ -14,9 +14,6 @@ public class GetStatusServlet extends HttpServlet {
 			throws IOException {
 		String id = req.getParameter("id");
 		Order order = Dao.get(id);
-		order.setCarrier("Declined by Carrier Joe the helpful trucker");
-		order.setResponded(true);
-		Dao.save(order);
 		resp.setContentType("text/plain");
 		resp.getWriter().println("Carrier status: " + order.getCarrier());
 	}

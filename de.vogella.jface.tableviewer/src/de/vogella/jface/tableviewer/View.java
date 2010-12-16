@@ -5,9 +5,15 @@ import java.util.List;
 
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
+import org.eclipse.jface.viewers.ColumnViewerEditor;
+import org.eclipse.jface.viewers.ColumnViewerEditorActivationEvent;
+import org.eclipse.jface.viewers.ColumnViewerEditorActivationStrategy;
+import org.eclipse.jface.viewers.FocusCellOwnerDrawHighlighter;
 import org.eclipse.jface.viewers.StyledCellLabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
+import org.eclipse.jface.viewers.TableViewerEditor;
+import org.eclipse.jface.viewers.TableViewerFocusCellManager;
 import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyleRange;
@@ -80,6 +86,28 @@ public class View extends ViewPart {
 	private void createViewer(Composite parent) {
 		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL
 				| SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER);
+
+		ColumnViewerEditorActivationStrategy actStrategy = new ColumnViewerEditorActivationStrategy(
+				viewer) {
+			protected boolean isEditorActivationEvent(
+					ColumnViewerEditorActivationEvent event) {
+				return event.eventType == ColumnViewerEditorActivationEvent.TRAVERSAL
+						|| event.eventType == ColumnViewerEditorActivationEvent.MOUSE_DOUBLE_CLICK_SELECTION
+						// || event.eventType ==
+						// ColumnViewerEditorActivationEvent.MOUSE_CLICK_SELECTION
+						|| (event.eventType == ColumnViewerEditorActivationEvent.KEY_PRESSED);
+			}
+
+		};
+
+		final TableViewerFocusCellManager focusCellMgr = new TableViewerFocusCellManager(
+				viewer, new FocusCellOwnerDrawHighlighter(viewer));
+
+		TableViewerEditor.create(viewer, focusCellMgr, actStrategy,
+				ColumnViewerEditor.TABBING_HORIZONTAL
+						| ColumnViewerEditorActivationEvent.TRAVERSAL
+						| ColumnViewerEditor.KEYBOARD_ACTIVATION);
+
 		createColumns(parent, viewer);
 		final Table table = viewer.getTable();
 		table.setHeaderVisible(true);
@@ -164,6 +192,7 @@ public class View extends ViewPart {
 				return p.getGender();
 			}
 		});
+
 		col.setEditingSupport(new GenderEditingSupport(viewer));
 
 		// // Now the status married

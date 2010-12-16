@@ -15,9 +15,9 @@ public class ModelProvider {
 		Person person;
 		person = new Person("Rainer", "Zufall", "male", true);
 		persons.add(person);
-		person = new Person("Rainer", "Babbel", "male", true);
+		person = new Person("Reiner", "Babbel", "male", true);
 		persons.add(person);
-		person = new Person("Marie", "Darms", "female", false);
+		person = new Person("Marie", "Dortmund", "female", false);
 		persons.add(person);
 		person = new Person("Holger", "Adams", "male", true);
 		persons.add(person);
