@@ -1,10 +1,10 @@
 package de.vogella.rcp.intro.forms;
 
-import org.eclipse.jface.viewers.IStructuredContentProvider;
-import org.eclipse.jface.viewers.ITableLabelProvider;
-import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.action.ToolBarManager;
+import org.eclipse.jface.viewers.ArrayContentProvider;
+import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
-import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
@@ -17,40 +17,13 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.ui.menus.IMenuService;
 import org.eclipse.ui.part.ViewPart;
 
 public class View extends ViewPart {
 	public static final String ID = "de.vogella.rcp.intro.forms.view";
 
 	private TableViewer viewer;
-
-	class ViewContentProvider implements IStructuredContentProvider {
-		public void inputChanged(Viewer v, Object oldInput, Object newInput) {
-		}
-
-		public void dispose() {
-		}
-
-		public Object[] getElements(Object parent) {
-			return new String[] { "One", "Two", "Three" };
-		}
-	}
-
-	class ViewLabelProvider extends LabelProvider implements
-			ITableLabelProvider {
-		public String getColumnText(Object obj, int index) {
-			return getText(obj);
-		}
-
-		public Image getColumnImage(Object obj, int index) {
-			return getImage(obj);
-		}
-
-		public Image getImage(Object obj) {
-			return PlatformUI.getWorkbench().getSharedImages().getImage(
-					ISharedImages.IMG_OBJ_ELEMENT);
-		}
-	}
 
 	/**
 	 * This is a callback that will allow us to create the viewer and initialize
@@ -59,6 +32,13 @@ public class View extends ViewPart {
 	public void createPartControl(Composite parent) {
 		FormToolkit toolkit = new FormToolkit(parent.getDisplay());
 		ScrolledForm form = toolkit.createScrolledForm(parent);
+		ToolBarManager manager = (ToolBarManager) form.getToolBarManager();
+		toolkit.decorateFormHeading(form.getForm());
+		IMenuService menuService = (IMenuService) getSite().getService(
+				IMenuService.class);
+		menuService.populateContributionManager(manager, "popup:formsToolBar");
+		manager.update(true);
+
 		form.setText("Eclipse Forms API Example");
 
 		// Lets make a layout for the first section of the screen
@@ -90,8 +70,23 @@ public class View extends ViewPart {
 		section.setClient(client);
 		viewer = new TableViewer(t);
 
-		viewer.setContentProvider(new ViewContentProvider());
-		viewer.setLabelProvider(new ViewLabelProvider());
+		viewer.setContentProvider(new ArrayContentProvider());
+
+		TableViewerColumn viewerColumn = new TableViewerColumn(viewer, SWT.NONE);
+		viewerColumn.getColumn().setWidth(100);
+		viewerColumn.setLabelProvider(new ColumnLabelProvider() {
+			@Override
+			public String getText(Object element) {
+				return element.toString();
+			};
+
+			public Image getImage(Object element) {
+				return PlatformUI.getWorkbench().getSharedImages()
+						.getImage(ISharedImages.IMG_OBJ_ELEMENT);
+			};
+		}
+
+		);
 		viewer.setInput(getViewSite());
 	}
 
