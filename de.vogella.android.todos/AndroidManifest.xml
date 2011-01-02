@@ -3,19 +3,19 @@
 	package="de.vogella.android.todos" android:versionCode="1"
 	android:versionName="1.0">
 	<application android:icon="@drawable/todo" android:label="@string/app_name">
-		<activity android:name=".Todos" android:label="@string/app_name">
+		<activity android:name=".TodosOverview" android:label="@string/app_name">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
 
-		<activity android:name=".TodoEdit"
+		<activity android:name=".TodoDetails"
 			android:windowSoftInputMode="stateVisible|adjustResize">
 			>
     
     </activity>
 	</application>
-	<uses-sdk android:minSdkVersion="8" />
+	<uses-sdk android:minSdkVersion="9" />
 
 </manifest> 

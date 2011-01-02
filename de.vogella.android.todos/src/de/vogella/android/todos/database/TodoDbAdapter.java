@@ -16,14 +16,14 @@ public class TodoDbAdapter {
 	private static final String DATABASE_TABLE = "todo";
 	private Context context;
 	private SQLiteDatabase database;
-	private DatabaseHelper dbHelper;
+	private TodoDatabaseHelper dbHelper;
 
 	public TodoDbAdapter(Context context) {
 		this.context = context;
 	}
 
 	public TodoDbAdapter open() throws SQLException {
-		dbHelper = new DatabaseHelper(context);
+		dbHelper = new TodoDatabaseHelper(context);
 		database = dbHelper.getWritableDatabase();
 		return this;
 	}
@@ -35,12 +35,6 @@ public class TodoDbAdapter {
 	/**
 	 * Create a new todo If the todo is successfully created return the new
 	 * rowId for that note, otherwise return a -1 to indicate failure.
-	 * 
-	 * @param title
-	 *            the title of the note
-	 * @param body
-	 *            the body of the note
-	 * @return rowId or -1 if failed
 	 */
 	public long createTodo(String category, String summary, String description) {
 		ContentValues initialValues = createContentValues(category, summary,
@@ -50,20 +44,26 @@ public class TodoDbAdapter {
 	}
 
 	/**
-	 * Delete the note with the given rowId
-	 * 
-	 * @param rowId
-	 *            id of note to delete
-	 * @return true if deleted, false otherwise
+	 * Update the todo
+	 */
+	public boolean updateTodo(long rowId, String category, String summary,
+			String description) {
+		ContentValues updateValues = createContentValues(category, summary,
+				description);
+
+		return database.update(DATABASE_TABLE, updateValues, KEY_ROWID + "="
+				+ rowId, null) > 0;
+	}
+
+	/**
+	 * Deletes todo
 	 */
 	public boolean deleteTodo(long rowId) {
 		return database.delete(DATABASE_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
 	}
 
 	/**
-	 * Return a Cursor over the list of all todo in the database The cursor
-	 * represents a light representation of the data memory efficient -> the
-	 * cursor will retrieve and release data as it is needed
+	 * Return a Cursor over the list of all todo in the database
 	 * 
 	 * @return Cursor over all notes
 	 */
@@ -74,13 +74,7 @@ public class TodoDbAdapter {
 	}
 
 	/**
-	 * Return a Cursor positioned at the note that matches the given rowId
-	 * 
-	 * @param rowId
-	 *            id of note to retrieve
-	 * @return Cursor positioned to matching note, if found
-	 * @throws SQLException
-	 *             if note could not be found/retrieved
+	 * Return a Cursor positioned at the defined todo
 	 */
 	public Cursor fetchTodo(long rowId) throws SQLException {
 		Cursor mCursor = database.query(true, DATABASE_TABLE, new String[] {
@@ -90,29 +84,6 @@ public class TodoDbAdapter {
 			mCursor.moveToFirst();
 		}
 		return mCursor;
-
-	}
-
-	/**
-	 * Update the note using the details provided. The note to be updated is
-	 * specified using the rowId, and it is altered to use the title and body
-	 * values passed in
-	 * 
-	 * @param rowId
-	 *            id of note to update
-	 * @param summary
-	 *            value to set note title to
-	 * @param description
-	 *            value to set note body to
-	 * @return true if the note was successfully updated, false otherwise
-	 */
-	public boolean updateTodo(long rowId, String category, String summary,
-			String description) {
-		ContentValues updateValues = createContentValues(category, summary,
-				description);
-
-		return database.update(DATABASE_TABLE, updateValues, KEY_ROWID + "="
-				+ rowId, null) > 0;
 	}
 
 	private ContentValues createContentValues(String category, String summary,

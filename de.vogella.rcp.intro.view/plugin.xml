@@ -33,16 +33,11 @@
       <perspectiveExtension
             targetID="*">
          <view
-               closeable="true"
                id="de.vogella.rcp.intro.view.MyView"
                minimized="false"
-               moveable="true"
                ratio="0.95f"
                relationship="top"
-               relative="org.eclipse.ui.editorss"
-               showTitle="true"
-               standalone="true"
-               visible="true">
+               relative="org.eclipse.ui.editorss">
          </view>
       </perspectiveExtension>
    </extension>

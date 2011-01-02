@@ -21,13 +21,8 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 	public void preWindowOpen() {
 		IWorkbenchWindowConfigurer configurer = getWindowConfigurer();
 		configurer.setInitialSize(new Point(400, 300));
-//		configurer.setShowCoolBar(false);
 		configurer.setShowStatusLine(false);
 		configurer.setTitle("RCP Application");
-//		configurer.setShowPerspectiveBar(true);
-//		IPreferenceStore apiStore = PlatformUI.getPreferenceStore();
-//		apiStore.setValue(IWorkbenchPreferenceConstants.DOCK_PERSPECTIVE_BAR,
-//				"TOP_LEFT");
-
+		configurer.setShowPerspectiveBar(true);
 	}
 }

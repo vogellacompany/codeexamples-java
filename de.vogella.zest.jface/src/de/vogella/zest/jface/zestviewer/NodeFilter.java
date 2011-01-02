@@ -9,13 +9,14 @@ public class NodeFilter extends ViewerFilter {
 
 	@Override
 	public boolean select(Viewer viewer, Object parentElement, Object element) {
-		
+
 		if (element instanceof MyNode) {
 			MyNode node = (MyNode) element;
-			return node.getName().toLowerCase().contains("a");
-			
+			return true;
+			// return node.getName().toLowerCase().contains("a");
+
 		}
-		return true; 
+		return true;
 	}
 
 }

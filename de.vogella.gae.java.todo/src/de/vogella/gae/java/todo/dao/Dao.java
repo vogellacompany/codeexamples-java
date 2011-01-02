@@ -15,7 +15,7 @@ public enum Dao {
 	public List<Todo> listTodos() {
 		EntityManager em = EMFService.get().createEntityManager();
 		// Read the existing entries
-		Query q = em.createQuery("select m from Todo todo");
+		Query q = em.createQuery("select m from Todo m");
 		List<Todo> todos = q.getResultList();
 		return todos;
 	}

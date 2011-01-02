@@ -30,8 +30,8 @@
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            class="de.vogella.rcp.intro.perspective.PerspectiveFactory"
-            id="de.vogella.rcp.intro.perspective.MyPerspective"
+            class="de.vogella.rcp.intro.perspective.Perspective"
+            id="de.vogella.rcp.intro.perspective.perspective"
             name="vogella.de Perspective">
       </perspective>
    </extension>
