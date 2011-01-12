@@ -18,7 +18,9 @@ public class MyArrayAdapter extends ArrayAdapter<String> {
 		this.names = names;
 	}
 
-	class ViewHolder {
+	// static to save the reference to the outer class and to avoid access to
+	// any members of the containing class
+	static class ViewHolder {
 		public ImageView imageView;
 		public TextView textView;
 	}
@@ -39,6 +41,7 @@ public class MyArrayAdapter extends ArrayAdapter<String> {
 			holder = new ViewHolder();
 			holder.textView = (TextView) rowView.findViewById(R.id.label);
 			holder.imageView = (ImageView) rowView.findViewById(R.id.icon);
+			rowView.setTag(holder);
 		} else {
 			holder = (ViewHolder) rowView.getTag();
 		}

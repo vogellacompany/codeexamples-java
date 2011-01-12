@@ -3,6 +3,7 @@ package de.vogella.android.listactivity;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,7 +16,8 @@ public class MyList extends ListActivity {
 		String[] names = new String[] { "Linux", "Windows7", "Eclipse", "Suse",
 				"Ubuntu", "Solaris", "Android", "iPhone", "Linux", "Windows7",
 				"Eclipse", "Suse", "Ubuntu", "Solaris", "Android", "iPhone" };
-		this.setListAdapter(new MyArrayAdapter(this, names));
+		ArrayAdapter<String> adapter = new TwoLayoutsArrayAdapter(this, names);
+		setListAdapter(adapter);
 	}
 
 	@Override
@@ -24,7 +26,7 @@ public class MyList extends ListActivity {
 		// Get the item that was clicked
 		Object o = this.getListAdapter().getItem(position);
 		String keyword = o.toString();
-		Toast.makeText(this, "You selected: " + keyword, Toast.LENGTH_LONG)
+		Toast.makeText(this, "You selected: " + keyword, Toast.LENGTH_SHORT)
 				.show();
 
 	}
