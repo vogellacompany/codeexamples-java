@@ -32,7 +32,7 @@ public class HelloPreferences extends Activity {
 				String password = preferences.getString("password", "n/a");
 				Toast.makeText(
 						HelloPreferences.this,
-						"You maintained user: " + username + " and password: "
+						"You entered user: " + username + " and password: "
 								+ password, Toast.LENGTH_LONG).show();
 
 			}

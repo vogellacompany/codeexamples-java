@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     >
 
-<LinearLayout android:id="@+id/LinearLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content"><TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Text1:"></TextView><EditText android:text="@+id/EditText01" android:id="@+id/EditText01" android:layout_width="wrap_content" android:layout_height="wrap_content"></EditText></LinearLayout>
-<LinearLayout android:id="@+id/LinearLayout02" android:layout_width="wrap_content" android:layout_height="wrap_content"><TextView android:id="@+id/TextView02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Text2:"></TextView><EditText android:text="@+id/EditText02" android:id="@+id/EditText02" android:layout_width="wrap_content" android:layout_height="wrap_content"></EditText></LinearLayout>
+<LinearLayout android:id="@+id/LinearLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content"><TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="First Activity. Press button to call second activity" android:minHeight="60dip" android:textSize="20sp"></TextView></LinearLayout>
+<LinearLayout android:id="@+id/LinearLayout02" android:layout_width="wrap_content" android:layout_height="wrap_content"></LinearLayout>
 <Button android:id="@+id/Button01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:onClick="onClick" android:text="Calling an intent"></Button>
 </LinearLayout>
