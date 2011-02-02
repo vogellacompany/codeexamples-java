@@ -33,5 +33,6 @@ public class CallableFutures {
 			}
 		}
 		System.out.println(sum);
+		executor.shutdown();
 	}
 }

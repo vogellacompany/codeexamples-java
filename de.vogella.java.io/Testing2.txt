@@ -1,0 +1,240 @@
+%---------------------------------------------------------------------------
+\documentclass%%
+%---------------------------------------------------------------------------
+  [fontsize=10pt,%%          Schriftgroesse
+%---------------------------------------------------------------------------
+% Satzspiegel
+   paper=a4,%%               Papierformat
+   %enlargefirstpage=on,%%    Erste Seite anders
+   %pagenumber=headright,%%   Seitenzahl oben mittig
+%---------------------------------------------------------------------------
+% Layout
+   headsepline=off,%%         Linie unter der Seitenzahl
+   parskip=half,%%           Abstand zwischen Absaetzen
+%---------------------------------------------------------------------------
+% Was kommt in den Briefkopf und in die Anschrift
+   fromalign=right,%%        Plazierung des Briefkopfs
+   fromphone=on,%%           Telefonnummer im Absender
+   fromrule=aftername,%%     Linie im Absender (aftername, afteraddress)
+   fromfax=on,%%            Faxnummer
+   fromemail=on,%%           Emailadresse
+   fromurl=on,%%            Homepage
+   fromlogo=on,%%            Firmenlogo
+   addrfield=on,%%           Adressfeld fuer Fensterkuverts
+   backaddress=on,%%         ...und Absender im Fenster
+   subject=beforeopening,%%  Plazierung der Betreffzeile
+   locfield=narrow,%%        zusaetzliches Feld fuer Absender
+   foldmarks=on,%%           Faltmarken setzen
+   numericaldate=off,%%      Datum numerisch ausgeben
+   refline=narrow,%%         Geschaeftszeile im Satzspiegel
+   firstfoot=on,%%           Footerbereich
+   stnr=on,%%                Steuernummer
+%---------------------------------------------------------------------------
+% Formatierung
+   draft=off%%                Entwurfsmodus
+]{scrlttr2}
+%---------------------------------------------------------------------------
+\usepackage[english, ngerman]{babel}
+\usepackage{url}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+% symbols: (cell)phone, email
+\RequirePackage{marvosym}
+% for gray color in header
+\RequirePackage{color}
+\usepackage[T1]{fontenc}
+
+%---------------------------------------------------------------------------
+% Schriften werden hier definiert
+\renewcommand*\familydefault{\sfdefault} % Latin Modern Sans
+\setkomafont{fromname}{\sffamily\color{mygray}\LARGE}
+%\setkomafont{pagenumber}{\sffamily}
+\setkomafont{subject}{\mdseries}
+\setkomafont{backaddress}{\mdseries}
+\setkomafont{fromaddress}{\small\sffamily\mdseries\color{mygray}}
+
+
+%---------------------------------------------------------------------------
+\begin{document}
+%---------------------------------------------------------------------------
+% Briefstil und Position des Briefkopfs
+\LoadLetterOption{DIN} %% oder: DINmtext, SN, SNleft, KOMAold.
+\makeatletter
+\@setplength{sigbeforevskip}{17mm} % Abstand der Signatur von dem closing
+\@setplength{firstheadvpos}{17mm} % Abstand des Absenderfeldes vom Top
+\@setplength{firstfootvpos}{275mm} % Abstand des Footers von oben
+\@setplength{firstheadwidth}{\paperwidth}
+\@setplength{locwidth}{70mm}   % Breite des Locationfeldes
+\@setplength{locvpos}{65mm}    % Abstand des Locationfeldes von oben
+\ifdim \useplength{toaddrhpos}>\z@
+  \@addtoplength[-2]{firstheadwidth}{\useplength{toaddrhpos}}
+\else
+  \@addtoplength[2]{firstheadwidth}{\useplength{toaddrhpos}}
+\fi
+\@setplength{foldmarkhpos}{6.5mm}
+\makeatother
+%---------------------------------------------------------------------------
+% Farben werden hier definiert
+% define gray for header
+\definecolor{mygray}{gray}{.55}
+% define blue for address
+\definecolor{myblue}{rgb}{0.25,0.45,0.75}
+
+%---------------------------------------------------------------------------
+% Absender Daten
+\setkomavar{fromname}{Lars Vogel}
+\setkomavar{fromaddress}{Mathias-Claudius Weg 6\\69190 Walldorf}
+\setkomavar{fromphone}[\Mobilefone~]{+49\,(0)\,176\,704\,722\,36}
+\setkomavar{fromfax}[\FAX~]{+49\,(0)\,32\,221\,739\,404}
+\setkomavar{fromemail}[\Letter~]{rcpschulung@gmail.com}
+\setkomavar{fromurl}[]{http://www.vogella.de}
+\newkomavar[Steuernummer]{stnr}
+\setkomavar{stnr}{123/4567/8900}
+%\setkomafont{fromaddress}{\small\rmfamily\mdseries\slshape\color{myblue}}
+
+\setkomavar{backaddressseparator}{ - }
+%\setkomavar{backaddress}{Tim Metzner, Felderhof 112, 40880 Ratingen} % wenn erwünscht kann hier eine andere Backaddress eingetragen werden
+\setkomavar{signature}{Lars Vogel}
+% signature same indention level as rest
+\renewcommand*{\raggedsignature}{\raggedright}
+
+
+% Anlage neu definieren
+\renewcommand{\enclname}{Anlagen}
+\setkomavar{enclseparator}{: }
+%---------------------------------------------------------------------------
+% Seitenstil
+%pagenumber=footmiddle
+\pagestyle{plain}%% keine Header in der Kopfzeile bzw. plain
+\pagenumbering{arabic}
+%---------------------------------------------------------------------------
+%---------------------------------------------------------------------------
+\firstfoot{\footnotesize%
+\rule[3pt]{\textwidth}{.4pt} \\
+\begin{tabular}[t]{l@{}}%
+\usekomavar{fromname}\\
+\usekomavar{fromaddress}\\
+[\baselineskip]
+Ust-Id: DE 32451 / 30 224
+\end{tabular}%
+\hfill
+\begin{tabular}[t]{l@{}}%
+  \usekomavar[\Mobilefone~]{fromphone}\\
+  \usekomavar[\FAX~]{fromfax}\\
+   \usekomavar[\Letter~]{fromemail}\\
+   
+\end{tabular}%
+\ifkomavarempty{frombank}{}{%
+\hfill
+\begin{tabular}[t]{l@{}}%
+\usekomavar{frombank}
+\end{tabular}%
+}%
+}%
+%---------------------------------------------------------------------------
+% Bankverbindung
+\setkomavar{frombank}{Bank: Comdirect\\Konto Nr.: 1775055\\
+BLZ: 20041133 
+%BLZ 123\,123\,12\\
+}
+%---------------------------------------------------------------------------
+%\setkomavar{yourref}{}
+%\setkomavar{yourmail}{}
+%\setkomavar{myref}{}
+%\setkomavar{customer}{}
+%\setkomavar{invoice}{}
+%---------------------------------------------------------------------------
+% Datum und Ort werden hier eingetragen
+\setkomavar{date}{den \today}
+\setkomavar{place}{Walldorf}
+%---------------------------------------------------------------------------
+
+
+
+
+
+%---------------------------------------------------------------------------
+% Hier beginnt der Brief, mit der Anschrift des Empfängers
+
+\begin{letter}
+{
+This is cool\\
+
+}
+%---------------------------------------------------------------------------
+% Der Betreff des Briefes
+\setkomavar{subject}{\bf{
+Angebot Eclipse RCP Schulung
+}
+}
+%---------------------------------------------------------------------------
+\opening{Sehr geehrter Herr Kinnen,}
+
+vielen Dank für Ihre Anfrage und Ihr Interesse an der Schulung „Eclipse RCP“. Hiermit erstelle ich Ihnen
+folgendes Angebot:
+\newline
+   
+\begin{tabular}{|l|l|l|}
+\hline
+Nr. & Leistung & Gesamtbetrag \\ \hline
+1 & Schulung ``Eclipse RCP'' &  \\
+&&\\
+ & 28.03.2011 - 01.04.2011 in Dortmund  & \\
+ & Teilnahmegebühr je Teilnehmer &  \\
+ & Schulungsinhalte gemäß beiliegender Agenda & 1800,00 EUR \\ \hline
+\end{tabular}\newline
+
+
+Anbei finden Sie die Kursbeschreibung, Agenda sowie die geltenden AGB für öffentliche Schulungen
+(Stand: 12.10.2010). Eine Anmeldung erfolgt durch Rücksendung des beiliegenden Anmeldeformulars per
+Post oder Fax. Das Angebot ist freibleibend. Alle Preise verstehen sich zuzüglich der gesetzlichen
+Mehrwertsteuer.
+
+
+
+\closing{Mit freundlichen Grüßen,}
+%---------------------------------------------------------------------------
+%\ps{PS:}
+%\encl{Lebenslauf\\ Zeugnisse}
+%\cc{}
+\newpage
+
+\thispagestyle{myheadings}
+
+\markright{\textbf{Lars Vogel}\\ \usekomavar[\FAX~]{fromfax}\\}
+
+
+{\bf Schulungsanmeldung}:
+\vspace{10 mm}
+
+
+Hiermit melden wir gemäß dem vorliegenden Angebot die folgenden Teilnehmer:
+\vspace{10 mm}
+
+Name: \hspace{60 mm} E-Mail:
+
+\underline{\hspace{60 mm}} \hspace{10 mm} \underline{\hspace{60 mm}}
+
+
+\underline{\hspace{60 mm}} \hspace{10 mm} \underline{\hspace{60 mm}}
+
+
+\underline{\hspace{60 mm}} \hspace{10 mm} \underline{\hspace{60 mm}}
+
+\vspace{10 mm}
+verbindlich für folgende Schulung an:
+\vspace{5 mm}
+
+{\bf Schulung: Eclipse RCP}
+
+Datum: 28.03.2011 - 01.04.2011
+
+Ort: Dortmund
+
+\vspace{15 mm}
+
+\begin{tabular}{ l l }
+Firma: &  \underline{\hspace{100 mm}}  \\\\
+Ansprechpartner: & \underline{\hspace{100 mm}}\\\\
+Straße: & \underline{\hspace{100 mm}}\\\\
+PLZ / Ort:& \underline{\hspace{100
