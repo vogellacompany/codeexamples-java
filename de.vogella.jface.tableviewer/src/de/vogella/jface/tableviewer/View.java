@@ -116,7 +116,7 @@ public class View extends ViewPart {
 		viewer.setContentProvider(new ArrayContentProvider());
 		// Get the content for the viewer, setInput will call getElements in the
 		// contentProvider
-		viewer.setInput(ModelProvider.getInstance().getPersons());
+		viewer.setInput(ModelProvider.INSTANCE.getPersons());
 		// Make the selection available to other views
 		getSite().setSelectionProvider(viewer);
 		// Set the sorter for the table
