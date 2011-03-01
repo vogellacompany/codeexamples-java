@@ -3,6 +3,8 @@ package de.vogella.android.listactivity;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -18,6 +20,19 @@ public class MyList extends ListActivity {
 				"Eclipse", "Suse", "Ubuntu", "Solaris", "Android", "iPhone" };
 		ArrayAdapter<String> adapter = new TwoLayoutsArrayAdapter(this, names);
 		setListAdapter(adapter);
+		ListView list = getListView();
+		list.setOnItemLongClickListener(new OnItemLongClickListener() {
+			@Override
+			public boolean onItemLongClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				Toast.makeText(MyList.this,
+						"Item in position " + position + " clicked",
+						Toast.LENGTH_LONG).show();
+				// Return true to consume the click event. In this case the
+				// onListItemClick listener is not called anymore.
+				return true;
+			}
+		});
 	}
 
 	@Override
