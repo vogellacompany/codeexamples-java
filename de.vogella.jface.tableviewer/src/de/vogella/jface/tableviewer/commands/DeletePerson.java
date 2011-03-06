@@ -27,7 +27,7 @@ public class DeletePerson extends AbstractHandler {
 				.getSelection();
 
 		if (selection != null && selection instanceof IStructuredSelection) {
-			List<Person> persons = ModelProvider.getInstance().getPersons();
+			List<Person> persons = ModelProvider.INSTANCE.getPersons();
 			IStructuredSelection sel = (IStructuredSelection) selection;
 
 			for (Iterator<Person> iterator = sel.iterator(); iterator.hasNext();) {

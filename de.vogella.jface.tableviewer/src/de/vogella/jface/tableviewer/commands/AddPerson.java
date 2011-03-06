@@ -16,7 +16,7 @@ public class AddPerson extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);
-		ModelProvider persons = ModelProvider.getInstance();
+		ModelProvider persons = ModelProvider.INSTANCE;
 		AddPersonDialog dialog = new AddPersonDialog(window.getShell());
 		dialog.open();
 		if (dialog.getPerson() != null) {

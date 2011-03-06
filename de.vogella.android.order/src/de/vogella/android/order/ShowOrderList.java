@@ -14,6 +14,7 @@ public class ShowOrderList extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         Button button =(Button) findViewById(R.id.Button01);
+        button.setBackgroundDrawable(getResources().getDrawable(R.drawable.icon));
         button.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {

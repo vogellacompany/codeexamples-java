@@ -17,6 +17,7 @@ public class MyList extends ListActivity {
 				"Ubuntu", "Solaris", "Android", "iPhone", "Linux", "Windows7",
 				"Eclipse", "Suse", "Ubuntu", "Solaris", "Android", "iPhone" };
 		ArrayAdapter<String> adapter = new TwoLayoutsArrayAdapter(this, names);
+//		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, android.R.id.text1,names);
 		setListAdapter(adapter);
 	}
 

@@ -12,7 +12,7 @@ import de.vogella.jface.tableviewer.model.Person;
 public class Print extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		List<Person> personList = ModelProvider.getInstance().getPersons();
+		List<Person> personList = ModelProvider.INSTANCE.getPersons();
 		for (Person p : personList) {
 			System.out.println(p);
 		}
