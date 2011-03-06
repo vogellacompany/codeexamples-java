@@ -9,7 +9,6 @@ import java.util.Random;
 import org.junit.Before;
 import org.junit.Test;
 
-
 public class MergesortTest {
 
 	private int[] numbers;
@@ -24,7 +23,6 @@ public class MergesortTest {
 			numbers[i] = generator.nextInt(MAX);
 		}
 	}
-
 
 	@Test
 	public void testMergeSort() {
@@ -44,6 +42,25 @@ public class MergesortTest {
 		}
 		assertTrue(true);
 
+	}
+
+	@Test
+	public void itWorksRepeatably() {
+		for (int i = 0; i < 200; i++) {
+			numbers = new int[SIZE];
+			Random generator = new Random();
+			for (int a = 0; a < numbers.length; a++) {
+				numbers[a] = generator.nextInt(MAX);
+			}
+			Mergesort sorter = new Mergesort();
+			sorter.sort(numbers);
+			for (int j = 0; j < numbers.length - 1; j++) {
+				if (numbers[j] > numbers[j + 1]) {
+					fail("Should not happen");
+				}
+			}
+			assertTrue(true);
+		}
 	}
 
 	@Test

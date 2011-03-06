@@ -1,6 +1,5 @@
 package de.vogella.algorithms.sort.mergesort;
 
-
 public class Mergesort {
 	private int[] numbers;
 
@@ -45,11 +44,12 @@ public class Mergesort {
 		while (i <= middle && j <= high) {
 			if (helper[i] <= helper[j]) {
 				numbers[k] = helper[i];
+				i++;
 			} else {
 				numbers[k] = helper[j];
+				j++;
 			}
 			k++;
-			i++;
 		}
 		// Copy the rest of the left side of the array into the target array
 		while (i <= middle) {

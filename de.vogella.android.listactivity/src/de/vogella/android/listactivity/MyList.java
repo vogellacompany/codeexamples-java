@@ -1,11 +1,11 @@
 package de.vogella.android.listactivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
 
 public class MyList extends ListActivity {
 
@@ -13,23 +13,28 @@ public class MyList extends ListActivity {
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		// Create an array of Strings, that will be put to our ListActivity
-		String[] names = new String[] { "Linux", "Windows7", "Eclipse", "Suse",
-				"Ubuntu", "Solaris", "Android", "iPhone", "Linux", "Windows7",
-				"Eclipse", "Suse", "Ubuntu", "Solaris", "Android", "iPhone" };
-		ArrayAdapter<String> adapter = new TwoLayoutsArrayAdapter(this, names);
-//		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, android.R.id.text1,names);
+		ArrayAdapter<Model> adapter = new InteractiveArrayAdapter(this,
+				getModel());
 		setListAdapter(adapter);
 	}
 
-	@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) {
-		super.onListItemClick(l, v, position, id);
-		// Get the item that was clicked
-		Object o = this.getListAdapter().getItem(position);
-		String keyword = o.toString();
-		Toast.makeText(this, "You selected: " + keyword, Toast.LENGTH_SHORT)
-				.show();
+	private List<Model> getModel() {
+		List<Model> list = new ArrayList<Model>();
+		list.add(get("Linux"));
+		list.add(get("Windows7"));
+		list.add(get("Suse"));
+		list.add(get("Eclipse"));
+		list.add(get("Ubuntu"));
+		list.add(get("Solaris"));
+		list.add(get("Android"));
+		list.add(get("iPhone"));
+		// Initially select one of the items
+		list.get(1).setSelected(true);
+		return list;
+	}
 
+	private Model get(String s) {
+		return new Model(s);
 	}
 
 }

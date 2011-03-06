@@ -53,6 +53,8 @@ public class MyArrayAdapter extends ArrayAdapter<String> {
 				|| s.startsWith("Solaris")) {
 
 			holder.imageView.setImageResource(R.drawable.no);
+		} else {
+			holder.imageView.setImageResource(R.drawable.ok);
 		}
 
 		return rowView;

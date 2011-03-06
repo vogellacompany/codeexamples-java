@@ -1,3 +1,4 @@
+
 package de.vogella.android.temperature;
 
 import android.app.Activity;
@@ -14,7 +15,7 @@ public class Convert extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		text = (EditText) findViewById(R.id.EditText01);
+		text = (EditText) findViewById(R.id.editText1);
 
 	}
 
@@ -22,9 +23,9 @@ public class Convert extends Activity {
 	// "On Click property" of the button
 	public void myClickHandler(View view) {
 		switch (view.getId()) {
-		case R.id.Button01:
-			RadioButton celsiusButton = (RadioButton) findViewById(R.id.RadioButton01);
-			RadioButton fahrenheitButton = (RadioButton) findViewById(R.id.RadioButton02);
+		case R.id.button1:
+			RadioButton celsiusButton = (RadioButton) findViewById(R.id.radio0);
+			RadioButton fahrenheitButton = (RadioButton) findViewById(R.id.radio1);
 			if (text.getText().length() == 0) {
 				Toast.makeText(this, "Please enter a valid number",
 						Toast.LENGTH_LONG).show();
