@@ -26,7 +26,7 @@ public class StaXParser {
 	static final String INTERACTIVE = "interactive";
 
 	@SuppressWarnings({ "unchecked", "null" })
-	public List<Item>  readConfig(String configFile) {
+	public List<Item> readConfig(String configFile) {
 		List<Item> items = new ArrayList<Item>();
 		try {
 			// First create a new XMLInputFactory
@@ -36,7 +36,7 @@ public class StaXParser {
 			XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
 			// Read the XML document
 			Item item = null;
-			
+
 			while (eventReader.hasNext()) {
 				XMLEvent event = eventReader.nextEvent();
 
@@ -45,13 +45,16 @@ public class StaXParser {
 					// If we have a item element we create a new item
 					if (startElement.getName().getLocalPart() == (ITEM)) {
 						item = new Item();
-						// We read the attributes from this tag and add the date attribute to our object
+						// We read the attributes from this tag and add the date
+						// attribute to our object
 						Iterator<Attribute> attributes = startElement
 								.getAttributes();
 						while (attributes.hasNext()) {
 							Attribute attribute = attributes.next();
-							if (attribute.getName().toString().equals(DATE));
-							item.setDate(attribute.getValue());
+							if (attribute.getName().toString().equals(DATE)) {
+								item.setDate(attribute.getValue());
+							}
+
 						}
 					}
 
@@ -63,28 +66,31 @@ public class StaXParser {
 							continue;
 						}
 					}
-					if (event.asStartElement().getName().getLocalPart().equals(UNIT)) {
+					if (event.asStartElement().getName().getLocalPart()
+							.equals(UNIT)) {
 						event = eventReader.nextEvent();
 						item.setUnit(event.asCharacters().getData());
 						continue;
 					}
 
-					if (event.asStartElement().getName().getLocalPart().equals(CURRENT)) {
+					if (event.asStartElement().getName().getLocalPart()
+							.equals(CURRENT)) {
 						event = eventReader.nextEvent();
 						item.setCurrent(event.asCharacters().getData());
 						continue;
 					}
 
-					if (event.asStartElement().getName().getLocalPart().equals(INTERACTIVE)) {
+					if (event.asStartElement().getName().getLocalPart()
+							.equals(INTERACTIVE)) {
 						event = eventReader.nextEvent();
 						item.setInteractive(event.asCharacters().getData());
 						continue;
 					}
 				}
 				// If we reach the end of an item element we add it to the list
-				if (event.isEndElement()){
+				if (event.isEndElement()) {
 					EndElement endElement = event.asEndElement();
-					if (endElement.getName().getLocalPart() ==(ITEM)){
+					if (endElement.getName().getLocalPart() == (ITEM)) {
 						items.add(item);
 					}
 				}
@@ -95,7 +101,7 @@ public class StaXParser {
 		} catch (XMLStreamException e) {
 			e.printStackTrace();
 		}
-		return items; 
+		return items;
 	}
 
 }
