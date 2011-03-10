@@ -18,7 +18,7 @@ public class AnimationExample extends Activity implements AnimationListener {
 	}
 
 	public void startAnimation(View view) {
-		Animation animation = AnimationUtils.makeOutAnimation(this, false);
+		Animation animation = AnimationUtils.loadAnimation(this, R.anim.myanimation);
 		animation.setAnimationListener(this);
 		View animatedView = findViewById(R.id.textview);
 		animatedView.startAnimation(animation);
