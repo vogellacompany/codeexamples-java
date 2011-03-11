@@ -26,7 +26,7 @@ public class C2DMReceiver extends C2DMBaseReceiver {
 
 	@Override
 	public void onError(Context context, String errorId) {
-		Log.e("C2DM", "Fuck: Error!!!");
+		Log.e("C2DM", "Error occured!!!");
 	}
 
 }
