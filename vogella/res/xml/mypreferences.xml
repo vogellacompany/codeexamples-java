@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <EditTextPreference android:title="C2DM registered user" android:key="user"></EditTextPreference>
-    <EditTextPreference android:title="Password" android:key="password"></EditTextPreference>
-</PreferenceScreen>
