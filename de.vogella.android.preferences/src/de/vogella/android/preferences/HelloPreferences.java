@@ -46,8 +46,8 @@ public class HelloPreferences extends Activity {
 			}
 		});
 
-		Button buttonChangePerferences = (Button) findViewById(R.id.Button02);
-		buttonChangePerferences.setOnClickListener(new OnClickListener() {
+		Button buttonChangePreferences = (Button) findViewById(R.id.Button02);
+		buttonChangePreferences.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Editor edit = preferences.edit();
 				String username = preferences.getString("username", "n/a");
