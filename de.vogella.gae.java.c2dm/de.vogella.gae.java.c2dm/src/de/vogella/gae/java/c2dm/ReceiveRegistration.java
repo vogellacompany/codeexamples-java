@@ -7,15 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.appengine.api.datastore.DatastoreService;
-import com.google.appengine.api.datastore.DatastoreServiceFactory;
-import com.google.appengine.api.datastore.Entity;
+import de.vogella.gae.java.c2dm.dao.Dao;
 
 @SuppressWarnings("serial")
 public class ReceiveRegistration extends HttpServlet {
-	
+
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
-	throws IOException {
+			throws IOException {
 		resp.setContentType("text/plain");
 		PrintWriter writer = resp.getWriter();
 		writer.write("This servlet is alive and kicking");
@@ -24,12 +22,12 @@ public class ReceiveRegistration extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		System.out.println("Register a new registration key ");
-		String key = (String) req.getParameter("registrationid");
-		Entity entity = new Entity("registrationid", key);
-		DatastoreService datastore = DatastoreServiceFactory
-				.getDatastoreService();
-		datastore.put(entity);
-
+		String registrationId = (String) req.getParameter("registrationid");
+		String deviceId = (String) req.getParameter("deviceid");
+		Dao.INSTANCE.add(deviceId, registrationId);
+		resp.setContentType("text/plain");
+		PrintWriter writer = resp.getWriter();
+		writer.append("Thank you for registering");
 	}
 
 }

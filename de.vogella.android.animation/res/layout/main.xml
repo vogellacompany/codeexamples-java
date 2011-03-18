@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<TextView  
-	android:id="@+id/textview"
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
-<Button android:id="@+id/Button01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Animate" android:onClick="startAnimation"></Button>
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<TextView android:id="@+id/rotatetext" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="@string/hello" />
+	<Button android:id="@+id/Button01" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Animate"
+		android:onClick="startAnimation"></Button>
+	<TextView android:id="@+id/scrolltext" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:lines="1"
+		android:text="This is a long text, working in the train, yeah you yeah."
+		android:scrollHorizontally="true"/>
+	<Button android:id="@+id/Button02" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Animate"
+		android:onClick="startAnimation"></Button>
 </LinearLayout>

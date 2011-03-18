@@ -20,6 +20,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<servlet-name>AuthenticationServlet</servlet-name>
 		<url-pattern>/authenticate</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>SendServlet</servlet-name>
+		<servlet-class>de.vogella.gae.java.c2dm.SendServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SendServlet</servlet-name>
+		<url-pattern>/send</url-pattern>
+	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
