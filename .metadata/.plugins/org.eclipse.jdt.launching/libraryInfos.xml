@@ -19,7 +19,7 @@
 <entry path="/usr/lib/jvm/java-6-openjdk/jre/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
-<libraryInfo home="/usr/lib/jvm/java-6-openjdk" version="1.6.0_18">
+<libraryInfo home="/usr/lib/jvm/java-6-openjdk" version="1.6.0_20">
 <bootpath>
 <entry path="/usr/lib/jvm/java-6-openjdk/jre/lib/resources.jar"/>
 <entry path="/usr/lib/jvm/java-6-openjdk/jre/lib/rt.jar"/>
@@ -27,7 +27,10 @@
 <entry path="/usr/lib/jvm/java-6-openjdk/jre/lib/jsse.jar"/>
 <entry path="/usr/lib/jvm/java-6-openjdk/jre/lib/jce.jar"/>
 <entry path="/usr/lib/jvm/java-6-openjdk/jre/lib/charsets.jar"/>
+<entry path="/usr/lib/jvm/java-6-openjdk/jre/lib/netx.jar"/>
+<entry path="/usr/lib/jvm/java-6-openjdk/jre/lib/plugin.jar"/>
 <entry path="/usr/lib/jvm/java-6-openjdk/jre/lib/rhino.jar"/>
+<entry path="/usr/lib/jvm/java-6-openjdk/jre/lib/modules/jdk.boot.jar"/>
 <entry path="/usr/lib/jvm/java-6-openjdk/jre/classes"/>
 </bootpath>
 <extensionDirs>

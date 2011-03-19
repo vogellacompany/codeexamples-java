@@ -6,16 +6,12 @@
 		<item value="false" key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_LOCATION"/>
 		<item value="415" key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_HEIGHT"/>
 		<list key="orderedProviders">
-			<item value="org.eclipse.ui.views"/>
 		</list>
 		<list key="textArray">
-			<item value="sv"/>
 		</list>
 		<list key="orderedElements">
-			<item value="org.eclipse.team.svn.ui.repository.RepositoriesView"/>
 		</list>
 		<list key="textEntries">
-			<item value="1"/>
 		</list>
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">
