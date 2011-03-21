@@ -1,4 +1,4 @@
-#Sat Mar 19 22:25:49 CET 2011
+#Mon Mar 21 21:15:28 CET 2011
 org.eclipse.jet.javafilter=true
 content_assist_proposals_foreground=58,57,53
 content_assist_favorite_static_members=org.eclipse.swtbot.swt.finder.matchers.WidgetMatcherFactory.*;org.hamcrest.Matchers.*;org.hamcrest.MatcherAssert.*;org.junit.Assert.*;org.eclipse.swtbot.eclipse.finder.matchers.WidgetMatcherFactory.*;org.eclipse.swtbot.swt.finder.finders.UIThreadRunnable.*;org.eclipse.swtbot.swt.finder.SWTBotAssert.*;org.eclipse.swtbot.eclipse.finder.waits.Conditions.*;org.eclipse.swtbot.swt.finder.waits.Conditions.*
@@ -15,6 +15,7 @@ org.eclipse.jdt.ui.editor.tab.width=
 org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter=true
 fontPropagated=true
 org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter=true
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
 org.eclipse.jdt.ui.javadoclocations.migrated=true
 proposalOrderMigrated=true
 org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter=true
@@ -30,3 +31,4 @@ CustomFiltersActionGroup.org.eclipse.jdt.ui.PackageExplorer.TAG_DUMMY_TO_TEST_EX
 org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
 content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"/>
 org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter=true
+org.eclipse.jdt.ui.text.code_templates_migrated=true

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="18" version="2.0">
+<workbench progressCount="35" version="2.0">
 <workbenchAdvisor/>
 <window height="920" maximized="true" width="1251" x="185" y="70">
 <fastViewData fastViewLocation="1024"/>
@@ -55,6 +55,11 @@
 <part id="16"/>
 <part id="17"/>
 <part id="18"/>
+<part id="19"/>
+<part id="20"/>
+<part id="21"/>
+<part id="22"/>
+<part id="23"/>
 </presentation>
 </folder>
 </info>
@@ -127,8 +132,25 @@
 <editor id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="attrs.xml" partName="attrs.xml" path="/home/vogella/workspace/vogella/Apfel2/res/values/attrs.xml" title="attrs.xml" tooltip="Apfel2/res/values/attrs.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Apfel2/res/values/attrs.xml"/>
 </editor>
-<editor activePart="true" focus="true" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" partName="main.xml" path="/home/vogella/workspace/vogella/Apfel2/res/layout/main.xml" title="main.xml" tooltip="Apfel2/res/layout/main.xml" workbook="DefaultEditorWorkbook">
+<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" partName="main.xml" path="/home/vogella/workspace/vogella/Apfel2/res/layout/main.xml" title="main.xml" tooltip="Apfel2/res/layout/main.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Apfel2/res/layout/main.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LayoutTester.java" partName="LayoutTester.java" path="/home/vogella/workspace/vogella/de.vogella.android.layout/src/de/vogella/android/layout/LayoutTester.java" title="LayoutTester.java" tooltip="de.vogella.android.layout/src/de/vogella/android/layout/LayoutTester.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.layout/src/de/vogella/android/layout/LayoutTester.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1173" selectionTopPixel="307"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="de.vogella.android.layout Manifest" path="/home/vogella/workspace/vogella/de.vogella.android.layout/AndroidManifest.xml" title="de.vogella.android.layout Manifest" tooltip="de.vogella.android.layout/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.layout/AndroidManifest.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" partName="main.xml" path="/home/vogella/workspace/vogella/de.vogella.android.layout/res/layout/main.xml" title="main.xml" tooltip="de.vogella.android.layout/res/layout/main.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.layout/res/layout/main.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ActivityOne.java" partName="ActivityOne.java" path="/home/vogella/workspace/vogella/de.vogella.android.intent.explicit/src/de/vogella/android/intent/explicit/ActivityOne.java" title="ActivityOne.java" tooltip="de.vogella.android.intent.explicit/src/de/vogella/android/intent/explicit/ActivityOne.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.intent.explicit/src/de/vogella/android/intent/explicit/ActivityOne.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="816" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="de.vogella.android.intent.explicit Manifest" path="/home/vogella/workspace/vogella/de.vogella.android.intent.explicit/AndroidManifest.xml" title="de.vogella.android.intent.explicit Manifest" tooltip="de.vogella.android.intent.explicit/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.intent.explicit/AndroidManifest.xml"/>
 </editor>
 </editors>
 <views>
@@ -195,7 +217,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="com.android.ide.eclipse.editors.layout.LayoutEditor" activePerspective="org.eclipse.pde.ui.PDEPerspective">
+<perspectives activePart="com.android.ide.eclipse.editors.manifest.ManifestEditor" activePerspective="org.eclipse.pde.ui.PDEPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.pde.internal.ui.PDEPerspective" id="org.eclipse.pde.ui.PDEPerspective" label="Plug-in Development"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -330,25 +352,12 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/Apfel1/res/layout/main.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/Apfel2/res/values/attrs.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/Apfel2/res/layout/main.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.layout/src/de/vogella/android/layout/LayoutTester.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/de.vogella.android.layout/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/de.vogella.android.layout/res/layout/main.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.intent.explicit/src/de/vogella/android/intent/explicit/ActivityOne.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/de.vogella.android.intent.explicit/AndroidManifest.xml"/>
 </editors>
-<item historyLabel="de.vogella.rcp.intro.spellchecking" index="0"/>
-<item historyLabel="View.java" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="View.java" index="1">
-<position/>
-</item>
-<item historyLabel="View.java" index="1">
-<position/>
-</item>
-<item historyLabel="View.java" index="1">
-<position info="not_deleted" x="524" y="0"/>
-</item>
-<item historyLabel="de.vogella.rcp.intro.spellchecking" index="0"/>
-<item historyLabel="View.java" index="1">
-<position info="not_deleted" x="863" y="0"/>
-</item>
-<item historyLabel="de.vogella.rcp.intro.spellchecking" index="0"/>
 <item historyLabel="View.java" index="1">
 <position info="not_deleted" x="863" y="0"/>
 </item>
@@ -454,7 +463,27 @@
 </item>
 <item historyLabel="main.xml" index="17"/>
 <item historyLabel="attrs.xml" index="18"/>
-<item active="true" historyLabel="main.xml" index="19"/>
+<item historyLabel="main.xml" index="19"/>
+<item historyLabel="LayoutTester.java" index="20">
+<position info="not_deleted" x="480" y="431"/>
+</item>
+<item historyLabel="de.vogella.android.layout Manifest" index="21"/>
+<item historyLabel="main.xml" index="22"/>
+<item historyLabel="LayoutTester.java" index="20">
+<position info="not_deleted" x="843" y="0"/>
+</item>
+<item historyLabel="main.xml" index="22"/>
+<item historyLabel="LayoutTester.java" index="20">
+<position info="not_deleted" x="900" y="0"/>
+</item>
+<item historyLabel="main.xml" index="22"/>
+<item historyLabel="LayoutTester.java" index="20">
+<position info="not_deleted" x="1173" y="0"/>
+</item>
+<item historyLabel="ActivityOne.java" index="23">
+<position info="not_deleted" x="816" y="0"/>
+</item>
+<item active="true" historyLabel="de.vogella.android.intent.explicit Manifest" index="24"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -472,6 +501,21 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="de.vogella.android.intent.explicit/AndroidManifest.xml">
+<persistable path="/de.vogella.android.intent.explicit/AndroidManifest.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ActivityOne.java" tooltip="de.vogella.android.intent.explicit/src/de/vogella/android/intent/explicit/ActivityOne.java">
+<persistable path="/de.vogella.android.intent.explicit/src/de/vogella/android/intent/explicit/ActivityOne.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" tooltip="de.vogella.android.layout/res/layout/main.xml">
+<persistable path="/de.vogella.android.layout/res/layout/main.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="de.vogella.android.layout/AndroidManifest.xml">
+<persistable path="/de.vogella.android.layout/AndroidManifest.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LayoutTester.java" tooltip="de.vogella.android.layout/src/de/vogella/android/layout/LayoutTester.java">
+<persistable path="/de.vogella.android.layout/src/de/vogella/android/layout/LayoutTester.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" tooltip="Apfel2/res/layout/main.xml">
 <persistable path="/Apfel2/res/layout/main.xml"/>
 </file>
@@ -501,21 +545,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="default.properties" tooltip="Apfel2/default.properties">
 <persistable path="/Apfel2/default.properties"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="default.properties" tooltip="Apfel3/default.properties">
-<persistable path="/Apfel3/default.properties"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="Apfel3/AndroidManifest.xml">
-<persistable path="/Apfel3/AndroidManifest.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="Apfel3/src/com/linkesoft/apfel3/Main.java">
-<persistable path="/Apfel3/src/com/linkesoft/apfel3/Main.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UpdateThread.java" tooltip="Apfel3/src/com/linkesoft/apfel3/UpdateThread.java">
-<persistable path="/Apfel3/src/com/linkesoft/apfel3/UpdateThread.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AutoCompleteDemo.java" tooltip="de.vogella.android.autocomplete/src/de/vogella/android/autocomplete/AutoCompleteDemo.java">
-<persistable path="/de.vogella.android.autocomplete/src/de/vogella/android/autocomplete/AutoCompleteDemo.java"/>
 </file>
 </mruList>
 </workbench>
