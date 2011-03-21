@@ -1,6 +1,7 @@
-#Sat Mar 19 21:44:29 CET 2011
+#Sat Mar 19 22:25:49 CET 2011
 org.eclipse.jet.javafilter=true
 content_assist_proposals_foreground=58,57,53
+content_assist_favorite_static_members=org.eclipse.swtbot.swt.finder.matchers.WidgetMatcherFactory.*;org.hamcrest.Matchers.*;org.hamcrest.MatcherAssert.*;org.junit.Assert.*;org.eclipse.swtbot.eclipse.finder.matchers.WidgetMatcherFactory.*;org.eclipse.swtbot.swt.finder.finders.UIThreadRunnable.*;org.eclipse.swtbot.swt.finder.SWTBotAssert.*;org.eclipse.swtbot.eclipse.finder.waits.Conditions.*;org.eclipse.swtbot.swt.finder.waits.Conditions.*
 spelling_locale_initialized=true
 content_assist_disabled_computers=org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000
 org.eclipse.pde.ui.ExternalPluginLibrariesFilter1=true
@@ -21,7 +22,7 @@ org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter=true
 org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter=true
 org.eclipse.jdt.ui.formatterprofiles.version=12
 content_assist_proposals_background=255,255,255
-content_assist_number_of_computers=18
+content_assist_number_of_computers=19
 org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter=true
 org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*=true
 useQuickDiffPrefPage=true

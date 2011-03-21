@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="31" version="2.0">
+<workbench progressCount="18" version="2.0">
 <workbenchAdvisor/>
 <window height="920" maximized="true" width="1251" x="185" y="70">
 <fastViewData fastViewLocation="1024"/>
@@ -10,15 +10,20 @@
 <coolItem id="group.file" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="132" y="30"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="adt.actionSet.avdManager" itemType="typeToolBarContribution" x="40" y="30"/>
+<coolItem id="adt.actionSet.wizards" itemType="typeToolBarContribution" x="96" y="30"/>
+<coolItem id="com.google.gdt.eclipse.suite.actionSet" itemType="typeToolBarContribution" x="124" y="30"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="120" y="30"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="30"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="104" y="30"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="152" y="30"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="68" y="30"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="68" y="30"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="com.android.ide.eclipse.editors.layout.LayoutEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.pde.ui.manifestEditor" itemType="typeToolBarContribution" x="40" y="30"/>
@@ -34,6 +39,22 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+<part id="16"/>
+<part id="17"/>
+<part id="18"/>
 </presentation>
 </folder>
 </info>
@@ -41,13 +62,73 @@
 <editor id="org.eclipse.pde.ui.manifestEditor" name="plugin.xml" partName="com.code9.examples.spellchecking" path="/home/vogella/Desktop/hubba/com.code9.examples.spellchecking/plugin.xml" title="com.code9.examples.spellchecking" tooltip="com.code9.examples.spellchecking/plugin.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/com.code9.examples.spellchecking/plugin.xml"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TextBox.java" partName="TextBox.java" path="/home/vogella/Desktop/hubba/com.code9.examples.spellchecking/src/com/code9/examples/spellchecking/handlers/TextBox.java" title="TextBox.java" tooltip="com.code9.examples.spellchecking/src/com/code9/examples/spellchecking/handlers/TextBox.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/com.code9.examples.spellchecking/src/com/code9/examples/spellchecking/handlers/TextBox.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3513" selectionTopPixel="476"/>
-</editor>
 <editor id="org.eclipse.jdt.ui.ClassFileEditor" name="Document.class" partName="Document.class" title="Document.class" tooltip="org.eclipse.jface.text.Document" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=com.code9.examples.spellchecking/\/home\/vogella\/eclipse\/eclipse-3.6-rcp\/plugins\/org.eclipse.text_3.5.0.v20100601-1300.jar&lt;org.eclipse.jface.text(Document.class"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="88" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmActivity.java" partName="AlarmActivity.java" path="/home/vogella/workspace/vogella/de.vogella.android.alarm/src/de/vogella/android/alarm/AlarmActivity.java" title="AlarmActivity.java" tooltip="de.vogella.android.alarm/src/de/vogella/android/alarm/AlarmActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.alarm/src/de/vogella/android/alarm/AlarmActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ReadWebpageAsynTask.java" partName="ReadWebpageAsynTask.java" path="/home/vogella/workspace/vogella/de.vogella.android.asyntask/src/de/vogella/android/asyntask/ReadWebpageAsynTask.java" title="ReadWebpageAsynTask.java" tooltip="de.vogella.android.asyntask/src/de/vogella/android/asyntask/ReadWebpageAsynTask.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.asyntask/src/de/vogella/android/asyntask/ReadWebpageAsynTask.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AutoCompleteDemo.java" partName="AutoCompleteDemo.java" path="/home/vogella/workspace/vogella/de.vogella.android.autocomplete/src/de/vogella/android/autocomplete/AutoCompleteDemo.java" title="AutoCompleteDemo.java" tooltip="de.vogella.android.autocomplete/src/de/vogella/android/autocomplete/AutoCompleteDemo.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.autocomplete/src/de/vogella/android/autocomplete/AutoCompleteDemo.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UpdateThread.java" partName="UpdateThread.java" path="/home/vogella/workspace/vogella/Apfel3/src/com/linkesoft/apfel3/UpdateThread.java" title="UpdateThread.java" tooltip="Apfel3/src/com/linkesoft/apfel3/UpdateThread.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Apfel3/src/com/linkesoft/apfel3/UpdateThread.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4824" selectionTopPixel="1905"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="/home/vogella/workspace/vogella/Apfel3/src/com/linkesoft/apfel3/Main.java" title="Main.java" tooltip="Apfel3/src/com/linkesoft/apfel3/Main.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Apfel3/src/com/linkesoft/apfel3/Main.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="Apfel3 Manifest" path="/home/vogella/workspace/vogella/Apfel3/AndroidManifest.xml" title="Apfel3 Manifest" tooltip="Apfel3/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Apfel3/AndroidManifest.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.PropertiesFileEditor" name="default.properties" partName="default.properties" path="/home/vogella/workspace/vogella/Apfel3/default.properties" title="default.properties" tooltip="Apfel3/default.properties" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Apfel3/default.properties"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="362" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.PropertiesFileEditor" name="default.properties" partName="default.properties" path="/home/vogella/workspace/vogella/Apfel2/default.properties" title="default.properties" tooltip="Apfel2/default.properties" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Apfel2/default.properties"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="362" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.PropertiesFileEditor" name="default.properties" partName="default.properties" path="/home/vogella/workspace/vogella/Apfel1/default.properties" title="default.properties" tooltip="Apfel1/default.properties" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Apfel1/default.properties"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="362" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApfelView.java" partName="ApfelView.java" path="/home/vogella/workspace/vogella/Apfel1/src/com/linkesoft/apfel1/ApfelView.java" title="ApfelView.java" tooltip="Apfel1/src/com/linkesoft/apfel1/ApfelView.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Apfel1/src/com/linkesoft/apfel1/ApfelView.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4160" selectionTopPixel="1888"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApfelView.java" partName="ApfelView.java" path="/home/vogella/workspace/vogella/Apfel3/src/com/linkesoft/apfel3/ApfelView.java" title="ApfelView.java" tooltip="Apfel3/src/com/linkesoft/apfel3/ApfelView.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Apfel3/src/com/linkesoft/apfel3/ApfelView.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5225" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="Canvas.class" partName="Canvas.class" title="Canvas.class" tooltip="android.graphics.Canvas" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=de.vogella.android.first/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-8\/android.jar&lt;android.graphics(Canvas.class"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="13133" selectionTopPixel="5474"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="RectF.class" partName="RectF.class" title="RectF.class" tooltip="android.graphics.RectF" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=B-Bingo/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-9\/android.jar&lt;android.graphics(RectF.class"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="21" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="/home/vogella/workspace/vogella/Apfel1/src/com/linkesoft/apfel1/Main.java" title="Main.java" tooltip="Apfel1/src/com/linkesoft/apfel1/Main.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Apfel1/src/com/linkesoft/apfel1/Main.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" partName="main.xml" path="/home/vogella/workspace/vogella/Apfel1/res/layout/main.xml" title="main.xml" tooltip="Apfel1/res/layout/main.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Apfel1/res/layout/main.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="attrs.xml" partName="attrs.xml" path="/home/vogella/workspace/vogella/Apfel2/res/values/attrs.xml" title="attrs.xml" tooltip="Apfel2/res/values/attrs.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Apfel2/res/values/attrs.xml"/>
+</editor>
+<editor activePart="true" focus="true" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" partName="main.xml" path="/home/vogella/workspace/vogella/Apfel2/res/layout/main.xml" title="main.xml" tooltip="Apfel2/res/layout/main.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Apfel2/res/layout/main.xml"/>
 </editor>
 </editors>
 <views>
@@ -77,15 +158,15 @@
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
-<child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="true"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
 <child filterId="org.eclipse.jet.javafilter" isEnabled="true"/>
 <child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
@@ -114,7 +195,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.pde.ui.PDEPerspective">
+<perspectives activePart="com.android.ide.eclipse.editors.layout.LayoutEditor" activePerspective="org.eclipse.pde.ui.PDEPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.pde.internal.ui.PDEPerspective" id="org.eclipse.pde.ui.PDEPerspective" label="Plug-in Development"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -133,7 +214,13 @@
 <alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
 <alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
 <alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
-<alwaysOnActionSet id="org.eclipse.team.svn.ui.menu.help"/>
+<alwaysOnActionSet id="com.google.gdt.eclipse.suite.actionSet.20.gae"/>
+<alwaysOnActionSet id="com.google.gdt.eclipse.suite.actionSet"/>
+<alwaysOnActionSet id="com.google.gdt.eclipse.suite.actionSet.10.gwt"/>
+<alwaysOnActionSet id="com.google.gdt.eclipse.suite.actionSet.15.speedTracer"/>
+<alwaysOnActionSet id="adt.actionSet.wizards"/>
+<alwaysOnActionSet id="adt.actionSet.refactorings"/>
+<alwaysOnActionSet id="adt.actionSet.avdManager"/>
 <show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
 <show_view_action id="org.eclipse.jdt.ui.PackagesView"/>
 <show_view_action id="org.eclipse.pde.ui.PluginsView"/>
@@ -190,8 +277,8 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.34032354" ratioLeft="568" ratioRight="1101" relationship="2" relative="topLeft"/>
-<info folder="true" part="bottomRight" ratio="0.093103446" ratioLeft="81" ratioRight="789" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.team.svn.ui.repository.RepositoriesView" appearance="2" expanded="2">
+<info folder="true" part="bottomRight" ratio="0.6873563" ratioLeft="598" ratioRight="272" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.pde.runtime.LogView" label="Error Log"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
@@ -227,6 +314,22 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.rcp.intro.spellchecking/src/de/vogella/rcp/intro/spellchecking/View.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.pde.ui.manifestEditor" path="/com.code9.examples.spellchecking/plugin.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/com.code9.examples.spellchecking/src/com/code9/examples/spellchecking/handlers/TextBox.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.alarm/src/de/vogella/android/alarm/AlarmActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.asyntask/src/de/vogella/android/asyntask/ReadWebpageAsynTask.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.autocomplete/src/de/vogella/android/autocomplete/AutoCompleteDemo.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Apfel3/src/com/linkesoft/apfel3/UpdateThread.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Apfel3/src/com/linkesoft/apfel3/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/Apfel3/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/Apfel3/default.properties"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/Apfel2/default.properties"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/Apfel1/default.properties"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Apfel1/src/com/linkesoft/apfel1/ApfelView.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Apfel3/src/com/linkesoft/apfel3/ApfelView.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Apfel1/src/com/linkesoft/apfel1/ApfelView.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Apfel1/src/com/linkesoft/apfel1/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/Apfel1/res/layout/main.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/Apfel2/res/values/attrs.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/Apfel2/res/layout/main.xml"/>
 </editors>
 <item historyLabel="de.vogella.rcp.intro.spellchecking" index="0"/>
 <item historyLabel="View.java" index="1">
@@ -303,9 +406,55 @@
 <item historyLabel="View.java" index="1">
 <position info="not_deleted" x="1355" y="0"/>
 </item>
-<item active="true" historyLabel="TextBox.java" index="3">
+<item historyLabel="TextBox.java" index="3">
 <position info="not_deleted" x="9548" y="0"/>
 </item>
+<item historyLabel="AlarmActivity.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ReadWebpageAsynTask.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="AutoCompleteDemo.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="UpdateThread.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Main.java" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="UpdateThread.java" index="7">
+<position info="not_deleted" x="266" y="0"/>
+</item>
+<item historyLabel="Apfel3 Manifest" index="9"/>
+<item historyLabel="default.properties" index="10">
+<position info="not_deleted" x="362" y="0"/>
+</item>
+<item historyLabel="default.properties" index="11">
+<position info="not_deleted" x="362" y="0"/>
+</item>
+<item historyLabel="default.properties" index="12">
+<position info="not_deleted" x="362" y="0"/>
+</item>
+<item historyLabel="ApfelView.java" index="13">
+<position info="not_deleted" x="2947" y="5"/>
+</item>
+<item historyLabel="ApfelView.java" index="14">
+<position info="not_deleted" x="5225" y="0"/>
+</item>
+<item historyLabel="UpdateThread.java" index="7">
+<position info="not_deleted" x="266" y="0"/>
+</item>
+<item historyLabel="ApfelView.java" index="15">
+<position info="not_deleted" x="4160" y="0"/>
+</item>
+<item historyLabel="Main.java" index="16">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.xml" index="17"/>
+<item historyLabel="attrs.xml" index="18"/>
+<item active="true" historyLabel="main.xml" index="19"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -323,20 +472,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Document.class" tooltip="org.eclipse.jface.text.Document">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=com.code9.examples.spellchecking/\/home\/vogella\/eclipse\/eclipse-3.6-rcp\/plugins\/org.eclipse.text_3.5.0.v20100601-1300.jar&lt;org.eclipse.jface.text(Document.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" tooltip="Apfel2/res/layout/main.xml">
+<persistable path="/Apfel2/res/layout/main.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TextBox.java" tooltip="com.code9.examples.spellchecking/src/com/code9/examples/spellchecking/handlers/TextBox.java">
-<persistable path="/com.code9.examples.spellchecking/src/com/code9/examples/spellchecking/handlers/TextBox.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="attrs.xml" tooltip="Apfel2/res/values/attrs.xml">
+<persistable path="/Apfel2/res/values/attrs.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.pde.ui.manifestEditor" name="plugin.xml" tooltip="com.code9.examples.spellchecking/plugin.xml">
-<persistable path="/com.code9.examples.spellchecking/plugin.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" tooltip="Apfel1/res/layout/main.xml">
+<persistable path="/Apfel1/res/layout/main.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="View.java" tooltip="de.vogella.rcp.intro.spellchecking/src/de/vogella/rcp/intro/spellchecking/View.java">
-<persistable path="/de.vogella.rcp.intro.spellchecking/src/de/vogella/rcp/intro/spellchecking/View.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="Apfel1/src/com/linkesoft/apfel1/Main.java">
+<persistable path="/Apfel1/src/com/linkesoft/apfel1/Main.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.pde.ui.manifestEditor" name="MANIFEST.MF" tooltip="de.vogella.rcp.intro.spellchecking/META-INF/MANIFEST.MF">
-<persistable path="/de.vogella.rcp.intro.spellchecking/META-INF/MANIFEST.MF"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="RectF.class" tooltip="android.graphics.RectF">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=B-Bingo/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-9\/android.jar&lt;android.graphics(RectF.class"/>
+</file>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Canvas.class" tooltip="android.graphics.Canvas">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=de.vogella.android.first/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-8\/android.jar&lt;android.graphics(Canvas.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApfelView.java" tooltip="Apfel3/src/com/linkesoft/apfel3/ApfelView.java">
+<persistable path="/Apfel3/src/com/linkesoft/apfel3/ApfelView.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApfelView.java" tooltip="Apfel1/src/com/linkesoft/apfel1/ApfelView.java">
+<persistable path="/Apfel1/src/com/linkesoft/apfel1/ApfelView.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="default.properties" tooltip="Apfel1/default.properties">
+<persistable path="/Apfel1/default.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="default.properties" tooltip="Apfel2/default.properties">
+<persistable path="/Apfel2/default.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="default.properties" tooltip="Apfel3/default.properties">
+<persistable path="/Apfel3/default.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="Apfel3/AndroidManifest.xml">
+<persistable path="/Apfel3/AndroidManifest.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="Apfel3/src/com/linkesoft/apfel3/Main.java">
+<persistable path="/Apfel3/src/com/linkesoft/apfel3/Main.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UpdateThread.java" tooltip="Apfel3/src/com/linkesoft/apfel3/UpdateThread.java">
+<persistable path="/Apfel3/src/com/linkesoft/apfel3/UpdateThread.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AutoCompleteDemo.java" tooltip="de.vogella.android.autocomplete/src/de/vogella/android/autocomplete/AutoCompleteDemo.java">
+<persistable path="/de.vogella.android.autocomplete/src/de/vogella/android/autocomplete/AutoCompleteDemo.java"/>
 </file>
 </mruList>
 </workbench>

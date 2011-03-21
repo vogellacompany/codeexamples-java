@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=de.vogella.android.first/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-8\/android.jar&lt;android.graphics(Canvas.class[Canvas" modifiers="33" timestamp="1294173724000"/>
+<typeInfo handle="=B-Bingo/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-9\/android.jar&lt;android.graphics(RectF.class[RectF" modifiers="33" timestamp="1291666035000"/>
+</typeInfoHistroy>

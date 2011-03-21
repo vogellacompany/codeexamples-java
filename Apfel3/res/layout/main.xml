@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res/com.linkesoft.apfel3"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<RelativeLayout
+		android:id="@+id/RelativeLayout01"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<com.linkesoft.apfel3.ApfelView
+			android:id="@+id/ApfelView"
+			android:layout_height="fill_parent"
+			android:layout_width="fill_parent"
+			app:timerLabel="@+id/TimerLabel" />
+		<TextView
+			android:text="time"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/TimerLabel"
+			android:layout_alignRight="@+id/ApfelView"
+			android:layout_alignBottom="@+id/ApfelView"
+			android:layout_marginRight="5dip"
+			android:background="#44000000"
+			android:padding="2dip"
+			android:layout_marginBottom="5dip"
+			android:textColor="#ffffff"></TextView>
+	</RelativeLayout>
+</LinearLayout>
