@@ -5,7 +5,6 @@ import java.util.Random;
 import android.app.ListActivity;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.SimpleCursorAdapter;
 
 public class TestDatabase extends ListActivity {
@@ -38,4 +37,5 @@ public class TestDatabase extends ListActivity {
     	db.close();
     	super.onPause();
     }
+    
 }
