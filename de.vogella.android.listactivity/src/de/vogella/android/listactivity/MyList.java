@@ -5,7 +5,10 @@ import java.util.List;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 public class MyList extends ListActivity {
 
@@ -13,8 +16,9 @@ public class MyList extends ListActivity {
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		// Create an array of Strings, that will be put to our ListActivity
-		ArrayAdapter<Model> adapter = new InteractiveArrayAdapter(this,
-				getModel());
+//		ArrayAdapter<Model> adapter = new InteractiveArrayAdapter(this,
+//				getModel());
+		ArrayAdapter<Model> adapter = new ArrayAdapter<Model>(this, android.R.layout.simple_list_item_1, getModel());
 		setListAdapter(adapter);
 	}
 
@@ -31,6 +35,13 @@ public class MyList extends ListActivity {
 		// Initially select one of the items
 		list.get(1).setSelected(true);
 		return list;
+	}
+
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		Model item = (Model) l.getAdapter().getItem(position);
+		Toast.makeText(this, item.getName(), Toast.LENGTH_SHORT).show();
+		super.onListItemClick(l, v, position, id);
 	}
 
 	private Model get(String s) {

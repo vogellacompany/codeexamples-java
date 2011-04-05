@@ -23,6 +23,7 @@ import de.vogella.gae.java.c2dm.model.RegisteredDevice;
 public class SendServlet extends HttpServlet{
 	
 	private final static String AUTH = "authentication";
+	// Evil hard code the auth_key
 	private final static String auth_key ="DQAAAMUAAABLNakYQJ4RGzTc8mrp-7wX4NLyfwZx27o_Gyp6R3zOmVvGxNpeizMGdnorRtBUtyH3xkmHJ8NzY1hXBV9RT4q1miIjC86qZkXw6WW7qJli96bAVfSYegy4KpK7WyNHow1AM3pekYqvQLDR9CaRjuTVvH7bxryWce-sUFp1ME-p_Px1LJ_Ua8dxwbkefEhK5q6oD4rF7NzQ-bOZnW7MD-aOktqVhWcUlX7bj0uc3oVKJnQDgNcfAFmPt4NQc1c8F3o-IleEPpisUCoezuV6SJ0R";
 	
 	private static final String UPDATE_CLIENT_AUTH = "Update-Client-Auth";

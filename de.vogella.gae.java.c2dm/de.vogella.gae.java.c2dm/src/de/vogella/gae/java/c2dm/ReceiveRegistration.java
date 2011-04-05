@@ -21,13 +21,17 @@ public class ReceiveRegistration extends HttpServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		System.out.println("Register a new registration key ");
+		// Register a new registration key
 		String registrationId = (String) req.getParameter("registrationid");
 		String deviceId = (String) req.getParameter("deviceid");
-		Dao.INSTANCE.add(deviceId, registrationId);
 		resp.setContentType("text/plain");
 		PrintWriter writer = resp.getWriter();
-		writer.append("Thank you for registering");
+		if (registrationId != null && registrationId.length() > 0
+				&& deviceId != null && deviceId.length() > 0) {
+			Dao.INSTANCE.add(deviceId, registrationId);
+			writer.append("Thank you for registering");
+		} else {
+			writer.append("Registration failed");
+		}
 	}
-
 }
