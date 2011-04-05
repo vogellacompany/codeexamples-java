@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<wallpaper android:settingsActivity="WallpaperPreferencesActivity"
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<wallpaper xmlns:android="http://schemas.android.com/apk/res/android"
+	android:settingsActivity="MyPreferenceActivity"
 	android:description="@string/wallpaper_description" 
 	/>

@@ -10,14 +10,13 @@
 			<intent-filter>
 				<action android:name="android.service.wallpaper.WallpaperService"></action>
 			</intent-filter>
-			<meta-data android:name="android.service.wallpaper" android:resource="@xml/mywallpaperdescription"></meta-data>
+			<meta-data android:name="android.service.wallpaper"
+				android:resource="@xml/mywallpaperdescription"></meta-data>
 		</service>
-		<activity android:name="WallpaperPreferencesActivity"
-			android:label="Preferences"></activity>
+		<activity android:name=".MyPreferencesActivity"></activity>
 	</application>
-	<uses-sdk android:minSdkVersion="9" />
-
-
-<uses-feature android:name="android.software.live_wallpaper" android:required="true"></uses-feature>
+	<uses-sdk android:minSdkVersion="10" />
+	<uses-feature android:name="android.software.live_wallpaper"
+		android:required="true"></uses-feature>
 
 </manifest> 

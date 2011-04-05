@@ -2,4 +2,21 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="org.eclipse.swt.widgets.Text"/>
 <fullyQualifiedTypeName name="org.eclipse.jface.text.Document"/>
+<fullyQualifiedTypeName name="android.sax.Element"/>
+<fullyQualifiedTypeName name="android.widget.SimpleCursorAdapter"/>
+<fullyQualifiedTypeName name="android.R.layout"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="android.R.id"/>
+<fullyQualifiedTypeName name="de.vogella.android.sqlite.first.CommentsDbAdapter"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.preference.PreferenceManager"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="de.vogella.android.notification.TargetActivity"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.widget.RemoteViews"/>
+<fullyQualifiedTypeName name="de.vogella.android.notification.R.layout"/>
+<fullyQualifiedTypeName name="de.vogella.android.notification.R.id"/>
+<fullyQualifiedTypeName name="de.vogella.android.wallpaper.MyPreferencesActivity"/>
 </qualifiedTypeNameHistroy>

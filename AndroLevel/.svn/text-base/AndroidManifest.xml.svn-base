@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.androgames.level"
+    android:installLocation="preferExternal"
+    android:versionCode="22"
+    android:versionName="1.7.0">
+    
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:anyDensity="true" />
+    
+    <uses-sdk android:minSdkVersion="3" />
+      
+    <application 
+    	android:icon="@drawable/icon" 
+    	android:label="@string/name"
+    	android:theme="@style/Level">
+    	
+        <activity 
+        	android:name=".Level"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    	
+        <activity 
+        	android:label="@string/preference"
+        	android:name=".LevelPreferences"
+            android:screenOrientation="portrait"/>
+        
+    </application>
+    
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" />
+
+</manifest> 

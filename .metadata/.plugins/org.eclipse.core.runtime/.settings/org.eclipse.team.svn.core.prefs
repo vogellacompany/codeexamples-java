@@ -1,5 +1,7 @@
-#Tue Aug 17 00:30:20 CEST 2010
+#Wed Apr 06 00:33:34 CEST 2011
+repositories/906d5ca8d45f00101097c3556398960e=906d5ca8d45f00101097c3556398960e;http\://androgames-sample.googlecode.com/svn/Market-apps/Level;http\://androgames-sample.googlecode.com/svn/Market-apps/Level;branches;tags;trunk;true;2d06d06c-c9e5-11de-a70d-3b9dd4243769;http\://androgames-sample.googlecode.com/svn;;false;;;0
+repositories/60f2eabad45f00101097c3556398960e=60f2eabad45f00101097c3556398960e;http\://androgames-sample.googlecode.com/svn/SampleAppengineRestServer;http\://androgames-sample.googlecode.com/svn/SampleAppengineRestServer;branches;tags;trunk;true;2d06d06c-c9e5-11de-a70d-3b9dd4243769;http\://androgames-sample.googlecode.com/svn;;false;;;0
 eclipse.preferences.version=1
 externalMigrateFromAuthorizationDatabase/isMigrated=true
-repositories/90b139b21fa9001f163f9114f1096b2d=90b139b21fa9001f163f9114f1096b2d;https\://vogella.googlecode.com/svn/;https\://vogella.googlecode.com/svn/trunk/;branches;tags;trunk;true;df88710e-8934-0410-ab8b-bbab12a37475;https\://vogella.googlecode.com/svn;;false;<https\://vogella.googlecode.com\:443> Google Code Subversion Repository;;0
+repositories/90b139b21fa9001f163f9114f1096b2d=90b139b21fa9001f163f9114f1096b2d;https\://vogella.googlecode.com/svn/;https\://vogella.googlecode.com/svn/trunk/;branches;tags;trunk;true;df88710e-8934-0410-ab8b-bbab12a37475;https\://vogella.googlecode.com/svn;;false;;;0
 migrateFromAuthorizationDatabase/isMigrated=true

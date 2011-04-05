@@ -74,11 +74,6 @@ public class ReadRssFeed extends Activity {
 	        } catch (Exception e) {
 	            throw new RuntimeException(e);
 	        }
-
-		
-		
-	
-
 	}
 
 }

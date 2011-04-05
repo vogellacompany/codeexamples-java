@@ -8,6 +8,6 @@ public class WriteOnScreen extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(new SignatureView3Fast(this, null));
+        setContentView(new TouchEventView(this, null));
     }
 }

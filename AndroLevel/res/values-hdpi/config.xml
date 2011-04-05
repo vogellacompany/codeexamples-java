@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<integer name="viscosity_low">1200</integer>
+	<integer name="viscosity_medium">800</integer>
+	<integer name="viscosity_high">400</integer>
+	
+</resources>

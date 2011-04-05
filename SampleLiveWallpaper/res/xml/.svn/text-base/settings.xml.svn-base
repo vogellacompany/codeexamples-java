@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/settings_title">
+
+    <ListPreference
+	    android:key="preference_radius"
+	    android:title="@string/preference_radius_title"
+	    android:summary="@string/preference_radius_summary"
+	    android:entries="@array/radius_names"
+	    android:entryValues="@array/radius_values" />
+
+</PreferenceScreen>
