@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=de.vogella.android.wallpaper/src&lt;de.vogella.android.wallpaper{MyWallpaperService.java[MyWallpaperService[MyWallpaperEngine" modifiers="2" timestamp="1302042152000"/>
+<typeInfo handle="=de.vogella.android.wallpaper/src&lt;de.vogella.android.wallpaper{MyWallpaperService.java[MyWallpaperService[MyWallpaperEngine" modifiers="2" timestamp="1302042650000"/>
 <typeInfo handle="=de.vogella.android.touch/src&lt;de.vogella.android.touch{TouchEventView.java[TouchEventView" modifiers="1" timestamp="1301953836000"/>
-<typeInfo handle="=de.vogella.android.notification/src&lt;de.vogella.android.notification{CallNotification.java[CallNotification" modifiers="1" timestamp="1302041192000"/>
-<typeInfo handle="=de.vogella.android.wallpaper/src&lt;de.vogella.android.wallpaper{MyWallpaperService.java[MyWallpaperService" modifiers="1" timestamp="1302042152000"/>
+<typeInfo handle="=de.vogella.android.wallpaper/src&lt;de.vogella.android.wallpaper{MyPreferencesActivity.java[MyPreferencesActivity" modifiers="1" timestamp="1302041673000"/>
+<typeInfo handle="=de.vogella.android.notification/src&lt;de.vogella.android.notification{CallNotification.java[CallNotification" modifiers="1" timestamp="1302125148000"/>
+<typeInfo handle="=de.vogella.android.wallpaper/src&lt;de.vogella.android.wallpaper{MyWallpaperService.java[MyWallpaperService" modifiers="1" timestamp="1302042650000"/>
 <typeInfo handle="=de.vogella.android.notification/src&lt;de.vogella.android.notification{TargetActivity.java[TargetActivity" modifiers="1" timestamp="1302032188000"/>
-<typeInfo handle="=SampleAndroidRestClient/src&lt;net.androgames.blog.sample.rest.client{User.java[User" modifiers="1" timestamp="1302030913000"/>
-<typeInfo handle="=SampleAndroidRestClient/src&lt;net.androgames.blog.sample.rest.client{UserConsumer.java[UserConsumer" modifiers="1" timestamp="1302030913000"/>
-<typeInfo handle="=SampleAndroidRestClient/src&lt;net.androgames.blog.sample.rest.client{UserConsumer.java[UserConsumer[ListUsersTask" modifiers="2" timestamp="1302030913000"/>
 </typeInfoHistroy>

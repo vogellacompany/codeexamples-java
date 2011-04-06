@@ -57,7 +57,6 @@ public class CallNotification extends Activity {
 				// TODO Auto-generated catch block
 			}
 		}
-
 	}
 
 }
