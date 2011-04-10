@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="316" key="DIALOG_WIDTH"/>
-		<item value="590" key="DIALOG_Y_ORIGIN"/>
+		<item value="574" key="DIALOG_Y_ORIGIN"/>
 		<item value="426" key="DIALOG_HEIGHT"/>
 		<item value="682" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
@@ -15,9 +15,14 @@
 		<item value="false" key="wholeword"/>
 		<item value="Document" key="selection"/>
 		<list key="findhistory">
+			<item value="   "/>
 			<item value="Document"/>
 		</list>
 		<list key="replacehistory">
 		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="359" key="DIALOG_Y_ORIGIN"/>
+		<item value="566" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>

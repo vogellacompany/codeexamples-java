@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=de.vogella.android.wallpaper/src&lt;de.vogella.android.wallpaper{MyWallpaperService.java[MyWallpaperService[MyWallpaperEngine" modifiers="2" timestamp="1302042650000"/>
-<typeInfo handle="=de.vogella.android.touch/src&lt;de.vogella.android.touch{TouchEventView.java[TouchEventView" modifiers="1" timestamp="1301953836000"/>
-<typeInfo handle="=de.vogella.android.wallpaper/src&lt;de.vogella.android.wallpaper{MyPreferencesActivity.java[MyPreferencesActivity" modifiers="1" timestamp="1302041673000"/>
-<typeInfo handle="=de.vogella.android.notification/src&lt;de.vogella.android.notification{CallNotification.java[CallNotification" modifiers="1" timestamp="1302125148000"/>
-<typeInfo handle="=de.vogella.android.wallpaper/src&lt;de.vogella.android.wallpaper{MyWallpaperService.java[MyWallpaperService" modifiers="1" timestamp="1302042650000"/>
-<typeInfo handle="=de.vogella.android.notification/src&lt;de.vogella.android.notification{TargetActivity.java[TargetActivity" modifiers="1" timestamp="1302032188000"/>
+<typeInfo handle="=Apfel1/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-10\/android.jar&lt;java.io(InputStream.class[InputStream" modifiers="1057" timestamp="1299009890000"/>
+<typeInfo handle="=EMFEncrypt/\/usr\/lib\/jvm\/java-6-openjdk\/jre\/lib\/rt.jar&lt;java.io(InputStream.class[InputStream" modifiers="1057" timestamp="1298491856000"/>
 </typeInfoHistroy>

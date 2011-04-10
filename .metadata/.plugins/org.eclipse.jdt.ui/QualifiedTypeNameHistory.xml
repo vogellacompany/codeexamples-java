@@ -9,7 +9,6 @@
 <fullyQualifiedTypeName name="android.R.id"/>
 <fullyQualifiedTypeName name="de.vogella.android.sqlite.first.CommentsDbAdapter"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
-<fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.preference.PreferenceManager"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="de.vogella.android.notification.TargetActivity"/>
@@ -19,4 +18,20 @@
 <fullyQualifiedTypeName name="de.vogella.android.notification.R.layout"/>
 <fullyQualifiedTypeName name="de.vogella.android.notification.R.id"/>
 <fullyQualifiedTypeName name="de.vogella.android.wallpaper.MyPreferencesActivity"/>
+<fullyQualifiedTypeName name="org.apache.http.client.methods.HttpDelete"/>
+<fullyQualifiedTypeName name="org.apache.http.client.HttpClient"/>
+<fullyQualifiedTypeName name="org.apache.http.impl.client.DefaultHttpClient"/>
+<fullyQualifiedTypeName name="org.apache.http.client.methods.HttpGet"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="org.json.JSONArray"/>
+<fullyQualifiedTypeName name="de.vogella.android.twitter.json.ParseJSON"/>
+<fullyQualifiedTypeName name="android.R.array"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.net.Uri"/>
+<fullyQualifiedTypeName name="android.content.BroadcastReceiver"/>
+<fullyQualifiedTypeName name="android.database.Cursor"/>
+<fullyQualifiedTypeName name="android.app.DownloadManager"/>
 </qualifiedTypeNameHistroy>

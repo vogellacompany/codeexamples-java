@@ -1,5 +1,7 @@
-#Tue Apr 05 20:32:45 CEST 2011
+#Sat Apr 09 01:16:38 CEST 2011
+org.eclipse.debug.ui.switch_perspective_on_suspend=always
 eclipse.preferences.version=1
+preferredDetailPanes=DefaultDetailPane\:DefaultDetailPane|
 preferredTargets=default\:default|
 org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<launchPerspectives/>\n
 org.eclipse.debug.ui.user_view_bindings=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<viewBindings>\n<view id\="org.eclipse.ui.console.ConsoleView">\n<perspective id\="com.android.ide.eclipse.ddms.Perspective" userAction\="opened"/>\n<perspective id\="org.eclipse.pde.ui.PDEPerspective" userAction\="opened"/>\n<perspective id\="org.eclipse.jdt.ui.JavaPerspective" userAction\="opened"/>\n</view>\n</viewBindings>\n
