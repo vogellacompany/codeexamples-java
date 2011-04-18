@@ -23,17 +23,17 @@
 		<item value="5" key="DIALOG_Y_ORIGIN"/>
 		<item value="186" key="DIALOG_X_ORIGIN"/>
 	</section>
-	<section name="NewWizardAction">
-		<item value="org.eclipse.pde.ui.NewProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
-		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.pde.PDE"/>
-		</list>
-	</section>
 	<section name="ZipFileExportWizard">
 		<item value="true" key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID"/>
 		<item value="true" key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID"/>
 		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
 			<item value="/home/vogella/Desktop/project.zip"/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.pde.ui.NewProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.pde.PDE"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">

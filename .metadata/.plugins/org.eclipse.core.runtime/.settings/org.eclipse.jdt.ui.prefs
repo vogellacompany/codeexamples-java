@@ -1,4 +1,4 @@
-#Sun Apr 10 21:59:28 CEST 2011
+#Mon Apr 18 01:00:33 CEST 2011
 org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*=true
 sp_cleanup.remove_unnecessary_casts=true
 org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter=true
@@ -33,11 +33,10 @@ content_assist_favorite_static_members=org.eclipse.swtbot.swt.finder.matchers.Wi
 org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter=true
 sp_cleanup.sort_members_all=false
 useAnnotationsPrefPage=true
-sp_cleanup.use_this_for_non_static_field_access=false
 proposalOrderMigrated=true
+sp_cleanup.use_this_for_non_static_field_access=false
 sp_cleanup.format_source_code=true
 sp_cleanup.remove_unused_private_methods=true
-org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter=true
 tabWidthPropagated=true
 sp_cleanup.use_parentheses_in_expressions=false
 org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter=true
