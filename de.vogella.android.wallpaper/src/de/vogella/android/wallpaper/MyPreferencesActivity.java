@@ -11,7 +11,7 @@ public class MyPreferencesActivity extends PreferenceActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.prefs);
- 
+
 		// We want to add a validator to the number of circles so that it only
 		// accepts numbers
 		Preference circlePreference = getPreferenceScreen().findPreference(
@@ -39,5 +39,4 @@ public class MyPreferencesActivity extends PreferenceActivity {
 			return false;
 		}
 	};
-
 }

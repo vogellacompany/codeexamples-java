@@ -16,9 +16,10 @@ public class MyList extends ListActivity {
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		// Create an array of Strings, that will be put to our ListActivity
-//		ArrayAdapter<Model> adapter = new InteractiveArrayAdapter(this,
-//				getModel());
-		ArrayAdapter<Model> adapter = new ArrayAdapter<Model>(this, android.R.layout.simple_list_item_1, getModel());
+		// ArrayAdapter<Model> adapter = new InteractiveArrayAdapter(this,
+		// getModel());
+		ArrayAdapter<Model> adapter = new ArrayAdapter<Model>(this,
+				android.R.layout.simple_list_item_1, getModel());
 		setListAdapter(adapter);
 	}
 

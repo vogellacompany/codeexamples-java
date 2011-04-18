@@ -38,7 +38,7 @@ public class CallNotification extends Activity {
 			notification.flags |= Notification.FLAG_AUTO_CANCEL;
 
 			RemoteViews view = new RemoteViews(getPackageName(), R.layout.main);
-			int done = i*10;
+			int done = i * 10;
 			view.setProgressBar(R.id.progressBar1, 100, done, false);
 			view.setTextViewText(R.id.textView1,
 					"Das ist die Nachricht. Wir sind " + done + " % fertig");

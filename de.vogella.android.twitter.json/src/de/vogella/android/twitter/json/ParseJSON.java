@@ -43,7 +43,7 @@ public class ParseJSON extends Activity {
 		StringBuilder builder = new StringBuilder();
 		HttpClient client = new DefaultHttpClient();
 		HttpGet httpGet = new HttpGet(
-				"http://twitter.com/statuses/user_timeline/vogella.json");
+				"http://twitter.com/statuses/user_timeline/greenrobot_de.json");
 		try {
 			HttpResponse response = client.execute(httpGet);
 			StatusLine statusLine = response.getStatusLine();
@@ -57,7 +57,7 @@ public class ParseJSON extends Activity {
 				while ((line = reader.readLine()) != null) {
 					builder.append(line);
 				}
-			} else {"com.example.android.rssfeed"
+			} else {
 				Log.e(ParseJSON.class.toString(), "Failed to download file");
 			}
 		} catch (ClientProtocolException e) {

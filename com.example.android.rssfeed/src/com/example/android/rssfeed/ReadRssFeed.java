@@ -9,7 +9,6 @@ import org.xmlpull.v1.XmlPullParser;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.util.Log;
 import android.util.Xml;
 import android.view.View;
@@ -27,18 +26,20 @@ public class ReadRssFeed extends Activity {
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-				.detectAll().penaltyLog().penaltyDeath().build());
-		StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll()
-				.penaltyLog().penaltyDeath().build());
+		// StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+		// .detectAll().penaltyLog().penaltyDeath().build());
+		// StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll()
+		// .penaltyLog().penaltyDeath().build());
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 	}
 
-	public void parseRss(View view) {
+	public void readRss(View view) {
 		if (parseTask != null) {
-
+			parseTask = new ParseTask(this);
+			parseTask
+					.execute(new String[] { "http://www.vogella.de/article.rss" });
 		}
 	}
 
@@ -94,7 +95,9 @@ public class ReadRssFeed extends Activity {
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
+		Log.e("Elements", String.valueOf(list.size()));
 		return list;
+
 	}
 
 	private static class ParseTask extends
