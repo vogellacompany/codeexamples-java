@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="33" version="2.0">
+<workbench progressCount="38" version="2.0">
 <workbenchAdvisor/>
 <window height="919" maximized="true" width="1253" x="181" y="70">
 <fastViewData fastViewLocation="1024"/>
@@ -48,6 +48,9 @@
 <part id="7"/>
 <part id="8"/>
 <part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
 </presentation>
 </folder>
 </info>
@@ -84,9 +87,21 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.alarm/src/de/vogella/android/alarm/AlarmActivity.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="880" selectionTopPixel="213"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Perspective.java" partName="Perspective.java" path="/home/vogella/workspace/vogella/TestKeybinding/src/testkeybinding/Perspective.java" title="Perspective.java" tooltip="TestKeybinding/src/testkeybinding/Perspective.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Perspective.java" partName="Perspective.java" path="/home/vogella/workspace/vogella/TestKeybinding/src/testkeybinding/Perspective.java" title="Perspective.java" tooltip="TestKeybinding/src/testkeybinding/Perspective.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TestKeybinding/src/testkeybinding/Perspective.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TodoDetails.java" partName="TodoDetails.java" path="/home/vogella/workspace/vogella/de.vogella.android.todos/src/de/vogella/android/todos/TodoDetails.java" title="TodoDetails.java" tooltip="de.vogella.android.todos/src/de/vogella/android/todos/TodoDetails.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.todos/src/de/vogella/android/todos/TodoDetails.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TodosOverview.java" partName="TodosOverview.java" path="/home/vogella/workspace/vogella/de.vogella.android.todos/src/de/vogella/android/todos/TodosOverview.java" title="TodosOverview.java" tooltip="de.vogella.android.todos/src/de/vogella/android/todos/TodosOverview.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.todos/src/de/vogella/android/todos/TodosOverview.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="692"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TodoDatabaseHelper.java" partName="TodoDatabaseHelper.java" path="/home/vogella/workspace/vogella/de.vogella.android.todos/src/de/vogella/android/todos/database/TodoDatabaseHelper.java" title="TodoDatabaseHelper.java" tooltip="de.vogella.android.todos/src/de/vogella/android/todos/database/TodoDatabaseHelper.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.todos/src/de/vogella/android/todos/database/TodoDatabaseHelper.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="924" selectionTopPixel="247"/>
 </editor>
 </editors>
 <views>
@@ -661,7 +676,6 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.wallpaper/src/de/vogella/android/wallpaper/MyWallpaperService.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.wallpaper/src/de/vogella/android/wallpaper/MyPoint.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/com.example.android.rssfeed/src/com/example/android/rssfeed/ReadRssFeed.java"/>
 <editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=Apfel1/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-10\/android.jar&lt;java.io(InputStream.class"/>
 <editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=de.vogella.android.twitter.json/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-10\/android.jar&lt;java.io(BufferedReader.class"/>
@@ -689,147 +703,150 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/EditorTest/src/editortest/contentProvider/MyContentProvider.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/EditorTest/src/editortest/handler/CallEditor.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TestKeybinding/src/testkeybinding/Perspective.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.todos/src/de/vogella/android/todos/TodoDetails.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.todos/src/de/vogella/android/todos/TodosOverview.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.todos/src/de/vogella/android/todos/database/TodoDatabaseHelper.java"/>
 </editors>
-<item historyLabel="MyWallpaperService.java" index="0">
-<position/>
-</item>
-<item historyLabel="MyPoint.java" index="1">
-<position info="not_deleted" x="218" y="0"/>
-</item>
-<item historyLabel="MyWallpaperService.java" index="0">
-<position info="not_deleted" x="3308" y="0"/>
-</item>
-<item historyLabel="ReadRssFeed.java" index="2">
+<item historyLabel="ReadRssFeed.java" index="1">
 <position info="not_deleted" x="1384" y="0"/>
 </item>
 <item historyLabel="MyWallpaperService.java" index="0">
 <position info="not_deleted" x="3331" y="0"/>
 </item>
-<item historyLabel="InputStream.class" index="3">
+<item historyLabel="InputStream.class" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="BufferedReader.class" index="4">
+<item historyLabel="BufferedReader.class" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="XmlPullParser.class" index="5">
+<item historyLabel="XmlPullParser.class" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="RectF.class" index="6">
+<item historyLabel="RectF.class" index="5">
 <position info="not_deleted" x="3" y="0"/>
 </item>
-<item historyLabel="RectF.class" index="6">
+<item historyLabel="RectF.class" index="5">
 <position info="not_deleted" x="21" y="0"/>
 </item>
-<item historyLabel="TableLayout.class" index="7">
+<item historyLabel="TableLayout.class" index="6">
 <position info="not_deleted" x="3" y="0"/>
 </item>
-<item historyLabel="TableLayout.class" index="7">
+<item historyLabel="TableLayout.class" index="6">
 <position info="not_deleted" x="3603" y="11"/>
 </item>
-<item historyLabel="Message.class" index="8">
+<item historyLabel="Message.class" index="7">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Canvas.class" index="9">
+<item historyLabel="Canvas.class" index="8">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Random.class" index="10">
+<item historyLabel="Random.class" index="9">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="ReadRssFeed.java" index="11">
+<item historyLabel="ReadRssFeed.java" index="10">
 <position info="not_deleted" x="1328" y="0"/>
 </item>
-<item historyLabel="View.java" index="12">
+<item historyLabel="View.java" index="11">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="ReadRssFeed.java" index="11">
+<item historyLabel="ReadRssFeed.java" index="10">
 <position/>
 </item>
-<item historyLabel="strings.xml" index="13"/>
-<item historyLabel="main.xml" index="14"/>
-<item historyLabel="com.example.android.rssfeed Manifest" index="15"/>
-<item historyLabel="ReadRssFeed.java" index="11">
+<item historyLabel="strings.xml" index="12"/>
+<item historyLabel="main.xml" index="13"/>
+<item historyLabel="com.example.android.rssfeed Manifest" index="14"/>
+<item historyLabel="ReadRssFeed.java" index="10">
 <position/>
 </item>
-<item historyLabel="RssItem.java" index="16">
+<item historyLabel="RssItem.java" index="15">
 <position info="not_deleted" x="316" y="0"/>
 </item>
-<item historyLabel="ReadRssFeed.java" index="11">
+<item historyLabel="ReadRssFeed.java" index="10">
 <position/>
 </item>
-<item historyLabel="ReadRssFeed.java" index="11">
+<item historyLabel="ReadRssFeed.java" index="10">
 <position info="not_deleted" x="1040" y="0"/>
 </item>
-<item historyLabel="ReadRssFeed.java" index="11">
+<item historyLabel="ReadRssFeed.java" index="10">
 <position/>
 </item>
-<item historyLabel="ReadRssFeed.java" index="11">
+<item historyLabel="ReadRssFeed.java" index="10">
 <position info="not_deleted" x="3483" y="0"/>
 </item>
-<item historyLabel="ReadRssFeed.java" index="11">
+<item historyLabel="ReadRssFeed.java" index="10">
 <position/>
 </item>
-<item historyLabel="MyWallpaperService.java" index="17">
+<item historyLabel="MyWallpaperService.java" index="16">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="MyWallpaperService.java" index="17">
+<item historyLabel="MyWallpaperService.java" index="16">
 <position info="not_deleted" x="971" y="0"/>
 </item>
-<item historyLabel="MyWallpaperService.java" index="17">
+<item historyLabel="MyWallpaperService.java" index="16">
 <position info="not_deleted" x="524" y="33"/>
 </item>
-<item historyLabel="MyWallpaperService.java" index="17">
+<item historyLabel="MyWallpaperService.java" index="16">
 <position info="not_deleted" x="3318" y="0"/>
 </item>
-<item historyLabel="prefs.xml" index="18"/>
-<item historyLabel="MyWallpaperService.java" index="17">
+<item historyLabel="prefs.xml" index="17"/>
+<item historyLabel="MyWallpaperService.java" index="16">
 <position info="not_deleted" x="0" y="3596"/>
 </item>
-<item historyLabel="ReadRssFeed.java" index="11">
+<item historyLabel="ReadRssFeed.java" index="10">
 <position info="not_deleted" x="1182" y="0"/>
 </item>
-<item historyLabel="AlarmActivity.java" index="19">
+<item historyLabel="AlarmActivity.java" index="18">
 <position info="not_deleted" x="600" y="0"/>
 </item>
-<item historyLabel="LevelView.java" index="20">
+<item historyLabel="LevelView.java" index="19">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="AlarmActivity.java" index="19">
+<item historyLabel="AlarmActivity.java" index="18">
 <position info="not_deleted" x="600" y="0"/>
 </item>
-<item historyLabel="LevelPreferences.java" index="21">
+<item historyLabel="LevelPreferences.java" index="20">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Level.java" index="22">
+<item historyLabel="Level.java" index="21">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="LevelPreferences.java" index="21">
+<item historyLabel="LevelPreferences.java" index="20">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="AlarmActivity.java" index="19">
+<item historyLabel="AlarmActivity.java" index="18">
 <position info="not_deleted" x="600" y="0"/>
 </item>
-<item historyLabel="AccelerometerListener.java" index="23">
+<item historyLabel="AccelerometerListener.java" index="22">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="CustomDialogActivity.java" index="24">
+<item historyLabel="CustomDialogActivity.java" index="23">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="CustomDialog.java" index="25">
+<item historyLabel="CustomDialog.java" index="24">
 <position info="not_deleted" x="689" y="0"/>
 </item>
-<item historyLabel="AlarmActivity.java" index="19">
+<item historyLabel="AlarmActivity.java" index="18">
 <position info="not_deleted" x="600" y="0"/>
 </item>
-<item historyLabel="MyContentProvider.java" index="26">
+<item historyLabel="MyContentProvider.java" index="25">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="CallEditor.java" index="27">
+<item historyLabel="CallEditor.java" index="26">
 <position info="not_deleted" x="1046" y="0"/>
 </item>
-<item historyLabel="AlarmActivity.java" index="19">
+<item historyLabel="AlarmActivity.java" index="18">
 <position info="not_deleted" x="880" y="0"/>
 </item>
-<item active="true" historyLabel="Perspective.java" index="28">
+<item historyLabel="Perspective.java" index="27">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="TodoDetails.java" index="28">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="TodosOverview.java" index="29">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="TodoDatabaseHelper.java" index="30">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
@@ -849,6 +866,15 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TodoDatabaseHelper.java" tooltip="de.vogella.android.todos/src/de/vogella/android/todos/database/TodoDatabaseHelper.java">
+<persistable path="/de.vogella.android.todos/src/de/vogella/android/todos/database/TodoDatabaseHelper.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TodosOverview.java" tooltip="de.vogella.android.todos/src/de/vogella/android/todos/TodosOverview.java">
+<persistable path="/de.vogella.android.todos/src/de/vogella/android/todos/TodosOverview.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TodoDetails.java" tooltip="de.vogella.android.todos/src/de/vogella/android/todos/TodoDetails.java">
+<persistable path="/de.vogella.android.todos/src/de/vogella/android/todos/TodoDetails.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Perspective.java" tooltip="TestKeybinding/src/testkeybinding/Perspective.java">
 <persistable path="/TestKeybinding/src/testkeybinding/Perspective.java"/>
 </file>
@@ -884,15 +910,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyWallpaperService.java" tooltip="de.vogella.android.wallpaper/src/de/vogella/android/wallpaper/MyWallpaperService.java">
 <persistable path="/de.vogella.android.wallpaper/src/de/vogella/android/wallpaper/MyWallpaperService.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RssItem.java" tooltip="com.example.android.rssfeed/src/com/example/android/rssfeed/RssItem.java">
-<persistable path="/com.example.android.rssfeed/src/com/example/android/rssfeed/RssItem.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="com.example.android.rssfeed/AndroidManifest.xml">
-<persistable path="/com.example.android.rssfeed/AndroidManifest.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" tooltip="com.example.android.rssfeed/res/layout/main.xml">
-<persistable path="/com.example.android.rssfeed/res/layout/main.xml"/>
 </file>
 </mruList>
 </workbench>

@@ -24,7 +24,7 @@ public class TodoDatabaseHelper extends SQLiteOpenHelper {
 		database.execSQL(DATABASE_CREATE);
 	}
 
-	// Method is called during an update of the database, e.g. if you increase
+	// Method is called during an upgrade of the database, e.g. if you increase
 	// the database version
 	@Override
 	public void onUpgrade(SQLiteDatabase database, int oldVersion,
