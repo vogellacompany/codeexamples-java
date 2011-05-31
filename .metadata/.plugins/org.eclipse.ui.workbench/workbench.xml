@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="38" version="2.0">
+<workbench progressCount="49" version="2.0">
 <workbenchAdvisor/>
 <window height="919" maximized="true" width="1253" x="181" y="70">
 <fastViewData fastViewLocation="1024"/>
@@ -51,6 +51,14 @@
 <part id="10"/>
 <part id="11"/>
 <part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+<part id="16"/>
+<part id="17"/>
+<part id="18"/>
+<part id="19"/>
+<part id="20"/>
 </presentation>
 </folder>
 </info>
@@ -99,9 +107,36 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.todos/src/de/vogella/android/todos/TodosOverview.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="692"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TodoDatabaseHelper.java" partName="TodoDatabaseHelper.java" path="/home/vogella/workspace/vogella/de.vogella.android.todos/src/de/vogella/android/todos/database/TodoDatabaseHelper.java" title="TodoDatabaseHelper.java" tooltip="de.vogella.android.todos/src/de/vogella/android/todos/database/TodoDatabaseHelper.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TodoDatabaseHelper.java" partName="TodoDatabaseHelper.java" path="/home/vogella/workspace/vogella/de.vogella.android.todos/src/de/vogella/android/todos/database/TodoDatabaseHelper.java" title="TodoDatabaseHelper.java" tooltip="de.vogella.android.todos/src/de/vogella/android/todos/database/TodoDatabaseHelper.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.todos/src/de/vogella/android/todos/database/TodoDatabaseHelper.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="924" selectionTopPixel="247"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" partName="main.xml" path="/home/vogella/workspace/vogella/de.vogella.android.layout.table/res/layout/main.xml" title="main.xml" tooltip="de.vogella.android.layout.table/res/layout/main.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.layout.table/res/layout/main.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" partName="main.xml" path="/home/vogella/workspace/vogella/de.vogella.android.intent.browserfilter/res/layout/main.xml" title="main.xml" tooltip="de.vogella.android.intent.browserfilter/res/layout/main.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.intent.browserfilter/res/layout/main.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="result.xml" partName="result.xml" path="/home/vogella/workspace/vogella/de.vogella.android.notificationmanager/res/layout/result.xml" title="result.xml" tooltip="de.vogella.android.notificationmanager/res/layout/result.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.notificationmanager/res/layout/result.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" partName="main.xml" path="/home/vogella/workspace/vogella/de.vogella.android.notificationmanager/res/layout/main.xml" title="main.xml" tooltip="de.vogella.android.notificationmanager/res/layout/main.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.notificationmanager/res/layout/main.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NotificationReceiver.java" partName="NotificationReceiver.java" path="/home/vogella/workspace/vogella/de.vogella.android.notificationmanager/src/de/vogella/android/notificationmanager/NotificationReceiver.java" title="NotificationReceiver.java" tooltip="de.vogella.android.notificationmanager/src/de/vogella/android/notificationmanager/NotificationReceiver.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.notificationmanager/src/de/vogella/android/notificationmanager/NotificationReceiver.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="de.vogella.android.notificationmanager Manifest" path="/home/vogella/workspace/vogella/de.vogella.android.notificationmanager/AndroidManifest.xml" title="de.vogella.android.notificationmanager Manifest" tooltip="de.vogella.android.notificationmanager/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.notificationmanager/AndroidManifest.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CreateNotification.java" partName="CreateNotification.java" path="/home/vogella/workspace/vogella/de.vogella.android.notificationmanager/src/de/vogella/android/notificationmanager/CreateNotification.java" title="CreateNotification.java" tooltip="de.vogella.android.notificationmanager/src/de/vogella/android/notificationmanager/CreateNotification.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.android.notificationmanager/src/de/vogella/android/notificationmanager/CreateNotification.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="795" selectionTopPixel="162"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="View.java" partName="View.java" path="/home/vogella/workspace/vogella/de.vogella.jface.tableviewer/src/de/vogella/jface/tableviewer/View.java" title="View.java" tooltip="de.vogella.jface.tableviewer/src/de/vogella/jface/tableviewer/View.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.vogella.jface.tableviewer/src/de/vogella/jface/tableviewer/View.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="631" selectionTopPixel="49"/>
 </editor>
 </editors>
 <views>
@@ -144,9 +179,6 @@
 <view id="com.android.ide.eclipse.ddms.views.FileExplorerView" partName="File Explorer"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>&#x0A;<category IMemento.internal.id="Warnings"/>
-<category IMemento.internal.id="Errors"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -156,7 +188,7 @@
 </viewState>
 </view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
-<viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="Aggregate for window 1281991596963">
+<viewState group_libraries="1" layout="2" linkWithEditor="1" rootMode="1" workingSetName="Aggregate for window 1281991596963">
 <customFilters userDefinedPatternsEnabled="false">
 <xmlDefinedFilters>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
@@ -675,18 +707,7 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.wallpaper/src/de/vogella/android/wallpaper/MyWallpaperService.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/com.example.android.rssfeed/src/com/example/android/rssfeed/ReadRssFeed.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=Apfel1/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-10\/android.jar&lt;java.io(InputStream.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=de.vogella.android.twitter.json/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-10\/android.jar&lt;java.io(BufferedReader.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=com.example.android.rssfeed/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-10\/android.jar&lt;org.xmlpull.v1(XmlPullParser.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=B-Bingo/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-9\/android.jar&lt;android.graphics(RectF.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=B-Bingo/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-9\/android.jar&lt;android.widget(TableLayout.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=de.vogella.android.rssfeed/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-10\/android.jar&lt;android.os(Message.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=de.vogella.android.first/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-10\/android.jar&lt;android.graphics(Canvas.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=de.vogella.android.sqlite.first/\/home\/vogella\/androidsdk\/android-sdk-linux_86\/platforms\/android-10\/android.jar&lt;java.util(Random.class"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/com.example.android.rssfeed/src/com/example/android/rssfeed/ReadRssFeed.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.adapter.example/src/de/vogella/adapter/example/View.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/com.example.android.rssfeed/res/values/strings.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/com.example.android.rssfeed/res/layout/main.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/com.example.android.rssfeed/AndroidManifest.xml"/>
@@ -706,148 +727,146 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.todos/src/de/vogella/android/todos/TodoDetails.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.todos/src/de/vogella/android/todos/TodosOverview.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.todos/src/de/vogella/android/todos/database/TodoDatabaseHelper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/de.vogella.android.layout.table/res/layout/main.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/de.vogella.android.intent.browserfilter/res/layout/main.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/de.vogella.android.notificationmanager/res/layout/result.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/de.vogella.android.notificationmanager/res/layout/main.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.notificationmanager/src/de/vogella/android/notificationmanager/NotificationReceiver.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/de.vogella.android.notificationmanager/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.android.notificationmanager/src/de/vogella/android/notificationmanager/CreateNotification.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.vogella.jface.tableviewer/src/de/vogella/jface/tableviewer/View.java"/>
 </editors>
-<item historyLabel="ReadRssFeed.java" index="1">
-<position info="not_deleted" x="1384" y="0"/>
-</item>
-<item historyLabel="MyWallpaperService.java" index="0">
-<position info="not_deleted" x="3331" y="0"/>
-</item>
-<item historyLabel="InputStream.class" index="2">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="BufferedReader.class" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="XmlPullParser.class" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="RectF.class" index="5">
-<position info="not_deleted" x="3" y="0"/>
-</item>
-<item historyLabel="RectF.class" index="5">
-<position info="not_deleted" x="21" y="0"/>
-</item>
-<item historyLabel="TableLayout.class" index="6">
-<position info="not_deleted" x="3" y="0"/>
-</item>
-<item historyLabel="TableLayout.class" index="6">
-<position info="not_deleted" x="3603" y="11"/>
-</item>
-<item historyLabel="Message.class" index="7">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Canvas.class" index="8">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Random.class" index="9">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="ReadRssFeed.java" index="10">
-<position info="not_deleted" x="1328" y="0"/>
-</item>
-<item historyLabel="View.java" index="11">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="ReadRssFeed.java" index="10">
+<item historyLabel="strings.xml" index="1"/>
+<item historyLabel="main.xml" index="2"/>
+<item historyLabel="com.example.android.rssfeed Manifest" index="3"/>
+<item historyLabel="ReadRssFeed.java" index="0">
 <position/>
 </item>
-<item historyLabel="strings.xml" index="12"/>
-<item historyLabel="main.xml" index="13"/>
-<item historyLabel="com.example.android.rssfeed Manifest" index="14"/>
-<item historyLabel="ReadRssFeed.java" index="10">
-<position/>
-</item>
-<item historyLabel="RssItem.java" index="15">
+<item historyLabel="RssItem.java" index="4">
 <position info="not_deleted" x="316" y="0"/>
 </item>
-<item historyLabel="ReadRssFeed.java" index="10">
+<item historyLabel="ReadRssFeed.java" index="0">
 <position/>
 </item>
-<item historyLabel="ReadRssFeed.java" index="10">
+<item historyLabel="ReadRssFeed.java" index="0">
 <position info="not_deleted" x="1040" y="0"/>
 </item>
-<item historyLabel="ReadRssFeed.java" index="10">
+<item historyLabel="ReadRssFeed.java" index="0">
 <position/>
 </item>
-<item historyLabel="ReadRssFeed.java" index="10">
+<item historyLabel="ReadRssFeed.java" index="0">
 <position info="not_deleted" x="3483" y="0"/>
 </item>
-<item historyLabel="ReadRssFeed.java" index="10">
+<item historyLabel="ReadRssFeed.java" index="0">
 <position/>
 </item>
-<item historyLabel="MyWallpaperService.java" index="16">
+<item historyLabel="MyWallpaperService.java" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="MyWallpaperService.java" index="16">
+<item historyLabel="MyWallpaperService.java" index="5">
 <position info="not_deleted" x="971" y="0"/>
 </item>
-<item historyLabel="MyWallpaperService.java" index="16">
+<item historyLabel="MyWallpaperService.java" index="5">
 <position info="not_deleted" x="524" y="33"/>
 </item>
-<item historyLabel="MyWallpaperService.java" index="16">
+<item historyLabel="MyWallpaperService.java" index="5">
 <position info="not_deleted" x="3318" y="0"/>
 </item>
-<item historyLabel="prefs.xml" index="17"/>
-<item historyLabel="MyWallpaperService.java" index="16">
+<item historyLabel="prefs.xml" index="6"/>
+<item historyLabel="MyWallpaperService.java" index="5">
 <position info="not_deleted" x="0" y="3596"/>
 </item>
-<item historyLabel="ReadRssFeed.java" index="10">
+<item historyLabel="ReadRssFeed.java" index="0">
 <position info="not_deleted" x="1182" y="0"/>
 </item>
-<item historyLabel="AlarmActivity.java" index="18">
+<item historyLabel="AlarmActivity.java" index="7">
 <position info="not_deleted" x="600" y="0"/>
 </item>
-<item historyLabel="LevelView.java" index="19">
+<item historyLabel="LevelView.java" index="8">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="AlarmActivity.java" index="18">
+<item historyLabel="AlarmActivity.java" index="7">
 <position info="not_deleted" x="600" y="0"/>
 </item>
-<item historyLabel="LevelPreferences.java" index="20">
+<item historyLabel="LevelPreferences.java" index="9">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Level.java" index="21">
+<item historyLabel="Level.java" index="10">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="LevelPreferences.java" index="20">
+<item historyLabel="LevelPreferences.java" index="9">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="AlarmActivity.java" index="18">
+<item historyLabel="AlarmActivity.java" index="7">
 <position info="not_deleted" x="600" y="0"/>
 </item>
-<item historyLabel="AccelerometerListener.java" index="22">
+<item historyLabel="AccelerometerListener.java" index="11">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="CustomDialogActivity.java" index="23">
+<item historyLabel="CustomDialogActivity.java" index="12">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="CustomDialog.java" index="24">
+<item historyLabel="CustomDialog.java" index="13">
 <position info="not_deleted" x="689" y="0"/>
 </item>
-<item historyLabel="AlarmActivity.java" index="18">
+<item historyLabel="AlarmActivity.java" index="7">
 <position info="not_deleted" x="600" y="0"/>
 </item>
-<item historyLabel="MyContentProvider.java" index="25">
+<item historyLabel="MyContentProvider.java" index="14">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="CallEditor.java" index="26">
+<item historyLabel="CallEditor.java" index="15">
 <position info="not_deleted" x="1046" y="0"/>
 </item>
-<item historyLabel="AlarmActivity.java" index="18">
+<item historyLabel="AlarmActivity.java" index="7">
 <position info="not_deleted" x="880" y="0"/>
 </item>
-<item historyLabel="Perspective.java" index="27">
+<item historyLabel="Perspective.java" index="16">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="TodoDetails.java" index="28">
+<item historyLabel="TodoDetails.java" index="17">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="TodosOverview.java" index="29">
+<item historyLabel="TodosOverview.java" index="18">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item active="true" historyLabel="TodoDatabaseHelper.java" index="30">
+<item historyLabel="TodoDatabaseHelper.java" index="19">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.xml" index="20"/>
+<item historyLabel="main.xml" index="21"/>
+<item historyLabel="result.xml" index="22"/>
+<item historyLabel="main.xml" index="23"/>
+<item historyLabel="NotificationReceiver.java" index="24">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="de.vogella.android.notificationmanager Manifest" index="25"/>
+<item historyLabel="CreateNotification.java" index="26">
+<position info="not_deleted" x="1196" y="0"/>
+</item>
+<item historyLabel="View.java" index="27">
+<position info="not_deleted" x="4484" y="0"/>
+</item>
+<item historyLabel="View.java" index="27">
+<position info="not_deleted" x="2947" y="0"/>
+</item>
+<item historyLabel="View.java" index="27">
+<position info="not_deleted" x="1176" y="0"/>
+</item>
+<item historyLabel="View.java" index="27">
+<position info="not_deleted" x="3126" y="23"/>
+</item>
+<item historyLabel="View.java" index="27">
+<position info="not_deleted" x="3170" y="0"/>
+</item>
+<item historyLabel="View.java" index="27">
+<position info="not_deleted" x="3381" y="23"/>
+</item>
+<item historyLabel="View.java" index="27">
+<position info="not_deleted" x="3534" y="0"/>
+</item>
+<item active="true" historyLabel="View.java" index="27">
+<position info="not_deleted" x="3645" y="23"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -866,6 +885,30 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="View.java" tooltip="de.vogella.jface.tableviewer/src/de/vogella/jface/tableviewer/View.java">
+<persistable path="/de.vogella.jface.tableviewer/src/de/vogella/jface/tableviewer/View.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CreateNotification.java" tooltip="de.vogella.android.notificationmanager/src/de/vogella/android/notificationmanager/CreateNotification.java">
+<persistable path="/de.vogella.android.notificationmanager/src/de/vogella/android/notificationmanager/CreateNotification.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="de.vogella.android.notificationmanager/AndroidManifest.xml">
+<persistable path="/de.vogella.android.notificationmanager/AndroidManifest.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NotificationReceiver.java" tooltip="de.vogella.android.notificationmanager/src/de/vogella/android/notificationmanager/NotificationReceiver.java">
+<persistable path="/de.vogella.android.notificationmanager/src/de/vogella/android/notificationmanager/NotificationReceiver.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" tooltip="de.vogella.android.notificationmanager/res/layout/main.xml">
+<persistable path="/de.vogella.android.notificationmanager/res/layout/main.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="result.xml" tooltip="de.vogella.android.notificationmanager/res/layout/result.xml">
+<persistable path="/de.vogella.android.notificationmanager/res/layout/result.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" tooltip="de.vogella.android.intent.browserfilter/res/layout/main.xml">
+<persistable path="/de.vogella.android.intent.browserfilter/res/layout/main.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" tooltip="de.vogella.android.layout.table/res/layout/main.xml">
+<persistable path="/de.vogella.android.layout.table/res/layout/main.xml"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TodoDatabaseHelper.java" tooltip="de.vogella.android.todos/src/de/vogella/android/todos/database/TodoDatabaseHelper.java">
 <persistable path="/de.vogella.android.todos/src/de/vogella/android/todos/database/TodoDatabaseHelper.java"/>
 </file>
@@ -886,30 +929,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CustomDialog.java" tooltip="SampleCustomDialog/src/net/androgames/blog/sample/customdialog/dialog/CustomDialog.java">
 <persistable path="/SampleCustomDialog/src/net/androgames/blog/sample/customdialog/dialog/CustomDialog.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CustomDialogActivity.java" tooltip="SampleCustomDialog/src/net/androgames/blog/sample/customdialog/CustomDialogActivity.java">
-<persistable path="/SampleCustomDialog/src/net/androgames/blog/sample/customdialog/CustomDialogActivity.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AccelerometerListener.java" tooltip="SampleAccelerometerSensor/src/net/androgames/bolg/sample/accelerometer/AccelerometerListener.java">
-<persistable path="/SampleAccelerometerSensor/src/net/androgames/bolg/sample/accelerometer/AccelerometerListener.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Level.java" tooltip="AndroLevel/src/net/androgames/level/Level.java">
-<persistable path="/AndroLevel/src/net/androgames/level/Level.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LevelPreferences.java" tooltip="AndroLevel/src/net/androgames/level/LevelPreferences.java">
-<persistable path="/AndroLevel/src/net/androgames/level/LevelPreferences.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LevelView.java" tooltip="AndroLevel/src/net/androgames/level/view/LevelView.java">
-<persistable path="/AndroLevel/src/net/androgames/level/view/LevelView.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmActivity.java" tooltip="de.vogella.android.alarm/src/de/vogella/android/alarm/AlarmActivity.java">
-<persistable path="/de.vogella.android.alarm/src/de/vogella/android/alarm/AlarmActivity.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.xml.XmlEditor" name="prefs.xml" tooltip="de.vogella.android.wallpaper/res/xml/prefs.xml">
-<persistable path="/de.vogella.android.wallpaper/res/xml/prefs.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyWallpaperService.java" tooltip="de.vogella.android.wallpaper/src/de/vogella/android/wallpaper/MyWallpaperService.java">
-<persistable path="/de.vogella.android.wallpaper/src/de/vogella/android/wallpaper/MyWallpaperService.java"/>
 </file>
 </mruList>
 </workbench>
