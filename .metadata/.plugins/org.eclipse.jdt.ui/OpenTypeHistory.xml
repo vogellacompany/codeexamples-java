@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=de.vogella.android.notificationmanager/src&lt;de.vogella.android.notificationmanager{NotificationReceiver.java[NotificationReceiver" modifiers="1" timestamp="1304976872000"/>
+<typeInfo handle="=de.vogella.android.kidsdrawing/src&lt;de.vogella.android.kidsdrawing{FingerPaintActivity.java[FingerPaintActivity" modifiers="1" timestamp="1307132444000"/>
+<typeInfo handle="=de.vogella.android.kidsdrawing/src&lt;de.vogella.android.kidsdrawing{DrawingView.java[DrawingView" modifiers="1" timestamp="1307132053000"/>
 </typeInfoHistroy>
