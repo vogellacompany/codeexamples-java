@@ -1,11 +1,15 @@
 package de.vogella.android.sensor;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 public class SensorTest extends Activity implements SensorEventListener {
@@ -13,12 +17,20 @@ public class SensorTest extends Activity implements SensorEventListener {
 	private float lastX = 0;
 	private float lastY = 0;
 	private float lastZ = 0;
+	private View view;
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+	            WindowManager.LayoutParams.FLAG_FULLSCREEN);
+	  
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		view = findViewById(R.id.textView);
+		view.setBackgroundColor(Color.GREEN);
+
 		sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 		sensorManager.registerListener(this,
 				sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
@@ -27,7 +39,7 @@ public class SensorTest extends Activity implements SensorEventListener {
 
 	@Override
 	public void onSensorChanged(SensorEvent event) {
-		if (event.sensor.getType() == SensorManager.SENSOR_ACCELEROMETER) {
+		if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
 			float[] values = event.values;
 			// Movement
 			float x = values[0];
@@ -36,9 +48,13 @@ public class SensorTest extends Activity implements SensorEventListener {
 
 			float accelationSquareRoot = (x * x + y * y + z * z)
 					/ (SensorManager.GRAVITY_EARTH * SensorManager.GRAVITY_EARTH);
-			if (accelationSquareRoot >= 4) // twice the accelation of earth
+			if (accelationSquareRoot >= 2) //
+			{
 				Toast.makeText(this, "Device was shuffed", Toast.LENGTH_SHORT)
 						.show();
+				view.setBackgroundColor(Color.RED);
+			}
+
 		}
 
 	}
