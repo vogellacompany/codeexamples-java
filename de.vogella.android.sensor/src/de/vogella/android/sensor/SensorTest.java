@@ -14,10 +14,9 @@ import android.widget.Toast;
 
 public class SensorTest extends Activity implements SensorEventListener {
 	private SensorManager sensorManager;
-	private float lastX = 0;
-	private float lastY = 0;
-	private float lastZ = 0;
+	private boolean color = false; 
 	private View view;
+	private long lastUpdate;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -35,6 +34,7 @@ public class SensorTest extends Activity implements SensorEventListener {
 		sensorManager.registerListener(this,
 				sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
 				SensorManager.SENSOR_DELAY_NORMAL);
+		lastUpdate = System.currentTimeMillis();
 	}
 
 	@Override
@@ -48,11 +48,22 @@ public class SensorTest extends Activity implements SensorEventListener {
 
 			float accelationSquareRoot = (x * x + y * y + z * z)
 					/ (SensorManager.GRAVITY_EARTH * SensorManager.GRAVITY_EARTH);
+			long actualTime = System.currentTimeMillis();
 			if (accelationSquareRoot >= 2) //
 			{
+				if (actualTime - lastUpdate < 200) {
+					return;
+				}
+				lastUpdate = actualTime;
 				Toast.makeText(this, "Device was shuffed", Toast.LENGTH_SHORT)
 						.show();
-				view.setBackgroundColor(Color.RED);
+				if (color) {
+					view.setBackgroundColor(Color.GREEN);
+					
+				} else {
+					view.setBackgroundColor(Color.RED);
+				}
+				color = !color;
 			}
 
 		}
