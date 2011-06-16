@@ -85,7 +85,7 @@ public class HelloPreferences extends Activity {
 			startActivity(i);
 			// Some feedback to the user
 			Toast.makeText(HelloPreferences.this,
-					"Here you can maintain your user credentials.",
+					"Here you can enter your user credentials.",
 					Toast.LENGTH_LONG).show();
 			break;
 

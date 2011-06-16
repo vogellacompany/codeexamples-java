@@ -20,7 +20,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Layout;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.part.ViewPart;
 
@@ -50,7 +49,8 @@ public class View extends ViewPart {
 		person.setAge(12);
 		person.setMarried(true);
 		// Lets put thing to order
-		Layout layout = new GridLayout(2, false);
+		GridLayout layout = new GridLayout(2, false);
+		layout.marginRight = 5;
 		parent.setLayout(layout);
 
 		Label firstLabel = new Label(parent, SWT.NONE);
@@ -141,7 +141,7 @@ public class View extends ViewPart {
 
 		widgetValue = WidgetProperties.text(SWT.Modify).observe(ageText);
 		modelValue = BeanProperties.value(Person.class, "age").observe(person);
-
+		//
 		// We want that age is a number
 		IValidator numberValidator = new IValidator() {
 
@@ -156,9 +156,13 @@ public class View extends ViewPart {
 			}
 		};
 		UpdateValueStrategy targetToModel = new UpdateValueStrategy();
-		targetToModel.setAfterConvertValidator(numberValidator);
+		targetToModel.setBeforeSetValidator(numberValidator);
 
-		bindingContext.bindValue(widgetValue, modelValue);
+		// Bind values using the validator
+		// Remember the bindingContext to allow control decoration
+		Binding bindValue = bindingContext.bindValue(widgetValue, modelValue,
+				targetToModel, null);
+		ControlDecorationSupport.create(bindValue, SWT.TOP | SWT.RIGHT);
 
 		widgetValue = WidgetProperties.selection().observe(marriedButton);
 		modelValue = BeanProperties.value(Person.class, "married").observe(
@@ -175,8 +179,6 @@ public class View extends ViewPart {
 
 		modelValue = BeanProperties.value(Person.class, "address.country")
 				.observe(person);
-		// Remember the bindingContext to allow control decoration
-		Binding bindValue = bindingContext.bindValue(widgetValue, modelValue, targetToModel, null);
-		ControlDecorationSupport.create(bindValue, SWT.TOP | SWT.RIGHT);
+
 	}
 }

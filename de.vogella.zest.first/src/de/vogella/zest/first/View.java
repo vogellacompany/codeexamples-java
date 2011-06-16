@@ -1,10 +1,9 @@
-
 package de.vogella.zest.first;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Listener;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.zest.core.widgets.Graph;
 import org.eclipse.zest.core.widgets.GraphConnection;
@@ -44,17 +43,18 @@ public class View extends ViewPart {
 		graphConnection.setHighlightColor(parent.getDisplay().getSystemColor(
 				SWT.COLOR_RED));
 		graphConnection.setLineWidth(3);
-		graphConnection.addListener(SWT.SELECTED, new Listener() {
 
+		graph.setLayoutAlgorithm(new SpringLayoutAlgorithm(
+				LayoutStyles.NO_LAYOUT_NODE_RESIZING), true);
+		// Selection listener on graphConnect or GraphNode is not supported
+		// see https://bugs.eclipse.org/bugs/show_bug.cgi?id=236528
+		graph.addSelectionListener(new SelectionAdapter() {
 			@Override
-			public void handleEvent(Event event) {
-				System.out.println("Selected");
+			public void widgetSelected(SelectionEvent e) {
+				System.out.println(e);
 			}
 
 		});
-		graph.setLayoutAlgorithm(new SpringLayoutAlgorithm(
-				LayoutStyles.NO_LAYOUT_NODE_RESIZING), true);
-
 	}
 
 	public void setLayoutManager() {

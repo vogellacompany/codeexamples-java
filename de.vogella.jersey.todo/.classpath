@@ -11,7 +11,7 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-server-1.1.4.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jettison-1.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsr311-api-1.1.1.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="/javax.servlet" sourcepath="/javax.servlet/source-bundle"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
