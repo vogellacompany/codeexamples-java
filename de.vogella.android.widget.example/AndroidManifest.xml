@@ -11,6 +11,8 @@
 		<meta-data android:name="android.appwidget.provider"
 			android:resource="@xml/widget_info" />
 		</receiver>
+		<service android:name=".UpdateWidgetService"></service>
+		<activity android:name=".Test"></activity>
 	</application>
 	<uses-sdk android:minSdkVersion="10" />
 
