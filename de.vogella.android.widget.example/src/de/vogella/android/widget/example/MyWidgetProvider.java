@@ -12,7 +12,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
 		// Get some useful info from the web
-		String fakeUpdate = "Updating the text...";
+		String fakeUpdate = "Random: ";
 		Random random = new Random();
 		int nextInt = random.nextInt(100);
 		fakeUpdate += String.valueOf(nextInt);

@@ -44,8 +44,7 @@ public class JpaTest {
 				person.setFirstName("Jim_" + i);
 				person.setLastName("Knopf_" + i);
 				em.persist(person);
-				// First we have to persists the job
-				// Now persists the new person
+				// Now persists the family person relationship
 				family.getMembers().add(person);
 				em.persist(person);
 				em.persist(family);
