@@ -1,11 +1,15 @@
 package de.vogella.databinding.person.listviewer;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.databinding.observable.list.WritableList;
 import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -29,6 +33,30 @@ public class View extends ViewPart {
 
 		// Define the viewer
 		viewer = new ListViewer(parent);
+
+		LabelProvider personLabelProvider = new LabelProvider() {
+			private PropertyChangeListener pcl = new PropertyChangeListener() {
+				@Override
+				public void propertyChange(PropertyChangeEvent e) {
+					callChange(e.getSource());
+				}
+			};
+
+			private void callChange(Object object) {
+				fireLabelProviderChanged(new LabelProviderChangedEvent(this,
+						object));
+			}
+
+			public String getText(Object element) {
+				Person p = (Person) element;
+				p.addPropertyChangeListener("firstName", pcl);
+				p.addPropertyChangeListener("lastNamel", pcl);
+				return p.getFirstName() + " " + p.getLastName();
+			}
+		};
+
+		viewer.setLabelProvider(personLabelProvider);
+
 		viewer.setContentProvider(new ObservableListContentProvider());
 		List<Person> persons = new ArrayList<Person>();
 		// Just for testing we create sample data
@@ -60,6 +88,16 @@ public class View extends ViewPart {
 				p.setFirstName("Test");
 				p.setLastName("Test");
 				input.add(p);
+			}
+		});
+
+		Button change = new Button(parent, SWT.PUSH);
+		change.setText("change");
+		change.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				Person p = (Person) input.get(0);
+				p.setFirstName(p.getFirstName() + "1");
 			}
 		});
 	}

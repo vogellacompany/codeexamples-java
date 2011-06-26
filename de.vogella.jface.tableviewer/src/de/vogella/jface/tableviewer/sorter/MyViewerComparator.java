@@ -2,6 +2,7 @@ package de.vogella.jface.tableviewer.sorter;
 
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerComparator;
+import org.eclipse.swt.SWT;
 
 import de.vogella.jface.tableviewer.model.Person;
 
@@ -13,6 +14,10 @@ public class MyViewerComparator extends ViewerComparator {
 	public MyViewerComparator() {
 		this.propertyIndex = 0;
 		direction = DESCENDING;
+	}
+
+	public int getDirection() {
+		return direction == 1 ? SWT.DOWN : SWT.UP;
 	}
 
 	public void setColumn(int column) {

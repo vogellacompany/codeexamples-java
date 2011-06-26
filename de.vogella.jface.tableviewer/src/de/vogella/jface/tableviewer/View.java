@@ -5,6 +5,8 @@ import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -17,9 +19,11 @@ import org.eclipse.ui.part.ViewPart;
 
 import de.vogella.jface.tableviewer.model.ModelProvider;
 import de.vogella.jface.tableviewer.model.Person;
+import de.vogella.jface.tableviewer.sorter.MyViewerComparator;
 
 public class View extends ViewPart {
 	public static final String ID = "de.vogella.jface.tableviewer.view";
+	private MyViewerComparator comparator;
 
 	private TableViewer viewer;
 	// We use icons
@@ -37,6 +41,10 @@ public class View extends ViewPart {
 		searchText.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL
 				| GridData.HORIZONTAL_ALIGN_FILL));
 		createViewer(parent);
+		// Set the sorter for the table
+		comparator = new MyViewerComparator();
+		viewer.setComparator(comparator);
+
 	}
 
 	private void createViewer(Composite parent) {
@@ -53,7 +61,6 @@ public class View extends ViewPart {
 		viewer.setInput(ModelProvider.INSTANCE.getPersons());
 		// Make the selection available to other views
 		getSite().setSelectionProvider(viewer);
-		// Set the sorter for the table
 
 		// Layout the viewer
 		GridData gridData = new GridData();
@@ -75,7 +82,7 @@ public class View extends ViewPart {
 		int[] bounds = { 100, 100, 100, 100 };
 
 		// First column is for the first name
-		TableViewerColumn col = createTableViewerColumn(titles[0], bounds[0]);
+		TableViewerColumn col = createTableViewerColumn(titles[0], bounds[0], 0);
 		col.setLabelProvider(new ColumnLabelProvider() {
 			@Override
 			public String getText(Object element) {
@@ -85,7 +92,7 @@ public class View extends ViewPart {
 		});
 
 		// Second column is for the last name
-		col = createTableViewerColumn(titles[1], bounds[1]);
+		col = createTableViewerColumn(titles[1], bounds[1], 1);
 		col.setLabelProvider(new ColumnLabelProvider() {
 			@Override
 			public String getText(Object element) {
@@ -95,7 +102,7 @@ public class View extends ViewPart {
 		});
 
 		// Now the gender
-		col = createTableViewerColumn(titles[2], bounds[2]);
+		col = createTableViewerColumn(titles[2], bounds[2], 2);
 		col.setLabelProvider(new ColumnLabelProvider() {
 			@Override
 			public String getText(Object element) {
@@ -105,7 +112,7 @@ public class View extends ViewPart {
 		});
 
 		// // Now the status married
-		col = createTableViewerColumn(titles[3], bounds[3]);
+		col = createTableViewerColumn(titles[3], bounds[3], 3);
 		col.setLabelProvider(new ColumnLabelProvider() {
 			@Override
 			public String getText(Object element) {
@@ -124,7 +131,8 @@ public class View extends ViewPart {
 
 	}
 
-	private TableViewerColumn createTableViewerColumn(String title, int bound) {
+	private TableViewerColumn createTableViewerColumn(String title, int bound,
+			final int colNumber) {
 		final TableViewerColumn viewerColumn = new TableViewerColumn(viewer,
 				SWT.NONE);
 		final TableColumn column = viewerColumn.getColumn();
@@ -132,8 +140,22 @@ public class View extends ViewPart {
 		column.setWidth(bound);
 		column.setResizable(true);
 		column.setMoveable(true);
+		column.addSelectionListener(getSelectionAdapter(column, colNumber));
 		return viewerColumn;
+	}
 
+	private SelectionAdapter getSelectionAdapter(final TableColumn column,
+			final int index) {
+		SelectionAdapter selectionAdapter = new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				comparator.setColumn(index);
+				int dir = comparator.getDirection();
+				viewer.getTable().setSortDirection(dir);
+				viewer.refresh();
+			}
+		};
+		return selectionAdapter;
 	}
 
 	/**
