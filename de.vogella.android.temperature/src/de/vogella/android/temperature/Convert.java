@@ -1,4 +1,3 @@
-
 package de.vogella.android.temperature;
 
 import android.app.Activity;
@@ -36,17 +35,13 @@ public class Convert extends Activity {
 			if (celsiusButton.isChecked()) {
 				text.setText(String
 						.valueOf(convertFahrenheitToCelsius(inputValue)));
+				celsiusButton.setChecked(false);
+				fahrenheitButton.setChecked(true);
 			} else {
 				text.setText(String
 						.valueOf(convertCelsiusToFahrenheit(inputValue)));
-			}
-			// Switch to the other button
-			if (fahrenheitButton.isChecked()) {
 				fahrenheitButton.setChecked(false);
 				celsiusButton.setChecked(true);
-			} else {
-				fahrenheitButton.setChecked(true);
-				celsiusButton.setChecked(false);
 			}
 			break;
 		}

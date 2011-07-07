@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
+	android:id="@+id/layout" android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
 	<TextView android:id="@+id/rotatetext" android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="@string/hello" />
+		android:layout_height="wrap_content" android:text="Will be rotated." />
 	<Button android:id="@+id/Button01" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:text="Animate"
+		android:layout_height="wrap_content" android:text="Rotate"
 		android:onClick="startAnimation"></Button>
 	<TextView android:id="@+id/scrolltext" android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:lines="1"
-		android:text="This is a long text, working in the train, yeah you yeah."
-		android:scrollHorizontally="true"/>
+		android:text="Will be scrolled to the left."
+		android:scrollHorizontally="true" />
 	<Button android:id="@+id/Button02" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:text="Animate"
+		android:layout_height="wrap_content" android:text="Animate to left + bounce"
+		android:onClick="startAnimation"></Button>
+	<TextView android:id="@+id/fadeout" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:lines="1"
+		android:text="Will be faded out / in" android:scrollHorizontally="true" />
+	<Button android:id="@+id/Button03" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Fade"
+		android:onClick="startAnimation"></Button>
+	<Button android:id="@+id/Button04" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Add / Remove component"
 		android:onClick="startAnimation"></Button>
 </LinearLayout>

@@ -6,7 +6,6 @@ import java.util.List;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,11 +14,9 @@ public class MyList extends ListActivity {
 	/** Called when the activity is first created. */
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
-		// Create an array of Strings, that will be put to our ListActivity
-		// ArrayAdapter<Model> adapter = new InteractiveArrayAdapter(this,
-		// getModel());
-		ArrayAdapter<Model> adapter = new ArrayAdapter<Model>(this,
-				android.R.layout.simple_list_item_1, getModel());
+		String[] names = new String[] { "Linux", "Windows7", "Eclipse", "Suse",
+				"Ubuntu", "Solaris", "Android", "iPhone" };
+		MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this, names);
 		setListAdapter(adapter);
 	}
 
