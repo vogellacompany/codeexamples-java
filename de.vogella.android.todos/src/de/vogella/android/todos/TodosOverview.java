@@ -88,7 +88,7 @@ public class TodosOverview extends ListActivity {
 		Intent i = new Intent(this, TodoDetails.class);
 		i.putExtra(TodoDbAdapter.KEY_ROWID, id);
 		// Activity returns an result if called with startActivityForResult
-		
+
 		startActivityForResult(i, ACTIVITY_EDIT);
 	}
 
@@ -122,5 +122,13 @@ public class TodosOverview extends ListActivity {
 			ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
 		menu.add(0, DELETE_ID, 0, R.string.menu_delete);
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		if (dbHelper == null) {
+			dbHelper.close();
+		}
 	}
 }

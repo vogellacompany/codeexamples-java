@@ -94,4 +94,5 @@ public class TodoDbAdapter {
 		values.put(KEY_DESCRIPTION, description);
 		return values;
 	}
+
 }

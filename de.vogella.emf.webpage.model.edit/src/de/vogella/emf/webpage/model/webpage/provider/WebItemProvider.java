@@ -7,7 +7,7 @@
 package de.vogella.emf.webpage.model.webpage.provider;
 
 
-import de.vogella.emf.webpage.model.webpage.Category;
+import de.vogella.emf.webpage.model.webpage.Web;
 import de.vogella.emf.webpage.model.webpage.WebpageFactory;
 import de.vogella.emf.webpage.model.webpage.WebpagePackage;
 
@@ -33,12 +33,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.vogella.emf.webpage.model.webpage.Category} object.
+ * This is the item provider adapter for a {@link de.vogella.emf.webpage.model.webpage.Web} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CategoryItemProvider
+public class WebItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -52,7 +52,7 @@ public class CategoryItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CategoryItemProvider(AdapterFactory adapterFactory) {
+	public WebItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -67,9 +67,56 @@ public class CategoryItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addKeywordsPropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Keywords feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addKeywordsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Web_keywords_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Web_keywords_feature", "_UI_Web_type"),
+				 WebpagePackage.Literals.WEB__KEYWORDS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Web_description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Web_description_feature", "_UI_Web_type"),
+				 WebpagePackage.Literals.WEB__DESCRIPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -83,9 +130,31 @@ public class CategoryItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Category_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Category_name_feature", "_UI_Category_type"),
-				 WebpagePackage.Literals.CATEGORY__NAME,
+				 getString("_UI_Web_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Web_name_feature", "_UI_Web_type"),
+				 WebpagePackage.Literals.WEB__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Web_title_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Web_title_feature", "_UI_Web_type"),
+				 WebpagePackage.Literals.WEB__TITLE,
 				 true,
 				 false,
 				 false,
@@ -106,7 +175,7 @@ public class CategoryItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebpagePackage.Literals.CATEGORY__ARTICLES);
+			childrenFeatures.add(WebpagePackage.Literals.WEB__PAGES);
 		}
 		return childrenFeatures;
 	}
@@ -125,14 +194,14 @@ public class CategoryItemProvider
 	}
 
 	/**
-	 * This returns Category.gif.
+	 * This returns Web.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Category"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Web"));
 	}
 
 	/**
@@ -143,10 +212,10 @@ public class CategoryItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Category)object).getName();
+		String label = ((Web)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Category_type") :
-			getString("_UI_Category_type") + " " + label;
+			getString("_UI_Web_type") :
+			getString("_UI_Web_type") + " " + label;
 	}
 
 	/**
@@ -160,11 +229,14 @@ public class CategoryItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Category.class)) {
-			case WebpagePackage.CATEGORY__NAME:
+		switch (notification.getFeatureID(Web.class)) {
+			case WebpagePackage.WEB__KEYWORDS:
+			case WebpagePackage.WEB__DESCRIPTION:
+			case WebpagePackage.WEB__NAME:
+			case WebpagePackage.WEB__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebpagePackage.CATEGORY__ARTICLES:
+			case WebpagePackage.WEB__PAGES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -184,8 +256,8 @@ public class CategoryItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebpagePackage.Literals.CATEGORY__ARTICLES,
-				 WebpageFactory.eINSTANCE.createArticle()));
+				(WebpagePackage.Literals.WEB__PAGES,
+				 WebpageFactory.eINSTANCE.createWebpage()));
 	}
 
 	/**

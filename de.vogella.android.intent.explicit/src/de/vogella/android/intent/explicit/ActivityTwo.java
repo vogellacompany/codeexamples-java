@@ -35,7 +35,7 @@ public class ActivityTwo extends Activity {
 	public void finish() {
 		Intent data = new Intent();
 		data.putExtra("returnKey1", "Swinging on a star. ");
-		data.putExtra("returnKey2", "You could be bettern then you are. ");
+		data.putExtra("returnKey2", "You could be better then you are. ");
 		setResult(RESULT_OK, data);
 		super.finish();
 	}

@@ -65,6 +65,7 @@ public class ArticleItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addCreatedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -83,6 +84,28 @@ public class ArticleItemProvider
 				 getString("_UI_Article_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Article_name_feature", "_UI_Article_type"),
 				 WebpagePackage.Literals.ARTICLE__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Created feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCreatedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Article_created_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Article_created_feature", "_UI_Article_type"),
+				 WebpagePackage.Literals.ARTICLE__CREATED,
 				 true,
 				 false,
 				 false,
@@ -129,6 +152,7 @@ public class ArticleItemProvider
 
 		switch (notification.getFeatureID(Article.class)) {
 			case WebpagePackage.ARTICLE__NAME:
+			case WebpagePackage.ARTICLE__CREATED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

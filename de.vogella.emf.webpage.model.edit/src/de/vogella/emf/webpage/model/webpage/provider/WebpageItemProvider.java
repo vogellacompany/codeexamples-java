@@ -67,12 +67,34 @@ public class WebpageItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addKeywordsPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addKeywordsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Keywords feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addKeywordsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Webpage_keywords_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Webpage_keywords_feature", "_UI_Webpage_type"),
+				 WebpagePackage.Literals.WEBPAGE__KEYWORDS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -133,28 +155,6 @@ public class WebpageItemProvider
 				 getString("_UI_Webpage_description_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Webpage_description_feature", "_UI_Webpage_type"),
 				 WebpagePackage.Literals.WEBPAGE__DESCRIPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Keywords feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addKeywordsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Webpage_keywords_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Webpage_keywords_feature", "_UI_Webpage_type"),
-				 WebpagePackage.Literals.WEBPAGE__KEYWORDS,
 				 true,
 				 false,
 				 false,
@@ -230,10 +230,10 @@ public class WebpageItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Webpage.class)) {
+			case WebpagePackage.WEBPAGE__KEYWORDS:
 			case WebpagePackage.WEBPAGE__NAME:
 			case WebpagePackage.WEBPAGE__TITLE:
 			case WebpagePackage.WEBPAGE__DESCRIPTION:
-			case WebpagePackage.WEBPAGE__KEYWORDS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebpagePackage.WEBPAGE__CATEGORIES:

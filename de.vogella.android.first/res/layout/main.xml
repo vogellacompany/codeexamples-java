@@ -1,12 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:background="#C0C0C0">
+	<EditText android:layout_height="wrap_content" android:id="@+id/editText1"
+		android:layout_width="match_parent">
+		<requestFocus></requestFocus>
+	</EditText>
+	<Button android:id="@+id/button1" android:text="Show Message"
+		android:layout_height="wrap_content" android:layout_width="wrap_content"></Button>
+
+	<RadioGroup android:id="@+id/orientation"
+		android:layout_height="wrap_content" android:layout_width="match_parent">
+		<RadioButton android:text="Horizontal"
+			android:layout_height="wrap_content" android:layout_width="wrap_content"
+			android:id="@+id/horizontal"></RadioButton>
+		<RadioButton android:text="Vertical"
+			android:layout_height="wrap_content" android:layout_width="wrap_content"
+			android:id="@+id/vertical" android:checked="true"></RadioButton>
+	</RadioGroup>
+	<TableLayout android:id="@+id/tableLayout1"
+		android:layout_width="match_parent" android:layout_height="wrap_content"
+		android:stretchColumns="1">
+		<TableRow android:layout_width="match_parent"
+			android:layout_height="wrap_content" android:id="@+id/tableRow1">
+			<TextView android:id="@+id/textView1" android:text="User"
+				android:layout_height="wrap_content" android:layout_width="match_parent"
+				style="@style/myText"></TextView>
+			<EditText android:layout_height="wrap_content" android:id="@+id/editText2"
+				android:layout_width="match_parent" android:padding="3dip"></EditText>
+		</TableRow>
+		<TableRow android:layout_width="match_parent"
+			android:layout_height="wrap_content" android:id="@+id/tableRow2">
+			<TextView  android:id="@+id/textView2"
+				android:text="Password" android:layout_height="wrap_content"
+				android:layout_width="match_parent" style="@style/myText"
+				 ></TextView>
+			<EditText android:layout_height="wrap_content" android:id="@+id/editText3"
+				android:layout_width="match_parent" android:padding="3dip"></EditText>
+		</TableRow>
+	</TableLayout>
+
 </LinearLayout>

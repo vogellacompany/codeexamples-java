@@ -76,26 +76,26 @@ public class WebpageItemProviderAdapterFactory extends WebpageAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.vogella.emf.webpage.model.webpage.MyWeb} instances.
+	 * This keeps track of the one adapter used for all {@link de.vogella.emf.webpage.model.webpage.Web} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MyWebItemProvider myWebItemProvider;
+	protected WebItemProvider webItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.vogella.emf.webpage.model.webpage.MyWeb}.
+	 * This creates an adapter for a {@link de.vogella.emf.webpage.model.webpage.Web}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createMyWebAdapter() {
-		if (myWebItemProvider == null) {
-			myWebItemProvider = new MyWebItemProvider(this);
+	public Adapter createWebAdapter() {
+		if (webItemProvider == null) {
+			webItemProvider = new WebItemProvider(this);
 		}
 
-		return myWebItemProvider;
+		return webItemProvider;
 	}
 
 	/**
@@ -266,7 +266,7 @@ public class WebpageItemProviderAdapterFactory extends WebpageAdapterFactory imp
 	 * @generated
 	 */
 	public void dispose() {
-		if (myWebItemProvider != null) myWebItemProvider.dispose();
+		if (webItemProvider != null) webItemProvider.dispose();
 		if (webpageItemProvider != null) webpageItemProvider.dispose();
 		if (categoryItemProvider != null) categoryItemProvider.dispose();
 		if (articleItemProvider != null) articleItemProvider.dispose();
