@@ -4,19 +4,18 @@
 	android:background="@drawable/customshape" android:layout_margin="6dip"
 	android:orientation="vertical" android:id="@+id/layout">
 	<TextView android:text="Twitter ID" android:id="@+id/twitteruser"
-	 	android:layout_marginTop="8dip"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:textColor="@color/white" android:textStyle="bold"
-		android:gravity="center_vertical|center_horizontal"
+		android:layout_marginTop="8dip" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:textColor="@color/white"
+		android:textStyle="bold" android:gravity="center_vertical|center_horizontal"
 		android:layout_gravity="center_horizontal"></TextView>
 	<TextView android:text="Follower" android:id="@+id/followers"
 		android:layout_width="wrap_content" android:layout_height="fill_parent"
 		android:textColor="@color/white" android:textStyle="bold"
-		android:layout_weight="10"
-		android:layout_gravity="center_vertical|center_horizontal"
+		android:layout_weight="10" android:layout_gravity="center_vertical|center_horizontal"
 		android:textSize="24dip"></TextView>
 	<TextView android:text="Last updated" android:id="@+id/time"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:textColor="@color/white" android:layout_marginBottom="8dip"
 		android:layout_gravity="center_vertical|center_horizontal"></TextView>
+
 </LinearLayout>

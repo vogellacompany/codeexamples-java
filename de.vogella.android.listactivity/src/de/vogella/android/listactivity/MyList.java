@@ -6,6 +6,7 @@ import java.util.List;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -16,7 +17,8 @@ public class MyList extends ListActivity {
 		super.onCreate(icicle);
 		String[] names = new String[] { "Linux", "Windows7", "Eclipse", "Suse",
 				"Ubuntu", "Solaris", "Android", "iPhone" };
-		MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this, names);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, android.R.id.text1, names);
 		setListAdapter(adapter);
 	}
 

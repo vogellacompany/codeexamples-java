@@ -15,62 +15,91 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONObject;
 
+import android.app.PendingIntent;
 import android.app.Service;
 import android.appwidget.AppWidgetManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.IBinder;
 import android.util.Log;
 import android.widget.RemoteViews;
 
 public class TwitterFollowerService extends Service {
+	static final String TAG = "TwitterFollower";
 
 	@Override
 	public void onStart(Intent intent, int startId) {
-		Log.i("TwitterFollowerService", "Called");
+		Log.i("TwitterFollower", "Service Called");
 		SharedPreferences preferences = this.getSharedPreferences(
 				TwitterFollowerConfigActivity.PREFS_NAME, 0);
 
-		int[] appWidgetIds = intent
-				.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
+		int appWidgetId = intent.getIntExtra(
+				AppWidgetManager.EXTRA_APPWIDGET_ID,
+				AppWidgetManager.INVALID_APPWIDGET_ID);
 
+		if (appWidgetId == AppWidgetManager.INVALID_APPWIDGET_ID) {
+			return;
+		}
 		AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this
 				.getApplicationContext());
 
-		if (appWidgetIds.length > 0) {
+		RemoteViews views = new RemoteViews(this.getPackageName(),
+				R.layout.widget_layout);
+		views.setTextViewText(R.id.time, "updating...");
+		appWidgetManager.updateAppWidget(appWidgetId, views);
 
-			for (int widgetId : appWidgetIds) {
-				try {
-					String user = preferences.getString(
-							TwitterFollowerConfigActivity.PREF_PREFIX_KEY
-									+ widgetId, "vogella");
-					JSONObject twitterProfile = new JSONObject(
-							readTwitterFeed(user));
-					Log.e("TwitterFollowerReceiver", String
-							.valueOf(twitterProfile.getInt("followers_count")));
-					RemoteViews views = new RemoteViews(this.getPackageName(),
-							R.layout.widget_layout);
-					Date dt = new Date();
-					int hours = dt.getHours();
-					int minutes = dt.getMinutes();
-					String sMinutes = String.valueOf(minutes);
-					if (sMinutes.length() == 1) {
-						sMinutes = "0" + sMinutes;
-					}
+		String user = preferences.getString(
+				TwitterFollowerConfigActivity.PREF_PREFIX_KEY + appWidgetId,
+				"vogella");
+		String followerNumber = preferences.getString("followerNumber"
+				+ appWidgetId, "unknown");
+		String lastUpdated = preferences.getString("lastUpdated" + appWidgetId,
+				"not updated");
 
-					String curTime = hours + ":" + sMinutes;
-					views.setTextViewText(R.id.twitteruser, user);
-					views.setTextViewText(R.id.followers, String
-							.valueOf(twitterProfile.getInt("followers_count")));
-					views.setTextViewText(R.id.time, String.valueOf(curTime));
-					appWidgetManager.updateAppWidget(widgetId, views);
-				} catch (Exception e) {
-					e.printStackTrace();
+		Log.i("TwitterFollower", "Saved data. User: " + user + " Follower: "
+				+ followerNumber + " lastUpdated " + lastUpdated);
+		if (isOnline()) {
+			try {
+				Log.e(TAG, "we are online");
+				JSONObject twitterProfile = new JSONObject(
+						readTwitterFeed(user));
+				Log.e("TwitterFollower", String.valueOf(twitterProfile
+						.getInt("followers_count")));
+				followerNumber = String.valueOf(twitterProfile
+						.getInt("followers_count"));
+				Date dt = new Date();
+				int hours = dt.getHours();
+				int minutes = dt.getMinutes();
+				String sMinutes = String.valueOf(minutes);
+				if (sMinutes.length() == 1) {
+					sMinutes = "0" + sMinutes;
 				}
+				lastUpdated = hours + ":" + sMinutes;
+				Log.i("TwitterFollower", "New data. User: " + user
+						+ " Follower: " + followerNumber + " lastUpdated "
+						+ lastUpdated);
 
+			} catch (Exception e) {
+				// Download did not work
+				e.printStackTrace();
 			}
-			stopSelf();
 		}
+		views = new RemoteViews(this.getPackageName(), R.layout.widget_layout);
+		views.setTextViewText(R.id.twitteruser, user);
+		views.setTextViewText(R.id.followers, followerNumber);
+		views.setTextViewText(R.id.time, lastUpdated);
+		PendingIntent pendingIntent = PendingIntent.getService(
+				getApplicationContext(), 0, intent,
+				PendingIntent.FLAG_UPDATE_CURRENT);
+		views.setOnClickPendingIntent(R.id.layout, pendingIntent);
+
+		Log.i("TwitterFollower", "Service set new UI for " + appWidgetId);
+		appWidgetManager.updateAppWidget(appWidgetId, views);
+		Log.i("TwitterFollower", "Service ended");
+		stopSelf();
 		super.onStart(intent, startId);
 
 	}
@@ -107,6 +136,15 @@ public class TwitterFollowerService extends Service {
 			e.printStackTrace();
 		}
 		return builder.toString();
+	}
+
+	public boolean isOnline() {
+		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo netInfo = cm.getActiveNetworkInfo();
+		if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+			return true;
+		}
+		return false;
 	}
 
 }

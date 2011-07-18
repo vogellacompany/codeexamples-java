@@ -51,16 +51,16 @@ public class TodoDetails extends Activity {
 			startManagingCursor(todo);
 			String category = todo.getString(todo
 					.getColumnIndexOrThrow(TodoDbAdapter.KEY_CATEGORY));
-			
-			for (int i=0; i<mCategory.getCount();i++){
-				
-				String s = (String) mCategory.getItemAtPosition(i); 
-				Log.e(null, s +" " + category);
-				if (s.equalsIgnoreCase(category)){
+
+			for (int i = 0; i < mCategory.getCount(); i++) {
+
+				String s = (String) mCategory.getItemAtPosition(i);
+				Log.e(null, s + " " + category);
+				if (s.equalsIgnoreCase(category)) {
 					mCategory.setSelection(i);
 				}
 			}
-			
+
 			mTitleText.setText(todo.getString(todo
 					.getColumnIndexOrThrow(TodoDbAdapter.KEY_SUMMARY)));
 			mBodyText.setText(todo.getString(todo
@@ -90,7 +90,6 @@ public class TodoDetails extends Activity {
 		String category = (String) mCategory.getSelectedItem();
 		String summary = mTitleText.getText().toString();
 		String description = mBodyText.getText().toString();
-		
 
 		if (mRowId == null) {
 			long id = mDbHelper.createTodo(category, summary, description);

@@ -16,7 +16,7 @@ import android.view.View;
 
 public class DrawingView extends View {
 
-	private static final float STROKE_WIDTH = 5f;
+	private static float STROKE_WIDTH = 20f;
 
 	/** Need to track this so the dirty region can accommodate the stroke. **/
 	private static final float HALF_STROKE_WIDTH = STROKE_WIDTH / 2;
@@ -88,8 +88,8 @@ public class DrawingView extends View {
 			paint.setAntiAlias(true);
 			paint.setStyle(Paint.Style.STROKE);
 			paint.setStrokeJoin(Paint.Join.ROUND);
+			paint.setStrokeWidth(STROKE_WIDTH);
 
-			paint.setStrokeWidth(STROKE_WIDTH + random.nextInt(5));
 			paint.setColor(colors[nextColor++]);
 			if (nextColor >= colors.length) {
 				nextColor = 0;
@@ -130,4 +130,5 @@ public class DrawingView extends View {
 
 		return true;
 	}
+
 }

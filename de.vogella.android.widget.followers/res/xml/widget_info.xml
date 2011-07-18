@@ -2,6 +2,7 @@
 <appwidget-provider android:initialLayout="@layout/widget_layout"
 	android:minHeight="72dp" android:updatePeriodMillis="180000"
 	android:minWidth="144dp"
+	android:configure="de.vogella.android.widget.followers.TwitterFollowerConfigActivity"
 	xmlns:android="http://schemas.android.com/apk/res/android">
 
 </appwidget-provider>

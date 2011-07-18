@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
-	<EditText android:hint="Enter Twitter account here"
-		android:id="@+id/editText1" android:layout_height="wrap_content"
+	<EditText android:text="vogella" android:hint="Enter Twitter account here"
+		android:id="@+id/twitteruser" android:layout_height="wrap_content"
 		android:layout_width="fill_parent">
 		<requestFocus></requestFocus>
 	</EditText>

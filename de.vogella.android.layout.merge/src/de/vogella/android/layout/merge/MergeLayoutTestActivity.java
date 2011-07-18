@@ -1,13 +1,13 @@
-package de.vogella.android.touch;
+package de.vogella.android.layout.merge;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-public class WriteOnScreen extends Activity {
+public class MergeLayoutTestActivity extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(new TouchEventView(this, null));
+        setContentView(R.layout.main);
     }
 }

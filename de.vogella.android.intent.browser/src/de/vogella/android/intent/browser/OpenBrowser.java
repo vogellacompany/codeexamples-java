@@ -15,7 +15,8 @@ public class OpenBrowser extends Activity {
 	}
 
 	public void openBrowser(View view) {
-		Intent i = new Intent("android.intent.action.VIEW", Uri.parse("http://www.vogella.de"));
+		Intent i = new Intent("android.intent.action.VIEW",
+				Uri.parse("http://www.vogella.de"));
 		startActivity(i);
 	}
 }

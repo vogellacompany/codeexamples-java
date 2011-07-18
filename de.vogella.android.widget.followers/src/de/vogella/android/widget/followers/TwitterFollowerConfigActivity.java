@@ -10,18 +10,20 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.RemoteViews;
 import android.widget.TextView;
 
 public class TwitterFollowerConfigActivity extends Activity {
 	int mAppWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
 	public static final String PREFS_NAME = "de.vogella.android.widget.followers";
-	public static final String PREF_PREFIX_KEY = "follower_";
+	public static final String PREF_PREFIX_KEY = "twitteruser_";
 	private TextView user;
+	static final String TAG = "TwitterFollower";
+	private int[] appWidgetIds;
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		Log.e("TwitterFollower", "onCreate of ConfigActivity called");
 		super.onCreate(savedInstanceState);
 		// Set the result to CANCELED. This will cause the widget host to cancel
 		// out of the widget placement if they press the back button.
@@ -36,14 +38,14 @@ public class TwitterFollowerConfigActivity extends Activity {
 			mAppWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID,
 					AppWidgetManager.INVALID_APPWIDGET_ID);
 		}
-
+		Log.e("TwitterFollower", "WidgetId " + mAppWidgetId);
 		// If they gave us an intent without the widget id, just bail.
 		if (mAppWidgetId == AppWidgetManager.INVALID_APPWIDGET_ID) {
 			finish();
 		}
 
 		Button button = (Button) findViewById(R.id.finish);
-		user = (TextView) findViewById(R.id.editText1);
+		user = (TextView) findViewById(R.id.twitteruser);
 		button.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -51,13 +53,16 @@ public class TwitterFollowerConfigActivity extends Activity {
 				String userName = user.getText().toString();
 				userName = userName.replaceAll("@", "");
 				saveTitlePref(context, mAppWidgetId, userName);
-				Log.e("TwitterFollowerReceiver", "Config Saved Preference");
+				Log.e("TwitterFollower", "Config Saved Preference");
 				// Push widget update to surface with newly set prefix
 				AppWidgetManager appWidgetManager = AppWidgetManager
 						.getInstance(context);
-				RemoteViews views = new RemoteViews(context.getPackageName(),
-						R.layout.widget_layout);
-				appWidgetManager.updateAppWidget(mAppWidgetId, views);
+				Log.e(TAG, "Update Widget from config");
+
+				// Trigger the update
+				TwitterFollowerReceiver.updateAppWidget(
+						TwitterFollowerConfigActivity.this, appWidgetManager,
+						mAppWidgetId);
 
 				// Make sure we pass back the original appWidgetId
 				Intent resultValue = new Intent();
@@ -77,7 +82,7 @@ public class TwitterFollowerConfigActivity extends Activity {
 		SharedPreferences.Editor prefs = context.getSharedPreferences(
 				PREFS_NAME, 0).edit();
 		prefs.putString(PREF_PREFIX_KEY + appWidgetId, text);
-		Log.e("TwitterFollowerReceiver", "Config "
+		Log.e("TwitterFollower", "Config "
 				+ TwitterFollowerConfigActivity.PREF_PREFIX_KEY + appWidgetId);
 		prefs.commit();
 	}

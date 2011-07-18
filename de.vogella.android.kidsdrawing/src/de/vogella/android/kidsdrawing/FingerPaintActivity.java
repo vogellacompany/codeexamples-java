@@ -19,8 +19,8 @@ public class FingerPaintActivity extends Activity {
 		// could also be done later
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		view = new DrawingView(this, null);
-		setContentView(view);
+		setContentView(R.layout.main);
+		view = (DrawingView) findViewById(R.id.drawingView1);
 	}
 
 	@Override
@@ -31,7 +31,13 @@ public class FingerPaintActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		view.clear();
+		switch (item.getItemId()) {
+		case R.id.menuItemClear:
+			view.clear();
+			break;
+		default:
+			break;
+		}
 		return super.onOptionsItemSelected(item);
 	}
 }
