@@ -6,15 +6,16 @@ import java.util.List;
 
 import org.xmlpull.v1.XmlPullParser;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Xml;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class ReadRssFeed extends Activity {
+public class ReadRssFeed extends ListActivity {
 	static final String PUB_DATE = "pubDate";
 	static final String DESCRIPTION = "description";
 	static final String CHANNEL = "channel";
@@ -35,8 +36,9 @@ public class ReadRssFeed extends Activity {
 		setContentView(R.layout.main);
 	}
 
-	public void readRss(View view) {
-		if (parseTask != null) {
+	public void parseRss(View view) {
+		Log.e("DEBUG", "parseRss");
+		if (parseTask == null) {
 			parseTask = new ParseTask(this);
 			parseTask
 					.execute(new String[] { "http://www.vogella.de/article.rss" });
@@ -95,9 +97,7 @@ public class ReadRssFeed extends Activity {
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
-		Log.e("Elements", String.valueOf(list.size()));
 		return list;
-
 	}
 
 	private static class ParseTask extends
@@ -110,21 +110,28 @@ public class ReadRssFeed extends Activity {
 
 		public void setActivity(ReadRssFeed activity) {
 			this.activity = activity;
-			Log.d("Task", "ParseTask's activity: " + activity);
+			Log.d("DEBUG", "ParseTask's activity: " + activity);
 		}
 
 		@Override
 		protected List<RssItem> doInBackground(String... params) {
-			return activity.parse("http://www.vogella.de/article.rss");
+			Log.d("DEBUG", "doInBackground");
+			return activity.parse(params[0]);
 		}
 
 		@Override
 		protected void onPostExecute(List<RssItem> result) {
+			Log.w("DEBUG", "onPostExecute called");
 			finishWithText(String.valueOf(result.size()));
+			ArrayAdapter<RssItem> adapter = new ArrayAdapter<RssItem>(activity,
+					android.R.layout.simple_list_item_1, android.R.id.text1,
+					result);
+			activity.setListAdapter(adapter);
+
 		}
 
 		private void finishWithText(String text) {
-			Log.d("Task", "ParseTask done. Updating activity: " + activity
+			Log.d("DEBUG", "ParseTask done. Updating activity: " + activity
 					+ ", message: " + text);
 			if (activity != null) {
 				activity.parseTask = null;
@@ -133,6 +140,7 @@ public class ReadRssFeed extends Activity {
 						.findViewById(R.id.textViewCount);
 				textView.setText(text);
 			}
+
 		}
 	}
 }

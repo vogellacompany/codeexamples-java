@@ -13,11 +13,8 @@ public class SearchExampleActivity extends Activity {
 		setDefaultKeyMode(DEFAULT_KEYS_SEARCH_LOCAL);
 	}
 
-	public void startMySearch(View view) {
+	public void startSearch(View View) {
 		onSearchRequested();
 	}
 
-	public void startGlobalSearch(View View) {
-		startSearch(null, false, null, true);
-	}
 }

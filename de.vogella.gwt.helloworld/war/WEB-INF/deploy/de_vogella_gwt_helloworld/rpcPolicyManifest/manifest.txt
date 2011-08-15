@@ -1,0 +1,2 @@
+# Module de_vogella_gwt_helloworld
+# RPC service class, partial path of RPC policy file

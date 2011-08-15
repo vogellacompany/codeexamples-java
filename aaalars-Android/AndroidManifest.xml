@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aaalars" android:versionCode="11" android:versionName="2.2.0">
+    <!--  C2DM requires Android SDK version 2.2 (API level 8) or above -->
+    <uses-sdk android:minSdkVersion="8" />
+
+    <!-- Only this application can receive the messages and registration result -->
+    <permission android:name="com.aaalars.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.aaalars.permission.C2D_MESSAGE" />
+
+    <!-- Permission to register and receive data messages -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!-- Permission for internet access -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Permission to keep the processor from sleeping -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Permission to retrieve the list of accounts in the Accounts Service -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- Permission to request authtokens from the AccountManager -->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
+    <application android:icon="@drawable/app_icon"
+        android:label="@string/app_name">
+
+        <!--  Main activity -->
+        <activity android:name=".AaalarsActivity" android:label="@string/app_name"
+            android:launchMode="singleTop" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Account selection activity -->
+        <activity android:name=".AccountsActivity" android:label="@string/app_name"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- In order to use the C2DM library, an application must declare a class 
+             with the name C2DMReceiver, extending com.google.android.c2dm.C2DMBaseReceiver.
+             It must also include this section in the manifest. -->
+        <service android:name=".C2DMReceiver" />
+
+        <!-- Only Google services can send data messages for the app. If permission
+             is not set - any other app can generate it -->
+        <receiver android:name="com.google.android.c2dm.C2DMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <!-- Receive the actual message -->
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.aaalars" />
+            </intent-filter>
+            <!-- Receive the registration id -->
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.aaalars" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

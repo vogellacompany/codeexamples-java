@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!--
+        Copyright 2010 Google Inc. Licensed under the Apache License, Version
+        2.0 (the "License"); you may not use this file except in compliance
+        with the License. You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+        applicable law or agreed to in writing, software distributed under the
+        License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+        CONDITIONS OF ANY KIND, either express or implied. See the License for
+        the specific language governing permissions and limitations under the
+        License.
+    -->
+<web-app xmlns:xsi="http://www.w3.org/2001/xmlschema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    xsi:schemalocation="http://java.sun.com/xml/ns/javaee
+                        http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    version="2.5">
+
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>Aaalars.html</welcome-file>
+  </welcome-file-list>
+
+  <!-- RequestFactory Servlet -->
+
+  <servlet>
+    <servlet-name>requestFactoryServlet</servlet-name>
+    <servlet-class>com.google.web.bindery.requestfactory.server.RequestFactoryServlet</servlet-class>
+    <init-param>
+      <param-name>symbolMapsDirectory</param-name>
+      <!-- You'll need to compile with -extras and move the symbolMaps directory
+           to this location if you want stack trace deobfuscation to work -->
+      <param-value>WEB-INF/classes/symbolMaps/</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>requestFactoryServlet</servlet-name>
+    <url-pattern>/gwtRequest</url-pattern>
+  </servlet-mapping>
+
+  <!-- Other servlets -->
+
+  <servlet>
+    <servlet-name>dataMessagingServlet</servlet-name>
+    <servlet-class>
+      com.google.android.c2dm.server.C2DMRetryServlet
+    </servlet-class>
+  </servlet>
+    
+  <servlet-mapping>
+    <servlet-name>dataMessagingServlet</servlet-name>
+      <url-pattern>/tasks/c2dm</url-pattern>
+  </servlet-mapping>
+
+  <!-- Security -->
+
+  <!--  Require user login for the .html welcome page -->
+  <security-constraint>
+    <web-resource-collection>
+      <url-pattern>/Aaalars.html</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>*</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <!--  Require admin role for the tasks servlet -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>tasks</web-resource-name>
+      <url-pattern>/tasks/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+</web-app>

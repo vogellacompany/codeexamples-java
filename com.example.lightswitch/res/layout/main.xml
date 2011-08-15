@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:gravity="center"
+	android:orientation="vertical">
+	<ImageView
+		android:id="@+id/light_bulb"
+		android:layout_width="wrap_content"
+		android:src="@drawable/light_bulb"
+		android:layout_height="wrap_content"></ImageView>
+	<ToggleButton
+		android:text="ToggleButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/light_switch"
+		android:background="@drawable/button"
+		android:paddingBottom="20dip"
+		android:paddingTop="20dip"
+		android:paddingRight="40dip"
+		android:paddingLeft="40dip"
+		android:textColor="@android:color/white"
+		android:textAppearance="@android:style/TextAppearance.Large" />
+</LinearLayout>

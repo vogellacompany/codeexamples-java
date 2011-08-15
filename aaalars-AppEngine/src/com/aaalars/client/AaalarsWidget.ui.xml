@@ -1,0 +1,24 @@
+<ui:UiBinder
+    xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <g:HTMLPanel>
+    <div id="widget">
+        <div id="header">
+            <div ui:field="status" class="status none"></div>
+            <p>Try out roundtripping data to App Engine.</p>
+            <g:Button ui:field="sayHelloButton">Say Hello</g:Button>
+        </div>
+
+        <div id="message">
+            <p>Send a poke to your Android device using Cloud to Device Messaging.</p>
+            <div class="roundRect">
+                <input ui:field="recipientArea" type="text" class="field" size="62"
+                    placeholder="pat@example.com" />
+                <textarea ui:field="messageArea" cols="46" rows="3" placeholder="Message" />
+            </div>
+            <g:Button ui:field="sendMessageButton">Send Message</g:Button>
+        </div>
+        <div id="footer"><p>Powered by Big Daddy</p></div>
+    </div>
+   </g:HTMLPanel>
+</ui:UiBinder>

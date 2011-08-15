@@ -48,4 +48,5 @@ public class SearchableActivity extends ListActivity {
 			}
 		}
 	}
+
 }

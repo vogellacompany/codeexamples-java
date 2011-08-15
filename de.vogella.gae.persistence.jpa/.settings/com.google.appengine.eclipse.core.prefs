@@ -1,3 +1,3 @@
-#Mon Nov 08 21:30:48 CET 2010
+#Wed Jul 27 22:54:19 CEST 2011
 eclipse.preferences.version=1
-filesCopiedToWebInfLib=appengine-api-1.0-sdk-1.3.7.jar|appengine-jsr107cache-1.3.7.jar|datanucleus-jpa-1.1.5.jar|datanucleus-core-1.1.5.jar|datanucleus-appengine-1.0.7.final.jar|geronimo-jta_1.1_spec-1.1.1.jar|geronimo-jpa_3.0_spec-1.1.1.jar|jdo2-api-2.3-eb.jar|jsr107cache-1.1.jar|appengine-api-labs-1.3.7.jar
+filesCopiedToWebInfLib=appengine-api-1.0-sdk-1.5.2.jar|appengine-api-labs-1.5.2.jar|appengine-jsr107cache-1.5.2.jar|jsr107cache-1.1.jar|datanucleus-appengine-1.0.9.final.jar|datanucleus-core-1.1.5.jar|datanucleus-jpa-1.1.5.jar|geronimo-jpa_3.0_spec-1.1.1.jar|geronimo-jta_1.1_spec-1.1.1.jar|jdo2-api-2.3-eb.jar

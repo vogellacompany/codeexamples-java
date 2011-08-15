@@ -7,6 +7,7 @@ import android.app.ListActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
 public class ListFilterDemoActivity extends ListActivity {
@@ -15,7 +16,8 @@ public class ListFilterDemoActivity extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		final MyFilteringListAdapter adapter = new MyFilteringListAdapter(this,
+		final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, android.R.id.text1,
 				getModel());
 		setListAdapter(adapter);
 		EditText filterEditText = (EditText) findViewById(R.id.filterText);
@@ -24,7 +26,7 @@ public class ListFilterDemoActivity extends ListActivity {
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before,
 					int count) {
-				adapter.setFilter(s.toString());
+				adapter.getFilter().filter(s.toString());
 			}
 
 			@Override

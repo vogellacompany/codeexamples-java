@@ -43,7 +43,7 @@ public class ParseJSON extends Activity {
 		StringBuilder builder = new StringBuilder();
 		HttpClient client = new DefaultHttpClient();
 		HttpGet httpGet = new HttpGet(
-				"http://twitter.com/statuses/user_timeline/greenrobot_de.json");
+				"http://twitter.com/statuses/user_timeline/vogella.json");
 		try {
 			HttpResponse response = client.execute(httpGet);
 			StatusLine statusLine = response.getStatusLine();

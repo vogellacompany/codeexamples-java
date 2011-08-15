@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/gradient"
+        android:paddingLeft="10dip"
+        android:gravity="center_vertical"
+        android:textColor="#ffffff"
+        android:text="@string/connected_to_the_cloud"
+        android:textSize="16dip"/>
+
+    <TextView
+        android:id="@+id/disconnect_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:padding="25dip"
+        android:gravity="center"
+        android:background="#000000"
+        android:textColor="#ffffff"
+        android:textSize="16dip"
+        android:visibility="visible"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="80dip"
+        android:layout_above="@+id/disconnect_footer"
+        android:padding="25dip"
+        android:gravity="center_vertical"
+        android:background="#000000"
+        android:textColor="#ffffff"
+        android:text="@string/do_you_want_to_disconnect"
+        android:textSize="16dip"/>
+
+    <LinearLayout
+        android:id="@id/disconnect_footer"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/gradient">
+        <Button
+            android:id="@+id/disconnect"
+            android:text="@string/disconnect"
+            android:layout_marginTop="5px"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -2,6 +2,7 @@ package de.vogella.android.ownservice;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -56,8 +57,20 @@ public class WordService extends Service {
 
 	public List<String> getWordList() {
 		ArrayList<String> list = new ArrayList<String>();
-		list.add("Linux");
-		list.add("Linux");
+		Random random = new Random();
+		if (random.nextBoolean()) {
+			list.add("Linux");
+		}
+		if (random.nextBoolean()) {
+			list.add("Android");
+		}
+		if (random.nextBoolean()) {
+			list.add("iPhone");
+		}
+		if (random.nextBoolean()) {
+			list.add("Windows7");
+		}
+
 		return list;
 	}
 
