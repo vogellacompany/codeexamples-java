@@ -127,7 +127,7 @@ public class TodosOverview extends ListActivity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		if (dbHelper == null) {
+		if (dbHelper != null) {
 			dbHelper.close();
 		}
 	}
