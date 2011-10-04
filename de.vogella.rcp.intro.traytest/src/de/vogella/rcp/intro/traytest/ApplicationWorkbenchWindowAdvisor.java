@@ -1,12 +1,14 @@
 package de.vogella.rcp.intro.traytest;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.MenuDetectEvent;
+import org.eclipse.swt.events.MenuDetectListener;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.ShellAdapter;
 import org.eclipse.swt.events.ShellEvent;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Shell;
@@ -17,15 +19,12 @@ import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
-import org.eclipse.ui.handlers.IHandlerService;
-import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 
 	private IWorkbenchWindow window;
 	private TrayItem trayItem;
 	private Image trayImage;
-	private final static String COMMAND_ID = "de.vogella.rcp.intro.traytest.exitCommand";
 
 	public ApplicationWorkbenchWindowAdvisor(
 			IWorkbenchWindowConfigurer configurer) {
@@ -60,7 +59,7 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 	}
 
 	// Add a listener to the shell
-	
+
 	private void minimizeBehavior() {
 		window.getShell().addShellListener(new ShellAdapter() {
 			// If the window is minimized hide the window
@@ -70,8 +69,9 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 		});
 		// If user double-clicks on the tray icons the application will be
 		// visible again
-		trayItem.addListener(SWT.DefaultSelection, new Listener() {
-			public void handleEvent(Event event) {
+		trayItem.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
 				Shell shell = window.getShell();
 				if (!shell.isVisible()) {
 					window.getShell().setMinimized(false);
@@ -83,24 +83,18 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 
 	// We hook up on menu entry which allows to close the application
 	private void hookPopupMenu() {
-		trayItem.addListener(SWT.MenuDetect, new Listener() {
-			public void handleEvent(Event event) {
-				Menu menu = new Menu(window.getShell(), SWT.POP_UP);
+		trayItem.addMenuDetectListener(new MenuDetectListener() {
 
+			@Override
+			public void menuDetected(MenuDetectEvent e) {
+				Menu menu = new Menu(window.getShell(), SWT.POP_UP);
 				// Creates a new menu item that terminates the program
-				// when selected
 				MenuItem exit = new MenuItem(menu, SWT.NONE);
 				exit.setText("Goodbye!");
-				exit.addListener(SWT.Selection, new Listener() {
-					public void handleEvent(Event event) {
-						// Lets call our command
-						IHandlerService handlerService = (IHandlerService) window
-								.getService(IHandlerService.class);
-						try {
-							handlerService.executeCommand(COMMAND_ID, null);
-						} catch (Exception ex) {
-							throw new RuntimeException(COMMAND_ID);
-						}
+				exit.addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						window.getWorkbench().close();
 					}
 				});
 				// We need to make the menu visible
@@ -113,8 +107,7 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 	private TrayItem initTaskItem(IWorkbenchWindow window) {
 		final Tray tray = window.getShell().getDisplay().getSystemTray();
 		TrayItem trayItem = new TrayItem(tray, SWT.NONE);
-		trayImage = AbstractUIPlugin.imageDescriptorFromPlugin(
-				"de.vogella.rcp.intro.traytest", "/icons/alt_about.gif")
+		trayImage = Activator.getImageDescriptor("/icons/alt_about.gif")
 				.createImage();
 		trayItem.setImage(trayImage);
 		trayItem.setToolTipText("TrayItem");

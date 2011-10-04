@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.intro.workbench.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="de.vogella.rcp.intro.workbench.Perspective"
+            id="de.vogella.rcp.intro.workbench.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="de.vogella.rcp.intro.workbench.View"
+            id="de.vogella.rcp.intro.workbench.view">
+      </view>
+      <view
+            class="de.vogella.rcp.intro.workbench.View2"
+            id="de.vogella.rcp.intro.workbench.view2"
+            name="Another View">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               closeable="true"
+               id="de.vogella.rcp.intro.workbench.view"
+               minimized="false"
+               relationship="left"
+               relative="org.eclipse.ui.editorss">
+         </view>
+         <view
+               closeable="true"
+               id="de.vogella.rcp.intro.workbench.view2"
+               minimized="false"
+               relationship="left"
+               relative="org.eclipse.ui.editorss">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="File">
+            <command
+                  commandId="org.eclipse.ui.file.exit"
+                  label="Exit">
+            </command>
+            <command
+                  commandId="de.vogella.rcp.intro.workbench.interact"
+                  label="Close all views and open one "
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.rcp.intro.workbench.handler.InteractHandler"
+            id="de.vogella.rcp.intro.workbench.interact"
+            name="WorkbenchTest">
+      </command>
+   </extension>
+
+</plugin>

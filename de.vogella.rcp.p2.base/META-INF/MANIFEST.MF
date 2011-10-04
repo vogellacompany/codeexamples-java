@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Base
+Bundle-SymbolicName: de.vogella.rcp.p2.base; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.vogella.rcp.p2.base.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

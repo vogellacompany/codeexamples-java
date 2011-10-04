@@ -16,22 +16,24 @@ public class AuthenticationServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		resp.setContentType("text/plain");
-		PrintWriter writer = resp.getWriter();
-		writer.write("This servlet is alive and kicking");
+		doPost(req, resp);
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		
-		Entity entity = new Entity("key", "");
-        // Alternatively use
-        // Key todoKey = KeyFactory.createKey("Todo", "Todo1");
-        // Entity entity = new Entity(todoKey);
-        entity.setProperty("summary", "This is my summary");
-        DatastoreService datastore = DatastoreServiceFactory
-                .getDatastoreService();
-        datastore.put(entity);
-	}
+		String token = AuthenticationUtil.getToken("your_user", "testing");
+		resp.setContentType("text/plain");
+		PrintWriter writer = resp.getWriter();
+		if (token != null & token.length() > 0) {
+			// Save data
+			Entity entity = new Entity("token", "mytoken");
+			entity.setProperty("authkey", token);
+			DatastoreService datastore = DatastoreServiceFactory
+					.getDatastoreService();
+			datastore.put(entity);
+			writer.write("Response: " + token + "\n");
+		}
+		writer.write("Registration process finished.\n");
 
+	}
 }

@@ -12,19 +12,21 @@ public class OpenMessageDialog extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		Shell shell = HandlerUtil.getActiveWorkbenchWindow(event).getShell();
-		// Now a few standard message dialog
+
+		// Customized MessageDialog with configured buttons
+		MessageDialog dialog = new MessageDialog(shell, "My Title", null,
+				"My message", MessageDialog.ERROR, new String[] { "First",
+						"Second", "Third" }, 0);
+		int result = dialog.open();
+		System.out.println(result);
+
+		// A few standard message dialog
 		MessageDialog.openConfirm(shell, "Confirm", "Please confirm");
 		MessageDialog.openError(shell, "Error", "Error occured");
 		MessageDialog.openInformation(shell, "Info", "Info for you");
 		MessageDialog.openQuestion(shell, "Question", "Really, really?");
 		MessageDialog.openWarning(shell, "Warning", "I warn you");
 
-		// A Message Dialog with configurable buttons
-		MessageDialog dialog = new MessageDialog(shell, "My Title", null,
-				"My message", MessageDialog.ERROR, new String[] {
-						"First choice", "Second choice", "Third choice" }, 0);
-		int result = dialog.open();
-		System.out.println(result);
 		return null;
 	}
 }

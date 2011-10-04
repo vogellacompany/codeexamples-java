@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!--
+  - Author:  Lars Vogel
+  -->
+<project name="docbook-src" default="build-html5">
+
+	<description>
+            This Ant buildhtml.xml file is used to transform DocBook XML to html output
+    </description>
+
+	<!--
+      - Configure basic properties that will be used in the file.
+      -->
+	<property name="input.dir" value="input" />
+	<property name="output.dir" value="output" />
+	<property name="docbook.xsl.dir" value="docbook-xsl-1.76.1" />
+	<property name="mydocbook.xsl.dir" value="docbook-xsl-mystylesheets" />
+	<property name="html.stylesheet" value="${docbook.xsl.dir}/html/docbook.xsl" />
+	<property name="xhtml5.stylesheet" value="${docbook.xsl.dir}/xhtml5/docbook.xsl" />
+	<property name="xhtml.stylesheet" value="${docbook.xsl.dir}/xhtml/docbook.xsl" />
+	<property name="my.stylesheet" value="${mydocbook.xsl.dir}/myhtmldocbook.xsl" />
+
+	<!-- Making saxon available -->
+	<path id="saxon.class.path">
+		<pathelement location="lib/saxon.jar" />
+	</path>
+
+
+	<!--
+      - target:  usage
+      -->
+	<target name="usage" description="Prints the Ant build.xml usage">
+		<echo message="Use -projecthelp to get a list of the available targets." />
+	</target>
+
+	<!--
+      - target:  clean
+      -->
+	<target name="clean" description="Cleans up generated files.">
+		<delete dir="${output.dir}" />
+	</target>
+
+	<!--
+      - target:  depends
+      -->
+	<target name="createtargetdir">
+		<mkdir dir="${output.dir}" />
+		<mkdir dir="${output.dir}/images" />
+	</target>
+
+	<!--
+      - target:  build-html
+      - description:  Iterates through a directory and transforms
+      -     .xml files into .html files using the DocBook XSL.
+      -->
+	<target name="build-html5" depends="clean, createtargetdir" description="Generates HTML files from DocBook XML">
+		<!-- Copy the stylesheet to the same directory as the HTML files -->
+		<copy todir="${output.dir}">
+			<fileset dir="css">
+				<include name="style.css" />
+			</fileset>
+		</copy>
+
+		<!-- Copy the images to the same directory as the HTML files -->
+		<copy todir="${output.dir}\images">
+			<fileset dir="${input.dir}\images">
+				<include name="title.png" />
+			</fileset>
+		</copy>
+		<xslt style="${my.stylesheet}" extension=".html" basedir="${input.dir}" destdir="${output.dir}">
+			<include name="**/*book.xml" />
+			<include name="**/*article.xml" />
+			<param name="html.stylesheet" expression="style.css" />
+			<param name="docbook.css.source" expression="" />
+			<param name="highlight.source" expression="1" />
+			<param name="highlight.xslthl.config" expression="file:///C:/Users/D034797/workspace/vogella/de.vogella.docbook.first/docbook-xsl-1.76.1/highlighting/xslthl-config.xml" />
+			<param name="make.clean.html" expression="1" />
+			<outputproperty name="indent" value="yes" />
+			<classpath refid="saxon.class.path" />
+		</xslt>
+	</target>
+
+</project>

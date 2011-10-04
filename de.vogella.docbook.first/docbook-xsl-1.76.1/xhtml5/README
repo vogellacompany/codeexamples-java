@@ -1,0 +1,71 @@
+DocBook stylesheets for HTML5 output - BETA
+=============================================
+16 September 2011
+Bob Stayton
+Sagehill Enterprises
+bobs@sagehill.net
+
+This directory contains a beta version of XSL stylesheets
+for generating HTML5 output from DocBook 4 content.
+The stylesheets should work for DocBook5 content by first
+stripping off the namespace, but that feature has not
+yet been extensively tested.
+
+The output of these stylesheets is the XML serialization of
+HTML5.  There is no provision for generating the HTML
+serilization of HTML5 with these stylesheets.
+
+These HTML5 stylesheets are also used by the beta EPUB3
+stylesheets included in this distribution.
+
+
+Installation
+--------------
+These stylesheets are customizations of the
+existing stylesheets in the "xhtml/" directory in
+the docbook-xsl-1.76.1 distribution.  This archive
+should be unzipped within your local installation of
+docbook-xsl-1.76.1.  It will create two new directories:
+
+docbook-xsl-1.76.1/xhtml5
+docbook-xsl-1.76.1/epub3
+
+There are relative paths in the files that rely on
+this arrangement of files.
+
+Usage
+-----------
+You should be able to apply any of these stylesheet files
+to a DocBook document as with any other DocBook stylesheet:
+
+xhtml5/docbook.xsl         - Single file output.
+xhtml5/chunk.xsl           - Chunked output.
+xhtml5/profile-docbook.xsl - Profiled single file output.
+xhtml5/profile-chunk.xsl   - Profiled chunk output.
+xhtml5/chunkfast.xsl       - Chunked output with precomputed chunks.
+
+
+Do not attempt to directly use the following two stylesheet files:
+
+xhtml-docbook.xsl
+xhtml-profile-docbook.xsl
+
+Those are copies of the corresponding files in the
+xhtml/ directory, modified to remove the doctype
+declarations in the xsl:output elements.  They were also
+modified to import from the original xhtml/ directory.
+They are imported by the xhtml5 stylesheet files.
+
+Testing
+--------------
+
+The HTML5 output of these stylesheets should pass the
+W3C online validator, available here:
+
+http://validator.w3.org/
+
+Since this is a beta release, it is likely there will be
+some issues that still need to be fixed.  Please report
+those to the docbook-apps mailing list for now.
+
+bobs

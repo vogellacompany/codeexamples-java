@@ -16,46 +16,53 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.EntityNotFoundException;
+import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
+
 import de.vogella.gae.java.c2dm.dao.Dao;
 import de.vogella.gae.java.c2dm.model.RegisteredDevice;
 
+public class SendServlet extends HttpServlet {
 
-public class SendServlet extends HttpServlet{
-	
 	private final static String AUTH = "authentication";
 	// Evil hard code the auth_key
-	private final static String auth_key ="DQAAAMUAAABLNakYQJ4RGzTc8mrp-7wX4NLyfwZx27o_Gyp6R3zOmVvGxNpeizMGdnorRtBUtyH3xkmHJ8NzY1hXBV9RT4q1miIjC86qZkXw6WW7qJli96bAVfSYegy4KpK7WyNHow1AM3pekYqvQLDR9CaRjuTVvH7bxryWce-sUFp1ME-p_Px1LJ_Ua8dxwbkefEhK5q6oD4rF7NzQ-bOZnW7MD-aOktqVhWcUlX7bj0uc3oVKJnQDgNcfAFmPt4NQc1c8F3o-IleEPpisUCoezuV6SJ0R";
-	
 	private static final String UPDATE_CLIENT_AUTH = "Update-Client-Auth";
-	
 	public static final String PARAM_REGISTRATION_ID = "registration_id";
-
 	public static final String PARAM_DELAY_WHILE_IDLE = "delay_while_idle";
-	
-	private static final Logger log = Logger.getLogger(SendServlet.class.getName());
 
-	  
+	private static final Logger log = Logger.getLogger(SendServlet.class
+			.getName());
+
 	public static final String PARAM_COLLAPSE_KEY = "collapse_key";
-	
+
 	private static final String UTF8 = "UTF-8";
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		
+
 		List<RegisteredDevice> devices = Dao.INSTANCE.getDevices();
 		StringBuilder sb = new StringBuilder();
 		for (RegisteredDevice device : devices) {
 			sb.append(sendMessage(device.getRegistrationId()));
-			
+
 		}
 		resp.setContentType("text/plain");
 		PrintWriter writer = resp.getWriter();
 		writer.write(sb.toString());
-		
+
 	}
-	
-	private String  sendMessage(String registrationId) throws IOException {
+
+	private String sendMessage(String registrationId) throws IOException {
+		// Get the authentication token
+		String auth_key = getStoredAuthenticationCode();
+		log.warning("Used authentication token:" + auth_key);
+		log.warning("Used registration id:" + registrationId);
+
 		// Send a sync message to this Android device.
 		StringBuilder postDataBuilder = new StringBuilder();
 		postDataBuilder.append(PARAM_REGISTRATION_ID).append("=")
@@ -81,15 +88,13 @@ public class SendServlet extends HttpServlet{
 				"application/x-www-form-urlencoded;charset=UTF-8");
 		conn.setRequestProperty("Content-Length",
 				Integer.toString(postData.length));
-		conn.setRequestProperty("Authorization", "GoogleLogin auth="
-				+ auth_key );
+		conn.setRequestProperty("Authorization", "GoogleLogin auth=" + auth_key);
 
 		OutputStream out = conn.getOutputStream();
 		out.write(postData);
 		out.close();
 
 		int responseCode = conn.getResponseCode();
-		
 
 		log.info(String.valueOf(responseCode));
 		// Validate the response code
@@ -102,14 +107,14 @@ public class SendServlet extends HttpServlet{
 			// is updating the token, or Update-Client-Auth was received by
 			// another server,
 			// and next retry will get the good one from database.
-			log.severe("Unauthorized - need token");
+			log.severe("Unauthorized - need token / or token not valid.");
 		}
 
 		// Check for updated token header
 		String updatedAuthToken = conn.getHeaderField(UPDATE_CLIENT_AUTH);
 		if (updatedAuthToken != null && !auth_key.equals(updatedAuthToken)) {
 			log.info("Got updated auth token from datamessaging servers: "
-							+ updatedAuthToken);
+					+ updatedAuthToken);
 		}
 
 		String responseLine = new BufferedReader(new InputStreamReader(
@@ -132,8 +137,8 @@ public class SendServlet extends HttpServlet{
 
 		String[] responseParts = responseLine.split("=", 2);
 		if (responseParts.length != 2) {
-			log.warning("Invalid message from google: " + responseCode
-					+ " " + responseLine);
+			log.warning("Invalid message from google: " + responseCode + " "
+					+ responseLine);
 			throw new IOException("Invalid response from Google "
 					+ responseCode + " " + responseLine);
 		}
@@ -145,12 +150,34 @@ public class SendServlet extends HttpServlet{
 
 		if (responseParts[0].equals("Error")) {
 			String err = responseParts[1];
-			log.warning(
-					"Got error response from Google datamessaging endpoint: "
-							+ err);
+			log.warning("Got error response from Google datamessaging endpoint: "
+					+ err);
 			// No retry.
 			throw new IOException(err);
 		}
-		return responseLine + " " +String.valueOf(responseCode);
+		return responseLine + " " + String.valueOf(responseCode);
+	}
+
+	private String getStoredAuthenticationCode() {
+
+		// Entity entity = new Entity("token", "mytoken");
+		// entity.setProperty("authkey", token);
+		DatastoreService datastore = DatastoreServiceFactory
+				.getDatastoreService();
+		Key todoKey = KeyFactory.createKey("token", "mytoken");
+		Entity entity;
+		try {
+			entity = datastore.get(todoKey);
+			String token = (String) entity.getProperty("authkey");
+
+			// return token;
+			// TODO Temp fix to avoid network issues
+			return "DQAAANIAAAD6AedEXHBwKRBUhMg7cvwhpO837Y9DN3SGYadb499nigiaa2y_ge0pQP7EEBXUfIlm-7TnjOoYN8uKGftDzEoPzPu0W2fDH1j1kPDdWEqYSNMWnk8J_CX_OTGi_WkrfUUy7pzUDPXRC8r1Cthw6aEzys_OmTEY6xJQjD7-Kz5lFe61c5OeAsnCXdV9WattBKGfc37wQZ_Oc2c2mFJoxAguzzvE793ppcBCt6lgUGKSM2c5o0jgkGzJeR6Kgn9c7htsiWuIJKRsnJHTgiYlQdkDGcbX5rV9HS3QjkVIZMJ-SA";
+
+		} catch (EntityNotFoundException e) {
+			// Log.setContentType("text/plain");
+			// resp.getWriter().println("Entry not found.");
+		}
+		throw new RuntimeException("No authentication tooken");
 	}
 }

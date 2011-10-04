@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/de.vogella.rcp.p2.base.feature_1.0.0.qualifier.jar" id="de.vogella.rcp.p2.base.feature" version="1.0.0.qualifier">
+      <category name="de.vogella.rcp.p2.base"/>
+   </feature>
+   <category-def name="de.vogella.rcp.p2.base" label="Todo"/>
+</site>

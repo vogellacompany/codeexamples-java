@@ -24,7 +24,7 @@
       <view
             class="de.vogella.databinding.person.swt.View"
             id="de.vogella.databinding.person.swt.View"
-            name="name"
+            name="Person Maintenance"
             restorable="true">
       </view>
    </extension>

@@ -1,10 +1,9 @@
 package de.vogella.plugin.adapter.views;
 
-import org.eclipse.jface.viewers.IStructuredContentProvider;
+import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
-import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
@@ -14,27 +13,10 @@ import org.eclipse.ui.part.ViewPart;
 
 import de.vogella.plugin.adapter.model.Todo;
 
-
 public class SampleView extends ViewPart {
 	public static final String ID = "de.vogella.plugin.adapter.views.SampleView";
 
 	private TableViewer viewer;
-
-	class ViewContentProvider implements IStructuredContentProvider {
-		private Todo[] todos;
-		public void inputChanged(Viewer v, Object oldInput, Object newInput) {
-			todos = (Todo[]) newInput;
-		}
-
-		public void dispose() {
-		}
-
-		@Override
-		public Object[] getElements(Object inputElement) {
-			return todos;
-		}
-
-	}
 
 	class ViewLabelProvider extends LabelProvider implements
 			ITableLabelProvider {
@@ -48,8 +30,8 @@ public class SampleView extends ViewPart {
 		}
 
 		public Image getImage(Object obj) {
-			return PlatformUI.getWorkbench().getSharedImages().getImage(
-					ISharedImages.IMG_OBJ_ELEMENT);
+			return PlatformUI.getWorkbench().getSharedImages()
+					.getImage(ISharedImages.IMG_OBJ_ELEMENT);
 		}
 	}
 
@@ -60,7 +42,7 @@ public class SampleView extends ViewPart {
 	public void createPartControl(Composite parent) {
 		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL
 				| SWT.V_SCROLL);
-		viewer.setContentProvider(new ViewContentProvider());
+		viewer.setContentProvider(new ArrayContentProvider());
 		viewer.setLabelProvider(new ViewLabelProvider());
 		getSite().setSelectionProvider(viewer);
 		viewer.setInput(getElements());
@@ -73,7 +55,7 @@ public class SampleView extends ViewPart {
 	public void setFocus() {
 		viewer.getControl().setFocus();
 	}
-	
+
 	// Build up a simple data model
 	private Todo[] getElements() {
 		Todo[] todos = new Todo[2];

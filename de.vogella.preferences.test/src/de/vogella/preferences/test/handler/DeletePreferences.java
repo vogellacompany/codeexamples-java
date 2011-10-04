@@ -11,7 +11,7 @@ public class DeletePreferences extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) {
-		Preferences preferences = new ConfigurationScope()
+		Preferences preferences = ConfigurationScope.INSTANCE
 				.getNode("de.vogella.preferences.test");
 		Preferences sub1 = preferences.node("note1");
 		Preferences sub2 = preferences.node("node2");

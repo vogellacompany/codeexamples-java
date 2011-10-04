@@ -20,14 +20,6 @@
       </perspective>
    </extension>
    <extension
-         point="org.eclipse.ui.commands">
-      <command
-            defaultHandler="de.vogella.rcp.intro.traytest.commands.ExitCommand"
-            id="de.vogella.rcp.intro.traytest.exitCommand"
-            name="Exit">
-      </command>
-   </extension>
-   <extension
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"

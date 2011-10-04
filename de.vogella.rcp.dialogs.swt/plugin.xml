@@ -38,5 +38,13 @@
          </command>
       </menuContribution>
    </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="de.vogella.rcp.dialogs.swt.View"
+            id="de.vogella.rcp.dialogs.swt.View"
+            name="View">
+      </view>
+   </extension>
 
 </plugin>

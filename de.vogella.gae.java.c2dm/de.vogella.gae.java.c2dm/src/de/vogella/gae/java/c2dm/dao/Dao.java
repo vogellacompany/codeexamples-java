@@ -7,7 +7,6 @@ import javax.persistence.Query;
 
 import de.vogella.gae.java.c2dm.model.RegisteredDevice;
 
-
 public enum Dao {
 	INSTANCE;
 
@@ -22,7 +21,8 @@ public enum Dao {
 	public void add(String deviceId, String registrationId) {
 		synchronized (this) {
 			EntityManager em = EMFService.get().createEntityManager();
-			RegisteredDevice todo = new RegisteredDevice(deviceId, registrationId);
+			RegisteredDevice todo = new RegisteredDevice(deviceId,
+					registrationId);
 			em.persist(todo);
 			em.close();
 		}
@@ -30,8 +30,8 @@ public enum Dao {
 
 	public List<RegisteredDevice> getDevices() {
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em
-				.createQuery("select t from RegisteredDevice t");
+		Query q = em.createQuery("select t from RegisteredDevice t");
+		@SuppressWarnings("unchecked")
 		List<RegisteredDevice> todos = q.getResultList();
 		return todos;
 	}

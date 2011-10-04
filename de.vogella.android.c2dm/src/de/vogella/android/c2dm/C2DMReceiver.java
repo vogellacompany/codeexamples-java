@@ -15,18 +15,27 @@ public class C2DMReceiver extends C2DMBaseReceiver {
 	@Override
 	public void onRegistered(Context context, String registrationId)
 			throws java.io.IOException {
-		Log.e("C2DM", "Registration ID arrived: Fantastic!!!");
+		Log.e("C2DM", "Registration ID received");
 		Log.e("C2DM", registrationId);
+		Intent intent = new Intent(context, ResultActivity.class);
+		intent.putExtra("message", "Registration ID received");
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		context.startActivity(intent);
 	};
 
 	@Override
 	protected void onMessage(Context context, Intent intent) {
-		Log.e("C2DM", "Message: Fantastic!!!");
+		Log.e("C2DM", "Neue Message.");
+		Intent resultIntent = new Intent(context, ResultActivity.class);
+		resultIntent.putExtra("message", "Message received");
+		resultIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		context.startActivity(intent);
 	}
 
 	@Override
 	public void onError(Context context, String errorId) {
 		Log.e("C2DM", "Error occured!!!");
+		Log.e("C2DM", errorId);
 	}
 
 }

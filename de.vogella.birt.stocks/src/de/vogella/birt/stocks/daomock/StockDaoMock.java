@@ -28,12 +28,15 @@ public class StockDaoMock {
 			data.setOpen(begin);
 			double close = Math.round(begin + Math.random() * begin * 0.1);
 			data.setClose(close);
-			data.setLow(Math.round(Math.min(begin, begin - Math.random() * begin * 0.1)));
+			data.setLow(Math.round(Math.min(begin, begin - Math.random()
+					* begin * 0.1)));
 			data.setHigh(Math.round(Math.max(begin, close) + Math.random() * 2));
 			data.setVolume(1000 + (int) (Math.random() * 500));
 			begin = close;
 			data.setDate(day.getTime());
 			history.add(data);
+			System.out.println("Hello");
+
 		}
 		return history;
 	}

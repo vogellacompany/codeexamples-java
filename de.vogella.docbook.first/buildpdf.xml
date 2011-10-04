@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!--
+  - Author:  Lars Vogel
+  -->
+<project name="docbook-src" default="build-pdf">
+	
+	<taskdef name="fop" classname="org.apache.fop.tools.anttasks.Fop" />
+
+	<description>
+            This Ant buildhtml.xml file is used to transform DocBook XML to html output
+    </description>
+
+	<!--
+      - Configure basic properties that will be used in the file.
+      -->
+	<property name="input.dir" value="input" />
+	<property name="output.dir" value="output" />
+	<property name="temp.dir" value="${output.dir}/temp" />
+	<property name="docbook.xsl.dir" value="docbook-xsl-1.76.1" />
+	<property name="html.stylesheet" value="${docbook.xsl.dir}/html/docbook.xsl" />
+	<property name="xhtml5.stylesheet" value="${docbook.xsl.dir}/xhtml5/docbook.xsl" />
+	<property name="fo.stylesheet" value="${docbook.xsl.dir}/fo/docbook.xsl" />
+	<property name="my.stylesheet" value="${docbook.xsl.dir}/doctype.xsl" />
+
+	<!-- Making saxon available -->
+	<path id="saxon.class.path">
+		<pathelement location="lib/saxon.jar" />
+		<pathelement location="lib/saxon-xml-apis.jar" />
+		<pathelement location="lib/saxon-jdom.jar" />
+	</path>
+
+
+	<!--
+      - target:  usage
+      -->
+	<target name="usage" description="Prints the Ant build.xml usage">
+		<echo message="Use -projecthelp to get a list of the available targets." />
+	</target>
+
+	<!--
+      - target:  clean
+      -->
+	<target name="clean" description="Cleans up generated files.">
+		<delete dir="${output.dir}" />
+	</target>
+
+	<!--
+      - target:  depends
+      -->
+	<target name="createtargetdir">
+		<mkdir dir="${output.dir}" />
+		<mkdir dir="${output.dir}/temp" />
+	</target>
+
+	<!--
+      - target:  build-html
+      - description:  Iterates through a directory and transforms
+      -     .xml files into .html files using the DocBook XSL.
+      -->
+	<target name="build-pdf" depends="clean, createtargetdir"
+		description="Generates HTML files from DocBook XML">
+		
+		<!-- Copy the images to the same directory as the HTML files -->
+				<copy todir="${output.dir}\temp\fo\images">
+					<fileset dir="${input.dir}\images">
+						<include name="title.png" />
+					</fileset>
+				</copy>
+		<!-- Convert DocBook Files into FO -->
+		<xslt style="${fo.stylesheet}" extension=".fo" basedir="${input.dir}"
+			destdir="${temp.dir}">
+			<include name="**/*book.xml" />
+			<include name="**/*article.xml" />
+			<param name="section.autolabel" expression="1" />
+			<param name="page.margin.inner" expression="1cm" />
+			<param name="page.margin.outer" expression="1cm" />
+			<param name="body.start.indent" expression="0mm" />
+			<param name="double-sided" expression="1" />
+			<param name="paper.type" expression="A4" />
+		</xslt>
+		<!-- Convert FO Files into pdf -->
+		<fop format="application/pdf" basedir="${temp.dir}" outdir="${output.dir}">
+			<fileset dir="${temp.dir}">
+				<include name="**/*.fo" />
+			</fileset>
+		</fop>
+	</target>
+
+</project>

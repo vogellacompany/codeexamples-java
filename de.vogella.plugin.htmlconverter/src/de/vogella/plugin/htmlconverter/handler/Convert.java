@@ -28,8 +28,7 @@ public class Convert extends AbstractHandler {
 
 		IStructuredSelection selection = (IStructuredSelection) HandlerUtil
 				.getActiveMenuSelection(event);
-		DirectoryDialog fileDialog = new DirectoryDialog(HandlerUtil
-				.getActiveShell(event));
+
 		String directory = "";
 		Object firstElement = selection.getFirstElement();
 		if (firstElement instanceof ICompilationUnit) {
@@ -39,11 +38,13 @@ public class Convert extends AbstractHandler {
 			directory = getPersistentProperty(res, path);
 
 			if (directory != null && directory.length() > 0) {
-				newDirectory = !(MessageDialog.openQuestion(HandlerUtil
-						.getActiveShell(event), "Question",
+				newDirectory = !(MessageDialog.openQuestion(
+						HandlerUtil.getActiveShell(event), "Question",
 						"Use the previous output directory?"));
 			}
 			if (newDirectory) {
+				DirectoryDialog fileDialog = new DirectoryDialog(
+						HandlerUtil.getActiveShell(event));
 				directory = fileDialog.open();
 
 			}
@@ -57,10 +58,6 @@ public class Convert extends AbstractHandler {
 			MessageDialog.openInformation(HandlerUtil.getActiveShell(event),
 					"Information", "Please select a Java source file");
 		}
-
-		// iterator.next();
-
-		// }
 		return null;
 	}
 

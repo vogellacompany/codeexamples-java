@@ -10,6 +10,7 @@ public class ResultActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.rotekarte);
+		System.out.println("Hallo");
 	}
 
 }

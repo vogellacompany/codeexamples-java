@@ -236,6 +236,7 @@ public class View extends ViewPart {
 				comparator.setColumn(index);
 				int dir = comparator.getDirection();
 				viewer.getTable().setSortDirection(dir);
+				viewer.getTable().setSortColumn(column);
 				viewer.refresh();
 			}
 		};

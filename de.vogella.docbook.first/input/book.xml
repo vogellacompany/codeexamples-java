@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "../docbook-xml-4.5/docbookx.dtd">
+<article>
+	<articleinfo lang="en">
+		<title>vogella.de</title>
+		<author>
+			<firstname>Lars</firstname>
+			<surname>Vogel</surname>
+		</author>
+ <cover>
+    <para role="tagline">The Official Documentation for DocBook</para>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/title.png"/>
+      </imageobject>
+    </mediaobject>
+  </cover>
+	</articleinfo>
+	<section label="1.0">
+		<title> Introduction to vogella.de</title>
+		<para> TODO Fill out the content
+		</para>
+		<para>
+			<ulink url="http://www.heise.de/newsticker">German IT News</ulink>
+			.
+		</para>m
+		<mediaobject>
+			<imageobject>
+				<imagedata fileref="images/title.png" format="PNG"/>
+			</imageobject>
+			<textobject>
+				<phrase>A text for the graphic</phrase>
+			</textobject>
+		</mediaobject>
+		
+		<programlisting language="java"> 
+		
+package de.vogella.e4.first.handler;
+
+import org.eclipse.e4.workbench.ui.IWorkbench;
+
+// A Test comment
+public class ExitHandler extends Example {
+    @Override
+	public void execute(IWorkbench workbench) {
+		workbench.close();
+	}
+}
+		</programlisting>
+		
+		<para>The world is full of wonder.</para>
+		
+	</section>
+</article>

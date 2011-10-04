@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!--
+  - Author:  Lars Vogel
+  -->
+
+<project name="docbook-src" default="build-epub">
+	<description>
+            This Ant buildhtml.xml file is used to transform DocBook XML to html output
+    </description>
+
+	<!--
+      - Configure basic properties that will be used in the file.
+      -->
+
+	<property name="input.dir" value="input" />
+	<property name="output.dir" value="output" />
+	<property name="docbook.xsl.dir" value="docbook-xsl-1.76.1" />
+
+	<property name="epub.stylesheet" value="${docbook.xsl.dir}/epub/docbook.xsl" />
+
+	<property name="{destfilename}" value="book" />
+
+	<!-- Making saxon available -->
+	<path id="saxon.class.path">
+		<pathelement location="lib/saxon.jar" />
+		<pathelement location="lib/saxon-xml-apis.jar" />
+		<pathelement location="lib/saxon-jdom.jar" />
+	</path>
+
+	<!--
+      - target:  usage
+      -->
+
+	<target name="usage" description="Prints the Ant build.xml usage">
+		<echo message="Use -projecthelp to get a list of the available targets." />
+	</target>
+
+	<!--
+      - target:  clean
+      -->
+
+	<target name="clean" description="Cleans up generated files.">
+		<delete dir="${output.dir}" />
+	</target>
+
+	<!--
+      - target:  depends
+      -->
+
+	<target name="depends">
+		<mkdir dir="${output.dir}" />
+		<mkdir dir="${output.dir}/tmp" />
+	</target>
+
+	<!--
+      - target:  build-html
+      - description:  Iterates through a directory and transforms
+      -     .xml files into .html files using the DocBook XSL.
+      -->
+
+	<!--
+	   - target:  build-epub
+	   - description:  Iterates through a directory and transforms
+	   -     .xml files into .epub files using the DocBook XSL.
+	 -->
+	<target name="build-epub" depends="clean, depends" description="Generates EPUB files from DocBook XML">
+
+		<xslt style="${epub.stylesheet}" extension=".html" basedir="${input.dir}" destdir="${output.dir}/tmp">
+			<include name="**/*book.xml" />
+			<include name="**/*article.xml" />
+			<param name="epub.stylesheet" expression="style.css" />
+			<param name="epub.metainf.dir" expression="${output.dir}/tmp/META-INF/" />
+			<param name="epub.oebps.dir" expression="${output.dir}/tmp/OEBPS/" />
+			<classpath refid="saxon.class.path" />
+		</xslt>
+
+		<copy todir="${output.dir}/tmp">
+			<fileset dir="lib">
+				<include name="style.css" />
+			</fileset>
+		</copy>
+
+		<echo message="application/epub+zip" file="${output.dir}/tmp/mimetype" />
+
+		
+	</target>
+
+</project>

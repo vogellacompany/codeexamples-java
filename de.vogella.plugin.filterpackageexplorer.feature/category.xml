@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/de.vogella.plugin.filterpackageexplorer.feature_1.0.0.qualifier.jar" id="de.vogella.plugin.filterpackageexplorer.feature" version="1.0.0.qualifier">
+      <category name="FilterPackageExplorer"/>
+   </feature>
+   <category-def name="FilterPackageExplorer" label="FilterPackageExplorer"/>
+</site>

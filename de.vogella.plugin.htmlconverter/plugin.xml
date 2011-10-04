@@ -9,13 +9,17 @@
                commandId="de.vogella.plugin.htmlconverter.convert"
                label="Create HTML"
                style="push">
-               <visibleWhen>
+            <visibleWhen
+                  checkEnabled="false">
                <with
                      variable="activeMenuSelection">
-                  <iterate>
+                  <iterate
+                        ifEmpty="false"
+                        operator="or">
                      <adapt
                            type="org.eclipse.jdt.core.ICompilationUnit">
-                     </adapt></iterate>
+                     </adapt>
+                  </iterate>
                </with>
             </visibleWhen>
          </command>

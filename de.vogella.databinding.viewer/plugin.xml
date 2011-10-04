@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.databinding.viewer.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="de.vogella.databinding.viewer.Perspective"
+            id="de.vogella.databinding.viewer.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="de.vogella.databinding.viewer.View"
+            id="de.vogella.databinding.viewer.view">
+      </view>
+      <view
+            class="de.vogella.databinding.viewer.ViewTable"
+            id="de.vogella.databinding.viewer.viewtable"
+            name="TableViewer"
+            restorable="true">
+      </view>
+  
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               standalone="true"
+               minimized="false"
+               relative="org.eclipse.ui.editorss"
+               relationship="left"
+               id="de.vogella.databinding.viewer.view">
+         </view>
+         <view
+               id="de.vogella.databinding.viewer.viewtable"
+               minimized="false"
+               ratio="0.5f"
+               relationship="right"
+               relative="org.eclipse.ui.editorss">
+         </view>
+       
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="File">
+            <command
+                  commandId="org.eclipse.ui.file.exit"
+                  label="Exit">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>

@@ -39,15 +39,7 @@ public class View extends ViewPart {
 	@Override
 	public void createPartControl(Composite parent) {
 
-		person = new Person();
-		Address address = new Address();
-		address.setCountry("Deutschland");
-		person.setAddress(address);
-		person.setFirstName("John");
-		person.setLastName("Doo");
-		person.setGender("Male");
-		person.setAge(12);
-		person.setMarried(true);
+		person = createPerson();
 		// Lets put thing to order
 		GridLayout layout = new GridLayout(2, false);
 		layout.marginRight = 5;
@@ -125,6 +117,19 @@ public class View extends ViewPart {
 		bindValues();
 	}
 
+	private Person createPerson() {
+		Person person = new Person();
+		Address address = new Address();
+		address.setCountry("Deutschland");
+		person.setAddress(address);
+		person.setFirstName("John");
+		person.setLastName("Doo");
+		person.setGender("Male");
+		person.setAge(12);
+		person.setMarried(true);
+		return person;
+	}
+
 	@Override
 	public void setFocus() {
 	}
@@ -132,53 +137,54 @@ public class View extends ViewPart {
 	private void bindValues() {
 		// The DataBindingContext object will manage the databindings
 		// Lets bind it
-		DataBindingContext bindingContext = new DataBindingContext();
+		DataBindingContext ctx = new DataBindingContext();
 		IObservableValue widgetValue = WidgetProperties.text(SWT.Modify)
 				.observe(firstName);
 		IObservableValue modelValue = BeanProperties.value(Person.class,
 				"firstName").observe(person);
-		bindingContext.bindValue(widgetValue, modelValue);
+		ctx.bindValue(widgetValue, modelValue);
 
+		// Bind the age including a validator
 		widgetValue = WidgetProperties.text(SWT.Modify).observe(ageText);
 		modelValue = BeanProperties.value(Person.class, "age").observe(person);
-		//
-		// We want that age is a number
-		IValidator numberValidator = new IValidator() {
-
+		// Add an validator so that age can only be a number
+		IValidator validator = new IValidator() {
 			@Override
 			public IStatus validate(Object value) {
-				String s = String.valueOf(value);
-				boolean matches = s.matches("\\d*");
-				if (matches) {
-					return ValidationStatus.ok();
+				if (value instanceof Integer) {
+					String s = String.valueOf(value);
+					if (s.matches("\\d*")) {
+						return ValidationStatus.ok();
+					}
 				}
-				return ValidationStatus.error("Only Number permitted");
+				return ValidationStatus.error("Not a number");
 			}
 		};
-		UpdateValueStrategy targetToModel = new UpdateValueStrategy();
-		targetToModel.setBeforeSetValidator(numberValidator);
 
-		// Bind values using the validator
-		// Remember the bindingContext to allow control decoration
-		Binding bindValue = bindingContext.bindValue(widgetValue, modelValue,
-				targetToModel, null);
-		ControlDecorationSupport.create(bindValue, SWT.TOP | SWT.RIGHT);
+		UpdateValueStrategy strategy = new UpdateValueStrategy();
+		strategy.setBeforeSetValidator(validator);
+
+		Binding bindValue = ctx.bindValue(widgetValue, modelValue, strategy,
+				null);
+		// Add some decorations
+		ControlDecorationSupport.create(bindValue, SWT.TOP | SWT.LEFT);
 
 		widgetValue = WidgetProperties.selection().observe(marriedButton);
 		modelValue = BeanProperties.value(Person.class, "married").observe(
 				person);
-		bindingContext.bindValue(widgetValue, modelValue);
+		ctx.bindValue(widgetValue, modelValue);
 
 		widgetValue = WidgetProperties.selection().observe(genderCombo);
 		modelValue = BeansObservables.observeValue(person, "gender");
 
-		bindingContext.bindValue(widgetValue, modelValue);
+		ctx.bindValue(widgetValue, modelValue);
 
 		// Address field is bound to the Ui
 		widgetValue = WidgetProperties.text(SWT.Modify).observe(countryText);
 
 		modelValue = BeanProperties.value(Person.class, "address.country")
 				.observe(person);
+		ctx.bindValue(widgetValue, modelValue);
 
 	}
 }

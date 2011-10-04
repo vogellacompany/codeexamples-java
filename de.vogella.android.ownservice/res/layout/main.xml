@@ -7,5 +7,6 @@
 	<Button android:text="Button" android:id="@+id/button1"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:onClick="showServiceData"></Button>
-	<ListView android:layout_height="wrap_content" android:id="@id/android:list" android:layout_width="match_parent"></ListView>
+	<ListView android:layout_height="wrap_content" android:id="@id/android:list"
+		android:layout_width="match_parent"></ListView>
 </LinearLayout>

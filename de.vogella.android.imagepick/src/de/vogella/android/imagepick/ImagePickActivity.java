@@ -37,10 +37,10 @@ public class ImagePickActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK)
 			try {
-				// Necessary otherwise a
-				// "java.lang.OutOfMemoryError: bitmap size exceeds VM budget"
-				// error occurs
-				System.gc();
+				// We need to recyle unused bitmaps
+				if (bitmap != null) {
+					bitmap.recycle();
+				}
 				InputStream stream = getContentResolver().openInputStream(
 						data.getData());
 				bitmap = BitmapFactory.decodeStream(stream);

@@ -36,5 +36,6 @@
 				<category android:name="de.vogella.android.c2dm" />
 			</intent-filter>
 		</receiver>
+		<activity android:name="ResultActivity"></activity>
 	</application>
 </manifest>

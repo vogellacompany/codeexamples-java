@@ -37,7 +37,14 @@ public class MyPersonEditor extends EditorPart {
 		setInput(input);
 		person = ((MyPersonEditorInput) input).getPerson();
 		setPartName(person.getFirstName());
+		setTitleToolTip("This is my new tooltip");
+		setContentDescription("This is my new tooltip");
 
+	}
+
+	@Override
+	public String getTitleToolTip() {
+		return ("This is my new tooltip");
 	}
 
 	@Override

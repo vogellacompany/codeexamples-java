@@ -14,6 +14,7 @@ import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -33,6 +34,8 @@ public class View extends ViewPart {
 
 		// Define the viewer
 		viewer = new ListViewer(parent);
+		viewer.getControl().setLayoutData(
+				new GridData(SWT.FILL, SWT.FILL, true, true));
 
 		LabelProvider personLabelProvider = new LabelProvider() {
 			private PropertyChangeListener pcl = new PropertyChangeListener() {
@@ -58,9 +61,8 @@ public class View extends ViewPart {
 		viewer.setLabelProvider(personLabelProvider);
 
 		viewer.setContentProvider(new ObservableListContentProvider());
-		List<Person> persons = new ArrayList<Person>();
-		// Just for testing we create sample data
-		createExampleData(persons);
+		// Create sample data
+		List<Person> persons = createExampleData();
 		input = new WritableList(persons, Person.class);
 		// Set the writeableList as input for the viewer
 		viewer.setInput(input);
@@ -70,13 +72,9 @@ public class View extends ViewPart {
 		delete.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if (!viewer.getSelection().isEmpty()) {
-					IStructuredSelection selection = (IStructuredSelection) viewer
-							.getSelection();
-					Person p = (Person) selection.getFirstElement();
-					input.remove(p);
-				}
+				deleteFirstPerson();
 			}
+
 		});
 
 		Button add = new Button(parent, SWT.PUSH);
@@ -84,11 +82,9 @@ public class View extends ViewPart {
 		add.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				Person p = new Person();
-				p.setFirstName("Test");
-				p.setLastName("Test");
-				input.add(p);
+				addPerson();
 			}
+
 		});
 
 		Button change = new Button(parent, SWT.PUSH);
@@ -96,13 +92,13 @@ public class View extends ViewPart {
 		change.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				Person p = (Person) input.get(0);
-				p.setFirstName(p.getFirstName() + "1");
+				changeFirstPersonName();
 			}
 		});
 	}
 
-	protected void createExampleData(List<Person> persons) {
+	protected List<Person> createExampleData() {
+		List<Person> persons = new ArrayList<Person>();
 		Person p = new Person();
 		p.setFirstName("Joe");
 		p.setLastName("Darcey");
@@ -115,11 +111,33 @@ public class View extends ViewPart {
 		p.setFirstName("Jim");
 		p.setLastName("Bean");
 		persons.add(p);
+		return persons;
+	}
+
+	public void deleteFirstPerson() {
+		if (!viewer.getSelection().isEmpty()) {
+			IStructuredSelection selection = (IStructuredSelection) viewer
+					.getSelection();
+			Person p = (Person) selection.getFirstElement();
+			input.remove(p);
+		}
+	}
+
+	public void addPerson() {
+		Person p = new Person();
+		p.setFirstName("Test");
+		p.setLastName("Test");
+		input.add(p);
+	}
+
+	public void changeFirstPersonName() {
+		Person p = (Person) input.get(0);
+		p.setFirstName(p.getFirstName() + "1");
 	}
 
 	@Override
 	public void setFocus() {
-
+		// viewer.getControl().setFocus();
 	}
 
 }

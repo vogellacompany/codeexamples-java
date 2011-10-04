@@ -1,13 +1,9 @@
 package de.vogella.databinding.person.listviewer;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.core.databinding.beans.BeansObservables;
 import org.eclipse.core.databinding.observable.list.WritableList;
-import org.eclipse.core.databinding.observable.map.IObservableMap;
 import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
-import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.swt.SWT;
@@ -26,29 +22,19 @@ public class ViewElements extends View {
 
 	@Override
 	public void createPartControl(Composite parent) {
-		// Just a little bit layout
 		parent.setLayout(new GridLayout(1, false));
 		GridData gd = new GridData();
 		gd.grabExcessHorizontalSpace = true;
 
 		// Define the viewer
 		viewer = new ListViewer(parent);
-
+		viewer.getControl().setLayoutData(
+				new GridData(SWT.FILL, SWT.FILL, true, true));
 		ObservableListContentProvider contentProvider = new ObservableListContentProvider();
-		// This is now the new part
-		IObservableMap observeMap = BeansObservables.observeMap(contentProvider
-				.getKnownElements(), Person.class, "firstName");
-		observeMap.putAll(BeansObservables.observeMap(contentProvider
-				.getKnownElements(), Person.class, "lastName"));
-
-		ObservableMapLabelProvider labelProvider = new ObservableMapLabelProvider(
-				observeMap);
-		viewer.setLabelProvider(labelProvider);
-
 		viewer.setContentProvider(contentProvider);
-		List<Person> persons = new ArrayList<Person>();
-		// Just for testing we create sample data
-		createExampleData(persons);
+
+		// Create sample data
+		List<Person> persons = createExampleData();
 		input = new WritableList(persons, Person.class);
 		// Set the writeableList as input for the viewer
 		viewer.setInput(input);
@@ -83,15 +69,20 @@ public class ViewElements extends View {
 		change.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if (!viewer.getSelection().isEmpty()) {
-					IStructuredSelection selection = (IStructuredSelection) viewer
-							.getSelection();
-					Person p = (Person) selection.getFirstElement();
-					String temp = p.getLastName();
-					p.setLastName(p.getFirstName());
-					p.setFirstName(temp);
-				}
+				switchFirstLastName();
 			}
+
 		});
+	}
+
+	public void switchFirstLastName() {
+		if (!viewer.getSelection().isEmpty()) {
+			IStructuredSelection selection = (IStructuredSelection) viewer
+					.getSelection();
+			Person p = (Person) selection.getFirstElement();
+			String temp = p.getLastName();
+			p.setLastName(p.getFirstName());
+			p.setFirstName(temp);
+		}
 	}
 }

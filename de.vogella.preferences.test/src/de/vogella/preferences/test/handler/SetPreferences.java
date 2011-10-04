@@ -11,11 +11,8 @@ import org.osgi.service.prefs.Preferences;
 public class SetPreferences extends AbstractHandler {
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		Preferences preferences = new ConfigurationScope()
+		Preferences preferences = ConfigurationScope.INSTANCE
 				.getNode("de.vogella.preferences.test");
-		// This would be using default n scope
-		// Preferences preferences = new DefaultScope()
-		// .getNode(Application.PLUGIN_ID);
 		Preferences sub1 = preferences.node("note1");
 		Preferences sub2 = preferences.node("node2");
 		sub1.put("h1", "Hello");

@@ -22,6 +22,13 @@ public class FileLabelProvider extends LabelProvider {
 		File file = (File) element;
 		if (file.isDirectory())
 			return file.getParent() != null ? folderImage : driveImage;
+
+		// String extension = extension(((File) element).getName());
+		// if (extension != null && extension.length() > 0) {
+		// ImageData imageData = Program.findProgram(extension).getImageData();
+		// return new Image(Display.getDefault(), imageData);
+		// }
+
 		return fileImage;
 	}
 
@@ -32,5 +39,10 @@ public class FileLabelProvider extends LabelProvider {
 			return fileName;
 		}
 		return ((File) element).getPath();
+	}
+
+	public String extension(String fullPath) {
+		int dot = fullPath.lastIndexOf(".");
+		return fullPath.substring(dot + 1);
 	}
 }
