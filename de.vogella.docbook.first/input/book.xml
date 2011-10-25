@@ -1,54 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "../docbook-xml-4.5/docbookx.dtd">
-<article>
-	<articleinfo lang="en">
-		<title>vogella.de</title>
+<book>
+	<title>Docbook Book Example</title>
+	
+	<bookinfo>
+		<title>DocBook Intro</title>
 		<author>
 			<firstname>Lars</firstname>
 			<surname>Vogel</surname>
 		</author>
- <cover>
-    <para role="tagline">The Official Documentation for DocBook</para>
-    <mediaobject>
-      <imageobject>
-        <imagedata fileref="images/title.png"/>
-      </imageobject>
-    </mediaobject>
-  </cover>
-	</articleinfo>
-	<section label="1.0">
-		<title> Introduction to vogella.de</title>
-		<para> TODO Fill out the content
-		</para>
-		<para>
-			<ulink url="http://www.heise.de/newsticker">German IT News</ulink>
-			.
-		</para>m
-		<mediaobject>
-			<imageobject>
-				<imagedata fileref="images/title.png" format="PNG"/>
-			</imageobject>
-			<textobject>
-				<phrase>A text for the graphic</phrase>
+	</bookinfo>
+	
+	<chapter>
+		<title>This is the first chapter</title>
+		<section>
+			<title> First section in the chapter</title>
+			<para>Random text.
+			</para>
+			<para>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="images/vogella_current_logo.png"/>
+				</imageobject>
+				<textobject>
+				<phrase>
+				</phrase>
 			</textobject>
-		</mediaobject>
+			</mediaobject>
+		</para>
+		</section>
+		<section>
+			<title> Second section in the chapter</title>
+			<para>Other random text
+			</para>
+		</section>
 		
-		<programlisting language="java"> 
-		
-package de.vogella.e4.first.handler;
+	</chapter>
 
-import org.eclipse.e4.workbench.ui.IWorkbench;
-
-// A Test comment
-public class ExitHandler extends Example {
-    @Override
-	public void execute(IWorkbench workbench) {
-		workbench.close();
-	}
-}
-		</programlisting>
-		
-		<para>The world is full of wonder.</para>
-		
-	</section>
-</article>
+	<chapter>
+		<title>This is the second chapter</title>
+		<section>
+			<title> My Title</title>
+			<para>More...
+			</para>
+		</section>
+		<section>
+			<title> Other title</title>
+			<para>Blabla
+			</para>
+		</section>
+	</chapter>
+</book>

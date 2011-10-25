@@ -16,6 +16,7 @@
   xmlns:svg="http://www.w3.org/2000/svg"
   xmlns:opf="http://www.idpf.org/2007/opf"
   xmlns:dc="http://purl.org/dc/elements/1.1/"  
+  xmlns:cf="http://docbook.sourceforge.net/xmlns/chunkfast/1.0"
   xmlns:date="http://exslt.org/dates-and-times"
   xmlns:dcterms="http://purl.org/dc/terms/"
   xmlns:ncx="http://www.daisy.org/z3986/2005/ncx/"
@@ -25,7 +26,7 @@
   xmlns:xtext="xalan://com.nwalsh.xalan.Text"
 
   extension-element-prefixes="stext xtext"
-  exclude-result-prefixes="#default date db dc dcterms epub exsl m ncx opf pls set ssml stext str svg xtext"
+  exclude-result-prefixes="#default cf date db dc dcterms epub exsl m ncx opf pls set ssml stext str svg xtext"
   version="1.0">
 
 <!-- $Id: epub3-element-mods.xsl,v 1.1 2011-09-16 21:43:45 bobs Exp $ -->
@@ -78,10 +79,14 @@ book  toc,title
 <!-- optional ncx for backwards compatibility -->
 <xsl:param name="epub.include.ncx" select="1"/>
 <xsl:param name="epub.ncx.depth">4</xsl:param> <!-- Not functional until http://code.google.com/p/epubcheck/issues/detail?id=70 is resolved -->
-<!-- optional dcterms properties, for future compatibility -->
+<!-- currently optional duplicate dcterms properties, may be required in future -->
 <xsl:param name="epub.include.metadata.dcterms" select="1"/>
-<!-- currently required, to be replaced in future version -->
+<!-- optional guide element for backwards compatibility -->
+<xsl:param name="epub.include.guide" select="1"/>
+<!-- some dc: currently required, to be replaced in future version -->
 <xsl:param name="epub.include.metadata.dc.elements" select="1"/>
+<!-- Some dc: elements will remain optional according to the spec -->
+<xsl:param name="epub.include.optional.metadata.dc.elements" select="1"/>
 <xsl:param name="epub.autolabel" select="0"/>
 <xsl:param 
   name="epub.vocabulary.profile.content">http://www.idpf.org/epub/30/profile/content/</xsl:param>
@@ -96,6 +101,7 @@ book  toc,title
 <xsl:param name="epub.container.filename" select="'container.xml'"/> 
 <xsl:param name="epub.package.filename" select="'package.opf'"/> 
 <xsl:param name="epub.cover.filename" select="concat('cover', $html.ext)"/> 
+<xsl:param name="epub.cover.linear" select="0" />
 
 <!-- names of id attributes used in package files -->
 <xsl:param name="epub.meta.identifier.id">meta-identifier</xsl:param> 
@@ -113,7 +119,6 @@ book  toc,title
 <xsl:param name="epub.html.toc.id">htmltoc</xsl:param>
 <xsl:param name="epub.cover.filename.id" select="'cover'"/> 
 <xsl:param name="epub.cover.image.id" select="'cover-image'"/> 
-<xsl:param name="epub.cover.linear" select="0" />
 
 <xsl:param name="epub.embedded.fonts"></xsl:param>
 <xsl:param name="epub.namespace">http://www.idpf.org/2007/ops</xsl:param>
@@ -122,6 +127,8 @@ book  toc,title
 <xsl:param name="dc.namespace">http://purl.org/dc/elements/1.1/</xsl:param>
 <!-- prefix generated ids in package elements so they differ from content ids -->
 <xsl:param name="epub.package.id.prefix">id-</xsl:param>
+<!-- editor is either a creator or contributor -->
+<xsl:param name="editor.property">contributor</xsl:param> 
 
 <!-- Generate full output path -->
 <xsl:param name="epub.package.dir" select="concat($base.dir, '../')"/>
@@ -137,6 +144,16 @@ book  toc,title
            select="concat($base.dir, $epub.cover.filename)"/>
 <xsl:param name="epub.mimetype.pathname"
            select="concat($epub.package.dir, $epub.mimetype.filename)"/>
+
+<!--==============================================================-->
+<!--  Internal variables used for computing certain metadata      -->
+<!--==============================================================-->
+<xsl:variable name="epub3.chunk.hierarchy">
+  <xsl:apply-templates select="/*" mode="find.chunks"/>
+</xsl:variable>
+
+<xsl:variable name="chunkset" select="exsl:node-set($epub3.chunk.hierarchy)//cf:div"/>
+
 <!--==============================================================-->
 <!--  Template customizations                                     -->
 <!--==============================================================-->
@@ -247,7 +264,10 @@ book  toc,title
       <xsl:call-template name="package.metadata"/>
       <xsl:call-template name="package.manifest"/>
       <xsl:call-template name="package.spine"/>
-      <xsl:call-template name="package.guide"/>
+
+      <xsl:if test="$epub.include.guide != 0">
+        <xsl:call-template name="package.guide"/>
+      </xsl:if>
 
     </xsl:element>
   </xsl:variable>
@@ -379,13 +399,22 @@ book  toc,title
       <xsl:with-param name="date" select="$local.datetime"/>
     </xsl:call-template>
   </xsl:variable>
-  <xsl:if test="string-length($utc.datetime) != 0">
-    <xsl:element name="meta" namespace="{$opf.namespace}">
-      <xsl:attribute name="property">dcterms:modified</xsl:attribute>
-      <xsl:value-of select="$utc.datetime"/>
-    </xsl:element>
-    <xsl:comment>The preceding date value is actually local time (not UTC) in UTC format because there is no function in XSLT 1.0 to generate a correct UTC time</xsl:comment>
-  </xsl:if>
+  <xsl:choose>
+    <xsl:when test="string-length($utc.datetime) != 0">
+      <xsl:element name="meta" namespace="{$opf.namespace}">
+        <xsl:attribute name="property">dcterms:modified</xsl:attribute>
+        <xsl:value-of select="$utc.datetime"/>
+      </xsl:element>
+      <xsl:comment>The preceding date value is actually local time (not UTC) in UTC format because there is no function in XSLT 1.0 to generate a correct UTC time</xsl:comment>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:message terminate="yes">
+        <xsl:text>ERROR: no last-modified date value could be determined, </xsl:text>
+        <xsl:text>so cannot output required meta element with </xsl:text>
+        <xsl:text>dcterms:modified attribute. Exiting.</xsl:text>
+      </xsl:message>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 
 <xsl:template name="convert.date.to.utc">
@@ -412,7 +441,7 @@ book  toc,title
 </xsl:template>
 
 <xsl:template match="authorgroup" mode="opf.metadata">
-  <xsl:apply-templates select="author|corpauthor" mode="opf.metadata"/>
+  <xsl:apply-templates select="*" mode="opf.metadata"/>
 </xsl:template>
 
 <xsl:template match="author|corpauthor" mode="opf.metadata">
@@ -423,18 +452,6 @@ book  toc,title
   </xsl:variable>
 
   <xsl:if test="string-length($n) != 0">
-    <dc:creator>
-      <xsl:attribute name="id">
-        <xsl:value-of select="concat($epub.dc.creator.id, position())"/>
-      </xsl:attribute>
-      <!--
-      <xsl:attribute name="prefer">
-        <xsl:value-of select="concat($epub.meta.creator.id, position())"/>
-      </xsl:attribute>
-      -->
-      <xsl:value-of select="$n"/>
-    </dc:creator>
-
     <xsl:element name="meta" namespace="{$opf.namespace}">
       <xsl:attribute name="id">
         <xsl:value-of select="concat($epub.meta.creator.id, position())"/>
@@ -442,22 +459,133 @@ book  toc,title
       <xsl:attribute name="property">dcterms:creator</xsl:attribute>
       <xsl:value-of select="normalize-space(string($n))"/>
     </xsl:element>
+
+    <xsl:if test="$epub.include.optional.metadata.dc.elements != 0">
+      <dc:creator>
+        <xsl:attribute name="id">
+          <xsl:value-of select="concat($epub.dc.creator.id, position())"/>
+        </xsl:attribute>
+        <xsl:value-of select="$n"/>
+      </dc:creator>
+    </xsl:if>
   </xsl:if>
 </xsl:template>
 
-<xsl:template match="date" mode="opf.metadata">
+<xsl:template match="editor" mode="opf.metadata">
+  <xsl:variable name="name">
+    <xsl:choose>
+      <xsl:when test="string-length($editor.property) != 0">
+        <xsl:value-of select="$editor.property"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>contributor</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
   <xsl:element name="meta" namespace="{$opf.namespace}">
-    <xsl:attribute name="property">dcterms:date</xsl:attribute>
+    <xsl:attribute name="property">
+      <xsl:text>dcterms:</xsl:text>
+      <xsl:value-of select="$name"/>
+    </xsl:attribute>
     <xsl:value-of select="normalize-space(.)"/>
   </xsl:element>
+
+  <xsl:if test="$epub.include.optional.metadata.dc.elements != 0">
+    <xsl:choose>
+      <xsl:when test="$name = 'creator'">
+        <dc:creator>
+          <xsl:value-of select="normalize-space(.)"/>
+        </dc:creator>
+      </xsl:when>
+      <xsl:when test="$name = 'contributor'">
+        <dc:contributor>
+          <xsl:value-of select="normalize-space(.)"/>
+        </dc:contributor>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:element namespace="{$dc.namespace}" name="{$name}">
+          <xsl:value-of select="normalize-space(.)"/>
+        </xsl:element>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:if>
+
+</xsl:template>
+
+<xsl:template match="othercredit|corpcredit|collab" mode="opf.metadata">
+  <xsl:element name="meta" namespace="{$opf.namespace}">
+    <xsl:attribute name="property">dcterms:contributor</xsl:attribute>
+    <xsl:value-of select="normalize-space(.)"/>
+  </xsl:element>
+
+  <xsl:if test="$epub.include.optional.metadata.dc.elements != 0">
+    <dc:contributor>
+      <xsl:value-of select="normalize-space(.)"/>
+    </dc:contributor>
+  </xsl:if>
+
+</xsl:template>
+
+<xsl:template match="date|pubdate" mode="opf.metadata">
+  <xsl:variable name="date">
+    <xsl:call-template name="format.meta.date">
+      <xsl:with-param name="string" select="normalize-space(.)"/>
+    </xsl:call-template>
+  </xsl:variable>
+
+  <xsl:if test="string-length($date) != 0">
+    <xsl:element name="meta" namespace="{$opf.namespace}">
+      <xsl:attribute name="property">dcterms:date</xsl:attribute>
+      <xsl:value-of select="$date"/>
+    </xsl:element>
+  
+    <xsl:if test="$epub.include.optional.metadata.dc.elements != 0">
+      <dc:date>
+        <xsl:value-of select="$date"/>
+      </dc:date>
+    </xsl:if>
+  </xsl:if>
+
+</xsl:template>
+
+<!-- EPUB3 meta date should be of the form:
+  YYYY, YYYY-MM or YYYY-MM-DD -->
+<xsl:template name="format.meta.date">
+  <xsl:param name="string" select="''"/>
+  
+  <!-- FIXME: this needs further work, so just return the date string for now -->
+  <xsl:variable name="date">
+    <xsl:choose>
+      <xsl:when test="string-length($string) = 0">
+      </xsl:when>
+      <xsl:otherwise>
+        <!-- construct a date one digit at a time until it fails to match format -->
+        <xsl:if test="contains('1234567890', substring($string,1,1))">
+          <xsl:value-of select="substring($string,1,1)"/>
+        </xsl:if>
+        <xsl:if test="contains('1234567890', substring($string,2,1))">
+          <xsl:value-of select="substring($string,2,1)"/>
+        </xsl:if>
+        <xsl:if test="contains('1234567890', substring($string,3,1))">
+          <xsl:value-of select="substring($string,3,1)"/>
+        </xsl:if>
+        <xsl:if test="contains('1234567890', substring($string,4,1))">
+          <xsl:value-of select="substring($string,4,1)"/>
+        </xsl:if>
+        <!-- FIXME: continue -->
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
+  <xsl:value-of select="$string"/>
 
 </xsl:template>
 
 
 <!-- Space separate the compontents of the abstract (dropping the inline markup, sadly) -->
 <xsl:template match="abstract" mode="opf.metadata">
-  <xsl:element name="meta" namespace="{$opf.namespace}">
-    <xsl:attribute name="property">dcterms:description</xsl:attribute>
+  <xsl:variable name="content">
     <xsl:for-each select="formalpara|para|simpara|title">
       <xsl:choose>
         <xsl:when test="self::formalpara">
@@ -476,7 +604,18 @@ book  toc,title
         <xsl:text> </xsl:text>
       </xsl:if>
     </xsl:for-each>  
+  </xsl:variable>
+
+  <xsl:element name="meta" namespace="{$opf.namespace}">
+    <xsl:attribute name="property">dcterms:description</xsl:attribute>
+    <xsl:copy-of select="$content"/>
   </xsl:element>
+
+  <xsl:if test="$epub.include.optional.metadata.dc.elements != 0">
+    <dc:description>
+      <xsl:copy-of select="$content"/>
+    </dc:description>
+  </xsl:if>
 </xsl:template>
 
 <xsl:template match="subjectset" mode="opf.metadata">
@@ -488,6 +627,29 @@ book  toc,title
     <xsl:attribute name="property">dcterms:subject</xsl:attribute>
     <xsl:value-of select="normalize-space(string(.))"/>
   </xsl:element>
+
+  <xsl:if test="$epub.include.optional.metadata.dc.elements != 0">
+    <dc:subject>
+      <xsl:value-of select="normalize-space(string(.))"/>
+    </dc:subject>
+  </xsl:if>
+</xsl:template>
+
+<xsl:template match="keywordset" mode="opf.metadata">
+  <xsl:apply-templates select="keyword" mode="opf.metadata"/>
+</xsl:template>
+
+<xsl:template match="keyword" mode="opf.metadata">
+  <xsl:element name="meta" namespace="{$opf.namespace}">
+    <xsl:attribute name="property">dcterms:subject</xsl:attribute>
+    <xsl:value-of select="normalize-space(string(.))"/>
+  </xsl:element>
+
+  <xsl:if test="$epub.include.optional.metadata.dc.elements != 0">
+    <dc:subject>
+      <xsl:value-of select="normalize-space(string(.))"/>
+    </dc:subject>
+  </xsl:if>
 </xsl:template>
 
 <xsl:template match="publisher" mode="opf.metadata">
@@ -499,6 +661,51 @@ book  toc,title
     <xsl:attribute name="property">dcterms:publisher</xsl:attribute>
     <xsl:value-of select="normalize-space(string(.))"/>
   </xsl:element>
+
+  <xsl:if test="$epub.include.optional.metadata.dc.elements != 0">
+    <dc:publisher>
+      <xsl:value-of select="normalize-space(string(.))"/>
+    </dc:publisher>
+  </xsl:if>
+</xsl:template>
+
+<xsl:template match="bibliocoverage" mode="opf.metadata">
+  <xsl:element name="meta" namespace="{$opf.namespace}">
+    <xsl:attribute name="property">dcterms:coverage</xsl:attribute>
+    <xsl:value-of select="normalize-space(string(.))"/>
+  </xsl:element>
+
+  <xsl:if test="$epub.include.optional.metadata.dc.elements != 0">
+    <dc:coverage>
+      <xsl:value-of select="normalize-space(string(.))"/>
+    </dc:coverage>
+  </xsl:if>
+</xsl:template>
+
+<xsl:template match="bibliorelation" mode="opf.metadata">
+  <xsl:element name="meta" namespace="{$opf.namespace}">
+    <xsl:attribute name="property">dcterms:relation</xsl:attribute>
+    <xsl:value-of select="normalize-space(string(.))"/>
+  </xsl:element>
+
+  <xsl:if test="$epub.include.optional.metadata.dc.elements != 0">
+    <dc:relation>
+      <xsl:value-of select="normalize-space(string(.))"/>
+    </dc:relation>
+  </xsl:if>
+</xsl:template>
+
+<xsl:template match="bibliosource" mode="opf.metadata">
+  <xsl:element name="meta" namespace="{$opf.namespace}">
+    <xsl:attribute name="property">dcterms:source</xsl:attribute>
+    <xsl:value-of select="normalize-space(string(.))"/>
+  </xsl:element>
+
+  <xsl:if test="$epub.include.optional.metadata.dc.elements != 0">
+    <dc:source>
+      <xsl:value-of select="normalize-space(string(.))"/>
+    </dc:source>
+  </xsl:if>
 </xsl:template>
 
 <xsl:template match="copyright" mode="opf.metadata">
@@ -509,18 +716,32 @@ book  toc,title
       <xsl:with-param name="single.year.ranges" select="$make.single.year.ranges"/>
     </xsl:call-template>
   </xsl:variable>
+
+  <!-- if no docbook date element, use copyright year for single date metadata -->
   <xsl:if test="not(../date)">
+    <xsl:variable name="date.content">
+      <xsl:call-template name="format.meta.date">
+        <xsl:with-param name="string">
+          <xsl:call-template name="copyright.years">
+            <xsl:with-param name="years" select="year[last()]"/>
+            <xsl:with-param name="print.ranges" select="0"/>
+            <xsl:with-param name="single.year.ranges" select="0"/>
+          </xsl:call-template>
+        </xsl:with-param>
+      </xsl:call-template>
+    </xsl:variable>
     <xsl:element name="meta" namespace="{$opf.namespace}">
       <xsl:attribute name="property">dcterms:date</xsl:attribute>
-      <xsl:call-template name="copyright.years">
-        <xsl:with-param name="years" select="year[last()]"/>
-        <xsl:with-param name="print.ranges" select="0"/>
-        <xsl:with-param name="single.year.ranges" select="0"/>
-      </xsl:call-template>
+      <xsl:copy-of select="$date.content"/>
     </xsl:element>
+    <xsl:if test="$epub.include.optional.metadata.dc.elements != 0">
+      <dc:date>
+        <xsl:copy-of select="$date.content"/>
+      </dc:date>
+    </xsl:if>
   </xsl:if>
-  <xsl:element name="meta" namespace="{$opf.namespace}">
-    <xsl:attribute name="property">dcterms:rights</xsl:attribute>
+
+  <xsl:variable name="rights.content">
     <xsl:call-template name="gentext">
       <xsl:with-param name="key" select="'Copyright'"/>
     </xsl:call-template>
@@ -530,14 +751,65 @@ book  toc,title
     <xsl:value-of select="$copyright.date"/>
     <xsl:call-template name="gentext.space"/>
     <xsl:apply-templates select="holder" mode="titlepage.mode"/>
+  </xsl:variable>
+
+  <xsl:element name="meta" namespace="{$opf.namespace}">
+    <xsl:attribute name="property">dcterms:rights</xsl:attribute>
+    <xsl:copy-of select="$rights.content"/>
   </xsl:element>
+  <xsl:if test="$epub.include.optional.metadata.dc.elements != 0">
+    <dc:rights>
+      <xsl:copy-of select="$rights.content"/>
+    </dc:rights>
+  </xsl:if>
+
   <xsl:element name="meta" namespace="{$opf.namespace}">
     <xsl:attribute name="property">dcterms:rightsHolder</xsl:attribute>
     <xsl:apply-templates select="holder" mode="titlepage.mode"/>
   </xsl:element>
 </xsl:template>
 
-<xsl:template name="package.guide"/>
+<xsl:template name="package.guide">
+
+  <xsl:variable name="info" select="./*[contains(local-name(.), 'info')][1]"/>
+
+  <xsl:variable name="toc.params">
+    <xsl:call-template name="find.path.params">
+      <xsl:with-param name="node" select="."/>
+      <xsl:with-param name="table" select="normalize-space($generate.toc)"/>
+    </xsl:call-template>
+  </xsl:variable>
+
+  <xsl:if test="contains($toc.params, 'toc') or 
+                $info/cover or 
+                $info//mediaobject[@role='cover' or ancestor::cover]"> 
+    <xsl:element namespace="{$opf.namespace}" name="guide">
+      <xsl:if test="$info/cover or 
+                    $info//mediaobject[@role='cover' or ancestor::cover]"> 
+        <xsl:element namespace="{$opf.namespace}" name="reference">
+          <xsl:attribute name="href">
+            <xsl:value-of select="$epub.cover.filename" />
+          </xsl:attribute>
+          <xsl:attribute name="type">cover</xsl:attribute>
+          <xsl:attribute name="title">Cover</xsl:attribute>
+        </xsl:element>
+      </xsl:if>  
+
+      <xsl:if test="contains($toc.params, 'toc')">
+        <xsl:element namespace="{$opf.namespace}" name="reference">
+          <xsl:attribute name="href">
+            <xsl:call-template name="toc-href">
+              <xsl:with-param name="node" select="."/>
+            </xsl:call-template>
+          </xsl:attribute>
+          <xsl:attribute name="type">toc</xsl:attribute>
+          <xsl:attribute name="title">Table of Contents</xsl:attribute>
+        </xsl:element>
+      </xsl:if>  
+    </xsl:element>  
+  </xsl:if>  
+</xsl:template>
+
 
 <xsl:template name="package-identifier">  
 
@@ -621,7 +893,6 @@ book  toc,title
 <xsl:template match="*" mode="epub.type" priority="-1"/>
 
 <xsl:template match="chapter
-                    |section
                     |appendix
                     |epigraph
                     |warning
@@ -642,6 +913,18 @@ book  toc,title
     <xsl:attribute name="epub:type">
       <xsl:value-of select="$type"/>
     </xsl:attribute>
+  </xsl:if>
+</xsl:template>
+
+<xsl:template match="section[parent::chapter]" mode="epub.type">
+  <xsl:if test="$epub.output.epub.types != 0">
+    <xsl:attribute name="epub:type">subchapter</xsl:attribute>
+  </xsl:if>
+</xsl:template>
+
+<xsl:template match="section[not(parent::chapter)]" mode="epub.type">
+  <xsl:if test="$epub.output.epub.types != 0">
+    <xsl:attribute name="epub:type">division</xsl:attribute>
   </xsl:if>
 </xsl:template>
 
@@ -700,9 +983,13 @@ book  toc,title
     <xsl:call-template name="manifest.toc"/>
     <xsl:call-template name="manifest.css"/>
     <xsl:call-template name="manifest.cover"/>
+    <xsl:call-template name="manifest.other.items"/>
     <xsl:call-template name="manifest.content.items"/>
+    <xsl:call-template name="user.manifest.items"/>
   </xsl:element>
 </xsl:template>
+
+<xsl:template name="user.manifest.items"/>
 
 <xsl:template name="manifest.css">
   <xsl:if test="$html.stylesheet != ''">
@@ -759,7 +1046,11 @@ book  toc,title
 </xsl:template>
 
 <xsl:template name="manifest.fonts"/>
-<xsl:template name="manifest.other.items"/>
+
+<!--Misc items in the manifest based on content -->
+<xsl:template name="manifest.other.items">
+</xsl:template>
+
 
 <xsl:template name="manifest.cover">
   <xsl:variable name="info" select="./*[contains(local-name(.), 'info')][1]"/>
@@ -926,6 +1217,14 @@ book  toc,title
   
     <xsl:variable name="id" select="concat($epub.package.id.prefix, generate-id())"/>
 
+    <xsl:variable name="properties.set">
+      <xsl:call-template name="svg.property"/>
+      <xsl:text> </xsl:text>
+      <xsl:call-template name="mathml.property"/>
+    </xsl:variable>
+
+    <xsl:variable name="properties" select="normalize-space($properties.set)"/>
+
     <xsl:element namespace="{$opf.namespace}" name="item">
       <xsl:attribute name="id">
         <xsl:value-of select="$id"/>
@@ -934,10 +1233,81 @@ book  toc,title
         <xsl:value-of select="$href"/>
       </xsl:attribute>
       <xsl:attribute name="media-type">application/xhtml+xml</xsl:attribute>
+      <xsl:if test="string-length($properties) != 0">
+        <xsl:attribute name="properties">
+          <xsl:value-of select="$properties"/>
+        </xsl:attribute>
+      </xsl:if>
     </xsl:element>
   </xsl:if>  
   <xsl:apply-templates mode="package.manifest"/>
 
+</xsl:template>
+
+<xsl:template name="svg.property">
+  <xsl:param name="this.chunk" select="."/>
+
+  <xsl:variable name="genid" select="generate-id($this.chunk)"/>
+
+  <!-- get the chunkfast div element for this chunk -->
+  <xsl:variable name="div" select="$chunkset[@id=$genid or @xml:id=$genid]"/>
+
+  <!-- get the chunkfast div element the next chunk -->
+  <xsl:variable name="nextdiv"
+                select="($div/following-sibling::cf:div|
+                         $div/following::cf:div|
+                         $div/cf:div)[1]"/>
+
+  <!-- get the element corresponding to the next chunk -->
+  <xsl:variable name="next.chunk" select="key('genid', ($nextdiv/@id|$nextdiv/@xml:id)[1])"/>
+
+  <xsl:variable name="this.imagedata"
+                select="$this.chunk//imagedata"/>
+  <xsl:variable name="before.next"
+                select="$next.chunk/preceding::imagedata"/>
+  
+  <!-- select for an SVG imagedata in the intersection of them -->
+  <xsl:variable name="intersection"
+      select="$this.imagedata[count(.|$before.next) = count($before.next)]"/>
+
+  <xsl:variable name="svg.imagedata"
+      select="$intersection[contains(
+                  substring(@fileref, string-length(@fileref)-3,4), '.svg')]"/>
+
+  <xsl:if test="count($svg.imagedata) != 0">
+    <xsl:text>svg</xsl:text>
+ </xsl:if>
+</xsl:template>
+
+<xsl:template name="mathml.property">
+  <xsl:param name="this.chunk" select="."/>
+
+  <xsl:variable name="genid" select="generate-id($this.chunk)"/>
+
+  <!-- get the chunkfast div element for this chunk -->
+  <xsl:variable name="div" select="$chunkset[@id=$genid or @xml:id=$genid]"/>
+
+  <!-- get the chunkfast div element the next chunk -->
+  <xsl:variable name="nextdiv"
+                select="($div/following-sibling::cf:div|
+                         $div/following::cf:div|
+                         $div/cf:div)[1]"/>
+
+  <!-- get the element corresponding to the next chunk -->
+  <xsl:variable name="next.chunk" select="key('genid', ($nextdiv/@id|$nextdiv/@xml:id)[1])"/>
+
+  <xsl:variable name="this.math"
+                select="$this.chunk//m:*"/>
+  <xsl:variable name="before.next"
+                select="$next.chunk/preceding::m:*"/>
+  
+  <!-- select for an SVG imagedata in the intersection of them -->
+  <xsl:variable name="intersection"
+      select="$this.math[count(.|$before.next) = count($before.next)]"/>
+
+  <xsl:if test="count($intersection) != 0">
+    <xsl:text>mathml</xsl:text>
+ </xsl:if>
 </xsl:template>
 
 <xsl:template name="manifest.image.item">
@@ -962,6 +1332,7 @@ book  toc,title
                     function-available('set:distinct')">
       <xsl:for-each select="set:distinct(exsl:node-set($imagelist)/*)">
         <xsl:if test="string-length(href) != 0">
+          <!-- convert the child elements to attributes -->
           <xsl:element name="item" namespace="{$opf.namespace}">
             <xsl:attribute name="id">
               <xsl:value-of select="generate-id()"/>

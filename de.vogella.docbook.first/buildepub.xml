@@ -5,7 +5,7 @@
 
 <project name="docbook-src" default="build-epub">
 	<description>
-            This Ant buildhtml.xml file is used to transform DocBook XML to html output
+            This Ant file is used to transform DocBook XML to epub output
     </description>
 
 	<!--
@@ -23,10 +23,9 @@
 	<!-- Making saxon available -->
 	<path id="saxon.class.path">
 		<pathelement location="lib/saxon.jar" />
-		<pathelement location="lib/saxon-xml-apis.jar" />
-		<pathelement location="lib/saxon-jdom.jar" />
 	</path>
 
+	<property name="epubcheck.jar" value="lib/epubcheck-1.2.jar" />
 	<!--
       - target:  usage
       -->
@@ -50,6 +49,16 @@
 	<target name="depends">
 		<mkdir dir="${output.dir}" />
 		<mkdir dir="${output.dir}/tmp" />
+		<copy todir="${output.dir}/tmp">
+			<fileset dir="epubinput">
+				<include name="mimetype" />
+			</fileset>
+		</copy>
+		<copy todir="${output.dir}/tmp/OEBPS/images">
+			<fileset dir="images">
+				<include name="vogella_current_logo.png" />
+			</fileset>
+		</copy>
 	</target>
 
 	<!--
@@ -67,22 +76,55 @@
 
 		<xslt style="${epub.stylesheet}" extension=".html" basedir="${input.dir}" destdir="${output.dir}/tmp">
 			<include name="**/*book.xml" />
-			<include name="**/*article.xml" />
 			<param name="epub.stylesheet" expression="style.css" />
-			<param name="epub.metainf.dir" expression="${output.dir}/tmp/META-INF/" />
-			<param name="epub.oebps.dir" expression="${output.dir}/tmp/OEBPS/" />
+			<!-- The following parameter do not work currently
+			
+			<param name="epub.metainf.dir" expression="${output.dir}/META-INF/" />
+			<param name="epub.oebps.dir" expression="${output.dir}/OEBPS/" />
+			-->
 			<classpath refid="saxon.class.path" />
 		</xslt>
 
-		<copy todir="${output.dir}/tmp">
-			<fileset dir="lib">
-				<include name="style.css" />
+		<copy todir="${output.dir}/tmp/OEBPS">
+			<fileset dir="OEBPS">
 			</fileset>
 		</copy>
 
-		<echo message="application/epub+zip" file="${output.dir}/tmp/mimetype" />
+		<copy todir="${output.dir}/tmp/META-INF">
+			<fileset dir="META-INF">
+			</fileset>
+		</copy>
 
-		
+		<!-- Don't know how to avoid genereation of "${destfilename}.html" by Saxon -->
+		<delete file="${output.dir}/tmp/book.html" />
+
+		<echo message="Generating book.epub" level="info" />
+
+		<!-- We create temporary zips so that minetype is the first one in the final zip  -->
+
+		<zip destfile="${output.dir}/temp.mimetype" basedir="${output.dir}/tmp" compress="false" includes="mimetype" />
+		<zip destfile="${output.dir}/temp.zip" basedir="${output.dir}/tmp/" level="9" compress="true" excludes="mimetype" includes="OEBPS/** META-INF/**" />
+		<zip destfile="${output.dir}/book.epub" update="true" keepcompression="true" encoding="UTF-8" excludes="*.html">
+			<zipfileset src="${output.dir}/temp.mimetype" />
+			<zipfileset src="${output.dir}/temp.zip" />
+		</zip>
+
+		<!-- Have to delete these directories would be nicer to place then in tmp output dir -->
+		<delete dir="./OEBPS" />
+		<delete dir="./META-INF" />
+
+		<!-- epub check does currently not work as it does not find its dependent libraries 
+		<epub.check epub="${destfilename}" />
+		-->
 	</target>
 
+	<!-- epub check does currently not work -->
+	<macrodef name="epub.check" description="Check an epub">
+		<attribute name="epub" description="Name of the EPUB" />
+		<sequential>
+			<java jar="${epubcheck.jar}" fork="true">
+				<arg value="${output.dir}/@{epub}.epub" />
+			</java>
+		</sequential>
+	</macrodef>
 </project>

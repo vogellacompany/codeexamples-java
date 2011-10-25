@@ -22,7 +22,7 @@
    <extension
          point="org.eclipse.ui.views">
       <view
-            name="View"
+            name="Fahrplanpflegeview"
             class="de.vogella.rcp.p2.base.View"
             id="de.vogella.rcp.p2.base.view">
       </view>
@@ -72,15 +72,15 @@
             locationURI="menu:org.eclipse.ui.main.menu">
          <menu
                label="Update">
+            <command
+                  commandId="org.eclipse.equinox.p2.ui.sdk.update"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.eclipse.equinox.p2.ui.sdk.install"
+                  style="push">
+            </command>
          </menu>
-         <command
-               commandId="org.eclipse.equinox.p2.ui.sdk.update"
-               style="push">
-         </command>
-         <command
-               commandId="org.eclipse.equinox.p2.ui.sdk.install"
-               style="push">
-         </command>
       </menuContribution>
    </extension>
 

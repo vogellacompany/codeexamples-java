@@ -11,6 +11,9 @@ import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 
+import de.vogella.gae.java.c2dm.secure.SecureStorage;
+import de.vogella.gae.java.c2dm.util.AuthenticationUtil;
+
 @SuppressWarnings("serial")
 public class AuthenticationServlet extends HttpServlet {
 
@@ -21,7 +24,8 @@ public class AuthenticationServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		String token = AuthenticationUtil.getToken("your_user", "testing");
+		String token = AuthenticationUtil.getToken(SecureStorage.USER,
+				SecureStorage.PASSWORD);
 		resp.setContentType("text/plain");
 		PrintWriter writer = resp.getWriter();
 		if (token != null & token.length() > 0) {

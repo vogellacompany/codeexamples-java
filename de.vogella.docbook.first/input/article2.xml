@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "../docbook-xml-4.5/docbookx.dtd">
+<article>
+	<section label="1.0">
+		<title>An introduction to DocBook</title>
+		<para>Hello</para> 
+	</section>
+</article>

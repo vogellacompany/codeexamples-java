@@ -14,7 +14,7 @@
   exclude-result-prefixes="exsl stbl xtbl lxslt ptbl"
   version="1.0">
 
-<!-- $Id: html5-element-mods.xsl,v 1.1 2011-09-16 21:44:00 bobs Exp $ -->
+<!-- $Id: html5-element-mods.xsl,v 1.2 2011-09-18 17:47:28 bobs Exp $ -->
 
 <!--==============================================================-->
 <!--  DocBook XSL Parameter settings                              -->
@@ -440,6 +440,10 @@
 </xsl:template>
 
 <xsl:template match="calloutlist|revhistory|footnote|figure|co">
+  <xsl:call-template name="convert.styles"/>
+</xsl:template>
+
+<xsl:template match="revhistory" mode="titlepage.mode">
   <xsl:call-template name="convert.styles"/>
 </xsl:template>
 
@@ -1036,11 +1040,15 @@
   </xsl:variable>
 
   <audio>
+    <xsl:apply-templates select="." mode="class.attribute"/>
     <xsl:attribute name="src">
       <xsl:value-of select="$filename"/>
     </xsl:attribute>
     <xsl:attribute name="controls">controls</xsl:attribute>
     <xsl:attribute name="autoplay"></xsl:attribute>
+
+    <!-- add any fallback content -->
+    <xsl:call-template name="audio.fallback"/>
   </audio>
 </xsl:template>
 
@@ -1052,12 +1060,176 @@
   </xsl:variable>
 
   <video>
+    <xsl:apply-templates select="." mode="class.attribute"/>
     <xsl:attribute name="src">
       <xsl:value-of select="$filename"/>
     </xsl:attribute>
     <xsl:attribute name="controls">controls</xsl:attribute>
     <xsl:attribute name="autoplay"></xsl:attribute>
+    
+    <!-- add any fallback content -->
+    <xsl:call-template name="video.fallback"/>
   </video>
+</xsl:template>
+
+<xsl:template name="video.fallback">
+  <xsl:param name="videodata" select="."/>
+  <xsl:variable name="textobject" select="$videodata/../../textobject"/>
+
+  <xsl:apply-templates select="$textobject" mode="fallback"/>
+</xsl:template>
+
+<xsl:template name="audio.fallback">
+  <xsl:param name="audiodata" select="."/>
+  <xsl:variable name="textobject" select="$audiodata/../../textobject"/>
+
+  <xsl:apply-templates select="$textobject" mode="fallback"/>
+</xsl:template>
+
+<xsl:template match="textobject" mode="fallback">
+  <div>
+    <xsl:apply-templates select="." mode="class.attribute"/>
+    <xsl:apply-templates/>
+  </div> 
+</xsl:template>
+
+<!-- HTML5: select videoobject and audioobject before textobject -->
+<xsl:template name="select.mediaobject.index">
+  <xsl:param name="olist"
+             select="imageobject|imageobjectco
+                     |videoobject|audioobject|textobject"/>
+  <xsl:param name="count">1</xsl:param>
+
+  <xsl:choose>
+    <!-- Test for objects preferred by role -->
+    <xsl:when test="$use.role.for.mediaobject != 0 
+               and $preferred.mediaobject.role != ''
+               and $olist[@role = $preferred.mediaobject.role]"> 
+      
+      <!-- Get the first hit's position index -->
+      <xsl:for-each select="$olist">
+        <xsl:if test="@role = $preferred.mediaobject.role and
+             not(preceding-sibling::*[@role = $preferred.mediaobject.role])"> 
+          <xsl:value-of select="position()"/> 
+        </xsl:if>
+      </xsl:for-each>
+    </xsl:when>
+
+    <xsl:when test="$use.role.for.mediaobject != 0 
+               and $olist[@role = $stylesheet.result.type]">
+      <!-- Get the first hit's position index -->
+      <xsl:for-each select="$olist">
+        <xsl:if test="@role = $stylesheet.result.type and 
+              not(preceding-sibling::*[@role = $stylesheet.result.type])"> 
+          <xsl:value-of select="position()"/> 
+        </xsl:if>
+      </xsl:for-each>
+    </xsl:when>
+    <!-- Accept 'html' for $stylesheet.result.type = 'xhtml' -->
+    <xsl:when test="$use.role.for.mediaobject != 0 
+               and $stylesheet.result.type = 'xhtml'
+               and $olist[@role = 'html']">
+      <!-- Get the first hit's position index -->
+      <xsl:for-each select="$olist">
+        <xsl:if test="@role = 'html' and 
+              not(preceding-sibling::*[@role = 'html'])"> 
+          <xsl:value-of select="position()"/> 
+        </xsl:if>
+      </xsl:for-each>
+    </xsl:when>
+
+    <!-- If no selection by role, and there is only one object, use it -->
+    <xsl:when test="count($olist) = 1 and $count = 1">
+      <xsl:value-of select="$count"/> 
+    </xsl:when>
+
+    <xsl:otherwise>
+      <!-- Otherwise select first acceptable object -->
+      <xsl:if test="$count &lt;= count($olist)">
+        <xsl:variable name="object" select="$olist[position()=$count]"/>
+    
+        <xsl:variable name="useobject">
+          <xsl:choose>
+            <!-- select videoobject or audioobject before textobject -->
+            <xsl:when test="local-name($object) = 'videoobject'">
+              <xsl:text>1</xsl:text> 
+            </xsl:when>
+            <xsl:when test="local-name($object) = 'audioobject'">
+              <xsl:text>1</xsl:text> 
+            </xsl:when>
+            <!-- skip textobject if also video, audio, or image out of order -->
+            <xsl:when test="local-name($object) = 'textobject' and
+                            ../imageobject or
+                            ../audioobject or
+                            ../videoobject">
+              <xsl:text>0</xsl:text> 
+            </xsl:when>
+            <!-- The phrase is used only when contains TeX Math and output is FO -->
+            <xsl:when test="local-name($object)='textobject' and $object/phrase
+                            and $object/@role='tex' and $stylesheet.result.type = 'fo'
+                            and $tex.math.in.alt != ''">
+              <xsl:text>1</xsl:text> 
+            </xsl:when>
+            <!-- The phrase is never used -->
+            <xsl:when test="local-name($object)='textobject' and $object/phrase">
+              <xsl:text>0</xsl:text>
+            </xsl:when>
+            <xsl:when test="local-name($object)='textobject'
+                            and $object/ancestor::equation ">
+            <!-- The first textobject is not a reasonable fallback
+                 for equation image -->
+              <xsl:text>0</xsl:text>
+            </xsl:when>
+            <!-- The first textobject is a reasonable fallback -->
+            <xsl:when test="local-name($object)='textobject'
+                            and $object[not(@role) or @role!='tex']">
+              <xsl:text>1</xsl:text>
+            </xsl:when>
+            <!-- don't use graphic when output is FO, TeX Math is used 
+                 and there is math in alt element -->
+            <xsl:when test="$object/ancestor::equation and 
+                            $object/ancestor::equation/alt[@role='tex']
+                            and $stylesheet.result.type = 'fo'
+                            and $tex.math.in.alt != ''">
+              <xsl:text>0</xsl:text>
+            </xsl:when>
+            <!-- If there's only one object, use it -->
+            <xsl:when test="$count = 1 and count($olist) = 1">
+               <xsl:text>1</xsl:text>
+            </xsl:when>
+            <!-- Otherwise, see if this one is a useable graphic -->
+            <xsl:otherwise>
+              <xsl:choose>
+                <!-- peek inside imageobjectco to simplify the test -->
+                <xsl:when test="local-name($object) = 'imageobjectco'">
+                  <xsl:call-template name="is.acceptable.mediaobject">
+                    <xsl:with-param name="object" select="$object/imageobject"/>
+                  </xsl:call-template>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:call-template name="is.acceptable.mediaobject">
+                    <xsl:with-param name="object" select="$object"/>
+                  </xsl:call-template>
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+    
+        <xsl:choose>
+          <xsl:when test="$useobject='1'">
+            <xsl:value-of select="$count"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:call-template name="select.mediaobject.index">
+              <xsl:with-param name="olist" select="$olist"/>
+              <xsl:with-param name="count" select="$count + 1"/>
+            </xsl:call-template>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:if>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 
 </xsl:stylesheet>

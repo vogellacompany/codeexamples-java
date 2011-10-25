@@ -1,6 +1,6 @@
-DocBook stylesheets for HTML5 output - BETA
+DocBook stylesheets for HTML5 output - BETA 3
 =============================================
-16 September 2011
+28 September 2011
 Bob Stayton
 Sagehill Enterprises
 bobs@sagehill.net
@@ -17,6 +17,13 @@ serilization of HTML5 with these stylesheets.
 
 These HTML5 stylesheets are also used by the beta EPUB3
 stylesheets included in this distribution.
+
+Changes in beta 3
+------------------
+
+1.  For videoobject or audioobject, process any associated
+textobject into the fallback content of the video or audio
+output element.
 
 
 Installation
@@ -55,6 +62,22 @@ xhtml/ directory, modified to remove the doctype
 declarations in the xsl:output elements.  They were also
 modified to import from the original xhtml/ directory.
 They are imported by the xhtml5 stylesheet files.
+
+CSS support
+----------------
+Because HTML5 requires clean HTML and CSS for styling, the xhtml5
+stylesheet files make use of the following three params:
+
+make.clean.html
+docbook.css.source
+custom.css.source
+
+See the param reference for details:
+   http://docbook.sourceforge.net/release/xsl/current/doc/html/
+
+With these params set properly and the source files created, the
+stylesheet can automatically generate the CSS files into the
+output directory.
 
 Testing
 --------------

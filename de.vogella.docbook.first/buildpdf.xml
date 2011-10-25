@@ -69,9 +69,10 @@
 		<!-- Convert DocBook Files into FO -->
 		<xslt style="${fo.stylesheet}" extension=".fo" basedir="${input.dir}"
 			destdir="${temp.dir}">
-			<include name="**/*book.xml" />
-			<include name="**/*article.xml" />
+			<include name="**/*book*.xml" />
+			<include name="**/*article*.xml" />
 			<param name="section.autolabel" expression="1" />
+			<param name="fop1.extensions" expression="1" />
 			<param name="page.margin.inner" expression="1cm" />
 			<param name="page.margin.outer" expression="1cm" />
 			<param name="body.start.indent" expression="0mm" />

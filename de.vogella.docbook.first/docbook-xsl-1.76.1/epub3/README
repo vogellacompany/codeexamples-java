@@ -1,6 +1,6 @@
-DocBook stylesheets for EPUB 3 output - BETA
+DocBook stylesheets for EPUB 3 output - BETA 3
 =============================================
-16 September 2011
+30 September 2011
 Bob Stayton
 Sagehill Enterprises
 bobs@sagehill.net
@@ -14,6 +14,66 @@ yet been extensively tested.
 These beta EPUB3 stylesheets rely on the beta HTML5 
 stylesheets included in this distribution.
 
+Changes in Beta 3
+---------------------
+
+1.  Added param 'epub.include.optional.metadata.dc.elements' to
+toggle adding extra dc: elements for epub2 readers.
+
+2.  Added error checking of modified date to terminate if
+no generated date is available (required in EPUB3).
+
+3.  Added these new <meta> elements to the .opf file:
+
+  a.  property="dcterms:creator" for author element.
+  b.  property="dcterms:creator" or "dcterms:contributor" for editor (see below).
+  c.  property="dcterms:contributor" for othercredit, corpcredit, and collab.
+  d.  property="dcterms:date" for date or pubdate.
+  d.  property="dcterms:subject" for keywordset/keyword.
+  f.  property="dcterms:coverage" for bibliocoverage.
+  f.  property="dcterms:relation" for bibliorelation.
+  f.  property="dcterms:source" for bibliosource.
+
+4.  Added these new duplicate dc: metadata elements for EPUB2 compatibility:
+
+dc:creator
+dc:contributor
+dc:date
+dc:description
+dc:subject
+dc:publisher
+dc:coverage
+dc:relation
+dc:source
+dc:rights
+
+5.  Changed epub:type value for section to either 'subchapter'
+for level1 section or 'dvision' for other section levels.
+
+6.  Added new empty utility template 'user.manifest.items', which
+allows adding additional items to the manifest. For example, to
+embed a font:
+
+<xsl:template name="user.manifest.items" xmlns="http://www.idpf.org/2007/opf">
+  <item id="font.dejavu.serif" href="fonts/DejaVuSerif.ttf" media-type="font/opentype"/>
+</xsl:template>
+
+9. Uses mediaobject/textobject as the fallback for a 
+videoobject or audioobject.  epubcheck.b2 asks for 
+such fallback.
+
+10.  Adds a properties="svg mathml" or either value to the item element
+for a chunk that contains svg and/or mathml content.
+
+11.  Adds param 'editor.property' to select either 'creator'
+or 'contributor' value for an editor element.
+
+Changes in Beta 2
+---------------------
+
+1.  Fix table attributes for revhistory in titlepage.mode.
+
+2.  Remove common.entities declaration from xhtml5/docbook.xsl.
 
 Installation
 --------------
@@ -82,14 +142,17 @@ That feature will be added later.
 2.  cd to the directory containing your mimetype files,
 which would be ebook1 in this example.
 
-3.  Run the following zip command to create the epub file:
+3.  Run the following zip commands to create the epub file:
 
-zip -r -X mybook.epub mimetype META-INF OEBPS 
+  zip -X0 mybook.epub mimetype   
 
-The -r option means recursively include all directories.
+  zip -r -X9 mybook.epub META-INF OEBPS 
+
+The first command adds the 'mimetype' file first and uncompressed.
 The -X option excludes extra file attributes (required by epub3).
+The numbers indicate the degree of compression.
+The -r option means recursively include all directories.
 The "mybook.epub" in this example is the output file.
-The other three arguments must appear in this order.
 
 
 Testing with epubcheck 3

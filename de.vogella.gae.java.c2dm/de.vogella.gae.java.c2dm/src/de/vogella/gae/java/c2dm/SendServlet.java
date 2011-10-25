@@ -25,6 +25,7 @@ import com.google.appengine.api.datastore.KeyFactory;
 
 import de.vogella.gae.java.c2dm.dao.Dao;
 import de.vogella.gae.java.c2dm.model.RegisteredDevice;
+import de.vogella.gae.java.c2dm.util.MessageUtil;
 
 public class SendServlet extends HttpServlet {
 
@@ -58,6 +59,13 @@ public class SendServlet extends HttpServlet {
 	}
 
 	private String sendMessage(String registrationId) throws IOException {
+		String auth_key = getStoredAuthenticationCode();
+		int returnCode = MessageUtil.sendMessage(auth_key, registrationId,
+				"Hello");
+		return String.valueOf(returnCode);
+	}
+
+	private String sendMessage2(String registrationId) throws IOException {
 		// Get the authentication token
 		String auth_key = getStoredAuthenticationCode();
 		log.warning("Used authentication token:" + auth_key);
@@ -170,9 +178,7 @@ public class SendServlet extends HttpServlet {
 			entity = datastore.get(todoKey);
 			String token = (String) entity.getProperty("authkey");
 
-			// return token;
-			// TODO Temp fix to avoid network issues
-			return "DQAAANIAAAD6AedEXHBwKRBUhMg7cvwhpO837Y9DN3SGYadb499nigiaa2y_ge0pQP7EEBXUfIlm-7TnjOoYN8uKGftDzEoPzPu0W2fDH1j1kPDdWEqYSNMWnk8J_CX_OTGi_WkrfUUy7pzUDPXRC8r1Cthw6aEzys_OmTEY6xJQjD7-Kz5lFe61c5OeAsnCXdV9WattBKGfc37wQZ_Oc2c2mFJoxAguzzvE793ppcBCt6lgUGKSM2c5o0jgkGzJeR6Kgn9c7htsiWuIJKRsnJHTgiYlQdkDGcbX5rV9HS3QjkVIZMJ-SA";
+			return token;
 
 		} catch (EntityNotFoundException e) {
 			// Log.setContentType("text/plain");

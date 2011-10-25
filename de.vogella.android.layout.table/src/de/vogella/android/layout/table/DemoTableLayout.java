@@ -20,7 +20,7 @@ public class DemoTableLayout extends Activity {
 
 	}
 
-	public void toogleHiddenRows(View view) {
+	public void toggleHiddenRows(View view) {
 		// Second row has index 1
 		layout.setColumnCollapsed(1, !layout.isColumnCollapsed(1));
 		if (layout.isColumnCollapsed(1)) {

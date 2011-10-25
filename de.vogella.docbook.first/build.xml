@@ -15,11 +15,11 @@
 	<property name="output.dir" value="output" />
 	<property name="docbook.xsl.dir" value="docbook-xsl-1.76.1" />
 	<property name="mydocbook.xsl.dir" value="docbook-xsl-mystylesheets" />
-	<property name="html.stylesheet" value="${docbook.xsl.dir}/html/docbook.xsl" />
 	<property name="xhtml5.stylesheet" value="${docbook.xsl.dir}/xhtml5/docbook.xsl" />
-	<property name="xhtml.stylesheet" value="${docbook.xsl.dir}/xhtml/docbook.xsl" />
 	<property name="my.stylesheet" value="${mydocbook.xsl.dir}/myhtmldocbook.xsl" />
-
+	<!--
+	<property name="xhtml.stylesheet" value="${docbook.xsl.dir}/xhtml/docbook.xsl" />
+-->
 	<!-- Making saxon available -->
 	<path id="saxon.class.path">
 		<pathelement location="lib/saxon.jar" />
@@ -69,9 +69,10 @@
 		</copy>
 		<xslt style="${my.stylesheet}" extension=".html" basedir="${input.dir}" destdir="${output.dir}">
 			<include name="**/*book.xml" />
-			<include name="**/*article.xml" />
+			<include name="**/*article*.xml" />
 			<param name="html.stylesheet" expression="style.css" />
 			<param name="docbook.css.source" expression="" />
+			<param name="section.autolabel" expression="1" />
 			<param name="highlight.source" expression="1" />
 			<param name="highlight.xslthl.config" expression="file:///C:/Users/D034797/workspace/vogella/de.vogella.docbook.first/docbook-xsl-1.76.1/highlighting/xslthl-config.xml" />
 			<param name="make.clean.html" expression="1" />

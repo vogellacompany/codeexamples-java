@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xsl:stylesheet [
+]>
 <xsl:stylesheet 
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
   xmlns:exsl="http://exslt.org/common"
@@ -10,7 +12,7 @@
   exclude-result-prefixes="exsl stbl xtbl lxslt ptbl"
   version="1.0">
 
-<!-- $Id: docbook.xsl,v 1.1 2011-09-16 21:44:00 bobs Exp $ -->
+<!-- $Id: docbook.xsl,v 1.2 2011-09-18 17:47:28 bobs Exp $ -->
 <xsl:import href="xhtml-docbook.xsl"/>
 <xsl:include href="html5-element-mods.xsl"/>
 
