@@ -16,7 +16,7 @@
 	<property name="output.dir" value="output" />
 	<property name="docbook.xsl.dir" value="docbook-xsl-1.76.1" />
 
-	<property name="epub.stylesheet" value="${docbook.xsl.dir}/epub/docbook.xsl" />
+	<property name="epub.stylesheet" value="mystylesheets/mymobidocbook.xsl" />
 
 	<property name="{destfilename}" value="book" />
 
@@ -25,7 +25,7 @@
 		<pathelement location="lib/saxon.jar" />
 	</path>
 
-	<property name="epubcheck.jar" value="lib/epubcheck-1.2.jar" />
+	<property name="epubcheck.jar" value="lib/epubcheck/epubcheck-1.2.jar" />
 	<!--
       - target:  usage
       -->
@@ -74,7 +74,8 @@
 	 -->
 	<target name="build-epub" depends="clean, depends" description="Generates EPUB files from DocBook XML">
 
-		<xslt style="${epub.stylesheet}" extension=".html" basedir="${input.dir}" destdir="${output.dir}/tmp">
+		<xslt style="${epub.stylesheet}" extension=".html" 
+			basedir="${input.dir}" destdir="${output.dir}/tmp">
 			<include name="**/*book.xml" />
 			<param name="epub.stylesheet" expression="style.css" />
 			<!-- The following parameter do not work currently
@@ -113,12 +114,13 @@
 		<delete dir="./OEBPS" />
 		<delete dir="./META-INF" />
 
-		<!-- epub check does currently not work as it does not find its dependent libraries 
-		<epub.check epub="${destfilename}" />
+		<!-- Make sure the epubcheck lib has a subfolder lib with saxon.jar and jing.jar in it
 		-->
+		<epub.check epub="book" />
+		
 	</target>
 
-	<!-- epub check does currently not work -->
+	<!-- epub check macro definition -->
 	<macrodef name="epub.check" description="Check an epub">
 		<attribute name="epub" description="Name of the EPUB" />
 		<sequential>

@@ -9,13 +9,26 @@
 			<firstname>Lars</firstname>
 			<surname>Vogel</surname>
 		</author>
+		<volumenum>1234</volumenum>
 	</bookinfo>
 	
 	<chapter>
 		<title>This is the first chapter</title>
 		<section>
 			<title> First section in the chapter</title>
-			<para>Random text.
+			<para> Test</para>
+				<section>
+			<title> First sub section </title>
+			<para> Subsection1</para>
+		</section>
+			<section>
+			<title> second sub section </title>
+			<para> Subsection2</para>
+		</section>
+		</section>
+		<section>
+			<title> Second section in the chapter</title>
+			<para>Other random text
 			</para>
 			<para>
 			<mediaobject>
@@ -28,11 +41,6 @@
 			</textobject>
 			</mediaobject>
 		</para>
-		</section>
-		<section>
-			<title> Second section in the chapter</title>
-			<para>Other random text
-			</para>
 		</section>
 		
 	</chapter>
