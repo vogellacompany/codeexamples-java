@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, Convert!</string>
-    <string name="app_name">Temperature Convertor</string>
-<color name="myColor">#3399CC</color>
-<string name="myClickHandler">myClickHandler</string>
-<string name="celsius">to Celsius</string>
-<string name="fahrenheit">to Fahrenheit</string>
-<string name="calc">Calculate</string>
+
+    <string name="hello">Hello World, ConvertActivity!</string>
+    <string name="app_name">Temparature Converter</string>
+    <color name="myColor">#3399CC</color>
+    <string name="myClickHandler">myClickHandler</string>
+    <string name="celsius">to Celsius</string>
+    <string name="fahrenheit">to Fahrenheit</string>
+    <string name="calc">Calculate</string>
+
 </resources>

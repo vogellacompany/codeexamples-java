@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:background="@color/myColor">
-	<EditText android:layout_height="wrap_content" android:id="@+id/editText1"
-		android:layout_width="match_parent" android:inputType="numberDecimal|numberSigned"></EditText>
-	<RadioGroup android:layout_height="wrap_content" android:id="@+id/radioGroup1"
-		android:layout_width="match_parent">
-		<RadioButton android:layout_width="wrap_content"
-			android:id="@+id/radio0" android:layout_height="wrap_content"
-			android:text="@string/celsius" android:checked="true"></RadioButton>
-		<RadioButton android:layout_width="wrap_content"
-			android:id="@+id/radio1" android:layout_height="wrap_content"
-			android:text="@string/fahrenheit"></RadioButton>
-	</RadioGroup>
-	<Button android:id="@+id/button1" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:text="@string/calc"
-		android:onClick="myClickHandler"></Button>
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/myColor"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+	 >
+    </EditText>
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/radio0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/celsius" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fahrenheit" >
+        </RadioButton>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calc" 
+        android:onClick="myClickHandler">
+    </Button>
+
 </LinearLayout>
