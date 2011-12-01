@@ -22,22 +22,21 @@ public class SWTbitwiseOr {
 		System.out.println(SWT.RIGHT);
 		System.out.println(SWT.PASSWORD);
 		System.out.println(SWT.CENTER);
-		
-		// Lets see what we have 
-		
+
+		// Lets see what we have
+
 		int result = SWT.MULTI | SWT.WRAP;
 		System.out.println(result);
-		if (SWT.MULTI==(result & SWT.MULTI)){
-			System.out.println("SWT.MULI available");	
+		if (SWT.MULTI == (result & SWT.MULTI)) {
+			System.out.println("SWT.MULI available");
 		}
-		if (SWT.WRAP==(result & SWT.WRAP)){
-			System.out.println("SWT.WRAP available");	
+		if (SWT.WRAP == (result & SWT.WRAP)) {
+			System.out.println("SWT.WRAP available");
 		}
-		if (SWT.SINGLE==(result & SWT.SINGLE)){
-			System.out.println("SWT.SINGLE available");	
+		if (SWT.SINGLE == (result & SWT.SINGLE)) {
+			System.out.println("SWT.SINGLE available");
 		} else {
-			System.out.println("SWT.SINGLE available");	
+			System.out.println("SWT.SINGLE available");
 		}
-		
 	}
 }

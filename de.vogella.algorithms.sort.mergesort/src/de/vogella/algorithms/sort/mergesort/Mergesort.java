@@ -2,13 +2,14 @@ package de.vogella.algorithms.sort.mergesort;
 
 public class Mergesort {
 	private int[] numbers;
+	private int[] helper;
 
 	private int number;
 
 	public void sort(int[] values) {
 		this.numbers = values;
 		number = values.length;
-
+		this.helper = new int[number];
 		mergesort(0, number - 1);
 	}
 
@@ -27,9 +28,6 @@ public class Mergesort {
 	}
 
 	private void merge(int low, int middle, int high) {
-
-		// Helperarray
-		int[] helper = new int[number];
 
 		// Copy both parts into the helper array
 		for (int i = low; i <= high; i++) {
@@ -57,7 +55,6 @@ public class Mergesort {
 			k++;
 			i++;
 		}
-		helper = null;
 
 	}
 }

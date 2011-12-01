@@ -27,6 +27,7 @@ public class CallNotification extends Activity {
 	}
 
 	public void createNotification() {
+
 		NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
 		for (int i = 0; i <= 10; i++) {
@@ -54,9 +55,7 @@ public class CallNotification extends Activity {
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 			}
 		}
 	}
-
 }

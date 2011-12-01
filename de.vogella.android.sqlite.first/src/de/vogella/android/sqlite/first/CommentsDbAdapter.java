@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-
 public class CommentsDbAdapter {
 
 	// Database fields
@@ -39,8 +38,7 @@ public class CommentsDbAdapter {
 
 	public Cursor fetchAllComments() {
 		return database.query(DATABASE_TABLE, new String[] { KEY_ROWID,
-				KEY_COMMENT }, null, null, null,
-				null, null);
+				KEY_COMMENT }, null, null, null, null, null);
 	}
-	
+
 }

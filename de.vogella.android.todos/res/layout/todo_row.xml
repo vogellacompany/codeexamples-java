@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_height="wrap_content" android:layout_width="fill_parent">
-	<ImageView android:id="@+id/icon" android:src="@drawable/reminder"
-		android:layout_marginLeft="4px" android:layout_marginRight="8px"
-		android:layout_height="40px" android:layout_marginTop="8px"
-		android:layout_width="30px">
-	</ImageView>
-	<TextView android:text="@+id/TextView01"
-		android:layout_height="wrap_content" android:id="@+id/label"
-		android:textSize="40px" android:layout_marginTop="6px"
-		android:layout_width="fill_parent" android:textColor="@color/black" android:lines="1"></TextView>
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="30px"
+        android:layout_height="40px"
+        android:layout_marginLeft="4px"
+        android:layout_marginRight="8px"
+        android:layout_marginTop="8px"
+        android:src="@drawable/reminder" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6px"
+        android:lines="1"
+        android:text="@+id/TextView01"
+        android:textColor="@color/black"
+        android:textSize="40px" >
+    </TextView>
+
 </LinearLayout>

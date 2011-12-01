@@ -13,9 +13,9 @@ public class TodoDbAdapter {
 	public static final String KEY_CATEGORY = "category";
 	public static final String KEY_SUMMARY = "summary";
 	public static final String KEY_DESCRIPTION = "description";
-	private static final String DATABASE_TABLE = "todo";
+	private static final String DB_TABLE = "todo";
 	private Context context;
-	private SQLiteDatabase database;
+	private SQLiteDatabase db;
 	private TodoDatabaseHelper dbHelper;
 
 	public TodoDbAdapter(Context context) {
@@ -24,7 +24,7 @@ public class TodoDbAdapter {
 
 	public TodoDbAdapter open() throws SQLException {
 		dbHelper = new TodoDatabaseHelper(context);
-		database = dbHelper.getWritableDatabase();
+		db = dbHelper.getWritableDatabase();
 		return this;
 	}
 
@@ -37,10 +37,10 @@ public class TodoDbAdapter {
 	 * rowId for that note, otherwise return a -1 to indicate failure.
 	 */
 	public long createTodo(String category, String summary, String description) {
-		ContentValues initialValues = createContentValues(category, summary,
+		ContentValues values = createContentValues(category, summary,
 				description);
 
-		return database.insert(DATABASE_TABLE, null, initialValues);
+		return db.insert(DB_TABLE, null, values);
 	}
 
 	/**
@@ -48,18 +48,17 @@ public class TodoDbAdapter {
 	 */
 	public boolean updateTodo(long rowId, String category, String summary,
 			String description) {
-		ContentValues updateValues = createContentValues(category, summary,
+		ContentValues values = createContentValues(category, summary,
 				description);
 
-		return database.update(DATABASE_TABLE, updateValues, KEY_ROWID + "="
-				+ rowId, null) > 0;
+		return db.update(DB_TABLE, values, KEY_ROWID + "=" + rowId, null) > 0;
 	}
 
 	/**
 	 * Deletes todo
 	 */
 	public boolean deleteTodo(long rowId) {
-		return database.delete(DATABASE_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
+		return db.delete(DB_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
 	}
 
 	/**
@@ -68,18 +67,17 @@ public class TodoDbAdapter {
 	 * @return Cursor over all notes
 	 */
 	public Cursor fetchAllTodos() {
-		return database.query(DATABASE_TABLE, new String[] { KEY_ROWID,
-				KEY_CATEGORY, KEY_SUMMARY, KEY_DESCRIPTION }, null, null, null,
-				null, null);
+		return db.query(DB_TABLE, new String[] { KEY_ROWID, KEY_CATEGORY,
+				KEY_SUMMARY, KEY_DESCRIPTION }, null, null, null, null, null);
 	}
 
 	/**
 	 * Return a Cursor positioned at the defined todo
 	 */
 	public Cursor fetchTodo(long rowId) throws SQLException {
-		Cursor mCursor = database.query(true, DATABASE_TABLE, new String[] {
-				KEY_ROWID, KEY_CATEGORY, KEY_SUMMARY, KEY_DESCRIPTION },
-				KEY_ROWID + "=" + rowId, null, null, null, null, null);
+		Cursor mCursor = db.query(true, DB_TABLE, new String[] { KEY_ROWID,
+				KEY_CATEGORY, KEY_SUMMARY, KEY_DESCRIPTION }, KEY_ROWID + "="
+				+ rowId, null, null, null, null, null);
 		if (mCursor != null) {
 			mCursor.moveToFirst();
 		}

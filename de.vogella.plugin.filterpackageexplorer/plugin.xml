@@ -4,11 +4,11 @@
    <extension
          point="org.eclipse.ui.views">
       <view
-            name="FPackage Explorer"
-            icon="icons/package.gif"
             category="org.eclipse.jdt.ui.java"
             class="de.vogella.plugin.filterpackageexplorer.FilterPackageExplorer"
-            id="cc.frz.ecl.filterpackageexplorer">
+            icon="icons/creep-007.png"
+            id="cc.frz.ecl.filterpackageexplorer"
+            name="FPackage Explorer">
       </view>
    </extension>
 </plugin>

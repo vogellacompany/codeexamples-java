@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension
+point="org.eclipse.ui.menus">
+<menuContribution
+locationURI="toolbar:org.eclipse.ui.workbench.file">
+<command
+commandId="org.eclipse.ui.newWizard">
+<parameter
+name="newWizardId"
+value="org.eclipse.ui.wizards.new.file">
+</parameter>
+</command>
+</menuContribution>
+</extension>
+</plugin>

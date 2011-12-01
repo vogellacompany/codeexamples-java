@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import de.vogella.android.todos.database.TodoDbAdapter;
 
-public class TodoDetails extends Activity {
+public class TodoDetailActivity extends Activity {
 	private EditText mTitleText;
 	private EditText mBodyText;
 	private Long mRowId;

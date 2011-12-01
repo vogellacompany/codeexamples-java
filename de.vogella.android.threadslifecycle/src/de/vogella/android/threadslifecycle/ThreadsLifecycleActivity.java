@@ -109,7 +109,7 @@ public class ThreadsLifecycleActivity extends Activity {
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				downloadBitmap = downloadBitmap("http://www.vogella.de/img/lars/LarsVogelArticle7.png");
+				downloadBitmap = downloadBitmap("http://www.devoxx.com/download/attachments/4751369/DV11");
 				handler.post(new MyRunnable());
 			} catch (IOException e) {
 				e.printStackTrace();

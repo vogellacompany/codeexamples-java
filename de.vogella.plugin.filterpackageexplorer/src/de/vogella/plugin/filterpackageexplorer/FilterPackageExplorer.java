@@ -113,7 +113,7 @@ public class FilterPackageExplorer extends PackageExplorerPart {
 	}
 
 	private void updateTree() {
-		fcp.setFilter(filtertext.getText());
+		fcp.setFilter("*"+ filtertext.getText());
 		getTreeViewer().refresh();
 	}
 

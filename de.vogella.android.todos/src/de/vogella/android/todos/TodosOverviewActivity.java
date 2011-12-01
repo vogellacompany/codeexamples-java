@@ -15,7 +15,7 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import de.vogella.android.todos.database.TodoDbAdapter;
 
-public class TodosOverview extends ListActivity {
+public class TodosOverviewActivity extends ListActivity {
 	private TodoDbAdapter dbHelper;
 	private static final int ACTIVITY_CREATE = 0;
 	private static final int ACTIVITY_EDIT = 1;
@@ -77,15 +77,15 @@ public class TodosOverview extends ListActivity {
 	}
 
 	private void createTodo() {
-		Intent i = new Intent(this, TodoDetails.class);
+		Intent i = new Intent(this, TodoDetailActivity.class);
 		startActivityForResult(i, ACTIVITY_CREATE);
 	}
 
-	// ListView and view (row) on which was clicked, position and
+	// Opens the second activity if an entry is clicked
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
-		Intent i = new Intent(this, TodoDetails.class);
+		Intent i = new Intent(this, TodoDetailActivity.class);
 		i.putExtra(TodoDbAdapter.KEY_ROWID, id);
 		// Activity returns an result if called with startActivityForResult
 
@@ -95,7 +95,7 @@ public class TodosOverview extends ListActivity {
 	// Called with the result of the other activity
 	// requestCode was the origin request code send to the activity
 	// resultCode is the return code, 0 is everything is ok
-	// intend can be use to get some data from the caller
+	// intend can be used to get data
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode,
 			Intent intent) {

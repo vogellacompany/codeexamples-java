@@ -1,6 +1,7 @@
 package com.example.lightswitch;
 
 import android.app.Activity;
+import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,14 +20,14 @@ public class LightSwitchActivity extends Activity {
 		lightSwitch.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(final View v) {
-				// TransitionDrawable drawable = (TransitionDrawable)
-				// lightBulb.getDrawable();
+				TransitionDrawable drawable = (TransitionDrawable) lightBulb
+						.getDrawable();
 				if (lightSwitch.isChecked()) {
-					lightBulb.setImageResource(R.drawable.light_bulb_on);
-					// drawable.startTransition(500);
+					// lightBulb.setImageResource(R.drawable.light_bulb_on);
+					drawable.startTransition(500);
 				} else {
-					lightBulb.setImageResource(R.drawable.light_bulb_off);
-					// drawable.reverseTransition(500);
+					// lightBulb.setImageResource(R.drawable.light_bulb_off);
+					drawable.reverseTransition(500);
 				}
 			}
 		});

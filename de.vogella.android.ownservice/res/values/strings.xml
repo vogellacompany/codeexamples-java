@@ -2,4 +2,5 @@
 <resources>
     <string name="hello">Hello World, ServiceConsumer!</string>
     <string name="app_name">Own Service</string>
+    <string name="service_name">My Service</string>
 </resources>

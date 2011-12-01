@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent" android:layout_height="?android:attr/listPreferredItemHeight"
-	android:orientation="horizontal" android:padding="6dip">
-	<ImageView android:id="@+id/imageView1" android:src="@drawable/icon"
-		android:layout_height="wrap_content" android:layout_width="wrap_content"
-		android:layout_marginRight="6dip"></ImageView>
-	<LinearLayout android:id="@+id/linearLayout1"
-		android:layout_weight="1" android:layout_width="0dip"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:orientation="horizontal"
+    android:padding="6dip" >
 
-		android:layout_height="match_parent" android:orientation="vertical"
-		android:padding="6dip">
-		<TextView android:text="My Application" android:id="@+id/textView1"
-			android:gravity="center_vertical" android:layout_weight="1"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
-		<TextView android:text="Simple application that shows how to use RelativeLayout"
-			android:layout_weight="1" android:id="@+id/textView2"
-			android:layout_height="wrap_content" android:layout_width="wrap_content"
-			android:singleLine="true" 
-			></TextView>
-	</LinearLayout>
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="6dip"
+        android:src="@drawable/ic_launcher" >
+    </ImageView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="6dip" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="My Application" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="Simple application that shows how to use RelativeLayout" >
+        </TextView>
+    </LinearLayout>
+
 </LinearLayout>
