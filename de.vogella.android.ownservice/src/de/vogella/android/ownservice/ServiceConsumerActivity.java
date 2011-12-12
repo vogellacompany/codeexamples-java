@@ -11,6 +11,7 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.view.View;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class ServiceConsumerActivity extends ListActivity {
 				wordList);
 		setListAdapter(adapter);
 		doBindService();
+		Window window = getWindow();
 
 		// List<String> wordList = s.getWordList();
 		// Toast.makeText(this, wordList.get(0), Toast.LENGTH_LONG).show();

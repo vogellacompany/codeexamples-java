@@ -1,14 +1,15 @@
 package de.vogella.debug.first;
 
 public class Counter {
-	private int result=0;
+	private int result = 0;
+
 	public int getResult() {
-		return result; 
+		return result;
 	}
 
 	public void count() {
 		for (int i = 0; i < 100; i++) {
-			result += i +1; 
+			result += i + 1;
 		}
 	}
 }

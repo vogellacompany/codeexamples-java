@@ -1,14 +1,5 @@
 package de.vogella.android.locationsapi.simple;
 
-import android.app.Activity;
-import android.content.Context;
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class ShowLocation extends Activity implements LocationListener {
 	private TextView latituteField;
@@ -83,7 +74,7 @@ public class ShowLocation extends Activity implements LocationListener {
 
 	@Override
 	public void onProviderDisabled(String provider) {
-		Toast.makeText(this, "Disenabled provider " + provider,
+		Toast.makeText(this, "Disabled provider " + provider,
 				Toast.LENGTH_SHORT).show();
 	}
 }

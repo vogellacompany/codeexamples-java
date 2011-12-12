@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
-	<Button android:text="Register" 
-		android:layout_width="wrap_content" android:onClick="register" android:layout_height="wrap_content"></Button>
-	<Button android:text="Show" 
-		android:layout_width="wrap_content" android:onClick="showRegistrationId" android:layout_height="wrap_content"></Button>
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="register"
+        android:text="Register" >
+    </Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showRegistrationId"
+        android:text="Show" >
+    </Button>
+
 </LinearLayout>

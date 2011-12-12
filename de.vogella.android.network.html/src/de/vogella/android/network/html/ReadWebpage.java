@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.AbstractHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.app.Activity;
@@ -64,7 +64,11 @@ public class ReadWebpage extends Activity {
 		case R.id.ReadWebPage:
 			try {
 				textView.setText("");
-				HttpClient client = new DefaultHttpClient();
+
+				// Cast to AbstractHttpClient to have access to
+				// setHttpRequestRetryHandler
+				AbstractHttpClient client = (AbstractHttpClient) new DefaultHttpClient();
+
 				HttpGet request = new HttpGet(urlText.getText().toString());
 				HttpResponse response = client.execute(request);
 				// Get the response

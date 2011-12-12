@@ -43,6 +43,7 @@ public class ReadRssFeed extends ListActivity {
 			parseTask
 					.execute(new String[] { "http://www.vogella.de/article.rss" });
 		}
+
 	}
 
 	public List<RssItem> parse(String rssFeed) {

@@ -3,7 +3,7 @@
       package="de.vogella.android.listactivity"
       android:versionCode="1"
       android:versionName="1.0">
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
+    <application android:label="@string/app_name">
         <activity android:name=".MyListActivity"
                   android:label="@string/app_name">
             <intent-filter>

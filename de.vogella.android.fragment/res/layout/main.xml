@@ -9,8 +9,7 @@
         android:layout_width="150dip"
         android:layout_height="match_parent"
         android:layout_marginTop="?android:attr/actionBarSize"
-        class="de.vogella.android.fragments.ListFragment" >
-        </fragment>
+        class="de.vogella.android.fragments.ListFragment" ></fragment>
 
     <fragment
         android:id="@+id/detailFragment"

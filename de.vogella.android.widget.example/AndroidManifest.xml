@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="de.vogella.android.widget.example" android:versionCode="1"
-	android:versionName="1.0">
-	<application android:icon="@drawable/icon" android:label="@string/app_name">
+    package="de.vogella.android.widget.example"
+    android:versionCode="1"
+    android:versionName="1.0" >
 
-		<receiver android:name="MyWidgetProvider" android:label="Example Widget">
-			<intent-filter>
-				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-			</intent-filter>
-		<meta-data android:name="android.appwidget.provider"
-			android:resource="@xml/widget_info" />
-		</receiver>
-		<service android:name=".UpdateWidgetService"></service>
-		<activity android:name=".Test"></activity>
-	</application>
-	<uses-sdk android:minSdkVersion="10" />
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <receiver
+            android:icon="@drawable/icon"
+            android:label="Example Widget"
+            android:name="MyWidgetProvider" >
+            <intent-filter >
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
 
-</manifest> 	
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+
+        <service android:name=".UpdateWidgetService" >
+        </service>
+
+        <activity android:name=".Test" >
+        </activity>
+    </application>
+
+    <uses-sdk android:minSdkVersion="14" />
+
+</manifest>

@@ -20,9 +20,6 @@ public class Pathfinder extends Activity {
 		setContentView(R.layout.main);
 		edit1 = (EditText) findViewById(R.id.EditText01);
 		edit2 = (EditText) findViewById(R.id.EditText02);
-		
-		System.out.println("Hubba");
-		System.out.println("Called");
 
 	}
 
@@ -51,21 +48,21 @@ public class Pathfinder extends Activity {
 	}
 
 	public void showLocation(View view) {
-		System.out.println("Called");
 		switch (view.getId()) {
 		case R.id.Button01:
 			LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-			
-			Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-			if (location != null){
+
+			Location location = locationManager
+					.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+			if (location != null) {
 				System.out.println("not null");
 			} else {
 				System.out.println("null");
 			}
-//			int lat = (int) (location.getLatitude() * 1E6);
-//			int lng = (int) (location.getLongitude() * 1E6);
-//			edit1.setText(lat);
-//			edit2.setText(lng);
+			// int lat = (int) (location.getLatitude() * 1E6);
+			// int lng = (int) (location.getLongitude() * 1E6);
+			// edit1.setText(lat);
+			// edit2.setText(lng);
 			break;
 		}
 
