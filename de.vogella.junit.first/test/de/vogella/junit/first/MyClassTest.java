@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class MyClassTest {
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testMultiply() {
 		MyClass tester = new MyClass();
 		assertEquals("Result", 50, tester.multiply(10, 5));

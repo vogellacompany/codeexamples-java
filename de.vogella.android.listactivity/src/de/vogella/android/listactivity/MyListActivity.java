@@ -2,7 +2,6 @@ package de.vogella.android.listactivity;
 
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 
 public class MyListActivity extends ListActivity {
 	public void onCreate(Bundle icicle) {
@@ -10,9 +9,7 @@ public class MyListActivity extends ListActivity {
 		String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
 				"Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
 				"Linux", "OS/2" };
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-				R.layout.rowlayout, R.id.label, values);
-		setListAdapter(adapter);
+		setListAdapter(new MyPerformanceArrayAdapter(this, values));
 	}
 
 }

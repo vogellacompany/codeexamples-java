@@ -113,7 +113,7 @@ public class FilterPackageExplorer extends PackageExplorerPart {
 	}
 
 	private void updateTree() {
-		fcp.setFilter("*"+ filtertext.getText());
+		fcp.setFilter("*" + filtertext.getText());
 		getTreeViewer().refresh();
 	}
 
@@ -181,13 +181,11 @@ public class FilterPackageExplorer extends PackageExplorerPart {
 
 	@Override
 	public void selectAndReveal(Object element) {
-		// TODO Auto-generated method stub
 		super.selectAndReveal(element);
 	}
 
 	@Override
 	public void selectReveal(ISelection selection) {
-		// TODO Auto-generated method stub
 		super.selectReveal(selection);
 	}
 }

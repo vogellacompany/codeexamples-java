@@ -18,7 +18,7 @@ public class C2DMMessageReceiver extends BroadcastReceiver {
 			Log.w("C2DM", "Received message");
 			final String payload = intent.getStringExtra("payload");
 			Log.d("C2DM", "dmControl: payload = " + payload);
-			// TODO Send this to my application server to get the real data
+			// Note: Send this to my application server to get the real data
 			// Lets make something visible to show that we received the message
 			createNotification(context, payload);
 

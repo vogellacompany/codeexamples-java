@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class SensorTest extends Activity implements SensorEventListener {
 	private SensorManager sensorManager;
-	private boolean color = false; 
+	private boolean color = false;
 	private View view;
 	private long lastUpdate;
 
@@ -23,8 +23,8 @@ public class SensorTest extends Activity implements SensorEventListener {
 	public void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-	            WindowManager.LayoutParams.FLAG_FULLSCREEN);
-	  
+				WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		view = findViewById(R.id.textView);
@@ -59,7 +59,7 @@ public class SensorTest extends Activity implements SensorEventListener {
 						.show();
 				if (color) {
 					view.setBackgroundColor(Color.GREEN);
-					
+
 				} else {
 					view.setBackgroundColor(Color.RED);
 				}
@@ -72,7 +72,6 @@ public class SensorTest extends Activity implements SensorEventListener {
 
 	@Override
 	public void onAccuracyChanged(Sensor sensor, int accuracy) {
-		// TODO Auto-generated method stub
 
 	}
 
