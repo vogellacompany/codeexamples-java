@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/listcolor"
     android:orientation="vertical" >
 
     <Spinner
@@ -22,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Summary"
+            android:hint="@string/todo_edit_summary"
             android:imeOptions="actionNext" >
         </EditText>
     </LinearLayout>
@@ -33,7 +32,7 @@
         android:layout_height="fill_parent"
         android:layout_weight="1"
         android:gravity="top"
-        android:hint="Description"
+        android:hint="@string/todo_edit_description"
         android:imeOptions="actionNext" >
     </EditText>
 

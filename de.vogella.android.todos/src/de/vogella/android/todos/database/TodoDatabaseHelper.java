@@ -5,8 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class TodoDatabaseHelper extends SQLiteOpenHelper {
-	private static final String DATABASE_NAME = "applicationdata";
 
+	private static final String DATABASE_NAME = "todotable";
 	private static final int DATABASE_VERSION = 1;
 
 	public TodoDatabaseHelper(Context context) {
@@ -26,4 +26,5 @@ public class TodoDatabaseHelper extends SQLiteOpenHelper {
 			int newVersion) {
 		TodoTable.onUpgrade(database, oldVersion, newVersion);
 	}
+
 }

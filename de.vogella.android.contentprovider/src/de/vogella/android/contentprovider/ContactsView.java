@@ -25,6 +25,8 @@ public class ContactsView extends Activity {
 			contactView.append(displayName);
 			contactView.append("\n");
 		}
+		// Closing the cursor
+		cursor.close();
 	}
 
 	private Cursor getContacts() {
@@ -37,9 +39,8 @@ public class ContactsView extends Activity {
 		String[] selectionArgs = null;
 		String sortOrder = ContactsContract.Contacts.DISPLAY_NAME
 				+ " COLLATE LOCALIZED ASC";
-
-		return managedQuery(uri, projection, selection, selectionArgs,
-				sortOrder);
+		return getContentResolver().query(uri, projection, selection,
+				selectionArgs, sortOrder);
 	}
 
 }

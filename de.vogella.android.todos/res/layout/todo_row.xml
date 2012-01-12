@@ -5,11 +5,11 @@
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="30px"
-        android:layout_height="40px"
-        android:layout_marginLeft="4px"
-        android:layout_marginRight="8px"
-        android:layout_marginTop="8px"
+        android:layout_width="30dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/reminder" >
     </ImageView>
 
@@ -17,11 +17,11 @@
         android:id="@+id/label"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6px"
+        android:layout_marginTop="6dp"
         android:lines="1"
         android:text="@+id/TextView01"
-        android:textColor="@color/black"
-        android:textSize="40px" >
+        android:textSize="24dp" 
+        >
     </TextView>
 
 </LinearLayout>

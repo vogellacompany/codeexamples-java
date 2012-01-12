@@ -10,6 +10,4 @@
 	<string name="todo_edit_summary">Summary</string>
 	<string name="todo_edit_description">Description</string>
 	<string name="todo_edit_confirm">Confirm</string>
-	<color name="listcolor">#FFE87C</color>
-	<color name="black">#000000</color>
 </resources>
