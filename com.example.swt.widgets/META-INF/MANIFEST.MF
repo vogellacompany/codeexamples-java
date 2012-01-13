@@ -5,4 +5,4 @@ Bundle-SymbolicName: com.example.swt.widgets
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: EXAMPLE
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.eclipse.swt;bundle-version="3.8.0"
+Require-Bundle: org.eclipse.swt

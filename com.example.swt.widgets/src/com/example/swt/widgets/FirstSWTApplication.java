@@ -25,7 +25,7 @@ public class FirstSWTApplication {
 
 	private static void createUi(Display display, Shell shell) {
 		Label label = new Label(shell, SWT.BORDER);
-		label.setText("This is a lable:");
+		label.setText("This is a label:");
 		label.setToolTipText("This is the tooltip of this label");
 		Text text = new Text(shell, SWT.NONE);
 		text.setText("This is the text in the label");

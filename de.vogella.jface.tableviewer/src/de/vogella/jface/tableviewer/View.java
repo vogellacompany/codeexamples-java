@@ -84,18 +84,27 @@ public class View extends ViewPart {
 	}
 
 	private void createViewer(Composite parent) {
+
+		// Define the TableViewer
 		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL
 				| SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER);
-		createColumns(parent, viewer);
+
+		// Create the columns
+		createColumns(parent);
+
+		// Make lines and make header visible
 		final Table table = viewer.getTable();
 		table.setHeaderVisible(true);
 		table.setLinesVisible(true);
 
-		viewer.setContentProvider(new ArrayContentProvider());
-		// Get the content for the viewer, setInput will call getElements in the
-		// contentProvider
+		// Set the ContentProvider
+		viewer.setContentProvider(ArrayContentProvider.getInstance());
+
+		// Get the content for the Viewer,
+		// setInput will call getElements in the ContentProvider
 		viewer.setInput(ModelProvider.INSTANCE.getPersons());
-		// Make the selection available to other views
+
+		// Make the selection available to other Views
 		getSite().setSelectionProvider(viewer);
 
 		// Layout the viewer
@@ -113,7 +122,7 @@ public class View extends ViewPart {
 	}
 
 	// This will create the columns for the table
-	private void createColumns(final Composite parent, final TableViewer viewer) {
+	private void createColumns(final Composite parent) {
 		headerMenu = new Menu(parent.getShell(), SWT.POP_UP);
 
 		String[] titles = { "First name", "Last name", "Gender", "Married" };
@@ -186,9 +195,8 @@ public class View extends ViewPart {
 			public Image getImage(Object element) {
 				if (((Person) element).isMarried()) {
 					return CHECKED;
-				} else {
-					return UNCHECKED;
 				}
+				return UNCHECKED;
 			}
 		});
 		col.setEditingSupport(new MarriedEditingSupport(viewer));
