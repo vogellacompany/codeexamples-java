@@ -1,6 +1,6 @@
 package exercises.exercise04;
 
-class Person {
+class Person { 
 	String firstname = "Jim";
 	String lastname = "Knopf";
 	int age = 12;
