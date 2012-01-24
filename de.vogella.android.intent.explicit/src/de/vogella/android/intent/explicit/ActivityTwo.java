@@ -20,8 +20,8 @@ public class ActivityTwo extends Activity {
 		String value1 = extras.getString("Value1");
 		String value2 = extras.getString("Value2");
 		if (value1 != null && value2 != null) {
-			EditText text1 = (EditText) findViewById(R.id.EditText01);
-			EditText text2 = (EditText) findViewById(R.id.EditText02);
+			EditText text1 = (EditText) findViewById(R.id.input1);
+			EditText text2 = (EditText) findViewById(R.id.input2);
 			text1.setText(value1);
 			text2.setText(value2);
 		}

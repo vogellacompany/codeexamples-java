@@ -1,5 +1,7 @@
 package com.example.android.rssfeed;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,10 +51,11 @@ public class ReadRssFeed extends ListActivity {
 	public List<RssItem> parse(String rssFeed) {
 		List<RssItem> list = new ArrayList<RssItem>();
 		XmlPullParser parser = Xml.newPullParser();
+		InputStream stream = null;
 		try {
 			// auto-detect the encoding from the stream
-			parser.setInput(new URL(rssFeed).openConnection().getInputStream(),
-					null);
+			stream = new URL(rssFeed).openConnection().getInputStream();
+			parser.setInput(stream, null);
 			int eventType = parser.getEventType();
 			boolean done = false;
 			RssItem item = null;
@@ -72,13 +75,13 @@ public class ReadRssFeed extends ListActivity {
 							item.setLink(parser.nextText());
 						} else if (name.equalsIgnoreCase(DESCRIPTION)) {
 							Log.i("Attribute", "description");
-							item.setDescription(parser.nextText());
+							item.setDescription(parser.nextText().trim());
 						} else if (name.equalsIgnoreCase(PUB_DATE)) {
 							Log.i("Attribute", "date");
 							item.setPubDate(parser.nextText());
 						} else if (name.equalsIgnoreCase(TITLE)) {
 							Log.i("Attribute", "title");
-							item.setTitle(parser.nextText());
+							item.setTitle(parser.nextText().trim());
 						}
 					}
 					break;
@@ -97,6 +100,14 @@ public class ReadRssFeed extends ListActivity {
 			}
 		} catch (Exception e) {
 			throw new RuntimeException(e);
+		} finally {
+			if (stream != null) {
+				try {
+					stream.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 		return list;
 	}

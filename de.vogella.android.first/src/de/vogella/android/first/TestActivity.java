@@ -1,6 +1,7 @@
 package de.vogella.android.first;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -30,6 +31,13 @@ public class TestActivity extends Activity {
 			}
 		});
 
+	}
+
+	public void shareData(View view) {
+		Intent intent = new Intent(Intent.ACTION_SEND);
+		intent.setType("text/plain");
+		intent.putExtra(Intent.EXTRA_TEXT, "This is my shared text");
+		startActivity(Intent.createChooser(intent, "Share this text via"));
 	}
 
 	public void sayHello(View view) {

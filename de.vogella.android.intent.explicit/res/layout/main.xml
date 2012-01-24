@@ -4,26 +4,14 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <LinearLayout
-        android:id="@+id/LinearLayout01"
+    <TextView
+        android:id="@+id/TextView01"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/TextView01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="60dip"
-            android:text="First Activity. Press button to call second activity"
-            android:textSize="20sp" >
-        </TextView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/LinearLayout02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:minHeight="60dip"
+        android:text="First Activity. Press button to call second activity"
+        android:textSize="20sp" >
+    </TextView>
 
     <Button
         android:id="@+id/Button01"

@@ -29,13 +29,14 @@ public class ListFragment extends android.app.ListFragment {
 		String item = (String) getListAdapter().getItem(position);
 		DetailFragment fragment = (DetailFragment) getFragmentManager()
 				.findFragmentById(R.id.detailFragment);
-		if (fragment != null) {
+		if (fragment != null && fragment.isInLayout()) {
 			fragment.setText(item);
 		} else {
 			Intent intent = new Intent(getActivity().getApplicationContext(),
 					DetailActivity.class);
 			intent.putExtra("value", item);
 			startActivity(intent);
+
 		}
 
 	}

@@ -9,7 +9,7 @@ public class MyListActivity extends ListActivity {
 		String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
 				"Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
 				"Linux", "OS/2" };
-		setListAdapter(new MyPerformanceArrayAdapter(this, values));
+		setListAdapter(new MySimpleArrayAdapter(this, values));
 	}
 
 }

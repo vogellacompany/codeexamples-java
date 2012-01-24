@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, DrawingActivity!</string>
+    <string name="app_name">Kids Draw</string>
+
+</resources>

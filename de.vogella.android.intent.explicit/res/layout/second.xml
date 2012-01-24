@@ -1,55 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alignmentMode="alignBounds"
+    android:columnCount="2"
+    android:columnOrderPreserved="false"
+    android:useDefaultMargins="true" >
 
-    <LinearLayout
-        android:id="@+id/LinearLayout01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:text="Input 1"
+        android:textSize="32dip" />
 
-        <TextView
-            android:id="@+id/TextView01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="First value from Activity 1" >
-        </TextView>
+    <EditText
+        android:id="@+id/input1"
+        android:layout_gravity="fill_horizontal"
+        android:text="Default" />
 
-        <EditText
-            android:id="@+id/EditText01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@+id/EditText01" >
-        </EditText>
-    </LinearLayout>
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:text="Input 2"
+        android:textSize="32dip" />
 
-    <LinearLayout
-        android:id="@+id/LinearLayout02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+    <EditText
+        android:id="@+id/input2"
+        android:layout_gravity="fill_horizontal"
+        android:text="Default" />
 
-        <TextView
-            android:id="@+id/TextView02"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Second Value from Activity one" >
-        </TextView>
-
-        <EditText
-            android:id="@+id/EditText02"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@+id/EditText02" >
-        </EditText>
-    </LinearLayout>
-
+ 
     <Button
-        android:id="@+id/Button01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:layout_gravity="right"
+        android:width="80dp"
         android:onClick="onClick"
-        android:text="Finished this activity" >
-    </Button>
+        android:text="Finish" />
 
-</LinearLayout>
+</GridLayout>

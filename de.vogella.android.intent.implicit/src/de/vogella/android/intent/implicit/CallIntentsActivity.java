@@ -5,61 +5,67 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-public class CallIntents extends Activity {
+public class CallIntentsActivity extends Activity {
+	private Spinner spinner;
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		spinner = (Spinner) findViewById(R.id.spinner);
+		ArrayAdapter adapter = ArrayAdapter.createFromResource(this,
+				R.array.intents, android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner.setAdapter(adapter);
 	}
 
-	public void callIntent(View view) {
+	public void onClick(View view) {
+		int position = spinner.getSelectedItemPosition();
 		Intent intent = null;
-		switch (view.getId()) {
-		case R.id.Button01:
+		switch (position) {
+		case 0:
 			intent = new Intent(Intent.ACTION_VIEW,
 					Uri.parse("http://www.vogella.de"));
-			startActivity(intent);
 			break;
-		case R.id.Button02:
+		case 1:
 			intent = new Intent(Intent.ACTION_CALL,
 					Uri.parse("tel:(+49)12345789"));
-			startActivity(intent);
 			break;
-		case R.id.Button03:
+		case 2:
+			break;
+		case 3:
 			intent = new Intent(Intent.ACTION_DIAL,
 					Uri.parse("tel:(+49)12345789"));
 			startActivity(intent);
 			break;
-		case R.id.Button04:
+		case 4:
 			intent = new Intent(Intent.ACTION_VIEW,
 					Uri.parse("geo:50.123,7.1434?z=19"));
-			startActivity(intent);
 			break;
-		case R.id.Button05:
+		case 5:
 			intent = new Intent(Intent.ACTION_VIEW,
 					Uri.parse("geo:0,0?q=query"));
-			startActivity(intent);
 			break;
-		case R.id.Button06:
+		case 6:
 			intent = new Intent("android.media.action.IMAGE_CAPTURE");
-
-			startActivityForResult(intent, 0);
 			break;
-		case R.id.Button07:
+		case 7:
 			intent = new Intent(Intent.ACTION_VIEW,
 					Uri.parse("content://contacts/people/"));
-			startActivity(intent);
 			break;
-		case R.id.Button08:
+		case 8:
 			intent = new Intent(Intent.ACTION_EDIT,
 					Uri.parse("content://contacts/people/1"));
+			break;
+
+		}
+		if (intent != null) {
 			startActivity(intent);
-			break;
-		default:
-			break;
 		}
 	}
 
@@ -70,4 +76,5 @@ public class CallIntents extends Activity {
 			Toast.makeText(this, result, Toast.LENGTH_LONG);
 		}
 	}
+
 }
