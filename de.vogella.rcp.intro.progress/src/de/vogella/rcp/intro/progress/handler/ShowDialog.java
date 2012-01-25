@@ -20,9 +20,7 @@ public class ShowDialog extends AbstractHandler {
 			dialog.run(true, true, new IRunnableWithProgress() {
 				@Override
 				public void run(IProgressMonitor monitor) {
-					monitor
-							.beginTask("Doing something timeconsuming here",
-									10);
+					monitor.beginTask("Doing something time consuming here", 10);
 					for (int i = 1; i <= 10; i++) {
 						if (monitor.isCanceled())
 							return;

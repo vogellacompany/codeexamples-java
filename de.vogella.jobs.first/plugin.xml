@@ -48,5 +48,27 @@
          </command>
       </menuContribution>
    </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="de.vogella.jobs.first.parts.View"
+            id="de.vogella.jobs.first.parts.View1"
+            name="View"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               id="de.vogella.jobs.first.parts.View1"
+               minimized="false"
+               ratio="0.95f"
+               relationship="left"
+               relative="org.eclipse.ui.editorss">
+         </view>
+      </perspectiveExtension>
+   </extension>
 
 </plugin>
