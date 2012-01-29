@@ -4,8 +4,8 @@ import org.eclipse.jface.wizard.Wizard;
 
 public class MyWizard extends Wizard {
 
-	private MyPageOne one;
-	private MyPageTwo two;
+	protected MyPageOne one;
+	protected MyPageTwo two;
 
 	public MyWizard() {
 		super();
@@ -22,9 +22,7 @@ public class MyWizard extends Wizard {
 
 	@Override
 	public boolean performFinish() {
-
-		// just put the result to the console, imagine here much more
-		// intelligent stuff.
+		// Print the result to the console
 		System.out.println(one.getText1());
 		System.out.println(two.getText1());
 

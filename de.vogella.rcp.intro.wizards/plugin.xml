@@ -38,5 +38,19 @@
          </command>
       </menuContribution>
    </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="de.vogella.rcp.intro.wizards"
+            name="MyView">
+      </category>
+      <view
+            category="de.vogella.rcp.intro.wizards"
+            class="de.vogella.rcp.intro.wizards.views.MyView"
+            icon="icons/sample.gif"
+            id="de.vogella.rcp.intro.wizards.views.MyView"
+            name="MyView">
+      </view>
+   </extension>
 
 </plugin>

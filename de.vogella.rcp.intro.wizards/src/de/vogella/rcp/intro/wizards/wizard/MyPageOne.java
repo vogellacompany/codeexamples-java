@@ -1,5 +1,6 @@
 package de.vogella.rcp.intro.wizards.wizard;
 
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyEvent;
@@ -7,17 +8,19 @@ import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 public class MyPageOne extends WizardPage {
 	private Text text1;
 	private Composite container;
+	private int number = 0;
 
 	public MyPageOne() {
 		super("First Page");
-		setTitle("First Page2");
-		setDescription("This wizard does not really do anything. But this is the first page");
+		setTitle("First Page");
+		setDescription("Fake Wizard. First page");
 	}
 
 	@Override
@@ -58,4 +61,13 @@ public class MyPageOne extends WizardPage {
 		return text1.getText();
 	}
 
+	public IWizardPage getNextPage() {
+		Display.getDefault().asyncExec(new Runnable() {
+			public void run() {
+				// ... do any work that updates the screen ...
+			}
+		});
+
+		return super.getNextPage();
+	}
 }
