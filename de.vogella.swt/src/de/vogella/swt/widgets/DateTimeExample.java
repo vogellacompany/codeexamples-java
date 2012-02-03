@@ -15,7 +15,6 @@ public class DateTimeExample {
 		// setup the SWT window
 		Display display = new Display();
 		final Shell shell = new Shell(display);
-		shell.setSize(520, 200);
 		shell.setLayout(new RowLayout());
 
 		// initialize a parent composite with a grid layout manager
@@ -30,7 +29,8 @@ public class DateTimeExample {
 		DateTime time = new DateTime(parent, SWT.TIME);
 		// Date Selection as a drop-down
 		DateTime dateD = new DateTime(parent, SWT.DATE | SWT.DROP_DOWN);
-		// show the SWT window
+
+		shell.pack();
 		shell.open();
 		while (!shell.isDisposed()) {
 			if (!display.readAndDispatch())

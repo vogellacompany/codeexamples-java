@@ -13,11 +13,12 @@ public class CTabFolderExample {
 	public static void main(String[] args) {
 		Display display = new Display();
 		Shell shell = new Shell(display);
-		
+
 		shell.setLayout(new GridLayout());
-		CTabFolder folder = new CTabFolder(shell, SWT.NONE);
-		GridData data = new GridData(GridData.FILL, GridData.BEGINNING, true,
-				false, 2, 1);
+		// SWT.BOTTOM to show at the bottom
+		CTabFolder folder = new CTabFolder(shell, SWT.BOTTOM);
+		GridData data = new GridData(GridData.FILL, GridData.FILL, true, true,
+				2, 1);
 		folder.setLayoutData(data);
 		CTabItem cTabItem1 = new CTabItem(folder, SWT.NONE);
 		cTabItem1.setText("Tab1");
@@ -25,13 +26,13 @@ public class CTabFolderExample {
 		cTabItem2.setText("Tab2");
 		CTabItem cTabItem3 = new CTabItem(folder, SWT.NONE);
 		cTabItem3.setText("Tab3");
-		
-		Text text = new Text(folder, SWT.BORDER);
+
+		Text text = new Text(folder, SWT.BORDER | SWT.MULTI | SWT.WRAP);
 		text.setText("Hello");
 		cTabItem1.setControl(text);
-		
-		shell.pack ();
-		shell.open ();
+
+		shell.setSize(200, 200);
+		shell.open();
 
 		shell.open();
 		while (!display.isDisposed()) {

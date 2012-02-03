@@ -1,5 +1,8 @@
 package de.vogella.swt.widgets;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridLayout;
@@ -16,7 +19,6 @@ public class Photo {
 		// setup the SWT window
 		Display display = new Display();
 		final Shell shell = new Shell(display);
-		shell.setSize(520, 200);
 		shell.setLayout(new RowLayout());
 		shell.setText("Photo Application");
 
@@ -25,25 +27,34 @@ public class Photo {
 		// 4x columns
 		Composite parent = new Composite(shell, SWT.NONE);
 		GridLayout gridLayout = new GridLayout();
-		gridLayout.numColumns = 4;
+		gridLayout.numColumns = 7;
 		parent.setLayout(gridLayout);
 
-		// determine the path where the pictures are stored
-		String path = System.getProperty("user.dir") + "/images/";
-		// initialize an array with the photograph names
-		String[] imgNames = new String[] { "lars.png", "andre.png",
-				"matthias.png", "arne.png" };
+		// Get the Display default icons
+		List<Image> imageList = new ArrayList<Image>();
 
-		// loop over the photo array and establish all listeners
-		for (int i = 0; i < imgNames.length; i++) {
-			// labels serve as containers for the images
+		imageList.add(Display.getDefault().getSystemImage(SWT.ICON_CANCEL));
+		imageList.add(Display.getDefault().getSystemImage(SWT.ICON_WARNING));
+		imageList.add(Display.getDefault().getSystemImage(SWT.ICON_WORKING));
+		imageList.add(Display.getDefault().getSystemImage(SWT.ICON_QUESTION));
+		imageList.add(Display.getDefault().getSystemImage(SWT.ICON_SEARCH));
+		imageList
+				.add(Display.getDefault().getSystemImage(SWT.ICON_INFORMATION));
+		imageList.add(Display.getDefault().getSystemImage(SWT.ICON_ERROR));
+
+		// Alternative load images via
+		// Image img = new Image(display, path + imgNames[i]);
+		// to get a path
+		// String path = System.getProperty("user.dir") + "/images/";
+		for (Image image : imageList) {
 			Label label = new Label(parent, SWT.NONE);
-			Image img = new Image(display, path + imgNames[i]);
-			label.setImage(img);
+			label.setImage(image);
 		}
-
 		// show the SWT window
+
+		shell.pack();
 		shell.open();
+
 		while (!shell.isDisposed()) {
 			if (!display.readAndDispatch())
 				display.sleep();
