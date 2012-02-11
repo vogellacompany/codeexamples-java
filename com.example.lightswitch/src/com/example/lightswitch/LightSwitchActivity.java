@@ -23,10 +23,8 @@ public class LightSwitchActivity extends Activity {
 				TransitionDrawable drawable = (TransitionDrawable) lightBulb
 						.getDrawable();
 				if (lightSwitch.isChecked()) {
-					// lightBulb.setImageResource(R.drawable.light_bulb_on);
 					drawable.startTransition(500);
 				} else {
-					// lightBulb.setImageResource(R.drawable.light_bulb_off);
 					drawable.reverseTransition(500);
 				}
 			}

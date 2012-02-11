@@ -13,6 +13,14 @@
                 </action>
             </intent-filter>
         </receiver>
+        <activity android:name="StartActivity">
+            <intent-filter>
+                <action />
+                <category />
+            </intent-filter>
+            
+        </activity>
+        
     </application>
 
     <uses-sdk android:minSdkVersion="9" />
