@@ -1,7 +1,16 @@
 package de.vogella.android.locationsapi.simple;
 
+import android.app.Activity;
+import android.content.Context;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class ShowLocation extends Activity implements LocationListener {
+public class ShowLocationActivity extends Activity implements LocationListener {
 	private TextView latituteField;
 	private TextView longitudeField;
 	private LocationManager locationManager;
@@ -61,7 +70,6 @@ public class ShowLocation extends Activity implements LocationListener {
 
 	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {
-		// TODO Auto-generated method stub
 
 	}
 

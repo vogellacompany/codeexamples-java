@@ -11,6 +11,8 @@ public class MyPreferencesActivity extends PreferenceActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.preferences);
+		getActionBar().setHomeButtonEnabled(true);
+
 	}
 
 	// This method is called once the menu is selected

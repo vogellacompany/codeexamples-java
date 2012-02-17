@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ShareActionProvider;
 import android.widget.Toast;
 
 public class OverviewActivity extends Activity {
@@ -22,6 +23,7 @@ public class OverviewActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getActionBar().setHomeButtonEnabled(true);
 		setContentView(R.layout.main);
 		Button button = (Button) findViewById(R.id.Button01);
 		// Initialize preferences
@@ -72,6 +74,13 @@ public class OverviewActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.mainmenu, menu);
+		MenuItem item = menu.findItem(R.id.menu_share);
+		ShareActionProvider provider = (ShareActionProvider) item
+				.getActionProvider();
+		Intent intent = new Intent(Intent.ACTION_SEND);
+		intent.setType("plain/text");
+		intent.putExtra(Intent.EXTRA_TEXT, "Hello");
+		provider.setShareIntent(intent);
 		return true;
 	}
 
@@ -80,7 +89,6 @@ public class OverviewActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Log.i(TAG, "OptionsMenu called");
 		switch (item.getItemId()) {
-		// We have only one menu option
 		case R.id.preferences:
 			// Launch Preference activity
 			Intent i = new Intent(OverviewActivity.this,

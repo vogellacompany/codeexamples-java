@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.hardware.Camera.CameraInfo;
+import android.hardware.Camera.Face;
+import android.hardware.Camera.FaceDetectionListener;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -48,6 +50,12 @@ public class MakePhotoActivityAdvanced extends Activity {
 		camera.takePicture(null, null, new PhotoHandler(this));
 	}
 
+	public void faceDetection(View view) {
+		Toast.makeText(this, "Started Face detection", Toast.LENGTH_SHORT);
+		camera.startFaceDetection();
+
+	}
+
 	private int findFirstFrontFacingCamera() {
 		int cameraId = -1;
 		// search for the first front facing camera
@@ -70,6 +78,13 @@ public class MakePhotoActivityAdvanced extends Activity {
 			cameraView = new CameraView(this, camera);
 			layout.addView(cameraView);
 		}
+		camera.setFaceDetectionListener(new FaceDetectionListener() {
+
+			@Override
+			public void onFaceDetection(Face[] faces, Camera camera) {
+				// Do something useful with the info
+			}
+		});
 	}
 
 	@Override

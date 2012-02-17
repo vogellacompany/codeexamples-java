@@ -57,5 +57,13 @@
             name="Call Editor">
       </command>
    </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="de.vogella.rcp.intro.editor.WorkbenchPreferencePage1"
+            id="de.vogella.rcp.intro.editor.page1"
+            name="name">
+      </page>
+   </extension>
 
 </plugin>

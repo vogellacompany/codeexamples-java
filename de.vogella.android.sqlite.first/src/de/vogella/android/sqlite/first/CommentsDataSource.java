@@ -34,7 +34,6 @@ public class CommentsDataSource {
 		values.put(MySQLiteHelper.COLUMN_COMMENT, comment);
 		long insertId = database.insert(MySQLiteHelper.TABLE_COMMENTS, null,
 				values);
-		// To show how to query
 		Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
 				allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertId, null,
 				null, null, null);

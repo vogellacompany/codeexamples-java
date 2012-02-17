@@ -8,8 +8,14 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Event"
         android:onClick="onClick"
-         />
+        android:text="Create Event" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="queryCalendar"
+        android:text="Query Calendar" />
 
 </LinearLayout>

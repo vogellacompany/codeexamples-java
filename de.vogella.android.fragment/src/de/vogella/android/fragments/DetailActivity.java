@@ -15,6 +15,5 @@ public class DetailActivity extends Activity {
 			TextView view = (TextView) findViewById(R.id.detailsText);
 			view.setText(s);
 		}
-
 	}
 }

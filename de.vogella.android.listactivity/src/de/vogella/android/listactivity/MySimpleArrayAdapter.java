@@ -28,8 +28,7 @@ public class MySimpleArrayAdapter extends ArrayAdapter<String> {
 		textView.setText(values[position]);
 		// Change the icon for Windows and iPhone
 		String s = values[position];
-		if (s.startsWith("Windows7") || s.startsWith("iPhone")
-				|| s.startsWith("Solaris")) {
+		if (s.startsWith("iPhone")) {
 			imageView.setImageResource(R.drawable.no);
 		} else {
 			imageView.setImageResource(R.drawable.ok);

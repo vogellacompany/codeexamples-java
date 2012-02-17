@@ -21,5 +21,15 @@
         android:onClick="onClick"
  
         />
+    <Button
+        android:id="@+id/facerecognitioin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Start Face Detection" 
+        android:onClick="faceDetection"
+ 
+        />
 
 </RelativeLayout>
