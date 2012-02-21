@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.example.rcp.demo.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="com.example.rcp.demo.Perspective"
+            id="com.example.rcp.demo.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.example.rcp.demo.application"
+            name="RCP Demo">
+         <property
+               name="appName"
+               value="RCP Demo">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.example.rcp.demo.views.PlaygroundView"
+            id="com.example.rcp.demo.views.playground"
+            name="Playground"
+            restorable="true">
+      </view>
+   </extension>
+
+</plugin>

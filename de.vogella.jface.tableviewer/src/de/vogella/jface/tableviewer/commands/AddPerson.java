@@ -24,7 +24,7 @@ public class AddPerson extends AbstractHandler {
 			// Updating the display in the view
 			IWorkbenchPage page = window.getActivePage();
 			View view = (View) page.findView(View.ID);
-			view.getViewer().refresh();
+			view.refresh();
 		}
 		return null;
 	}

@@ -34,7 +34,7 @@ public class DeletePerson extends AbstractHandler {
 				Person person = iterator.next();
 				persons.remove(person);
 			}
-			view.getViewer().refresh();
+			view.refresh();
 		}
 		return null;
 	}

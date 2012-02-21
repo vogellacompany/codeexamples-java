@@ -12,8 +12,8 @@ import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyleRange;
-import org.eclipse.swt.events.KeyAdapter;
-import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Color;
@@ -72,12 +72,12 @@ public class View extends ViewPart {
 		viewer.setComparator(comparator);
 
 		// New to support the search
-		searchText.addKeyListener(new KeyAdapter() {
-			public void keyReleased(KeyEvent ke) {
+		searchText.addModifyListener(new ModifyListener() {
+			@Override
+			public void modifyText(ModifyEvent e) {
 				filter.setSearchText(searchText.getText());
 				viewer.refresh();
 			}
-
 		});
 		filter = new PersonFilter();
 		viewer.addFilter(filter);
@@ -117,8 +117,9 @@ public class View extends ViewPart {
 		viewer.getControl().setLayoutData(gridData);
 	}
 
-	public TableViewer getViewer() {
-		return viewer;
+	// Used to update the viewer from outsite
+	public void refresh() {
+		viewer.refresh();
 	}
 
 	// This will create the columns for the table
@@ -257,4 +258,5 @@ public class View extends ViewPart {
 	public void setFocus() {
 		viewer.getControl().setFocus();
 	}
+
 }

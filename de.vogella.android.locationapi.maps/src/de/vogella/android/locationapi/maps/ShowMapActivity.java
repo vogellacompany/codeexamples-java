@@ -29,7 +29,7 @@ public class ShowMapActivity extends MapActivity {
 		LinearLayout linearLayout = (LinearLayout) findViewById(R.id.main);
 		mapView = (MapView) findViewById(R.id.mapview);
 		mapView.setBuiltInZoomControls(true);
-		mapView.setStreetView(true);
+		mapView.setSatellite(true);
 		mapController = mapView.getController();
 		mapController.setZoom(14); // Zoon 1 is world view
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);

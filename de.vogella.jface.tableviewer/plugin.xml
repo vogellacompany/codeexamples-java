@@ -26,6 +26,12 @@
             class="de.vogella.jface.tableviewer.View"
             id="de.vogella.jface.tableviewer.view">
       </view>
+      <view
+            class="de.vogella.jface.tableviewer.ChangeView"
+            id="de.vogella.jface.tableviewer.changeview"
+            name="ChangeView"
+            restorable="true">
+      </view>
    </extension>
    <extension
          id="product"

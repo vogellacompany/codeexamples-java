@@ -38,7 +38,9 @@ public class CommentsDataSource {
 				allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertId, null,
 				null, null, null);
 		cursor.moveToFirst();
-		return cursorToComment(cursor);
+		Comment newComment = cursorToComment(cursor);
+		cursor.close();
+		return newComment;
 	}
 
 	public void deleteComment(Comment comment) {
@@ -50,8 +52,10 @@ public class CommentsDataSource {
 
 	public List<Comment> getAllComments() {
 		List<Comment> comments = new ArrayList<Comment>();
+
 		Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
 				allColumns, null, null, null, null, null);
+
 		cursor.moveToFirst();
 		while (!cursor.isAfterLast()) {
 			Comment comment = cursorToComment(cursor);
