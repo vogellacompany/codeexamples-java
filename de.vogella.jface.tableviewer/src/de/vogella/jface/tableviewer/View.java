@@ -18,6 +18,7 @@ import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -43,6 +44,9 @@ import de.vogella.jface.tableviewer.sorter.MyViewerComparator;
 import de.vogella.jface.tableviewer.util.SearchUtil;
 
 public class View extends ViewPart {
+	public View() {
+	}
+
 	public static final String ID = "de.vogella.jface.tableviewer.view";
 	private MyViewerComparator comparator;
 
@@ -170,6 +174,27 @@ public class View extends ViewPart {
 			public void update(ViewerCell cell) {
 				cell.setText(((Person) cell.getElement()).getLastName());
 			}
+
+			@Override
+			public String getToolTipText(Object element) {
+				return "Tooltip (" + element + ")";
+			}
+
+			@Override
+			public Point getToolTipShift(Object object) {
+				return new Point(5, 5);
+			}
+
+			@Override
+			public int getToolTipDisplayDelayTime(Object object) {
+				return 100;
+			}
+
+			@Override
+			public int getToolTipTimeDisplayed(Object object) {
+				return 5000;
+			}
+
 		});
 		col.setEditingSupport(new LastNameEditingSupport(viewer));
 
@@ -189,7 +214,7 @@ public class View extends ViewPart {
 		col.setLabelProvider(new ColumnLabelProvider() {
 			@Override
 			public String getText(Object element) {
-				return null;
+				return "Das ist ein Text";
 			}
 
 			@Override

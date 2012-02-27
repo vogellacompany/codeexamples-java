@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Sample Category"
+            id="com.example.rcp.demo.menucontribution.commands.category">
+      </category>
+      <command
+            name="Sample Command"
+            categoryId="com.example.rcp.demo.menucontribution.commands.category"
+            id="com.example.rcp.demo.menucontribution.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="com.example.rcp.demo.menucontribution.commands.sampleCommand"
+            class="com.example.rcp.demo.menucontribution.handlers.SampleHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.example.rcp.demo.menucontribution.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:filelars?after=additions">
+         <menu
+               label="Sample Menu"
+               mnemonic="M"
+               id="com.example.rcp.demo.menucontribution.menus.sampleMenu">
+            <command
+                  commandId="com.example.rcp.demo.menucontribution.commands.sampleCommand"
+                  mnemonic="S"
+                  id="com.example.rcp.demo.menucontribution.menus.sampleCommand">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="com.example.rcp.demo.menucontribution.toolbars.sampleToolbar">
+            <command
+                  commandId="com.example.rcp.demo.menucontribution.commands.sampleCommand"
+                  icon="icons/sample.gif"
+                  tooltip="Say hello world"
+                  id="com.example.rcp.demo.menucontribution.toolbars.sampleCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>

@@ -14,6 +14,11 @@ public class ModelService {
 		if (service == null) {
 			service = createPerson();
 		}
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return service;
 	}
 
