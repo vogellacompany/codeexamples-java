@@ -34,14 +34,14 @@ public class PlaygroundView extends ViewPart {
 		parent.setLayout(gl_parent);
 		persons = ModelService.getInstance();
 		p = persons.get(0);
-		new 
-		
+
+		Text text = new Text(parent, SWT.NONE);
+
 		text1 = new Text(parent, SWT.BORDER);
 		text1.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1,
 				1));
 		text1.setText("Na mal sehen");
 		m_bindingContext = initDataBindings();
-
 	}
 
 	@Override
