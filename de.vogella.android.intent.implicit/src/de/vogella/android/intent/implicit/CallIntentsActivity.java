@@ -37,28 +37,26 @@ public class CallIntentsActivity extends Activity {
 					Uri.parse("tel:(+49)12345789"));
 			break;
 		case 2:
-			break;
-		case 3:
 			intent = new Intent(Intent.ACTION_DIAL,
 					Uri.parse("tel:(+49)12345789"));
 			startActivity(intent);
 			break;
-		case 4:
+		case 3:
 			intent = new Intent(Intent.ACTION_VIEW,
 					Uri.parse("geo:50.123,7.1434?z=19"));
 			break;
-		case 5:
+		case 4:
 			intent = new Intent(Intent.ACTION_VIEW,
 					Uri.parse("geo:0,0?q=query"));
 			break;
-		case 6:
+		case 5:
 			intent = new Intent("android.media.action.IMAGE_CAPTURE");
 			break;
-		case 7:
+		case 6:
 			intent = new Intent(Intent.ACTION_VIEW,
 					Uri.parse("content://contacts/people/"));
 			break;
-		case 8:
+		case 7:
 			intent = new Intent(Intent.ACTION_EDIT,
 					Uri.parse("content://contacts/people/1"));
 			break;

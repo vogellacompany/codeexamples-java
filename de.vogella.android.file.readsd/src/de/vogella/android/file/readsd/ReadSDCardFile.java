@@ -14,28 +14,41 @@ import android.os.Environment;
 import android.util.Log;
 
 public class ReadSDCardFile extends Activity {
-	/** Called when the activity is first created. */
+	String eol = System.getProperty("line.separator");
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		writeFileToInternalStorage();
+		readFileFromInternalStorage();
 		readFileFromSDCard();
 	}
 
 	private void writeFileToInternalStorage() {
-		String eol = System.getProperty("line.separator");
+		BufferedWriter writer = null;
 		try {
-			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
-					openFileOutput("myfile", MODE_WORLD_WRITEABLE)));
+			writer = new BufferedWriter(new OutputStreamWriter(openFileOutput(
+					"myfile", MODE_WORLD_WRITEABLE)));
 			writer.write("This is a test1." + eol);
 			writer.write("This is a test2." + eol);
-			writer.close();
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			if (writer != null) {
+				try {
+					writer.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
+	}
+
+	private void readFileFromInternalStorage() {
+		BufferedReader input = null;
 		try {
-			BufferedReader input = new BufferedReader(new InputStreamReader(
+			input = new BufferedReader(new InputStreamReader(
 					openFileInput("myfile")));
 			String line;
 			StringBuffer buffer = new StringBuffer();
@@ -44,12 +57,20 @@ public class ReadSDCardFile extends Activity {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			if (input != null) {
+				try {
+					input.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 	}
 
 	private void readFileFromSDCard() {
 		File directory = Environment.getExternalStorageDirectory();
-		// Assumes that a file article.rss is availalbe on the SD card
+		// Assumes that a file article.rss is availabe on the SD card
 		File file = new File(directory + "/article.rss");
 		if (!file.exists()) {
 			throw new RuntimeException("File not found");

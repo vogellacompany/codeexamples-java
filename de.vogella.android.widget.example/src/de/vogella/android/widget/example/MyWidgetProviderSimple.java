@@ -23,23 +23,25 @@ public class MyWidgetProviderSimple extends AppWidgetProvider {
 
 		// Get all ids
 		ComponentName thisWidget = new ComponentName(context,
-				MyWidgetProvider.class);
+				MyWidgetProviderSimple.class);
 		int[] allWidgetIds = appWidgetManager.getAppWidgetIds(thisWidget);
+
 		for (int widgetId : allWidgetIds) {
 			// Create some random data
 			int number = (new Random().nextInt(100));
 
 			RemoteViews remoteViews = new RemoteViews(context.getPackageName(),
-					R.layout.widget_layout);
+					R.layout.widgetsimple_layout);
 			Log.w("WidgetExample", String.valueOf(number));
-			// Set the text
+			// Set the text to the view with the id R.id.update
+			// instead of -1
 			remoteViews.setTextViewText(R.id.update, String.valueOf(number));
 
 			// Register an onClickListener
-			Intent intent = new Intent(context, MyWidgetProvider.class);
+			Intent intent = new Intent(context, MyWidgetProviderSimple.class);
 
 			intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
-			intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
+			intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, allWidgetIds);
 
 			PendingIntent pendingIntent = PendingIntent.getBroadcast(context,
 					0, intent, PendingIntent.FLAG_UPDATE_CURRENT);

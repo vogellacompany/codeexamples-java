@@ -81,4 +81,11 @@ public class MainActivity extends Activity {
 		provider.setShareIntent(intent);
 	}
 
+	public int convertToDp(int input) {
+		// Get the screen's density scale
+		final float scale = getResources().getDisplayMetrics().density;
+		// Convert the dps to pixels, based on density scale
+		return (int) (input * scale + 0.5f);
+	}
+
 }

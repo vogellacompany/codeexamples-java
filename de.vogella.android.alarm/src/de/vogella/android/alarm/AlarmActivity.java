@@ -20,9 +20,11 @@ public class AlarmActivity extends Activity {
 	public void startAlert(View view) {
 		EditText text = (EditText) findViewById(R.id.time);
 		int i = Integer.parseInt(text.getText().toString());
+
 		Intent intent = new Intent(this, MyBroadcastReceiver.class);
 		PendingIntent pendingIntent = PendingIntent.getBroadcast(
 				this.getApplicationContext(), 234324243, intent, 0);
+
 		AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 		alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
 				+ (i * 1000), pendingIntent);

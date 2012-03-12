@@ -12,7 +12,6 @@ import android.media.FaceDetector;
 import android.media.FaceDetector.Face;
 import android.os.Bundle;
 import android.view.View;
-import de.vogella.cameara.api.R;
 
 public class AndroidFaceDetector extends Activity {
 	/** Called when the activity is first created. */

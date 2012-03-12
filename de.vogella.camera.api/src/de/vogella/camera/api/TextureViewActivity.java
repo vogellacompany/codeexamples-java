@@ -9,12 +9,14 @@ import android.hardware.Camera.CameraInfo;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.TextureView;
+import android.view.View;
 import android.widget.FrameLayout;
 
 public class TextureViewActivity extends Activity implements
 		TextureView.SurfaceTextureListener {
-	private Camera mCamera;
+	private Camera camera;
 	private TextureView mTextureView;
+	private float rotation = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,28 +24,34 @@ public class TextureViewActivity extends Activity implements
 
 		mTextureView = new TextureView(this);
 		mTextureView.setSurfaceTextureListener(this);
-
 		setContentView(mTextureView);
+
 	}
 
 	@Override
 	public void onSurfaceTextureAvailable(SurfaceTexture surface, int width,
 			int height) {
-		mCamera = Camera.open(findFirstFrontFacingCamera());
+		camera = Camera.open(findFirstFrontFacingCamera());
 
-		Camera.Size previewSize = mCamera.getParameters().getPreviewSize();
+		Camera.Size previewSize = camera.getParameters().getPreviewSize();
 		mTextureView.setLayoutParams(new FrameLayout.LayoutParams(
 				previewSize.width, previewSize.height, Gravity.CENTER));
 
 		try {
-			mCamera.setPreviewTexture(surface);
+			camera.setPreviewTexture(surface);
 		} catch (IOException t) {
 		}
 
-		mCamera.startPreview();
+		camera.startPreview();
 
 		mTextureView.setAlpha(0.5f);
 		mTextureView.setRotation(45.0f);
+
+	}
+
+	public void onClick(View view) {
+		camera.takePicture(null, null,
+				new PhotoHandler(getApplicationContext()));
 	}
 
 	private int findFirstFrontFacingCamera() {
@@ -69,8 +77,8 @@ public class TextureViewActivity extends Activity implements
 
 	@Override
 	public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
-		mCamera.stopPreview();
-		mCamera.release();
+		camera.stopPreview();
+		camera.release();
 		return true;
 	}
 
@@ -78,5 +86,10 @@ public class TextureViewActivity extends Activity implements
 	public void onSurfaceTextureUpdated(SurfaceTexture surface) {
 		// Called whenever a new frame is available and displayed in the
 		// TextureView
+		rotation += 10f;
+		if (rotation > 360) {
+			rotation = 0;
+		}
+		mTextureView.setRotation(rotation);
 	}
 }

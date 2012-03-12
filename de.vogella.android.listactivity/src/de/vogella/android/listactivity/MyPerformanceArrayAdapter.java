@@ -31,8 +31,7 @@ public class MyPerformanceArrayAdapter extends ArrayAdapter<String> {
 			rowView = inflater.inflate(R.layout.rowlayout, null);
 			ViewHolder viewHolder = new ViewHolder();
 			viewHolder.text = (TextView) rowView.findViewById(R.id.TextView01);
-			viewHolder.image = (ImageView) rowView
-					.findViewById(R.id.ImageView01);
+			viewHolder.image = (ImageView) rowView.findViewById(R.id.icon);
 			rowView.setTag(viewHolder);
 		}
 

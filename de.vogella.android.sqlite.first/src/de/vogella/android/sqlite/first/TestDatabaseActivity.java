@@ -55,14 +55,14 @@ public class TestDatabaseActivity extends ListActivity {
 
 	@Override
 	protected void onResume() {
-		datasource.open();
 		super.onResume();
+		datasource.open();
 	}
 
 	@Override
 	protected void onPause() {
-		datasource.close();
 		super.onPause();
+		datasource.close();
 	}
 
 }

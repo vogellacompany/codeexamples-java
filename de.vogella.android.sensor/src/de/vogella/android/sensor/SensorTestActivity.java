@@ -21,11 +21,11 @@ public class SensorTestActivity extends Activity implements SensorEventListener 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		view = findViewById(R.id.textView);
 		view.setBackgroundColor(Color.GREEN);
@@ -91,7 +91,7 @@ public class SensorTestActivity extends Activity implements SensorEventListener 
 	@Override
 	protected void onPause() {
 		// unregister listener
+		super.onPause();
 		sensorManager.unregisterListener(this);
-		super.onStop();
 	}
 }

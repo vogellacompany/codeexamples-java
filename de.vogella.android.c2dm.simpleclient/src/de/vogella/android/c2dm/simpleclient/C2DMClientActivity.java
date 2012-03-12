@@ -27,8 +27,8 @@ public class C2DMClientActivity extends Activity {
 		Intent intent = new Intent("com.google.android.c2dm.intent.REGISTER");
 		intent.putExtra("app",
 				PendingIntent.getBroadcast(this, 0, new Intent(), 0));
-		// Sender currently not used
-		intent.putExtra("sender", "nonsenses@gmail.com");
+		// Use registered Google email
+		intent.putExtra("sender", "registerungsemail@gmail.com");
 		startService(intent);
 	}
 

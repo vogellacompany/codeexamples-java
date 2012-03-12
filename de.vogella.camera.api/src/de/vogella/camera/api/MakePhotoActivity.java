@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-import de.vogella.cameara.api.R;
 
 public class MakePhotoActivity extends Activity {
 	private final static String DEBUG_TAG = "MakePhotoActivity";

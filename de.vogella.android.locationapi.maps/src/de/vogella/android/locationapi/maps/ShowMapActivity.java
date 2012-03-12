@@ -6,7 +6,6 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.widget.LinearLayout;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
@@ -25,8 +24,7 @@ public class ShowMapActivity extends MapActivity {
 		super.onCreate(bundle);
 		setContentView(R.layout.main); // bind the layout to the activity
 
-		// create a map view
-		LinearLayout linearLayout = (LinearLayout) findViewById(R.id.main);
+		// Configure the Map
 		mapView = (MapView) findViewById(R.id.mapview);
 		mapView.setBuiltInZoomControls(true);
 		mapView.setSatellite(true);
@@ -37,7 +35,7 @@ public class ShowMapActivity extends MapActivity {
 				0, new GeoUpdateHandler());
 
 		Drawable drawable = this.getResources().getDrawable(R.drawable.point);
-		itemizedoverlay = new MyOverlays(drawable);
+		itemizedoverlay = new MyOverlays(this, drawable);
 		createMarker();
 	}
 

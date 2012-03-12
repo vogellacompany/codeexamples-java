@@ -9,7 +9,7 @@ public class TargetActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		TextView textView = new TextView(this);
-		textView.setText("Zweite Aktivität aufgerufen Über eine Notifikation");
+		textView.setText("Zweite Aktivitï¿½t aufgerufen ï¿½ber eine Notifikation");
 		setContentView(textView);
 	}
 }
