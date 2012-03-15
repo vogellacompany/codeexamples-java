@@ -12,12 +12,12 @@ import com.google.android.maps.OverlayItem;
 
 public class MyOverlays extends ItemizedOverlay<OverlayItem> {
 
-	private static int maxNum = 3;
+	private static int maxNum = 5;
 	private OverlayItem overlays[] = new OverlayItem[maxNum];
 	private int index = 0;
 	private boolean full = false;
-	private MyOverlays itemizedoverlay;
 	private Context context;
+	private OverlayItem previousoverlay;
 
 	public MyOverlays(Context context, Drawable defaultMarker) {
 		super(boundCenterBottom(defaultMarker));
@@ -40,15 +40,18 @@ public class MyOverlays extends ItemizedOverlay<OverlayItem> {
 	}
 
 	public void addOverlay(OverlayItem overlay) {
-		if (index < maxNum) {
-			overlays[index] = overlay;
-		} else {
-			index = 0;
-			full = true;
-			overlays[index] = overlay;
+		if (previousoverlay != null) {
+			if (index < maxNum) {
+				overlays[index] = previousoverlay;
+			} else {
+				index = 0;
+				full = true;
+				overlays[index] = previousoverlay;
+			}
+			index++;
+			populate();
 		}
-		index++;
-		populate();
+		this.previousoverlay = overlay;
 	}
 
 	protected boolean onTap(int index) {

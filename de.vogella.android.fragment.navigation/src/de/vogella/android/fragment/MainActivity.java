@@ -9,7 +9,6 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 
 public class MainActivity extends Activity {
-	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -78,9 +77,6 @@ public class MainActivity extends Activity {
 
 		public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 			if (mFragment != null) {
-				// Detach the fragment, because another one is being attached
-				// ft.setCustomAnimations(android.R.animator.fade_in,
-				// android.R.animator.fade_out);
 				ft.setCustomAnimations(android.R.animator.fade_in,
 						R.animator.test);
 				ft.detach(mFragment);
@@ -88,7 +84,6 @@ public class MainActivity extends Activity {
 		}
 
 		public void onTabReselected(Tab tab, FragmentTransaction ft) {
-			// User selected the already selected tab. Usually do nothing.
 		}
 	}
 }

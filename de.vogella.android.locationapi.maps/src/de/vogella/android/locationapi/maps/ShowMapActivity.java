@@ -11,6 +11,7 @@ import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
+import com.google.android.maps.MyLocationOverlay;
 import com.google.android.maps.OverlayItem;
 
 public class ShowMapActivity extends MapActivity {
@@ -19,6 +20,7 @@ public class ShowMapActivity extends MapActivity {
 	private MapView mapView;
 	private LocationManager locationManager;
 	private MyOverlays itemizedoverlay;
+	private MyLocationOverlay myLocationOverlay;
 
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
@@ -33,6 +35,16 @@ public class ShowMapActivity extends MapActivity {
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0,
 				0, new GeoUpdateHandler());
+
+		myLocationOverlay = new MyLocationOverlay(this, mapView);
+		mapView.getOverlays().add(myLocationOverlay);
+
+		myLocationOverlay.runOnFirstFix(new Runnable() {
+			public void run() {
+				mapView.getController().animateTo(
+						myLocationOverlay.getMyLocation());
+			}
+		});
 
 		Drawable drawable = this.getResources().getDrawable(R.drawable.point);
 		itemizedoverlay = new MyOverlays(this, drawable);
@@ -73,6 +85,22 @@ public class ShowMapActivity extends MapActivity {
 		GeoPoint p = mapView.getMapCenter();
 		OverlayItem overlayitem = new OverlayItem(p, "", "");
 		itemizedoverlay.addOverlay(overlayitem);
-		mapView.getOverlays().add(itemizedoverlay);
+		if (itemizedoverlay.size() > 0) {
+			mapView.getOverlays().add(itemizedoverlay);
+		}
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		myLocationOverlay.enableMyLocation();
+		myLocationOverlay.enableCompass();
+	}
+
+	@Override
+	protected void onPause() {
+		super.onResume();
+		myLocationOverlay.disableMyLocation();
+		myLocationOverlay.disableCompass();
 	}
 }
