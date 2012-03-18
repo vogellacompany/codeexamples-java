@@ -44,7 +44,7 @@ public class TwoLayoutsArrayAdapter extends ArrayAdapter<String> {
 				rowView = inflator.inflate(R.layout.row_odd, null);
 			}
 			ViewHolder viewHolder = new ViewHolder();
-			viewHolder.text = (TextView) rowView.findViewById(R.id.TextView01);
+			viewHolder.text = (TextView) rowView.findViewById(R.id.label);
 			viewHolder.image = (ImageView) rowView.findViewById(R.id.icon);
 			rowView.setTag(viewHolder);
 		}

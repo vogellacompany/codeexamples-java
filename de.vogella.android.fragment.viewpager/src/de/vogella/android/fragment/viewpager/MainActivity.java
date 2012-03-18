@@ -38,9 +38,9 @@ public class MainActivity extends FragmentActivity {
 			case 0:
 				return new DetailFragment();
 			case 1:
-				return new ImageFragment();
+				return new ImageFragment(R.drawable.human);
 			case 2:
-				return new ImageFragment1();
+				return new ImageFragment(R.drawable.logo);
 
 			default:
 				return null;

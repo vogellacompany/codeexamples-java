@@ -15,17 +15,17 @@ public class LightSwitchActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		final ImageView lightBulb = (ImageView) findViewById(R.id.light_bulb);
-		final ToggleButton lightSwitch = (ToggleButton) findViewById(R.id.light_switch);
-		lightSwitch.setOnClickListener(new OnClickListener() {
+		final ImageView image = (ImageView) findViewById(R.id.image);
+		final ToggleButton button = (ToggleButton) findViewById(R.id.button);
+		button.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(final View v) {
-				TransitionDrawable drawable = (TransitionDrawable) lightBulb
+				TransitionDrawable drawable = (TransitionDrawable) image
 						.getDrawable();
-				if (lightSwitch.isChecked()) {
-					drawable.startTransition(500);
+				if (button.isChecked()) {
+					drawable.startTransition(1000);
 				} else {
-					drawable.reverseTransition(500);
+					drawable.reverseTransition(1000);
 				}
 			}
 		});

@@ -6,8 +6,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 public class ImageFragment extends Fragment {
+	private final int imageResourceId;
+
+	public ImageFragment(int imageResourceId) {
+		this.imageResourceId = imageResourceId;
+	}
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,7 +30,9 @@ public class ImageFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.image, container, false);
+		View view = inflater.inflate(R.layout.image_layout, container, false);
+		ImageView imageView = (ImageView) view.findViewById(R.id.imageView1);
+		imageView.setImageResource(imageResourceId);
 		return view;
 	}
 }

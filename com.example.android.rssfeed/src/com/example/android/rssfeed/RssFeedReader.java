@@ -1,14 +1,15 @@
 package com.example.android.rssfeed;
 
-import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.xmlpull.v1.XmlPullParser;
 
+import android.app.Activity;
 import android.util.Log;
 import android.util.Xml;
 
@@ -20,7 +21,7 @@ public class RssFeedReader {
 	static final String TITLE = "title";
 	static final String ITEM = "item";
 
-	public static List<RssItem> parse(String rssFeed) {
+	public static List<RssItem> parse(String rssFeed, Activity activity) {
 
 		try {
 			Thread.sleep(10000);
@@ -32,8 +33,15 @@ public class RssFeedReader {
 		XmlPullParser parser = Xml.newPullParser();
 		InputStream stream = null;
 		try {
+			stream = new URL(rssFeed).openStream();
+		} catch (MalformedURLException e1) {
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try {
 			// auto-detect the encoding from the stream
-			stream = new URL(rssFeed).openConnection().getInputStream();
 			parser.setInput(stream, null);
 			int eventType = parser.getEventType();
 			boolean done = false;
@@ -91,11 +99,4 @@ public class RssFeedReader {
 		return list;
 	}
 
-	public class MyFilterInputStream extends FilterInputStream {
-
-		protected MyFilterInputStream(InputStream in) {
-			super(in);
-		}
-
-	}
 }

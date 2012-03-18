@@ -87,7 +87,9 @@ class StackRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
 		// text based on the position.
 		RemoteViews rv = new RemoteViews(mContext.getPackageName(),
 				R.layout.widget_item);
-		rv.setTextViewText(R.id.widget_item, mWidgetItems.get(position).text);
+		rv.setImageViewResource(R.id.widget_item, R.drawable.logo);
+		// rv.setTextViewText(R.id.widget_item,
+		// mWidgetItems.get(position).text);
 
 		// Next, we set a fill-intent which will be used to fill-in the pending
 		// intent template
