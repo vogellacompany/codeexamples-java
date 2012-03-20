@@ -81,7 +81,8 @@ public class MyCalendarActivity extends Activity {
 				"com.google" };
 		// Submit the query and get a Cursor object back.
 		cur = cr.query(uri, EVENT_PROJECTION, selection, selectionArgs, null);
-
+		Toast.makeText(this, String.valueOf(cur.getCount()), Toast.LENGTH_LONG)
+				.show();
 		// Use the cursor to step through the returned records
 		while (cur.moveToNext()) {
 			long calID = 0;

@@ -87,7 +87,11 @@ class StackRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
 		// text based on the position.
 		RemoteViews rv = new RemoteViews(mContext.getPackageName(),
 				R.layout.widget_item);
-		rv.setImageViewResource(R.id.widget_item, R.drawable.logo);
+		if (position % 2 == 0) {
+			rv.setImageViewResource(R.id.widget_item, R.drawable.fire);
+		} else {
+			rv.setImageViewResource(R.id.widget_item, R.drawable.ente);
+		}
 		// rv.setTextViewText(R.id.widget_item,
 		// mWidgetItems.get(position).text);
 

@@ -86,7 +86,7 @@ public class TextureViewActivity extends Activity implements
 	public void onSurfaceTextureUpdated(SurfaceTexture surface) {
 		// Called whenever a new frame is available and displayed in the
 		// TextureView
-		rotation += 10f;
+		rotation += 1.0f;
 		if (rotation > 360) {
 			rotation = 0;
 		}
