@@ -36,20 +36,14 @@ public class TwoLayoutsArrayAdapter extends ArrayAdapter<String> {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		View rowView = convertView;
-		if (rowView == null) {
-			if (getItemViewType(position) == 0) {
-				rowView = inflator.inflate(R.layout.row_even, null);
-			} else {
-				rowView = inflator.inflate(R.layout.row_odd, null);
-			}
-			ViewHolder viewHolder = new ViewHolder();
-			viewHolder.text = (TextView) rowView.findViewById(R.id.label);
-			viewHolder.image = (ImageView) rowView.findViewById(R.id.icon);
-			rowView.setTag(viewHolder);
+		View rowView = null;
+		if (getItemViewType(position) == 0) {
+			rowView = inflator.inflate(R.layout.row_even, null);
+		} else {
+			rowView = inflator.inflate(R.layout.row_odd, null);
 		}
-		ViewHolder holder = (ViewHolder) rowView.getTag();
-		holder.text.setText(values[position]);
+		TextView text = (TextView) rowView.findViewById(R.id.label);
+		text.setText(values[position]);
 		return rowView;
 	}
 }

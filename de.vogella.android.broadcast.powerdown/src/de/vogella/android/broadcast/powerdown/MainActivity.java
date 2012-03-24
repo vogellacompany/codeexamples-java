@@ -14,6 +14,5 @@ public class MainActivity extends Activity {
 		filter.addAction(Intent.ACTION_SCREEN_OFF);
 		PowerDownReceiver receiver = new PowerDownReceiver();
 		registerReceiver(receiver, filter);
-		// de.vogella.android.broadcast.powerdown
 	}
 }

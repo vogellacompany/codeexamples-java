@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <EditTextPreference
+        android:key="user"
+        android:title="Benutzer" />
+    <EditTextPreference
+        android:key="password"
+        android:title="Password"
+        android:inputType="textPassword"
+         />
+
+    <CheckBoxPreference
+        android:key="active"
+        android:title="Logged into the system?" />
+    <ListPreference
+        android:entryValues="@array/values"
+        android:entries="@array/names"
+        
+         />
+
+</PreferenceScreen>

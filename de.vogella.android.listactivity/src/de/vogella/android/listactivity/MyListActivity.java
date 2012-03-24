@@ -10,12 +10,14 @@ public class MyListActivity extends ListActivity {
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		setContentView(R.layout.main);
-		String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-				"Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-				"Linux", "OS/2" };
+		List<Person> values = createModel();
+		// String[] values = new String[] { "Android", "iPhone",
+		// "WindowsMobile",
+		// "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
+		// "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
+		// "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2" };
 		// List<Person> list = createModel();
-		MyPerformanceArrayAdapter adapter = new MyPerformanceArrayAdapter(this,
-				values);
+		MySimplePersonAdapter adapter = new MySimplePersonAdapter(this, values);
 		setListAdapter(adapter);
 	}
 

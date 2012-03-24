@@ -24,6 +24,14 @@
             android:onClick="onClick"
             />
 
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="48dp"
+            android:layout_height="48dp" 
+            android:visibility="gone"
+            />
+
     </LinearLayout>
 
     <de.vogella.android.userinterface.RoundImageView
@@ -31,6 +39,7 @@
         android:layout_width="173dp"
         android:layout_height="198dp" 
         android:layout_gravity="center"
+        android:layout_marginTop="40dp"
         />
 
 </de.vogella.android.userinterface.MyShinyLinearLayout>

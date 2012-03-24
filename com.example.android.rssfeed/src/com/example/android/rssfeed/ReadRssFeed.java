@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ReadRssFeed extends ListActivity {
 
@@ -29,8 +31,7 @@ public class ReadRssFeed extends ListActivity {
 			parseTask.setActivity(this);
 		}
 		ArrayAdapter<RssItem> adapter = new ArrayAdapter<RssItem>(this,
-				android.R.layout.simple_list_item_1, android.R.id.text1,
-				RssApplication.list);
+				R.layout.rowlayout, android.R.id.text1, RssApplication.list);
 		RssApplication application = (RssApplication) getApplication();
 		setListAdapter(adapter);
 	}
@@ -43,6 +44,11 @@ public class ReadRssFeed extends ListActivity {
 					.execute(new String[] { "http://www.vogella.de/article.rss" });
 		}
 
+	}
+
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		Toast.makeText(this, "Clicked", Toast.LENGTH_LONG).show();
 	}
 
 	private static class ParseTask extends
@@ -65,18 +71,13 @@ public class ReadRssFeed extends ListActivity {
 		}
 
 		@Override
-		protected void onPostExecute(List<RssItem> result) {
+		protected void onPostExecute(List<RssItem> list) {
 			Log.w("DEBUG", "onPostExecute called");
-			finishWithText(String.valueOf(result.size()));
-			ArrayAdapter<RssItem> adapter = (ArrayAdapter<RssItem>) activity
-					.getListAdapter();
-			adapter.clear();
-			adapter.addAll(result);
-			RssApplication.list = result;
-
+			finishWithText(list);
 		}
 
-		private void finishWithText(String text) {
+		private void finishWithText(List<RssItem> list) {
+			String text = String.valueOf(list.size());
 			Log.d("DEBUG", "ParseTask done. Updating activity: " + activity
 					+ ", message: " + text);
 			if (activity != null) {
@@ -85,6 +86,11 @@ public class ReadRssFeed extends ListActivity {
 				TextView textView = (TextView) activity
 						.findViewById(R.id.textViewCount);
 				textView.setText(text);
+				ArrayAdapter<RssItem> adapter = (ArrayAdapter<RssItem>) activity
+						.getListAdapter();
+				adapter.clear();
+				adapter.addAll(list);
+				RssApplication.list = list;
 			}
 		}
 	}

@@ -20,7 +20,7 @@ public class MyPhoneReceiver extends BroadcastReceiver {
 			if (state.equals(TelephonyManager.EXTRA_STATE_RINGING)) {
 				String phoneNumber = extras
 						.getString(TelephonyManager.EXTRA_INCOMING_NUMBER);
-				Log.w("DEBUG", phoneNumber);
+				Log.e("DEBUG", phoneNumber);
 			}
 		}
 	}
