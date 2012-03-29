@@ -9,10 +9,18 @@
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo.Light" >
+        android:theme="@style/MyThemeHolo" >
+        <activity android:name="MyListActivity" >
+        </activity>
+        <activity
+            android:name=".TouchAreaActivity"
+            android:label="@string/app_name"
+            android:theme="@style/MyThemeHolo" >
+        </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

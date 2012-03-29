@@ -13,11 +13,12 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 	private Handler handler = new Handler() {
 		public void handleMessage(Message message) {
-			Object path = message.obj;
-			if (message.arg1 == RESULT_OK && path != null) {
-				Toast.makeText(MainActivity.this,
-						"Downloaded" + path.toString(), Toast.LENGTH_LONG)
-						.show();
+			Bundle data = message.getData();
+			if (message.arg1 == RESULT_OK && data != null) {
+
+				String path = data.getString("absolutePath");
+				Toast.makeText(MainActivity.this, "Downloaded" + path,
+						Toast.LENGTH_LONG).show();
 			} else {
 				Toast.makeText(MainActivity.this, "Download failed.",
 						Toast.LENGTH_LONG).show();
@@ -34,12 +35,25 @@ public class MainActivity extends Activity {
 	}
 
 	public void onClick(View view) {
-		Intent intent = new Intent(this, DownloadService.class);
+		Intent intent = null;
+		switch (view.getId()) {
+		case R.id.startService:
+			intent = new Intent(this, WrongDownloadService.class);
+			break;
+		case R.id.startIntentService:
+			intent = new Intent(this, DownloadService.class);
+		default:
+			break;
+		}
 		// Create a new Messenger for the communication back
 		Messenger messenger = new Messenger(handler);
 		intent.putExtra("MESSENGER", messenger);
 		intent.setData(Uri.parse("http://www.vogella.de/index.html"));
 		intent.putExtra("urlpath", "http://www.vogella.de/index.html");
 		startService(intent);
+	}
+
+	public void showToast(View view) {
+		Toast.makeText(this, "Still interactive", Toast.LENGTH_SHORT).show();
 	}
 }

@@ -23,6 +23,10 @@
 
         <service android:name="DownloadService" >
         </service>
+        <service android:name="WrongDownloadService" 
+            android:process=":download"
+            >
+        </service>
     </application>
 
 </manifest>

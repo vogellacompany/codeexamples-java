@@ -28,6 +28,12 @@ public class DownloadService extends IntentService {
 	// Will be called asynchronously be Android
 	@Override
 	protected void onHandleIntent(Intent intent) {
+
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e2) {
+			e2.printStackTrace();
+		}
 		Uri data = intent.getData();
 		String urlPath = intent.getStringExtra("urlpath");
 		String fileName = data.getLastPathSegment();
@@ -76,7 +82,9 @@ public class DownloadService extends IntentService {
 			Messenger messenger = (Messenger) extras.get("MESSENGER");
 			Message msg = Message.obtain();
 			msg.arg1 = result;
-			msg.obj = output.getAbsolutePath();
+			Bundle bundle = new Bundle();
+			bundle.putString("absolutePath", output.getAbsolutePath());
+			msg.setData(bundle);
 			try {
 				messenger.send(msg);
 			} catch (android.os.RemoteException e1) {
