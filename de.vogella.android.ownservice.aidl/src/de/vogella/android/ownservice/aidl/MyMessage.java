@@ -16,7 +16,7 @@ public class MyMessage implements Parcelable {
 			String s = source.readString();
 			int v = source.readInt();
 			MyMessage myMessage = new MyMessage(s, v);
-			return null;
+			return myMessage;
 		}
 
 		@Override
