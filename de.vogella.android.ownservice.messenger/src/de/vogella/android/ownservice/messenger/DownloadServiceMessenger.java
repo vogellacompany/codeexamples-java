@@ -74,7 +74,7 @@ public class DownloadServiceMessenger extends Service {
 
 			URL url = new URL(urlPath);
 			stream = url.openConnection().getInputStream();
-			InputStreamReader reader = new InputStreamReader(stream);
+			InputStreamReader reader = new InputStreamReader(stream, "UTF-8");
 			fos = new FileOutputStream(output.getPath());
 			int next = -1;
 			while ((next = reader.read()) != -1) {
