@@ -3,13 +3,13 @@
     <bookList>
         <book>
             <author>Neil Strauss</author>
-            <bookName>The Game</bookName>
+            <title>The Game</title>
             <publisher>Harpercollins</publisher>
             <isbn>978-0060554736</isbn>
         </book>
         <book>
             <author>Charlotte Roche</author>
-            <bookName>Feuchtgebiete</bookName>
+            <title>Feuchtgebiete</title>
             <publisher>Dumont Buchverlag</publisher>
             <isbn>978-3832180577</isbn>
         </book>

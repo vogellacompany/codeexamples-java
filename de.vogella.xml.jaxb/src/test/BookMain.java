@@ -1,9 +1,8 @@
 package test;
 
+import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 import java.util.ArrayList;
 
 import javax.xml.bind.JAXBContext;
@@ -47,18 +46,12 @@ public class BookMain {
 		JAXBContext context = JAXBContext.newInstance(Bookstore.class);
 		Marshaller m = context.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+
+		// Write to System.out
 		m.marshal(bookstore, System.out);
 
-		Writer w = null;
-		try {
-			w = new FileWriter(BOOKSTORE_XML);
-			m.marshal(bookstore, w);
-		} finally {
-			try {
-				w.close();
-			} catch (Exception e) {
-			}
-		}
+		// Write to File
+		m.marshal(bookstore, new File(BOOKSTORE_XML));
 
 		// get variables from our xml file, created before
 		System.out.println();

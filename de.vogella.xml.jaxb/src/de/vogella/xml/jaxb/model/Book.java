@@ -17,7 +17,7 @@ public class Book {
 
 	// If you like the variable name, e.g. "name", you can easily change this
 	// name for your XML-Output:
-	@XmlElement(name = "bookName")
+	@XmlElement(name = "title")
 	public String getName() {
 		return name;
 	}
