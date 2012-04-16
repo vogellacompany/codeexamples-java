@@ -27,4 +27,13 @@
             android:text="Change" />
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/myView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
 </LinearLayout>
