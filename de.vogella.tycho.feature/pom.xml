@@ -9,8 +9,8 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>de.vogella.tycho.plugin</artifactId>
-	<packaging>eclipse-plugin</packaging>
+	<artifactId>de.vogella.tycho.feature</artifactId>
+	<packaging>eclipse-feature</packaging>
 
 	<name>Tycho Test Build</name>
 </project>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/de.vogella.tycho.feature_1.0.0.qualifier.jar" id="de.vogella.tycho.feature" version="1.0.0.qualifier">
+      <category name="tycho_test"/>
+   </feature>
+   <category-def name="tycho_test" label="Tycho Test"/>
+</site>

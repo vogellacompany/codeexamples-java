@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.0.0.201204172023
+Bundle-Name: Rcp
+Bundle-Activator: de.vogella.tycho.rcp.Activator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: de.vogella.tycho.rcp; singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
