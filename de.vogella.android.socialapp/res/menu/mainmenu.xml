@@ -2,8 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/preferences"
+        android:id="@+id/menuitem1"
+        android:showAsAction="ifRoom"
         android:title="Prefs">
+    </item>
+    <item
+        android:id="@+id/menuitem2"
+        android:showAsAction="ifRoom"
+        android:title="Test">
     </item>
 
 </menu>

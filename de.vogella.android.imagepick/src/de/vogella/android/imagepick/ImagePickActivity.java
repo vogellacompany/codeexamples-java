@@ -35,21 +35,26 @@ public class ImagePickActivity extends Activity {
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		InputStream stream = null;
 		if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK)
 			try {
 				// We need to recyle unused bitmaps
 				if (bitmap != null) {
 					bitmap.recycle();
 				}
-				InputStream stream = getContentResolver().openInputStream(
-						data.getData());
+				stream = getContentResolver().openInputStream(data.getData());
 				bitmap = BitmapFactory.decodeStream(stream);
-				stream.close();
+
 				imageView.setImageBitmap(bitmap);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
+			} finally {
+				if (stream != null)
+					try {
+						stream.close();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 			}
 		super.onActivityResult(requestCode, resultCode, data);
 	}

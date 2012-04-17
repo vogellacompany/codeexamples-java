@@ -1,8 +1,10 @@
 package de.vogella.android.touch;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
@@ -10,12 +12,13 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-public class TouchEventView extends View {
+public class TouchEventViewWithImage extends View {
 	private Paint paint = new Paint();
 	private Path path = new Path();
 	private Point point = new Point();
+	private Bitmap bitmap;
 
-	public TouchEventView(Context context, AttributeSet attrs) {
+	public TouchEventViewWithImage(Context context, AttributeSet attrs) {
 		super(context, attrs);
 
 		paint.setAntiAlias(true);
@@ -27,6 +30,9 @@ public class TouchEventView extends View {
 
 	@Override
 	protected void onDraw(Canvas canvas) {
+		if (bitmap != null) {
+			canvas.drawBitmap(bitmap, new Matrix(), null);
+		}
 		canvas.drawPath(path, paint);
 		canvas.drawCircle((float) point.x, (float) point.y, 100, paint);
 	}
@@ -49,4 +55,10 @@ public class TouchEventView extends View {
 		invalidate();
 		return true;
 	}
+
+	public void setBitmap(Bitmap bitmap) {
+		this.bitmap = bitmap;
+		invalidate();
+	}
+
 }

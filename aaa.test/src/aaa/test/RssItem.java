@@ -1,4 +1,4 @@
-package com.example.android.rssfeed;
+package aaa.test;
 
 public class RssItem {
 	private String pubDate;
@@ -42,5 +42,4 @@ public class RssItem {
 	public String toString() {
 		return "RssItem [title=" + title + "]";
 	}
-
 }
