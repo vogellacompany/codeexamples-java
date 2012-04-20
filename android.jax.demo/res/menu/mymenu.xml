@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menuitem1_pickpicture"
+        android:icon="@drawable/ic_menu_manage"
+        android:showAsAction="ifRoom"
+        android:title="Pick">
+    </item>
+    <item
+        android:id="@+id/menuitem_redcolor"
+        android:title="Red">
+    </item>
+    <item
+        android:id="@+id/menuitem_savescreenshot"
+        android:title="Share Screenshot">
+    </item>
+
+</menu>

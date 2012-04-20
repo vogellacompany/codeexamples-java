@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.0.201204172136
+Bundle-Version: 1.0.0.201204180826
 Bundle-Name: Plugin
 Bundle-Activator: de.vogella.tycho.plugin.Activator
 Bundle-ManifestVersion: 2

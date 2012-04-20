@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?artifactRepository version='1.1.0'?>
 <artifacts size='1'>
-  <artifact classifier='org.eclipse.update.feature' id='de.vogella.tycho.feature' version='1.0.0.201204172136'>
+  <artifact classifier='org.eclipse.update.feature' id='de.vogella.tycho.feature' version='1.0.0.201204180826'>
     <properties size='6'>
-      <property name='artifact.size' value='1888'/>
-      <property name='download.size' value='1888'/>
+      <property name='artifact.size' value='1887'/>
+      <property name='download.size' value='1887'/>
       <property name='maven-groupId' value='com.vogella'/>
       <property name='maven-artifactId' value='de.vogella.tycho.feature'/>
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>
