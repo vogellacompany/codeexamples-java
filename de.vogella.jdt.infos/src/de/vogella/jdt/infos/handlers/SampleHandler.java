@@ -69,11 +69,7 @@ public class SampleHandler extends AbstractHandler {
 	private void printICompilationUnitInfo(IPackageFragment mypackage)
 			throws JavaModelException {
 		for (ICompilationUnit unit : mypackage.getCompilationUnits()) {
-			System.out.println("Source file " + unit.getElementName());
-			Document doc = new Document(unit.getSource());
-			System.out
-					.println("Has number of lines: " + doc.getNumberOfLines());
-			printIMethods(unit);
+			printCompilationUnitDetails(unit);
 
 		}
 	}
@@ -81,14 +77,26 @@ public class SampleHandler extends AbstractHandler {
 	private void printIMethods(ICompilationUnit unit) throws JavaModelException {
 		IType[] allTypes = unit.getAllTypes();
 		for (IType type : allTypes) {
-			IMethod[] methods = type.getMethods();
-			for (IMethod method : methods) {
+			printIMethodDetails(type);
+		}
+	}
 
-				System.out.println("Method name " + method.getElementName());
-				System.out.println("Signature " + method.getSignature());
-				System.out.println("Return Type " + method.getReturnType());
+	private void printCompilationUnitDetails(ICompilationUnit unit)
+			throws JavaModelException {
+		System.out.println("Source file " + unit.getElementName());
+		Document doc = new Document(unit.getSource());
+		System.out.println("Has number of lines: " + doc.getNumberOfLines());
+		printIMethods(unit);
+	}
 
-			}
+	private void printIMethodDetails(IType type) throws JavaModelException {
+		IMethod[] methods = type.getMethods();
+		for (IMethod method : methods) {
+
+			System.out.println("Method name " + method.getElementName());
+			System.out.println("Signature " + method.getSignature());
+			System.out.println("Return Type " + method.getReturnType());
+
 		}
 	}
 }
