@@ -8,36 +8,30 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 import android.app.Activity;
-import android.app.Service;
+import android.app.IntentService;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
-import android.os.StrictMode;
 import android.util.Log;
 
-/* This is an INCORRECT implementation for the purpose of demonstration 
- * Please do not use
- */
-public class WrongDownloadService extends Service {
+public class DownloadService extends IntentService {
 
+	// TODO 0 - Define your Download Service as Android component in
+	// AndroidManifest.xml
 	private int result = Activity.RESULT_CANCELED;
 
-	public WrongDownloadService() {
-		super();
+	public DownloadService() {
+		super("DownloadService");
 	}
 
-	// Runs in the main user interface thread
+	// Will be called asynchronously be Android
 	@Override
-	public int onStartCommand(Intent intent, int flags, int startId) {
-		// Don't do this
-		// This will run in the main thread
-		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
-				.permitAll().build();
-		StrictMode.setThreadPolicy(policy);
+	protected void onHandleIntent(Intent intent) {
+
+		// Simulate slow network access
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException e2) {
@@ -89,7 +83,6 @@ public class WrongDownloadService extends Service {
 		Bundle extras = intent.getExtras();
 		if (extras != null) {
 			Messenger messenger = (Messenger) extras.get("MESSENGER");
-
 			Message msg = Message.obtain();
 			msg.arg1 = result;
 			Bundle bundle = new Bundle();
@@ -102,12 +95,5 @@ public class WrongDownloadService extends Service {
 			}
 
 		}
-		return Service.START_NOT_STICKY;
-
-	}
-
-	@Override
-	public IBinder onBind(Intent intent) {
-		return null;
 	}
 }

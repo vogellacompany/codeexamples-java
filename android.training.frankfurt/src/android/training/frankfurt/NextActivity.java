@@ -1,13 +1,12 @@
 package android.training.frankfurt;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 
-public class NextActivity extends Activity {
+public class NextActivity extends PreferenceActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.second);
-
+		addPreferencesFromResource(R.xml.mypref);
 	}
 }

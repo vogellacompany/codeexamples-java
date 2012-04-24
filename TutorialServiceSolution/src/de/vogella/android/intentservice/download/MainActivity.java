@@ -36,7 +36,6 @@ public class MainActivity extends Activity {
 
 	public void onClick(View view) {
 		Intent intent = null;
-		// TODO1
 		intent = new Intent(this, DownloadService.class);
 		// Create a new Messenger for the communication back
 		Messenger messenger = new Messenger(handler);

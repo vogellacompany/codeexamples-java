@@ -6,13 +6,15 @@ import android.app.ListActivity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ReadRssFeed extends ListActivity {
+public class RssFeedActivity extends ListActivity {
 
 	private ParseTask parseTask;
 
@@ -36,16 +38,6 @@ public class ReadRssFeed extends ListActivity {
 		setListAdapter(adapter);
 	}
 
-	public void parseRss(View view) {
-		Log.e("DEBUG", "parseRss");
-		if (parseTask == null) {
-			parseTask = new ParseTask(this);
-			parseTask
-					.execute(new String[] { "http://www.vogella.de/article.rss" });
-		}
-
-	}
-
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		Toast.makeText(this, "Clicked", Toast.LENGTH_LONG).show();
@@ -53,13 +45,13 @@ public class ReadRssFeed extends ListActivity {
 
 	private static class ParseTask extends
 			AsyncTask<String, Void, List<RssItem>> {
-		private ReadRssFeed activity;
+		private RssFeedActivity activity;
 
-		private ParseTask(ReadRssFeed activity) {
+		private ParseTask(RssFeedActivity activity) {
 			setActivity(activity);
 		}
 
-		public void setActivity(ReadRssFeed activity) {
+		public void setActivity(RssFeedActivity activity) {
 			this.activity = activity;
 			Log.d("DEBUG", "ParseTask's activity: " + activity);
 		}
@@ -93,6 +85,29 @@ public class ReadRssFeed extends ListActivity {
 				RssApplication.list = list;
 			}
 		}
+	}
+
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.mymenu, menu);
+		return true;
+	};
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.menuitem1_refresh:
+			Log.e("DEBUG", "parseRss");
+			if (parseTask == null) {
+				parseTask = new ParseTask(this);
+				parseTask
+						.execute(new String[] { "http://www.vogella.de/article.rss" });
+			}
+			break;
+
+		default:
+			break;
+		}
+		return true;
 	}
 
 	@Override

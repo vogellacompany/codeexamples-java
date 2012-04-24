@@ -15,10 +15,7 @@ public class MainActivity extends Activity {
 		public void handleMessage(Message message) {
 			Bundle data = message.getData();
 			if (message.arg1 == RESULT_OK && data != null) {
-
-				String path = data.getString("absolutePath");
-				Toast.makeText(MainActivity.this, "Downloaded" + path,
-						Toast.LENGTH_LONG).show();
+				// TODO 3 - get the path from the service and show as Toast
 			} else {
 				Toast.makeText(MainActivity.this, "Download failed.",
 						Toast.LENGTH_LONG).show();
@@ -36,14 +33,23 @@ public class MainActivity extends Activity {
 
 	public void onClick(View view) {
 		Intent intent = null;
-		// TODO1
-		intent = new Intent(this, DownloadService.class);
+		switch (view.getId()) {
+		case R.id.startIntentService:
+			intent = new Intent(this, DownloadService.class);
+		default:
+			break;
+		}
 		// Create a new Messenger for the communication back
 		Messenger messenger = new Messenger(handler);
-		intent.putExtra("MESSENGER", messenger);
+
+		// TODO 2 - Put the instance of Messenger into the Intent as Extra
+
+		// Setting the data for the service to work on
 		intent.setData(Uri.parse("http://www.vogella.de/index.html"));
 		intent.putExtra("urlpath", "http://www.vogella.de/index.html");
-		startService(intent);
+
+		// TODO 2 - start the service
+
 	}
 
 	public void showToast(View view) {
