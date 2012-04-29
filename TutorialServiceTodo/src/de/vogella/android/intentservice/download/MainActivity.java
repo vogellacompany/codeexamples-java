@@ -15,7 +15,7 @@ public class MainActivity extends Activity {
 		public void handleMessage(Message message) {
 			Bundle data = message.getData();
 			if (message.arg1 == RESULT_OK && data != null) {
-				// TODO 3 - get the path from the service and show as Toast
+				// TODO 5 - get the path from the service and show as Toast
 			} else {
 				Toast.makeText(MainActivity.this, "Download failed.",
 						Toast.LENGTH_LONG).show();
@@ -42,13 +42,14 @@ public class MainActivity extends Activity {
 		// Create a new Messenger for the communication back
 		Messenger messenger = new Messenger(handler);
 
-		// TODO 2 - Put the instance of Messenger into the Intent as Extra
+		// TODO 2 - Put the instance of Messenger into the Intent as Extra, use
+		// the key "MESSENGER"
 
 		// Setting the data for the service to work on
 		intent.setData(Uri.parse("http://www.vogella.de/index.html"));
 		intent.putExtra("urlpath", "http://www.vogella.de/index.html");
 
-		// TODO 2 - start the service
+		// TODO 3 - start the service
 
 	}
 

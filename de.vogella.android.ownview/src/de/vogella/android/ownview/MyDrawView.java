@@ -78,7 +78,6 @@ public class MyDrawView extends View {
 
 	@Override
 	public void onRestoreInstanceState(Parcelable state) {
-		Log.e("Lars", "HELLLP");
 		if (state instanceof Bundle) {
 			System.out.println("HELLLP");
 			Bundle bundle = (Bundle) state;

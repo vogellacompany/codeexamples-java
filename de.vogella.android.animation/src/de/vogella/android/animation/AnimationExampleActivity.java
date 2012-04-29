@@ -26,8 +26,8 @@ public class AnimationExampleActivity extends Activity {
 		float dest = 0;
 		ImageView aniView = (ImageView) findViewById(R.id.imageView1);
 		switch (view.getId()) {
-
 		case R.id.Button01:
+
 			dest = 360;
 			if (aniView.getRotation() == 360) {
 				System.out.println(aniView.getAlpha());

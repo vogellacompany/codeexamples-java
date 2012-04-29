@@ -15,7 +15,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Message;
 import android.os.Messenger;
-import android.util.Log;
 
 public class DownloadService extends IntentService {
 
@@ -40,6 +39,8 @@ public class DownloadService extends IntentService {
 		Uri data = intent.getData();
 		String urlPath = intent.getStringExtra("urlpath");
 		String fileName = data.getLastPathSegment();
+
+		// Create file and download the requested URL
 		File output = new File(Environment.getExternalStorageDirectory(),
 				fileName);
 		if (output.exists()) {
@@ -82,17 +83,18 @@ public class DownloadService extends IntentService {
 
 		Bundle extras = intent.getExtras();
 		if (extras != null) {
+
+			// We retrieve the messenger from the intent extras
 			Messenger messenger = (Messenger) extras.get("MESSENGER");
 			Message msg = Message.obtain();
 			msg.arg1 = result;
-			Bundle bundle = new Bundle();
-			bundle.putString("absolutePath", output.getAbsolutePath());
-			msg.setData(bundle);
-			try {
-				messenger.send(msg);
-			} catch (android.os.RemoteException e1) {
-				Log.w(getClass().getName(), "Exception sending message", e1);
-			}
+
+			// TODO 5 Create new Bundle and put output.getAbsolutePath() into it
+
+			// TODO 6 - Use setData of the msg to add the bundle
+
+			// TODO 7 - Send the msg to the messenger and catch the remove
+			// expection
 
 		}
 	}

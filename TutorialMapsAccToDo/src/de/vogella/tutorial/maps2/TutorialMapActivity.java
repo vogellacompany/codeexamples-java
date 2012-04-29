@@ -175,6 +175,7 @@ public class TutorialMapActivity extends MapActivity implements
 		if (provider != null) {
 			locationManager.requestLocationUpdates(provider, 500, 5, this);
 		}
+
 		// TODO myLocationOverlay: Compass und "MyLocation" "enablen"
 	}
 

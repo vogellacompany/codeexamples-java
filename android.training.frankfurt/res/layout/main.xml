@@ -6,7 +6,7 @@
     android:background="@drawable/fire"
      >
 
-    <Button
+    <android.trainig.frankfurt.MyDrawingView
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
