@@ -19,6 +19,9 @@ public class NavigationActivity extends Activity {
 		case R.id.startListActivity:
 			intent = new Intent(this, MyListActivity.class);
 			break;
+		case R.id.startTouchArea:
+			intent = new Intent(this, TouchAreaActivity.class);
+			break;
 		case R.id.startStyledListActivity:
 			intent = new Intent(this, MyStyledListActivity.class);
 			break;
