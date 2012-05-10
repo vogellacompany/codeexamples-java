@@ -1,50 +1,61 @@
 package de.vogella.extensionpoint.definition;
 
-import org.eclipse.core.runtime.Plugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.ISafeRunnable;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.SafeRunner;
+import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-/**
- * The activator class controls the plug-in life cycle
- */
-public class Activator extends Plugin {
+public class Activator implements BundleActivator {
+	private static final String IGREETER_ID = "de.vogella.extensionpoint.definition.greeter";
 
-	// The plug-in ID
-	public static final String PLUGIN_ID = "de.vogella.extensionpoint.definition";
+	private static BundleContext context;
 
-	// The shared instance
-	private static Activator plugin;
-	
-	/**
-	 * The constructor
-	 */
-	public Activator() {
+	static BundleContext getContext() {
+		return context;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.core.runtime.Plugins#start(org.osgi.framework.BundleContext)
-	 */
-	public void start(BundleContext context) throws Exception {
-		super.start(context);
-		plugin = this;
+	public void start(BundleContext bundleContext) throws Exception {
+		Activator.context = bundleContext;
+		evaluateGreeterExtension();
+
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.core.runtime.Plugin#stop(org.osgi.framework.BundleContext)
-	 */
-	public void stop(BundleContext context) throws Exception {
-		plugin = null;
-		super.stop(context);
+	private void evaluateGreeterExtension() {
+		IConfigurationElement[] config = Platform.getExtensionRegistry()
+				.getConfigurationElementsFor(IGREETER_ID);
+		try {
+			for (IConfigurationElement e : config) {
+				System.out.println("Evaluating extension");
+				final Object o = e.createExecutableExtension("class");
+				if (o instanceof IGreeter) {
+					executeExtension(o);
+				}
+			}
+		} catch (CoreException ex) {
+			System.out.println(ex.getMessage());
+		}
 	}
 
-	/**
-	 * Returns the shared instance
-	 *
-	 * @return the shared instance
-	 */
-	public static Activator getDefault() {
-		return plugin;
+	private void executeExtension(final Object o) {
+		ISafeRunnable runnable = new ISafeRunnable() {
+			@Override
+			public void handleException(Throwable exception) {
+				System.out.println("Exception in client");
+			}
+
+			@Override
+			public void run() throws Exception {
+				((IGreeter) o).greet();
+			}
+		};
+		SafeRunner.run(runnable);
+	}
+
+	public void stop(BundleContext bundleContext) throws Exception {
+		Activator.context = null;
 	}
 
 }

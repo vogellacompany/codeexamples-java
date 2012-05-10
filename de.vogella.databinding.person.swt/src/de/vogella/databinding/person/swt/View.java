@@ -5,6 +5,8 @@ import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.UpdateValueStrategy;
 import org.eclipse.core.databinding.beans.BeanProperties;
 import org.eclipse.core.databinding.beans.BeansObservables;
+import org.eclipse.core.databinding.observable.IChangeListener;
+import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.validation.IValidator;
 import org.eclipse.core.databinding.validation.ValidationStatus;
@@ -184,7 +186,17 @@ public class View extends ViewPart {
 
 		modelValue = BeanProperties.value(Person.class, "address.country")
 				.observe(person);
+
 		ctx.bindValue(widgetValue, modelValue);
 
+	}
+
+	public static void addDirtyListenersToContext(DataBindingContext context,
+			IChangeListener listener) {
+		IObservableList bindings = context.getBindings();
+		for (Object o : bindings) {
+			Binding b = (Binding) o;
+			b.getTarget().addChangeListener(listener);
+		}
 	}
 }

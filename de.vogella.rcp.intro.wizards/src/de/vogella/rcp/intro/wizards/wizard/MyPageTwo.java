@@ -24,11 +24,11 @@ public class MyPageTwo extends WizardPage {
 
 	@Override
 	public void createControl(Composite parent) {
-		container = new Composite(parent, SWT.NULL);
+		container = new Composite(parent, SWT.NONE);
 		GridLayout layout = new GridLayout();
 		container.setLayout(layout);
 		layout.numColumns = 2;
-		Label label1 = new Label(container, SWT.NULL);
+		Label label1 = new Label(container, SWT.NONE);
 		label1.setText("Say hello to Fred");
 
 		text1 = new Text(container, SWT.BORDER | SWT.SINGLE);

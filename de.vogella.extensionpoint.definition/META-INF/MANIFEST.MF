@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Definition
-Bundle-SymbolicName: de.vogella.extensionpoint.definition; singleton:=true
+Bundle-SymbolicName: de.vogella.extensionpoint.definition;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.vogella.extensionpoint.definition.Activator
 Require-Bundle: org.eclipse.core.runtime
