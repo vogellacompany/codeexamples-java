@@ -15,10 +15,8 @@ public class MyListActivity extends ListActivity {
 				"Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
 				"Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
 				"OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2" };
-		// List<Person> list = createModel();
-		// MySimplePersonAdapter adapter = new MySimplePersonAdapter(this,
-		// values);
-		MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this, values);
+		TwoLayoutsArrayAdapter adapter = new TwoLayoutsArrayAdapter(this,
+				values);
 		setListAdapter(adapter);
 	}
 
