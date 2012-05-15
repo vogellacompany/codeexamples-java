@@ -55,7 +55,6 @@ public class CommentsDataSource {
 
 		Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
 				allColumns, null, null, null, null, null);
-
 		cursor.moveToFirst();
 		while (!cursor.isAfterLast()) {
 			Comment comment = cursorToComment(cursor);

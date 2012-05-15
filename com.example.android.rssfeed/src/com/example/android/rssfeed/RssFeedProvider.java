@@ -13,7 +13,7 @@ import android.app.Activity;
 import android.util.Log;
 import android.util.Xml;
 
-public class RssFeedReader {
+public class RssFeedProvider {
 	static final String PUB_DATE = "pubDate";
 	static final String DESCRIPTION = "description";
 	static final String CHANNEL = "channel";

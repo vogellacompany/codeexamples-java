@@ -59,7 +59,7 @@ public class RssFeedActivity extends ListActivity {
 		@Override
 		protected List<RssItem> doInBackground(String... params) {
 			Log.d("DEBUG", "doInBackground");
-			return RssFeedReader.parse(params[0], activity);
+			return RssFeedProvider.parse(params[0], activity);
 		}
 
 		@Override
