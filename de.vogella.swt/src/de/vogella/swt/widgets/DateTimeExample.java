@@ -18,8 +18,6 @@ public class DateTimeExample {
 		shell.setLayout(new RowLayout());
 
 		// initialize a parent composite with a grid layout manager
-		// since the demo application uses 4x pictures the grid has exactly
-		// 4x columnsxample
 		Composite parent = new Composite(shell, SWT.NONE);
 		GridLayout gridLayout = new GridLayout();
 		gridLayout.numColumns = 1;

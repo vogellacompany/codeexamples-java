@@ -34,7 +34,6 @@ public class CTabFolderExample {
 		shell.setSize(200, 200);
 		shell.open();
 
-		shell.open();
 		while (!display.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();

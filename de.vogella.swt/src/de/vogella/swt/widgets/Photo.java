@@ -22,9 +22,6 @@ public class Photo {
 		shell.setLayout(new RowLayout());
 		shell.setText("Photo Application");
 
-		// initialize a parent composite with a grid layout manager
-		// since the demo application uses 4x pictures the grid has exactly
-		// 4x columns
 		Composite parent = new Composite(shell, SWT.NONE);
 		GridLayout gridLayout = new GridLayout();
 		gridLayout.numColumns = 7;
@@ -61,5 +58,12 @@ public class Photo {
 		}
 		// tear down the SWT window
 		display.dispose();
+		// if you don't use system images you would have to release them
+		// not necessary in this example
+		// for (Image image : imageList) {
+		// if (image != null) {
+		// image.dispose();
+		// }
+		// }
 	}
 }
