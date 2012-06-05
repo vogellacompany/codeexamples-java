@@ -40,7 +40,7 @@ public class Tester {
 		System.out.println(service.path("rest").path("todos/1")
 				.accept(MediaType.APPLICATION_XML).get(String.class));
 		// get Todo with id 1
-		service.path("rest").path("todos/3").delete();
+		service.path("rest").path("todos/1").delete();
 		// Get the all todos, id 1 should be deleted
 		System.out.println(service.path("rest").path("todos")
 				.accept(MediaType.APPLICATION_XML).get(String.class));
