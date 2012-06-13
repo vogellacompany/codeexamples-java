@@ -28,7 +28,7 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            defaultHandler="de.vogella.plugin.htmlconverter.handler.Convert"
+            defaultHandler="de.vogella.plugin.htmlconverter.handler.ConvertHandler"
             id="de.vogella.plugin.htmlconverter.convert"
             name="Convert">
       </command>

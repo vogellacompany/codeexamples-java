@@ -4,8 +4,8 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            defaultHandler="de.vogella.plugin.markers.handler.AddMarker"
-            id="de.vogella.plugin.markers.AddMarker"
+            defaultHandler="de.vogella.plugin.markers.handler.AddMarkerHandler"
+            id="de.vogella.plugin.markers.AddMarkerHandler"
             name="Add Marker">
       </command>
    </extension>
