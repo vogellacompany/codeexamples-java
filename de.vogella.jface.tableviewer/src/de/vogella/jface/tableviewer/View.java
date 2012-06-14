@@ -1,8 +1,12 @@
 package de.vogella.jface.tableviewer;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.CellLabelProvider;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
@@ -32,6 +36,8 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.part.ViewPart;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 
 import de.vogella.jface.tableviewer.edit.FirstNameEditingSupport;
 import de.vogella.jface.tableviewer.edit.GenderEditingSupport;
@@ -52,11 +58,10 @@ public class View extends ViewPart {
 
 	private TableViewer viewer;
 	private PersonFilter filter;
-	// We use icons
-	private static final Image CHECKED = Activator.getImageDescriptor(
-			"icons/checked.gif").createImage();
-	private static final Image UNCHECKED = Activator.getImageDescriptor(
-			"icons/unchecked.gif").createImage();
+	// Assuming your have these two icons
+	// in your icons folder
+	private static final Image CHECKED = getImage("checked.gif");
+	private static final Image UNCHECKED = getImage("unchecked.gif");
 	private Text searchText;
 	private static Color colorYellow = Display.getCurrent().getSystemColor(
 			SWT.COLOR_YELLOW);
@@ -284,4 +289,11 @@ public class View extends ViewPart {
 		viewer.getControl().setFocus();
 	}
 
+	private static Image getImage(String file) {
+		Bundle bundle = FrameworkUtil.getBundle(View.class);
+		URL url = FileLocator.find(bundle, new Path("icons/" + file), null);
+		ImageDescriptor image = ImageDescriptor.createFromURL(url);
+		return image.createImage();
+
+	}
 }
