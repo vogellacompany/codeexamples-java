@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"  >
+
+    <View
+        android:id="@+id/myid1"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="onClick"
+        
+        />
+    
+    <de.vogella.customview.DrawView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/holo_green_dark"
+        />
+
+</LinearLayout>

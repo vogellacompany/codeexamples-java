@@ -23,11 +23,11 @@ public class RssFeedProvider {
 
 	public static List<RssItem> parse(String rssFeed, Activity activity) {
 
-		// try {
-		// Thread.sleep(10000);
-		// } catch (InterruptedException e1) {
-		// e1.printStackTrace();
-		// }
+		try {
+			Thread.sleep(6000);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
 
 		List<RssItem> list = new ArrayList<RssItem>();
 		XmlPullParser parser = Xml.newPullParser();

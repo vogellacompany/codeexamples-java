@@ -11,8 +11,6 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
 
-//NOT USED IN THE CODING, JUST FOR DEMO PURPOSE
-
 public class MyWidgetProviderSimple extends AppWidgetProvider {
 
 	private static final String ACTION_CLICK = "ACTION_CLICK";

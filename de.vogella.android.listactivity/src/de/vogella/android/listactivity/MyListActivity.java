@@ -5,6 +5,8 @@ import java.util.List;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
 
 public class MyListActivity extends ListActivity {
 	public void onCreate(Bundle icicle) {
@@ -31,5 +33,11 @@ public class MyListActivity extends ListActivity {
 		person = new Person("Bim", "Parker");
 		list.add(person);
 		return list;
+	}
+
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		// TODO Auto-generated method stub
+		super.onListItemClick(l, v, position, id);
 	}
 }

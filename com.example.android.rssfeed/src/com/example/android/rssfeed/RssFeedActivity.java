@@ -59,12 +59,14 @@ public class RssFeedActivity extends ListActivity {
 		@Override
 		protected List<RssItem> doInBackground(String... params) {
 			Log.d("DEBUG", "doInBackground");
+			// All long running things....
 			return RssFeedProvider.parse(params[0], activity);
 		}
 
 		@Override
 		protected void onPostExecute(List<RssItem> list) {
 			Log.w("DEBUG", "onPostExecute called");
+			// Juhu UI thread
 			finishWithText(list);
 		}
 
@@ -99,8 +101,7 @@ public class RssFeedActivity extends ListActivity {
 			Log.e("DEBUG", "parseRss");
 			if (parseTask == null) {
 				parseTask = new ParseTask(this);
-				parseTask
-						.execute(new String[] { "http://www.vogella.de/article.rss" });
+				parseTask.execute("http://www.vogella.de/article.rss");
 			}
 			break;
 

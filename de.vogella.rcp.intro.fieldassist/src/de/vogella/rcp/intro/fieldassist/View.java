@@ -41,7 +41,7 @@ public class View extends ViewPart {
 				.getFieldDecoration(FieldDecorationRegistry.DEC_INFORMATION)
 				.getImage();
 		// Set description and image
-		deco.setDescriptionText("Use CNTL + SPACE to see possible values");
+		deco.setDescriptionText("Use CNTR + SPACE to see possible values");
 		deco.setImage(image);
 		// Hide deco if not in focus
 		deco.setShowOnlyOnFocus(false);

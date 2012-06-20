@@ -20,7 +20,7 @@ public class MySimpleArrayAdapter extends ArrayAdapter<String> {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		View rowView = convertView;
+		View rowView = null;
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		rowView = inflater.inflate(R.layout.rowlayout, parent, false);
