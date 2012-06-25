@@ -126,9 +126,10 @@ public class PersonViewValidation extends ViewPart {
 		update.setAfterConvertValidator(new StringLongerThenTwo(MESSAGE,
 				firstNameDecorator));
 		// Bind fistName
-		bindingContext.bindValue(SWTObservables.observeText(firstName,
-				SWT.Modify), PojoObservables.observeValue(person, "firstName"),
-				update, null);
+		bindingContext
+				.bindValue(SWTObservables.observeText(firstName, SWT.Modify),
+						PojoObservables.observeValue(person, "firstName"),
+						update, null);
 
 		// Bind lastName
 		bindingContext.bindValue(SWTObservables.observeText(lastName,
@@ -143,7 +144,6 @@ public class PersonViewValidation extends ViewPart {
 		bindingContext.bindValue(uiElement, new AggregateValidationStatus(
 				bindingContext.getBindings(),
 				AggregateValidationStatus.MAX_SEVERITY), null, null);
-
 		// Lets change the color of the field lastName
 		uiElement.addChangeListener(new IChangeListener() {
 			@Override

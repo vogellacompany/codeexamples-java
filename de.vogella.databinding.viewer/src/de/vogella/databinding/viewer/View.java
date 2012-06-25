@@ -3,9 +3,10 @@ package de.vogella.databinding.viewer;
 import java.util.List;
 
 import org.eclipse.core.databinding.beans.BeanProperties;
-import org.eclipse.core.databinding.observable.list.WritableList;
+import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.map.IObservableMap;
 import org.eclipse.core.databinding.observable.set.IObservableSet;
+import org.eclipse.core.databinding.property.Properties;
 import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
 import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
@@ -28,7 +29,7 @@ import de.vogella.databinding.viewer.model.Person;
 
 public class View extends ViewPart {
 	private ListViewer viewer;
-	private WritableList input;
+	private IObservableList input;
 
 	@Override
 	public void createPartControl(Composite parent) {
@@ -63,7 +64,10 @@ public class View extends ViewPart {
 
 		// Create sample data
 		List<Person> persons = MyModel.getPersons();
-		input = new WritableList(persons, Person.class);
+		input = Properties.selfList(Person.class).observe(persons);
+
+		// input = new WritableList(persons, Person.class);
+
 		// Set the writeableList as input for the viewer
 		viewer.setInput(input);
 
