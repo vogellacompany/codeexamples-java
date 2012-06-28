@@ -99,7 +99,7 @@ public class ShowMapActivity extends MapActivity {
 
 	@Override
 	protected void onPause() {
-		super.onResume();
+		super.onPause();
 		myLocationOverlay.disableMyLocation();
 		myLocationOverlay.disableCompass();
 	}
