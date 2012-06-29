@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='1'>
+  <unit id='201206291446.vogellaeclipsetools' version='1.0.0.2--cDeyQ6773573E7K5AAE'>
+    <properties size='2'>
+      <property name='org.eclipse.equinox.p2.name' value='Eclipse tools by vogella'/>
+      <property name='org.eclipse.equinox.p2.type.category' value='true'/>
+    </properties>
+    <provides size='1'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='201206291446.vogellaeclipsetools' version='1.0.0.2--cDeyQ6773573E7K5AAE'/>
+    </provides>
+    <requires size='1'>
+      <required namespace='org.eclipse.equinox.p2.iu' name='de.vogella.plugin.filterpackageexplorer.feature.feature.group' range='[1.0.0.201206291446,1.0.0.201206291446]'/>
+    </requires>
+    <touchpoint id='null' version='0.0.0'/>
+  </unit>
+</units>
