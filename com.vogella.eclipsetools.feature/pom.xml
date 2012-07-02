@@ -9,7 +9,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>de.vogella.eclipsetools.feature</artifactId>
+	<artifactId>com.vogella.eclipsetools.feature</artifactId>
 	<packaging>eclipse-feature</packaging>
 
 	<name>Eclipse tools feature</name>
