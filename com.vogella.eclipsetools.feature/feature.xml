@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.vogella.plugin.filterpackageexplorer.feature"
-      label="Filtered Package Explorer"
-      version="1.0.0.qualifier">
+      id="com.vogella.eclipsetools.feature"
+      label="Feature"
+      version="1.0.0.qualifier"
+      provider-name="VOGELLA">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]

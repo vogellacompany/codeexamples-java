@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/de.vogella.plugin.filterpackageexplorer.feature_1.0.0.qualifier.jar" id="de.vogella.plugin.filterpackageexplorer.feature" version="1.0.0.qualifier">
+   <feature url="features/com.vogella.eclipsetools.feature_1.0.0.qualifier.jar" id="com.vogella.eclipsetools.feature" version="1.0.0.qualifier">
       <category name="vogellaeclipsetools"/>
    </feature>
    <category-def name="vogellaeclipsetools" label="Eclipse tools by vogella"/>

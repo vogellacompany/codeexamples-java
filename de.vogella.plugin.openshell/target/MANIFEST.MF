@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.co
+ re.resources;bundle-version="3.7.101"
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.0.0.201207021426
+Bundle-Name: Openshell
+Bundle-Activator: de.vogella.plugin.openshell.Activator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: de.vogella.plugin.openshell;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

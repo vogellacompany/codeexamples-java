@@ -47,7 +47,6 @@ public class LocalWordService extends Service {
 	}
 
 	public List<String> getWordList() {
-		ArrayList<String> list = new ArrayList<String>();
 		return list;
 	}
 
