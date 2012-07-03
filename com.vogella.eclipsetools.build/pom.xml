@@ -16,12 +16,7 @@
 		<tycho-version>0.15.0</tycho-version>
 	</properties>
 
-	<distributionManagement>
-		<repository>
-			<id>ftp-repository</id>
-			<url>ftp://www.vogella.com/httpdocs/updatesite/eclipsetools</url>
-		</repository>
-	</distributionManagement>
+	
 	<repositories>
 		<repository>
 			<id>juno</id>
@@ -69,6 +64,53 @@
 		</plugins>
 
 	</build>
+	
+	<profiles>	
+		<!-- This profile is used to upload the repo -->
+	    <profile>
+      		<id>uploadRepo</id>
+		     	<properties>
+					<!-- Properties relative to the distant host where to upload the repo -->
+					<ftp.url>ftp://www.vogella.com</ftp.url>
+					<ftp.toDir>/httpdoc/updatesite/eclipsetools</ftp.toDir>
+					<!-- Relative path to the repo being uploaded -->
+					<repo.path>${project.build.directory}../com.vogella.eclipsetools.updatesite/target/repository/</repo.path>
+				</properties>
+
+			<build>
+				<plugins>
+					<!-- Upload the repo to the server -->
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>wagon-maven-plugin</artifactId>
+						<version>1.0-beta-4</version>
+						<executions>
+							<execution>
+								<id>upload-update-site</id>
+								<phase>install</phase>
+								<goals>
+									<goal>upload</goal>
+								</goals>
+								<configuration>
+									<fromDir>${repo.path}</fromDir>
+									<includes>**</includes>
+									<url>${ftp.url}</url>
+									<toDir>${ftp.toDir}</toDir>
+									<!-- Points to your settings.xml where the connection settings are stored as shown below -->
+									<!-- <server> -->
+									<!-- 	<id>p2Repoo</id> -->
+									<!-- 	<username>username</username> -->
+									<!-- 	<password>password</password> -->
+									<!-- </server> -->
+									<serverId>p2Repo</serverId>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+    	</profile>
+   	</profiles>
 
 </project>
 	
