@@ -16,7 +16,7 @@
 		<tycho-version>0.15.0</tycho-version>
 	</properties>
 
-	
+
 	<repositories>
 		<repository>
 			<id>juno</id>
@@ -63,19 +63,21 @@
 			</plugin>
 		</plugins>
 
+
+
 	</build>
-	
-	<profiles>	
+
+	<profiles>
 		<!-- This profile is used to upload the repo -->
-	    <profile>
-      		<id>uploadRepo</id>
-		     	<properties>
-					<!-- Properties relative to the distant host where to upload the repo -->
-					<ftp.url>ftp://www.vogella.com</ftp.url>
-					<ftp.toDir>/httpdoc/updatesite/eclipsetools</ftp.toDir>
-					<!-- Relative path to the repo being uploaded -->
-					<repo.path>${project.build.directory}../com.vogella.eclipsetools.updatesite/target/repository/</repo.path>
-				</properties>
+		<profile>
+			<id>uploadRepo</id>
+			<properties>
+				<!-- Properties relative to the distant host where to upload the repo -->
+				<ftp.url>ftp://www.vogella.com</ftp.url>
+				<ftp.toDir>/httpdocs/updatesite/eclipsetools</ftp.toDir>
+				<!-- Relative path to the repo being uploaded -->
+				<repo.path>${project.build.directory}/repository/</repo.path>
+			</properties>
 
 			<build>
 				<plugins>
@@ -86,7 +88,7 @@
 						<version>1.0-beta-4</version>
 						<executions>
 							<execution>
-								<id>upload-update-site</id>
+								<id>upload-repo</id>
 								<phase>install</phase>
 								<goals>
 									<goal>upload</goal>
@@ -94,14 +96,8 @@
 								<configuration>
 									<fromDir>${repo.path}</fromDir>
 									<includes>**</includes>
-									<url>${ftp.url}</url>
 									<toDir>${ftp.toDir}</toDir>
-									<!-- Points to your settings.xml where the connection settings are stored as shown below -->
-									<!-- <server> -->
-									<!-- 	<id>p2Repoo</id> -->
-									<!-- 	<username>username</username> -->
-									<!-- 	<password>password</password> -->
-									<!-- </server> -->
+									<url>${ftp.url}</url>
 									<serverId>p2Repo</serverId>
 								</configuration>
 							</execution>
@@ -109,8 +105,8 @@
 					</plugin>
 				</plugins>
 			</build>
-    	</profile>
-   	</profiles>
+		</profile>
+	</profiles>
 
 </project>
 	

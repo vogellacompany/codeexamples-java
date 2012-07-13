@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.jd
  t.core,org.eclipse.jdt.ui,org.eclipse.core.resources
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.0.201207031305
+Bundle-Version: 1.0.0.201207131422
 Bundle-Name: Filterpackageexplorer
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: de.vogella.plugin.filterpackageexplorer;singleton

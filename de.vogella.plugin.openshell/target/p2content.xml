@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <units size='1'>
-  <unit id='de.vogella.plugin.openshell' version='1.0.0.201207031305'>
-    <update id='de.vogella.plugin.openshell' range='[0.0.0,1.0.0.201207031305)' severity='0'/>
+  <unit id='de.vogella.plugin.openshell' version='1.0.0.201207131422'>
+    <update id='de.vogella.plugin.openshell' range='[0.0.0,1.0.0.201207131422)' severity='0'/>
     <properties size='4'>
       <property name='org.eclipse.equinox.p2.name' value='Openshell'/>
       <property name='maven-groupId' value='com.vogella'/>
@@ -9,8 +9,8 @@
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>
     </properties>
     <provides size='3'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='de.vogella.plugin.openshell' version='1.0.0.201207031305'/>
-      <provided namespace='osgi.bundle' name='de.vogella.plugin.openshell' version='1.0.0.201207031305'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='de.vogella.plugin.openshell' version='1.0.0.201207131422'/>
+      <provided namespace='osgi.bundle' name='de.vogella.plugin.openshell' version='1.0.0.201207131422'/>
       <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
     </provides>
     <requires size='3'>
@@ -19,13 +19,13 @@
       <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='3.7.101'/>
     </requires>
     <artifacts size='1'>
-      <artifact classifier='osgi.bundle' id='de.vogella.plugin.openshell' version='1.0.0.201207031305'/>
+      <artifact classifier='osgi.bundle' id='de.vogella.plugin.openshell' version='1.0.0.201207131422'/>
     </artifacts>
     <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
     <touchpointData size='1'>
       <instructions size='1'>
         <instruction key='manifest'>
-          Bundle-SymbolicName: de.vogella.plugin.openshell;singleton:=true&#xA;Bundle-Version: 1.0.0.201207031305&#xA;
+          Bundle-SymbolicName: de.vogella.plugin.openshell;singleton:=true&#xA;Bundle-Version: 1.0.0.201207131422&#xA;
         </instruction>
       </instructions>
     </touchpointData>
