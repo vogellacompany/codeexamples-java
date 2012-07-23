@@ -35,11 +35,8 @@ import org.eclipse.swt.widgets.Text;
 import phonebook.model.Person;
 import phonebook.model.PhoneGroup;
 import phonebook.model.PhoneGroups;
-import org.eclipse.core.databinding.beans.BeanProperties;
-import org.eclipse.jface.databinding.viewers.ViewerProperties;
-import org.eclipse.jface.databinding.swt.WidgetProperties;
 
-public class PhoneBook {
+public class PhoneBookFinished {
 
 	private Button deleteGroupButton;
 	private Button newGroupButton;
@@ -70,7 +67,7 @@ public class PhoneBook {
 			public void run() {
 
 				try {
-					PhoneBook window = new PhoneBook();
+					PhoneBookFinished window = new PhoneBookFinished();
 					window.open();
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -293,66 +290,101 @@ public class PhoneBook {
 		label.setText("Name:");
 
 		m_nameText = new Text(detailComposite, SWT.BORDER);
-		m_nameText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true,
-				false));
+		final GridData gd_m_nameText = new GridData(SWT.FILL, SWT.CENTER, true,
+				false);
+		m_nameText.setLayoutData(gd_m_nameText);
 
 		final Label emailLabel = new Label(detailComposite, SWT.NONE);
 		emailLabel.setText("E-mail:");
 
 		m_emailText = new Text(detailComposite, SWT.BORDER);
-		m_emailText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER,
-				true, false));
+		final GridData gd_m_emailText = new GridData(SWT.FILL, SWT.CENTER,
+				true, false);
+		m_emailText.setLayoutData(gd_m_emailText);
 
 		final Label phoneLabel = new Label(detailComposite, SWT.NONE);
 		phoneLabel.setText("Phone:");
 
 		m_phoneText = new Text(detailComposite, SWT.BORDER);
-		m_phoneText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER,
-				true, false));
+		final GridData gd_m_phoneText = new GridData(SWT.FILL, SWT.CENTER,
+				true, false);
+		m_phoneText.setLayoutData(gd_m_phoneText);
 
 		final Label mobilePhone1Label = new Label(detailComposite, SWT.NONE);
 		mobilePhone1Label.setText("Mobile Phone 1:");
 
 		m_mobile1Text = new Text(detailComposite, SWT.BORDER);
-		m_mobile1Text.setLayoutData(new GridData(SWT.FILL, SWT.CENTER,
-				true, false));
+		final GridData gd_m_mobile1Text = new GridData(SWT.FILL, SWT.CENTER,
+				true, false);
+		m_mobile1Text.setLayoutData(gd_m_mobile1Text);
 
 		final Label mobilePhone2Label = new Label(detailComposite, SWT.NONE);
 		mobilePhone2Label.setText("Mobile Phone 2:");
 
 		m_mobile2Text = new Text(detailComposite, SWT.BORDER);
-		m_mobile2Text.setLayoutData(new GridData(SWT.FILL, SWT.CENTER,
-				true, false));
+		final GridData gd_m_mobile2Text = new GridData(SWT.FILL, SWT.CENTER,
+				true, false);
+		m_mobile2Text.setLayoutData(gd_m_mobile2Text);
 		sashForm.setWeights(new int[] { 161, 617 });
 		personSashForm.setWeights(new int[] { 1, 1 });
-		m_bindingContext = initDataBindings();
 		//
+		m_bindingContext = initDataBindings();
 	}
 	protected DataBindingContext initDataBindings() {
+		IObservableValue m_personViewerSelectionObserveSelection_3 = ViewersObservables.observeSingleSelection(m_personViewer);
+		IObservableValue table_1SelectionIndexObserveWidget_1 = SWTObservables.observeSingleSelectionIndex(table_1);
+		IObservableValue m_personViewerSelectionObserveSelection_2 = ViewersObservables.observeSingleSelection(m_personViewer);
+		IObservableValue m_groupViewerSelectionObserveSelection = ViewersObservables.observeSingleSelection(m_groupViewer);
+		IObservableValue m_emailTextTextObserveWidget = SWTObservables.observeText(m_emailText, SWT.Modify);
+		IObservableValue m_mobile1TextTextObserveWidget = SWTObservables.observeText(m_mobile1Text, SWT.Modify);
+		IObservableValue m_personViewerSelectionObserveSelection_4 = ViewersObservables.observeSingleSelection(m_personViewer);
+		IObservableValue m_phoneTextTextObserveWidget = SWTObservables.observeText(m_phoneText, SWT.Modify);
+		IObservableValue m_nameTextTextObserveWidget = SWTObservables.observeText(m_nameText, SWT.Modify);
+		IObservableValue m_mobile2TextTextObserveWidget = SWTObservables.observeText(m_mobile2Text, SWT.Modify);
+		IObservableValue deleteGroupButtonEnabledObserveWidget = SWTObservables.observeEnabled(deleteGroupButton);
+		IObservableValue m_personViewerSelectionObserveSelection = ViewersObservables.observeSingleSelection(m_personViewer);
+		IObservableValue newGroupButtonEnabledObserveWidget = SWTObservables.observeEnabled(editGroupButton);
+		IObservableValue deletePersonButtonEnabledObserveWidget = SWTObservables.observeEnabled(deletePersonButton);
+		IObservableValue m_personViewerSelectionObserveSelection_1 = ViewersObservables.observeSingleSelection(m_personViewer);
+		IObservableValue tableSelectionIndexObserveWidget = SWTObservables.observeSingleSelectionIndex(table);
+		IObservableValue table_1SelectionIndexObserveWidget = SWTObservables.observeSingleSelectionIndex(table_1);
+		IObservableValue m_personViewerNameObserveDetailValue = BeansObservables.observeDetailValue(Realm.getDefault(), m_personViewerSelectionObserveSelection_4, "name", java.lang.String.class);
+		IObservableValue m_personViewerMobilePhone1ObserveDetailValue = BeansObservables.observeDetailValue(Realm.getDefault(), m_personViewerSelectionObserveSelection_1, "mobilePhone1", java.lang.String.class);
+		IObservableValue m_personViewerMobilePhone2ObserveDetailValue = BeansObservables.observeDetailValue(Realm.getDefault(), m_personViewerSelectionObserveSelection, "mobilePhone2", java.lang.String.class);
+		IObservableValue m_personViewerEmailObserveDetailValue = BeansObservables.observeDetailValue(Realm.getDefault(), m_personViewerSelectionObserveSelection_2, "email", java.lang.String.class);
+		IObservableValue m_personViewerPhoneObserveDetailValue = BeansObservables.observeDetailValue(Realm.getDefault(), m_personViewerSelectionObserveSelection_3, "phone", java.lang.String.class);
+		//
 		DataBindingContext bindingContext = new DataBindingContext();
 		//
-		ObservableListContentProvider listContentProvider = new ObservableListContentProvider();
-		IObservableMap observeMap = BeansObservables.observeMap(listContentProvider.getKnownElements(), PhoneGroup.class, "name");
-		m_groupViewer.setLabelProvider(new ObservableMapLabelProvider(observeMap));
-		m_groupViewer.setContentProvider(listContentProvider);
+		bindingContext.bindValue(m_personViewerNameObserveDetailValue, m_nameTextTextObserveWidget, null, null);
+		bindingContext.bindValue(m_personViewerEmailObserveDetailValue, m_emailTextTextObserveWidget, null, null);
+		bindingContext.bindValue(m_personViewerPhoneObserveDetailValue, m_phoneTextTextObserveWidget, null, null);
+		bindingContext.bindValue(m_personViewerMobilePhone1ObserveDetailValue, m_mobile1TextTextObserveWidget, null, null);
+		bindingContext.bindValue(m_personViewerMobilePhone2ObserveDetailValue, m_mobile2TextTextObserveWidget, null, null);
+		bindingContext.bindValue(table_1SelectionIndexObserveWidget_1, newGroupButtonEnabledObserveWidget, new phonebook.SelectionUpdateValueStrategy(), new UpdateValueStrategy(UpdateValueStrategy.POLICY_NEVER));
+		bindingContext.bindValue(table_1SelectionIndexObserveWidget, deleteGroupButtonEnabledObserveWidget, new phonebook.SelectionUpdateValueStrategy(), new UpdateValueStrategy(UpdateValueStrategy.POLICY_NEVER));
+		bindingContext.bindValue(tableSelectionIndexObserveWidget, deletePersonButtonEnabledObserveWidget, new phonebook.SelectionUpdateValueStrategy(), new UpdateValueStrategy(UpdateValueStrategy.POLICY_NEVER));
 		//
-		IObservableList groupsGroupsObserveList = BeanProperties.list("groups").observe(m_groups);
-		m_groupViewer.setInput(groupsGroupsObserveList);
+		ObservableListContentProvider m_groupViewerContentProviderList = new ObservableListContentProvider();
+		m_groupViewer.setContentProvider(m_groupViewerContentProviderList);
 		//
-		ObservableListContentProvider listContentProvider_1 = new ObservableListContentProvider();
-		IObservableMap[] observeMaps = BeansObservables.observeMaps(listContentProvider_1.getKnownElements(), Person.class, new String[]{"name", "phone", "mobilePhone2", "mobilePhone1"});
-		m_personViewer.setLabelProvider(new ObservableMapLabelProvider(observeMaps));
-		m_personViewer.setContentProvider(listContentProvider_1);
+		IObservableMap[] m_groupViewerLabelProviderMaps = BeansObservables.observeMaps(m_groupViewerContentProviderList.getKnownElements(), PhoneGroup.class, new String[]{"name"});
+		m_groupViewer.setLabelProvider(new ObservableMapLabelProvider(m_groupViewerLabelProviderMaps));
 		//
-		IObservableValue observeSingleSelectionGroupViewer = ViewerProperties.singleSelection().observe(m_groupViewer);
-		IObservableList groupViewerPersonsObserveDetailList = BeanProperties.list(PhoneGroup.class, "persons", Person.class).observeDetail(observeSingleSelectionGroupViewer);
-		m_personViewer.setInput(groupViewerPersonsObserveDetailList);
+		IObservableList m_groupsGroupsObserveList = BeansObservables.observeList(Realm.getDefault(), m_groups, "groups");
+		m_groupViewer.setInput(m_groupsGroupsObserveList);
 		//
-		IObservableValue observeTextNameTextObserveWidget = WidgetProperties.text(SWT.Modify).observe(m_nameText);
-		IObservableValue observeSingleSelectionPersonViewer = ViewerProperties.singleSelection().observe(m_personViewer);
-		IObservableValue personViewerNameObserveDetailValue = BeanProperties.value(Person.class, "name", String.class).observeDetail(observeSingleSelectionPersonViewer);
-		bindingContext.bindValue(observeTextNameTextObserveWidget, personViewerNameObserveDetailValue, null, null);
+		ObservableListContentProvider m_personViewerContentProviderList = new ObservableListContentProvider();
+		m_personViewer.setContentProvider(m_personViewerContentProviderList);
+		//
+		IObservableMap[] m_personViewerLabelProviderMaps = BeansObservables.observeMaps(m_personViewerContentProviderList.getKnownElements(), Person.class, new String[]{"name", "email", "phone", "mobilePhone1", "mobilePhone2"});
+		m_personViewer.setLabelProvider(new ObservableMapLabelProvider(m_personViewerLabelProviderMaps));
+		//
+		IObservableList m_groupViewerPersonsObserveDetailList = BeansObservables.observeDetailList(Realm.getDefault(), m_groupViewerSelectionObserveSelection, "persons", phonebook.model.Person.class);
+		m_personViewer.setInput(m_groupViewerPersonsObserveDetailList);
 		//
 		return bindingContext;
 	}
+
+
 }
