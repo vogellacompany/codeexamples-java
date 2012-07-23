@@ -35,13 +35,10 @@ public class ShowLocationActivity extends Activity implements LocationListener {
 		// Initialize the location fields
 		if (location != null) {
 			System.out.println("Provider " + provider + " has been selected.");
-			int lat = (int) (location.getLatitude());
-			int lng = (int) (location.getLongitude());
-			latituteField.setText(String.valueOf(lat));
-			longitudeField.setText(String.valueOf(lng));
+			onLocationChanged(location);
 		} else {
-			latituteField.setText("Provider not available");
-			longitudeField.setText("Provider not available");
+			latituteField.setText("Location not available");
+			longitudeField.setText("Location not available");
 		}
 	}
 
@@ -61,7 +58,6 @@ public class ShowLocationActivity extends Activity implements LocationListener {
 
 	@Override
 	public void onLocationChanged(Location location) {
-
 		int lat = (int) (location.getLatitude());
 		int lng = (int) (location.getLongitude());
 		latituteField.setText(String.valueOf(lat));
@@ -70,6 +66,7 @@ public class ShowLocationActivity extends Activity implements LocationListener {
 
 	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {
+		// TODO Auto-generated method stub
 
 	}
 
