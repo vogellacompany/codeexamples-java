@@ -2,6 +2,9 @@ package de.vogella.databinding.emf.table;
 
 import java.util.HashMap;
 
+import org.eclipse.core.databinding.observable.map.IObservableMap;
+import org.eclipse.emf.databinding.EMFProperties;
+import org.eclipse.emf.databinding.FeaturePath;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
 import org.eclipse.jface.databinding.viewers.ObservableMapCellLabelProvider;
