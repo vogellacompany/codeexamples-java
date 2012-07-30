@@ -69,8 +69,8 @@ public class FilterPackageExplorer extends PackageExplorerPart {
 	public void createPartControl(Composite parent) {
 		Composite newParent = new Composite(parent, 0);
 		GridLayout layout = new GridLayout(2, false);
-		newParent.setBackground(Display.getDefault().getSystemColor(
-				SWT.COLOR_WHITE));
+//		newParent.setBackground(Display.getDefault().getSystemColor(
+//				SWT.COLOR_WHITE));
 		layout.marginWidth = 0;
 		layout.marginHeight = 0;
 		layout.horizontalSpacing = 0;
