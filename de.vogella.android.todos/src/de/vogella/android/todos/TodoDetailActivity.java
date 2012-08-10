@@ -20,7 +20,7 @@ import de.vogella.android.todos.database.TodoTable;
  */
 public class TodoDetailActivity extends Activity {
 	private Spinner mCategory;
-	private EditText mTitleText;
+	private EditText mTitleText; 
 	private EditText mBodyText;
 
 	private Uri todoUri;
