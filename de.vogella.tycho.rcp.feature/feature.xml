@@ -17,7 +17,7 @@
    </license>
 
    <plugin
-         id="de.vogella.tycho.rcp"
+         id="de.vogella.tycho.rcp.application"
          download-size="0"
          install-size="0"
          version="0.0.0"

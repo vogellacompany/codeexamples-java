@@ -12,16 +12,16 @@
 	</modules>
 
 	<properties>
-		<tycho-version>0.14.0</tycho-version>
+		<tycho-version>0.15.0</tycho-version>
 	</properties>
 
 	<repositories>
-		<repository>
-			<id>indigo</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/indigo</url>
-		</repository>
-	</repositories>
+    <repository>
+      <id>juno</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/releases/juno</url>
+    </repository>
+  </repositories>
 
 	<build>
 		<plugins>

@@ -12,5 +12,5 @@
 	<artifactId>de.vogella.tycho.plugin</artifactId>
 	<packaging>eclipse-plugin</packaging>
 
-	<name>Tycho Test Build</name>
+	<name>de.vogella.tycho.plugin - Plugin build</name>
 </project>

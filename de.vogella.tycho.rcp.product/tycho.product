@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Tycho Test" id="de.vogella.tycho.rcp.test" application="de.vogella.tycho.rcp.application" useFeatures="true" includeLaunchers="true">
+<product name="Tycho Test" uid="de.vogella.tycho.rcp.product" id="de.vogella.tycho.rcp.test" application="de.vogella.tycho.rcp.application" useFeatures="true" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
@@ -10,12 +10,13 @@
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
+
    <plugins>
    </plugins>
 
    <features>
       <feature id="de.vogella.tycho.rcp.feature" version="1.0.0.qualifier"/>
-      <feature id="org.eclipse.rcp" version="3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272"/>
+      <feature id="org.eclipse.e4.rcp"/>
    </features>
 
 

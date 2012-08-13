@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="de.vogella.tycho.rcp.application"
+            application="org.eclipse.e4.ui.workbench.swt.E4Application">
+         <property
+               name="appName"
+               value="de.vogella.tycho.rcp.application">
+         </property>
+         <property
+               name="applicationXMI"
+               value="de.vogella.tycho.rcp.application/Application.e4xmi">
+         </property>
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/de.vogella.tycho.rcp.application/css/default.css">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

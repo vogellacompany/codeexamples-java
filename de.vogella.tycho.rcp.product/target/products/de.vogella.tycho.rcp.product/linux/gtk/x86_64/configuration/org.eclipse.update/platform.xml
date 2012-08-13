@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config transient="false" date="1344871344486">
+	<site enabled="true" updateable="true" policy="USER-EXCLUDE" url="platform:/base/">
+		<feature id="org.eclipse.emf.ecore" url="features/org.eclipse.emf.ecore_2.8.0.v20120606-0717/" version="2.8.0.v20120606-0717">
+		</feature>
+		<feature id="org.eclipse.e4.rcp" url="features/org.eclipse.e4.rcp_1.1.0.v20120521-2329-8yFTIGF3GGduEYqkQB9M3DKn/" version="1.1.0.v20120521-2329-8yFTIGF3GGduEYqkQB9M3DKn">
+		</feature>
+		<feature id="de.vogella.tycho.rcp.feature" url="features/de.vogella.tycho.rcp.feature_1.0.0.201208131522/" version="1.0.0.201208131522">
+		</feature>
+		<feature id="org.eclipse.emf.common" url="features/org.eclipse.emf.common_2.8.0.v20120606-0717/" version="2.8.0.v20120606-0717">
+		</feature>
+	</site>
+</config>

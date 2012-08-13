@@ -9,10 +9,41 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	
-	<artifactId>de.vogella.tycho.product</artifactId>
-	<packaging>eclipse-repository</packaging>
-	
 
-	<name>Tycho Test Build</name>
+	<artifactId>de.vogella.tycho.rcp.product</artifactId>
+	<packaging>eclipse-repository</packaging>
+
+
+	<name>de.vogella.tycho.rcp.product product build</name>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-repository-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<includeAllDependencies>true</includeAllDependencies>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-director-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>materialize-products</id>
+						<goals>
+							<goal>materialize-products</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>archive-products</id>
+						<goals>
+							<goal>archive-products</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

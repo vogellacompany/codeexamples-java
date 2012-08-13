@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_nWYasOVZEeGt4qnB9FH0IA" elementId="org.eclipse.e4.ide.application" bindingContexts="_nWYaseVZEeGt4qnB9FH0IA">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_nWZBw-VZEeGt4qnB9FH0IA" label="de.vogella.tycho.rcp.application" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_nWZBy-VZEeGt4qnB9FH0IA">
+      <children xsi:type="advanced:Perspective" xmi:id="_nWZBzOVZEeGt4qnB9FH0IA">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_nWZBzeVZEeGt4qnB9FH0IA">
+          <children xsi:type="basic:PartStack" xmi:id="_nWZo0OVZEeGt4qnB9FH0IA"/>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_nWZBxOVZEeGt4qnB9FH0IA" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_nWZBxeVZEeGt4qnB9FH0IA" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_nWZBxuVZEeGt4qnB9FH0IA" label="Open" iconURI="platform:/plugin/de.vogella.tycho.rcp.application/icons/sample.gif" command="_nWYavuVZEeGt4qnB9FH0IA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_nWZBx-VZEeGt4qnB9FH0IA" label="Save" iconURI="platform:/plugin/de.vogella.tycho.rcp.application/icons/save_edit.gif" command="_nWYaweVZEeGt4qnB9FH0IA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_nWZByOVZEeGt4qnB9FH0IA" label="Quit" command="_nWYauuVZEeGt4qnB9FH0IA"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_nWZByeVZEeGt4qnB9FH0IA" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_nWZByuVZEeGt4qnB9FH0IA" label="About" command="_nWZBwOVZEeGt4qnB9FH0IA"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_nWZo0eVZEeGt4qnB9FH0IA">
+      <children xsi:type="menu:ToolBar" xmi:id="_nWZo0uVZEeGt4qnB9FH0IA" elementId="toolbar:org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_nWZo0-VZEeGt4qnB9FH0IA" iconURI="platform:/plugin/de.vogella.tycho.rcp.application/icons/sample.gif" command="_nWYavuVZEeGt4qnB9FH0IA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_nWZo1OVZEeGt4qnB9FH0IA" iconURI="platform:/plugin/de.vogella.tycho.rcp.application/icons/save_edit.gif" command="_nWYaweVZEeGt4qnB9FH0IA"/>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_nWYau-VZEeGt4qnB9FH0IA" contributionURI="bundleclass://de.vogella.tycho.rcp.application/de.vogella.tycho.rcp.application.handlers.QuitHandler" command="_nWYauuVZEeGt4qnB9FH0IA"/>
+  <handlers xmi:id="_nWYav-VZEeGt4qnB9FH0IA" contributionURI="bundleclass://de.vogella.tycho.rcp.application/de.vogella.tycho.rcp.application.handlers.OpenHandler" command="_nWYavuVZEeGt4qnB9FH0IA"/>
+  <handlers xmi:id="_nWYawuVZEeGt4qnB9FH0IA" contributionURI="bundleclass://de.vogella.tycho.rcp.application/de.vogella.tycho.rcp.application.handlers.SaveHandler" command="_nWYaweVZEeGt4qnB9FH0IA"/>
+  <handlers xmi:id="_nWZBweVZEeGt4qnB9FH0IA" contributionURI="bundleclass://de.vogella.tycho.rcp.application/de.vogella.tycho.rcp.application.handlers.AboutHandler" command="_nWZBwOVZEeGt4qnB9FH0IA"/>
+  <bindingTables xmi:id="_nWYavOVZEeGt4qnB9FH0IA" bindingContext="_nWYaseVZEeGt4qnB9FH0IA">
+    <bindings xmi:id="_nWYaveVZEeGt4qnB9FH0IA" keySequence="M1+Q" command="_nWYauuVZEeGt4qnB9FH0IA"/>
+    <bindings xmi:id="_nWYawOVZEeGt4qnB9FH0IA" keySequence="M1+O" command="_nWYavuVZEeGt4qnB9FH0IA"/>
+    <bindings xmi:id="_nWYaw-VZEeGt4qnB9FH0IA" keySequence="M1+S" command="_nWYaweVZEeGt4qnB9FH0IA"/>
+    <bindings xmi:id="_nWZBwuVZEeGt4qnB9FH0IA" keySequence="M1+A" command="_nWZBwOVZEeGt4qnB9FH0IA"/>
+  </bindingTables>
+  <rootContext xmi:id="_nWYaseVZEeGt4qnB9FH0IA" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_nWYasuVZEeGt4qnB9FH0IA" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_nWYas-VZEeGt4qnB9FH0IA" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_nWYauuVZEeGt4qnB9FH0IA" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
+  <commands xmi:id="_nWYavuVZEeGt4qnB9FH0IA" elementId="de.vogella.tycho.rcp.application.open" commandName="openCommand"/>
+  <commands xmi:id="_nWYaweVZEeGt4qnB9FH0IA" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
+  <commands xmi:id="_nWZBwOVZEeGt4qnB9FH0IA" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <addons xmi:id="_nWYatOVZEeGt4qnB9FH0IA" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_nWYateVZEeGt4qnB9FH0IA" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_nWYatuVZEeGt4qnB9FH0IA" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_nWYat-VZEeGt4qnB9FH0IA" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_nWYauOVZEeGt4qnB9FH0IA" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_nWYaueVZEeGt4qnB9FH0IA" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>
