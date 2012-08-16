@@ -32,6 +32,11 @@
             name="ChangeView"
             restorable="true">
       </view>
+      <view
+            class="de.vogella.jface.tableviewer.ViewOwnerDrawExample"
+            id="de.vogella.jface.tableviewer.ownerdrawview"
+            name="OwnerDrawView">
+      </view>
    </extension>
    <extension
          id="product"

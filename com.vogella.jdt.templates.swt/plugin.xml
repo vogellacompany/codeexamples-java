@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <!-- =========================================================================== -->
+<!-- Templates                                                                   -->
+<!-- =========================================================================== -->
+   <extension
+         point="org.eclipse.ui.editors.templates">
+      <contextTypeRegistry
+            id="org.eclipse.jdt.ui.CompilationUnitEditor">
+      </contextTypeRegistry>
+       <contextType
+            name="%templates.java.contextType.name"
+            class="org.eclipse.jdt.internal.corext.template.java.JavaContextType"
+            id="java"
+            registryId="org.eclipse.jdt.ui.CompilationUnitEditor">
+      </contextType>
+      <contextType
+            name="%templates.java.statements.contextType.name"
+            class="org.eclipse.jdt.internal.corext.template.java.JavaContextType"
+            id="java-statements"
+            registryId="org.eclipse.jdt.ui.CompilationUnitEditor">
+      </contextType>
+      <contextType
+            name="%templates.java.members.contextType.name"
+            class="org.eclipse.jdt.internal.corext.template.java.JavaContextType"
+            id="java-members"
+            registryId="org.eclipse.jdt.ui.CompilationUnitEditor">
+      </contextType>
+      <contextType
+            name="%templates.swt.contextType.name"
+            class="org.eclipse.jdt.internal.corext.template.java.SWTContextType"
+            id="swt"
+            registryId="org.eclipse.jdt.ui.CompilationUnitEditor">
+      </contextType>
+      <contextType
+            name="%templates.swt.statements.contextType.name"
+            class="org.eclipse.jdt.internal.corext.template.java.SWTContextType"
+            id="swt-statements"
+            registryId="org.eclipse.jdt.ui.CompilationUnitEditor">
+      </contextType>
+      <contextType
+            name="%templates.swt.members.contextType.name"
+            class="org.eclipse.jdt.internal.corext.template.java.SWTContextType"
+            id="swt-members"
+            registryId="org.eclipse.jdt.ui.CompilationUnitEditor">
+      </contextType>      
+      <include
+            file="templates/additional-swttemplates.xml"
+       >
+      </include>
+       <include
+      		file="templates/additional-templates.xml">
+      </include>
+   </extension>
+
+</plugin>

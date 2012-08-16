@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Serviceexample
+Bundle-SymbolicName: de.vogella.osgi.bundletracker.serviceexample
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Service-Contribution: de.vogella.osgi.bundletracker.serviceexample.NewWordService
+Require-Bundle: de.vogella.osgi.quote;bundle-version="1.0.0",
+ de.vogella.osgi.annotations;bundle-version="1.0.0"

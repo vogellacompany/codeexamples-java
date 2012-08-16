@@ -1,24 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <units size='2'>
-  <unit id='com.vogella.eclipsetools.feature.feature.group' version='1.0.0.201207191559' singleton='false'>
-    <update id='com.vogella.eclipsetools.feature.feature.group' range='[0.0.0,1.0.0.201207191559)' severity='0'/>
+  <unit id='com.vogella.eclipsetools.feature.feature.group' version='1.0.0.201208151405' singleton='false'>
+    <update id='com.vogella.eclipsetools.feature.feature.group' range='[0.0.0,1.0.0.201208151405)' severity='0'/>
     <properties size='8'>
-      <property name='org.eclipse.equinox.p2.name' value='Feature'/>
+      <property name='org.eclipse.equinox.p2.name' value='Filtered PackageExplorer'/>
       <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
       <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
-      <property name='org.eclipse.equinox.p2.provider' value='VOGELLA'/>
+      <property name='org.eclipse.equinox.p2.provider' value='vogella GmbH'/>
       <property name='org.eclipse.equinox.p2.type.group' value='true'/>
       <property name='maven-groupId' value='com.vogella'/>
       <property name='maven-artifactId' value='com.vogella.eclipsetools.feature'/>
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>
     </properties>
     <provides size='1'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.eclipsetools.feature.feature.group' version='1.0.0.201207191559'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.eclipsetools.feature.feature.group' version='1.0.0.201208151405'/>
     </provides>
     <requires size='3'>
-      <required namespace='org.eclipse.equinox.p2.iu' name='de.vogella.plugin.filterpackageexplorer' range='[1.0.0.201207191559,1.0.0.201207191559]'/>
-      <required namespace='org.eclipse.equinox.p2.iu' name='de.vogella.plugin.openshell' range='[1.0.0.201207191559,1.0.0.201207191559]'/>
-      <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.eclipsetools.feature.feature.jar' range='[1.0.0.201207191559,1.0.0.201207191559]'>
+      <required namespace='org.eclipse.equinox.p2.iu' name='de.vogella.plugin.filterpackageexplorer' range='[1.0.0.201208151405,1.0.0.201208151405]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='de.vogella.plugin.openshell' range='[1.0.0.201207031305,1.0.0.201207031305]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.eclipsetools.feature.feature.jar' range='[1.0.0.201208151405,1.0.0.201208151405]'>
         <filter>
           (org.eclipse.update.install.features=true)
         </filter>
@@ -34,26 +34,26 @@
       [Enter Copyright Description here.]
     </copyright>
   </unit>
-  <unit id='com.vogella.eclipsetools.feature.feature.jar' version='1.0.0.201207191559'>
+  <unit id='com.vogella.eclipsetools.feature.feature.jar' version='1.0.0.201208151405'>
     <properties size='7'>
-      <property name='org.eclipse.equinox.p2.name' value='Feature'/>
+      <property name='org.eclipse.equinox.p2.name' value='Filtered PackageExplorer'/>
       <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
       <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
-      <property name='org.eclipse.equinox.p2.provider' value='VOGELLA'/>
+      <property name='org.eclipse.equinox.p2.provider' value='vogella GmbH'/>
       <property name='maven-groupId' value='com.vogella'/>
       <property name='maven-artifactId' value='com.vogella.eclipsetools.feature'/>
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>
     </properties>
     <provides size='3'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.eclipsetools.feature.feature.jar' version='1.0.0.201207191559'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.eclipsetools.feature.feature.jar' version='1.0.0.201208151405'/>
       <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-      <provided namespace='org.eclipse.update.feature' name='com.vogella.eclipsetools.feature' version='1.0.0.201207191559'/>
+      <provided namespace='org.eclipse.update.feature' name='com.vogella.eclipsetools.feature' version='1.0.0.201208151405'/>
     </provides>
     <filter>
       (org.eclipse.update.install.features=true)
     </filter>
     <artifacts size='1'>
-      <artifact classifier='org.eclipse.update.feature' id='com.vogella.eclipsetools.feature' version='1.0.0.201207191559'/>
+      <artifact classifier='org.eclipse.update.feature' id='com.vogella.eclipsetools.feature' version='1.0.0.201208151405'/>
     </artifacts>
     <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
     <touchpointData size='1'>

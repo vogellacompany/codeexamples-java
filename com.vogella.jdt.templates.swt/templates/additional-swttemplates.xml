@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/*******************************************************************************
+ * Copyright (c) 2012 vogella GmbH and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Lars Vogel <lars.vogel@gmail.com> - initial API and implementation
+ *******************************************************************************/
+-->
+
+<templates>
+
+<!-- ************************************************** Basic Widgets ************************************************** -->
+
+<template 
+	name="Button SelectionAdapter" 
+	description="Button with SelectionAdapter" 
+	id="org.eclipse.jdt.ui.text.codetemplates.swt.button2" 
+	context="swt-statements" enabled="true" autoinsert="false"
+	
+>${buttonType:newType(org.eclipse.swt.widgets.Button)} ${button:newName(org.eclipse.swt.widgets.Button)}= new ${buttonType}(${parent:var(org.eclipse.swt.widgets.Composite)}, ${style:link(SWT.PUSH, SWT.TOGGLE, SWT.RADIO, SWT.CHECK, SWT.FLAT)});
+${button}.addSelectionListener(new SelectionAdapter(){
+		@Override
+		public void widgetSelected(SelectionEvent e) {
+			${cursor}
+		}	
+	});
+${imp:import(org.eclipse.swt.SWT)}
+
+
+</template>
+
+
+</templates>

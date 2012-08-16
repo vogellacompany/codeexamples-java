@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui.editors,org.eclipse.jdt,org.eclipse.jdt
+ .ui
+Bundle-Vendor: VOGELLA
+Bundle-Version: 1.0.0.201208151405
+Bundle-Name: Swt
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.vogella.jdt.templates.swt;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

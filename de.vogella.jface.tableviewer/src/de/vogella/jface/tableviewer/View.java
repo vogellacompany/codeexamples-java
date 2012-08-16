@@ -50,8 +50,6 @@ import de.vogella.jface.tableviewer.sorter.MyViewerComparator;
 import de.vogella.jface.tableviewer.util.SearchUtil;
 
 public class View extends ViewPart {
-	public View() {
-	}
 
 	public static final String ID = "de.vogella.jface.tableviewer.view";
 	private MyViewerComparator comparator;

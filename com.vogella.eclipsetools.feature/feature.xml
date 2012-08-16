@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="com.vogella.eclipsetools.feature"
-      label="Feature"
+      label="Filtered PackageExplorer"
       version="1.0.0.qualifier"
-      provider-name="VOGELLA">
+      provider-name="vogella GmbH">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -16,6 +16,10 @@
    <license url="http://www.example.com/license">
       [Enter License Description here.]
    </license>
+
+   <url>
+      <update label="vogellas Eclipse tooling" url="http://www.vogella.com/updatesite/eclipsetools"/>
+   </url>
 
    <plugin
          id="de.vogella.plugin.filterpackageexplorer"
