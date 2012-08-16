@@ -1,5 +1,7 @@
 package de.vogella.osgi.bundletracker;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Method;
 
 import org.osgi.framework.Bundle;
