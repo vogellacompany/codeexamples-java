@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?metadataRepository version='1.1.0'?>
 <repository name='TychoTargetPlatform' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='0.0.1'>
-  <units size='58'>
+  <units size='62'>
     <unit id='org.w3c.dom.events' version='3.0.0.draft20060413_v201105210656' singleton='false'>
       <update id='org.w3c.dom.events' range='[0.0.0,3.0.0.draft20060413_v201105210656)' severity='0'/>
       <properties size='4'>
@@ -160,6 +160,38 @@
           </instruction>
         </instructions>
       </touchpointData>
+    </unit>
+    <unit id='de.vogella.tycho.feature.feature.group' version='1.0.0.v20120813-1558' singleton='false'>
+      <update id='de.vogella.tycho.feature.feature.group' range='[0.0.0,1.0.0.v20120813-1558)' severity='0'/>
+      <properties size='7'>
+        <property name='org.eclipse.equinox.p2.name' value='Feature'/>
+        <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
+        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
+        <property name='maven-groupId' value='com.vogella'/>
+        <property name='maven-artifactId' value='de.vogella.tycho.feature'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+      <provides size='1'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='de.vogella.tycho.feature.feature.group' version='1.0.0.v20120813-1558'/>
+      </provides>
+      <requires size='2'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='de.vogella.tycho.plugin' range='[1.0.0.v20120813-1558,1.0.0.v20120813-1558]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='de.vogella.tycho.feature.feature.jar' range='[1.0.0.v20120813-1558,1.0.0.v20120813-1558]'>
+          <filter>
+            (org.eclipse.update.install.features=true)
+          </filter>
+        </required>
+      </requires>
+      <touchpoint id='null' version='0.0.0'/>
+      <licenses size='1'>
+        <license uri='http://www.example.com/license' url='http://www.example.com/license'>
+          [Enter License Description here.]
+        </license>
+      </licenses>
+      <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
+        [Enter Copyright Description here.]
+      </copyright>
     </unit>
     <unit id='org.eclipse.emf.ecore' version='2.8.0.v20120606-0717'>
       <update id='org.eclipse.emf.ecore' range='[0.0.0,2.8.0.v20120606-0717)' severity='0'/>
@@ -625,6 +657,45 @@
         </instructions>
       </touchpointData>
     </unit>
+    <unit id='org.eclipse.swt.win32.win32.x86' version='3.100.0.v4233d'>
+      <update id='org.eclipse.swt.win32.win32.x86' range='[0.0.0,3.100.0.v4233d)' severity='0'/>
+      <properties size='5'>
+        <property name='df_LT.providerName' value='Eclipse.org'/>
+        <property name='df_LT.fragmentName' value='Standard Widget Toolkit for Windows'/>
+        <property name='org.eclipse.equinox.p2.name' value='%fragmentName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='fragment'/>
+      </properties>
+      <provides size='10'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.swt.win32.win32.x86' version='3.100.0.v4233d'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.swt.win32.win32.x86' version='3.100.0.v4233d'/>
+        <provided namespace='java.package' name='org.eclipse.swt.ole.win32' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.gdip' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.ole.win32' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.win32' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.opengl.win32' version='0.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='osgi.fragment' name='org.eclipse.swt' version='3.100.0.v4233d'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='1'>
+        <required namespace='osgi.bundle' name='org.eclipse.swt' range='[3.0.0,4.0.0)'/>
+      </requires>
+      <filter>
+        (&amp;(osgi.arch=x86)(osgi.os=win32)(osgi.ws=win32))
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.swt.win32.win32.x86' version='3.100.0.v4233d'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.swt.win32.win32.x86; singleton:=true&#xA;Bundle-Version: 3.100.0.v4233d&#xA;Fragment-Host: org.eclipse.swt; bundle-version=&quot;[3.0.0,4.0.0)&quot;
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
     <unit id='javax.inject' version='1.0.0.v20091030' singleton='false'>
       <update id='javax.inject' range='[0.0.0,1.0.0.v20091030)' severity='0'/>
       <properties size='5'>
@@ -713,75 +784,6 @@
           </instruction>
         </instructions>
       </touchpointData>
-    </unit>
-    <unit id='de.vogella.tycho.feature.feature.jar' version='1.0.0.201208131503'>
-      <properties size='6'>
-        <property name='org.eclipse.equinox.p2.name' value='Feature'/>
-        <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
-        <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
-        <property name='maven-groupId' value='com.vogella'/>
-        <property name='maven-artifactId' value='de.vogella.tycho.feature'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-      </properties>
-      <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='de.vogella.tycho.feature.feature.jar' version='1.0.0.201208131503'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-        <provided namespace='org.eclipse.update.feature' name='de.vogella.tycho.feature' version='1.0.0.201208131503'/>
-      </provides>
-      <filter>
-        (org.eclipse.update.install.features=true)
-      </filter>
-      <artifacts size='1'>
-        <artifact classifier='org.eclipse.update.feature' id='de.vogella.tycho.feature' version='1.0.0.201208131503'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='zipped'>
-            true
-          </instruction>
-        </instructions>
-      </touchpointData>
-      <licenses size='1'>
-        <license uri='http://www.example.com/license' url='http://www.example.com/license'>
-          [Enter License Description here.]
-        </license>
-      </licenses>
-      <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
-        [Enter Copyright Description here.]
-      </copyright>
-    </unit>
-    <unit id='de.vogella.tycho.feature.feature.group' version='1.0.0.201208131503' singleton='false'>
-      <update id='de.vogella.tycho.feature.feature.group' range='[0.0.0,1.0.0.201208131503)' severity='0'/>
-      <properties size='7'>
-        <property name='org.eclipse.equinox.p2.name' value='Feature'/>
-        <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
-        <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
-        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
-        <property name='maven-groupId' value='com.vogella'/>
-        <property name='maven-artifactId' value='de.vogella.tycho.feature'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-      </properties>
-      <provides size='1'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='de.vogella.tycho.feature.feature.group' version='1.0.0.201208131503'/>
-      </provides>
-      <requires size='2'>
-        <required namespace='org.eclipse.equinox.p2.iu' name='de.vogella.tycho.plugin' range='[1.0.0.201208131503,1.0.0.201208131503]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='de.vogella.tycho.feature.feature.jar' range='[1.0.0.201208131503,1.0.0.201208131503]'>
-          <filter>
-            (org.eclipse.update.install.features=true)
-          </filter>
-        </required>
-      </requires>
-      <touchpoint id='null' version='0.0.0'/>
-      <licenses size='1'>
-        <license uri='http://www.example.com/license' url='http://www.example.com/license'>
-          [Enter License Description here.]
-        </license>
-      </licenses>
-      <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
-        [Enter Copyright Description here.]
-      </copyright>
     </unit>
     <unit id='org.apache.batik.css' version='1.6.0.v201011041432' singleton='false'>
       <update id='org.apache.batik.css' range='[0.0.0,1.6.0.v201011041432)' severity='0'/>
@@ -1328,35 +1330,6 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='de.vogella.tycho.plugin' version='1.0.0.201208131503'>
-      <update id='de.vogella.tycho.plugin' range='[0.0.0,1.0.0.201208131503)' severity='0'/>
-      <properties size='4'>
-        <property name='org.eclipse.equinox.p2.name' value='Plugin'/>
-        <property name='maven-groupId' value='com.vogella'/>
-        <property name='maven-artifactId' value='de.vogella.tycho.plugin'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-      </properties>
-      <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='de.vogella.tycho.plugin' version='1.0.0.201208131503'/>
-        <provided namespace='osgi.bundle' name='de.vogella.tycho.plugin' version='1.0.0.201208131503'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-      </provides>
-      <requires size='2'>
-        <required namespace='osgi.bundle' name='org.eclipse.ui' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='0.0.0'/>
-      </requires>
-      <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='de.vogella.tycho.plugin' version='1.0.0.201208131503'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='manifest'>
-            Bundle-SymbolicName: de.vogella.tycho.plugin; singleton:=true&#xA;Bundle-Version: 1.0.0.201208131503&#xA;
-          </instruction>
-        </instructions>
-      </touchpointData>
-    </unit>
     <unit id='org.eclipse.e4.ui.workbench3' version='0.12.0.v20120521-2329'>
       <update id='org.eclipse.e4.ui.workbench3' range='[0.0.0,0.12.0.v20120521-2329)' severity='0'/>
       <properties size='5'>
@@ -1386,6 +1359,47 @@
         <instructions size='1'>
           <instruction key='manifest'>
             Bundle-SymbolicName: org.eclipse.e4.ui.workbench3;singleton:=true&#xA;Bundle-Version: 0.12.0.v20120521-2329
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='org.eclipse.swt.gtk.linux.x86' version='3.100.0.v4233d'>
+      <update id='org.eclipse.swt.gtk.linux.x86' range='[0.0.0,3.100.0.v4233d)' severity='0'/>
+      <properties size='5'>
+        <property name='df_LT.providerName' value='Eclipse.org'/>
+        <property name='df_LT.fragmentName' value='Standard Widget Toolkit for GTK 2.0'/>
+        <property name='org.eclipse.equinox.p2.name' value='%fragmentName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='fragment'/>
+      </properties>
+      <provides size='12'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.swt.gtk.linux.x86' version='3.100.0.v4233d'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.swt.gtk.linux.x86' version='3.100.0.v4233d'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.accessibility.gtk' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.cairo' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.cde' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.gnome' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.gtk' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.mozilla' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.opengl.glx' version='0.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='osgi.fragment' name='org.eclipse.swt' version='3.100.0.v4233d'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='1'>
+        <required namespace='osgi.bundle' name='org.eclipse.swt' range='[3.0.0,4.0.0)'/>
+      </requires>
+      <filter>
+        (&amp;(osgi.arch=x86)(osgi.os=linux)(osgi.ws=gtk))
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.swt.gtk.linux.x86' version='3.100.0.v4233d'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.swt.gtk.linux.x86; singleton:=true&#xA;Bundle-Version: 3.100.0.v4233d&#xA;Fragment-Host: org.eclipse.swt; bundle-version=&quot;[3.0.0,4.0.0)&quot;
           </instruction>
         </instructions>
       </touchpointData>
@@ -1964,6 +1978,70 @@
         </instructions>
       </touchpointData>
     </unit>
+    <unit id='de.vogella.tycho.plugin' version='1.0.0.v20120813-1558'>
+      <update id='de.vogella.tycho.plugin' range='[0.0.0,1.0.0.v20120813-1558)' severity='0'/>
+      <properties size='4'>
+        <property name='org.eclipse.equinox.p2.name' value='Plugin'/>
+        <property name='maven-groupId' value='com.vogella'/>
+        <property name='maven-artifactId' value='de.vogella.tycho.plugin'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='de.vogella.tycho.plugin' version='1.0.0.v20120813-1558'/>
+        <provided namespace='osgi.bundle' name='de.vogella.tycho.plugin' version='1.0.0.v20120813-1558'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+      </provides>
+      <requires size='2'>
+        <required namespace='osgi.bundle' name='org.eclipse.ui' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='0.0.0'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='de.vogella.tycho.plugin' version='1.0.0.v20120813-1558'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: de.vogella.tycho.plugin; singleton:=true&#xA;Bundle-Version: 1.0.0.v20120813-1558&#xA;
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='org.eclipse.swt.cocoa.macosx.x86_64' version='3.100.0.v4233d'>
+      <update id='org.eclipse.swt.cocoa.macosx.x86_64' range='[0.0.0,3.100.0.v4233d)' severity='0'/>
+      <properties size='5'>
+        <property name='df_LT.providerName' value='Eclipse.org'/>
+        <property name='df_LT.fragmentName' value='Standard Widget Toolkit for Mac OS X (Cocoa)'/>
+        <property name='org.eclipse.equinox.p2.name' value='%fragmentName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='fragment'/>
+      </properties>
+      <provides size='6'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.swt.cocoa.macosx.x86_64' version='3.100.0.v4233d'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.swt.cocoa.macosx.x86_64' version='3.100.0.v4233d'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.cocoa' version='0.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='osgi.fragment' name='org.eclipse.swt' version='3.100.0.v4233d'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='1'>
+        <required namespace='osgi.bundle' name='org.eclipse.swt' range='[3.0.0,4.0.0)'/>
+      </requires>
+      <filter>
+        (&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.swt.cocoa.macosx.x86_64' version='3.100.0.v4233d'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.swt.cocoa.macosx.x86_64; singleton:=true&#xA;Bundle-Version: 3.100.0.v4233d&#xA;Fragment-Host: org.eclipse.swt; bundle-version=&quot;[3.0.0,4.0.0)&quot;
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
     <unit id='org.eclipse.ui.workbench' version='3.103.0.v20120530-1824'>
       <update id='org.eclipse.ui.workbench' range='[0.0.0,3.103.0.v20120530-1824)' severity='0'/>
       <properties size='5'>
@@ -2232,6 +2310,43 @@
         </instructions>
       </touchpointData>
     </unit>
+    <unit id='de.vogella.tycho.feature.feature.jar' version='1.0.0.v20120813-1558'>
+      <properties size='6'>
+        <property name='org.eclipse.equinox.p2.name' value='Feature'/>
+        <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
+        <property name='maven-groupId' value='com.vogella'/>
+        <property name='maven-artifactId' value='de.vogella.tycho.feature'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='de.vogella.tycho.feature.feature.jar' version='1.0.0.v20120813-1558'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+        <provided namespace='org.eclipse.update.feature' name='de.vogella.tycho.feature' version='1.0.0.v20120813-1558'/>
+      </provides>
+      <filter>
+        (org.eclipse.update.install.features=true)
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='org.eclipse.update.feature' id='de.vogella.tycho.feature' version='1.0.0.v20120813-1558'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='zipped'>
+            true
+          </instruction>
+        </instructions>
+      </touchpointData>
+      <licenses size='1'>
+        <license uri='http://www.example.com/license' url='http://www.example.com/license'>
+          [Enter License Description here.]
+        </license>
+      </licenses>
+      <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
+        [Enter Copyright Description here.]
+      </copyright>
+    </unit>
     <unit id='org.eclipse.e4.core.di' version='1.1.0.v20120521-2346' singleton='false'>
       <update id='org.eclipse.e4.core.di' range='[0.0.0,1.1.0.v20120521-2346)' severity='0'/>
       <properties size='5'>
@@ -2266,6 +2381,45 @@
         <instructions size='1'>
           <instruction key='manifest'>
             Bundle-SymbolicName: org.eclipse.e4.core.di&#xA;Bundle-Version: 1.1.0.v20120521-2346
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='org.eclipse.swt.win32.win32.x86_64' version='3.100.0.v4233d'>
+      <update id='org.eclipse.swt.win32.win32.x86_64' range='[0.0.0,3.100.0.v4233d)' severity='0'/>
+      <properties size='5'>
+        <property name='df_LT.providerName' value='Eclipse.org'/>
+        <property name='df_LT.fragmentName' value='Standard Widget Toolkit for Windows'/>
+        <property name='org.eclipse.equinox.p2.name' value='%fragmentName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='fragment'/>
+      </properties>
+      <provides size='10'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.swt.win32.win32.x86_64' version='3.100.0.v4233d'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.swt.win32.win32.x86_64' version='3.100.0.v4233d'/>
+        <provided namespace='java.package' name='org.eclipse.swt.ole.win32' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.gdip' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.ole.win32' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.win32' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.swt.internal.opengl.win32' version='0.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='osgi.fragment' name='org.eclipse.swt' version='3.100.0.v4233d'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='1'>
+        <required namespace='osgi.bundle' name='org.eclipse.swt' range='[3.0.0,4.0.0)'/>
+      </requires>
+      <filter>
+        (&amp;(osgi.arch=x86_64)(osgi.os=win32)(osgi.ws=win32))
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.swt.win32.win32.x86_64' version='3.100.0.v4233d'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.swt.win32.win32.x86_64; singleton:=true&#xA;Bundle-Version: 3.100.0.v4233d&#xA;Fragment-Host: org.eclipse.swt; bundle-version=&quot;[3.0.0,4.0.0)&quot;
           </instruction>
         </instructions>
       </touchpointData>
