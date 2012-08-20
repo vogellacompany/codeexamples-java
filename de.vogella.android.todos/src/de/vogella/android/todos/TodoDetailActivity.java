@@ -60,6 +60,7 @@ public class TodoDetailActivity extends Activity {
 			}
 
 		});
+		
 	}
 
 	private void fillData(Uri uri) {
