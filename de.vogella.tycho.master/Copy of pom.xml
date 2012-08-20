@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.vogella</groupId>
+	<artifactId>parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>../de.vogella.tycho.plugin</module>
+		<module>../de.vogella.tycho.feature</module>
+		<module>../de.vogella.tycho.p2updatesite</module>
+	</modules>
+
+	<properties>
+		<tycho-version>0.16.0.SNAPSHOT</tycho-version>
+	</properties>
+
+	<repositories>
+    <repository>
+      <id>juno</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/releases/juno</url>
+    </repository>
+  </repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-director-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>materialize-products</id>
+						<goals>
+							<goal>materialize-products</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>archive-products</id>
+						<goals>
+							<goal>archive-products</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+
+
+	</build>
+
+</project>
