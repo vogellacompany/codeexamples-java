@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Swt
-Bundle-SymbolicName: com.vogella.jdt.templates.swt;singleton:=true
+Bundle-SymbolicName: com.vogella.jdt.templates;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: VOGELLA
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
