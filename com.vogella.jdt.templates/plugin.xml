@@ -10,37 +10,37 @@
             id="org.eclipse.jdt.ui.CompilationUnitEditor">
       </contextTypeRegistry>
        <contextType
-            name="%templates.java.contextType.name"
+            name="Java ContextType"
             class="org.eclipse.jdt.internal.corext.template.java.JavaContextType"
             id="java"
             registryId="org.eclipse.jdt.ui.CompilationUnitEditor">
       </contextType>
       <contextType
-            name="%templates.java.statements.contextType.name"
+            name="Statements"
             class="org.eclipse.jdt.internal.corext.template.java.JavaContextType"
             id="java-statements"
             registryId="org.eclipse.jdt.ui.CompilationUnitEditor">
       </contextType>
       <contextType
-            name="%templates.java.members.contextType.name"
+            name="Members"
             class="org.eclipse.jdt.internal.corext.template.java.JavaContextType"
             id="java-members"
             registryId="org.eclipse.jdt.ui.CompilationUnitEditor">
       </contextType>
       <contextType
-            name="%templates.swt.contextType.name"
+            name="SWT Context Type"
             class="org.eclipse.jdt.internal.corext.template.java.SWTContextType"
             id="swt"
             registryId="org.eclipse.jdt.ui.CompilationUnitEditor">
       </contextType>
       <contextType
-            name="%templates.swt.statements.contextType.name"
+            name="SWT Statements"
             class="org.eclipse.jdt.internal.corext.template.java.SWTContextType"
             id="swt-statements"
             registryId="org.eclipse.jdt.ui.CompilationUnitEditor">
       </contextType>
       <contextType
-            name="%templates.swt.members.contextType.name"
+            name="SWT Members"
             class="org.eclipse.jdt.internal.corext.template.java.SWTContextType"
             id="swt-members"
             registryId="org.eclipse.jdt.ui.CompilationUnitEditor">
@@ -52,6 +52,9 @@
        <include
       		file="templates/additional-templates.xml">
       </include>
+       <include
+             file="templates/android-templates.xml">
+       </include>
    </extension>
 
 </plugin>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/*******************************************************************************
+ * Copyright (c) 2012 vogella GmbH and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Lars Vogel <lars.vogel@gmail.com> - initial API and implementation
+ *******************************************************************************/
+-->
+
+<templates>
+
+
+<template name="android-actionbar" description="Creates ActionBar" id="org.eclipse.jdt.ui.templates.android.actionbar" context="java-statements" enabled="true" autoinsert="false">
+	public void onCreateOptionMenu(Menu menu){
+		
+	}
+	public void onOptionMenuSelected(MenuItem item)){
+	
+	}
+	
+</template>
+
+
+<template name="android-view-ontouch" description="Create onTouch method" id="org.eclipse.jdt.ui.templates.android.actionbar" context="java-statements" enabled="true" autoinsert="false">
+	public boolean onTouch(Event event) {
+		int x = event.getX();
+		int y = event.getY();
+		switch (event.getAction()){
+			
+		}
+		
+	}
+	
+	
+</template>
+
+
+
+</templates>

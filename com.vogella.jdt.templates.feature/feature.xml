@@ -22,7 +22,7 @@
    </url>
 
    <plugin
-         id="com.vogella.jdt.templates.swt"
+         id="com.vogella.jdt.templates"
          download-size="0"
          install-size="0"
          version="0.0.0"
