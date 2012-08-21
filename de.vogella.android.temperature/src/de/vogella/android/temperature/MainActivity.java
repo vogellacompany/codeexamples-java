@@ -7,20 +7,20 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-public class ConvertActivity extends Activity {
+public class MainActivity extends Activity {
 	private EditText text;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		setContentView(R.layout.activity_main);
 		text = (EditText) findViewById(R.id.editText1);
 
 	}
 
 	// This method is called at button click because we assigned the name to the
-	// "On Click property" of the button
-	public void myClickHandler(View view) {
+	// "OnClick property" of the button
+	public void onClick(View view) {
 		switch (view.getId()) {
 		case R.id.button1:
 			RadioButton celsiusButton = (RadioButton) findViewById(R.id.radio0);
