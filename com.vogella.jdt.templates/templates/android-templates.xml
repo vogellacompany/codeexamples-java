@@ -16,30 +16,126 @@
 <templates>
 
 
-<template name="android-actionbar" description="Creates ActionBar" id="org.eclipse.jdt.ui.templates.android.actionbar" context="java-statements" enabled="true" autoinsert="false">
-	public void onCreateOptionMenu(Menu menu){
-		
-	}
-	public void onOptionMenuSelected(MenuItem item)){
-	
-	}
-	
-</template>
+<template name="onOptionsItemSelected" description="OptionMenu" id="org.eclipse.jdt.ui.templates.android.actionbar" context="java-members" enabled="true" autoinsert="false">
+	@Override
+    public boolean onOptionsItemSelected(${type:newType(android.view.MenuItem)} item) {
+    	switch (item.getItemId()) {
+		case R.id.menu_settings:
+			break;
 
-
-<template name="android-view-ontouch" description="Create onTouch method" id="org.eclipse.jdt.ui.templates.android.actionbar" context="java-statements" enabled="true" autoinsert="false">
-	public boolean onTouch(Event event) {
-		int x = event.getX();
-		int y = event.getY();
-		switch (event.getAction()){
-			
+		default:
+			break;
 		}
-		
-	}
-	
-	
+    	
+    return super.onOptionsItemSelected(item);
+    }
+    	
 </template>
 
+
+
+
+<template name="onActivityResult" description="OptionMenu" id="org.eclipse.jdt.ui.templates.android.onActivityResult" context="java-members" enabled="true" autoinsert="false">
+@Override
+	  protected void onActivityResult(int requestCode, int resultCode, ${type:newType(android.content.Intent)} data) {
+	    if (resultCode == Activity.RESULT_OK){
+	   	 	${cursor}
+	    }
+	  }
+</template>
+
+<template name="onTouchDraw" description="OnTouch Method" id="org.eclipse.jdt.ui.templates.android.ontouch" context="java-members" enabled="true" autoinsert="false">
+@Override
+	protected void onDraw(Canvas canvas) {
+		super.onDraw(canvas);
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		float x = event.getX();
+		float y = event.getY();
+		switch (event.getAction()) {
+		case MotionEvent.ACTION_DOWN:
+			break;
+		case MotionEvent.ACTION_MOVE:
+			break;
+		default:
+			break;
+		}
+		return true;
+	}
+
+</template>
+
+
+<template name="findViewById" description="Find View by ID" id="org.eclipse.jdt.ui.templates.android.findviewbyid" context="java-statements" enabled="true" autoinsert="false">
+	${viewtype:link(EditText, ImageView)} ${myvar:newName(view)} = (${viewtype:link(EditText, ImageView)}) findViewById(R.id.${cursor});
+</template>
+
+<template name="toast" description="Creates a toast" id="org.eclipse.jdt.ui.templates.android.toast" context="java-statements" enabled="true" autoinsert="false">
+	Toast.makeText(this, "${cursor}", Toast.LENGTH_SHORT).show();
+</template>
+
+
+
+	  
+<template name="paintconfig" description="Create Paint configuration" id="org.eclipse.jdt.ui.templates.android.paintconfig" context="java-statements" enabled="true" autoinsert="false">
+	paint.setAntiAlias(true);
+    paint.setColor(Color.WHITE);
+    paint.setStyle(Paint.Style.STROKE);
+    paint.setStrokeJoin(Paint.Join.ROUND);
+    paint.setStrokeWidth(5f);
+</template>
+
+<template name="onClick" description="Create onClickMethod" id="org.eclipse.jdt.ui.templates.android.onclick" context="java-members" enabled="true" autoinsert="false">
+		public void onClick(View view) {
+	}
+</template>
+<template name="saveBitmap" description="Save Bitmap" id="org.eclipse.jdt.ui.templates.android.savebitmap" context="java-members" enabled="true" autoinsert="false">
+		private void saveBitmap(Bitmap cache, String name) {
+		File dir = Environment.getExternalStorageDirectory();
+		File file = new File(dir, "name");
+		FileOutputStream fOut = null;
+		try {
+			fOut = new FileOutputStream(file);
+			cache.compress(Bitmap.CompressFormat.JPEG, 85, fOut);
+			// Add to Media ContentProvider
+			fOut.flush();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (fOut != null) {
+				try {
+					fOut.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+</template>
+
+<template name="arrayadaper" description="creates default ArrayAdaper"
+		id="org.eclipse.jdt.ui.templates.arrayadaper" context="java-statements"
+		enabled="true" autoinsert="false">
+		new ArrayAdapter(this,
+				android.R.layout.simple_list_item_1, input);
+	</template>
+
+
+
+<template name="intent-share" description="Share Intent" id="org.eclipse.jdt.ui.templates.android.intent.share" context="java-statements" enabled="true" autoinsert="false">
+	${type:newType(android.content.Intent)} intent = new Intent(Intent.ACTION_SEND);
+	intent.setType("text/plain");
+ 	intent.putExtra(Intent.EXTRA_TEXT, "Message");
+</template>
+
+<template name="intent-pickimage" description="Pick an Image" id="org.eclipse.jdt.ui.templates.android.intent.pickimage" context="java-statements" enabled="true" autoinsert="false">
+	${type:newType(android.content.Intent)} intent = new Intent();
+	intent.setType("image/*");
+	intent.setAction(Intent.ACTION_GET_CONTENT);
+	intent.addCategory(Intent.CATEGORY_OPENABLE);
+</template>
 
 
 </templates>

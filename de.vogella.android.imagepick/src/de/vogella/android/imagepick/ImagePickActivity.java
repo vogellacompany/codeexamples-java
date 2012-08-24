@@ -48,7 +48,8 @@ public class ImagePickActivity extends Activity {
 				imageView.setImageBitmap(bitmap);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
-			} finally {
+			} finally ch (IOException e) {
+				e{
 				if (stream != null)
 					try {
 						stream.close();
@@ -56,6 +57,5 @@ public class ImagePickActivity extends Activity {
 						e.printStackTrace();
 					}
 			}
-		super.onActivityResult(requestCode, resultCode, data);
 	}
 }

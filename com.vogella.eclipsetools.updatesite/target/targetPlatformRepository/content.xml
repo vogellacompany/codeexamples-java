@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?metadataRepository version='1.1.0'?>
 <repository name='TychoTargetPlatform' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='0.0.1'>
-  <units size='100'>
+  <units size='99'>
     <unit id='org.eclipse.core.contenttype' version='3.4.200.v20120523-2004'>
       <update id='org.eclipse.core.contenttype' range='[0.0.0,3.4.200.v20120523-2004)' severity='0'/>
       <properties size='5'>
@@ -845,44 +845,6 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.vogella.eclipsetools.feature.feature.jar' version='1.0.0.201208151405'>
-      <properties size='7'>
-        <property name='org.eclipse.equinox.p2.name' value='Filtered PackageExplorer'/>
-        <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
-        <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
-        <property name='org.eclipse.equinox.p2.provider' value='vogella GmbH'/>
-        <property name='maven-groupId' value='com.vogella'/>
-        <property name='maven-artifactId' value='com.vogella.eclipsetools.feature'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-      </properties>
-      <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.eclipsetools.feature.feature.jar' version='1.0.0.201208151405'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-        <provided namespace='org.eclipse.update.feature' name='com.vogella.eclipsetools.feature' version='1.0.0.201208151405'/>
-      </provides>
-      <filter>
-        (org.eclipse.update.install.features=true)
-      </filter>
-      <artifacts size='1'>
-        <artifact classifier='org.eclipse.update.feature' id='com.vogella.eclipsetools.feature' version='1.0.0.201208151405'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='zipped'>
-            true
-          </instruction>
-        </instructions>
-      </touchpointData>
-      <licenses size='1'>
-        <license uri='http://www.example.com/license' url='http://www.example.com/license'>
-          [Enter License Description here.]
-        </license>
-      </licenses>
-      <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
-        [Enter Copyright Description here.]
-      </copyright>
-    </unit>
     <unit id='org.eclipse.jface' version='3.8.0.v20120521-2329' singleton='false'>
       <update id='org.eclipse.jface' range='[0.0.0,3.8.0.v20120521-2329)' severity='0'/>
       <properties size='5'>
@@ -1239,44 +1201,6 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.vogella.jdt.templates.feature.feature.jar' version='1.0.0.201208151405'>
-      <properties size='7'>
-        <property name='org.eclipse.equinox.p2.name' value='Additional JDT templates'/>
-        <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
-        <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
-        <property name='org.eclipse.equinox.p2.provider' value='vogella GmbH'/>
-        <property name='maven-groupId' value='com.vogella'/>
-        <property name='maven-artifactId' value='com.vogella.jdt.templates.feature'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-      </properties>
-      <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.feature.feature.jar' version='1.0.0.201208151405'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-        <provided namespace='org.eclipse.update.feature' name='com.vogella.jdt.templates.feature' version='1.0.0.201208151405'/>
-      </provides>
-      <filter>
-        (org.eclipse.update.install.features=true)
-      </filter>
-      <artifacts size='1'>
-        <artifact classifier='org.eclipse.update.feature' id='com.vogella.jdt.templates.feature' version='1.0.0.201208151405'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='zipped'>
-            true
-          </instruction>
-        </instructions>
-      </touchpointData>
-      <licenses size='1'>
-        <license uri='http://www.example.com/license' url='http://www.example.com/license'>
-          [Enter License Description here.]
-        </license>
-      </licenses>
-      <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
-        [Enter Copyright Description here.]
-      </copyright>
-    </unit>
     <unit id='org.eclipse.osgi.services' version='3.3.100.v20120522-1822' singleton='false'>
       <update id='org.eclipse.osgi.services' range='[0.0.0,3.3.100.v20120522-1822)' severity='0'/>
       <properties size='8'>
@@ -1394,6 +1318,39 @@
           </instruction>
         </instructions>
       </touchpointData>
+    </unit>
+    <unit id='com.vogella.jdt.templates.feature.feature.group' version='1.0.0.201208231258' singleton='false'>
+      <update id='com.vogella.jdt.templates.feature.feature.group' range='[0.0.0,1.0.0.201208231258)' severity='0'/>
+      <properties size='8'>
+        <property name='org.eclipse.equinox.p2.name' value='Additional JDT templates'/>
+        <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
+        <property name='org.eclipse.equinox.p2.provider' value='vogella GmbH'/>
+        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
+        <property name='maven-groupId' value='com.vogella'/>
+        <property name='maven-artifactId' value='com.vogella.jdt.templates.feature'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+      <provides size='1'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.feature.feature.group' version='1.0.0.201208231258'/>
+      </provides>
+      <requires size='2'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates' range='[1.0.0.201208231258,1.0.0.201208231258]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.feature.feature.jar' range='[1.0.0.201208231258,1.0.0.201208231258]'>
+          <filter>
+            (org.eclipse.update.install.features=true)
+          </filter>
+        </required>
+      </requires>
+      <touchpoint id='null' version='0.0.0'/>
+      <licenses size='1'>
+        <license uri='http://www.example.com/license' url='http://www.example.com/license'>
+          [Enter License Description here.]
+        </license>
+      </licenses>
+      <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
+        [Enter Copyright Description here.]
+      </copyright>
     </unit>
     <unit id='org.eclipse.equinox.preferences' version='3.5.0.v20120522-1841'>
       <update id='org.eclipse.equinox.preferences' range='[0.0.0,3.5.0.v20120522-1841)' severity='0'/>
@@ -1782,36 +1739,6 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='de.vogella.plugin.openshell' version='1.0.0.201207031305'>
-      <update id='de.vogella.plugin.openshell' range='[0.0.0,1.0.0.201207031305)' severity='0'/>
-      <properties size='4'>
-        <property name='org.eclipse.equinox.p2.name' value='Openshell'/>
-        <property name='maven-groupId' value='com.vogella'/>
-        <property name='maven-artifactId' value='de.vogella.plugin.openshell'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-      </properties>
-      <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='de.vogella.plugin.openshell' version='1.0.0.201207031305'/>
-        <provided namespace='osgi.bundle' name='de.vogella.plugin.openshell' version='1.0.0.201207031305'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-      </provides>
-      <requires size='3'>
-        <required namespace='osgi.bundle' name='org.eclipse.ui' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='3.7.101'/>
-      </requires>
-      <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='de.vogella.plugin.openshell' version='1.0.0.201207031305'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='manifest'>
-            Bundle-SymbolicName: de.vogella.plugin.openshell;singleton:=true&#xA;Bundle-Version: 1.0.0.201207031305
-          </instruction>
-        </instructions>
-      </touchpointData>
-    </unit>
     <unit id='org.eclipse.core.filesystem' version='1.3.200.v20120522-2012'>
       <update id='org.eclipse.core.filesystem' range='[0.0.0,1.3.200.v20120522-2012)' severity='0'/>
       <properties size='5'>
@@ -1891,6 +1818,44 @@
           </instruction>
         </instructions>
       </touchpointData>
+    </unit>
+    <unit id='com.vogella.eclipsetools.feature.feature.jar' version='1.0.0.201208231258'>
+      <properties size='7'>
+        <property name='org.eclipse.equinox.p2.name' value='Open vogella tools'/>
+        <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
+        <property name='org.eclipse.equinox.p2.provider' value='vogella GmbH'/>
+        <property name='maven-groupId' value='com.vogella'/>
+        <property name='maven-artifactId' value='com.vogella.eclipsetools.feature'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.eclipsetools.feature.feature.jar' version='1.0.0.201208231258'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+        <provided namespace='org.eclipse.update.feature' name='com.vogella.eclipsetools.feature' version='1.0.0.201208231258'/>
+      </provides>
+      <filter>
+        (org.eclipse.update.install.features=true)
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='org.eclipse.update.feature' id='com.vogella.eclipsetools.feature' version='1.0.0.201208231258'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='zipped'>
+            true
+          </instruction>
+        </instructions>
+      </touchpointData>
+      <licenses size='1'>
+        <license uri='http://www.example.com/license' url='http://www.example.com/license'>
+          [Enter License Description here.]
+        </license>
+      </licenses>
+      <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
+        [Enter Copyright Description here.]
+      </copyright>
     </unit>
     <unit id='org.eclipse.e4.core.di' version='1.1.0.v20120521-2346' singleton='false'>
       <update id='org.eclipse.e4.core.di' range='[0.0.0,1.1.0.v20120521-2346)' severity='0'/>
@@ -2096,40 +2061,6 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.vogella.eclipsetools.feature.feature.group' version='1.0.0.201208151405' singleton='false'>
-      <update id='com.vogella.eclipsetools.feature.feature.group' range='[0.0.0,1.0.0.201208151405)' severity='0'/>
-      <properties size='8'>
-        <property name='org.eclipse.equinox.p2.name' value='Filtered PackageExplorer'/>
-        <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
-        <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
-        <property name='org.eclipse.equinox.p2.provider' value='vogella GmbH'/>
-        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
-        <property name='maven-groupId' value='com.vogella'/>
-        <property name='maven-artifactId' value='com.vogella.eclipsetools.feature'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-      </properties>
-      <provides size='1'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.eclipsetools.feature.feature.group' version='1.0.0.201208151405'/>
-      </provides>
-      <requires size='3'>
-        <required namespace='org.eclipse.equinox.p2.iu' name='de.vogella.plugin.filterpackageexplorer' range='[1.0.0.201208151405,1.0.0.201208151405]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='de.vogella.plugin.openshell' range='[1.0.0.201207031305,1.0.0.201207031305]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.eclipsetools.feature.feature.jar' range='[1.0.0.201208151405,1.0.0.201208151405]'>
-          <filter>
-            (org.eclipse.update.install.features=true)
-          </filter>
-        </required>
-      </requires>
-      <touchpoint id='null' version='0.0.0'/>
-      <licenses size='1'>
-        <license uri='http://www.example.com/license' url='http://www.example.com/license'>
-          [Enter License Description here.]
-        </license>
-      </licenses>
-      <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
-        [Enter Copyright Description here.]
-      </copyright>
-    </unit>
     <unit id='org.eclipse.core.jobs' version='3.5.200.v20120521-2346'>
       <update id='org.eclipse.core.jobs' range='[0.0.0,3.5.200.v20120521-2346)' severity='0'/>
       <properties size='5'>
@@ -2271,38 +2202,6 @@
         <instructions size='1'>
           <instruction key='manifest'>
             Bundle-SymbolicName: org.eclipse.ui.navigator.resources; singleton:=true&#xA;Bundle-Version: 3.4.400.v20120523-1955
-          </instruction>
-        </instructions>
-      </touchpointData>
-    </unit>
-    <unit id='de.vogella.plugin.filterpackageexplorer' version='1.0.0.201208151405'>
-      <update id='de.vogella.plugin.filterpackageexplorer' range='[0.0.0,1.0.0.201208151405)' severity='0'/>
-      <properties size='4'>
-        <property name='org.eclipse.equinox.p2.name' value='Filterpackageexplorer'/>
-        <property name='maven-groupId' value='com.vogella'/>
-        <property name='maven-artifactId' value='de.vogella.plugin.filterpackageexplorer'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-      </properties>
-      <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='de.vogella.plugin.filterpackageexplorer' version='1.0.0.201208151405'/>
-        <provided namespace='osgi.bundle' name='de.vogella.plugin.filterpackageexplorer' version='1.0.0.201208151405'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-      </provides>
-      <requires size='5'>
-        <required namespace='osgi.bundle' name='org.eclipse.ui' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.jdt.core' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.jdt.ui' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='0.0.0'/>
-      </requires>
-      <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='de.vogella.plugin.filterpackageexplorer' version='1.0.0.201208151405'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='manifest'>
-            Bundle-SymbolicName: de.vogella.plugin.filterpackageexplorer;singleton:=true&#xA;Bundle-Version: 1.0.0.201208151405&#xA;
           </instruction>
         </instructions>
       </touchpointData>
@@ -3529,6 +3428,36 @@
         </instructions>
       </touchpointData>
     </unit>
+    <unit id='de.vogella.plugin.openshell' version='1.0.0.201207191559'>
+      <update id='de.vogella.plugin.openshell' range='[0.0.0,1.0.0.201207191559)' severity='0'/>
+      <properties size='4'>
+        <property name='org.eclipse.equinox.p2.name' value='Openshell'/>
+        <property name='maven-groupId' value='com.vogella'/>
+        <property name='maven-artifactId' value='de.vogella.plugin.openshell'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='de.vogella.plugin.openshell' version='1.0.0.201207191559'/>
+        <provided namespace='osgi.bundle' name='de.vogella.plugin.openshell' version='1.0.0.201207191559'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+      </provides>
+      <requires size='3'>
+        <required namespace='osgi.bundle' name='org.eclipse.ui' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='3.7.101'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='de.vogella.plugin.openshell' version='1.0.0.201207191559'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: de.vogella.plugin.openshell;singleton:=true&#xA;Bundle-Version: 1.0.0.201207191559
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
     <unit id='org.eclipse.core.filebuffers' version='3.5.200.v20120523-1310'>
       <update id='org.eclipse.core.filebuffers' range='[0.0.0,3.5.200.v20120523-1310)' severity='0'/>
       <properties size='5'>
@@ -3962,37 +3891,6 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.vogella.jdt.templates.swt' version='1.0.0.201208151405'>
-      <update id='com.vogella.jdt.templates.swt' range='[0.0.0,1.0.0.201208151405)' severity='0'/>
-      <properties size='5'>
-        <property name='org.eclipse.equinox.p2.name' value='Swt'/>
-        <property name='org.eclipse.equinox.p2.provider' value='VOGELLA'/>
-        <property name='maven-groupId' value='com.vogella'/>
-        <property name='maven-artifactId' value='com.vogella.jdt.templates.swt'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-      </properties>
-      <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.swt' version='1.0.0.201208151405'/>
-        <provided namespace='osgi.bundle' name='com.vogella.jdt.templates.swt' version='1.0.0.201208151405'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-      </provides>
-      <requires size='3'>
-        <required namespace='osgi.bundle' name='org.eclipse.ui.editors' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.jdt' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.jdt.ui' range='0.0.0'/>
-      </requires>
-      <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.vogella.jdt.templates.swt' version='1.0.0.201208151405'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='manifest'>
-            Bundle-SymbolicName: com.vogella.jdt.templates.swt;singleton:=true&#xA;Bundle-Version: 1.0.0.201208151405&#xA;
-          </instruction>
-        </instructions>
-      </touchpointData>
-    </unit>
     <unit id='org.eclipse.equinox.security' version='1.1.100.v20120522-1841'>
       <update id='org.eclipse.equinox.security' range='[0.0.0,1.1.100.v20120522-1841)' severity='0'/>
       <properties size='5'>
@@ -4048,6 +3946,75 @@
         <instructions size='1'>
           <instruction key='manifest'>
             Bundle-SymbolicName: org.eclipse.equinox.security;singleton:=true&#xA;Bundle-Version: 1.1.100.v20120522-1841
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='com.vogella.jdt.templates.feature.feature.jar' version='1.0.0.201208231258'>
+      <properties size='7'>
+        <property name='org.eclipse.equinox.p2.name' value='Additional JDT templates'/>
+        <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
+        <property name='org.eclipse.equinox.p2.provider' value='vogella GmbH'/>
+        <property name='maven-groupId' value='com.vogella'/>
+        <property name='maven-artifactId' value='com.vogella.jdt.templates.feature'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.feature.feature.jar' version='1.0.0.201208231258'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+        <provided namespace='org.eclipse.update.feature' name='com.vogella.jdt.templates.feature' version='1.0.0.201208231258'/>
+      </provides>
+      <filter>
+        (org.eclipse.update.install.features=true)
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='org.eclipse.update.feature' id='com.vogella.jdt.templates.feature' version='1.0.0.201208231258'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='zipped'>
+            true
+          </instruction>
+        </instructions>
+      </touchpointData>
+      <licenses size='1'>
+        <license uri='http://www.example.com/license' url='http://www.example.com/license'>
+          [Enter License Description here.]
+        </license>
+      </licenses>
+      <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
+        [Enter Copyright Description here.]
+      </copyright>
+    </unit>
+    <unit id='com.vogella.jdt.templates' version='1.0.0.201208231258'>
+      <update id='com.vogella.jdt.templates' range='[0.0.0,1.0.0.201208231258)' severity='0'/>
+      <properties size='5'>
+        <property name='org.eclipse.equinox.p2.name' value='Swt'/>
+        <property name='org.eclipse.equinox.p2.provider' value='VOGELLA'/>
+        <property name='maven-groupId' value='com.vogella'/>
+        <property name='maven-artifactId' value='com.vogella.jdt.templates'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates' version='1.0.0.201208231258'/>
+        <provided namespace='osgi.bundle' name='com.vogella.jdt.templates' version='1.0.0.201208231258'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+      </provides>
+      <requires size='3'>
+        <required namespace='osgi.bundle' name='org.eclipse.ui.editors' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.jdt' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.jdt.ui' range='0.0.0'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='com.vogella.jdt.templates' version='1.0.0.201208231258'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: com.vogella.jdt.templates;singleton:=true&#xA;Bundle-Version: 1.0.0.201208231258&#xA;
           </instruction>
         </instructions>
       </touchpointData>
@@ -4511,24 +4478,24 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.vogella.jdt.templates.feature.feature.group' version='1.0.0.201208151405' singleton='false'>
-      <update id='com.vogella.jdt.templates.feature.feature.group' range='[0.0.0,1.0.0.201208151405)' severity='0'/>
+    <unit id='com.vogella.eclipsetools.feature.feature.group' version='1.0.0.201208231258' singleton='false'>
+      <update id='com.vogella.eclipsetools.feature.feature.group' range='[0.0.0,1.0.0.201208231258)' severity='0'/>
       <properties size='8'>
-        <property name='org.eclipse.equinox.p2.name' value='Additional JDT templates'/>
+        <property name='org.eclipse.equinox.p2.name' value='Open vogella tools'/>
         <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
         <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
         <property name='org.eclipse.equinox.p2.provider' value='vogella GmbH'/>
         <property name='org.eclipse.equinox.p2.type.group' value='true'/>
         <property name='maven-groupId' value='com.vogella'/>
-        <property name='maven-artifactId' value='com.vogella.jdt.templates.feature'/>
+        <property name='maven-artifactId' value='com.vogella.eclipsetools.feature'/>
         <property name='maven-version' value='1.0.0-SNAPSHOT'/>
       </properties>
       <provides size='1'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.feature.feature.group' version='1.0.0.201208151405'/>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.eclipsetools.feature.feature.group' version='1.0.0.201208231258'/>
       </provides>
       <requires size='2'>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.swt' range='[1.0.0.201208151405,1.0.0.201208151405]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.feature.feature.jar' range='[1.0.0.201208151405,1.0.0.201208151405]'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='de.vogella.plugin.openshell' range='[1.0.0.201207191559,1.0.0.201207191559]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.eclipsetools.feature.feature.jar' range='[1.0.0.201208231258,1.0.0.201208231258]'>
           <filter>
             (org.eclipse.update.install.features=true)
           </filter>

@@ -6,8 +6,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>../de.vogella.plugin.filterpackageexplorer</module>
-		<module>../com.vogella.jdt.templates.swt</module>
+		<module>../com.vogella.jdt.templates</module>
 		<module>../com.vogella.jdt.templates.feature</module>
 		<module>../com.vogella.eclipsetools.feature</module>
 		<module>../com.vogella.eclipsetools.updatesite</module>

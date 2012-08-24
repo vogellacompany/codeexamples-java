@@ -39,6 +39,6 @@ public class MarriedEditingSupport extends EditingSupport {
 	protected void setValue(Object element, Object value) {
 		Person pers = (Person) element;
 		pers.setMarried((Boolean) value);
-		viewer.refresh();
+		viewer.update(element, null);
 	}
 }

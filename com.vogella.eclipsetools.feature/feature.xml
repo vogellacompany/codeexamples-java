@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="com.vogella.eclipsetools.feature"
-      label="Filtered PackageExplorer"
+      label="Open vogella tools"
       version="1.0.0.qualifier"
       provider-name="vogella GmbH">
 
@@ -20,13 +20,6 @@
    <url>
       <update label="vogellas Eclipse tooling" url="http://www.vogella.com/updatesite/eclipsetools"/>
    </url>
-
-   <plugin
-         id="de.vogella.plugin.filterpackageexplorer"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
    <plugin
          id="de.vogella.plugin.openshell"

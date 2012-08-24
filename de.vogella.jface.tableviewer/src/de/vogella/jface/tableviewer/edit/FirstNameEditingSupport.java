@@ -71,6 +71,6 @@ public class FirstNameEditingSupport extends EditingSupport {
 	@Override
 	protected void setValue(Object element, Object value) {
 		((Person) element).setFirstName(String.valueOf(value));
-		viewer.refresh();
+		viewer.update(element, null);
 	}
 }

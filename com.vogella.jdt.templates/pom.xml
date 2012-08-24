@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <relativePath>../de.vogella.tycho.master/pom.xml</relativePath>
+    <relativePath>../com.vogella.eclipsetools.master/pom.xml</relativePath>
     <groupId>com.vogella</groupId>
     <artifactId>parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>com.vogella.jdt.templates.swt</artifactId>
+  <artifactId>com.vogella.jdt.templates</artifactId>
   <packaging>eclipse-plugin</packaging>
 
   <name>JDT template</name>

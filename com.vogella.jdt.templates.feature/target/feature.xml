@@ -2,7 +2,7 @@
 <feature
       id="com.vogella.jdt.templates.feature"
       label="Additional JDT templates"
-      version="1.0.0.201208151405"
+      version="1.0.0.201208231258"
       provider-name="vogella GmbH">
 
    <description url="http://www.example.com/description">
@@ -22,10 +22,10 @@
    </url>
 
    <plugin
-         id="com.vogella.jdt.templates.swt"
-         download-size="3"
-         install-size="5"
-         version="1.0.0.201208151405"
+         id="com.vogella.jdt.templates"
+         download-size="6"
+         install-size="16"
+         version="1.0.0.201208231258"
          unpack="false"/>
 
 </feature>

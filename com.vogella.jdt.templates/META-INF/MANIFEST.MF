@@ -8,3 +8,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.ui.editors,
  org.eclipse.jdt,
  org.eclipse.jdt.ui
+Bundle-ActivationPolicy: lazy

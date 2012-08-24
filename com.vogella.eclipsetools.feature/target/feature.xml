@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="com.vogella.eclipsetools.feature"
-      label="Filtered PackageExplorer"
-      version="1.0.0.201208151405"
+      label="Open vogella tools"
+      version="1.0.0.201208231258"
       provider-name="vogella GmbH">
 
    <description url="http://www.example.com/description">
@@ -22,17 +22,10 @@
    </url>
 
    <plugin
-         id="de.vogella.plugin.filterpackageexplorer"
-         download-size="14"
-         install-size="22"
-         version="1.0.0.201208151405"
-         unpack="false"/>
-
-   <plugin
          id="de.vogella.plugin.openshell"
          download-size="4"
          install-size="4"
-         version="1.0.0.201207031305"
+         version="1.0.0.201207191559"
          unpack="false"/>
 
 </feature>

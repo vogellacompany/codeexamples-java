@@ -55,6 +55,118 @@
        <include
              file="templates/android-templates.xml">
        </include>
+          <resolver
+            class="org.eclipse.jdt.internal.corext.template.java.LocalVarResolver"
+            contextTypeId="e4-members"
+            description="&lt;b&gt;${&lt;i&gt;id&lt;/i&gt;:localVar(type[,type]*)}&lt;/b&gt;&lt;br&gt;Evaluates
+to a local variable or parameter visible in the current scope that is
+a subtype of any of the given types. If no type is specified, any
+non-primitive local variable
+matches.&lt;br&gt;&lt;br&gt;&lt;b&gt;Example:&lt;/b&gt;&lt;br&gt;&lt;code&gt;${iterable:localVar(java.lang.Iterable)}&lt;/code&gt;"
+            name="Local Variable"
+            type="localVar"/>
+      <resolver
+            class="org.eclipse.jdt.internal.corext.template.java.VarResolver"
+            contextTypeId="e4-members"
+            description="&lt;b&gt;${&lt;i&gt;id&lt;/i&gt;:var(type[,type]*)}&lt;/b&gt;&lt;br&gt;Evaluates
+to a field, local variable or parameter visible in the current scope
+that is a subtype of any of the given types. If no type is specified,
+any non-primitive variable
+matches.&lt;br&gt;&lt;br&gt;&lt;b&gt;Example:&lt;/b&gt;&lt;br&gt;&lt;code&gt;${array:var(&apos;java.lang.Object[]&apos;)}&lt;/code&gt;"
+            name="Variable"
+            type="var"/>
+      <resolver
+            class="org.eclipse.jdt.internal.corext.template.java.NameResolver"
+            contextTypeId="e4-members"
+            description="&lt;b&gt;${&lt;i&gt;id&lt;/i&gt;:newName(reference)}&lt;/b&gt;&lt;br&gt;Evaluates
+to an non-conflicting name for a new local variable of the type
+specified by the reference. The reference may either be a Java type
+name or the name of another template variable. The generated name
+respects the code style
+settings.&lt;br&gt;&lt;br&gt;&lt;b&gt;Example:&lt;/b&gt;&lt;br&gt;&lt;code&gt;${index:newName(int)}&lt;/code&gt;
+"
+            name="New Name"
+            type="newName"/>
+      <resolver
+            class="org.eclipse.jdt.internal.corext.template.java.TypeResolver"
+            contextTypeId="e4-members"
+            description="&lt;b&gt;${&lt;i&gt;id&lt;/i&gt;:newType(fullyQualifiedType)}&lt;/b&gt;&lt;br&gt;Evaluates
+to a type name given the fully qualified Java type name. Evaluates to
+a simple type name and an import if no conflicting type exists.
+Evaluates to a fully qualified type name
+otherwise.&lt;br&gt;&lt;br&gt;&lt;b&gt;Example:&lt;/b&gt;&lt;br&gt;&lt;code&gt;${type:newType(java.util.Iterator)}&lt;/code&gt;"
+            name="New Type"
+            type="newType"/>
+      <resolver
+            class="org.eclipse.jdt.internal.corext.template.java.ElementTypeResolver"
+            contextTypeId="e4-members"
+            description="&lt;b&gt;${&lt;i&gt;id&lt;/i&gt;:elemType(variable)}&lt;/b&gt;&lt;br&gt;Evaluates
+to the element type of the referenced template variable. The reference
+should be the name of another template variable that resolves to an
+array or an instance of
+&lt;code&gt;java.lang.Iterable&lt;/code&gt;.&lt;br&gt;&lt;br&gt;&lt;b&gt;Example:&lt;/b&gt;&lt;br&gt;&lt;code&gt;${t:elemType(a)}
+elem = ${a:array};&lt;/code&gt;"
+            name="Element Type"
+            type="elemType"/>
+      <resolver
+            class="org.eclipse.jdt.internal.corext.template.java.TypeVariableResolver"
+            contextTypeId="e4-members"
+            description="&lt;b&gt;${&lt;i&gt;id&lt;/i&gt;:argType(variable,
+n)}&lt;/b&gt;&lt;br&gt; Evaluates to the &lt;em&gt;nth&lt;/em&gt; type
+argument of the referenced template variable. The reference should be
+the name of another template variable. Resolves to
+&lt;code&gt;java.lang.Object&lt;/code&gt; if the referenced variable
+cannot be found or is not a parameterized
+type.&lt;br&gt;&lt;br&gt;&lt;b&gt;Example:&lt;/b&gt;&lt;br&gt;&lt;code&gt;${type:argType(vector,
+0)} ${first:name(type)} =
+${vector:var(java.util.Vector)}.get(0);&lt;/code&gt;;"
+            name="Argument Type"
+            type="argType"/>
+          <resolver
+            class="org.eclipse.jdt.internal.corext.template.java.LinkResolver"
+            contextTypeId="e4-members"
+            description="&lt;b&gt;${&lt;i&gt;id&lt;/i&gt;:link([proposal[,proposal]*])}&lt;/b&gt;&lt;br&gt;Evaluates
+to &lt;i&gt;id&lt;/i&gt; if the list of proposals is empty, evaluates
+to the first proposal otherwise. The evaluated value is put into
+linked mode. A proposal window shows all the given
+proposals.&lt;br&gt;&lt;br&gt;&lt;b&gt;Example1:&lt;/b&gt;&lt;br&gt;&lt;code&gt;java.util.Collections.${kind:link(EMPTY_SET,
+EMPTY_LIST, &apos;EMPTY_MAP.entrySet()&apos;)}&lt;/code&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Example2:&lt;/b&gt;&lt;br&gt;&lt;code&gt;int
+${integer:link}; ${integer}= 0;&lt;/code&gt;"
+            name="Linked Mode"
+            type="link"/>
+      <resolver
+            class="org.eclipse.jdt.internal.corext.template.java.ImportsResolver"
+            contextTypeId="e4-members"
+            description="&lt;b&gt;${:import([type[,type]*])}&lt;/b&gt;&lt;br&gt;Adds
+an import statement for each type that is not already imported. Does
+nothing if a conflicting import exists. Evaluates to
+nothing.&lt;br&gt;&lt;br&gt;&lt;b&gt;Example:&lt;/b&gt;&lt;br&gt;&lt;code&gt;${:import(java.util.List,
+java.util.Collection)}&lt;/code&gt;
+"
+            name="Import"
+            type="import"/>
+      <resolver
+            class="org.eclipse.jdt.internal.corext.template.java.StaticImportResolver"
+            contextTypeId="e4-members"
+            description="&lt;b&gt;${:importStatic([qualifiedName[,qualifiedName]*])}&lt;/b&gt;&lt;br&gt;Adds
+a static import statement for each qualified name that is not already
+imported. The &lt;code&gt;qualifiedName&lt;/code&gt; is the fully
+qualified name of a static field or method, or it is the qualified
+name of a type plus a &lt;code&gt;.*&lt;/code&gt; suffix, enclosed in
+single quotes &lt;code&gt;&apos;\u0027&lt;/code&gt;. Does nothing if a
+conflicting import exists. Evaluates to
+nothing.&lt;br&gt;&lt;br&gt;&lt;b&gt;Example:&lt;/b&gt;&lt;br&gt;&lt;code&gt;${:importStatic(java.util.Collections.EMPTY_SET,
+&apos;java.lang.System.*&apos;)}&lt;/code&gt;
+"
+            name="Import Static"
+            type="importStatic"/>
+      <resolver
+            class="org.eclipse.jdt.internal.corext.template.java.ExceptionVariableNameResolver"
+            contextTypeId="e4-members"
+            description="Exception variable name in catch blocks"
+            name="Exception Variable Name"
+            type="exception_variable_name">
+      </resolver>
    </extension>
 
 </plugin>

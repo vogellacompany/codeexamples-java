@@ -1,25 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--
-/*******************************************************************************
- * Copyright (c) 2012 vogella GmbH and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *     Lars Vogel <lars.vogel@gmail.com> - initial API and implementation
- *******************************************************************************/
--->
+<!-- /******************************************************************************* 
+	* Copyright (c) 2012 vogella GmbH and others. * All rights reserved. This 
+	program and the accompanying materials * are made available under the terms 
+	of the Eclipse Public License v1.0 * which accompanies this distribution, 
+	and is available at * http://www.eclipse.org/legal/epl-v10.html * * Contributors: 
+	* Lars Vogel <lars.vogel@gmail.com> - initial API and implementation *******************************************************************************/ -->
 
 <templates>
 
 
 
-<template name="arrayexample" description="Creates an Array with some example content" id="org.eclipse.jdt.ui.templates.arrayexample" context="java-statements" enabled="true" autoinsert="false">String[] input = 
-new String[]{"Windows", "MacOS", "Debian", "Ubuntu", "Redhat", "Android", "iPhone"};
-</template>
+	<template name="localvariable" description="Local Variable"
+		id="org.eclipse.jdt.ui.templates.localvariable" context="java-statements"
+		enabled="true" autoinsert="false">
+		${variabletype} ${myvar:newName(var)}= new ${variabletype}(${cursor});
+	</template>
 
+
+	<template name="ifnotnull" description="If not null"
+		id="org.eclipse.jdt.ui.templates.notnull" context="java-statements"
+		enabled="true" autoinsert="false">
+		if (${myvar:newName(variable)}!=null) {
+			${cursor}
+		}
+	</template>
+
+	<template name="arrayexample" description="Creates an Array with some example content"
+		id="org.eclipse.jdt.ui.templates.arrayexample" context="java-statements"
+		enabled="true" autoinsert="false">
+		String[] input =
+		new String[]{"Windows 7", "MacOS", "Debian", "Ubuntu", "Redhat",
+		"Android", "iPhone", "Suse", "Windows XP", "Windows Mobile", "OS/2", "WebOS"};
+	</template>
+	
+		
+
+
+	<template name="finallyCloseStream"
+		description="Creates the finally block for closing a stream" id="org.eclipse.jdt.ui.templates.finallyclosestream"
+		context="java-statements" enabled="true" autoinsert="false">
+		finally {
+		if (stream != null)
+		try {
+		stream.close();
+		} catch (IOException e) {
+		e.printStackTrace();
+		}
+		}
+	</template>
 
 </templates>

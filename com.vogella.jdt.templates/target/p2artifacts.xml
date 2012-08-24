@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?artifactRepository version='1.1.0'?>
 <artifacts size='1'>
-  <artifact classifier='osgi.bundle' id='com.vogella.jdt.templates.swt' version='1.0.0.201208151405'>
+  <artifact classifier='osgi.bundle' id='com.vogella.jdt.templates' version='1.0.0.201208231258'>
     <properties size='5'>
-      <property name='artifact.size' value='3721'/>
-      <property name='download.size' value='3721'/>
+      <property name='artifact.size' value='6846'/>
+      <property name='download.size' value='6846'/>
       <property name='maven-groupId' value='com.vogella'/>
-      <property name='maven-artifactId' value='com.vogella.jdt.templates.swt'/>
+      <property name='maven-artifactId' value='com.vogella.jdt.templates'/>
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>
     </properties>
   </artifact>

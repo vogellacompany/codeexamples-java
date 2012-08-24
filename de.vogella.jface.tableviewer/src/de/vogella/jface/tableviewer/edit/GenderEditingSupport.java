@@ -48,6 +48,6 @@ public class GenderEditingSupport extends EditingSupport {
 		} else {
 			pers.setGender("female");
 		}
-		viewer.refresh();
+		viewer.update(element, null);
 	}
 }

@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <units size='1'>
-  <unit id='201208151405.vogellaeclipsetools' version='1.0.0.4--cL_bnh7E7AE7cAQAM7Q'>
+  <unit id='201208231258.vogellaeclipsetools' version='1.0.0.4--cKwWA67E7AE7cEIAEQc'>
     <properties size='2'>
       <property name='org.eclipse.equinox.p2.name' value='Eclipse tools by vogella'/>
       <property name='org.eclipse.equinox.p2.type.category' value='true'/>
     </properties>
     <provides size='1'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='201208151405.vogellaeclipsetools' version='1.0.0.4--cL_bnh7E7AE7cAQAM7Q'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='201208231258.vogellaeclipsetools' version='1.0.0.4--cKwWA67E7AE7cEIAEQc'/>
     </provides>
     <requires size='2'>
-      <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.feature.feature.group' range='[1.0.0.201208151405,1.0.0.201208151405]'/>
-      <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.eclipsetools.feature.feature.group' range='[1.0.0.201208151405,1.0.0.201208151405]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.eclipsetools.feature.feature.group' range='[1.0.0.201208231258,1.0.0.201208231258]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.feature.feature.group' range='[1.0.0.201208231258,1.0.0.201208231258]'/>
     </requires>
     <touchpoint id='null' version='0.0.0'/>
   </unit>

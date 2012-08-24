@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <units size='1'>
-  <unit id='com.vogella.jdt.templates.swt' version='1.0.0.201208151405'>
-    <update id='com.vogella.jdt.templates.swt' range='[0.0.0,1.0.0.201208151405)' severity='0'/>
+  <unit id='com.vogella.jdt.templates' version='1.0.0.201208231258'>
+    <update id='com.vogella.jdt.templates' range='[0.0.0,1.0.0.201208231258)' severity='0'/>
     <properties size='5'>
       <property name='org.eclipse.equinox.p2.name' value='Swt'/>
       <property name='org.eclipse.equinox.p2.provider' value='VOGELLA'/>
       <property name='maven-groupId' value='com.vogella'/>
-      <property name='maven-artifactId' value='com.vogella.jdt.templates.swt'/>
+      <property name='maven-artifactId' value='com.vogella.jdt.templates'/>
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>
     </properties>
     <provides size='3'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.swt' version='1.0.0.201208151405'/>
-      <provided namespace='osgi.bundle' name='com.vogella.jdt.templates.swt' version='1.0.0.201208151405'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates' version='1.0.0.201208231258'/>
+      <provided namespace='osgi.bundle' name='com.vogella.jdt.templates' version='1.0.0.201208231258'/>
       <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
     </provides>
     <requires size='3'>
@@ -20,13 +20,13 @@
       <required namespace='osgi.bundle' name='org.eclipse.jdt.ui' range='0.0.0'/>
     </requires>
     <artifacts size='1'>
-      <artifact classifier='osgi.bundle' id='com.vogella.jdt.templates.swt' version='1.0.0.201208151405'/>
+      <artifact classifier='osgi.bundle' id='com.vogella.jdt.templates' version='1.0.0.201208231258'/>
     </artifacts>
     <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
     <touchpointData size='1'>
       <instructions size='1'>
         <instruction key='manifest'>
-          Bundle-SymbolicName: com.vogella.jdt.templates.swt;singleton:=true&#xA;Bundle-Version: 1.0.0.201208151405&#xA;
+          Bundle-SymbolicName: com.vogella.jdt.templates;singleton:=true&#xA;Bundle-Version: 1.0.0.201208231258&#xA;
         </instruction>
       </instructions>
     </touchpointData>
