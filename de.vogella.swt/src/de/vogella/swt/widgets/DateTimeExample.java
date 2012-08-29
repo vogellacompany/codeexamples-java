@@ -37,4 +37,5 @@ public class DateTimeExample {
 		// tear down the SWT window
 		display.dispose();
 	}
+
 }
