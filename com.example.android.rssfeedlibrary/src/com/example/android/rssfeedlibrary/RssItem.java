@@ -1,4 +1,4 @@
-package com.example.android.rssfeedlibary;
+package com.example.android.rssfeedlibrary;
 
 public class RssItem {
 	private String pubDate;

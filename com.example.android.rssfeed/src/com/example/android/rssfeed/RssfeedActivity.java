@@ -1,20 +1,40 @@
 package com.example.android.rssfeed;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.Menu;
+import android.view.MenuItem;
 
 public class RssfeedActivity extends Activity {
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rssfeed);
-    }
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+				.permitAll().build();
+		StrictMode.setThreadPolicy(policy);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_rssfeed, menu);
-        return true;
-    }
+		setContentView(R.layout.activity_rssfeed);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.activity_main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.menuitem_refresh:
+			MyListFragment fragment = (MyListFragment) getFragmentManager()
+					.findFragmentById(R.id.listFragment);
+			fragment.updateListContent();
+			break;
+		default:
+			break;
+		}
+		return true;
+	}
 }

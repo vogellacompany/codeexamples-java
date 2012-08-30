@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_settings"
-        android:title="@string/menu_settings"
+    <item android:id="@+id/menuitem_refresh"
+        android:title="Refresh"
         android:orderInCategory="100"
         android:showAsAction="never" />
 </menu>
