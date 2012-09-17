@@ -2,7 +2,7 @@
 <feature
       id="com.vogella.eclipsetools.feature"
       label="Open vogella tools"
-      version="1.0.0.201208231258"
+      version="1.0.0.201209110648"
       provider-name="vogella GmbH">
 
    <description url="http://www.example.com/description">

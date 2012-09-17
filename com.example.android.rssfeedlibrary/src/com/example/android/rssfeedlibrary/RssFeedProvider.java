@@ -20,6 +20,11 @@ public class RssFeedProvider {
 	static final String ITEM = "item";
 
 	public static List<RssItem> parse(String rssFeed) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
 		List<RssItem> list = new ArrayList<RssItem>();
 		XmlPullParser parser = Xml.newPullParser();
 		InputStream stream = null;

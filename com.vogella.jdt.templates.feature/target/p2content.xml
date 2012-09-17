@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <units size='2'>
-  <unit id='com.vogella.jdt.templates.feature.feature.group' version='1.0.0.201208231258' singleton='false'>
-    <update id='com.vogella.jdt.templates.feature.feature.group' range='[0.0.0,1.0.0.201208231258)' severity='0'/>
+  <unit id='com.vogella.jdt.templates.feature.feature.group' version='1.0.0.201209110648' singleton='false'>
+    <update id='com.vogella.jdt.templates.feature.feature.group' range='[0.0.0,1.0.0.201209110648)' severity='0'/>
     <properties size='8'>
       <property name='org.eclipse.equinox.p2.name' value='Additional JDT templates'/>
       <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
@@ -13,11 +13,11 @@
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>
     </properties>
     <provides size='1'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.feature.feature.group' version='1.0.0.201208231258'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.feature.feature.group' version='1.0.0.201209110648'/>
     </provides>
     <requires size='2'>
-      <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates' range='[1.0.0.201208231258,1.0.0.201208231258]'/>
-      <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.feature.feature.jar' range='[1.0.0.201208231258,1.0.0.201208231258]'>
+      <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates' range='[1.0.0.201209110648,1.0.0.201209110648]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.feature.feature.jar' range='[1.0.0.201209110648,1.0.0.201209110648]'>
         <filter>
           (org.eclipse.update.install.features=true)
         </filter>
@@ -33,7 +33,7 @@
       [Enter Copyright Description here.]
     </copyright>
   </unit>
-  <unit id='com.vogella.jdt.templates.feature.feature.jar' version='1.0.0.201208231258'>
+  <unit id='com.vogella.jdt.templates.feature.feature.jar' version='1.0.0.201209110648'>
     <properties size='7'>
       <property name='org.eclipse.equinox.p2.name' value='Additional JDT templates'/>
       <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
@@ -44,15 +44,15 @@
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>
     </properties>
     <provides size='3'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.feature.feature.jar' version='1.0.0.201208231258'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates.feature.feature.jar' version='1.0.0.201209110648'/>
       <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-      <provided namespace='org.eclipse.update.feature' name='com.vogella.jdt.templates.feature' version='1.0.0.201208231258'/>
+      <provided namespace='org.eclipse.update.feature' name='com.vogella.jdt.templates.feature' version='1.0.0.201209110648'/>
     </provides>
     <filter>
       (org.eclipse.update.install.features=true)
     </filter>
     <artifacts size='1'>
-      <artifact classifier='org.eclipse.update.feature' id='com.vogella.jdt.templates.feature' version='1.0.0.201208231258'/>
+      <artifact classifier='org.eclipse.update.feature' id='com.vogella.jdt.templates.feature' version='1.0.0.201209110648'/>
     </artifacts>
     <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
     <touchpointData size='1'>

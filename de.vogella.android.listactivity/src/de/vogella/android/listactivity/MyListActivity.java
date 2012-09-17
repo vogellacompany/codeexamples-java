@@ -13,12 +13,16 @@ public class MyListActivity extends ListActivity {
 		super.onCreate(icicle);
 		setContentView(R.layout.main);
 		// List<Person> values = createModel();
-		String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-				"Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-				"Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-				"OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2" };
-		TwoLayoutsArrayAdapter adapter = new TwoLayoutsArrayAdapter(this,
-				values);
+		// String[] values = new String[] { "Android", "iPhone",
+		// "WindowsMobile",
+		// "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
+		// "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
+		// "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2" };
+		InteractiveArrayAdapter adapter = new InteractiveArrayAdapter(this,
+				getModel());
+		// MySimplePerformanceArrayAdapter adapter = new
+		// MyPerformanceArrayAdapter(this,
+		// values);
 		setListAdapter(adapter);
 	}
 
@@ -32,6 +36,49 @@ public class MyListActivity extends ListActivity {
 		list.add(person);
 		person = new Person("Bim", "Parker");
 		list.add(person);
+		return list;
+	}
+
+	private Model get(String s) {
+		return new Model(s);
+	}
+
+	private List<Model> getModel() {
+		List<Model> list = new ArrayList<Model>();
+		list.add(get("Linux"));
+		list.add(get("Windows7"));
+		list.add(get("Suse"));
+		list.add(get("Eclipse"));
+		list.add(get("Ubuntu"));
+		list.add(get("Solaris"));
+		list.add(get("Android"));
+		list.add(get("iPhone"));
+		list.add(get("Linux"));
+		list.add(get("Windows7"));
+		list.add(get("Suse"));
+		list.add(get("Eclipse"));
+		list.add(get("Ubuntu"));
+		list.add(get("Solaris"));
+		list.add(get("Android"));
+		list.add(get("iPhone"));
+		list.add(get("Linux"));
+		list.add(get("Windows7"));
+		list.add(get("Suse"));
+		list.add(get("Eclipse"));
+		list.add(get("Ubuntu"));
+		list.add(get("Solaris"));
+		list.add(get("Android"));
+		list.add(get("iPhone"));
+		list.add(get("Linux"));
+		list.add(get("Windows7"));
+		list.add(get("Suse"));
+		list.add(get("Eclipse"));
+		list.add(get("Ubuntu"));
+		list.add(get("Solaris"));
+		list.add(get("Android"));
+		list.add(get("iPhone"));
+		// Initially select one of the items
+		list.get(1).setSelected(true);
 		return list;
 	}
 

@@ -3,7 +3,6 @@ package com.example.android.rssfeed;
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.widget.TextView;
 
 public class DetailActivity extends Activity {
 	@Override
@@ -19,9 +18,10 @@ public class DetailActivity extends Activity {
 		setContentView(R.layout.activity_detail);
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
-			String s = extras.getString("value");
-			TextView view = (TextView) findViewById(R.id.detailsText);
-			view.setText(s);
+			String url = extras.getString("value");
+			DetailFragment detailFragment = (DetailFragment) getFragmentManager()
+					.findFragmentById(R.id.detailFragment);
+			detailFragment.setText(url);
 		}
 	}
 }

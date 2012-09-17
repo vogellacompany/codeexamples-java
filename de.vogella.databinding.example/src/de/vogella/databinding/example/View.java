@@ -29,9 +29,6 @@ import de.vogella.databinding.example.model.Person;
 import de.vogella.databinding.example.validators.StringLongerThenTwo;
 
 public class View extends ViewPart {
-	public View() {
-	}
-
 	public static final String ID = "de.vogella.databinding.person.swt.View";
 	private Person person;
 
@@ -107,7 +104,6 @@ public class View extends ViewPart {
 				person.setAge(person.getAge() + 1);
 				person.setMarried(!person.isMarried());
 				if (person.getGender().equals("Male")) {
-
 				} else {
 					person.setGender("Male");
 				}

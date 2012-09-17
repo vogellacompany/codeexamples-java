@@ -2,7 +2,8 @@ Manifest-Version: 1.0
 Require-Bundle: org.eclipse.ui.editors,org.eclipse.jdt,org.eclipse.jdt
  .ui
 Bundle-Vendor: VOGELLA
-Bundle-Version: 1.0.0.201208231258
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.0.0.201209110648
 Bundle-Name: Swt
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: com.vogella.jdt.templates;singleton:=true

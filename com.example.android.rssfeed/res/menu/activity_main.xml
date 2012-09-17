@@ -3,4 +3,5 @@
         android:title="Refresh"
         android:orderInCategory="100"
         android:showAsAction="never" />
+    <item android:id="@+id/menuitem_settings" android:title="Settings"></item>
 </menu>

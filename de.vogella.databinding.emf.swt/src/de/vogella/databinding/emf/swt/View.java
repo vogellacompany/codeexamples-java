@@ -7,6 +7,8 @@ import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -21,10 +23,9 @@ import de.vogella.databinding.emf.swt.model.Person;
 import de.vogella.databinding.emf.swt.model.Phone;
 
 public class View extends ViewPart {
-	public View() {
-	}
 
 	public static final String ID = "de.vogella.databinding.emf.swt.view";
+	private Text firstName;
 
 	@Override
 	public void createPartControl(Composite parent) {
@@ -33,7 +34,7 @@ public class View extends ViewPart {
 		Layout layout = new GridLayout(2, false);
 		parent.setLayout(layout);
 
-		Text firstName = new Text(parent, SWT.NONE);
+		firstName = new Text(parent, SWT.NONE);
 		GridData gridData = new GridData();
 		gridData.horizontalAlignment = GridData.FILL;
 		gridData.horizontalSpan = 2;
@@ -46,19 +47,20 @@ public class View extends ViewPart {
 
 		Button button1 = new Button(parent, SWT.PUSH);
 		button1.setText("Write model");
-		button1.addMouseListener(new MouseAdapter() {
+		button1.addSelectionListener(new SelectionAdapter() {
 			@Override
-			public void mouseDown(MouseEvent e) {
+			public void widgetSelected(SelectionEvent e) {
 				System.out.println(person.getFirstName());
 				System.out.println(person.getPhone().getNumber());
 			}
 		});
+		
 
 		Button button2 = new Button(parent, SWT.PUSH);
 		button2.setText("Change model");
-		button2.addMouseListener(new MouseAdapter() {
+		button2.addSelectionListener(new SelectionAdapter() {
 			@Override
-			public void mouseDown(MouseEvent e) {
+			public void widgetSelected(SelectionEvent e) {
 				person.setFirstName("Lars2");
 				String reversedNumber = new StringBuffer(person.getPhone()
 						.getNumber()).reverse().toString();
@@ -98,5 +100,6 @@ public class View extends ViewPart {
 
 	@Override
 	public void setFocus() {
+		firstName.setFocus();
 	}
 }

@@ -5,20 +5,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.webkit.WebView;
 
 public class DetailFragment extends Fragment {
+
+	private WebView webview;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_rssitem_detail,
-				container, false);
-		return view;
+		webview = new WebView(getActivity());
+		return webview;
 	}
 
 	public void setText(String item) {
-		TextView view = (TextView) getView().findViewById(R.id.detailsText);
-		view.setText(item);
+		webview.loadUrl(item);
 	}
 }

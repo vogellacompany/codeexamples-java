@@ -340,7 +340,7 @@ public class PhoneBook {
 		m_groupViewer.setInput(groupsGroupsObserveList);
 		//
 		ObservableListContentProvider listContentProvider_1 = new ObservableListContentProvider();
-		IObservableMap[] observeMaps = BeansObservables.observeMaps(listContentProvider_1.getKnownElements(), Person.class, new String[]{"name", "phone", "mobilePhone2", "mobilePhone1"});
+		IObservableMap[] observeMaps = BeansObservables.observeMaps(listContentProvider_1.getKnownElements(), Person.class, new String[]{"name", "phone", "mobilePhone2", "mobilePhone1", "email"});
 		m_personViewer.setLabelProvider(new ObservableMapLabelProvider(observeMaps));
 		m_personViewer.setContentProvider(listContentProvider_1);
 		//

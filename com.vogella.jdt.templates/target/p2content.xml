@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <units size='1'>
-  <unit id='com.vogella.jdt.templates' version='1.0.0.201208231258'>
-    <update id='com.vogella.jdt.templates' range='[0.0.0,1.0.0.201208231258)' severity='0'/>
+  <unit id='com.vogella.jdt.templates' version='1.0.0.201209110648'>
+    <update id='com.vogella.jdt.templates' range='[0.0.0,1.0.0.201209110648)' severity='0'/>
     <properties size='5'>
       <property name='org.eclipse.equinox.p2.name' value='Swt'/>
       <property name='org.eclipse.equinox.p2.provider' value='VOGELLA'/>
@@ -10,8 +10,8 @@
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>
     </properties>
     <provides size='3'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates' version='1.0.0.201208231258'/>
-      <provided namespace='osgi.bundle' name='com.vogella.jdt.templates' version='1.0.0.201208231258'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='com.vogella.jdt.templates' version='1.0.0.201209110648'/>
+      <provided namespace='osgi.bundle' name='com.vogella.jdt.templates' version='1.0.0.201209110648'/>
       <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
     </provides>
     <requires size='3'>
@@ -20,13 +20,13 @@
       <required namespace='osgi.bundle' name='org.eclipse.jdt.ui' range='0.0.0'/>
     </requires>
     <artifacts size='1'>
-      <artifact classifier='osgi.bundle' id='com.vogella.jdt.templates' version='1.0.0.201208231258'/>
+      <artifact classifier='osgi.bundle' id='com.vogella.jdt.templates' version='1.0.0.201209110648'/>
     </artifacts>
     <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
     <touchpointData size='1'>
       <instructions size='1'>
         <instruction key='manifest'>
-          Bundle-SymbolicName: com.vogella.jdt.templates;singleton:=true&#xA;Bundle-Version: 1.0.0.201208231258&#xA;
+          Bundle-SymbolicName: com.vogella.jdt.templates;singleton:=true&#xA;Bundle-Version: 1.0.0.201209110648&#xA;
         </instruction>
       </instructions>
     </touchpointData>

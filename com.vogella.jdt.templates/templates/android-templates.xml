@@ -69,7 +69,7 @@
 
 
 <template name="findViewById" description="Find View by ID" id="org.eclipse.jdt.ui.templates.android.findviewbyid" context="java-statements" enabled="true" autoinsert="false">
-	${viewtype:link(EditText, ImageView)} ${myvar:newName(view)} = (${viewtype:link(EditText, ImageView)}) findViewById(R.id.${cursor});
+	${viewtype:link(EditText, ImageView, Button)} ${myvar:newName(view)} = (${viewtype:link(EditText, ImageView, Button)}) findViewById(R.id.${cursor});
 </template>
 
 <template name="toast" description="Creates a toast" id="org.eclipse.jdt.ui.templates.android.toast" context="java-statements" enabled="true" autoinsert="false">
@@ -118,7 +118,7 @@
 <template name="arrayadaper" description="creates default ArrayAdaper"
 		id="org.eclipse.jdt.ui.templates.arrayadaper" context="java-statements"
 		enabled="true" autoinsert="false">
-		new ArrayAdapter(this,
+		ArrayAdapter adapter = new ArrayAdapter(this,
 				android.R.layout.simple_list_item_1, input);
 	</template>
 

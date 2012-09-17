@@ -1,6 +1,7 @@
 package com.example.android.rssfeed;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.Menu;
@@ -27,10 +28,15 @@ public class RssfeedActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
+
 		case R.id.menuitem_refresh:
 			MyListFragment fragment = (MyListFragment) getFragmentManager()
 					.findFragmentById(R.id.listFragment);
 			fragment.updateListContent();
+			break;
+		case R.id.menuitem_settings:
+			Intent intent = new Intent(this, MyPreferenceActivity.class);
+			startActivity(intent);
 			break;
 		default:
 			break;

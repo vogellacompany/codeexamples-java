@@ -5,8 +5,10 @@ import java.util.List;
 
 import android.app.ListFragment;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,15 +19,16 @@ import com.example.android.rssfeedlibrary.RssFeedProvider;
 import com.example.android.rssfeedlibrary.RssItem;
 
 public class MyListFragment extends ListFragment {
+	ParseTask parseTask;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		List<RssItem> list = new ArrayList<RssItem>();
-
-		ArrayAdapter<RssItem> adapter = new ArrayAdapter<RssItem>(
-				getActivity(), android.R.layout.simple_list_item_1, list);
+		MyAdapter adapter = new MyAdapter(getActivity(),
+				android.R.layout.simple_list_item_1, list);
 		setListAdapter(adapter);
+		setRetainInstance(true);
 	}
 
 	@Override
@@ -45,29 +48,38 @@ public class MyListFragment extends ListFragment {
 
 	private static class ParseTask extends
 			AsyncTask<String, Void, List<RssItem>> {
-		private RssfeedActivity activity;
+		private MyListFragment fragment;
+
+		public synchronized void setFragment(MyListFragment fragment) {
+			this.fragment = fragment;
+		}
 
 		@Override
 		protected List<RssItem> doInBackground(String... params) {
-			// TODO Auto-generated method stub
-			return null;
+			List<RssItem> list = RssFeedProvider.parse(params[0]);
+			return list;
 		}
 
 		@Override
 		protected void onPostExecute(List<RssItem> result) {
-			// TODO Auto-generated method stub
-			super.onPostExecute(result);
+			fragment.setListContent(result);
 		}
-
 	}
 
 	public void updateListContent() {
-		// Reading the RSS items
-		List<RssItem> list = RssFeedProvider
-				.parse("http://www.vogella.com/article.rss");
+		if (parseTask == null) {
+			parseTask = new ParseTask();
+			parseTask.setFragment(this);
+			parseTask.execute("http://www.vogella.com/article.rss");
+		}
+	}
+
+	public void setListContent(List<RssItem> result) {
 		ArrayAdapter listAdapter = (ArrayAdapter) getListAdapter();
 		listAdapter.clear();
-		listAdapter.addAll(list);
+		listAdapter.addAll(result);
+		parseTask.setFragment(null);
+		parseTask = null;
 	}
 
 	public void updateDetail(RssItem item) {
@@ -81,7 +93,13 @@ public class MyListFragment extends ListFragment {
 					DetailActivity.class);
 			intent.putExtra("value", item.getLink());
 			startActivity(intent);
-
 		}
+
+		SharedPreferences prefs = PreferenceManager
+				.getDefaultSharedPreferences(getActivity());
+
+		// Get existing preference
+		String string = prefs.getString("url", "kdsfkds");
+
 	}
 }

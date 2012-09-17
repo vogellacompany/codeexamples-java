@@ -1,14 +1,17 @@
 package de.vogella.jface.treeviewer;
 
+import org.eclipse.core.commands.Command;
+import org.eclipse.jface.viewers.DoubleClickEvent;
+import org.eclipse.jface.viewers.IDoubleClickListener;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.KeyAdapter;
+import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Tree;
-import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.ui.part.ViewPart;
 
+import de.vogella.jface.treeviewer.model.Todo;
 import de.vogella.jface.treeviewer.model.TodoMockModel;
 import de.vogella.jface.treeviewer.provider.TodoContentProvider;
 import de.vogella.jface.treeviewer.provider.TodoLabelProvider;
@@ -26,16 +29,34 @@ public class View extends ViewPart {
 		// Provide the input to the ContentProvider
 		viewer.setInput(new TodoMockModel());
 
-		Tree tree = (Tree) viewer.getControl();
-		tree.addSelectionListener(new SelectionAdapter() {
+		viewer.addDoubleClickListener(new IDoubleClickListener() {
+
 			@Override
-			public void widgetSelected(SelectionEvent e) {
-				TreeItem item = (TreeItem) e.item;
-				if (item.getItemCount() > 0) {
-					item.setExpanded(!item.getExpanded());
+			public void doubleClick(DoubleClickEvent event) {
+				TreeViewer viewer = (TreeViewer) event.getViewer();
+				IStructuredSelection thisSelection = (IStructuredSelection) event
+						.getSelection();
+				Object selectedNode = thisSelection.getFirstElement();
+				viewer.setExpandedState(selectedNode,
+						!viewer.getExpandedState(selectedNode));
+			}
+		});
+
+		viewer.getTree().addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(final KeyEvent e) {
+				if (e.keyCode == SWT.DEL) {
+					final IStructuredSelection selection = (IStructuredSelection) viewer
+							.getSelection();
+					if (selection.getFirstElement() instanceof Todo) {
+						Todo o = (Todo) selection.getFirstElement();
+						// TODO Delete the selected element from the model
+					}
+
 				}
 			}
 		});
+
 	}
 
 	/**
