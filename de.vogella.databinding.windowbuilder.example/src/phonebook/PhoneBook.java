@@ -58,6 +58,7 @@ public class PhoneBook {
 	private Button newPersonButton;
 	private Button deletePersonButton;
 	private DataBindingContext m_bindingContext;
+	private Label label;
 
 	/**
 	 * Launch the application
@@ -289,7 +290,7 @@ public class PhoneBook {
 		descriptionLabel.setText("Description:");
 		new Label(detailComposite, SWT.NONE);
 
-		final Label label = new Label(detailComposite, SWT.NONE);
+		label = new Label(detailComposite, SWT.NONE);
 		label.setText("Name:");
 
 		m_nameText = new Text(detailComposite, SWT.BORDER);
@@ -338,17 +339,13 @@ public class PhoneBook {
 		//
 		IObservableList groupsGroupsObserveList = BeanProperties.list("groups").observe(m_groups);
 		m_groupViewer.setInput(groupsGroupsObserveList);
-		//
-		ObservableListContentProvider listContentProvider_1 = new ObservableListContentProvider();
-		IObservableMap[] observeMaps = BeansObservables.observeMaps(listContentProvider_1.getKnownElements(), Person.class, new String[]{"name", "phone", "mobilePhone2", "mobilePhone1", "email"});
-		m_personViewer.setLabelProvider(new ObservableMapLabelProvider(observeMaps));
-		m_personViewer.setContentProvider(listContentProvider_1);
+		
 		//
 		IObservableValue observeSingleSelectionGroupViewer = ViewerProperties.singleSelection().observe(m_groupViewer);
 		IObservableList groupViewerPersonsObserveDetailList = BeanProperties.list(PhoneGroup.class, "persons", Person.class).observeDetail(observeSingleSelectionGroupViewer);
 		m_personViewer.setInput(groupViewerPersonsObserveDetailList);
 		//
-		IObservableValue observeTextNameTextObserveWidget = WidgetProperties.text(SWT.Modify).observe(m_nameText);
+		IObservableValue observeTextNameTextObserveWidget = WidgetProperties.text(SWT.Modify).observeDelayed(2000, m_nameText);
 		IObservableValue observeSingleSelectionPersonViewer = ViewerProperties.singleSelection().observe(m_personViewer);
 		IObservableValue personViewerNameObserveDetailValue = BeanProperties.value(Person.class, "name", String.class).observeDetail(observeSingleSelectionPersonViewer);
 		bindingContext.bindValue(observeTextNameTextObserveWidget, personViewerNameObserveDetailValue, null, null);
