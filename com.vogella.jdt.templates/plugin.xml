@@ -52,9 +52,6 @@
        <include
       		file="templates/additional-templates.xml">
       </include>
-       <include
-             file="templates/android-templates.xml">
-       </include>
           <resolver
             class="org.eclipse.jdt.internal.corext.template.java.LocalVarResolver"
             contextTypeId="e4-members"

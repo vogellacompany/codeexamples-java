@@ -2,7 +2,7 @@
 <feature
       id="com.vogella.eclipsetools.feature"
       label="Open vogella tools"
-      version="1.0.0.201209110648"
+      version="1.0.0.201209261358"
       provider-name="vogella GmbH">
 
    <description url="http://www.example.com/description">
@@ -25,7 +25,7 @@
          id="de.vogella.plugin.openshell"
          download-size="4"
          install-size="4"
-         version="1.0.0.201207191559"
+         version="1.0.0.201207031305"
          unpack="false"/>
 
 </feature>
