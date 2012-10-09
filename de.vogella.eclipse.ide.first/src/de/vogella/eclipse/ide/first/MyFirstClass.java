@@ -16,6 +16,15 @@ public class MyFirstClass {
 		for (int i = 0; i <= 100; i++) {
 			sum += i;
 		}
+
+		try {
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+
+		}
+
 		return sum;
 	}
 }
