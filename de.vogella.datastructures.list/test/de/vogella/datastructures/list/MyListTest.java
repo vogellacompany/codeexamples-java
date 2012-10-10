@@ -21,7 +21,19 @@ public class MyListTest {
 		assertTrue(2 == list.get(1));
 		assertTrue(3 == list.get(2));
 		
-		list.get(100);
+		list.get(6);
+	}
+	
+
+	@Test(expected=IndexOutOfBoundsException.class)
+	public void testNegative() {
+		MyList<Integer> list = new MyList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.add(3);
+		list.add(4);
+		list.get(-1);
 	}
 
 	@Test(expected=IndexOutOfBoundsException.class)
@@ -36,7 +48,7 @@ public class MyListTest {
 		assertTrue(2 == list.get(1));
 		assertTrue(3 == list.get(2));
 		
-		list.get(100);
+		list.get(6);
 	}
 	
 	

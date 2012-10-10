@@ -26,7 +26,7 @@ public class MyList<E> {
 
 	@SuppressWarnings("unchecked")
 	public E get(int i) {
-		if (i>= elements.length) {
+		if (i>= size || i <0) {
 			throw new IndexOutOfBoundsException("Index: " + i + ", Size " + i );
 		}
 		return (E) elements[i];
