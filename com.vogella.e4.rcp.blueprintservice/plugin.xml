@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="com.vogella.e4.rcp.blueprintservice"
+            application="org.eclipse.e4.ui.workbench.swt.E4Application">
+         <property
+               name="RICH_SAMPLE"
+               value="TRUE">
+         </property>
+         <property
+               name="clearPersistedState"
+               value="true">
+         </property>
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/com.vogella.e4.rcp.blueprintservice/css/default.css">
+         </property>
+         <property
+               name="appName"
+               value="com.vogella.e4.rcp.blueprintservice">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

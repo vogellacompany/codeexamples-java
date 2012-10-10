@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_5aY2wBLMEeKzvZAOmnA4Pw" elementId="org.eclipse.e4.ide.application" bindingContexts="_5aZd0RLMEeKzvZAOmnA4Pw">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_5aY2wRLMEeKzvZAOmnA4Pw" label="com.vogella.e4.rcp.blueprintservice" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_5aar9xLMEeKzvZAOmnA4Pw">
+      <children xsi:type="advanced:Perspective" xmi:id="_5aar-BLMEeKzvZAOmnA4Pw">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_5aar-RLMEeKzvZAOmnA4Pw">
+          <children xsi:type="basic:PartStack" xmi:id="_5abTABLMEeKzvZAOmnA4Pw">
+            <children xsi:type="basic:Part" xmi:id="_5abTARLMEeKzvZAOmnA4Pw" contributionURI="bundleclass://com.vogella.e4.rcp.blueprintservice/com.vogella.e4.rcp.blueprintservice.parts.SamplePart" label="Sample Part"/>
+          </children>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_5aar8BLMEeKzvZAOmnA4Pw" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_5aar8RLMEeKzvZAOmnA4Pw" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_5aar8hLMEeKzvZAOmnA4Pw" label="Open" iconURI="platform:/plugin/com.vogella.e4.rcp.blueprintservice/icons/sample.gif" command="_5aZd2BLMEeKzvZAOmnA4Pw"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_5aar8xLMEeKzvZAOmnA4Pw" label="Save" iconURI="platform:/plugin/com.vogella.e4.rcp.blueprintservice/icons/save_edit.gif" command="_5aZd2xLMEeKzvZAOmnA4Pw"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_5aar9BLMEeKzvZAOmnA4Pw" label="Quit" command="_5aZd1BLMEeKzvZAOmnA4Pw"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_5aar9RLMEeKzvZAOmnA4Pw" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_5aar9hLMEeKzvZAOmnA4Pw" label="About" command="_5aaE4BLMEeKzvZAOmnA4Pw"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_5abTAhLMEeKzvZAOmnA4Pw">
+      <children xsi:type="menu:ToolBar" xmi:id="_5abTAxLMEeKzvZAOmnA4Pw" elementId="toolbar:org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_5abTBBLMEeKzvZAOmnA4Pw" iconURI="platform:/plugin/com.vogella.e4.rcp.blueprintservice/icons/sample.gif" command="_5aZd2BLMEeKzvZAOmnA4Pw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_5abTBRLMEeKzvZAOmnA4Pw" iconURI="platform:/plugin/com.vogella.e4.rcp.blueprintservice/icons/save_edit.gif" command="_5aZd2xLMEeKzvZAOmnA4Pw"/>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_5aZd1RLMEeKzvZAOmnA4Pw" contributionURI="bundleclass://com.vogella.e4.rcp.blueprintservice/com.vogella.e4.rcp.blueprintservice.handlers.QuitHandler" command="_5aZd1BLMEeKzvZAOmnA4Pw"/>
+  <handlers xmi:id="_5aZd2RLMEeKzvZAOmnA4Pw" contributionURI="bundleclass://com.vogella.e4.rcp.blueprintservice/com.vogella.e4.rcp.blueprintservice.handlers.OpenHandler" command="_5aZd2BLMEeKzvZAOmnA4Pw"/>
+  <handlers xmi:id="_5aZd3BLMEeKzvZAOmnA4Pw" contributionURI="bundleclass://com.vogella.e4.rcp.blueprintservice/com.vogella.e4.rcp.blueprintservice.handlers.SaveHandler" command="_5aZd2xLMEeKzvZAOmnA4Pw"/>
+  <handlers xmi:id="_5aaE4RLMEeKzvZAOmnA4Pw" contributionURI="bundleclass://com.vogella.e4.rcp.blueprintservice/com.vogella.e4.rcp.blueprintservice.handlers.AboutHandler" command="_5aaE4BLMEeKzvZAOmnA4Pw"/>
+  <bindingTables xmi:id="_5aZd1hLMEeKzvZAOmnA4Pw" bindingContext="_5aZd0RLMEeKzvZAOmnA4Pw">
+    <bindings xmi:id="_5aZd1xLMEeKzvZAOmnA4Pw" keySequence="M1+Q" command="_5aZd1BLMEeKzvZAOmnA4Pw"/>
+    <bindings xmi:id="_5aZd2hLMEeKzvZAOmnA4Pw" keySequence="M1+O" command="_5aZd2BLMEeKzvZAOmnA4Pw"/>
+    <bindings xmi:id="_5aZd3RLMEeKzvZAOmnA4Pw" keySequence="M1+S" command="_5aZd2xLMEeKzvZAOmnA4Pw"/>
+    <bindings xmi:id="_5aaE4hLMEeKzvZAOmnA4Pw" keySequence="M1+A" command="_5aaE4BLMEeKzvZAOmnA4Pw"/>
+  </bindingTables>
+  <rootContext xmi:id="_5aZd0RLMEeKzvZAOmnA4Pw" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_5aZd0hLMEeKzvZAOmnA4Pw" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_5aZd0xLMEeKzvZAOmnA4Pw" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_5aZd1BLMEeKzvZAOmnA4Pw" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
+  <commands xmi:id="_5aZd2BLMEeKzvZAOmnA4Pw" elementId="com.vogella.e4.rcp.blueprintservice.open" commandName="openCommand"/>
+  <commands xmi:id="_5aZd2xLMEeKzvZAOmnA4Pw" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
+  <commands xmi:id="_5aaE4BLMEeKzvZAOmnA4Pw" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <addons xmi:id="_5aY2whLMEeKzvZAOmnA4Pw" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_5aY2wxLMEeKzvZAOmnA4Pw" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_5aY2xBLMEeKzvZAOmnA4Pw" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_5aY2xRLMEeKzvZAOmnA4Pw" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_5aY2xhLMEeKzvZAOmnA4Pw" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_5aZd0BLMEeKzvZAOmnA4Pw" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>
