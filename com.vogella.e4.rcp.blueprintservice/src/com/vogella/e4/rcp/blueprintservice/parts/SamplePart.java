@@ -11,6 +11,8 @@
 package com.vogella.e4.rcp.blueprintservice.parts;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
@@ -19,17 +21,21 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
+import com.vogella.e4.rcp.blueprintservice.api.IService;
+
 public class SamplePart {
 
 	private Label label;
 	private TableViewer tableViewer;
+	@Inject
+	IService service;
 
 	@PostConstruct
 	public void createComposite(Composite parent) {
 		parent.setLayout(new GridLayout());
 
 		label = new Label(parent, SWT.NONE);
-		label.setText("Sample table");
+		label.setText(service.getConfig());
 
 		tableViewer = new TableViewer(parent);
 		tableViewer.add("Sample item 1");

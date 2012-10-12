@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Service
+Bundle-SymbolicName: com.vogella.e4.rcp.blueprintservice.service
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Felix Heppner
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: com.vogella.e4.rcp.blueprintservice.api;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
