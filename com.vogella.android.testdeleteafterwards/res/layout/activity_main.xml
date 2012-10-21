@@ -1,0 +1,90 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/GridLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="4"
+    android:orientation="horizontal"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:layout_gravity="left|bottom"
+        android:layout_row="1"
+        android:text="TextView" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_column="1"
+        android:layout_columnSpan="3"
+        android:layout_gravity="left"
+        android:layout_row="1"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_column="1"
+        android:layout_columnSpan="3"
+        android:layout_gravity="left"
+        android:layout_row="2"
+        android:layout_rowSpan="3"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_column="0"
+        android:layout_gravity="left"
+        android:layout_row="3"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="101dp"
+        android:layout_column="2"
+        android:layout_gravity="right"
+        android:layout_row="5"
+        android:text="Button" />
+
+    <Space
+        android:layout_width="19dp"
+        android:layout_height="1dp"
+        android:layout_column="2"
+        android:layout_row="0" />
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="16dp"
+        android:layout_column="0"
+        android:layout_row="2" />
+
+    <Space
+        android:layout_width="100dp"
+        android:layout_height="1dp"
+        android:layout_column="2"
+        android:layout_row="1" />
+
+    <Space
+        android:layout_width="159dp"
+        android:layout_height="15dp"
+        android:layout_column="3"
+        android:layout_row="5" />
+
+    <Space
+        android:layout_width="100dp"
+        android:layout_height="1dp"
+        android:layout_column="2"
+        android:layout_row="2" />
+
+    <Space
+        android:layout_width="100dp"
+        android:layout_height="1dp"
+        android:layout_row="0" />
+
+    <Space
+        android:layout_width="100dp"
+        android:layout_height="36dp"
+        android:layout_row="4" />
+
+</GridLayout>
