@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class ProgressTestActivity extends Activity {
 	private Handler handler;
 	private ProgressBar progress;
+	private TextView text;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -16,7 +18,9 @@ public class ProgressTestActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		progress = (ProgressBar) findViewById(R.id.progressBar1);
+		text = (TextView) findViewById(R.id.textView1);
 		handler = new Handler();
+
 	}
 
 	public void startProgress(View view) {
@@ -34,6 +38,7 @@ public class ProgressTestActivity extends Activity {
 					handler.post(new Runnable() {
 						@Override
 						public void run() {
+							text.setText("Updating");
 							progress.setProgress(value);
 						}
 					});
@@ -42,4 +47,5 @@ public class ProgressTestActivity extends Activity {
 		};
 		new Thread(runnable).start();
 	}
+
 }

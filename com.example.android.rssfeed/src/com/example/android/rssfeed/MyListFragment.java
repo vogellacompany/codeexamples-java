@@ -24,6 +24,7 @@ public class MyListFragment extends ListFragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		List<RssItem> list = new ArrayList<RssItem>();
 		MyAdapter adapter = new MyAdapter(getActivity(),
 				android.R.layout.simple_list_item_1, list);

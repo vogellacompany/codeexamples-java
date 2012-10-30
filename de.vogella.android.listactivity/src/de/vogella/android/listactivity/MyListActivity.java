@@ -13,16 +13,25 @@ public class MyListActivity extends ListActivity {
 		super.onCreate(icicle);
 		setContentView(R.layout.main);
 		// List<Person> values = createModel();
-		// String[] values = new String[] { "Android", "iPhone",
-		// "WindowsMobile",
-		// "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-		// "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-		// "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2" };
-		InteractiveArrayAdapter adapter = new InteractiveArrayAdapter(this,
-				getModel());
-		// MySimplePerformanceArrayAdapter adapter = new
-		// MyPerformanceArrayAdapter(this,
-		// values);
+		String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
+				"Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
+				"Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
+				"OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
+				"Android", "iPhone", "WindowsMobile", "Blackberry", "WebOS",
+				"Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2", "Ubuntu",
+				"Windows7", "Max OS X", "Linux", "OS/2", "Ubuntu", "Windows7",
+				"Max OS X", "Linux", "OS/2", "Android", "iPhone",
+				"WindowsMobile", "Blackberry", "WebOS", "Ubuntu", "Windows7",
+				"Max OS X", "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X",
+				"Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
+				"OS/2", "Android", "iPhone", "WindowsMobile", "Blackberry",
+				"WebOS", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
+				"Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2", "Ubuntu",
+				"Windows7", "Max OS X", "Linux", "OS/2" };
+		// InteractiveArrayAdapter adapter = new InteractiveArrayAdapter(this,
+		// getModel());
+		MySimplePerformanceArrayAdapter adapter = new MySimplePerformanceArrayAdapter(
+				this, values);
 		setListAdapter(adapter);
 	}
 

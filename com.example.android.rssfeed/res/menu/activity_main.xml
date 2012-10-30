@@ -1,7 +1,14 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menuitem_refresh"
-        android:title="Refresh"
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menuitem_refresh"
         android:orderInCategory="100"
-        android:showAsAction="never" />
-    <item android:id="@+id/menuitem_settings" android:title="Settings"></item>
+        android:showAsAction="always"
+        android:icon="@drawable/ic_action_search"
+        android:title="Refresh"/>
+    <item
+        android:id="@+id/menuitem_settings"
+        android:title="Settings">
+    </item>
+
 </menu>

@@ -25,18 +25,21 @@ public class AnimationExampleActivity extends Activity {
 	public void startAnimation(View view) {
 		float dest = 0;
 		ImageView aniView = (ImageView) findViewById(R.id.imageView1);
+		
 		switch (view.getId()) {
 		case R.id.Button01:
 
 			dest = 360;
 			if (aniView.getRotation() == 360) {
-				System.out.println(aniView.getAlpha());
 				dest = 0;
 			}
-			ObjectAnimator animation1 = ObjectAnimator.ofFloat(aniView,
-					"rotation", dest);
-			animation1.setDuration(2000);
-			animation1.start();
+//			ObjectAnimator animation1 = ObjectAnimator.ofFloat(aniView,
+//					"rotation", dest);
+//			animation1.setDuration(2000);
+//			animation1.start();
+			
+			aniView.animate().rotation(dest).setDuration(1000);
+			
 			// Show how to load an animation from XML
 			// Animation animation1 = AnimationUtils.loadAnimation(this,
 			// R.anim.myanimation);
