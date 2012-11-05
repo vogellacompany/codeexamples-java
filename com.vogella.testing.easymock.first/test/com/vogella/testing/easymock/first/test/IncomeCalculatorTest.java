@@ -1,3 +1,9 @@
+package com.vogella.testing.easymock.first.test;
+// Use static imports to 
+// have direct access to these methods
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
@@ -5,11 +11,9 @@ import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.vogella.easymock.first.CalcMethodException;
-import de.vogella.easymock.first.ICalcMethod;
-import de.vogella.easymock.first.IncomeCalculator;
-import de.vogella.easymock.first.Position;
-import de.vogella.easymock.first.PositionException;
+import com.vogella.testing.easymock.first.ICalcMethod;
+import com.vogella.testing.easymock.first.IncomeCalculator;
+import com.vogella.testing.easymock.first.Position;
 
 public class IncomeCalculatorTest {
 
@@ -25,52 +29,49 @@ public class IncomeCalculatorTest {
 	@Test
 	public void testCalc1() {
 		// Setting up the expected value of the method call calc
-		EasyMock.expect(calcMethod.calc(Position.BOSS)).andReturn(70000.0)
-				.times(2);
-		EasyMock.expect(calcMethod.calc(Position.PROGRAMMER))
-				.andReturn(50000.0);
+		expect(calcMethod.calc(Position.BOSS)).andReturn(70000.0).times(2);
+		expect(calcMethod.calc(Position.PROGRAMMER)).andReturn(50000.0);
 		// Setup is finished need to activate the mock
-		EasyMock.replay(calcMethod);
+		replay(calcMethod);
 
 		calc.setCalcMethod(calcMethod);
 		try {
 			calc.calc();
 			fail("Exception did not occur");
-		} catch (PositionException e) {
+		} catch (RuntimeException e) {
 
 		}
 		calc.setPosition(Position.BOSS);
-		assertEquals(70000.0, calc.calc());
-		assertEquals(70000.0, calc.calc());
+		assertEquals(70000.0, calc.calc(), 0);
+		assertEquals(70000.0, calc.calc(), 0);
 		calc.setPosition(Position.PROGRAMMER);
-		assertEquals(50000.0, calc.calc());
+		assertEquals(50000.0, calc.calc(), 0);
 		calc.setPosition(Position.SURFER);
-		EasyMock.verify(calcMethod);
+		verify(calcMethod);
 	}
 
-	@Test(expected = CalcMethodException.class)
+	@Test(expected = RuntimeException.class)
 	public void testNoCalc() {
 		calc.setPosition(Position.SURFER);
 		calc.calc();
 	}
 
-	@Test(expected = PositionException.class)
+	@Test(expected = RuntimeException.class)
 	public void testNoPosition() {
-		EasyMock.expect(calcMethod.calc(Position.BOSS)).andReturn(70000.0);
-		EasyMock.replay(calcMethod);
+		expect(calcMethod.calc(Position.BOSS)).andReturn(70000.0);
+		replay(calcMethod);
 		calc.setCalcMethod(calcMethod);
 		calc.calc();
 	}
 
-	@Test(expected = PositionException.class)
+	@Test(expected = RuntimeException.class)
 	public void testCalc2() {
 		// Setting up the expected value of the method call calc
-		EasyMock.expect(calcMethod.calc(Position.SURFER))
-				.andThrow(new PositionException("Don't know this guy"))
-				.times(1);
+		expect(calcMethod.calc(Position.SURFER)).andThrow(
+				new RuntimeException("Don't know this guy")).times(1);
 
 		// Setup is finished need to activate the mock
-		EasyMock.replay(calcMethod);
+		replay(calcMethod);
 		calc.setPosition(Position.SURFER);
 		calc.setCalcMethod(calcMethod);
 		calc.calc();

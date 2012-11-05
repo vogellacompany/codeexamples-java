@@ -44,7 +44,7 @@ public class TextureViewActivity extends Activity implements
 
 		camera.startPreview();
 
-		mTextureView.setAlpha(0.5f);
+		mTextureView.setAlpha(0.8f);
 		mTextureView.setRotation(45.0f);
 
 	}

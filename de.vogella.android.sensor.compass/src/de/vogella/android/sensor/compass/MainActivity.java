@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
 
 		@Override
 		public void onSensorChanged(SensorEvent event) {
-			// angle between the magnetic north directio
+			// angle between the magnetic north direction
 			// 0=North, 90=East, 180=South, 270=West
 			float azimuth = event.values[0];
 			compassView.updateData(azimuth);

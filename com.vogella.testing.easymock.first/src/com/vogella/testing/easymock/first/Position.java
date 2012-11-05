@@ -1,4 +1,4 @@
-package de.vogella.easymock.first;
+package com.vogella.testing.easymock.first;
 
 public enum Position {
 	BOSS, PROGRAMMER, SURFER

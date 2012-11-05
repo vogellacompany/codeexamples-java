@@ -1,4 +1,4 @@
-package de.vogella.easymock.first;
+package com.vogella.testing.easymock.first;
 
 public class IncomeCalculator {
 
@@ -15,10 +15,10 @@ public class IncomeCalculator {
 
 	public double calc() {
 		if (calcMethod == null) {
-			throw new CalcMethodException("CalcMethod not yet maintained");
+			throw new RuntimeException("CalcMethod not yet maintained");
 		}
 		if (position == null) {
-			throw new PositionException("Position not yet maintained");
+			throw new RuntimeException("Position not yet maintained");
 		}
 		return calcMethod.calc(position);
 	}
