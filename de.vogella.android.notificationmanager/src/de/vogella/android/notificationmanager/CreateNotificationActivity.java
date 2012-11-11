@@ -17,7 +17,7 @@ public class CreateNotificationActivity extends Activity {
 
 	public void createNotification(View view) {
 		// Prepare intent which is triggered if the
-		// notification is selected
+		// notification is selected 
 		Intent intent = new Intent(this, NotificationReceiverActivity.class);
 		PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
@@ -26,11 +26,11 @@ public class CreateNotificationActivity extends Activity {
 		// Actions are just fake
 		Notification noti = new Notification.Builder(this)
 				.setContentTitle("New mail from " + "test@gmail.com")
-				.setContentText("Subject").setSmallIcon(R.drawable.icon)
+				.setContentText("Subject").setSmallIcon(R.drawable.ic_stat_name)
 				.setContentIntent(pIntent).setAutoCancel(true)
-				.addAction(R.drawable.icon, "Call", pIntent)
-				.addAction(R.drawable.icon, "More", pIntent)
-				.addAction(R.drawable.icon, "And more", pIntent)
+				.addAction(R.drawable.ic_stat_call, "Call", pIntent)
+				.addAction(R.drawable.ic_stat_other, "More", pIntent)
+				.addAction(R.drawable.ic_stat_more, "And more", pIntent)
 				.setStyle(new Notification.BigTextStyle().bigText(longText))
 				.build();
 

@@ -16,7 +16,7 @@ public class CallNotification extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Button button = new Button(this);
-		button.setText("Create Notification");
+		button.setText("Create Notification"); 
 		button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
