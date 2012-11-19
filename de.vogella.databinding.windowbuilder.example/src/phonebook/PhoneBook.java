@@ -38,6 +38,7 @@ import phonebook.model.PhoneGroups;
 import org.eclipse.core.databinding.beans.BeanProperties;
 import org.eclipse.jface.databinding.viewers.ViewerProperties;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
+import org.eclipse.core.databinding.property.Properties;
 
 public class PhoneBook {
 
@@ -337,15 +338,19 @@ public class PhoneBook {
 		m_groupViewer.setLabelProvider(new ObservableMapLabelProvider(observeMap));
 		m_groupViewer.setContentProvider(listContentProvider);
 		//
-		IObservableList groupsGroupsObserveList = BeanProperties.list("groups").observe(m_groups);
-		m_groupViewer.setInput(groupsGroupsObserveList);
-		
+		IObservableList selfList = Properties.selfList(PhoneGroup.class).observe(m_groups.getGroups());
+		m_groupViewer.setInput(selfList);
+		//
+		ObservableListContentProvider listContentProvider_1 = new ObservableListContentProvider();
+		IObservableMap[] observeMaps = BeansObservables.observeMaps(listContentProvider_1.getKnownElements(), Person.class, new String[]{"name", "phone", "mobilePhone2", "mobilePhone1", "email"});
+		m_personViewer.setLabelProvider(new ObservableMapLabelProvider(observeMaps));
+		m_personViewer.setContentProvider(listContentProvider_1);
 		//
 		IObservableValue observeSingleSelectionGroupViewer = ViewerProperties.singleSelection().observe(m_groupViewer);
 		IObservableList groupViewerPersonsObserveDetailList = BeanProperties.list(PhoneGroup.class, "persons", Person.class).observeDetail(observeSingleSelectionGroupViewer);
 		m_personViewer.setInput(groupViewerPersonsObserveDetailList);
 		//
-		IObservableValue observeTextNameTextObserveWidget = WidgetProperties.text(SWT.Modify).observeDelayed(2000, m_nameText);
+		IObservableValue observeTextNameTextObserveWidget = WidgetProperties.text(SWT.Modify).observe(m_nameText);
 		IObservableValue observeSingleSelectionPersonViewer = ViewerProperties.singleSelection().observe(m_personViewer);
 		IObservableValue personViewerNameObserveDetailValue = BeanProperties.value(Person.class, "name", String.class).observeDetail(observeSingleSelectionPersonViewer);
 		bindingContext.bindValue(observeTextNameTextObserveWidget, personViewerNameObserveDetailValue, null, null);
