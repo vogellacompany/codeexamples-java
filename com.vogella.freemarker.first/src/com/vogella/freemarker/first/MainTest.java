@@ -19,7 +19,7 @@ public class MainTest {
 		// Configuration
 		Writer file = null;
 		Configuration cfg = new Configuration();
-		
+
 		try {
 			// Set Directory for templates
 			cfg.setDirectoryForTemplateLoading(new File("templates"));
@@ -32,12 +32,13 @@ public class MainTest {
 			input.put("container", "test");
 
 			// create list
-			List<String> systems = new ArrayList<String>();
-			systems.add("Android");
-			systems.add("iOS States");
-			systems.add("Ubuntu");
-			systems.add("Windows7");
-			systems.add("OS/2");
+			List<ValueExampleObject> systems = new ArrayList<ValueExampleObject>();
+
+			systems.add(new ValueExampleObject("Android"));
+			systems.add(new ValueExampleObject("iOS States"));
+			systems.add(new ValueExampleObject("Ubuntu"));
+			systems.add(new ValueExampleObject("Windows7"));
+			systems.add(new ValueExampleObject("OS/2"));
 
 			input.put("systems", systems);
 

@@ -7,7 +7,7 @@
 
 <ul>
 <#list systems as system>
-<li>${system_index + 1}. ${system}</li>
+<li>${system_index + 1}.${system.getName()}</li>
 </#list>
 </ul>
 
