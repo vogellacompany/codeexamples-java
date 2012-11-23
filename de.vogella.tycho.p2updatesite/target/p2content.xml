@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <units size='1'>
-  <unit id='v20120813-1558.tycho_test' version='1.0.0.2--cDbsnh8s73573I5915CCI'>
+  <unit id='v20120820-1648.tycho_test' version='1.0.0.2--cDbsnh8s73573I7315EAI'>
     <properties size='2'>
       <property name='org.eclipse.equinox.p2.name' value='Tycho Test'/>
       <property name='org.eclipse.equinox.p2.type.category' value='true'/>
     </properties>
     <provides size='1'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='v20120813-1558.tycho_test' version='1.0.0.2--cDbsnh8s73573I5915CCI'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='v20120820-1648.tycho_test' version='1.0.0.2--cDbsnh8s73573I7315EAI'/>
     </provides>
     <requires size='1'>
-      <required namespace='org.eclipse.equinox.p2.iu' name='de.vogella.tycho.feature.feature.group' range='[1.0.0.v20120813-1558,1.0.0.v20120813-1558]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='de.vogella.tycho.feature.feature.group' range='[1.0.0.v20120820-1648,1.0.0.v20120820-1648]'/>
     </requires>
     <touchpoint id='null' version='0.0.0'/>
   </unit>

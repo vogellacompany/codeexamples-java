@@ -59,12 +59,10 @@ public class BookMain {
 		Unmarshaller um = context.createUnmarshaller();
 		Bookstore bookstore2 = (Bookstore) um.unmarshal(new FileReader(
 				BOOKSTORE_XML));
-
-		for (int i = 0; i < bookstore2.getBooksList().toArray().length; i++) {
-			System.out.println("Book " + (i + 1) + ": "
-					+ bookstore2.getBooksList().get(i).getName() + " from "
-					+ bookstore2.getBooksList().get(i).getAuthor());
+		ArrayList<Book> list = bookstore2.getBooksList();
+		for (Book book : list) {
+			System.out.println("Book: " + book.getName() + " from "
+					+ book.getAuthor());
 		}
-
 	}
 }
