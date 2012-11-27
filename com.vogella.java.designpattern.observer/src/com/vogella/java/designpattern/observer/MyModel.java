@@ -1,8 +1,8 @@
 package com.vogella.java.designpattern.observer;
 
+import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class MyModel {
@@ -27,8 +27,8 @@ public class MyModel {
 		}
 
 		public void setFirstName(String firstName) {
-			this.firstName = firstName;
-			notifyListeners();
+			notifyListeners(this, "firstName", firstName, this.firstName = firstName);
+			
 		}
 
 		public String getLastName() {
@@ -36,8 +36,7 @@ public class MyModel {
 		}
 
 		public void setLastName(String lastName) {
-			this.lastName = lastName;
-			notifyListeners();
+			notifyListeners(this, "lastName", lastName, this.lastName = lastName);
 		}
 	}
 
@@ -51,9 +50,9 @@ public class MyModel {
 		persons.add(new Person("Jim", "Knopf"));
 	}
 
-	private void notifyListeners() {
+	private void notifyListeners(Object object, String property, String oldValue, String newValue) {
 		for (PropertyChangeListener name : listener) {
-			name.propertyChange(null);
+			name.propertyChange(new PropertyChangeEvent(this, "firstName", oldValue, newValue));
 		}
 	}
 
