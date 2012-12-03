@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?artifactRepository version='1.1.0'?>
 <artifacts size='1'>
-  <artifact classifier='org.eclipse.update.feature' id='de.vogella.tycho.feature' version='1.0.0.v20120820-1648'>
+  <artifact classifier='org.eclipse.update.feature' id='de.vogella.tycho.feature' version='1.0.0.v20121123-1503'>
     <properties size='6'>
       <property name='artifact.size' value='1864'/>
       <property name='download.size' value='1864'/>

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?artifactRepository version='1.1.0'?>
 <artifacts size='2'>
-  <artifact classifier='osgi.bundle' id='de.vogella.tycho.plugin' version='1.0.0.v20120820-1648'>
+  <artifact classifier='osgi.bundle' id='de.vogella.tycho.plugin' version='1.0.0.v20121123-1503'>
     <properties size='5'>
       <property name='artifact.size' value='5156'/>
       <property name='download.size' value='5156'/>
@@ -10,10 +10,10 @@
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>
     </properties>
   </artifact>
-  <artifact classifier='osgi.bundle' id='de.vogella.tycho.plugin.source' version='1.0.0.v20120820-1648'>
+  <artifact classifier='osgi.bundle' id='de.vogella.tycho.plugin.source' version='1.0.0.v20121123-1503'>
     <properties size='6'>
-      <property name='artifact.size' value='2767'/>
-      <property name='download.size' value='2767'/>
+      <property name='artifact.size' value='2771'/>
+      <property name='download.size' value='2771'/>
       <property name='maven-groupId' value='com.vogella'/>
       <property name='maven-artifactId' value='de.vogella.tycho.plugin'/>
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>

@@ -12,8 +12,8 @@
 	</modules>
 
 	<properties>
-		<tycho.version>0.16.0-SNAPSHOT</tycho.version>
-		<tycho-extras.version>0.16.0-SNAPSHOT</tycho-extras.version>
+		<tycho.version>0.16.0</tycho.version>
+		<tycho-extras.version>0.16.0</tycho-extras.version>
 
 		<juno-repo.url>http://download.eclipse.org/releases/juno</juno-repo.url>
 		<tycho-repo.url>https://oss.sonatype.org/content/groups/public/</tycho-repo.url>

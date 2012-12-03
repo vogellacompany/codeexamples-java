@@ -11,7 +11,7 @@ repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.p2updatesite
 repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.p2updatesite_target_repository/description=
 repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.p2updatesite_target_repository/enabled=true
 repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.p2updatesite_target_repository/isSystem=false
-repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.p2updatesite_target_repository/name=de.vogella.tycho.p2updatesite update site build
+repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.p2updatesite_target_repository/name=de.vogella.tycho.p2updatesite
 repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.p2updatesite_target_repository/provider=
 repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.p2updatesite_target_repository/type=org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository
 repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.p2updatesite_target_repository/uri=file\:/home/vogella/workspace/vogella/de.vogella.tycho.p2updatesite/target/repository/

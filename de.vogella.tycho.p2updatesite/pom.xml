@@ -11,6 +11,4 @@
 
 	<artifactId>de.vogella.tycho.p2updatesite</artifactId>
 	<packaging>eclipse-repository</packaging>
-
-	<name>de.vogella.tycho.p2updatesite update site build</name>
 </project>

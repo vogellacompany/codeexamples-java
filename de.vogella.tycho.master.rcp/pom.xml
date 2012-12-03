@@ -12,7 +12,7 @@
 	</modules>
 
 	<properties>
-		<tycho-version>0.15.0</tycho-version>
+		<tycho-version>0.16.0</tycho-version>
 	</properties>
 
 	<repositories>
@@ -34,8 +34,6 @@
 
 			
 		</plugins>
-
-
 
 	</build>
 

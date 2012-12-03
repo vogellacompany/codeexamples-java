@@ -13,8 +13,6 @@
 	<artifactId>de.vogella.tycho.rcp.product</artifactId>
 	<packaging>eclipse-repository</packaging>
 
-
-	<name>de.vogella.tycho.rcp.product product build</name>
 	<build>
 		<plugins>
 			<plugin>
