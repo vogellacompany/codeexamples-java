@@ -26,10 +26,11 @@ public class MakePhotoActivity extends Activity {
 					.show();
 		} else {
 			cameraId = findFrontFacingCamera();
-			camera = Camera.open(cameraId);
 			if (cameraId < 0) {
 				Toast.makeText(this, "No front facing camera found.",
 						Toast.LENGTH_LONG).show();
+			} else {
+				camera = Camera.open(cameraId);
 			}
 		}
 	}

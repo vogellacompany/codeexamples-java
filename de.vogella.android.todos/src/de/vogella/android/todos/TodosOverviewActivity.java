@@ -82,7 +82,7 @@ public class TodosOverviewActivity extends ListActivity implements
 
 	private void createTodo() {
 		Intent i = new Intent(this, TodoDetailActivity.class);
-		startActivityForResult(i, ACTIVITY_CREATE);
+		startActivity(i, ACTIVITY_CREATE);
 	}
 
 	// Opens the second activity if an entry is clicked
@@ -94,18 +94,9 @@ public class TodosOverviewActivity extends ListActivity implements
 		i.putExtra(MyTodoContentProvider.CONTENT_ITEM_TYPE, todoUri);
 
 		// Activity returns an result if called with startActivityForResult
-		startActivityForResult(i, ACTIVITY_EDIT);
+		startActivity(i, ACTIVITY_EDIT);
 	}
 
-	// Called with the result of the other activity
-	// requestCode was the origin request code send to the activity
-	// resultCode is the return code, 0 is everything is ok
-	// intend can be used to get data
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode,
-			Intent intent) {
-		super.onActivityResult(requestCode, resultCode, intent);
-	}
 
 	private void fillData() {
 

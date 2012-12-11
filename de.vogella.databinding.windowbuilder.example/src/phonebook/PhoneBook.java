@@ -338,11 +338,11 @@ public class PhoneBook {
 		m_groupViewer.setLabelProvider(new ObservableMapLabelProvider(observeMap));
 		m_groupViewer.setContentProvider(listContentProvider);
 		//
-		IObservableList selfList = Properties.selfList(PhoneGroup.class).observe(m_groups.getGroups());
-		m_groupViewer.setInput(selfList);
+		IObservableList groupsGroupsObserveList = BeanProperties.list("groups").observe(m_groups);
+		m_groupViewer.setInput(groupsGroupsObserveList);
 		//
 		ObservableListContentProvider listContentProvider_1 = new ObservableListContentProvider();
-		IObservableMap[] observeMaps = BeansObservables.observeMaps(listContentProvider_1.getKnownElements(), Person.class, new String[]{"name", "phone", "mobilePhone2", "mobilePhone1", "email"});
+		IObservableMap[] observeMaps = BeansObservables.observeMaps(listContentProvider_1.getKnownElements(), Person.class, new String[]{"name", "email", "phone", "mobilePhone2", "mobilePhone1"});
 		m_personViewer.setLabelProvider(new ObservableMapLabelProvider(observeMaps));
 		m_personViewer.setContentProvider(listContentProvider_1);
 		//
@@ -354,6 +354,11 @@ public class PhoneBook {
 		IObservableValue observeSingleSelectionPersonViewer = ViewerProperties.singleSelection().observe(m_personViewer);
 		IObservableValue personViewerNameObserveDetailValue = BeanProperties.value(Person.class, "name", String.class).observeDetail(observeSingleSelectionPersonViewer);
 		bindingContext.bindValue(observeTextNameTextObserveWidget, personViewerNameObserveDetailValue, null, null);
+		//
+		IObservableValue observeTextEmailTextObserveWidget = WidgetProperties.text(SWT.Modify).observe(m_emailText);
+		IObservableValue observeSingleSelectionPersonViewer_1 = ViewerProperties.singleSelection().observe(m_personViewer);
+		IObservableValue personViewerEmailObserveDetailValue = BeanProperties.value(Person.class, "email", String.class).observeDetail(observeSingleSelectionPersonViewer_1);
+		bindingContext.bindValue(observeTextEmailTextObserveWidget, personViewerEmailObserveDetailValue, null, null);
 		//
 		return bindingContext;
 	}
