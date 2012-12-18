@@ -65,4 +65,8 @@ public class MakePhotoActivity extends Activity {
 		super.onPause();
 	}
 
+	public static void main(String[] args) {
+		SingleTouchEventView
+	}
+
 }
