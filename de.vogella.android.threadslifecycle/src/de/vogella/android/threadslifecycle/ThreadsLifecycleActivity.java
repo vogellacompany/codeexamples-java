@@ -13,19 +13,21 @@ import org.apache.http.util.EntityUtils;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
 
 public class ThreadsLifecycleActivity extends Activity {
 	// Static so that the thread access the latest attribute
 	private static ProgressDialog dialog;
-	private static ImageView imageView;
 	private static Bitmap downloadBitmap;
 	private static Handler handler;
+	private ImageView imageView;
 	private Thread downloadThread;
 
 	/** Called when the activity is first created. */
@@ -35,9 +37,18 @@ public class ThreadsLifecycleActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		// Create a handler to update the UI
-		handler = new Handler();
+		handler = new Handler() {
+			@Override
+			public void handleMessage(Message msg) {
+				imageView.setImageBitmap(downloadBitmap);
+				dialog.dismiss();
+			}
+
+		};
 		// get the latest imageView after restart of the application
 		imageView = (ImageView) findViewById(R.id.imageView1);
+		Context context = imageView.getContext();
+		System.out.println(context);
 		// Did we already download the image?
 		if (downloadBitmap != null) {
 			imageView.setImageBitmap(downloadBitmap);
@@ -110,19 +121,13 @@ public class ThreadsLifecycleActivity extends Activity {
 					e.printStackTrace();
 				}
 				downloadBitmap = downloadBitmap("http://www.devoxx.com/download/attachments/4751369/DV11");
-				handler.post(new MyRunnable());
+				// Updates the user interface
+				handler.sendEmptyMessage(0);
 			} catch (IOException e) {
 				e.printStackTrace();
 			} finally {
 
 			}
-		}
-	}
-
-	static public class MyRunnable implements Runnable {
-		public void run() {
-			imageView.setImageBitmap(downloadBitmap);
-			dialog.dismiss();
 		}
 	}
 
