@@ -32,7 +32,7 @@ public class RssfeedActivity extends Activity {
 		case R.id.menuitem_refresh:
 			MyListFragment fragment = (MyListFragment) getFragmentManager()
 					.findFragmentById(R.id.listFragment);
-			fragment.updateListContent();
+			// fragment.updateListContent();
 			break;
 		case R.id.menuitem_settings:
 			Intent intent = new Intent(this, MyPreferenceActivity.class);
