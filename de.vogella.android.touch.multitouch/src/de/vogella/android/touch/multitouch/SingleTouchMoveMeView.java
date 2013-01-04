@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-public class TouchExampleView extends View {
+public class SingleTouchMoveMeView extends View {
 	private Drawable mIcon;
 	private float mPosX;
 	private float mPosY;
@@ -15,16 +15,18 @@ public class TouchExampleView extends View {
 	private float mLastTouchX;
 	private float mLastTouchY;
 
-	public TouchExampleView(Context context) {
+	public SingleTouchMoveMeView(Context context) {
 		this(context, null, 0);
 	}
 
-	public TouchExampleView(Context context, AttributeSet attrs) {
+	public SingleTouchMoveMeView(Context context, AttributeSet attrs) {
 		this(context, attrs, 0);
 	}
 
-	public TouchExampleView(Context context, AttributeSet attrs, int defStyle) {
+	public SingleTouchMoveMeView(Context context, AttributeSet attrs,
+			int defStyle) {
 		super(context, attrs, defStyle);
+
 		mIcon = context.getResources().getDrawable(R.drawable.ic_launcher);
 		mIcon.setBounds(0, 0, mIcon.getIntrinsicWidth(),
 				mIcon.getIntrinsicHeight());

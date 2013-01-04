@@ -9,7 +9,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(new TouchExampleView(this));
+		setContentView(new SingleTouchMoveMeView(this));
 	}
 
 	@Override
