@@ -3,7 +3,14 @@
     <item
         android:id="@+id/menu_settings"
         android:orderInCategory="100"
+        android:showAsAction="always|collapseActionView"
+        android:title="Settings"
+        />
+    <item
+        android:id="@+id/menu_load"
+        android:icon="@drawable/navigation_refresh"
+        android:orderInCategory="200"
         android:showAsAction="always"
-        android:title="@string/menu_settings" android:icon="@drawable/ic_launcher"/>
+        android:title="@string/menu_settings"/>
 
 </menu>
