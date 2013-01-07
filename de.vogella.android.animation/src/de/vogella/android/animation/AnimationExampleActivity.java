@@ -19,13 +19,13 @@ public class AnimationExampleActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
- 
+
 	}
 
 	public void startAnimation(View view) {
 		float dest = 0;
 		final ImageView aniView = (ImageView) findViewById(R.id.imageView1);
-		
+
 		switch (view.getId()) {
 		case R.id.Button01:
 
@@ -33,23 +33,27 @@ public class AnimationExampleActivity extends Activity {
 			if (aniView.getRotation() == 360) {
 				dest = 0;
 			}
-//			ObjectAnimator animation1 = ObjectAnimator.ofFloat(aniView,
-//					"rotation", dest);
-//			animation1.setDuration(2000);
-//			animation1.start();
-			
-			aniView.animate().
-			rotation(dest).setDuration(1000).
-			scaleX(2).scaleY(2).withEndAction(new Runnable() {
-				
-				@Override
-				public void run() {
-					//
-					aniView.animate().rotationXBy(100).rotation(Math.abs(360-aniView.getRotation())).scaleX(0.4F).scaleY(0.4F).setDuration(1000);
-				}
-			});
-		
-			
+			// ObjectAnimator animation1 = ObjectAnimator.ofFloat(aniView,
+			// "rotation", dest);
+			// animation1.setDuration(2000);
+			// animation1.start();
+
+			aniView.animate().rotation(dest).setDuration(1000).scaleX(2)
+					.scaleY(2).withEndAction(new Runnable() {
+
+						@Override
+						public void run() {
+							//
+							aniView.animate()
+									.rotationXBy(100)
+									.rotation(
+											Math.abs(360 - aniView
+													.getRotation()))
+									.scaleX(0.4F).scaleY(0.4F)
+									.setDuration(1000);
+						}
+					});
+
 			// Show how to load an animation from XML
 			// Animation animation1 = AnimationUtils.loadAnimation(this,
 			// R.anim.myanimation);

@@ -21,6 +21,9 @@
     <!--  app/activity examples strings  -->
     <!-- =============================== -->
 
+    <string name="styled_12_hour_clock">MM/<font fgcolor="#ffff0000"><b>dd</b></font>/yy h<font fgcolor="#ffff0000"><sup><small>mm</small></sup></font><b>aa</b></string>
+    <string name="styled_24_hour_clock">MM/<font fgcolor="#ffff0000"><b>dd</b></font>/yy k<font fgcolor="#ffff0000"><sup><small>mm</small></sup></font></string>
+
     <string name="tabs_1_tab_1">tab1</string>
     <string name="tabs_1_tab_2">tab2</string>
     <string name="tabs_1_tab_3">tab3</string>
@@ -112,6 +115,54 @@
     <string name="redirect_getter">Enter the text that will be used by the main activity.  Press back to cancel.</string>
     <string name="apply">Apply</string>
 
+    <string name="activity_presentation">App/Activity/Presentation</string>
+    <string name="presentation_activity_text">This activity demonstrates how to use a
+                  Presentation and the DisplayManager to show content on other Displays.\n
+                  Try connecting a secondary display and watch what happens.\n
+                  Selecting a Display will open a Presentation on it.</string>
+    <string name="presentation_show_all_displays">Show all displays</string>
+    <string name="presentation_photo_text">Showing photo #%1$d on display #%2$d: %3$s.</string>
+    <string name="presentation_info_text">Info</string>
+    <string name="presentation_display_id_text">Display #%1$d: %2$s</string>
+    <string name="presentation_alert_info_text">Display #%1$d Info</string>
+    <string name="presentation_alert_dismiss_text">OK</string>
+
+    <string name="activity_presentation_with_media_router">App/Activity/Presentation with Media Router</string>
+    <string name="presentation_with_media_router_activity_text">This activity demonstrates how to
+                  use a Presentation and the MediaRouter to automatically
+                  show content on a secondary display when available based on the currently
+                  selected media route.\n
+                  Try connecting a secondary display and watch what happens.</string>
+    <string name="presentation_with_media_router_play_on">Play on...</string>
+    <string name="presentation_with_media_router_now_playing_locally">Now playing on main display \'%s\'.</string>
+    <string name="presentation_with_media_router_now_playing_remotely">Now playing on secondary display \'%s\'.</string>
+
+    <string name="activity_secure_window">App/Activity/Secure Surfaces/Secure Window</string>
+    <string name="secure_window_activity_text">This activity demonstrates how to make an activity
+            use a secure surface so that its contents will only be visible on secure displays.
+            The activity\'s window has been marked with FLAG_SECURE to make it use a secure surface.
+            Consequently, the contents of the activity will not appear in screenshots and will not
+            be mirrored to non-secure displays.\n
+            \n
+            I am a secure activity!</string>
+
+    <string name="activity_secure_dialog">App/Activity/Secure Surfaces/Secure Dialog</string>
+    <string name="secure_dialog_activity_text">This activity demonstrates how to make a dialog use
+            a secure surface so that its contents will only be visible on secure displays.
+            The dialog\'s window has been marked with FLAG_SECURE to make it use a secure surface.
+            Consequently, the contents of the dialog will not appear in screenshots and will not
+            be mirrored to non-secure displays.</string>
+    <string name="secure_dialog_show_button">Show secure dialog</string>
+    <string name="secure_dialog_dialog_text">I am a secure dialog!</string>
+
+    <string name="activity_secure_surface_view">App/Activity/Secure Surfaces/Secure Surface View</string>
+    <string name="secure_surface_view_activity_text">This activity demonstrates how to make a
+            SurfaceView use a secure surface so that its contents will only be visible on
+            secure displays.
+            The surface view\'s window has been made secure using setSecure(true) to make it use
+            a secure surface.  Consequently, the contents of the surface view will not appear in
+            screenshots and will not be mirrored to non-secure displays.</string>
+
     <string name="fragment_alert_dialog">App/Fragment/Alert Dialog</string>
 
     <string name="fragment_arguments">App/Fragment/Arguments</string>
@@ -119,6 +170,9 @@
         as a Bundle at runtime (on the right) or from attributes in a layout (on the left).</string>
     <string name="fragment_arguments_embedded">From Attributes</string>
     <string name="fragment_arguments_embedded_land">Landscape Only</string>
+
+    <string name="fragment_arguments_fragment_msg">Demonstrates two embedded fragments
+        that are instantiated with arguments.</string>
 
     <string name="fragment_custom_animations">App/Fragment/Custom Animations</string>
 
@@ -148,6 +202,8 @@
     <string name="fragment1menu">Show fragment 1 menu</string>
     <string name="fragment2menu">Show fragment 2 menu</string>
 
+    <string name="fragment_nesting_tabs">App/Fragment/Nesting Tabs</string>
+
     <string name="fragment_retain_instance">App/Fragment/Retain Instance</string>
     <string name="fragment_retain_instance_msg">Current progress of retained fragment;
     restarts if fragment is re-created.</string>
@@ -156,7 +212,8 @@
     <string name="fragment_receive_result">App/Fragment/Receive Result</string>
 
     <string name="fragment_stack">App/Fragment/Stack</string>
-    <string name="new_fragment">New fragment</string>
+    <string name="new_fragment">Push</string>
+    <string name="delete_fragment">Pop</string>
 
     <string name="first">First</string>
     <string name="last">Last</string>
@@ -661,6 +718,12 @@
     <string name="enable_admin">Enable admin</string>
     <string name="device_capabilities_category">Device capabilities</string>
     <string name="disable_camera">Disable all device cameras</string>
+    <string name="disable_keyguard_widgets">Disable keyguard widgets</string>
+    <string name="disable_keyguard_secure_camera">Disable keyguard secure camera</string>
+    <string name="keyguard_widgets_disabled">Keyguard widgets disabled</string>
+    <string name="keyguard_widgets_enabled">Keyguard widgets enabled</string>
+    <string name="keyguard_secure_camera_disabled">Keyguard secure camera disabled</string>
+    <string name="keyguard_secure_camera_enabled">Keyguard secure camera enabled</string>
     <string name="camera_disabled">Device cameras disabled</string>
     <string name="camera_enabled">Device cameras enabled</string>
     <string name="password_controls_category">Password controls</string>
@@ -1010,6 +1073,9 @@
     <string name="focus_5_button4">4</string>
     <string name="focus_5_button5">5</string>
     <string name="gallery_2_text">Testing</string>
+    <string name="grid_layout_1_instructions">Type here:</string>
+    <string name="grid_layout_1_ok">Ok</string>
+    <string name="grid_layout_1_cancel">Cancel</string>
     <string name="googlelogin_login">Login</string>
     <string name="googlelogin_bad_login">Bad Login</string>
     <string name="googlelogin_clear">Clear Credentials</string>

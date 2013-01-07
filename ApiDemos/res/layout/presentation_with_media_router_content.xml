@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2010 The Android Open Source Project
+<!-- Copyright (C) 2012 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,18 +14,10 @@
      limitations under the License.
 -->
 
+<!-- The content that we show on secondary displays.
+     See corresponding Java code PresentationWithMediaRouterActivity.java. -->
 
-<device-admin xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-policies>
-        <limit-password />
-        <watch-login />
-        <reset-password />
-        <force-lock />
-        <wipe-data />
-        <expire-password />
-        <encrypted-storage />
-        <disable-camera />
-        <disable-keyguard-features />
-    </uses-policies>
-</device-admin>
-
+<android.opengl.GLSurfaceView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/surface_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />

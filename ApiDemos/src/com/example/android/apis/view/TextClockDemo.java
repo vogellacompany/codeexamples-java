@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 The Android Open Source Project
+ * Copyright (C) 2012 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,23 @@
 
 package com.example.android.apis.view;
 
-import android.app.Activity;
-import android.os.Bundle;
+// Need the following import to get access to the app resources, since this
+// class is in a sub-package.
+import android.text.Html;
+import android.widget.TextClock;
 import com.example.android.apis.R;
 
+import android.app.Activity;
+import android.os.Bundle;
+
 /**
- * Demonstrates using GridLayout to build the same "Simple Form" as in the
- * LinearLayout and RelativeLayout demos.
+ * Variants of {@link TextClock}.
  */
-public class GridLayout1 extends Activity {
+public class TextClockDemo extends Activity {
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.grid_layout_1);
+        setContentView(R.layout.textclock);
     }
 }
