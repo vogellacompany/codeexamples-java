@@ -19,9 +19,6 @@ public class ProgressTestActivity extends Activity {
 		setContentView(R.layout.main);
 		progress = (ProgressBar) findViewById(R.id.progressBar1);
 		text = (TextView) findViewById(R.id.textView1);
-		// Reuse existing hander from Activity
-		// Avoid the creation of a new object via new Handler();
-		handler = getWindow().getDecorView().getHandler();
 
 	}
 
@@ -37,7 +34,7 @@ public class ProgressTestActivity extends Activity {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					handler.post(new Runnable() {
+					progress.post(new Runnable() {
 						@Override
 						public void run() {
 							text.setText("Updating");

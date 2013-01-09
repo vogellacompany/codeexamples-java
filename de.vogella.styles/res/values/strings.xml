@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">de.vogella.styles</string>
+    <string name="message">This is an activity with Wallpaper background</string>
+    <string name="dialog_message">This is an activity appearing as a dialog</string>
+    <string name="dialog">Activity Dialog</string>
+    <string name="wallpaper">Activity Wallpaper</string>
+
+</resources>

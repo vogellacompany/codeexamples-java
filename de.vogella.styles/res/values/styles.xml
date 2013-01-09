@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="WallpaperTheme" parent="@android:style/Theme.Wallpaper">
+        <item name="android:windowActionBar">true</item>
+    </style>
+
+</resources>
