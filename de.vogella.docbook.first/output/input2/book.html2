@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docbook Book Example</title>
+      <link rel="stylesheet" type="text/css" href="style.css"/>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.76.1"/>
+   </head>
+   <body>
+      <div class="book" title="Docbook Book Example" id="d73e1">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title">DocBook Intro</h1>
+               </div>
+               <div>
+                  <div class="author">
+                     <h3 class="author">
+                        <span class="firstname">Lars</span> 
+                        <span class="surname">Vogel</span>
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <hr/>
+         </div>
+         <div class="toc">
+            <div class="toc-title">Table of Contents</div>
+            <ul>
+               <li>
+                  <span class="chapter">
+                     <a href="#d73e14">1. This is the first chapter</a>
+                  </span>
+                  <ul>
+                     <li>
+                        <span class="section">
+                           <a href="#d73e17">1.  First section in the chapter</a>
+                        </span>
+                        <ul>
+                           <li>
+                              <span class="section">
+                                 <a href="#d73e22">1.1.  First sub section </a>
+                              </span>
+                           </li>
+                           <li>
+                              <span class="section">
+                                 <a href="#d73e27">1.2.  second sub section </a>
+                              </span>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <span class="section">
+                           <a href="#d73e32">2.  Second section in the chapter</a>
+                        </span>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <span class="chapter">
+                     <a href="#d73e46">2. This is the second chapter</a>
+                  </span>
+                  <ul>
+                     <li>
+                        <span class="section">
+                           <a href="#d73e49">1.  My Title</a>
+                        </span>
+                     </li>
+                     <li>
+                        <span class="section">
+                           <a href="#d73e54">2.  Other title</a>
+                        </span>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+         <section class="chapter" title="Chapter 1. This is the first chapter" id="d73e14">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title">Chapter 1. This is the first chapter</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="toc">
+               <div class="toc-title">Table of Contents</div>
+               <ul>
+                  <li>
+                     <span class="section">
+                        <a href="#d73e17">1.  First section in the chapter</a>
+                     </span>
+                     <ul>
+                        <li>
+                           <span class="section">
+                              <a href="#d73e22">1.1.  First sub section </a>
+                           </span>
+                        </li>
+                        <li>
+                           <span class="section">
+                              <a href="#d73e27">1.2.  second sub section </a>
+                           </span>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <span class="section">
+                        <a href="#d73e32">2.  Second section in the chapter</a>
+                     </span>
+                  </li>
+               </ul>
+            </div>
+            <section class="section" title="1.  First section in the chapter">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both" id="d73e17">1.  First section in the chapter</h2>
+                     </div>
+                  </div>
+               </div>
+               <p> Test</p>
+               <section class="section" title="1.1.  First sub section">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h3 class="title" id="d73e22">1.1.  First sub section </h3>
+                        </div>
+                     </div>
+                  </div>
+                  <p> Subsection1</p>
+               </section>
+               <section class="section" title="1.2.  second sub section">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h3 class="title" id="d73e27">1.2.  second sub section </h3>
+                        </div>
+                     </div>
+                  </div>
+                  <p> Subsection2</p>
+               </section>
+            </section>
+            <section class="section" title="2.  Second section in the chapter">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both" id="d73e32">2.  Second section in the chapter</h2>
+                     </div>
+                  </div>
+               </div>
+               <p>Other random text
+			</p>
+               <p>
+			
+               </p>
+               <div class="mediaobject">
+                  <img src="images/title.png" alt=""/>
+               </div>
+               <p>
+		
+               </p>
+            </section>
+         </section>
+         <section class="chapter" title="Chapter 2. This is the second chapter" id="d73e46">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title">Chapter 2. This is the second chapter</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="toc">
+               <div class="toc-title">Table of Contents</div>
+               <ul>
+                  <li>
+                     <span class="section">
+                        <a href="#d73e49">1.  My Title</a>
+                     </span>
+                  </li>
+                  <li>
+                     <span class="section">
+                        <a href="#d73e54">2.  Other title</a>
+                     </span>
+                  </li>
+               </ul>
+            </div>
+            <section class="section" title="1.  My Title">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both" id="d73e49">1.  My Title</h2>
+                     </div>
+                  </div>
+               </div>
+               <p>More...
+			</p>
+            </section>
+            <section class="section" title="2.  Other title">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title" style="clear: both" id="d73e54">2.  Other title</h2>
+                     </div>
+                  </div>
+               </div>
+               <p>Blabla
+			</p>
+            </section>
+         </section>
+      </div>
+   </body>
+</html>

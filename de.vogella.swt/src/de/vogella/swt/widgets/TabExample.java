@@ -1,6 +1,5 @@
 package de.vogella.swt.widgets;
 
-
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
@@ -24,7 +23,7 @@ public class TabExample {
 		shell.setTabList(controls);
 		shell.pack();
 		shell.open();
-		while (!display.isDisposed()) {
+		while (!shell.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>DocBook Intro</title>
+      <link rel="stylesheet" type="text/css" href="style.css"/>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.76.1"/>
+   </head>
+   <body>
+      <div class="article" title="DocBook Intro" id="d0e1">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title">DocBook Intro</h2>
+               </div>
+               <div>
+                  <div class="author">
+                     <h3 class="author">
+                        <span class="firstname">Lars</span> 
+                        <span class="surname">Vogel</span>
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <hr/>
+         </div>
+         <div class="toc">
+            <div class="toc-title">Table of Contents</div>
+            <ul>
+               <li>
+                  <span class="section">
+                     <a href="#d0e13">1.0. An introduction to DocBook</a>
+                  </span>
+                  <ul>
+                     <li>
+                        <span class="section">
+                           <a href="#d0e16">1.0.1.1. Subsection</a>
+                        </span>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+         <section class="section" title="1.0. An introduction to DocBook">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both" id="d0e13">1.0. An introduction to DocBook</h2>
+                  </div>
+               </div>
+            </div>
+            <section class="section" title="1.0.1.1. Subsection">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title" id="d0e16">1.0.1.1. Subsection</h3>
+                     </div>
+                  </div>
+               </div>
+               <p> 
+				This is text.
+			</p>
+            </section>
+         </section>
+      </div>
+   </body>
+</html>

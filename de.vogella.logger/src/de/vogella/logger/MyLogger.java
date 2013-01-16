@@ -15,8 +15,10 @@ public class MyLogger {
 	static private Formatter formatterHTML;
 
 	static public void setup() throws IOException {
-		// Create Logger
-		Logger logger = Logger.getLogger("");
+
+		// Get the global logger to configure it
+		Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
 		logger.setLevel(Level.INFO);
 		fileTxt = new FileHandler("Logging.txt");
 		fileHTML = new FileHandler("Logging.html");

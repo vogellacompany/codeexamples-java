@@ -22,19 +22,19 @@ public class Photo {
 		shell.setLayout(new RowLayout());
 		shell.setText("Photo Application");
 
+		// initialize a parent composite with a grid layout manager
+		// with 5x columns
 		Composite parent = new Composite(shell, SWT.NONE);
 		GridLayout gridLayout = new GridLayout();
-		gridLayout.numColumns = 7;
+		gridLayout.numColumns = 5;
 		parent.setLayout(gridLayout);
 
 		// Get the Display default icons
 		List<Image> imageList = new ArrayList<Image>();
 
-		imageList.add(Display.getDefault().getSystemImage(SWT.ICON_CANCEL));
 		imageList.add(Display.getDefault().getSystemImage(SWT.ICON_WARNING));
 		imageList.add(Display.getDefault().getSystemImage(SWT.ICON_WORKING));
 		imageList.add(Display.getDefault().getSystemImage(SWT.ICON_QUESTION));
-		imageList.add(Display.getDefault().getSystemImage(SWT.ICON_SEARCH));
 		imageList
 				.add(Display.getDefault().getSystemImage(SWT.ICON_INFORMATION));
 		imageList.add(Display.getDefault().getSystemImage(SWT.ICON_ERROR));

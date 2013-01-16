@@ -1,15 +1,21 @@
-package de.vogella.logger;
+package de.vogella.logger.test;
 
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import de.vogella.logger.MyLogger;
 
 public class UseLogger {
 	// Always use the classname, this way you can refactor
 	private final static Logger LOGGER = Logger.getLogger(UseLogger.class
 			.getName());
 
-	public void writeLog() {
+	public void doSomeThingAndLog() {
+		// Image here some real work
+
+		// Now we demo the logging
+
 		// Set the LogLevel to Severe, only severe Messages will be written
 		LOGGER.setLevel(Level.SEVERE);
 		LOGGER.severe("Info Log");
@@ -27,13 +33,13 @@ public class UseLogger {
 	}
 
 	public static void main(String[] args) {
-		UseLogger logger = new UseLogger();
+		UseLogger tester = new UseLogger();
 		try {
 			MyLogger.setup();
 		} catch (IOException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Problems with creating the log files");
 		}
-		logger.writeLog();
+		tester.doSomeThingAndLog();
 	}
 }

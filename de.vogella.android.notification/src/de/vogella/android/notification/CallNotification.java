@@ -16,7 +16,7 @@ public class CallNotification extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Button button = new Button(this);
-		button.setText("Create Notification"); 
+		button.setText("Create Notification");
 		button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -46,8 +46,8 @@ public class CallNotification extends Activity {
 			notification.contentView = view;
 
 			Intent intent = new Intent(this, TargetActivity.class);
-			PendingIntent activity = PendingIntent.getActivity(this, 0, intent,
-					0);
+			PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
+					intent, PendingIntent.FLAG_CANCEL_CURRENT);
 			notification.contentIntent = activity;
 			notificationManager.notify(0, notification);
 
