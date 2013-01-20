@@ -131,7 +131,8 @@ public class View extends ViewPart {
 
 	// This will create the columns for the table
 	private void createColumns(final Composite parent) {
-		headerMenu = new Menu(parent.getShell(), SWT.POP_UP);
+		headerMenu = new Menu(viewer.getTable());
+		viewer.getTable().setMenu(headerMenu);
 
 		String[] titles = { "First name", "Last name", "Gender", "Married" };
 		int[] bounds = { 100, 100, 100, 100 };
