@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
-public class RssfeedActivity extends Activity {
+public class RssfeedActivity extends Activity implements
+		MyListFragment.OnItemSelectedListener {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -16,7 +18,7 @@ public class RssfeedActivity extends Activity {
 		// .permitAll().build();
 		// StrictMode.setThreadPolicy(policy);
 
-		setContentView(R.layout.activity_rssfeed);
+		// setContentView(R.layout.activity_rssfeed);
 	}
 
 	@Override
@@ -29,12 +31,13 @@ public class RssfeedActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 
-		case R.id.menuitem_refresh:
-			MyListFragment fragment = (MyListFragment) getFragmentManager()
-					.findFragmentById(R.id.listFragment);
-			// fragment.updateListContent();
+		case R.id.action_refresh:
+			Toast.makeText(this, "Action refresh selected", Toast.LENGTH_SHORT)
+					.show();
+			// MyListFragment fragment = (MyListFragment) getFragmentManager()
+			// .findFragmentById(R.id.listFragment);
 			break;
-		case R.id.menuitem_settings:
+		case R.id.action_settings:
 			Intent intent = new Intent(this, MyPreferenceActivity.class);
 			startActivity(intent);
 			break;
@@ -42,5 +45,11 @@ public class RssfeedActivity extends Activity {
 			break;
 		}
 		return true;
+	}
+
+	@Override
+	public void onRssItemSelected(String link) {
+		// TODO Auto-generated method stub
+
 	}
 }
