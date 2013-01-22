@@ -1,15 +1,5 @@
 package de.vogella.customview;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.os.Parcelable;
-import android.util.AttributeSet;
-import android.view.MotionEvent;
-import android.view.View;
-
 public class DrawView extends View {
 
 	public DrawView(Context context) {

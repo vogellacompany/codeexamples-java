@@ -11,7 +11,7 @@ import android.widget.ListView;
 public class MyListActivity extends ListActivity {
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
-		setContentView(R.layout.main);
+		// setContentView(R.layout.main);
 		// List<Person> values = createModel();
 		String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
 				"Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
@@ -30,8 +30,8 @@ public class MyListActivity extends ListActivity {
 				"Windows7", "Max OS X", "Linux", "OS/2" };
 		// InteractiveArrayAdapter adapter = new InteractiveArrayAdapter(this,
 		// getModel());
-		MySimplePerformanceArrayAdapter adapter = new MySimplePerformanceArrayAdapter(
-				this, values);
+		InteractiveArrayAdapter adapter = new InteractiveArrayAdapter(this,
+				getModel());
 		setListAdapter(adapter);
 	}
 

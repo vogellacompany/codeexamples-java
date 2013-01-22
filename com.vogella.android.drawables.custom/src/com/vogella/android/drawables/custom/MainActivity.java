@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
 		ImageView button = (ImageView) findViewById(R.id.image);
 		InputStream resource = getResources().openRawResource(R.drawable.dog);
 		Bitmap bitmap = BitmapFactory.decodeStream(resource);
+
 		button.setBackground(new MyRoundCornerDrawable(bitmap));
 	}
 

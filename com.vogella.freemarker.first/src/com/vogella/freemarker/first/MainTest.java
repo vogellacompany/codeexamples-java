@@ -42,6 +42,10 @@ public class MainTest {
 
 			input.put("systems", systems);
 
+			ValueExampleObject exampleObject = new ValueExampleObject(
+					"Java object");
+			input.put("exampleObject", exampleObject);
+
 			// File output
 			file = new FileWriter(new File("output.html"));
 			template.process(input, file);

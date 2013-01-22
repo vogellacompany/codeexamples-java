@@ -11,6 +11,8 @@
 </#list>
 </ul>
 
+<h1>${exampleObject.getName()}</h1>
+
 </div>
 
 <#include "./common/footer.ftl">  
