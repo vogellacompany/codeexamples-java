@@ -26,11 +26,12 @@ public class MainActivity extends Activity {
 		actionBar.setBackgroundDrawable(new BitmapDrawable(getResources(), b));
 
 		// add the custom view to the action bar
-		// actionBar.setCustomView(R.layout.actionbar_view);
+
+		actionBar.setCustomView(R.layout.actionbar_view);
+
 		EditText search = (EditText) actionBar.getCustomView().findViewById(
 				R.id.searchfield);
 		search.setOnEditorActionListener(new OnEditorActionListener() {
-
 			@Override
 			public boolean onEditorAction(TextView v, int actionId,
 					KeyEvent event) {

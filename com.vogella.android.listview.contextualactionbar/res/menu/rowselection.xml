@@ -5,5 +5,9 @@
         android:id="@+id/menuitem1_show"
         android:title="Show Selection">
     </item>
+    <item
+        android:id="@+id/menuitem2_delete"
+        android:title="Delete">
+    </item>
 
 </menu>

@@ -34,7 +34,6 @@ public class MySimpleArrayAdapter extends ArrayAdapter<String> {
 		} else {
 			imageView.setImageResource(R.drawable.ok);
 		}
-
 		return rowView;
 	}
 }

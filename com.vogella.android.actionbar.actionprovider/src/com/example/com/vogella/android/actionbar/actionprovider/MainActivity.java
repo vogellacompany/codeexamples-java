@@ -2,6 +2,7 @@ package com.example.com.vogella.android.actionbar.actionprovider;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,6 +10,7 @@ import android.widget.ShareActionProvider;
 
 public class MainActivity extends Activity {
 	private ShareActionProvider provider;
+	private MenuItem findItem;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,23 +21,43 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.activity_main, menu);
-
-		// Get the ActionProvider
-		provider = (ShareActionProvider) menu.findItem(R.id.menu_share)
-				.getActionProvider();
-		// Initialize the share intent
-		Intent intent = new Intent(Intent.ACTION_SEND);
-		intent.setType("text/plain");
-		provider.setShareIntent(intent);
 		return true;
+	}
+
+	private void doSometime() {
+		AsyncTask<String, Void, String> task = new AsyncTask<String, Void, String>() {
+
+			@Override
+			protected String doInBackground(String... params) {
+				try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				return "test";
+			}
+
+			protected void onPostExecute(String result) {
+				findItem.collapseActionView();
+				findItem.setActionView(null);
+			};
+		};
+		task.execute("test");
+
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.menu_share:
-			doShare();
-			break;
+		// case R.id.menu_share:
+		// doShare();
+		// break;
+		case R.id.item1:
+			// Get the ActionProvider
+			findItem = item;
+			MenuItem setActionView = findItem.setActionView(R.layout.progress);
+			findItem.expandActionView();
+			doSometime();
 		default:
 			break;
 		}

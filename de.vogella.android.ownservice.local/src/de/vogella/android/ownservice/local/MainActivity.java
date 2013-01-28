@@ -34,8 +34,8 @@ public class MainActivity extends ListActivity {
 
 		public void onServiceConnected(ComponentName className, IBinder binder) {
 			s = ((LocalWordService.MyBinder) binder).getService();
-			Toast.makeText(MainActivity.this, "Connected",
-					Toast.LENGTH_SHORT).show();
+			Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_SHORT)
+					.show();
 		}
 
 		public void onServiceDisconnected(ComponentName className) {

@@ -8,21 +8,26 @@ import org.junit.Test;
 
 public class MyClassTest {
 
-
-	@BeforeClass 
-	public static void testSetup(){
+	@BeforeClass
+	public static void testSetup() {
 		// Preparation of the unit tests
 	}
-	
-	@AfterClass 
-	public static void testCleanup(){
+
+	@AfterClass
+	public static void testCleanup() {
 		// Teardown for data used by the unit tests
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
-	public void testMultiply() {
+	public void testMultiplyExeception() {
 		MyClass tester = new MyClass();
-		assertEquals("Result", 50, tester.multiply(10, 5));
+		tester.multiply(500, 500);
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testMultiplty() {
+		MyClass tester = new MyClass();
+		assertEquals("Result", 50, tester.multiply(1, 5));
 	}
 
 }

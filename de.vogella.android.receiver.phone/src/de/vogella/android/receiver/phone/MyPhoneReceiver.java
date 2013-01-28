@@ -11,11 +11,9 @@ public class MyPhoneReceiver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		Log.w("DEBUG", "Receiver called");
 		Bundle extras = intent.getExtras();
 		if (extras != null) {
 			String state = extras.getString(TelephonyManager.EXTRA_STATE);
-			Log.w("DEBUG", state);
 
 			if (state.equals(TelephonyManager.EXTRA_STATE_RINGING)) {
 				String phoneNumber = extras

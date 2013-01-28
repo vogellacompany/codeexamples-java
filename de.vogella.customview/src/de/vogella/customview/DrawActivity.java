@@ -1,9 +1,5 @@
 package de.vogella.customview;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
 public class DrawActivity extends Activity {
 
@@ -22,6 +18,7 @@ public class DrawActivity extends Activity {
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		outState.putInt("clicks", clicks);
+
 		super.onSaveInstanceState(outState);
 	}
 

@@ -38,7 +38,7 @@ public class MyListActivityActionbar extends ListActivity {
 				selectedItem = position;
 
 				// Start the CAB using the ActionMode.Callback defined above
-				mActionMode = MyListActivityActionbar.this
+				MyListActivityActionbar.this
 						.startActionMode(mActionModeCallback);
 				view.setSelected(true);
 				return true;

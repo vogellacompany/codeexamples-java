@@ -26,6 +26,13 @@
             android:icon="@drawable/icon"
             android:label="@string/service_name" >
         </service>
+        
+        <service
+            android:name="MyService"
+            android:process=":meinprocess"
+            android:icon="@drawable/icon"
+            android:label="@string/service_name" >
+        </service>
 
         <receiver android:name="MyScheduleReceiver" >
             <intent-filter>
