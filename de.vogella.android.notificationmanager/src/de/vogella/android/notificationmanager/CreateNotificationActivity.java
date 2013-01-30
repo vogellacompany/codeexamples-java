@@ -28,12 +28,7 @@ public class CreateNotificationActivity extends Activity {
 				.setContentTitle("New mail from " + "test@gmail.com")
 				.setContentText("Subject")
 				.setSmallIcon(R.drawable.ic_stat_name)
-				.setContentIntent(pIntent).setAutoCancel(true)
-				.addAction(R.drawable.ic_stat_call, "Call", pIntent)
-				.addAction(R.drawable.ic_stat_other, "More", pIntent)
-				.addAction(R.drawable.ic_stat_more, "And more", pIntent)
-				.setStyle(new Notification.BigTextStyle().bigText(longText))
-				.build();
+				.setContentIntent(pIntent).build();
 
 		NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 		// Hide the notification after its selected

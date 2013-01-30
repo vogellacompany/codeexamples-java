@@ -34,7 +34,6 @@ public class MySimplePersonAdapter extends ArrayAdapter<Person> {
 		String firstName = values.get(position).getFirstName();
 
 		textView.setText(firstName);
-		// Change the icon for Windows and iPhone
 		String s = firstName;
 		if (s.startsWith("Peter")) {
 			imageView.setImageResource(R.drawable.no);

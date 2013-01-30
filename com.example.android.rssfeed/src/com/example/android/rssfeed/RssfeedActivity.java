@@ -3,9 +3,9 @@ package com.example.android.rssfeed;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 public class RssfeedActivity extends Activity implements
 		MyListFragment.OnItemSelectedListener {
@@ -13,12 +13,11 @@ public class RssfeedActivity extends Activity implements
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// StrictMode.ThreadPolicy policy = new
-		// StrictMode.ThreadPolicy.Builder()
-		// .permitAll().build();
-		// StrictMode.setThreadPolicy(policy);
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+				.permitAll().build();
+		StrictMode.setThreadPolicy(policy);
 
-		// setContentView(R.layout.activity_rssfeed);
+		setContentView(R.layout.activity_rssfeed);
 	}
 
 	@Override
@@ -32,10 +31,9 @@ public class RssfeedActivity extends Activity implements
 		switch (item.getItemId()) {
 
 		case R.id.action_refresh:
-			Toast.makeText(this, "Action refresh selected", Toast.LENGTH_SHORT)
-					.show();
-			// MyListFragment fragment = (MyListFragment) getFragmentManager()
-			// .findFragmentById(R.id.listFragment);
+			MyListFragment fragment = (MyListFragment) getFragmentManager()
+					.findFragmentById(R.id.listFragment);
+			fragment.updateListContent();
 			break;
 		case R.id.action_settings:
 			Intent intent = new Intent(this, MyPreferenceActivity.class);
@@ -49,7 +47,16 @@ public class RssfeedActivity extends Activity implements
 
 	@Override
 	public void onRssItemSelected(String link) {
-		// TODO Auto-generated method stub
+		DetailFragment fragment = (DetailFragment) getFragmentManager()
+				.findFragmentById(R.id.detailFragment);
+		if (fragment != null && fragment.isInLayout()) {
+			fragment.setText(link);
+		} else {
+			Intent intent = new Intent(getApplicationContext(),
+					DetailActivity.class);
+			intent.putExtra(DetailActivity.EXTRA_URL, link);
+			startActivity(intent);
 
+		}
 	}
 }
