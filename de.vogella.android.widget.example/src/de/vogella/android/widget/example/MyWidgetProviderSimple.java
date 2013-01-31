@@ -47,4 +47,4 @@ public class MyWidgetProviderSimple extends AppWidgetProvider {
 			appWidgetManager.updateAppWidget(widgetId, remoteViews);
 		}
 	}
-}
+}|
