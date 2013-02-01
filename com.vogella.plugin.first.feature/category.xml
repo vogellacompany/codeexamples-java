@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.vogella.plugin.first.feature_1.0.0.qualifier.jar" id="com.vogella.plugin.first.feature" version="1.0.0.qualifier">
+      <category name="vogella"/>
+   </feature>
+   <category-def name="vogella" label="My category"/>
+</site>
