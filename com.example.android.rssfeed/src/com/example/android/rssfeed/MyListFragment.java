@@ -47,7 +47,7 @@ public class MyListFragment extends ListFragment {
 			AsyncTask<String, Void, List<RssItem>> {
 		private MyListFragment fragment;
 
-		public synchronized void setFragment(MyListFragment fragment) {
+		public void setFragment(MyListFragment fragment) {
 			this.fragment = fragment;
 		}
 
