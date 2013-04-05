@@ -82,7 +82,7 @@ public class TodosOverviewActivity extends ListActivity implements
 
 	private void createTodo() {
 		Intent i = new Intent(this, TodoDetailActivity.class);
-		startActivity(i, ACTIVITY_CREATE);
+		startActivity(i);
 	}
 
 	// Opens the second activity if an entry is clicked
@@ -94,9 +94,8 @@ public class TodosOverviewActivity extends ListActivity implements
 		i.putExtra(MyTodoContentProvider.CONTENT_ITEM_TYPE, todoUri);
 
 		// Activity returns an result if called with startActivityForResult
-		startActivity(i, ACTIVITY_EDIT);
+		startActivity(i);
 	}
-
 
 	private void fillData() {
 

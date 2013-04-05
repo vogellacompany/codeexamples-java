@@ -19,6 +19,7 @@ public class DetailFragment extends Fragment {
 	}
 
 	public void setText(String item) {
+		webview.setInitialScale(50);
 		webview.loadUrl(item);
 	}
 }

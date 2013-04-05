@@ -33,6 +33,7 @@ public class Ball extends SurfaceView implements SurfaceHolder.Callback {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		update(canvas);
+		canvas.drawARGB(255, 0, 0, 0);
 		canvas.drawBitmap(bitmap, x, y, null);
 	}
 

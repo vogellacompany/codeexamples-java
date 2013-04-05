@@ -28,6 +28,8 @@ public class CreateNotificationActivity extends Activity {
 				.setContentTitle("New mail from " + "test@gmail.com")
 				.setContentText("Subject")
 				.setSmallIcon(R.drawable.ic_stat_name)
+				.addAction(R.drawable.ic_stat_name, "Call", pIntent)
+				.setStyle(new Notification.BigTextStyle().bigText("Long text"))
 				.setContentIntent(pIntent).build();
 
 		NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);

@@ -2,7 +2,7 @@
 <feature
       id="de.vogella.tycho.feature"
       label="Feature"
-      version="1.0.0.v20121123-1503">
+      version="1.0.0.v20121203-2023">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -20,7 +20,7 @@
          id="de.vogella.tycho.plugin"
          download-size="5"
          install-size="6"
-         version="1.0.0.v20121123-1503"
+         version="1.0.0.v20121203-2023"
          unpack="false"/>
 
 </feature>
