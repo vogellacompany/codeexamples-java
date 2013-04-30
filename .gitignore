@@ -1,7 +1,8 @@
 bin
 gen
-build
+build/
 .metadata
+.gradle
 classes
 External Plug-in Libraries/
 
