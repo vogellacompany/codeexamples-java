@@ -8,7 +8,7 @@
     android:divider="?android:attr/listDivider"
     tools:context=".MainActivity" >
 
-        <com.vogella.android.view.compoundview.ColorOptionsView
+        <com.vogella.android.customview.compoundview.ColorOptionsView
             android:id="@+id/view1"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/listPreferredItemHeight"
@@ -18,7 +18,7 @@
             custom:valueColor="@android:color/holo_green_light"
              />
 
-        <com.vogella.android.view.compoundview.ColorOptionsView
+        <com.vogella.android.customview.compoundview.ColorOptionsView
             android:id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/listPreferredItemHeight"

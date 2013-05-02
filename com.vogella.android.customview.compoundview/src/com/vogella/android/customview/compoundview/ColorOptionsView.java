@@ -1,7 +1,5 @@
 package com.vogella.android.customview.compoundview;
 
-import com.vogella.android.view.compoundview.R;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
@@ -11,6 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.vogella.android.view.compoundview.R;
 
 public class ColorOptionsView extends LinearLayout {
 
@@ -40,7 +40,6 @@ public class ColorOptionsView extends LinearLayout {
 		mValue = getChildAt(1);
 		mValue.setBackgroundColor(valueColor);
 
-		mImage = (ImageView) getChildAt(2);
 	}
 
 	public ColorOptionsView(Context context) {

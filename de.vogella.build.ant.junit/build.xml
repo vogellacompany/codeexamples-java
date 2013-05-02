@@ -4,7 +4,7 @@
 	<!-- The value of a property is accessed via ${} -->
 	<property name="src.dir" location="src" />
 	
-	<property name="build.dir" location="build" />
+	<property name="build.dir" location="bin" />
 
 	<!-- Variables used for JUnit testin -->
 	<property name="test.dir" location="src" />
@@ -15,7 +15,6 @@
 		<pathelement location="lib/junit.jar" />
 		<pathelement location="${build.dir}" />
 	</path>
-
 
 	<!-- Deletes the existing build, docs and dist directory-->
 	<target name="clean">

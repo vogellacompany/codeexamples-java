@@ -26,6 +26,7 @@ public class DrawingView extends View {
 
 	@Override
 	public void draw(Canvas canvas) {
+		canvas.drawARGB(255, 255, 0, 0);
 		canvas.drawPath(path, paint);
 	}
 
