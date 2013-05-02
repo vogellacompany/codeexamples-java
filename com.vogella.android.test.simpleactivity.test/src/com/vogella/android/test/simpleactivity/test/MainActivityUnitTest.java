@@ -11,17 +11,23 @@ public class MainActivityUnitTest extends
 		android.test.ActivityUnitTestCase<MainActivity> {
 
 	private int buttonId;
+	private MainActivity activity;
 
 	public MainActivityUnitTest() {
 		super(MainActivity.class);
 	}
-
-	@SmallTest
-	public void testLayout() {
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
 		Intent intent = new Intent(getInstrumentation().getTargetContext(),
 				MainActivity.class);
 		startActivity(intent, null, null);
-		MainActivity activity = getActivity();
+		activity = getActivity();
+	}
+
+	@SmallTest
+	public void testLayout() {
+		
 		buttonId = com.vogella.android.test.simpleactivity.R.id.button1;
 		assertNotNull(activity.findViewById(buttonId));
 		Button view = (Button) activity.findViewById(buttonId);
@@ -30,10 +36,6 @@ public class MainActivityUnitTest extends
 
 	@SmallTest
 	public void testIntentTriggerViaOnClick() {
-		Intent intent = new Intent(getInstrumentation().getTargetContext(),
-				MainActivity.class);
-		startActivity(intent, null, null);
-		MainActivity activity = getActivity();
 		buttonId = com.vogella.android.test.simpleactivity.R.id.button1;
 		Button view = (Button) activity.findViewById(buttonId);
 		assertNotNull("Button not allowed to be null", view);

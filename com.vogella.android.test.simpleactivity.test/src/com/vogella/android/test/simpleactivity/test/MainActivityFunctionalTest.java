@@ -19,13 +19,21 @@ import com.vogella.android.test.simpleactivity.SecondActivity;
 public class MainActivityFunctionalTest extends
 		ActivityInstrumentationTestCase2<MainActivity> {
 
+	private MainActivity activity;
+
 	public MainActivityFunctionalTest() {
 		super(MainActivity.class);
+	}
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
+		setActivityInitialTouchMode(false);
+		activity = getActivity();
 	}
 
 	public void testStartSecondActivity() throws Exception {
 		
-		MainActivity activity = getActivity();
+		
 		
 		// Add monitor to check for the second activity
 		ActivityMonitor monitor = getInstrumentation().addMonitor(
