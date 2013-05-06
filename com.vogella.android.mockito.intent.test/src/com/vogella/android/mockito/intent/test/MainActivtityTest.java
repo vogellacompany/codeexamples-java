@@ -29,6 +29,7 @@ public class MainActivtityTest extends ActivityUnitTestCase<MainActivity> {
 	protected void setUp() throws Exception {
 		super.setUp();
 		MockitoAnnotations.initMocks(this);
+
 		myApp = mock(MyApp.class);
 		when(myApp.getNumber()).thenReturn(42);
 		setApplication(myApp);

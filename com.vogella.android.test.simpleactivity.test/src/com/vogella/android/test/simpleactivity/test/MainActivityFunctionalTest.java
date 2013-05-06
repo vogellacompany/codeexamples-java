@@ -1,19 +1,15 @@
 package com.vogella.android.test.simpleactivity.test;
 
-import android.app.Activity;
-import android.app.Instrumentation;
 import android.app.Instrumentation.ActivityMonitor;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.TouchUtils;
 import android.test.ViewAsserts;
 import android.view.KeyEvent;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.vogella.android.test.simpleactivity.R;
-
 import com.vogella.android.test.simpleactivity.MainActivity;
+import com.vogella.android.test.simpleactivity.R;
 import com.vogella.android.test.simpleactivity.SecondActivity;
 
 public class MainActivityFunctionalTest extends
@@ -24,6 +20,7 @@ public class MainActivityFunctionalTest extends
 	public MainActivityFunctionalTest() {
 		super(MainActivity.class);
 	}
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -32,9 +29,7 @@ public class MainActivityFunctionalTest extends
 	}
 
 	public void testStartSecondActivity() throws Exception {
-		
-		
-		
+
 		// Add monitor to check for the second activity
 		ActivityMonitor monitor = getInstrumentation().addMonitor(
 				SecondActivity.class.getName(), null, false);
@@ -51,15 +46,16 @@ public class MainActivityFunctionalTest extends
 				.waitForActivityWithTimeout(2000);
 		assertNotNull(startedActivity);
 
-		// Search for the textView 
-		TextView textView = (TextView) startedActivity.findViewById(R.id.resultText);
-		
+		// Search for the textView
+		TextView textView = (TextView) startedActivity
+				.findViewById(R.id.resultText);
+
 		// Check that the TextView is on the screen
 		ViewAsserts.assertOnScreen(startedActivity.getWindow().getDecorView(),
 				textView);
 		// Validate the text on the TextView
 		assertEquals("Text incorrect", "Started", textView.getText().toString());
-		
+
 		// Press back and click again
 		this.sendKeys(KeyEvent.KEYCODE_BACK);
 		TouchUtils.clickView(this, view);

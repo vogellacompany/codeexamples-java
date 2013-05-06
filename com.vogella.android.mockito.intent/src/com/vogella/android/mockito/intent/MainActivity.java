@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
+
+	/*
+	 * Get Application and display data
+	 */
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +21,9 @@ public class MainActivity extends Activity {
 		view.setText(String.valueOf(application.getNumber()));
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
+	/*
+	 * Prepare Intent
+	 */
 
 	public static Intent createQuery(Context context, String query, String value) {
 		Intent i = new Intent(context, MyListActivity.class);
