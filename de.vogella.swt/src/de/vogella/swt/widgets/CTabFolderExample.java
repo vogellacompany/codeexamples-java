@@ -17,7 +17,7 @@ public class CTabFolderExample {
 		shell.setLayout(new GridLayout());
 		// SWT.BOTTOM to show at the bottom
 		CTabFolder folder = new CTabFolder(shell, SWT.BOTTOM);
-		GridData data = new GridData(GridData.FILL, GridData.FILL, true, true,
+		GridData data = new GridData(SWT.FILL, SWT.FILL, true, true,
 				2, 1);
 		folder.setLayoutData(data);
 		CTabItem cTabItem1 = new CTabItem(folder, SWT.NONE);
@@ -34,7 +34,7 @@ public class CTabFolderExample {
 		shell.setSize(200, 200);
 		shell.open();
 
-		while (!display.isDisposed()) {
+		while (!shell.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}

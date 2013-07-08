@@ -38,7 +38,7 @@ public class TreeMenuTest {
 		tree.setMenu(menu);
 		shell.pack();
 		shell.open();
-		while (!display.isDisposed()) {
+		while (!shell.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}

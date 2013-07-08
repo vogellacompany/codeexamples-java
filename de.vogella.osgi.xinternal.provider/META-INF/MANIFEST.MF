@@ -4,4 +4,4 @@ Bundle-Name: Provider
 Bundle-SymbolicName: de.vogella.osgi.xinternal.provider
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.vogella.osgi.xinternal.provider;x-friends:="de.vogella.osgi.xinternal.consumer"
+Export-Package: de.vogella.osgi.xinternal.provider;x-internal:=true

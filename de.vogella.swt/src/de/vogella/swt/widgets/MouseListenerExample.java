@@ -24,7 +24,7 @@ public class MouseListenerExample {
 		});
 		shell.pack();
 		shell.open();
-		while (!display.isDisposed()) {
+		while (!shell.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}

@@ -16,7 +16,7 @@ public class ComboTest {
 		combo.pack();
 		shell.pack();
 		shell.open();
-		while (!display.isDisposed()) {
+		while (!shell.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}

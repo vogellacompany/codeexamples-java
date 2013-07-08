@@ -42,7 +42,7 @@ public class SWTTable {
 		shell.open ();
 
 		shell.open();
-		while (!display.isDisposed()) {
+		while (!shell.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}
