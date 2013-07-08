@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyModel {
+	public static final String FIRSTNAME = "firstName";
+	public static final String LASTNAME = "lastName";
 
 	private List<Person> persons = new ArrayList<Person>();
 	private List<PropertyChangeListener> listener = new ArrayList<PropertyChangeListener>();
@@ -27,7 +29,11 @@ public class MyModel {
 		}
 
 		public void setFirstName(String firstName) {
-			notifyListeners(this, "firstName", firstName, this.firstName = firstName);
+			notifyListeners(
+					this, 
+					FIRSTNAME,
+					this.firstName, 
+					this.firstName = firstName);
 			
 		}
 
@@ -36,7 +42,11 @@ public class MyModel {
 		}
 
 		public void setLastName(String lastName) {
-			notifyListeners(this, "lastName", lastName, this.lastName = lastName);
+			notifyListeners(
+					this, 
+					LASTNAME, 
+					this.lastName, 
+					this.lastName = lastName);
 		}
 	}
 
