@@ -81,39 +81,13 @@ public class DrawingView extends View {
 
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
-			path = new Path();
-			paths.add(path);
-
-			paint = new Paint();
-			paints.add(paint);
-			paint.setAntiAlias(true);
-			paint.setStyle(Paint.Style.STROKE);
-			paint.setStrokeJoin(Paint.Join.ROUND);
-			paint.setStrokeWidth(STROKE_WIDTH);
-
-			paint.setColor(colors[nextColor++]);
-			if (nextColor >= colors.length) {
-				nextColor = 0;
-			}
 			path.moveTo(eventX, eventY);
-			lastTouchX = eventX;
-			lastTouchY = eventY;
-			// There is no end point yet, so don't waste cycles invalidating.
-
 			return true;
 
 		case MotionEvent.ACTION_MOVE:
 		case MotionEvent.ACTION_UP:
 
-			// When the hardware tracks events faster than they are delivered,
-			// the
-			// event will contain a history of those skipped points.
-			int historySize = event.getHistorySize();
-			for (int i = 0; i < historySize; i++) {
-				float historicalX = event.getHistoricalX(i);
-				float historicalY = event.getHistoricalY(i);
-				path.lineTo(historicalX, historicalY);
-			}
+			path.lineTo(x, y);
 
 			// After replaying history, connect the line to the touch point.
 			path.lineTo(eventX, eventY);

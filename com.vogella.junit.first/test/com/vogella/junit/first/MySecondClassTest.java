@@ -20,7 +20,7 @@ public class MySecondClassTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void testExceptionIsThrown() {
 		MyClass tester = new MyClass();
-		tester.multiply(1000, 5);
+		tester.multiply(1, 5);
 	}
 
 	@Test

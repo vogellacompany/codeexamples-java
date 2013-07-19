@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
 		// case R.id.menu_share:
 		// doShare();
 		// break;
-		case R.id.item1:
+		case R.id.refresh:
 			// Get the ActionProvider
 			findItem = item;
 			MenuItem setActionView = findItem.setActionView(R.layout.progress);

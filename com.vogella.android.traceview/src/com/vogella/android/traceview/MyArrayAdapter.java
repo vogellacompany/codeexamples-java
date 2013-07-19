@@ -5,7 +5,6 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.os.Debug;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,13 +21,16 @@ public class MyArrayAdapter extends ArrayAdapter<String> {
 		super(context, R.layout.rowlayout, values);
 		this.context = context;
 		this.values = values;
+		Collections.sort(values);
 	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		Debug.startMethodTracing("getViewOfTrace");
 		// Ensure sorted values
-		Collections.sort(values);
+		View view = convertView;
+		if (view == null) {
+
+		}
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View view = inflater.inflate(R.layout.rowlayout, parent, false);
@@ -38,7 +40,6 @@ public class MyArrayAdapter extends ArrayAdapter<String> {
 		CharSequence styledText = Html.fromHtml(text);
 		TextView textView = (TextView) view.findViewById(R.id.textView3);
 		textView.setText(styledText);
-		Debug.stopMethodTracing();
 		return view;
 	}
 }
