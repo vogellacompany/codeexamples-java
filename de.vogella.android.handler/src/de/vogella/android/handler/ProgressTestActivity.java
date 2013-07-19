@@ -2,17 +2,14 @@ package de.vogella.android.handler;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class ProgressTestActivity extends Activity {
-	private Handler handler;
 	private ProgressBar progress;
 	private TextView text;
 
-	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -29,11 +26,7 @@ public class ProgressTestActivity extends Activity {
 			public void run() {
 				for (int i = 0; i <= 10; i++) {
 					final int value = i;
-					try {
-						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
+					 doFakeWork();
 					progress.post(new Runnable() {
 						@Override
 						public void run() {
@@ -45,6 +38,15 @@ public class ProgressTestActivity extends Activity {
 			}
 		};
 		new Thread(runnable).start();
+	}
+
+	// Simulating something timeconsuming
+	private void doFakeWork() {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

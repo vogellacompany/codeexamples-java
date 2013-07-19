@@ -19,7 +19,6 @@ import android.widget.TextView;
 public class ReadWebpageAsyncTask extends Activity {
 	private TextView textView;
 
-	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -58,7 +57,7 @@ public class ReadWebpageAsyncTask extends Activity {
 		}
 	}
 
-	public void readWebpage(View view) {
+	public void onClick(View view) {
 		DownloadWebPageTask task = new DownloadWebPageTask();
 		task.execute(new String[] { "http://www.vogella.de" });
 

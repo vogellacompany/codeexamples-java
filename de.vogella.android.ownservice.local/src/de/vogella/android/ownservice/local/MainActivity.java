@@ -26,8 +26,21 @@ public class MainActivity extends ListActivity {
 		adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, android.R.id.text1,
 				wordList);
+	
 		setListAdapter(adapter);
-		doBindService();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onPause();
+		bindService(new Intent(this, LocalWordService.class), mConnection,
+				Context.BIND_AUTO_CREATE);
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		unbindService(mConnection);
 	}
 
 	private ServiceConnection mConnection = new ServiceConnection() {
@@ -44,11 +57,6 @@ public class MainActivity extends ListActivity {
 	};
 	private ArrayAdapter<String> adapter;
 	private List<String> wordList;
-
-	void doBindService() {
-		bindService(new Intent(this, LocalWordService.class), mConnection,
-				Context.BIND_AUTO_CREATE);
-	}
 
 	public void showServiceData(View view) {
 		if (s != null) {

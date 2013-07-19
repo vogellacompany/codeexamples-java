@@ -17,7 +17,6 @@ public class ImagePickActivity extends Activity {
 	private Bitmap bitmap;
 	private ImageView imageView;
 
-	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -25,7 +24,7 @@ public class ImagePickActivity extends Activity {
 		imageView = (ImageView) findViewById(R.id.result);
 	}
 
-	public void pickImage(View View) {
+	public void onClick(View View) {
 		Intent intent = new Intent();
 		intent.setType("image/*");
 		intent.setAction(Intent.ACTION_GET_CONTENT);

@@ -13,7 +13,7 @@ public class LocalWordService extends Service {
 	private final IBinder mBinder = new MyBinder();
 	private ArrayList<String> list = new ArrayList<String>();
 
-	@Override
+	@Override  
 	public int onStartCommand(Intent intent, int flags, int startId) {
 
 		Random random = new Random();

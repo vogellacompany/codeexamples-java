@@ -22,7 +22,7 @@ public class MyPage1 extends WizardPage {
 	 * @param parent
 	 */
 	public void createControl(Composite parent) {
-		Composite container = new Composite(parent, SWT.NULL);
+		Composite container = new Composite(parent, SWT.NONE);
 		new Button(container, SWT.PUSH);
 		setControl(container);
 	}
