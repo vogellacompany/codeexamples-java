@@ -1,8 +1,0 @@
-eclipse.preferences.version=1
-repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.rcp.product_target_targetPlatformRepository/enabled=true
-repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.rcp.product_target_targetPlatformRepository/isSystem=false
-repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.rcp.product_target_targetPlatformRepository/name=TychoTargetPlatform
-repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.rcp.product_target_targetPlatformRepository/suffix=content.xml
-repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.rcp.product_target_targetPlatformRepository/type=org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository
-repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.rcp.product_target_targetPlatformRepository/uri=file\:/home/vogella/workspace/vogella/de.vogella.tycho.rcp.product/target/targetPlatformRepository/
-repositories/file\:_home_vogella_workspace_vogella_de.vogella.tycho.rcp.product_target_targetPlatformRepository/version=0.0.1
