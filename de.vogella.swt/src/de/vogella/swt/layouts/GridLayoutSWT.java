@@ -17,30 +17,32 @@ public class GridLayoutSWT {
 	public static void main(String[] args) {
 		Display display = new Display();
 		Shell shell = new Shell(display);
-		// Create a new Gridlayout with 2 columns where the 2 column do no need
-		// to be same size
+
+		// create a new Gridlayout with two columns
+		// of different size
 		GridLayout layout = new GridLayout(2, false);
+
 		// set the layout of the shell
 		shell.setLayout(layout);
+		
 		// Create a label and a button
 		Label label = new Label(shell, SWT.NONE);
 		label.setText("A label");
 		Button button = new Button(shell, SWT.PUSH);
 		button.setText("Press Me");
 
-		// Create a new label that will spam two columns
+		// Create a new label that will span two columns
 		label = new Label(shell, SWT.BORDER);
 		label.setText("This is a label");
 		// Create new layout data
-		GridData data = new GridData(SWT.FILL, SWT.LEFT, true,
-				false, 2, 1);
+		GridData data = new GridData(SWT.FILL, SWT.LEFT, true, false, 2, 1);
 		label.setLayoutData(data);
 
 		// Create a new label which is used as a separator
 		label = new Label(shell, SWT.SEPARATOR | SWT.HORIZONTAL);
+		
 		// Create new layout data
-		data = new GridData(SWT.FILL, SWT.LEFT, true, false, 2,
-				1);
+		data = new GridData(SWT.FILL, SWT.LEFT, true, false, 2, 1);
 		data.horizontalSpan = 2;
 		label.setLayoutData(data);
 
@@ -48,8 +50,7 @@ public class GridLayoutSWT {
 		Button b = new Button(shell, SWT.PUSH);
 		b.setText("New Button");
 
-		data = new GridData(SWT.BOTTOM, SWT.LEFT, false, false, 2,
-				1);
+		data = new GridData(SWT.BOTTOM, SWT.LEFT, false, false, 2, 1);
 		b.setLayoutData(data);
 
 		Spinner spinner = new Spinner(shell, SWT.READ_ONLY);
@@ -70,29 +71,28 @@ public class GridLayoutSWT {
 		composite.setLayoutData(gridData);
 		composite.setLayout(new GridLayout(1, false));
 
-		Text text = new Text(composite, SWT.NONE);
-		text.setText("Testing");
+		Text txtTest = new Text(composite, SWT.NONE);
+		txtTest.setText("Testing");
 		gridData = new GridData(SWT.FILL, SWT.FILL, true, false);
-		text.setLayoutData(gridData);
+		txtTest.setLayoutData(gridData);
 
-		text = new Text(composite, SWT.NONE);
-		text.setText("Another test");
-		// gridData = new GridData(SWT.FILL, SWT.FILL, true, false);
-		// text.setLayoutData(gridData);
+		Text txtMoreTests = new Text(composite, SWT.NONE);
+		txtMoreTests.setText("Another test");
 		Group group = new Group(shell, SWT.NONE);
 		group.setText("This is my group");
 		gridData = new GridData(SWT.FILL, SWT.FILL, true, false);
 		gridData.horizontalSpan = 2;
 		group.setLayoutData(gridData);
 		group.setLayout(new RowLayout(SWT.VERTICAL));
-		text = new Text(group, SWT.NONE);
-		text.setText("Another test");
+		Text txtAnotherTest = new Text(group, SWT.NONE);
+		txtAnotherTest.setText("Another test");
 
 		shell.pack();
 		shell.open();
 		while (!shell.isDisposed()) {
-			if (!display.readAndDispatch())
+			if (!display.readAndDispatch()) {
 				display.sleep();
+			}
 		}
 		display.dispose();
 	}
