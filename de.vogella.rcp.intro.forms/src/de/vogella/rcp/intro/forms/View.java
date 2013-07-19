@@ -58,7 +58,7 @@ public class View extends ViewPart {
 		layout.marginWidth = 2;
 		layout.marginHeight = 2;
 		client.setLayout(layout);
-		Table t = toolkit.createTable(client, SWT.NULL);
+		Table t = toolkit.createTable(client, SWT.NONE);
 		GridData gd = new GridData(GridData.FILL_BOTH);
 		gd.heightHint = 20;
 		gd.widthHint = 100;

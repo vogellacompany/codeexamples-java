@@ -5,15 +5,11 @@
          id="product2"
          point="org.eclipse.core.runtime.products">
       <product
-            application="org.eclipse.e4.ui.workbench.swt.application"
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
             name="vogella">
          <property
                name="appName"
                value="vogella">
-         </property>
-         <property
-               name="applicationXMI"
-               value="de.vogella.e4.first/Application.xmi">
          </property>
       </product>
    </extension>

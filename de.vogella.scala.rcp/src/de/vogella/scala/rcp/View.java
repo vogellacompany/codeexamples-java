@@ -17,7 +17,7 @@ public class View extends ViewPart {
 	public void createPartControl(Composite parent) {
 		parent.setLayout(new FillLayout());
 		// This one creates and uses the Scala plug-in
-		new de.vogella.scala.plugin.ScalaView(parent, SWT.NULL);
+		new de.vogella.scala.plugin.ScalaView(parent, SWT.NONE);
 	}
 
 	public void setFocus() {

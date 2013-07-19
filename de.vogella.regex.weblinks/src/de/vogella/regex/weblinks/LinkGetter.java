@@ -1,4 +1,3 @@
-				
 package de.vogella.regex.weblinks;
 
 import java.io.BufferedReader;
@@ -14,10 +13,8 @@ import java.util.regex.Pattern;
 public class LinkGetter {
 	private Pattern htmltag;
 	private Pattern link;
-	private final String root;
 
-	public LinkGetter(String root) {
-		this.root = root;
+	public LinkGetter() {
 		htmltag = Pattern.compile("<a\\b[^>]*href=\"[^>]*>(.*?)</a>");
 		link = Pattern.compile("href=\"[^>]*\">");
 	}
@@ -38,7 +35,8 @@ public class LinkGetter {
 				Matcher matcher = link.matcher(tagmatch.group());
 				matcher.find();
 				String link = matcher.group().replaceFirst("href=\"", "")
-						.replaceFirst("\">", "");
+						.replaceFirst("\">", "")
+						.replaceFirst	("\"[\\s]?target=\"[a-zA-Z_0-9]*", "");
 				if (valid(link)) {
 					links.add(makeAbsolute(url, link));
 				}
@@ -78,4 +76,3 @@ public class LinkGetter {
 				+ " Link " + link);
 	}
 }
-

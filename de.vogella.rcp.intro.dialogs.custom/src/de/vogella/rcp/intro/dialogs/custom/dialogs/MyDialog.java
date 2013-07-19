@@ -65,65 +65,14 @@ public class MyDialog extends TitleAreaDialog {
 		return parent;
 	}
 
-	@Override
-	protected void createButtonsForButtonBar(Composite parent) {
-		GridData gridData = new GridData();
-		gridData.verticalAlignment = GridData.FILL;
-		gridData.horizontalSpan = 3;
-		gridData.grabExcessHorizontalSpace = true;
-		gridData.grabExcessVerticalSpace = true;
-		gridData.horizontalAlignment = SWT.CENTER;
-
-		parent.setLayoutData(gridData);
-		// Create Add button
-		// Own method as we need to overview the SelectionAdapter
-		createOkButton(parent, OK, "Add", true);
-		// Add a SelectionListener
-
-		// Create Cancel button
-		Button cancelButton = createButton(parent, CANCEL, "Cancel", false);
-		// Add a SelectionListener
-		cancelButton.addSelectionListener(new SelectionAdapter() {
-			public void widgetSelected(SelectionEvent e) {
-				setReturnCode(CANCEL);
-				close();
-			}
-		});
-	}
-
-	protected Button createOkButton(Composite parent, int id, String label,
-			boolean defaultButton) {
-		// increment the number of columns in the button bar
-		((GridLayout) parent.getLayout()).numColumns++;
-		Button button = new Button(parent, SWT.PUSH);
-		button.setText(label);
-		button.setFont(JFaceResources.getDialogFont());
-		button.setData(new Integer(id));
-		button.addSelectionListener(new SelectionAdapter() {
-			public void widgetSelected(SelectionEvent event) {
-				if (isValidInput()) {
-					okPressed();
-				}
-			}
-		});
-		if (defaultButton) {
-			Shell shell = parent.getShell();
-			if (shell != null) {
-				shell.setDefaultButton(button);
-			}
-		}
-		setButtonLayoutData(button);
-		return button;
-	}
-
 	private boolean isValidInput() {
 		boolean valid = true;
 		if (firstNameText.getText().length() == 0) {
-			setErrorMessage("Please maintain the first name");
+			setErrorMessage("Please enter the first name");
 			valid = false;
 		}
 		if (lastNameText.getText().length() == 0) {
-			setErrorMessage("Please maintain the last name");
+			setErrorMessage("Please enter the last name");
 			valid = false;
 		}
 		return valid;
