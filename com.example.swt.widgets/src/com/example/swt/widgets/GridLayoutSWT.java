@@ -32,14 +32,14 @@ public class GridLayoutSWT {
 		label = new Label(shell, SWT.BORDER);
 		label.setText("This is a label");
 		// Create new layout data
-		GridData data = new GridData(GridData.FILL, GridData.BEGINNING, true,
+		GridData data = new GridData(SWT.FILL, SWT.LEFT, true,
 				false, 2, 1);
 		label.setLayoutData(data);
 
 		// Create a new label which is used as a separator
 		label = new Label(shell, SWT.SEPARATOR | SWT.HORIZONTAL);
 		// Create new layout data
-		data = new GridData(GridData.FILL, GridData.BEGINNING, true, false, 2,
+		data = new GridData(SWT.FILL, SWT.LEFT, true, false, 2,
 				1);
 		data.horizontalSpan = 2;
 		label.setLayoutData(data);
@@ -48,7 +48,7 @@ public class GridLayoutSWT {
 		Button b = new Button(shell, SWT.PUSH);
 		b.setText("New Button");
 
-		data = new GridData(GridData.END, GridData.BEGINNING, false, false, 2,
+		data = new GridData(SWT.BOTTOM, SWT.LEFT, false, false, 2,
 				1);
 		b.setLayoutData(data);
 
