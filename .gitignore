@@ -1,6 +1,7 @@
 bin
 gen
 build/
+target/
 .metadata
 .gradle
 classes
