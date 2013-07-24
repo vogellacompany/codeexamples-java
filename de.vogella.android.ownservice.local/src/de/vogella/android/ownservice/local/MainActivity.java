@@ -32,7 +32,7 @@ public class MainActivity extends ListActivity {
 
 	@Override
 	protected void onResume() {
-		super.onPause();
+		super.onResume();
 		bindService(new Intent(this, LocalWordService.class), mConnection,
 				Context.BIND_AUTO_CREATE);
 	}
