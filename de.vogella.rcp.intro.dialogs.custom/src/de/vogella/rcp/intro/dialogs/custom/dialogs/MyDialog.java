@@ -30,7 +30,7 @@ public class MyDialog extends TitleAreaDialog {
 	public void create() {
 		super.create();
 		// Set the title
-		setTitle("This is my first own dialog");
+		setTitle("This is my first custom dialog");
 		// Set the message
 		setMessage("This is a TitleAreaDialog", IMessageProvider.INFORMATION);
 
