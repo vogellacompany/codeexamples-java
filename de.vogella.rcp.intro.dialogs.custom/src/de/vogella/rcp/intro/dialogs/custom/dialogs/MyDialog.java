@@ -12,12 +12,13 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Layout;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
 public class MyDialog extends TitleAreaDialog {
 
-	private Text firstNameText;
+	private Text txtFirstName;
 	private Text lastNameText;
 	private String firstName;
 	private String lastName;
@@ -38,55 +39,43 @@ public class MyDialog extends TitleAreaDialog {
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		GridLayout layout = new GridLayout();
-		layout.numColumns = 2;
-		// layout.horizontalAlignment = GridData.FILL;
-		parent.setLayout(layout);
+		Composite composite = (Composite) super.createDialogArea(parent);
+		Composite area = new Composite(composite, SWT.NONE);
+		GridLayout layout = new GridLayout(2, false);
+		area.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		area.setLayout(layout);
+		Label lbtFirstName = new Label(area, SWT.NONE);
+		lbtFirstName.setText("First Name");
 
-		// The text fields will grow with the size of the dialog
-		GridData gridData = new GridData();
-		gridData.grabExcessHorizontalSpace = true;
-		gridData.horizontalAlignment = GridData.FILL;
+		GridData dataFirstName = new GridData();
+		dataFirstName.grabExcessHorizontalSpace = true;
+		dataFirstName.horizontalAlignment = GridData.FILL;
 
-		Label label1 = new Label(parent, SWT.NONE);
-		label1.setText("First Name");
+		txtFirstName = new Text(area, SWT.BORDER);
+		txtFirstName.setLayoutData(dataFirstName);
 
-		firstNameText = new Text(parent, SWT.BORDER);
-		firstNameText.setLayoutData(gridData);
-		
-		Label label2 = new Label(parent, SWT.NONE);
-		label2.setText("Last Name");
+		Label lbtLastName = new Label(area, SWT.NONE);
+		lbtLastName.setText("Last Name");
+
 		// You should not re-use GridData
-		gridData = new GridData();
-		gridData.grabExcessHorizontalSpace = true;
-		gridData.horizontalAlignment = GridData.FILL;
-		lastNameText = new Text(parent, SWT.BORDER);
-		lastNameText.setLayoutData(gridData);
-		return parent;
+		GridData dataLastName = new GridData();
+		dataLastName.grabExcessHorizontalSpace = true;
+		dataLastName.horizontalAlignment = GridData.FILL;
+		lastNameText = new Text(area, SWT.BORDER);
+		lastNameText.setLayoutData(dataLastName);
+		return area;
 	}
 
-	private boolean isValidInput() {
-		boolean valid = true;
-		if (firstNameText.getText().length() == 0) {
-			setErrorMessage("Please enter the first name");
-			valid = false;
-		}
-		if (lastNameText.getText().length() == 0) {
-			setErrorMessage("Please enter the last name");
-			valid = false;
-		}
-		return valid;
-	}
-	
 	@Override
 	protected boolean isResizable() {
 		return true;
 	}
 
-	// We need to have the textFields into Strings because the UI gets disposed
-	// and the Text Fields are not accessible any more.
+	// We need to save the values of the Text fields into Strings because the UI
+	// gets disposed
+	// and the Text fields are not accessible any more.
 	private void saveInput() {
-		firstName = firstNameText.getText();
+		firstName = txtFirstName.getText();
 		lastName = lastNameText.getText();
 
 	}
