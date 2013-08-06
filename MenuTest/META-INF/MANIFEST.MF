@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: MenuTest Plug-in
-Bundle-SymbolicName: MenuTest; singleton:=true
-Bundle-Version: 1.0.0
-Bundle-Activator: menutest.Activator
-Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime
-Eclipse-LazyStart: true
