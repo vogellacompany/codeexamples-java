@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Plugin
-Bundle-SymbolicName: de.vogella.scala.plugin
-Bundle-Version: 1.0.0
-Require-Bundle: scala.library;bundle-version="2.7.3",
- org.eclipse.swt;bundle-version="3.4.1"
-Export-Package: de.vogella.scala.plugin

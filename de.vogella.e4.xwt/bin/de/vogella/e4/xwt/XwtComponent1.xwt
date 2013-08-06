@@ -1,9 +1,0 @@
-<Composite xmlns="http://www.eclipse.org/xwt/presentation"
-	xmlns:x="http://www.eclipse.org/xwt" xmlns:c="clr-namespace:de.vogella.e4.xwt"
-	xmlns:j="clr-namespace:java.lang" x:Class="de.vogella.e4.xwt.XwtComponent1">
-	<Composite.layout>
-		<GridLayout numColumns="1" />
-	</Composite.layout>
-		<Text text="This is a text"></Text>
-		<Button x:style="SWT.PUSH" text="Hello, world" SelectionEvent="selection" ></Button>
-</Composite>
