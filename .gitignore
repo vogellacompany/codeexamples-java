@@ -6,4 +6,5 @@ target/
 .gradle
 classes
 External Plug-in Libraries/
+org.eclipse.jdt.core.prefs
 

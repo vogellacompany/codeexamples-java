@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/startSecondActivity" android:title="Show" android:showAsAction="ifRoom"></item>
-    <item android:id="@+id/perference" android:title="Preferences" android:showAsAction="ifRoom"></item>
-    <item android:id="@+id/perference1" android:title="Preferences" android:showAsAction="ifRoom"></item>
-    <item android:id="@+id/perference2" android:title="Preferences" android:showAsAction="ifRoom|collapseActionView"></item>
-
-</menu>
