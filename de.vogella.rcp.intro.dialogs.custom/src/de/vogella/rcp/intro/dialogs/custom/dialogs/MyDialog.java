@@ -1,96 +1,55 @@
 package de.vogella.rcp.intro.dialogs.custom.dialogs;
 
-import org.eclipse.jface.dialogs.IMessageProvider;
-import org.eclipse.jface.dialogs.TitleAreaDialog;
-import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Layout;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Text;
 
-public class MyDialog extends TitleAreaDialog {
+public class MyDialog extends Dialog {
 
-	private Text txtFirstName;
-	private Text lastNameText;
-	private String firstName;
-	private String lastName;
-
+	/**
+	 * Create the dialog.
+	 * @param parentShell
+	 */
 	public MyDialog(Shell parentShell) {
 		super(parentShell);
 	}
 
-	@Override
-	public void create() {
-		super.create();
-		// Set the title
-		setTitle("This is my first custom dialog");
-		// Set the message
-		setMessage("This is a TitleAreaDialog", IMessageProvider.INFORMATION);
-
-	}
-
+	/**
+	 * Create contents of the dialog.
+	 * @param parent
+	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite composite = (Composite) super.createDialogArea(parent);
-		Composite area = new Composite(composite, SWT.NONE);
-		GridLayout layout = new GridLayout(2, false);
-		area.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-		area.setLayout(layout);
-		Label lbtFirstName = new Label(area, SWT.NONE);
-		lbtFirstName.setText("First Name");
-
-		GridData dataFirstName = new GridData();
-		dataFirstName.grabExcessHorizontalSpace = true;
-		dataFirstName.horizontalAlignment = GridData.FILL;
-
-		txtFirstName = new Text(area, SWT.BORDER);
-		txtFirstName.setLayoutData(dataFirstName);
-
-		Label lbtLastName = new Label(area, SWT.NONE);
-		lbtLastName.setText("Last Name");
-
-		// You should not re-use GridData
-		GridData dataLastName = new GridData();
-		dataLastName.grabExcessHorizontalSpace = true;
-		dataLastName.horizontalAlignment = GridData.FILL;
-		lastNameText = new Text(area, SWT.BORDER);
-		lastNameText.setLayoutData(dataLastName);
-		return area;
+		Composite container = (Composite) super.createDialogArea(parent);
+		Button button = new Button(container, SWT.PUSH);
+		button.setLayoutData(new GridData(SWT.BEGINNING, SWT.CENTER, false,
+				false));
+		button.setText("Press me");
+		button.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				System.out.println("Pressed");
+			}
+		});
+		
+		return container;
 	}
 
+
+	/**
+	 * Return the initial size of the dialog.
+	 */
 	@Override
-	protected boolean isResizable() {
-		return true;
+	protected Point getInitialSize() {
+		return new Point(450, 300);
 	}
 
-	// We need to save the values of the Text fields into Strings because the UI
-	// gets disposed
-	// and the Text fields are not accessible any more.
-	private void saveInput() {
-		firstName = txtFirstName.getText();
-		lastName = lastNameText.getText();
-
-	}
-
-	@Override
-	protected void okPressed() {
-		saveInput();
-		super.okPressed();
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
 }
