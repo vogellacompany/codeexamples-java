@@ -15,6 +15,10 @@
                name="applicationCSS"
                value="platform:/plugin/com.vogella.jface.fieldassists/css/default.css">
          </property>
+         <property
+               name="appName"
+               value="com.vogella.jface.fieldassists">
+         </property>
       </product>
    </extension>
 
