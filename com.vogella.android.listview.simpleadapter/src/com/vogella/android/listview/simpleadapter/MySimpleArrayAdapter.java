@@ -13,11 +13,13 @@ import android.widget.TextView;
 public class MySimpleArrayAdapter extends ArrayAdapter<Model> {
 	private final Context context;
 	private final List<Model> values;
+	private int color;
 
 	public MySimpleArrayAdapter(Context context, List<Model> values) {
 		super(context, R.layout.rowlayout, values);
 		this.context = context;
 		this.values = values;
+		color = context.getResources().getColor(android.R.color.holo_blue_bright);
 	}
 
 	@Override
@@ -65,6 +67,8 @@ public class MySimpleArrayAdapter extends ArrayAdapter<Model> {
 		} else {
 			tag.i.setImageResource(R.drawable.no);
 		}
+		
+		rowView.setBackgroundColor(color);
 		return rowView;
 	}
 }

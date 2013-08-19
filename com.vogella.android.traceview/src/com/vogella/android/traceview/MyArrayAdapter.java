@@ -33,7 +33,7 @@ public class MyArrayAdapter extends ArrayAdapter<String> {
 		}
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View view = inflater.inflate(R.layout.rowlayout, parent, false);
+		view = inflater.inflate(R.layout.rowlayout, parent, false);
 		Resources res = context.getResources();
 		String text = String.format(res.getString(R.string.number_template),
 				values.get(position));
