@@ -1,4 +1,4 @@
-package de.vogella.android.loader.preferences;
+package com.vogella.android.loader.preferences;
 
 import android.content.AsyncTaskLoader;
 import android.content.Context;
@@ -17,30 +17,28 @@ public class SharedPreferencesLoader extends AsyncTaskLoader<SharedPreferences>
 		super(context);
 	}
 
-	/**
-	 * Runs on a worker thread, loading in our data.
-	 */
+	// Load the data asynchronously
 	@Override
 	public SharedPreferences loadInBackground() {
 		prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
 		prefs.registerOnSharedPreferenceChangeListener(this);
-
 		return (prefs);
 	}
 
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
 			String key) {
+		// notify loader that content has changed
 		onContentChanged();
 	}
 
 	/**
-	 * Starts an asynchronous load of the list data. When the result is ready
-	 * the callbacks will be called on the UI thread. If a previous load has
-	 * been completed and is still valid the result may be passed to the
-	 * callbacks immediately.
-	 * 
-	 * Must be called from the UI thread.
+	 * starts the loading of the data 
+	 * once result is ready the onLoadFinished method is called
+	 * in the main thread. It loader was started earlier the result
+	 * is return directly
+
+	 * method must be called from main thread.
 	 */
 	@Override
 	protected void onStartLoading() {
