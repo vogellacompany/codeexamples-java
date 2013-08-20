@@ -20,6 +20,9 @@ public class MultitouchView extends View {
 			Color.BLACK, Color.CYAN, Color.GRAY, Color.RED, Color.DKGRAY,
 			Color.LTGRAY, Color.YELLOW };
 
+	private Paint textPaint;
+
+
 	public MultitouchView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		initView();
@@ -31,19 +34,21 @@ public class MultitouchView extends View {
 		// set painter color to a color you like
 		mPaint.setColor(Color.BLUE);
 		mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+		textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+		textPaint.setTextSize(20);
 	}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 
 		// get pointer index from the event object
-		int pointerIndex = (event.getAction() & MotionEvent.ACTION_POINTER_INDEX_MASK) >> MotionEvent.ACTION_POINTER_INDEX_SHIFT;
+		int pointerIndex = event.getActionIndex();
 
 		// get pointer ID
 		int pointerId = event.getPointerId(pointerIndex);
 
 		// get masked (not specific to a pointer) action
-		int maskedAction = event.getAction() & MotionEvent.ACTION_MASK;
+		int maskedAction = event.getActionMasked();
 
 		switch (maskedAction) {
 
@@ -90,6 +95,7 @@ public class MultitouchView extends View {
 				mPaint.setColor(colors[i % 9]);
 			canvas.drawCircle(point.x, point.y, SIZE, mPaint);
 		}
+		canvas.drawText("Total pointers: " + mActivePointers.size(), 10, 40 , textPaint);
 	}
 
 }

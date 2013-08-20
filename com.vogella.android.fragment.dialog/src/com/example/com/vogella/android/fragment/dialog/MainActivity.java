@@ -17,7 +17,6 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}
@@ -25,9 +24,23 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		FragmentManager fm = getFragmentManager();
-		EditNameDialog editNameDialog = new EditNameDialog();
-		editNameDialog.setRetainInstance(true);
-		editNameDialog.show(fm, "fragment_edit_name");
+		switch (item.getItemId()) {
+
+		case R.id.actionitem_alertdialog:
+			AlertDialogFragment alertDialog = new AlertDialogFragment();
+			alertDialog.setRetainInstance(true);
+			alertDialog.show(fm, "alertfragment");
+			break;
+		case R.id.actionitem_userdialog:
+			EditNameDialogFragment editNameDialog = new EditNameDialogFragment();
+			editNameDialog.setRetainInstance(true);
+			editNameDialog.show(fm, "userfragemnt");
+			break;
+
+		default:
+			break;
+		}
+
 		return true;
 	}
 }

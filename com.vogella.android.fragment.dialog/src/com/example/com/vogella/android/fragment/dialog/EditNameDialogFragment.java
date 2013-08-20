@@ -7,11 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-public class EditNameDialog extends DialogFragment {
+public class EditNameDialogFragment extends DialogFragment {
 
 	private EditText mEditText;
 
-	public EditNameDialog() {
+	public EditNameDialogFragment() {
 		// Empty constructor required for DialogFragment
 	}
 
@@ -21,7 +21,7 @@ public class EditNameDialog extends DialogFragment {
 		View view = inflater.inflate(R.layout.fragment_editnamedialog,
 				container);
 		mEditText = (EditText) view.findViewById(R.id.txt_your_name);
-		getDialog().setTitle("Hello");
+		getDialog().setTitle("Please enter your name");
 
 		return view;
 	}

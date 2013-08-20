@@ -1,12 +1,11 @@
-package de.vogella.android.activitiystack;
+package de.vogella.android.activitystack;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class NextActivity extends Activity {
-	/** Called when the activity is first created. */
+public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -14,7 +13,7 @@ public class NextActivity extends Activity {
 	}
 
 	public void onClick(View view) {
-		Intent intent = new Intent(this, NextNextActivity.class);
+		Intent intent = new Intent(this, NextActivity.class);
 		startActivity(intent);
 	}
 }

@@ -10,7 +10,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name=".MainActivity"
+            android:name="de.vogella.android.activitystack.MainActivity"
             android:label="Main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,11 +19,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NextActivity"
+            android:name="de.vogella.android.activitystack.NextActivity"
             android:label="Next" >
         </activity>
         <activity
-            android:name=".NextNextActivity"
+            android:name="de.vogella.android.activitystack.NextNextActivity"
             android:label="NextNext" >
         </activity>
         
