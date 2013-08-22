@@ -96,4 +96,10 @@ public class MyListActivity extends ListActivity {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
 	}
+	
+	@Override
+	protected void onStop() {
+		super.onStop();
+		// SAVE DATA to database
+	}
 }

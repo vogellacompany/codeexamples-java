@@ -16,7 +16,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-    private String[] mPlanetTitles;
+    private String[] mOperationsSystem;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
@@ -27,18 +27,16 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         title = getActionBar().getTitle();
-        mPlanetTitles = getResources().getStringArray(R.array.operating_systems);
-        System.out.println(mPlanetTitles.length);
+        mOperationsSystem = getResources().getStringArray(R.array.operating_systems);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
         // Set the adapter for the list view
         mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.drawer_item,R.id.content, mPlanetTitles));
+                R.layout.drawer_item,R.id.content, mOperationsSystem));
         // Set the list's click listener
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
         
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,                  /* host Activity */
                 mDrawerLayout,         /* DrawerLayout object */
@@ -129,7 +127,7 @@ public class MainActivity extends Activity {
 
         // Highlight the selected item, update the title, and close the drawer
         mDrawerList.setItemChecked(position, true);
-        getActionBar().setTitle((mPlanetTitles[position]));
+        getActionBar().setTitle((mOperationsSystem[position]));
         mDrawerLayout.closeDrawer(mDrawerList);
     }
 

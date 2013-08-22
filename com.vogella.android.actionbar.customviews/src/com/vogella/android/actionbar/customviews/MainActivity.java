@@ -23,7 +23,8 @@ public class MainActivity extends Activity {
 		Bitmap b = BitmapFactory.decodeResource(getResources(),
 				R.drawable.ic_launcher);
 
-		actionBar.setBackgroundDrawable(new BitmapDrawable(getResources(), b));
+		actionBar.
+			setBackgroundDrawable(new BitmapDrawable(getResources(), b));
 
 		// add the custom view to the action bar
 

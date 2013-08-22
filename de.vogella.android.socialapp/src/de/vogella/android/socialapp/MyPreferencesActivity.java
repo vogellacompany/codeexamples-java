@@ -18,7 +18,6 @@ public class MyPreferencesActivity extends PreferenceActivity {
 	// This method is called once the menu is selected
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		Log.i("Test", "OptionsMenu called");
 		switch (item.getItemId()) {
 		case android.R.id.home:
 			Intent intent = new Intent(this, OverviewActivity.class);

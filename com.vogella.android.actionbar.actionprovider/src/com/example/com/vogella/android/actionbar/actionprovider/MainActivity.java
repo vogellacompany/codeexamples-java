@@ -64,7 +64,7 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-	public void doShare() {
+	private void doShare() {
 		// Populare the share intent with data
 		Intent intent = new Intent(Intent.ACTION_SEND);
 		intent.setType("text/plain");

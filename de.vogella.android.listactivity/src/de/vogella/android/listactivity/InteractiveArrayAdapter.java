@@ -56,7 +56,11 @@ public class InteractiveArrayAdapter extends ArrayAdapter<Model> {
 		}
 		ViewHolder holder = (ViewHolder) view.getTag();
 		holder.text.setText(list.get(position).getName());
-		holder.checkbox.setChecked(list.get(position).isSelected());
+		boolean selected = list.get(position).isSelected();
+		holder.checkbox.setChecked(selected);
+		if (selected) {
+			holder.text.setBackgroundResource(android.R.drawable.btn_default);
+		}
 		return view;
 	}
 }

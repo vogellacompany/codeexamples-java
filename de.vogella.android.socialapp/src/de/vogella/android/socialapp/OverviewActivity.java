@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Toast;
 
 public class OverviewActivity extends Activity {
-	protected Object mActionMode;
+	protected ActionMode mActionMode;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -19,8 +19,9 @@ public class OverviewActivity extends Activity {
 		// Define the contextual action mode
 		View view = findViewById(R.id.myView);
 		view.setOnLongClickListener(new View.OnLongClickListener() {
-			// Called when the user long-clicks on someView
+
 			public boolean onLongClick(View view) {
+				// If already in action mode just return
 				if (mActionMode != null) {
 					return false;
 				}
@@ -49,7 +50,8 @@ public class OverviewActivity extends Activity {
 
 	private ActionMode.Callback mActionModeCallback = new ActionMode.Callback() {
 
-		// Called when the action mode is created; startActionMode() was called
+		// called when the action mode is created
+		// inflate new menu
 		public boolean onCreateActionMode(ActionMode mode, Menu menu) {
 			// Inflate a menu resource providing context menu items
 			MenuInflater inflater = mode.getMenuInflater();
@@ -58,8 +60,8 @@ public class OverviewActivity extends Activity {
 			return true;
 		}
 
-		// Called each time the action mode is shown. Always called after
-		// onCreateActionMode, but
+		// Called each time the action mode is shown. 
+		// Always called after onCreateActionMode, but
 		// may be called multiple times if the mode is invalidated.
 		public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
 			return false; // Return false if nothing is done

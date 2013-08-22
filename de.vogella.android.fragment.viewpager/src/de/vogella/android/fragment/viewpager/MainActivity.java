@@ -15,9 +15,10 @@ public class MainActivity extends FragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		mAdapter = new MyAdapter(getSupportFragmentManager());
-
 		mPager = (ViewPager) findViewById(R.id.pager);
+		
+		mAdapter = new MyAdapter(getSupportFragmentManager());
+		
 		mPager.setAdapter(mAdapter);
 	}
 

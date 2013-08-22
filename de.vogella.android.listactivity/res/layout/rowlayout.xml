@@ -17,7 +17,7 @@
         android:id="@+id/label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@+id/label"
+        android:text="@+id/label"	
         android:textSize="20px" >
     </TextView>
    
