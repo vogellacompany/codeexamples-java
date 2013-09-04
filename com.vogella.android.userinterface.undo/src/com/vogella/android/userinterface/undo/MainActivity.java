@@ -24,13 +24,12 @@ public class MainActivity extends Activity {
 				"Windows", "Ubuntu", "Android", "iPhone", "Windows" };
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, values);
-		viewContainer = findViewById(R.id.undobar);
 		l.setAdapter(adapter);
+		viewContainer = findViewById(R.id.undobar);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}

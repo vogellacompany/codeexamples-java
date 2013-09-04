@@ -33,7 +33,8 @@ public class MainActivity extends ListActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		bindService(new Intent(this, LocalWordService.class), mConnection,
+		Intent intent= new Intent(this, LocalWordService.class);
+		bindService(intent, mConnection,
 				Context.BIND_AUTO_CREATE);
 	}
 
@@ -45,8 +46,10 @@ public class MainActivity extends ListActivity {
 
 	private ServiceConnection mConnection = new ServiceConnection() {
 
-		public void onServiceConnected(ComponentName className, IBinder binder) {
-			s = ((LocalWordService.MyBinder) binder).getService();
+		public void onServiceConnected(ComponentName className, 
+				IBinder binder) {
+			LocalWordService.MyBinder b = (LocalWordService.MyBinder) binder;
+			s = b.getService();
 			Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_SHORT)
 					.show();
 		}

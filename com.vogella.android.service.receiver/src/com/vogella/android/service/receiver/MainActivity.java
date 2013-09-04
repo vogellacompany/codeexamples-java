@@ -18,21 +18,10 @@ public class MainActivity extends Activity {
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			Bundle bundle = intent.getExtras();
-			if (bundle != null) {
-				String string = bundle.getString(DownloadService.FILEPATH);
-				int resultCode = bundle.getInt(DownloadService.RESULT);
-				if (resultCode == RESULT_OK) {
-					Toast.makeText(MainActivity.this,
-							"Download complete. Download URI: " + string,
-							Toast.LENGTH_LONG).show();
-					textView.setText("Download done");
-				} else {
-					Toast.makeText(MainActivity.this, "Download failed",
-							Toast.LENGTH_LONG).show();
-					textView.setText("Download failed");
-				}
-			}
+			handleResult(bundle);
 		}
+
+		
 	};
 
 	@Override
@@ -40,9 +29,9 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		textView = (TextView) findViewById(R.id.status);
-		
-
 	}
+	
+	
 
 	@Override
 	protected void onResume() {
@@ -50,6 +39,10 @@ public class MainActivity extends Activity {
 		registerReceiver(receiver, new IntentFilter(
 				DownloadService.NOTIFICATION));
 	}
+	
+	
+	
+	
 	@Override
 	protected void onPause() {
 		super.onPause();
@@ -65,6 +58,23 @@ public class MainActivity extends Activity {
 				"http://www.vogella.com/index.html");
 		startService(intent);
 		textView.setText("Service started");
+	}
+	
+	private void handleResult(Bundle bundle) {
+		if (bundle != null) {
+			String string = bundle.getString(DownloadService.FILEPATH);
+			int resultCode = bundle.getInt(DownloadService.RESULT);
+			if (resultCode == RESULT_OK) {
+				Toast.makeText(MainActivity.this,
+						"Download complete. Download URI: " + string,
+						Toast.LENGTH_LONG).show();
+				textView.setText("Download done");
+			} else {
+				Toast.makeText(MainActivity.this, "Download failed",
+						Toast.LENGTH_LONG).show();
+				textView.setText("Download failed");
+			}
+		}
 	}
 
 }

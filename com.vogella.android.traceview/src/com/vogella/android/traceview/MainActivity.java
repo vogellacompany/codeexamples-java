@@ -23,6 +23,7 @@ public class MainActivity extends ListActivity {
 		List<String> list = new ArrayList<String>();
 		for (int i = 0; i < 1000; i++) {
 			String string = new BigInteger(130, random).toString(32);
+			
 			list.add(string);
 		}
 		return list;

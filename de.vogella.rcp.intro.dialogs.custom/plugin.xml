@@ -7,7 +7,7 @@
          point="org.eclipse.core.runtime.applications">
       <application>
          <run
-               class="de.vogella.rcp.intro.dialogs.custom.Application">
+               class="com.vogella.plugin.dialogs.custom.Application">
          </run>
       </application>
    </extension>
@@ -15,7 +15,7 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             name="RCP Perspective"
-            class="de.vogella.rcp.intro.dialogs.custom.Perspective"
+            class="com.vogella.plugin.dialogs.custom.Perspective"
             id="de.vogella.rcp.intro.dialogs.custom.perspective">
       </perspective>
    </extension>

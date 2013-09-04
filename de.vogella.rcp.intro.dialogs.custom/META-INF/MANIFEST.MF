@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Custom Plug-in
-Bundle-SymbolicName: de.vogella.rcp.intro.dialogs.custom; singleton:=true
+Bundle-SymbolicName: com.vogella.plugin.dialogs.custom;singleton:=true
 Bundle-Version: 1.0.0
-Bundle-Activator: de.vogella.rcp.intro.dialogs.custom.Activator
-Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.jface;bundle-version="3.9.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: com.vogella.plugin.dialogs.custom

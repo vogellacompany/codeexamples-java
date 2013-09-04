@@ -66,8 +66,10 @@ public class WindowAnimations extends Activity {
                         AnimatedSubActivity.class);
                 // The enter/exit animations for the two activities are specified by xml resources
                 Bundle translateBundle =
-                        ActivityOptions.makeCustomAnimation(WindowAnimations.this,
-                        R.anim.slide_in_left, R.anim.slide_out_left).toBundle();
+                        ActivityOptions.
+                        makeCustomAnimation(WindowAnimations.this,
+                        R.anim.slide_in_left, 
+                        R.anim.slide_out_left).toBundle();
                 startActivity(subActivity, translateBundle);
             }
         });

@@ -1,8 +1,0 @@
-23.11.2009 12:23:39 de.vogella.logger.UseLogger writeLog
-SCHWERWIEGEND: Info Log
-23.11.2009 12:23:39 de.vogella.logger.UseLogger writeLog
-SCHWERWIEGEND: Info Log
-23.11.2009 12:23:39 de.vogella.logger.UseLogger writeLog
-WARNUNG: Info Log
-23.11.2009 12:23:39 de.vogella.logger.UseLogger writeLog
-INFO: Info Log

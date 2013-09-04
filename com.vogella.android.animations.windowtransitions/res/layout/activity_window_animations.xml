@@ -21,7 +21,6 @@
     <Button android:id="@+id/defaultButton"
         android:text="Default Animations"
         android:layout_width="wrap_content"
-        android:textColor="?android:attr/windowDisablePreview"
         android:layout_height="wrap_content"
         tools:context=".WindowAnimations" />
 

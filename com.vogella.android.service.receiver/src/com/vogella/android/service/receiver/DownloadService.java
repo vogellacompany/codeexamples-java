@@ -9,6 +9,7 @@ import java.net.URL;
 
 import android.app.Activity;
 import android.app.IntentService;
+import android.app.Service;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,7 +30,8 @@ public class DownloadService extends IntentService {
 	public DownloadService() {
 		super("DownloadService");
 	}
-
+	
+	
 	// Will be called asynchronously be Android
 	@Override
 	protected void onHandleIntent(Intent intent) {

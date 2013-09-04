@@ -23,7 +23,6 @@
 
         <service
             android:name=".LocalWordService"
-            android:process="meinprocess"
             android:icon="@drawable/icon"
             android:label="@string/service_name" >
         </service>

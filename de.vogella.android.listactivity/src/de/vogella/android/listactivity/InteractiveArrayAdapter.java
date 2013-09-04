@@ -25,6 +25,7 @@ public class InteractiveArrayAdapter extends ArrayAdapter<Model> {
 	static class ViewHolder {
 		protected TextView text;
 		protected CheckBox checkbox;
+		protected ViewGroup layout;
 	}
 
 	@Override
@@ -36,6 +37,7 @@ public class InteractiveArrayAdapter extends ArrayAdapter<Model> {
 			final ViewHolder viewHolder = new ViewHolder();
 			viewHolder.text = (TextView) view.findViewById(R.id.label);
 			viewHolder.checkbox = (CheckBox) view.findViewById(R.id.check);
+			viewHolder.layout = (ViewGroup) view.findViewById(R.id.mylayout);
 			viewHolder.checkbox
 					.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -45,7 +47,7 @@ public class InteractiveArrayAdapter extends ArrayAdapter<Model> {
 							Model element = (Model) viewHolder.checkbox
 									.getTag();
 							element.setSelected(buttonView.isChecked());
-
+							notifyDataSetChanged();
 						}
 					});
 			view.setTag(viewHolder);
@@ -59,7 +61,9 @@ public class InteractiveArrayAdapter extends ArrayAdapter<Model> {
 		boolean selected = list.get(position).isSelected();
 		holder.checkbox.setChecked(selected);
 		if (selected) {
-			holder.text.setBackgroundResource(android.R.drawable.btn_default);
+			holder.layout.setBackgroundResource(R.drawable.is_selector_focused);
+		} else {
+			holder.layout.setBackground(null);
 		}
 		return view;
 	}

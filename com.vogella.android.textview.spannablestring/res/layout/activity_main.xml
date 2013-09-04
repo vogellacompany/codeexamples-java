@@ -9,6 +9,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="image"
+        android:src="@drawable/vogella" />
+
     <TextView
         android:id="@+id/input"
         android:layout_width="wrap_content"
@@ -17,12 +24,5 @@
         android:layout_margin="16dp"
         android:text="@string/hello_world"
         android:textSize="32sp" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="image"
-        android:src="@drawable/vogella" />
 
 </FrameLayout>

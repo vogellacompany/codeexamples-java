@@ -29,6 +29,8 @@ public class CreateNotificationActivity extends Activity {
 				.setContentText("Subject")
 				.setSmallIcon(R.drawable.ic_stat_name)
 				.addAction(R.drawable.ic_stat_name, "Call", pIntent)
+				.addAction(R.drawable.ic_stat_name, "Dismiss", pIntent)
+				.addAction(R.drawable.ic_stat_name, "No idea", pIntent)
 				.setStyle(new Notification.BigTextStyle().bigText("Long text"))
 				.setContentIntent(pIntent).build();
 

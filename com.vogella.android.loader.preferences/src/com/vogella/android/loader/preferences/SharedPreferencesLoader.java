@@ -9,10 +9,6 @@ public class SharedPreferencesLoader extends AsyncTaskLoader<SharedPreferences>
 		implements SharedPreferences.OnSharedPreferenceChangeListener {
 	private SharedPreferences prefs = null;
 
-	public static void persist(final SharedPreferences.Editor editor) {
-		editor.apply();
-	}
-
 	public SharedPreferencesLoader(Context context) {
 		super(context);
 	}
@@ -50,4 +46,9 @@ public class SharedPreferencesLoader extends AsyncTaskLoader<SharedPreferences>
 			forceLoad();
 		}
 	}
+	
+	public static void persist(final SharedPreferences.Editor editor) {
+		editor.apply();
+	}
+
 }
