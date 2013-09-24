@@ -28,10 +28,9 @@ public class MyListActivity extends ListActivity {
 				"WebOS", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
 				"Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2", "Ubuntu",
 				"Windows7", "Max OS X", "Linux", "OS/2" };
-		InteractiveArrayAdapter adapter = new InteractiveArrayAdapter(this,
-				getModel());
-		// TwoLayoutsArrayAdapter adapter = new TwoLayoutsArrayAdapter(this,
-		// values);
+//		MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this,values);
+		TwoLayoutsArrayAdapter adapter = new TwoLayoutsArrayAdapter(this,
+		values);
 		setListAdapter(adapter);
 	}
 
