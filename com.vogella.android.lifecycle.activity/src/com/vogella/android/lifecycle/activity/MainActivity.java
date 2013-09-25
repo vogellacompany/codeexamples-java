@@ -1,5 +1,6 @@
 package com.vogella.android.lifecycle.activity;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
