@@ -92,7 +92,7 @@ public class SpinnerActivity extends Activity {
 		 * planets. The list is defined by XML in the strings.xml file.
 		 */
 
-		this.mAdapter = ArrayAdapter.createFromResource(this, R.array.Planets,
+		this.mAdapter = ArrayAdapter.createFromResource(this, R.array.OperatingSystems,
 				android.R.layout.simple_spinner_dropdown_item);
 
 		/*

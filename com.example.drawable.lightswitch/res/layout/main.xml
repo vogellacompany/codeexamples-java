@@ -21,7 +21,6 @@
         android:paddingLeft="40dip"
         android:paddingRight="40dip"
         android:paddingTop="20dip"
-        android:background="?android:attr/backgroundStacked"
         android:text="ToggleButton"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textColor="@android:color/white" />

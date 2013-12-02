@@ -22,7 +22,7 @@
  -->
 <resources>
     <string name="app_name">Spinner</string>
-    <string-array name="Planets">
+    <string-array name="OperatingSystems">
         <item>Mercury</item>
         <item>Venus</item>
         <item>Earth</item>
@@ -33,5 +33,5 @@
         <item>Neptune</item>
         <item>Pluto</item>
     </string-array>
-    <string name="planet_prompt">Select a planet</string>
+    <string name="planet_prompt">Select an Operating Szstem</string>
 </resources>

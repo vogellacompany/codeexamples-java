@@ -76,12 +76,12 @@ public class DrawingView extends View {
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		float eventX = event.getX();
-		float eventY = event.getY();
+		float x = event.getX();
+		float y = event.getY();
 
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
-			path.moveTo(eventX, eventY);
+			path.moveTo(x, y);
 			return true;
 
 		case MotionEvent.ACTION_MOVE:
@@ -90,7 +90,7 @@ public class DrawingView extends View {
 			path.lineTo(x, y);
 
 			// After replaying history, connect the line to the touch point.
-			path.lineTo(eventX, eventY);
+			path.lineTo(x, y);
 			break;
 
 		default:
@@ -100,8 +100,8 @@ public class DrawingView extends View {
 		// Include half the stroke width to avoid clipping.
 		invalidate();
 
-		lastTouchX = eventX;
-		lastTouchY = eventY;
+		lastTouchX = x;
+		lastTouchY = y;
 
 		return true;
 	}

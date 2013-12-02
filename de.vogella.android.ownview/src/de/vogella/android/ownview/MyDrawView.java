@@ -71,7 +71,7 @@ public class MyDrawView extends View {
 		Bundle bundle = new Bundle();
 		bundle.putParcelable("instanceState", super.onSaveInstanceState());
 		bundle.putSerializable("stateToSave", points);
-
+ 
 		return bundle;
 
 	}

@@ -4,11 +4,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-    <TextView
+    <com.vogella.android.customview.persistence.MyPersistenceView
+        android:id="@+id/myPersistenceView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="53dp"
+        android:layout_marginTop="36dp"
+        android:text="MyPersistenceView" />
 
 </RelativeLayout>

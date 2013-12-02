@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
-            android:text="Shape Drawable" />
+            android:text="ShapeDrawable" />
 
         <Button
             android:id="@+id/startShineActivity"
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
-            android:text="Shape Drawable" />
+            android:text="Shiny LinearLayout" />
     </LinearLayout>
 
 </LinearLayout>

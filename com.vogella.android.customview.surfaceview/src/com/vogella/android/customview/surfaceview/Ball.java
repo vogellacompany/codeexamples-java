@@ -18,7 +18,7 @@ public class Ball extends SurfaceView implements SurfaceHolder.Callback {
 	public Ball(Context context) {
 		super(context);
 		bitmap = BitmapFactory.decodeResource(getResources(),
-				R.drawable.ic_launcher);
+				R.drawable.vogella);
 
 		x = 50.0f;
 		y = 50.0f;
@@ -33,7 +33,7 @@ public class Ball extends SurfaceView implements SurfaceHolder.Callback {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		update(canvas);
-		canvas.drawARGB(255, 0, 0, 0);
+//		canvas.drawARGB(255, 0, 0, 0);
 		canvas.drawBitmap(bitmap, x, y, null);
 	}
 
