@@ -1,36 +1,38 @@
 package com.vogella.java.collections.map;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class MapTester {
 	public static void main(String[] args) {
-		// Keys are Strings
-		// Objects are also Strings
 		
-		Map<String, String> mMap = new HashMap<String, String>();
-		mMap.put("Android", "Mobile");
-		mMap.put("Eclipse", "IDE");
-		mMap.put("Git", "Version control system");
-		
-		// Output 
-		for (String key : mMap.keySet()) {
-			System.out.println(key +" "+ mMap.get(key));
+		// keys are Strings
+		// objects are also Strings
+		Map<String, String> map = new HashMap<>();
+		fillData(map);
+
+		// write to command line
+		for (String key : map.keySet()) {
+			System.out.println(key + " " + map.get(key));
 		}
 
-		System.out.println("Changing the data");
-		// Adding to the map
-		mMap.put("iPhone", "Created by Apple");
+		// add and remove from the map
+		map.put("iPhone", "Created by Apple");
+		map.remove("Android");
 
-		// Delete from map
-		
-		mMap.remove("Android");
-		
-		System.out.println("New output:");
-		// Output
-		for (String key : mMap.keySet()) {
-			System.out.println(key +" "+ mMap.get(key));
+		// write again to command line
+		for (String key : map.keySet()) {
+			System.out.println(key + " " + map.get(key));
 		}
+	
 	}
+
+	private static void fillData(Map<String, String> map) {
+		map.put("Android", "Mobile");
+		map.put("Eclipse IDE", "Java");
+		map.put("Eclipse RCP", "Java");
+		map.put("Git", "Version control system");
+		
+	}
+
 }
