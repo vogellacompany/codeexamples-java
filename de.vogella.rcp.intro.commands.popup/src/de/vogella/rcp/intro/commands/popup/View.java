@@ -1,11 +1,12 @@
 package de.vogella.rcp.intro.commands.popup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.jface.action.MenuManager;
-import org.eclipse.jface.viewers.IStructuredContentProvider;
-import org.eclipse.jface.viewers.ITableLabelProvider;
+import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
-import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
@@ -15,70 +16,48 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 
 public class View extends ViewPart {
-	public static final String ID = "de.vogella.rcp.intro.commands.popup.view";
 
 	private TableViewer viewer;
 
-	/**
-	 * The content provider class is responsible for providing objects to the
-	 * view. It can wrap existing objects in adapters or simply return objects
-	 * as-is. These objects may be sensitive to the current input of the view,
-	 * or ignore it and always show the same content (like Task List, for
-	 * example).
-	 */
-	class ViewContentProvider implements IStructuredContentProvider {
-		public void inputChanged(Viewer v, Object oldInput, Object newInput) {
-		}
-
-		public void dispose() {
-		}
-
-		public Object[] getElements(Object parent) {
-			return new String[] { "One", "Two", "Three" };
-		}
-	}
-
-	class ViewLabelProvider extends LabelProvider implements
-			ITableLabelProvider {
-		public String getColumnText(Object obj, int index) {
-			return getText(obj);
-		}
-
-		public Image getColumnImage(Object obj, int index) {
-			return getImage(obj);
-		}
-
+	class ViewLabelProvider extends LabelProvider {
+		@Override
 		public Image getImage(Object obj) {
-			return PlatformUI.getWorkbench().getSharedImages().getImage(
-					ISharedImages.IMG_OBJ_ELEMENT);
+			return PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJ_ELEMENT);
 		}
 	}
 
-	/**
-	 * This is a callback that will allow us to create the viewer and initialize
-	 * it.
-	 */
+	@Override
 	public void createPartControl(Composite parent) {
-		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL
-				| SWT.V_SCROLL);
-		viewer.setContentProvider(new ViewContentProvider());
+		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
+		viewer.setContentProvider(ArrayContentProvider.getInstance());
 		viewer.setLabelProvider(new ViewLabelProvider());
-		viewer.setInput(getViewSite());
-		// This is new code
-		// First we create a menu Manager
+		
+		viewer.setInput(getData());
+		// Create a menu manager and create context menu
 		MenuManager menuManager = new MenuManager();
 		Menu menu = menuManager.createContextMenu(viewer.getTable());
-		// Set the MenuManager
+		// set the menu on the SWT widget
 		viewer.getTable().setMenu(menu);
+		// register the menu with the framework
 		getSite().registerContextMenu(menuManager, viewer);
-		// Make the selection available
+
+		// make the viewer selection available
 		getSite().setSelectionProvider(viewer);
 	}
 
 	/**
 	 * Passing the focus request to the viewer's control.
 	 */
+	@Override
 	public void setFocus() {
 		viewer.getControl().setFocus();
+	}
+
+	private List<String> getData() {
+		List<String> list = new ArrayList<String>();
+		list.add("One");
+		list.add("Two");
+		list.add("Three");
+		return list;
 	}
 }
