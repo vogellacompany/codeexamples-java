@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java-8-oracle">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/aopalliance-repackaged-2.3.0-b10.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/asm-debug-all-5.0.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hk2-api-2.3.0-b10.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hk2-locator-2.3.0-b10.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hk2-utils-2.3.0-b10.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javassist-3.18.1-GA.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.annotation-api-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.inject-2.3.0-b10.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.servlet-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.ws.rs-api-2.0.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jaxb-api-2.2.7.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-client.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-common.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-container-servlet-core.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-container-servlet.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-guava-2.12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-server.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.osgi.core-4.2.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/osgi-resource-locator-1.0.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/persistence-api-1.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/validation-api-1.1.0.Final.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
