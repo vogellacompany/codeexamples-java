@@ -11,8 +11,7 @@ import com.squareup.okhttp.Response;
 
 	public class TestMain {
 	  OkHttpClient client = new OkHttpClient();
-	  public static final MediaType JSON
-      = MediaType.parse("application/json; charset=utf-8");
+	
 
 	  String doGetRequest(String url) throws IOException {
 	    Request request = new Request.Builder()
@@ -22,6 +21,9 @@ import com.squareup.okhttp.Response;
 	    Response response = client.newCall(request).execute();
 	    return response.body().string();
 	  }
+	  
+	  public static final MediaType JSON 
+	  = MediaType.parse("application/json; charset=utf-8");
 	  
 	  // test data
 	  String bowlingJson(String player1, String player2) {
