@@ -7,8 +7,8 @@ public class Main {
 		// I set the age of the person to 32
 		pers.setAge(32);
 
-		// Just for testing I write this to the console
-		System.out.println(pers.toString());
+		//  this calls the toString method on the pers object
+		System.out.println(pers);
 		/*
 		 * Actually System.out.println calls always toString, if you do not
 		 * specify it so you could also have written System.out.println(pers);

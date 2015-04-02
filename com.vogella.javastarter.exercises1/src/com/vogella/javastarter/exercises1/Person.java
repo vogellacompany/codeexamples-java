@@ -46,13 +46,9 @@ class Person {
 		this.address = address;
 	}
 
-	void writeName() {
-		// Writes the firstname
-		System.out.println(firstName);
-		
-		
-		// Alternatively you can combine strings with +
-		System.out.println(firstName + " " + lastName + "" + age);
+	@Override
+	public String toString() {
+		return firstName + " " + lastName;
 	}
 
 }
