@@ -14,6 +14,8 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.databinding.fieldassist.ControlDecorationSupport;
 import org.eclipse.jface.databinding.swt.ISWTObservableValue;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
+import org.eclipse.jface.layout.GridDataFactory;
+import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -49,9 +51,7 @@ public class View extends ViewPart {
 
 		person = createPerson();
 		// Lets put thing to order
-		GridLayout layout = new GridLayout(2, false);
-		layout.marginRight = 5;
-		parent.setLayout(layout);
+		GridLayoutFactory.swtDefaults().numColumns(2).applyTo(parent);
 
 		Label firstLabel = new Label(parent, SWT.NONE);
 		firstLabel.setText("Firstname: ");
@@ -84,14 +84,13 @@ public class View extends ViewPart {
 		Label countryLabel = new Label(parent, SWT.NONE);
 		countryLabel.setText("Country");
 		countryText = new Text(parent, SWT.BORDER);
-		
+
 		Label programmingSkillsLabel = new Label(parent, SWT.NONE);
 		programmingSkillsLabel.setText("Programming Skills");
+		GridDataFactory.swtDefaults().applyTo(programmingSkillsLabel);
+
 		programmingSkillsText = new Text(parent, SWT.BORDER);
-		gridData = new GridData();
-		gridData.horizontalAlignment = SWT.FILL;
-		gridData.grabExcessHorizontalSpace = true;
-		programmingSkillsText.setLayoutData(gridData);
+		GridDataFactory.fillDefaults().grab(true, false).applyTo(programmingSkillsText);
 
 		Button button1 = new Button(parent, SWT.PUSH);
 		button1.setText("Write model");
