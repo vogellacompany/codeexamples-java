@@ -1,5 +1,7 @@
 package de.vogella.databinding.example;
 
+import java.util.Arrays;
+
 import org.eclipse.core.databinding.AggregateValidationStatus;
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.DataBindingContext;
@@ -10,6 +12,7 @@ import org.eclipse.core.databinding.validation.IValidator;
 import org.eclipse.core.databinding.validation.ValidationStatus;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.databinding.fieldassist.ControlDecorationSupport;
+import org.eclipse.jface.databinding.swt.ISWTObservableValue;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -23,6 +26,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.part.ViewPart;
 
+import de.vogella.databinding.example.converter.CommaSeparatedStringToStringArrayConverter;
+import de.vogella.databinding.example.converter.StringArrayToCommaSeparatedStringConverter;
 import de.vogella.databinding.example.model.Address;
 import de.vogella.databinding.example.model.Person;
 import de.vogella.databinding.example.validators.StringLongerThenTwo;
@@ -37,6 +42,7 @@ public class View extends ViewPart {
 	private Combo genderCombo;
 	private Text countryText;
 	private Label errorLabel;
+	private Text programmingSkillsText;
 
 	@Override
 	public void createPartControl(Composite parent) {
@@ -78,6 +84,14 @@ public class View extends ViewPart {
 		Label countryLabel = new Label(parent, SWT.NONE);
 		countryLabel.setText("Country");
 		countryText = new Text(parent, SWT.BORDER);
+		
+		Label programmingSkillsLabel = new Label(parent, SWT.NONE);
+		programmingSkillsLabel.setText("Programming Skills");
+		programmingSkillsText = new Text(parent, SWT.BORDER);
+		gridData = new GridData();
+		gridData.horizontalAlignment = SWT.FILL;
+		gridData.grabExcessHorizontalSpace = true;
+		programmingSkillsText.setLayoutData(gridData);
 
 		Button button1 = new Button(parent, SWT.PUSH);
 		button1.setText("Write model");
@@ -89,8 +103,8 @@ public class View extends ViewPart {
 				System.out.println("Age " + person.getAge());
 				System.out.println("Married: " + person.isMarried());
 				System.out.println("Gender: " + person.getGender());
-				System.out.println("Country: "
-						+ person.getAddress().getCountry());
+				System.out.println("Country: " + person.getAddress().getCountry());
+				System.out.println("Programming Skills: " + Arrays.toString(person.getProgrammingSkills()));
 			}
 		});
 
@@ -139,6 +153,7 @@ public class View extends ViewPart {
 		person.setGender("Male");
 		person.setAge(12);
 		person.setMarried(true);
+		person.setProgrammingSkills(new String[] { "Java", "JavaScript", "Groovy" });
 		return person;
 	}
 
@@ -150,10 +165,8 @@ public class View extends ViewPart {
 		// The DataBindingContext object will manage the databindings
 		// Lets bind it
 		DataBindingContext ctx = new DataBindingContext();
-		IObservableValue widgetValue = WidgetProperties.text(SWT.Modify)
-				.observe(firstName);
-		IObservableValue modelValue = BeanProperties.value(Person.class,
-				"firstName").observe(person);
+		IObservableValue widgetValue = WidgetProperties.text(SWT.Modify).observe(firstName);
+		IObservableValue modelValue = BeanProperties.value(Person.class, "firstName").observe(person);
 		// Here we define the UpdateValueStrategy
 		UpdateValueStrategy update = new UpdateValueStrategy();
 		update.setAfterConvertValidator(new StringLongerThenTwo());
@@ -179,14 +192,12 @@ public class View extends ViewPart {
 		UpdateValueStrategy strategy = new UpdateValueStrategy();
 		strategy.setBeforeSetValidator(validator);
 
-		Binding bindValue = ctx.bindValue(widgetValue, modelValue, strategy,
-				null);
+		Binding bindValue = ctx.bindValue(widgetValue, modelValue, strategy, null);
 		// Add some decorations
 		ControlDecorationSupport.create(bindValue, SWT.TOP | SWT.LEFT);
 
 		widgetValue = WidgetProperties.selection().observe(marriedButton);
-		modelValue = BeanProperties.value(Person.class, "married").observe(
-				person);
+		modelValue = BeanProperties.value(Person.class, "married").observe(person);
 		ctx.bindValue(widgetValue, modelValue);
 
 		widgetValue = WidgetProperties.selection().observe(genderCombo);
@@ -197,19 +208,27 @@ public class View extends ViewPart {
 		// Address field is bound to the Ui
 		widgetValue = WidgetProperties.text(SWT.Modify).observe(countryText);
 
-		modelValue = BeanProperties.value(Person.class, "address.country")
-				.observe(person);
+		modelValue = BeanProperties.value(Person.class, "address.country").observe(person);
 		ctx.bindValue(widgetValue, modelValue);
+
+		UpdateValueStrategy programmingSkillsTargetStrategy = new UpdateValueStrategy();
+		programmingSkillsTargetStrategy.setConverter(new CommaSeparatedStringToStringArrayConverter());
+		UpdateValueStrategy programmingSkillsModelStrategy = new UpdateValueStrategy();
+		programmingSkillsModelStrategy.setConverter(new StringArrayToCommaSeparatedStringConverter());
+
+		ISWTObservableValue programmingSkillsTarget = WidgetProperties.text(SWT.Modify).observe(programmingSkillsText);
+		IObservableValue programmingSkillsModel = BeanProperties.value("programmingSkills").observe(person);
+
+		ctx.bindValue(programmingSkillsTarget, programmingSkillsModel, programmingSkillsTargetStrategy,
+				programmingSkillsModelStrategy);
 
 		// We listen to all errors via this binding
 		// We don't need to listen to any SWT event on this label as it never
 		// changes independently
-		final IObservableValue errorObservable = WidgetProperties.text()
-				.observe(errorLabel);
+		final IObservableValue errorObservable = WidgetProperties.text().observe(errorLabel);
 		// This one listenes to all changes
 		ctx.bindValue(errorObservable,
-				new AggregateValidationStatus(ctx.getBindings(),
-						AggregateValidationStatus.MAX_SEVERITY), null, null);
+				new AggregateValidationStatus(ctx.getBindings(), AggregateValidationStatus.MAX_SEVERITY), null, null);
 
 	}
 }

@@ -11,14 +11,14 @@ public class Person implements PropertyChangeListener {
 	private String gender;
 	private Integer age;
 	private Address address;
-	private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(
-			this);
+	private String[] programmingSkills;
+
+	private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
 
 	public Person() {
 	}
 
-	public void addPropertyChangeListener(String propertyName,
-			PropertyChangeListener listener) {
+	public void addPropertyChangeListener(String propertyName, PropertyChangeListener listener) {
 		propertyChangeSupport.addPropertyChangeListener(propertyName, listener);
 	}
 
@@ -43,23 +43,19 @@ public class Person implements PropertyChangeListener {
 	}
 
 	public void setFirstName(String firstName) {
-		propertyChangeSupport.firePropertyChange("firstName", this.firstName,
-				this.firstName = firstName);
+		propertyChangeSupport.firePropertyChange("firstName", this.firstName, this.firstName = firstName);
 	}
 
 	public void setGender(String gender) {
-		propertyChangeSupport.firePropertyChange("gender", this.gender,
-				this.gender = gender);
+		propertyChangeSupport.firePropertyChange("gender", this.gender, this.gender = gender);
 	}
 
 	public void setLastName(String lastName) {
-		propertyChangeSupport.firePropertyChange("lastName", this.lastName,
-				this.lastName = lastName);
+		propertyChangeSupport.firePropertyChange("lastName", this.lastName, this.lastName = lastName);
 	}
 
 	public void setMarried(boolean isMarried) {
-		propertyChangeSupport.firePropertyChange("married", this.married,
-				this.married = isMarried);
+		propertyChangeSupport.firePropertyChange("married", this.married, this.married = isMarried);
 	}
 
 	public Integer getAge() {
@@ -67,8 +63,7 @@ public class Person implements PropertyChangeListener {
 	}
 
 	public void setAge(Integer age) {
-		propertyChangeSupport.firePropertyChange("age", this.age,
-				this.age = age);
+		propertyChangeSupport.firePropertyChange("age", this.age, this.age = age);
 	}
 
 	public Address getAddress() {
@@ -77,8 +72,16 @@ public class Person implements PropertyChangeListener {
 
 	public void setAddress(Address address) {
 		address.addPropertyChangeListener("country", this);
-		propertyChangeSupport.firePropertyChange("address", this.address,
-				this.address = address);
+		propertyChangeSupport.firePropertyChange("address", this.address, this.address = address);
+	}
+
+	public String[] getProgrammingSkills() {
+		return programmingSkills;
+	}
+
+	public void setProgrammingSkills(String[] programmingSkills) {
+		propertyChangeSupport.firePropertyChange("programmingSkills", this.programmingSkills,
+				this.programmingSkills = programmingSkills);
 	}
 
 	@Override
