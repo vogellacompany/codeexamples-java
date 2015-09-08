@@ -3,12 +3,14 @@ package com.vogella.java.dagger2;
 import javax.inject.Inject;
 
 public class BackendService {
-	private User user;
+	
+	@Inject
+	public User user;
+	
 	private String serverUrl;
 	
 	@Inject
-	public BackendService(	User user, String serverUrl) {
-		this.user = user;
+	public BackendService(String serverUrl) {
 		this.serverUrl = serverUrl;
 	}
 	

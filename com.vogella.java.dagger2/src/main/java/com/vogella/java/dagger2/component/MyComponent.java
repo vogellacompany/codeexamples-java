@@ -12,4 +12,8 @@ import dagger.Component;
 @Component(modules = { UserModule.class, BackEndServiceModule.class })
 public interface MyComponent {
 	BackendService createBackendService();
+	
+	// allow to inject into BackendService
+	// method name not important
+	void injectIntoBackendService (BackendService service);
 }

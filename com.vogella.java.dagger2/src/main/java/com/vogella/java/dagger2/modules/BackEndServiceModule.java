@@ -4,7 +4,6 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 
 import com.vogella.java.dagger2.BackendService;
-import com.vogella.java.dagger2.User;
 
 import dagger.Module;
 import dagger.Provides;
@@ -14,8 +13,8 @@ public class BackEndServiceModule {
     
     @Provides
     @Singleton
-    BackendService provideBackendService(User user, @Named("serverUrl") String serverUrl) {
-       return new BackendService(user, serverUrl);
+    BackendService provideBackendService(@Named("serverUrl") String serverUrl) {
+       return new BackendService(serverUrl);
     }
     
     @Provides
