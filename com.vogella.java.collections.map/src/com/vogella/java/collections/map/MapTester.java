@@ -12,18 +12,14 @@ public class MapTester {
 		fillData(map);
 
 		// write to command line
-		for (String key : map.keySet()) {
-			System.out.println(key + " " + map.get(key));
-		}
+		map.forEach((k, v) -> System.out.printf("%s %s%n", k, v));
 
 		// add and remove from the map
 		map.put("iPhone", "Created by Apple");
 		map.remove("Android");
 
 		// write again to command line
-		for (String key : map.keySet()) {
-			System.out.println(key + " " + map.get(key));
-		}
+		map.forEach((k, v) -> System.out.printf("%s %s%n", k, v));
 	
 	}
 
