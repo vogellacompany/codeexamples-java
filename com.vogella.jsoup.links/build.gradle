@@ -1,0 +1,10 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+	compile 'org.jsoup:jsoup:1.9.1'
+}
