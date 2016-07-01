@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_v2MVMD-JEeajyYChQoCgXA">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_x1_pwD-JEeajyYChQoCgXA" featurename="descriptors" parentElementId="xpath:/">
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_0UQb8D-JEeajyYChQoCgXA" elementId="de.vogella.plugin.adapter.partdescriptor.sampleview" label="Sample View" contributionURI="bundleclass://de.vogella.plugin.adapter/de.vogella.plugin.adapter.views.SampleView">
+      <tags>View</tags>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>

@@ -21,10 +21,12 @@ public class ExampleTableViewer extends ViewPart {
 
 	@Override
 	public void createPartControl(Composite parent) {
-
+		
 		// create a table viewer with visible header
 		TableViewer viewer = new TableViewer(parent, SWT.FULL_SELECTION);
 		viewer.getTable().setHeaderVisible(true);
+		
+		getViewSite().setSelectionProvider(viewer);
 
 		// create an example model which will be visualized
 		Model model = createModel();
