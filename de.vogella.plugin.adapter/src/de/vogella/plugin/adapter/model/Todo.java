@@ -4,6 +4,7 @@ public class Todo {
 
 	private String summary;
 	private String description;
+	private boolean done;
 
 	public String getSummary() {
 		return summary;
@@ -19,6 +20,14 @@ public class Todo {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public boolean isDone() {
+		return done;
+	}
+
+	public void setDone(boolean done) {
+		this.done = done;
 	}
 
 }

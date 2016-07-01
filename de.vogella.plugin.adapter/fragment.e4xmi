@@ -4,5 +4,8 @@
     <elements xsi:type="basic:PartDescriptor" xmi:id="_0UQb8D-JEeajyYChQoCgXA" elementId="de.vogella.plugin.adapter.partdescriptor.sampleview" label="Sample View" contributionURI="bundleclass://de.vogella.plugin.adapter/de.vogella.plugin.adapter.views.SampleView">
       <tags>View</tags>
     </elements>
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_Yl7FID-0EeajyYChQoCgXA" elementId="de.vogella.plugin.adapter.partdescriptor.workbenchadaptersample" label="WorkbenchAdapter Sample" contributionURI="bundleclass://de.vogella.plugin.adapter/de.vogella.plugin.adapter.views.SampleWorkbenchAdapterView">
+      <tags>View</tags>
+    </elements>
   </fragments>
 </fragment:ModelFragments>

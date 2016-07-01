@@ -7,37 +7,19 @@ import javax.annotation.PostConstruct;
 
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.viewers.ArrayContentProvider;
+import org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
-import org.eclipse.jface.viewers.ITableLabelProvider;
-import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.ISharedImages;
-import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.model.WorkbenchLabelProvider;
 
 import de.vogella.plugin.adapter.model.Todo;
 
-public class SampleView {
+public class SampleWorkbenchAdapterView {
 
 	private TableViewer viewer;
-
-	class ViewLabelProvider extends LabelProvider implements ITableLabelProvider {
-		public String getColumnText(Object obj, int index) {
-			Todo todo = (Todo) obj;
-			return todo.getSummary();
-		}
-
-		public Image getColumnImage(Object obj, int index) {
-			return getImage(obj);
-		}
-
-		public Image getImage(Object obj) {
-			return PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJ_ELEMENT);
-		}
-	}
 
 	/**
 	 * This is a callback that will allow us to create the viewer and initialize
@@ -47,7 +29,9 @@ public class SampleView {
 	public void createPartControl(Composite parent, ESelectionService selectionService) {
 		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
 		viewer.setContentProvider(new ArrayContentProvider());
-		viewer.setLabelProvider(new ViewLabelProvider());
+
+		// make use of the DelegatingStyledCellLabelProvider with the WorkbenchLabelProvider as IStyledLabelProvider implementation 
+		viewer.setLabelProvider(new DelegatingStyledCellLabelProvider(new WorkbenchLabelProvider()));
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
 			@Override
