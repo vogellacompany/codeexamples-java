@@ -8,9 +8,11 @@ import com.google.gson.GsonBuilder;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.Credentials;
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;
+import okhttp3.logging.HttpLoggingInterceptor.Level;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -30,11 +32,11 @@ public class Controller {
 
 	private void initGerritApi() {
 		HttpLoggingInterceptor loggerInterceptor = new HttpLoggingInterceptor();
-		// loggerInterceptor.setLevel(Level.BODY);
+		 loggerInterceptor.setLevel(Level.BODY);
 
 		OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(loggerInterceptor).build();
 
-		Gson gson = new GsonBuilder().setLenient().create();
+		Gson gson = new GsonBuilder().registerTypeAdapter(ReviewInput.class, new JsonSerializer()).setLenient().create();
 
 		Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL)
 				.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -61,11 +63,12 @@ public class Controller {
 				.observeOn(Schedulers.single()).subscribeWith(getChangesObserver()));
 	}
 
-	public void upvote(int i) {
+	public void upvote(String username, String password, int i) {
 		Change currentChange = currentData.get(i);
-		// compositeDisposable.add(gerritAPI.postUpvote(currentChange.getChangeId(),
-		// currentChange.getCurrentRevision())
-		// .subscribeOn(Schedulers.io()).observeOn(Schedulers.single()).subscribeWith(getUpvoteObserver()));
+		compositeDisposable.add(gerritAPI
+				.postUpvote(Credentials.basic(username, username), currentChange.getChangeId(),
+						currentChange.getCurrentRevision(), new ReviewInput())
+				.subscribeOn(Schedulers.io()).observeOn(Schedulers.single()).subscribeWith(getUpvoteObserver()));
 	}
 
 	private DisposableSingleObserver<List<Change>> getChangesObserver() {
@@ -89,6 +92,7 @@ public class Controller {
 
 			@Override
 			public void onSuccess(ResponseBody value) {
+
 			}
 
 			@Override

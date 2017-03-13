@@ -4,7 +4,9 @@ import java.util.List;
 
 import io.reactivex.Single;
 import okhttp3.ResponseBody;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Url;
@@ -21,5 +23,5 @@ public interface GerritAPI {
 	Single<List<Change>> getChangesForUser(@Url String url);
 
 	@POST("changes/{change-id}/revisions/{revision-id}/review")
-	Single<ResponseBody> postUpvote(@Path("change-id") String changeId, @Path("revision-id") String revisionId);
+	Single<ResponseBody> postUpvote(@Header("Authentication") String credentials, @Path("change-id") String changeId, @Path("revision-id") String revisionId, @Body ReviewInput reviewInput);
 }

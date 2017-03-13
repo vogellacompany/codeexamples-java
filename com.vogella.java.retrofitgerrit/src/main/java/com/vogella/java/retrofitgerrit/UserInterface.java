@@ -7,6 +7,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
@@ -23,6 +24,11 @@ public class UserInterface {
 	private Text userIdText;
 	private Text projectNameText;
 	private Text upvoteText;
+	private Text usernameText;
+	private Text passwordText;
+
+	private Label passwordLabel;
+	private Label usernameLabel;
 
 	private Display display;
 	private Controller controller;
@@ -38,16 +44,34 @@ public class UserInterface {
 		GridData gridData;
 		display = new Display();
 		Shell shell = new Shell(display);
-		shell.setSize(400, 300);
-
+		shell.setSize(500, 400);
+		
 		GridLayout gridLayout = new GridLayout();
-		gridLayout.numColumns = 3;
+		gridLayout.numColumns = 4;
 		shell.setLayout(gridLayout);
 
+		usernameLabel = new Label(shell, SWT.NONE);
+		usernameLabel.setText("Username:");
+		gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		usernameLabel.setLayoutData(gridData);
+
+		usernameText = new Text(shell, SWT.NONE);
+		gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		usernameText.setLayoutData(gridData);
+		
+		passwordLabel = new Label(shell, SWT.NONE);
+		passwordLabel.setText("Password:");
+		gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		passwordLabel.setLayoutData(gridData);
+		
+		passwordText = new Text(shell, SWT.PASSWORD);
+		gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		passwordText.setLayoutData(gridData);
+				
 		allChangesButton = new Button(shell, SWT.PUSH);
 		allChangesButton.setText("Get all changes");
 		gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
-		gridData.horizontalSpan = 3;
+		gridData.horizontalSpan = 4;
 		allChangesButton.setLayoutData(gridData);
 		allChangesButton.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -64,6 +88,7 @@ public class UserInterface {
 		changes = new List(shell, SWT.NONE);
 		gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		gridData.verticalSpan = 4;
+		gridData.horizontalSpan = 2;
 		changes.setLayoutData(gridData);
 		changes.addSelectionListener(new SelectionAdapter() {
 
@@ -139,7 +164,7 @@ public class UserInterface {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				controller.upvote(changes.getSelectionIndex());
+				controller.upvote(usernameText.getText(), passwordText.getText(), changes.getSelectionIndex());
 			}
 
 			@Override
