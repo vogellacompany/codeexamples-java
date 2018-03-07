@@ -69,7 +69,7 @@ public class View extends ViewPart {
 		viewer.setInput(new String[] { "One", "Two", "Three" });
 		Text text = new Text(parent, SWT.NONE);
 		text.setText("Hello");
-		PlatformUI.getWorkbench().getHelpSystem().setHelp(text, "message");
+		PlatformUI.getWorkbench().getHelpSystem().setHelp(text, "de.vogella.rcp.help.content.message");
 	}
 
 	/**
